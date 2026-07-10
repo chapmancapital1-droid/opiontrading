@@ -1,0 +1,1070 @@
+You are a senior fintech product designer, quantitative developer, and full-stack TypeScript engineer.
+
+Build a production-ready responsive website application called “OptionScope,” an educational options strategy calculator and trading companion designed for people who place options trades through Robinhood.
+
+This is an analysis and decision-support application, not an autonomous trading bot. The MVP must not request a user’s Robinhood username, password, two-factor authentication code, or session token. It must not use unofficial or reverse-engineered Robinhood endpoints. It should calculate and explain a trade, then create a Robinhood-ready order checklist that the user can manually verify and enter into Robinhood.
+
+PRODUCT GOAL
+
+Help an options trader answer these questions before entering a trade:
+
+1. What is my total debit, credit, collateral, and maximum capital at risk?
+2. What are my maximum possible profit and maximum possible loss?
+3. At what underlying prices will the strategy break even?
+4. What is the estimated probability of making money?
+5. What is the estimated probability of losing money?
+6. What is the expected dollar profit or loss under the selected assumptions?
+7. How will the position react to changes in stock price, time, and implied volatility?
+8. What exact legs should I review and enter into Robinhood?
+9. After closing the trade, how accurate was the original probability estimate?
+
+The interface must clearly state that all probabilities are model-based estimates, not guarantees or personalized investment recommendations.
+
+TARGET USER
+
+The primary user trades options through Robinhood and understands basic calls and puts but may not fully understand multi-leg risk, implied volatility, time decay, assignment risk, or the assumptions behind probability-of-profit calculations.
+
+MVP USER FLOW
+
+1. The user searches for or manually enters an underlying ticker.
+2. Display the underlying price, quote timestamp, data source, and whether the quote is real-time, delayed, or manually entered.
+3. The user chooses a strategy template or creates a custom strategy.
+4. The user selects each option leg:
+   - Buy or sell
+   - Call or put
+   - Quantity
+   - Strike price
+   - Expiration date
+   - Bid
+   - Ask
+   - Mark price
+   - Expected fill price
+   - Implied volatility
+   - Contract multiplier, defaulting to 100
+5. The user can also include an underlying-stock leg for strategies such as a covered call.
+6. The app immediately calculates the trade’s risk and reward.
+7. The user adjusts assumptions such as implied volatility, target date, interest rate, dividend yield, expected stock drift, and simulation count.
+8. The app displays payoff charts, probability results, Greeks, and scenario analysis.
+9. The user saves the analysis to a trade journal.
+10. The app generates a copyable “Robinhood Order Checklist.”
+11. Later, the user enters the actual opening fill, closing fill, and realized result to compare the forecast with the outcome.
+
+SUPPORTED STRATEGIES
+
+Include these strategy templates:
+
+- Long call
+- Long put
+- Covered call
+- Cash-secured put
+- Bull call debit spread
+- Bear put debit spread
+- Bull put credit spread
+- Bear call credit spread
+- Long straddle
+- Long strangle
+- Iron condor
+- Iron butterfly
+- Call butterfly
+- Put butterfly
+- Custom same-expiration multi-leg strategy
+
+Allow the user to select an options-permission profile. Hide or warn about strategies that may not be supported by that profile.
+
+Do not permit an uncovered short call or uncovered short put in the default Robinhood companion mode. A separate educational sandbox may model undefined-risk positions, but it must display a prominent undefined-risk warning.
+
+Keep calendar spreads and other strategies with multiple expiration dates out of the first MVP. Add them in a later phase because calculating their risk requires valuing remaining legs at an intermediate expiration.
+
+CALCULATION ENGINE
+
+Create a tested calculation engine separate from the presentation layer.
+
+For every leg, store:
+
+- Underlying symbol
+- Asset type: option or stock
+- Position side: long or short
+- Option type: call or put
+- Number of contracts
+- Strike price
+- Expiration date and time
+- Premium per share
+- Contract multiplier
+- Implied volatility
+- Exercise style
+- Fees
+- Quote timestamp
+
+Expiration profit and loss formulas:
+
+Long call:
+max(underlying price - strike, 0) × contracts × multiplier
+minus premium paid and fees
+
+Short call:
+premium received
+minus max(underlying price - strike, 0) × contracts × multiplier
+minus fees
+
+Long put:
+max(strike - underlying price, 0) × contracts × multiplier
+minus premium paid and fees
+
+Short put:
+premium received
+minus max(strike - underlying price, 0) × contracts × multiplier
+minus fees
+
+Stock leg:
+(target stock price - stock entry price) × number of shares
+
+The total strategy profit or loss is the sum of all legs after premiums and fees.
+
+Calculate and display:
+
+- Net debit or net credit per share
+- Total debit or credit in dollars
+- Estimated collateral
+- Maximum profit
+- Maximum loss
+- Whether the risk or reward is unlimited or undefined
+- All break-even prices
+- Return on risk
+- Profit and loss at the current stock price
+- Aggregate delta
+- Aggregate gamma
+- Aggregate theta
+- Aggregate vega
+- Probability of profit
+- Probability of loss
+- Probability of maximum profit, when applicable
+- Probability of maximum loss, when applicable
+- Expected profit or loss
+- Median simulated result
+- Fifth-percentile result
+- Ninety-fifth-percentile result
+
+Do not determine maximum profit or loss by looking only at the visible chart range. Analyze the payoff function at all strike breakpoints and at both price-distribution tails. Correctly identify unlimited risk or reward.
+
+Find break-even prices by detecting roots in the complete net payoff function. Use a reliable numerical method such as interval scanning followed by bisection.
+
+PROBABILITY MODES
+
+Provide two clearly labeled probability modes.
+
+Mode 1: Market-Implied Probability
+
+- Use a risk-neutral price distribution.
+- Use the risk-free rate minus dividend yield as the risk-neutral drift.
+- Use an appropriate expected volatility input, preferably at-the-money implied volatility for the selected expiration.
+- Explain that this is a market-implied modeling view and is not a forecast of actual returns.
+
+Mode 2: User-Assumption Probability
+
+- Allow the user to enter an expected annual return or drift.
+- Allow the user to use zero drift, a manually entered view, or an optional historical estimate.
+- Clearly label any historical estimate and show the lookback period.
+- Explain that changing the expected return can materially change the probability result.
+
+Use Monte Carlo simulation with:
+
+- 20,000 simulations by default
+- User-selectable simulation count
+- A reproducible random seed
+- Geometric Brownian motion for the MVP
+- Fixed-volatility assumptions for the MVP
+- A clear statement that volatility may change in real markets
+- Monte Carlo standard error or a confidence interval for the estimated probability
+
+Define:
+
+Probability of profit =
+number of simulations with strategy profit greater than zero
+divided by total valid simulations
+
+Probability of loss =
+number of simulations with strategy profit less than zero
+divided by total valid simulations
+
+Do not describe option delta as the exact probability of profit. It may be shown as a separate market sensitivity metric.
+
+OPTION VALUATION
+
+At expiration, calculate intrinsic payoff directly.
+
+For target dates before expiration:
+
+- Reprice every remaining option at the selected target date.
+- Select the valuation model from contract metadata.
+- Support Bjerksund–Stensland or a tested binomial model for American-style contracts.
+- Support Black–Scholes for European-style contracts.
+- Include interest rate and dividend yield.
+- Allow implied volatility to remain unchanged, increase, decrease, or follow a user-defined scenario.
+- Clearly display which model and assumptions were used.
+
+Use decimal-safe money calculations. Avoid floating-point display errors in premiums, credits, and total dollar results.
+
+SCENARIO ANALYSIS
+
+Include four visual tools:
+
+1. Expiration payoff chart
+   - Underlying price on the horizontal axis
+   - Profit or loss in dollars on the vertical axis
+   - Highlight profitable and losing regions
+   - Mark current price, strikes, and break-even prices
+
+2. Target-date profit-and-loss curve
+   - Let the user select a date before expiration
+   - Reprice the strategy across a range of underlying prices
+
+3. Price-and-time heat map
+   - Rows represent possible underlying prices
+   - Columns represent dates
+   - Cells show estimated strategy profit or loss
+
+4. Monte Carlo outcome distribution
+   - Histogram of simulated dollar outcomes
+   - Mark zero profit, expected value, median, and major percentiles
+
+Add scenario controls for:
+
+- Underlying price change
+- Implied volatility change
+- Days passing
+- Interest rate
+- Dividend yield
+- Expected drift
+- Fees and slippage
+
+LIQUIDITY AND EVENT WARNINGS
+
+When data is available, display:
+
+- Bid-ask spread
+- Spread as a percentage of the option mark
+- Volume
+- Open interest
+- Quote age
+- Upcoming earnings
+- Ex-dividend date
+- Expiration proximity
+- In-the-money status
+- Potential early-assignment warning
+- Pin-risk warning near expiration
+- Adjusted-contract warning
+- No-bid warning
+- Stale-data warning
+
+Do not turn liquidity measurements into a guaranteed fill prediction. Explain that a limit order may not execute.
+
+ROBINHOOD ORDER CHECKLIST
+
+After the user finishes an analysis, generate a clean order card containing:
+
+- Underlying symbol
+- Strategy name
+- Number of spreads or contracts
+- Expiration date
+- Each leg in the correct order:
+  - Buy to open or sell to open
+  - Call or put
+  - Strike
+  - Quantity
+- Net debit or credit limit per share
+- Estimated total debit or credit
+- Maximum modeled loss
+- Estimated collateral
+- Break-even prices
+- Quote timestamp
+- User’s planned profit target
+- User’s planned loss limit
+- User’s planned exit date
+- A checkbox stating: “I reviewed the order details in Robinhood.”
+
+Include:
+
+- Copy to clipboard
+- Print-friendly view
+- Download as PDF
+- Save to journal
+
+Do not include a Place Trade button in the MVP.
+
+TRADE JOURNAL
+
+Allow users to save:
+
+- Original strategy
+- Original probability of profit
+- Model assumptions
+- Planned entry price
+- Actual entry price
+- Planned exit conditions
+- Actual exit price
+- Realized profit or loss
+- Notes
+- Screenshots or attachments
+- Whether the trade was closed, expired, exercised, or assigned
+
+Create a journal dashboard showing:
+
+- Total trades
+- Win rate
+- Average profit
+- Average loss
+- Average expected value at entry
+- Average predicted probability of profit
+- Actual outcome rate by probability range
+- Performance by strategy
+- Performance by days to expiration
+- Performance by implied-volatility range
+
+Do not claim that a small number of trades proves that the probability model is accurate.
+
+DATA ARCHITECTURE
+
+Create a provider-independent market-data interface.
+
+The app must support:
+
+- Demo data
+- Manual quote entry
+- A replaceable external market-data provider
+- Server-side environment variables for API credentials
+- Quote timestamps
+- Delayed-data labels
+- Data-source labels
+- Retry and error handling
+- Manual price and volatility overrides
+
+Never expose a market-data API secret in browser code.
+
+Use a normalized contract identifier so the app can distinguish ticker, expiration, strike, call/put type, multiplier, and adjusted contracts.
+
+TECHNOLOGY
+
+Use:
+
+- Next.js
+- React
+- TypeScript with strict mode
+- Tailwind CSS
+- Accessible chart components
+- PostgreSQL or Supabase for saved users and journals
+- Server-side API routes for market-data requests
+- A Web Worker for large Monte Carlo simulations so the interface stays responsive
+- Unit tests for the calculation engine
+- Integration tests for the primary user flow
+
+The app should work in demo mode without requiring an account. Authentication is required only for saving a journal.
+
+DESIGN
+
+Create a professional, calm financial interface rather than a gambling-style interface.
+
+Use:
+
+- Responsive desktop and mobile layouts
+- Light and dark modes
+- Large, readable numbers
+- Clear profit, loss, and warning states
+- Tooltips that explain every metric in plain English
+- Accessible keyboard navigation
+- Adequate color contrast
+- More than color alone to communicate profit and loss
+- Skeleton loading states
+- Helpful empty states and validation messages
+
+Primary pages:
+
+1. Dashboard
+2. Strategy Builder
+3. Analysis Results
+4. Compare Strategies
+5. Saved Trades
+6. Trade Journal
+7. Settings and Model Assumptions
+8. Education and Risk Disclosures
+
+STRATEGY COMPARISON
+
+Allow up to three strategies on the same underlying to be compared side by side.
+
+Compare:
+
+- Debit or credit
+- Maximum profit
+- Maximum loss
+- Break-even prices
+- Probability of profit
+- Expected profit or loss
+- Return on risk
+- Delta
+- Theta
+- Vega
+- Liquidity
+- Profit and loss at user-selected price targets
+
+Do not automatically label one strategy as “best.” Let the user sort by a chosen metric and explain the trade-offs.
+
+RISK CONTROLS
+
+Let the user optionally enter an account size and planned maximum risk percentage.
+
+Display:
+
+- Maximum loss as a percentage of account size
+- Total premium at risk
+- Estimated collateral usage
+- Concentration by underlying
+- Expiration concentration
+
+Do not automatically recommend a contract quantity. The app may calculate what different quantities would represent, but the user must select the quantity.
+
+DISCLOSURES
+
+Display a persistent disclosure that:
+
+- Options involve significant risk.
+- A trader can lose the full premium and, for some strategies, more than the initial amount invested.
+- Probability calculations are estimates based on selected models and assumptions.
+- Implied volatility, liquidity, interest rates, dividends, and market prices may change.
+- Simulated results are not actual results.
+- The application does not provide personalized investment, legal, or tax advice.
+- The product is not affiliated with or endorsed by Robinhood.
+
+Include a link to the official Characteristics and Risks of Standardized Options disclosure.
+
+TESTING REQUIREMENTS
+
+Write unit tests for every supported strategy.
+
+Include this fictitious bull call spread test:
+
+- Buy one 500 strike call for $6.20
+- Sell one 510 strike call for $3.10
+- Same expiration
+- Contract multiplier of 100
+- No fees
+
+Expected results:
+
+- Net debit: $3.10 per share
+- Total debit: $310
+- Maximum loss: $310
+- Maximum profit: $690
+- Expiration break-even: $503.10
+
+Also test:
+
+- Multiple contracts
+- Fees
+- Zero days to expiration
+- Missing bid
+- Wide bid-ask spread
+- Invalid implied volatility
+- Expired contract
+- Adjusted contract multiplier
+- Covered call with a stock leg
+- Iron condor with multiple break-even points
+- Undefined-risk educational position
+- Monte Carlo reproducibility with a fixed seed
+
+DELIVERABLES
+
+Produce:
+
+1. A complete working application
+2. Clean component and calculation-engine architecture
+3. Database schema
+4. Demo data
+5. Environment-variable example file
+6. Setup instructions
+7. Calculation methodology documentation
+8. Unit and integration tests
+9. Risk-disclosure page
+10. A README explaining how to connect a licensed market-data provider
+
+Do not leave nonfunctional placeholder buttons. Where a live-data service has not been configured, automatically use clearly labeled demo data or manual-entry mode.
+help write an idea for a prompt to build and option stredigy trading app to support my robinhood option trading like an option calucalor capanion that calculates the win loss probability in a website app   
+Thought for 5m 14s
+
+Boss man, the strongest version of your idea is an options strategy analysis companion for Robinhood traders. A user recreates a potential trade, and the website calculates estimated probability of profit, probability of s, break-even prices, Greeks, expected value, and scenario outcomes. It then produces a clean, copyable order checklist that the user can manually review and enter in Robinhood.
+
+For the first version, avoid asking users for Robinhood credentials or depending on unofficial brokerage endpoints. Robinhood’s publicly documented developer API is focused on crypto trading, while Robinhood’s newer agent-related options capabilities operate through a separate supported environment. Any future direct options integration should therefore use an expressly supported official interface and require user confirmation before an order is placed. inhood’s own Simulated Returns tool uses Bjerksund–Stensland modeling for stock and ETF options and Black–Scholes for index options. It also warns that assumptions such as implied volatility and interest rates may remain fixed in a simulation even though they change in real markets. Your app can differentiate itself by making those assumptions visible and adjustable. Copy-and-paste app-builder prompt
+
+You are a senior fintech product designer, quantitative developer, and full-stack TypeScript engineer.
+
+Build a production-ready responsive website application called “OptionScope,” an educational options strategy calculator and trading companion designed for people who place options trades through Robinhood.
+
+This is an analysis and decision-support application, not an autonomous trading bot. The MVP must not request a user’s Robinhood username, password, two-factor authentication code, or session token. It must not use unofficial or reverse-engineered Robinhood endpoints. It should calculate and explain a trade, then create a Robinhood-ready order checklist that the user can manually verify and enter into Robinhood.
+
+PRODUCT GOAL
+
+Help an options trader answer these questions before entering a trade:
+
+1. What is my total debit, credit, collateral, and maximum capital at risk?
+2. What are my maximum possible profit and maximum possible loss?
+3. At what underlying prices will the strategy break even?
+4. What is the estimated probability of making money?
+5. What is the estimated probability of losing money?
+6. What is the expected dollar profit or loss under the selected assumptions?
+7. How will the position react to changes in stock price, time, and implied volatility?
+8. What exact legs should I review and enter into Robinhood?
+9. After closing the trade, how accurate was the original probability estimate?
+
+The interface must clearly state that all probabilities are model-based estimates, not guarantees or personalized investment recommendations.
+
+TARGET USER
+
+The primary user trades options through Robinhood and understands basic calls and puts but may not fully understand multi-leg risk, implied volatility, time decay, assignment risk, or the assumptions behind probability-of-profit calculations.
+
+MVP USER FLOW
+
+1. The user searches for or manually enters an underlying ticker.
+2. Display the underlying price, quote timestamp, data source, and whether the quote is real-time, delayed, or manually entered.
+3. The user chooses a strategy template or creates a custom strategy.
+4. The user selects each option leg:
+   - Buy or sell
+   - Call or put
+   - Quantity
+   - Strike price
+   - Expiration date
+   - Bid
+   - Ask
+   - Mark price
+   - Expected fill price
+   - Implied volatility
+   - Contract multiplier, defaulting to 100
+5. The user can also include an underlying-stock leg for strategies such as a covered call.
+6. The app immediately calculates the trade’s risk and reward.
+7. The user adjusts assumptions such as implied volatility, target date, interest rate, dividend yield, expected stock drift, and simulation count.
+8. The app displays payoff charts, probability results, Greeks, and scenario analysis.
+9. The user saves the analysis to a trade journal.
+10. The app generates a copyable “Robinhood Order Checklist.”
+11. Later, the user enters the actual opening fill, closing fill, and realized result to compare the forecast with the outcome.
+
+SUPPORTED STRATEGIES
+
+Include these strategy templates:
+
+- Long call
+- Long put
+- Covered call
+- Cash-secured put
+- Bull call debit spread
+- Bear put debit spread
+- Bull put credit spread
+- Bear call credit spread
+- Long straddle
+- Long strangle
+- Iron condor
+- Iron butterfly
+- Call butterfly
+- Put butterfly
+- Custom same-expiration multi-leg strategy
+
+Allow the user to select an options-permission profile. Hide or warn about strategies that may not be supported by that profile.
+
+Do not permit an uncovered short call or uncovered short put in the default Robinhood companion mode. A separate educational sandbox may model undefined-risk positions, but it must display a prominent undefined-risk warning.
+
+Keep calendar spreads and other strategies with multiple expiration dates out of the first MVP. Add them in a later phase because calculating their risk requires valuing remaining legs at an intermediate expiration.
+
+CALCULATION ENGINE
+
+Create a tested calculation engine separate from the presentation layer.
+
+For every leg, store:
+
+- Underlying symbol
+- Asset type: option or stock
+- Position side: long or short
+- Option type: call or put
+- Number of contracts
+- Strike price
+- Expiration date and time
+- Premium per share
+- Contract multiplier
+- Implied volatility
+- Exercise style
+- Fees
+- Quote timestamp
+
+Expiration profit and loss formulas:
+
+Long call:
+max(underlying price - strike, 0) × contracts × multiplier
+minus premium paid and fees
+
+Short call:
+premium received
+minus max(underlying price - strike, 0) × contracts × multiplier
+minus fees
+
+Long put:
+max(strike - underlying price, 0) × contracts × multiplier
+minus premium paid and fees
+
+Short put:
+premium received
+minus max(strike - underlying price, 0) × contracts × multiplier
+minus fees
+
+Stock leg:
+(target stock price - stock entry price) × number of shares
+
+The total strategy profit or loss is the sum of all legs after premiums and fees.
+
+Calculate and display:
+
+- Net debit or net credit per share
+- Total debit or credit in dollars
+- Estimated collateral
+- Maximum profit
+- Maximum loss
+- Whether the risk or reward is unlimited or undefined
+- All break-even prices
+- Return on risk
+- Profit and loss at the current stock price
+- Aggregate delta
+- Aggregate gamma
+- Aggregate theta
+- Aggregate vega
+- Probability of profit
+- Probability of loss
+- Probability of maximum profit, when applicable
+- Probability of maximum loss, when applicable
+- Expected profit or loss
+- Median simulated result
+- Fifth-percentile result
+- Ninety-fifth-percentile result
+
+Do not determine maximum profit or loss by looking only at the visible chart range. Analyze the payoff function at all strike breakpoints and at both price-distribution tails. Correctly identify unlimited risk or reward.
+
+Find break-even prices by detecting roots in the complete net payoff function. Use a reliable numerical method such as interval scanning followed by bisection.
+
+PROBABILITY MODES
+
+Provide two clearly labeled probability modes.
+
+Mode 1: Market-Implied Probability
+
+- Use a risk-neutral price distribution.
+- Use the risk-free rate minus dividend yield as the risk-neutral drift.
+- Use an appropriate expected volatility input, preferably at-the-money implied volatility for the selected expiration.
+- Explain that this is a market-implied modeling view and is not a forecast of actual returns.
+
+Mode 2: User-Assumption Probability
+
+- Allow the user to enter an expected annual return or drift.
+- Allow the user to use zero drift, a manually entered view, or an optional historical estimate.
+- Clearly label any historical estimate and show the lookback period.
+- Explain that changing the expected return can materially change the probability result.
+
+Use Monte Carlo simulation with:
+
+- 20,000 simulations by default
+- User-selectable simulation count
+- A reproducible random seed
+- Geometric Brownian motion for the MVP
+- Fixed-volatility assumptions for the MVP
+- A clear statement that volatility may change in real markets
+- Monte Carlo standard error or a confidence interval for the estimated probability
+
+Define:
+
+Probability of profit =
+number of simulations with strategy profit greater than zero
+divided by total valid simulations
+
+Probability of loss =
+number of simulations with strategy profit less than zero
+divided by total valid simulations
+
+Do not describe option delta as the exact probability of profit. It may be shown as a separate market sensitivity metric.
+
+OPTION VALUATION
+
+At expiration, calculate intrinsic payoff directly.
+
+For target dates before expiration:
+
+- Reprice every remaining option at the selected target date.
+- Select the valuation model from contract metadata.
+- Support Bjerksund–Stensland or a tested binomial model for American-style contracts.
+- Support Black–Scholes for European-style contracts.
+- Include interest rate and dividend yield.
+- Allow implied volatility to remain unchanged, increase, decrease, or follow a user-defined scenario.
+- Clearly display which model and assumptions were used.
+
+Use decimal-safe money calculations. Avoid floating-point display errors in premiums, credits, and total dollar results.
+
+SCENARIO ANALYSIS
+
+Include four visual tools:
+
+1. Expiration payoff chart
+   - Underlying price on the horizontal axis
+   - Profit or loss in dollars on the vertical axis
+   - Highlight profitable and losing regions
+   - Mark current price, strikes, and break-even prices
+
+2. Target-date profit-and-loss curve
+   - Let the user select a date before expiration
+   - Reprice the strategy across a range of underlying prices
+
+3. Price-and-time heat map
+   - Rows represent possible underlying prices
+   - Columns represent dates
+   - Cells show estimated strategy profit or loss
+
+4. Monte Carlo outcome distribution
+   - Histogram of simulated dollar outcomes
+   - Mark zero profit, expected value, median, and major percentiles
+
+Add scenario controls for:
+
+- Underlying price change
+- Implied volatility change
+- Days passing
+- Interest rate
+- Dividend yield
+- Expected drift
+- Fees and slippage
+
+LIQUIDITY AND EVENT WARNINGS
+
+When data is available, display:
+
+- Bid-ask spread
+- Spread as a percentage of the option mark
+- Volume
+- Open interest
+- Quote age
+- Upcoming earnings
+- Ex-dividend date
+- Expiration proximity
+- In-the-money status
+- Potential early-assignment warning
+- Pin-risk warning near expiration
+- Adjusted-contract warning
+- No-bid warning
+- Stale-data warning
+
+Do not turn liquidity measurements into a guaranteed fill prediction. Explain that a limit order may not execute.
+
+ROBINHOOD ORDER CHECKLIST
+
+After the user finishes an analysis, generate a clean order card containing:
+
+- Underlying symbol
+- Strategy name
+- Number of spreads or contracts
+- Expiration date
+- Each leg in the correct order:
+  - Buy to open or sell to open
+  - Call or put
+  - Strike
+  - Quantity
+- Net debit or credit limit per share
+- Estimated total debit or credit
+- Maximum modeled loss
+- Estimated collateral
+- Break-even prices
+- Quote timestamp
+- User’s planned profit target
+- User’s planned loss limit
+- User’s planned exit date
+- A checkbox stating: “I reviewed the order details in Robinhood.”
+
+Include:
+
+- Copy to clipboard
+- Print-friendly view
+- Download as PDF
+- Save to journal
+
+Do not include a Place Trade button in the MVP.
+
+TRADE JOURNAL
+
+Allow users to save:
+
+- Original strategy
+- Original probability of profit
+- Model assumptions
+- Planned entry price
+- Actual entry price
+- Planned exit conditions
+- Actual exit price
+- Realized profit or loss
+- Notes
+- Screenshots or attachments
+- Whether the trade was closed, expired, exercised, or assigned
+
+Create a journal dashboard showing:
+
+- Total trades
+- Win rate
+- Average profit
+- Average loss
+- Average expected value at entry
+- Average predicted probability of profit
+- Actual outcome rate by probability range
+- Performance by strategy
+- Performance by days to expiration
+- Performance by implied-volatility range
+
+Do not claim that a small number of trades proves that the probability model is accurate.
+
+DATA ARCHITECTURE
+
+Create a provider-independent market-data interface.
+
+The app must support:
+
+- Demo data
+- Manual quote entry
+- A replaceable external market-data provider
+- Server-side environment variables for API credentials
+- Quote timestamps
+- Delayed-data labels
+- Data-source labels
+- Retry and error handling
+- Manual price and volatility overrides
+
+Never expose a market-data API secret in browser code.
+
+Use a normalized contract identifier so the app can distinguish ticker, expiration, strike, call/put type, multiplier, and adjusted contracts.
+
+TECHNOLOGY
+
+Use:
+
+- Next.js
+- React
+- TypeScript with strict mode
+- Tailwind CSS
+- Accessible chart components
+- PostgreSQL or Supabase for saved users and journals
+- Server-side API routes for market-data requests
+- A Web Worker for large Monte Carlo simulations so the interface stays responsive
+- Unit tests for the calculation engine
+- Integration tests for the primary user flow
+
+The app should work in demo mode without requiring an account. Authentication is required only for saving a journal.
+
+DESIGN
+
+Create a professional, calm financial interface rather than a gambling-style interface.
+
+Use:
+
+- Responsive desktop and mobile layouts
+- Light and dark modes
+- Large, readable numbers
+- Clear profit, loss, and warning states
+- Tooltips that explain every metric in plain English
+- Accessible keyboard navigation
+- Adequate color contrast
+- More than color alone to communicate profit and loss
+- Skeleton loading states
+- Helpful empty states and validation messages
+
+Primary pages:
+
+1. Dashboard
+2. Strategy Builder
+3. Analysis Results
+4. Compare Strategies
+5. Saved Trades
+6. Trade Journal
+7. Settings and Model Assumptions
+8. Education and Risk Disclosures
+
+STRATEGY COMPARISON
+
+Allow up to three strategies on the same underlying to be compared side by side.
+
+Compare:
+
+- Debit or credit
+- Maximum profit
+- Maximum loss
+- Break-even prices
+- Probability of profit
+- Expected profit or loss
+- Return on risk
+- Delta
+- Theta
+- Vega
+- Liquidity
+- Profit and loss at user-selected price targets
+
+Do not automatically label one strategy as “best.” Let the user sort by a chosen metric and explain the trade-offs.
+
+RISK CONTROLS
+
+Let the user optionally enter an account size and planned maximum risk percentage.
+
+Display:
+
+- Maximum loss as a percentage of account size
+- Total premium at risk
+- Estimated collateral usage
+- Concentration by underlying
+- Expiration concentration
+
+Do not automatically recommend a contract quantity. The app may calculate what different quantities would represent, but the user must select the quantity.
+
+DISCLOSURES
+
+Display a persistent disclosure that:
+
+- Options involve significant risk.
+- A trader can lose the full premium and, for some strategies, more than the initial amount invested.
+- Probability calculations are estimates based on selected models and assumptions.
+- Implied volatility, liquidity, interest rates, dividends, and market prices may change.
+- Simulated results are not actual results.
+- The application does not provide personalized investment, legal, or tax advice.
+- The product is not affiliated with or endorsed by Robinhood.
+
+Include a link to the official Characteristics and Risks of Standardized Options disclosure.
+
+TESTING REQUIREMENTS
+
+Write unit tests for every supported strategy.
+
+Include this fictitious bull call spread test:
+
+- Buy one 500 strike call for $6.20
+- Sell one 510 strike call for $3.10
+- Same expiration
+- Contract multiplier of 100
+- No fees
+
+Expected results:
+
+- Net debit: $3.10 per share
+- Total debit: $310
+- Maximum loss: $310
+- Maximum profit: $690
+- Expiration break-even: $503.10
+
+Also test:
+
+- Multiple contracts
+- Fees
+- Zero days to expiration
+- Missing bid
+- Wide bid-ask spread
+- Invalid implied volatility
+- Expired contract
+- Adjusted contract multiplier
+- Covered call with a stock leg
+- Iron condor with multiple break-even points
+- Undefined-risk educational position
+- Monte Carlo reproducibility with a fixed seed
+
+DELIVERABLES
+
+Produce:
+
+1. A complete working application
+2. Clean component and calculation-engine architecture
+3. Database schema
+4. Demo data
+5. Environment-variable example file
+6. Setup instructions
+7. Calculation methodology documentation
+8. Unit and integration tests
+9. Risk-disclosure page
+10. A README explaining how to connect a licensed market-data provider
+
+Do not leave nonfunctional placeholder buttons. Where a live-data service has not been configured, automatically use clearly labeled demo data or manual-entry mode.
+Best MVP boundary
+
+Start with manual entry, same-expiration strategies, expiration payoff calculations, Monte Carlo probability, scenario charts, the Robinhood order checklist, and a basic journal. That version is useful without storing brokerage credentials or solving brokerage-integration issues.
+
+Robinhood currently describes basic long options, covered calls, and cash-secured puts at one approval level, with spreads, straddles, strangles, condors, and butterflies available at a more advanced level; it also states that uncovered options are not supported. Making the user’s permission level configurable will help the app avoid showing an inappropriate order workflow. gested product names include OptionScope, ProbEdge, SpreadPilot, OptionCompass, and TradeOdds.
+
+henrys optionbook.pdf
+PDF
+Covered Call Cheat Sheet.pdf
+PDF
+these can help how can they be added to a second option document to support the prompt 
+Thought for 37m 53s
+Second supporting document created
+
+I converted the two PDFs into a separate domain and calculation specification rather than inserting their full text into the original build prompt.
+
+Download the editable Word document
+Download the finished PDF
+How the documents now work together
+
+Document 1: Main Build Prompt
+
+This remains the product and engineering brief. It tells the app builder what pages, features, technology, charts, journal, market-data system, and Robinhood order checklist to build.
+
+Document 2: OptionScope Companion Specification
+
+This becomes the options-trading rulebook. It tells the builder exactly how strategies, calculations, educational explanations, risk warnings, rolling, assignment, and testing should work.
+
+How the uploaded references were incorporated
+
+The Covered Call Cheat Sheet became the model for a consistent strategy card containing:
+
+Strategy description and required legs
+Whether premium is paid or collected
+Typical directional outlook
+Effect of time decay
+Effect of implied volatility
+Expiration payoff
+Maximum profit and loss
+Break-even price
+Assignment and opportunity-cost warnings
+
+The covered-call section also contains independently defined formulas and an acceptance test:
+
+Long 100 shares at $100
+Short one $105 call for $2.50
+Premium collected: $250
+Break-even: $97.50
+Maximum profit: $750
+Maximum loss if the stock reaches zero: $9,750
+Stock-only crossover price: $107.50
+
+The option book was converted into structured requirements for:
+
+Calls and puts
+Covered calls
+Option Greeks
+Cash-secured puts
+The wheel workflow
+Straddles and strangles
+Bull and bear spreads
+Call and put credit spreads
+Iron condors
+Position monitoring and adjustment concepts
+Important safeguards added
+
+The companion document does not blindly treat every statement in the references as a calculation rule. It specifically prevents the app from:
+
+Describing option selling as guaranteed, safe, passive, or non-losing
+Treating delta as the exact probability of profit
+Assuming an option expiring worthless means the entire position was profitable
+Showing a new rolling credit while hiding the realized loss on the original option
+Calling covered-call premium complete downside protection
+Selecting a “best” strategy without explaining risk and assumptions
+Copying source artwork, promotional claims, testimonials, or extended passages into the public app
+
+I also noted that the uploaded 69-page book ends during its iron-condor section even though its contents page lists later chapters on managing, closing, and tracking positions. The new document therefore supplies independent lifecycle, closing, rolling, assignment, and journal requirements to fill that gap.
+
+How to give this to an app builder
+
+Attach both documents to the same project and tell the builder:
+
+Document 1 controls the product scope and technical implementation. Document 2 controls options strategy definitions, calculations, risk rules, educational content, lifecycle accounting, and acceptance tests. When descriptive source language conflicts with tested calculations or contract metadata, Document 2’s tested rule takes priority.
+
+That exact copy-and-paste instruction is also included in Section 10 of the companion document.
