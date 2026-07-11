@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import TradingViewChart from "@/components/TradingViewChart";
+import MarketSummary from "@/components/MarketSummary";
 
 const QUICK = [
   { href: "/builder", title: "Strategy builder", desc: "Payoff, Greeks, and probability for a trade." },
@@ -41,6 +42,10 @@ export default function Dashboard() {
           </button>
         </form>
       </div>
+
+      <section className="rounded-xl border border-[var(--border)] bg-[var(--surface-2)] p-2">
+        <MarketSummary direction="horizontal" />
+      </section>
 
       <section className="rounded-xl border border-[var(--border)] bg-[var(--surface-2)] p-2">
         <div className="flex items-center justify-between px-2 py-1">
