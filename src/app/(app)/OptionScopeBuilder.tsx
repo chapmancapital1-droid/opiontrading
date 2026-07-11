@@ -5,6 +5,7 @@
 import { useState, useMemo } from "react";
 import { LineChart, Line, XAxis, YAxis, ReferenceLine, ReferenceDot, ResponsiveContainer, Tooltip, BarChart, Bar, Cell } from "recharts";
 import { dataClient } from "@/data/client";
+import MarketContextPanel from "@/components/MarketContextPanel";
 
 /* ============================================================================
    OptionScope — Strategy Builder + Analysis Results (working demo)
@@ -253,6 +254,9 @@ export default function OptionScopeBuilder() {
           <Field label={`Days to expiry: ${dte}`}><input type="range" min="1" max="180" step="1" value={dte} onChange={(e) => setDte(+e.target.value)} style={{ width: "100%" }} /></Field>
         </div>
       </div>
+
+      {/* Phase 3: live quantitative market context for the loaded ticker */}
+      {live && ticker.trim() && <MarketContextPanel symbol={ticker} />}
 
       {blocked && (
         <div style={{ ...card, background: "var(--bg-danger)", borderColor: "var(--border-danger)" }}>

@@ -5,6 +5,7 @@ import TradingViewChart from "@/components/TradingViewChart";
 import TradingViewTimeline from "@/components/TradingViewTimeline";
 import MarketSummary from "@/components/MarketSummary";
 import MarketSnapshot from "@/components/MarketSnapshot";
+import MarketContextPanel from "@/components/MarketContextPanel";
 
 const QUICK = [
   { href: "/builder", title: "Strategy builder", desc: "Payoff, Greeks, and probability for a trade." },
@@ -46,6 +47,8 @@ export default function Dashboard() {
       </div>
 
       <MarketSnapshot symbol={symbol} />
+
+      <MarketContextPanel symbol={symbol} />
 
       <section className="rounded-xl border border-[var(--border)] bg-[var(--surface-2)] p-2">
         <MarketSummary direction="horizontal" />

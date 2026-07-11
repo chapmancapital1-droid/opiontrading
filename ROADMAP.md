@@ -23,7 +23,7 @@ Black-Scholes, binomial, Monte Carlo, strategy definitions). `next build` ✓,
 TradingView on the dashboard: market-summary strip, live chart, symbol-aware
 news timeline.
 
-### 🔨 Phase 2 — Live data plumbing (mostly done ← we are here)
+### ✅ Phase 2 — Live data plumbing (done)
 Provider-independent data layer (`demo` / `polygon` / **OpenBB**) for quotes,
 option chains, expirations, events, and news. **Market Snapshot** panel computes
 the first context signals for a ticker: spot, ATM implied vol, nearest expiry,
@@ -32,18 +32,25 @@ next earnings.
   quote + expirations + chain; each strategy leg snaps to the nearest *listed
   strike* with its *real mark* premium, and IV/DTE come from the live chain.
   Falls back to demo prices when nothing is loaded.
-- Remaining: add an IV *history* store so IV *rank/percentile* is possible (feeds
-  Phase 3).
+- ✅ **IV history store** (`src/data/ivHistory.ts` + `ivHistoryStore.ts`): caches
+  a daily ATM IV (and spot) snapshot per underlying in localStorage (swap for a
+  DB later). `useIvHistory` hook queries it and computes IV rank / percentile
+  (0–1, 1 = highest). Feeds Phase 3.
 
-### 🧮 Phase 3 — Quantitative market-context engine
-Turn raw data into the **signals a selector conditions on**, per symbol:
-- IV rank / percentile (needs an IV history store), IV vs realized vol
-- Trend / regime (from price history), expected move (from ATM straddle)
-- Liquidity (spreads, OI, volume), event proximity (earnings/ex-div)
-- News sentiment (from the news feed)
+### ✅ Phase 3 — Quantitative market-context engine (done)
+Turns raw data into the **signals a selector conditions on**, per symbol, via
+`computeMarketContext` (`src/lib/marketContext.ts`) → a typed `MarketContext`:
+- `ivRank` (0–1) + `ivTrend` (elevated/neutral/low) from the IV history store
+- `spotTrend` (up/sideways/down) from the snapshot spot series
+- `expectedMove` from the ATM straddle
+- `liquidity` (tight/normal/wide) from near-the-money spreads
+- `eventProximity` (earnings/ex-div/clear) vs the nearest expiry
+- `newsSentiment` (positive/neutral/negative) from the news feed
+  (numeric scores when present, else a keyword fallback)
 
-Output: a typed `MarketContext` object. **This is the input the strategy brain
-reasons over.**
+Surfaced live in the builder (after "Load live chain") and on the dashboard via
+`MarketContextPanel`. Degrades gracefully to demo data with `confidence`/`notes`.
+**This is the input the strategy brain reasons over.**
 
 ---
 
