@@ -23,13 +23,17 @@ Black-Scholes, binomial, Monte Carlo, strategy definitions). `next build` ✓,
 TradingView on the dashboard: market-summary strip, live chart, symbol-aware
 news timeline.
 
-### 🔨 Phase 2 — Live data plumbing (in progress ← we are here)
+### 🔨 Phase 2 — Live data plumbing (mostly done ← we are here)
 Provider-independent data layer (`demo` / `polygon` / **OpenBB**) for quotes,
 option chains, expirations, events, and news. **Market Snapshot** panel computes
 the first context signals for a ticker: spot, ATM implied vol, nearest expiry,
 next earnings.
-- Remaining: feed a live chain into the **builder** so it analyzes *real*
-  contracts (not demo prices); add IV history so IV *rank/percentile* is possible.
+- ✅ **Builder consumes a live chain**: type a ticker → "Load live chain" pulls
+  quote + expirations + chain; each strategy leg snaps to the nearest *listed
+  strike* with its *real mark* premium, and IV/DTE come from the live chain.
+  Falls back to demo prices when nothing is loaded.
+- Remaining: add an IV *history* store so IV *rank/percentile* is possible (feeds
+  Phase 3).
 
 ### 🧮 Phase 3 — Quantitative market-context engine
 Turn raw data into the **signals a selector conditions on**, per symbol:

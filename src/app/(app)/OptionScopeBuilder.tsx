@@ -4,6 +4,7 @@
 "use client";
 import { useState, useMemo } from "react";
 import { LineChart, Line, XAxis, YAxis, ReferenceLine, ReferenceDot, ResponsiveContainer, Tooltip, BarChart, Bar, Cell } from "recharts";
+import { dataClient } from "@/data/client";
 
 /* ============================================================================
    OptionScope — Strategy Builder + Analysis Results (working demo)
@@ -120,7 +121,59 @@ export default function OptionScopeBuilder() {
   const [sims, setSims] = useState(20000);
   const [seed, setSeed] = useState(12345);
 
-  const legs = useMemo(() => TEMPLATES[tpl].legs(spot), [tpl, spot]);
+  // ---- Phase 2: live data. Load a real chain and analyze listed contracts. ----
+  const [ticker, setTicker] = useState("");
+  const [live, setLive] = useState(null);       // { chain:[{strike,type,mark,iv}], expiry, source, freshness }
+  const [expiries, setExpiries] = useState([]);
+  const [expiry, setExpiry] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [loadErr, setLoadErr] = useState("");
+
+  async function loadLive(exp) {
+    const t = ticker.trim().toUpperCase().split(":").pop();
+    if (!t) return;
+    setLoading(true); setLoadErr("");
+    try {
+      const q = await dataClient.quote(t);
+      const spotVal = Number(q.quote.price.toFixed(2));
+      setSpot(spotVal);
+      let useExp = exp;
+      if (!useExp) {
+        const ex = await dataClient.expirations(t);
+        setExpiries(ex.expirations || []);
+        useExp = (ex.expirations || [])[0] || "";
+        setExpiry(useExp);
+      }
+      if (!useExp) { setLive(null); setLoadErr("No listed expirations for " + t); return; }
+      const { chain, status } = await dataClient.chain(t, useExp);
+      const rows = chain.quotes.map((c) => ({ strike: c.contract.strike, type: c.contract.optionType, mark: c.mark, iv: c.impliedVol }));
+      const withIv = rows.filter((r) => r.iv != null);
+      if (withIv.length) {
+        const atm = withIv.reduce((b, c) => Math.abs(c.strike - spotVal) < Math.abs(b.strike - spotVal) ? c : b);
+        if (atm.iv) setSigma(Number(atm.iv.toFixed(4)));
+      }
+      setDte(Math.max(1, Math.round((new Date(useExp).getTime() - Date.now()) / 86400000)));
+      setLive({ chain: rows, expiry: useExp, source: status.usingDemoFallback ? "demo" : status.id, freshness: q.quote.meta.freshness });
+    } catch (e) {
+      setLive(null); setLoadErr((e && e.message) || "Failed to load live data");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // Snap each option leg to the nearest listed strike + real premium when a
+  // live chain is loaded; otherwise fall back to the demo template prices.
+  const legs = useMemo(() => {
+    const base = TEMPLATES[tpl].legs(spot);
+    if (!live || !live.chain || !live.chain.length) return base;
+    return base.map((l) => {
+      if (l.kind !== "opt") return l;
+      const cands = live.chain.filter((c) => c.type === l.type && c.mark != null);
+      if (!cands.length) return l;
+      const near = cands.reduce((b, c) => Math.abs(c.strike - l.strike) < Math.abs(b.strike - l.strike) ? c : b);
+      return { ...l, strike: near.strike, prem: near.mark };
+    });
+  }, [tpl, spot, live]);
 
   const analysis = useMemo(() => {
     const net = netCash(legs);
@@ -152,10 +205,43 @@ export default function OptionScopeBuilder() {
       <div style={card}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
           <span style={{ fontSize: 16, fontWeight: 500 }}>Strategy builder</span>
-          <span style={{ fontSize: 12, color: "var(--text-muted)", display: "flex", alignItems: "center", gap: 6 }}>
-            <i className="ti ti-clock" aria-hidden="true" /> Manual entry · demo prices
+          <span style={{ fontSize: 12, color: live ? "var(--text-success)" : "var(--text-muted)", display: "flex", alignItems: "center", gap: 6 }}>
+            <i className="ti ti-clock" aria-hidden="true" />
+            {live ? `Live · ${live.source} · ${live.freshness} · exp ${live.expiry}` : "Demo prices — load a symbol for live contracts"}
           </span>
         </div>
+
+        {/* Live data loader (Phase 2) */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", marginBottom: 12 }}>
+          <input
+            value={ticker}
+            onChange={(e) => setTicker(e.target.value)}
+            onKeyDown={(e) => { if (e.key === "Enter") loadLive(""); }}
+            placeholder="Ticker e.g. AAPL"
+            aria-label="Ticker"
+            style={{ fontSize: 13, padding: "6px 10px", borderRadius: 8, border: "0.5px solid var(--border)", background: "var(--surface-1)", color: "var(--text-primary)", width: 140 }}
+          />
+          <button
+            onClick={() => loadLive("")}
+            disabled={loading || !ticker.trim()}
+            style={{ fontSize: 13, padding: "6px 12px", borderRadius: 8, cursor: "pointer", border: "0.5px solid var(--border-accent)", background: "var(--bg-accent)", color: "var(--text-accent)", opacity: loading || !ticker.trim() ? 0.6 : 1 }}
+          >
+            {loading ? "Loading…" : "Load live chain"}
+          </button>
+          {expiries.length > 0 && (
+            <select
+              value={expiry}
+              onChange={(e) => { setExpiry(e.target.value); loadLive(e.target.value); }}
+              aria-label="Expiration"
+              style={{ fontSize: 13, padding: "6px 10px", borderRadius: 8, border: "0.5px solid var(--border)", background: "var(--surface-1)", color: "var(--text-primary)" }}
+            >
+              {expiries.map((x) => <option key={x} value={x}>{x}</option>)}
+            </select>
+          )}
+          {live && <button onClick={() => { setLive(null); setLoadErr(""); }} style={{ fontSize: 12, padding: "6px 10px", borderRadius: 8, cursor: "pointer", border: "0.5px solid var(--border)", background: "transparent", color: "var(--text-secondary)" }}>Use demo</button>}
+          {loadErr && <span style={{ fontSize: 12, color: "var(--text-danger)" }}>{loadErr}</span>}
+        </div>
+
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12 }}>
           <Field label="Strategy">
             <select value={tpl} onChange={(e) => setTpl(e.target.value)} style={{ width: "100%" }}>
