@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import TradingViewChart from "@/components/TradingViewChart";
+import TradingViewTimeline from "@/components/TradingViewTimeline";
 import MarketSummary from "@/components/MarketSummary";
 
 const QUICK = [
@@ -47,12 +48,22 @@ export default function Dashboard() {
         <MarketSummary direction="horizontal" />
       </section>
 
-      <section className="rounded-xl border border-[var(--border)] bg-[var(--surface-2)] p-2">
-        <div className="flex items-center justify-between px-2 py-1">
-          <span className="text-sm font-medium">Live chart · {symbol}</span>
-          <span className="text-xs text-[var(--text-muted)]">Live market data by TradingView</span>
+      <section className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_360px]">
+        <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-2)] p-2">
+          <div className="flex items-center justify-between px-2 py-1">
+            <span className="text-sm font-medium">Live chart · {symbol}</span>
+            <span className="text-xs text-[var(--text-muted)]">Live market data by TradingView</span>
+          </div>
+          <TradingViewChart symbol={symbol} height={520} />
         </div>
-        <TradingViewChart symbol={symbol} height={520} />
+
+        <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-2)] p-2">
+          <div className="flex items-center justify-between px-2 py-1">
+            <span className="text-sm font-medium">News · {symbol}</span>
+            <span className="text-xs text-[var(--text-muted)]">Top stories by TradingView</span>
+          </div>
+          <TradingViewTimeline symbol={symbol} height={520} />
+        </div>
       </section>
 
       <section className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
