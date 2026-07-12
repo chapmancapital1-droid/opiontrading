@@ -1,0 +1,172 @@
+{
+    "meta": {
+        "name": "NCI Phoenix Quantum Probability Options Brain",
+        "version": "2.3.0",
+        "last_updated": "2026-07-11T19:55:00Z",
+        "created_by": "Michael @ Nerd Command Studios (with Grok design)",
+        "description": "Advanced evolution of the NCI Phoenix brain for aggressive options trading. Integrates quantum-inspired algorithms, rigorous mathematical probability analysis, live data from the full OptionScope project, and a growing hierarchical Option Decision Matrix. Designed for self-improving strategy learning and seamless integration with Claude or other LLMs into the complete trading system.",
+        "purpose": "Create a brain that ingests live OptionScope data (chains, Greeks, charting, MC valuation, strategies), performs deep probabilistic and quantum-inspired analysis, maintains and grows a hierarchical decision matrix for options strategies, and delivers adaptive, high-edge trading recommendations while continuously learning.",
+        "instrument_focus": ["options", "stocks (as underlyings)"],
+        "aggressiveness_profile": "High-conviction, probability-weighted, quantum-optimized aggressive options strategies with dynamic learning",
+        "architecture_philosophy": "Data-rich from OptionScope + Quantum-inspired exploration + Rigorous probability math + Hierarchical growing Decision Matrix + Self-improving learning loop. Built for Claude integration and full system embedding.",
+        "claude_integration_notes": "This JSON + accompanying design specs and data schemas are structured for direct ingestion by Claude. The Option Decision Matrix, probability models, and integration points are described with clear hierarchies, formulas, and extensibility rules so Claude can implement, expand, or wire them into the OptionScope codebase."
+    },
+    "data_integration_option_scope": {
+        "enabled": true,
+        "description": "Direct hooks and schemas for pulling live and historical data from the full OptionScope project (data-layer.ts, database.ts, valuation-mc.ts, strategies, UI builder, charting). The brain has privileged access to the complete dataset for feature engineering and decision making.",
+        "data_sources": {
+            "options_chains_and_greeks": {
+                "source": "optionscope-data-layer.ts + optionscope-database.ts",
+                "fields": ["strike", "expiration", "bid_ask", "iv", "delta", "gamma", "theta", "vega", "rho", "open_interest", "volume"],
+                "update_frequency": "real-time or tick-level where available",
+                "usage": "Implied distributions, probability calculations, Greeks-based edge scoring"
+            },
+            "charting_and_technical_data": {
+                "source": "optionscope-ui-builder.tsx + charting components",
+                "fields": ["price_series", "volume_profile", "indicators (RSI, MACD, Bollinger, ATR)", "order_flow_imbalance", "support_resistance"],
+                "usage": "Momentum detection, regime confirmation, entry/exit timing probabilities"
+            },
+            "monte_carlo_valuation": {
+                "source": "optionscope-valuation-mc.ts",
+                "fields": ["simulated_paths", "payoff_distributions", "risk_metrics (VaR, CVaR)", "scenario_probabilities"],
+                "usage": "Enhance brain's own Monte Carlo with OptionScope simulations; cross-validate probabilities"
+            },
+            "strategy_library_and_tests": {
+                "source": "optionscope-strategies-tests.ts + optionprompt.txt",
+                "fields": ["defined_strategies", "backtest_results", "performance_metrics", "edge_cases"],
+                "usage": "Seed and grow the Option Decision Matrix with proven and experimental strategies"
+            },
+            "live_market_context": {
+                "source": "Full OptionScope runtime (earnings calendar, news, sector data, flow)",
+                "usage": "Catalyst detection, sector breadth, real-time probability adjustments"
+            }
+        },
+        "integration_pattern": "The brain subscribes to or queries OptionScope data layers on decision cycles. All probability and matrix calculations are enriched with this live context. Feedback from executed trades flows back into OptionScope for closed-loop learning."
+    },
+    "quantum_inspired_trading": {
+        "enabled": true,
+        "description": "Quantum-inspired components for strategy exploration, optimization, and probabilistic decision making. Uses classical approximations of quantum principles (superposition, interference, entanglement, amplitude amplification) since full quantum hardware is not assumed. Enhances exploration of high-edge opportunities in complex options spaces.",
+        "components": {
+            "strategy_superposition": {
+                "description": "Maintain a superposition of multiple strategy states (long vol, credit spreads, directional, earnings plays) simultaneously. Measure/collapse to the highest-probability or highest-edge outcome based on current data.",
+                "implementation": "Weighted ensemble of agent scores + quantum amplitude simulation (use probability amplitudes instead of simple scores). Interference terms boost mutually reinforcing strategies.",
+                "benefit": "Avoids premature commitment to one strategy; explores combinations efficiently."
+            },
+            "quantum_optimization_for_trade_construction": {
+                "description": "Use quantum-inspired optimization (e.g., simulated annealing or QAOA-like variational methods) to select optimal strikes, expirations, and leg combinations for spreads/condors/straddles.",
+                "inputs": "Live Greeks, IV surface, probability distributions from OptionScope MC and chains.",
+                "objective": "Maximize expected edge while respecting Greeks limits and risk constraints.",
+                "classical_approximation": "Multi-start gradient or evolutionary search with quantum-inspired mutation/crossover."
+            },
+            "probability_amplitudes_and_interference": {
+                "description": "Represent decision confidence as complex amplitudes. Constructive/destructive interference between data signals (technical + IV + flow + earnings) modulates final probability.",
+                "math_note": "Probability = |amplitude|^2. Use phase alignment for correlated bullish/bearish signals."
+            },
+            "entanglement_correlations": {
+                "description": "Model correlations between underlyings, strikes, or strategies as entangled states. A strong move or IV shift in one leg affects probabilities in correlated positions.",
+                "usage": "Portfolio-level risk and opportunity detection across multiple options positions."
+            },
+            "amplitude_amplification_for_high_edge_setups": {
+                "description": "Iteratively amplify the 'amplitude' (weight) of high-probability, high-edge setups identified from OptionScope data while suppressing low-edge noise.",
+                "integration": "Feeds directly into the Option Decision Matrix scoring."
+            }
+        },
+        "libraries_note": "Implementable with numpy/scipy for classical sims. Future: interface with Qiskit or PennyLane if quantum backend becomes available. Designed so Claude can code the approximations cleanly."
+    },
+    "probability_analysis_engine": {
+        "enabled": true,
+        "description": "Rigorous, multi-layered mathematical probability engine that ingests live OptionScope data (chains, Greeks, MC paths, charting) to compute detailed probabilities for regimes, strategies, individual trades, and outcomes. Goes far beyond simple win rates.",
+        "core_models": {
+            "implied_probability_distributions": {
+                "source": "Options chain prices + OptionScope valuation MC",
+                "methods": ["Risk-neutral density extraction from option prices", "Breeden-Litzenberger formula for PDF from call/put prices", "Mixture models for fat tails and jumps (earnings gaps)"],
+                "output": "Full probability distribution over future underlying prices at expiration. Used for precise payoff probabilities."
+            },
+            "bayesian_updating": {
+                "description": "Continuously update probabilities as new live data arrives (price moves, IV changes, flow, news). Prior from historical + OptionScope backtests; likelihood from current regime/matrix state.",
+                "example": "P(strong momentum | current price action, volume surge, IV rank) updated in real time."
+            },
+            "greeks_based_probability_proxies_and_adjustments": {
+                "delta_as_approx_probability": "Adjusted with skew and higher moments from the full distribution.",
+                "gamma_impact_on_tail_risk": "Higher gamma increases probability of large moves in short timeframes.",
+                "vega_and_iv_dynamics": "Probability of IV crush/expansion derived from term structure and OptionScope MC scenarios."
+            },
+            "multi_factor_probability_scoring": {
+                "factors": ["Technical momentum probability", "IV rank / vol regime prob", "Earnings catalyst prob", "Sector breadth prob", "Options flow imbalance prob", "Quantum amplitude score"],
+                "fusion": "Weighted Bayesian or Dempster-Shafer combination, with quantum interference terms for correlated factors.",
+                "output": "Calibrated probability of success + expected edge for each candidate in the Decision Matrix."
+            },
+            "kelly_and_fractional_sizing_with_probability": {
+                "description": "Use detailed probabilities + edge to compute optimal (fractional) Kelly bet sizes. Accounts for fat tails and model uncertainty from OptionScope MC.",
+                "output": "Recommended contract size or % risk per trade with confidence intervals."
+            }
+        },
+        "live_data_usage": "Every decision cycle pulls fresh OptionScope data to recompute distributions and update posteriors. This makes the brain highly responsive to real-time market microstructure and volatility surfaces."
+    },
+    "option_decision_matrix": {
+        "enabled": true,
+        "description": "Hierarchical, growing Option Decision Matrix that structures the brain's option strategy knowledge, evaluation, and recommendation process. It starts with core aggressive strategies and expands dynamically as the brain learns new patterns, backtest results from OptionScope, or successful live trades.",
+        "hierarchy_levels": {
+            "level_0_data_ingestion_and_feature_engineering": {
+                "description": "Ingest and normalize all OptionScope live data into features (Greeks surfaces, IV term structure, probability distributions, momentum indicators, catalyst flags).",
+                "growth": "New data sources or derived features (e.g., custom order flow metrics) can be added to this base layer."
+            },
+            "level_1_regime_and_probability_assessment": {
+                "description": "Compute current regime probabilities and overall market edge probability using the Probability Analysis Engine + Quantum components.",
+                "output": "Vector of regime probabilities + baseline success probability for options strategies."
+            },
+            "level_2_strategy_universe_scoring": {
+                "description": "Score all known strategies in the matrix against current regime/probability vector. Each strategy has a profile (ideal regimes, Greeks sweet spots, edge characteristics).",
+                "scoring": "Multi-factor: probability match * expected edge * quantum amplitude * historical OptionScope performance * current live data fit.",
+                "growth": "New strategies (or variants) are added here when discovered via learning or proposed by Claude/ human."
+            },
+            "level_3_trade_construction_and_optimization": {
+                "description": "For top-scoring strategies, construct specific trades (strikes, expirations, legs, ratios) using quantum-inspired optimization and live Greeks/IV from OptionScope.",
+                "example": "For a credit spread in low-IV regime: optimize short strike for max credit with acceptable delta/gamma, choose expiration balancing theta vs event risk.",
+                "quantum_element": "Search over combinatorial space of possible constructions with amplitude amplification for high-edge combinations."
+            },
+            "level_4_risk_adjusted_recommendation_and_sizing": {
+                "description": "Apply full probability engine, Kelly sizing, Greeks limits, and portfolio correlation checks. Output ranked recommendations with probabilities, expected returns, risk metrics, and confidence.",
+                "output": "Actionable trade cards: strategy, construction details, probability of profit, expected edge, recommended size, stop/ adjustment rules."
+            },
+            "level_5_execution_monitoring_and_feedback": {
+                "description": "Monitor live P/L, Greeks evolution, and market changes. Trigger adjustments or exits based on updated probabilities.",
+                "feedback_loop": "Trade outcomes (win/loss, realized edge) flow back to update agent scores, strategy profiles in Level 2, and probability models. Enables continuous growth."
+            }
+        },
+        "growth_and_adaptability_rules": {
+            "adding_new_strategies": "When OptionScope backtests or live results show consistent edge for a new pattern (or Claude proposes one), add it to Level 2 with initial profile derived from data. Quantum superposition allows testing it alongside existing strategies without disruption.",
+            "matrix_expansion": "The hierarchy can grow new sub-levels or branches (e.g., a dedicated 'exotic options' branch or 'volatility surface arbitrage' sub-matrix) as knowledge increases.",
+            "learning_mechanisms": "Bayesian updates to strategy scores/probabilities + reinforcement from realized P/L + quantum amplitude adjustments based on success frequency. Periodic 'matrix pruning' of underperforming branches.",
+            "claude_integration_for_growth": "Claude can be prompted with the current matrix state + recent OptionScope data + trade results to propose new strategies, refine scoring weights, or expand levels. The structured hierarchy makes this prompt-friendly and auditable."
+        },
+        "current_matrix_state_example": {
+            "active_strategies_count": 12,
+            "top_scoring_strategy": "MomentumBreakoutStock_v3 + AggressiveCallBuyer_v2 hybrid",
+            "recent_additions": ["IV Surface Arbitrage variant", "Post-Earnings IV Crush Credit Spread"],
+            "growth_trend": "Matrix expanding with volatility surface and multi-leg exotic strategies based on OptionScope MC insights."
+        }
+    },
+    "learning_adaptability": {
+        "enabled": true,
+        "description": "Closed-loop learning system that allows the brain to grow its option strategy knowledge, refine probabilities, and improve decision quality over time using data from OptionScope and live trading results.",
+        "mechanisms": {
+            "online_bayesian_updating": "Continuous posterior updates to all probabilities and strategy scores as new data arrives.",
+            "reinforcement_from_trades": "Realized P/L, max adverse excursion, and edge capture feed back into agent performance scores and matrix strategy profiles.",
+            "knowledge_graph_growth": "Strategies, patterns, and successful constructions are stored in an expandable graph (nodes = strategies/features, edges = correlations or success dependencies). Quantum-inspired links for entangled opportunities.",
+            "self_improvement_rate": 0.08,
+            "periodic_matrix_optimization": "Weekly or regime-change triggered re-optimization of scoring weights and quantum parameters using historical OptionScope + live data.",
+            "claude_collaboration": "Designed so the brain can output its current state (matrix snapshot + probability distributions + recent performance) in a format easily consumed by Claude for deeper analysis, new strategy generation, or code suggestions for OptionScope integration."
+        }
+    },
+    "current_state": {
+        "timestamp": "2026-07-11T19:55:00Z",
+        "active_regime": "momentum_surge_bullish_with_high_probability_amplitude",
+        "dominant_matrix_path": "Level_3_optimized_momentum_call_debit_spread",
+        "current_probability_of_profit_top_recommendation": 0.68,
+        "quantum_amplitude_top_strategy": 0.82,
+        "option_scope_data_freshness_seconds": 3,
+        "matrix_growth_status": "Expanding with new IV surface strategies",
+        "notes": "Brain fully integrated with OptionScope live data. Running quantum-inspired superposition across aggressive options strategies. High-edge momentum setup identified with strong probability backing from implied distributions and flow."
+    }
+}
