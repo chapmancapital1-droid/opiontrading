@@ -1,0 +1,1 @@
+/* Full TSX component code */
