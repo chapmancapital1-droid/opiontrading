@@ -24,6 +24,9 @@ export interface EngineMetrics {
 export interface ScoredRecommendation extends BrainRecommendation {
   engine: EngineMetrics;
   legsNote: string;
+  /** Domain legs used for engine score (for builder load). */
+  legs?: InstantiatedStrategy["legs"];
+  expiration?: string;
 }
 
 export interface EngineScoreContext {
@@ -140,6 +143,8 @@ export function scoreRecommendationsWithEngine(
       maxLossPerContract,
       engine,
       legsNote: inst.notes.join("; "),
+      legs: inst.ok ? inst.legs : [],
+      expiration: ctx.expiration,
     };
   });
 }

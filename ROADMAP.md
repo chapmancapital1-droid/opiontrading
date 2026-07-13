@@ -135,12 +135,16 @@ Given `MarketContext` + the book-library rules:
 - Multi-TF bar feed from market-data provider into `computeNciTa`
 - Wire catalog citations into builder UI recommendation cards
 
-### 🤖 Phase 5 — AI reasoning layer ("Quantum AI")
-The `options-trading-analyst` agent (already in the agent library) explains,
-critiques, and stress-tests the ranked candidates in plain language — grounded in
-the book-library rules via retrieval (RAG), never freelancing risk. This is where
-the "AI brain" narrative lands. `multi-agent-systems-architect` designs how the
-data → context → selector → explainer stages coordinate.
+### ✅ Phase 5 — AI reasoning layer ("Quantum AI") — catalog-grounded (done)
+- Deterministic explainer: `src/brain/explain.ts` + `POST /api/brain/explain`
+- UI: **Explain (AI)** on each brain card → thesis / why-now / risks / book citations
+- Grounded only in `ScoredRecommendation` + `MarketContext` + `searchCatalog` (no freelanced strikes)
+- Builder load applies **exact instantiated legs** the engine scored
+- Optional future: LLM polish behind `AI_EXPLAIN_MODE=llm` without changing fact block
+
+### 🤖 Phase 5.1 — Optional LLM polish (open)
+Wire SpaceXAI / Grok to rewrite the grounded markdown for tone only — must not
+mutate `facts` (PoP, strikes, size, max loss). Keep disclaimers mandatory.
 
 ### 📈 Phase 6 — Charting & backtest
 Overlay strategy payoff/breakevens on the live chart; backtest the selector's

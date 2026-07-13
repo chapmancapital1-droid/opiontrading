@@ -7,6 +7,7 @@ import { LineChart, Line, XAxis, YAxis, ReferenceLine, ReferenceDot, ResponsiveC
 import { dataClient } from "@/data/client";
 import MarketContextPanel from "@/components/MarketContextPanel";
 import BrainRecommendPanel from "@/components/BrainRecommendPanel";
+import { pickPreferredExpiration } from "@/brain";
 
 /* ============================================================================
    OptionScope — Strategy Builder + Analysis Results (working demo)
@@ -145,11 +146,15 @@ export default function OptionScopeBuilder() {
   const [expiry, setExpiry] = useState("");
   const [loading, setLoading] = useState(false);
   const [loadErr, setLoadErr] = useState("");
+  // Brain Phase 4.1/5: when user loads a recommendation, pin the exact legs scored by the engine
+  const [brainLegs, setBrainLegs] = useState(null); // builder-format legs or null
+  const [brainNote, setBrainNote] = useState("");
 
   async function loadLive(exp) {
     const t = ticker.trim().toUpperCase().split(":").pop();
     if (!t) return;
     setLoading(true); setLoadErr("");
+    setBrainLegs(null); setBrainNote("");
     try {
       const q = await dataClient.quote(t);
       const spotVal = Number(q.quote.price.toFixed(2));
@@ -157,8 +162,10 @@ export default function OptionScopeBuilder() {
       let useExp = exp;
       if (!useExp) {
         const ex = await dataClient.expirations(t);
-        setExpiries(ex.expirations || []);
-        useExp = (ex.expirations || [])[0] || "";
+        const list = ex.expirations || [];
+        setExpiries(list);
+        const pick = pickPreferredExpiration(list, { minDte: 7, maxDte: 45 });
+        useExp = pick?.expiration || list[0] || "";
         setExpiry(useExp);
       }
       if (!useExp) { setLive(null); setLoadErr("No listed expirations for " + t); return; }
@@ -178,9 +185,9 @@ export default function OptionScopeBuilder() {
     }
   }
 
-  // Snap each option leg to the nearest listed strike + real premium when a
-  // live chain is loaded; otherwise fall back to the demo template prices.
+  // Prefer brain-instantiated legs (exact engine structure); else template + live snap.
   const legs = useMemo(() => {
+    if (brainLegs && brainLegs.length) return brainLegs;
     const base = TEMPLATES[tpl].legs(spot);
     if (!live || !live.chain || !live.chain.length) return base;
     return base.map((l) => {
@@ -190,7 +197,7 @@ export default function OptionScopeBuilder() {
       const near = cands.reduce((b, c) => Math.abs(c.strike - l.strike) < Math.abs(b.strike - l.strike) ? c : b);
       return { ...l, strike: near.strike, prem: near.mark };
     });
-  }, [tpl, spot, live]);
+  }, [tpl, spot, live, brainLegs]);
 
   const analysis = useMemo(() => {
     const net = netCash(legs);
@@ -279,14 +286,54 @@ export default function OptionScopeBuilder() {
         <BrainRecommendPanel
           symbol={ticker}
           preferredExpiration={expiry || undefined}
-          onSelectStrategy={(id) => {
-            if (TEMPLATES[id]) {
-              setTpl(id);
+          onSelectStrategy={(payload) => {
+            const id = typeof payload === "string" ? payload : payload.strategyId;
+            if (TEMPLATES[id]) setTpl(id);
+            else setLoadErr(`No builder template for strategy "${id}" — structure still applied if legs provided.`);
+
+            // Prefer exact engine legs when provided (domain → builder shape)
+            const domainLegs = typeof payload === "object" ? payload.legs : null;
+            if (domainLegs && domainLegs.length) {
+              const mapped = domainLegs.map((l) => {
+                if (l.assetType === "stock") {
+                  return { kind: "stk", side: l.side, shares: l.shares, entry: l.entryPrice, fees: l.feesTotal || 0 };
+                }
+                return {
+                  kind: "opt",
+                  side: l.side,
+                  type: l.optionType,
+                  qty: l.contracts,
+                  strike: l.strike,
+                  prem: l.premiumPerShare,
+                  fees: l.feesTotal || 0,
+                };
+              });
+              setBrainLegs(mapped);
+              setBrainNote(typeof payload === "object" ? (payload.legsNote || payload.name || id) : id);
+              if (typeof payload === "object" && payload.expiration) {
+                setExpiry(payload.expiration);
+                setDte(Math.max(1, Math.round((new Date(payload.expiration).getTime() - Date.now()) / 86400000)));
+              }
             } else {
-              setLoadErr(`No builder template for strategy "${id}" yet — open Compare or pick a listed template.`);
+              setBrainLegs(null);
+              setBrainNote("");
             }
           }}
         />
+      )}
+
+      {brainNote && (
+        <div style={{ ...card, fontSize: 13, color: "var(--text-secondary)" }}>
+          Brain structure locked: <strong>{brainNote}</strong>
+          {" · "}
+          <button
+            type="button"
+            onClick={() => { setBrainLegs(null); setBrainNote(""); }}
+            style={{ fontSize: 12, cursor: "pointer", border: "0.5px solid var(--border)", borderRadius: 6, padding: "2px 8px", background: "transparent", color: "var(--text-accent)" }}
+          >
+            Clear · use template snap
+          </button>
+        </div>
       )}
 
       {blocked && (

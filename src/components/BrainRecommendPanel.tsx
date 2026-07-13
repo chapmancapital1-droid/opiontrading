@@ -22,12 +22,24 @@ import {
   buildRiskMapsFromChain,
   scoreRecommendationsWithEngine,
   pickPreferredExpiration,
+  explainStrategy,
   type ScoredRecommendation,
   type BrainDecision,
   type AccountState,
+  type StrategyExplanation,
 } from "@/brain";
 import type { NciTaSnapshot } from "@/indicators/nciTa";
+import type { Leg } from "@/domain/types";
 import { STRATEGY_RULES } from "@/knowledge/strategyRules";
+
+/** Payload for loading a brain pick into the builder. */
+export type BrainSelectPayload = {
+  strategyId: string;
+  name: string;
+  legs: Leg[];
+  legsNote: string;
+  expiration?: string;
+};
 
 function bareTicker(s: string): string {
   const t = s.includes(":") ? s.split(":").pop()! : s;
@@ -54,8 +66,8 @@ export interface BrainRecommendPanelProps {
   preferredExpiration?: string;
   /** Optional account override (defaults to educational demo account). */
   account?: Partial<AccountState>;
-  /** When user clicks a recommendation, apply that strategy template id. */
-  onSelectStrategy?: (strategyId: string) => void;
+  /** When user clicks a recommendation, load strategy (+ optional exact legs). */
+  onSelectStrategy?: (payload: BrainSelectPayload | string) => void;
 }
 
 export default function BrainRecommendPanel({
@@ -205,6 +217,17 @@ export default function BrainRecommendPanel({
     return { decision, scored };
   }, [ctx, data, account, nciTa, ticker]);
 
+  const [explainOpen, setExplainOpen] = useState<string | null>(null);
+  const explanation = useMemo<StrategyExplanation | null>(() => {
+    if (!decision || !ctx || !explainOpen) return null;
+    return explainStrategy({
+      decision,
+      context: ctx,
+      scored,
+      strategyId: explainOpen,
+    });
+  }, [decision, ctx, scored, explainOpen]);
+
   const wrap =
     "rounded-xl border border-[var(--border)] bg-[var(--surface-2)] p-3 flex flex-col gap-3";
 
@@ -286,10 +309,34 @@ export default function BrainRecommendPanel({
                 <RecCard
                   key={r.ruleId}
                   r={r}
-                  {...(onSelectStrategy ? { onSelect: onSelectStrategy } : {})}
+                  explainOpen={explainOpen === r.strategyId}
+                  onExplain={() =>
+                    setExplainOpen((cur) => (cur === r.strategyId ? null : r.strategyId))
+                  }
+                  {...(onSelectStrategy
+                    ? {
+                        onSelect: () => {
+                          const payload: BrainSelectPayload = {
+                            strategyId: r.strategyId,
+                            name: r.name,
+                            legs: r.legs ?? [],
+                            legsNote: r.legsNote || r.engine.notes.join("; "),
+                          };
+                          if (r.expiration) payload.expiration = r.expiration;
+                          onSelectStrategy(payload);
+                        },
+                      }
+                    : {})}
                 />
               ))}
             </div>
+          )}
+
+          {explanation && (
+            <ExplainPanel
+              x={explanation}
+              onClose={() => setExplainOpen(null)}
+            />
           )}
 
           <p className="text-[11px] text-[var(--text-muted)] m-0">{decision.disclaimer}</p>
@@ -316,9 +363,13 @@ function Pill({ ok, text }: { ok: boolean; text: string }) {
 function RecCard({
   r,
   onSelect,
+  onExplain,
+  explainOpen,
 }: {
   r: ScoredRecommendation;
-  onSelect?: (strategyId: string) => void;
+  onSelect?: () => void;
+  onExplain?: () => void;
+  explainOpen?: boolean;
 }) {
   const e = r.engine;
   return (
@@ -341,15 +392,26 @@ function RecCard({
               : "size 0 (budget / max-loss)"}
           </div>
         </div>
-        {onSelect && (
-          <button
-            type="button"
-            onClick={() => onSelect(r.strategyId)}
-            className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border-accent)] bg-[var(--bg-accent)] text-[var(--text-accent)] cursor-pointer"
-          >
-            Load in builder
-          </button>
-        )}
+        <div className="flex gap-1.5 flex-wrap">
+          {onExplain && (
+            <button
+              type="button"
+              onClick={onExplain}
+              className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] text-[var(--text-secondary)] cursor-pointer"
+            >
+              {explainOpen ? "Hide AI" : "Explain (AI)"}
+            </button>
+          )}
+          {onSelect && (
+            <button
+              type="button"
+              onClick={onSelect}
+              className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border-accent)] bg-[var(--bg-accent)] text-[var(--text-accent)] cursor-pointer"
+            >
+              Load in builder
+            </button>
+          )}
+        </div>
       </div>
 
       <div
@@ -429,5 +491,72 @@ function Metric({
         {value}
       </div>
     </div>
+  );
+}
+
+function ExplainPanel({
+  x,
+  onClose,
+}: {
+  x: StrategyExplanation;
+  onClose: () => void;
+}) {
+  return (
+    <section
+      className="rounded-lg border border-[var(--border-accent)] bg-[var(--surface-1)] p-3 flex flex-col gap-2"
+      aria-label={`AI explanation for ${x.name}`}
+    >
+      <div className="flex items-start justify-between gap-2">
+        <div>
+          <div className="text-xs text-[var(--text-accent)] font-medium">
+            Phase 5 · catalog-grounded explainer
+          </div>
+          <h3 className="text-sm font-medium m-0 mt-0.5">{x.headline}</h3>
+        </div>
+        <button
+          type="button"
+          onClick={onClose}
+          className="text-xs px-2 py-1 rounded border border-[var(--border)] cursor-pointer bg-transparent text-[var(--text-secondary)]"
+        >
+          Close
+        </button>
+      </div>
+      <p className="text-sm text-[var(--text-secondary)] m-0">{x.thesis}</p>
+      <div>
+        <div className="text-xs font-medium mb-1">Why now</div>
+        <ul className="text-xs text-[var(--text-secondary)] m-0 pl-4 list-disc space-y-0.5">
+          {x.whyNow.map((w) => (
+            <li key={w.slice(0, 48)}>{w}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <div className="text-xs font-medium mb-1">Risks &amp; exits</div>
+        <ul className="text-xs text-[var(--text-secondary)] m-0 pl-4 list-disc space-y-0.5">
+          {x.risks.map((w) => (
+            <li key={w.slice(0, 48)}>{w}</li>
+          ))}
+        </ul>
+      </div>
+      {x.citations.length > 0 && (
+        <div>
+          <div className="text-xs font-medium mb-1">Book library citations</div>
+          <ul className="text-[11px] text-[var(--text-muted)] m-0 pl-4 list-disc space-y-1">
+            {x.citations.map((c, i) => (
+              <li key={`${c.source}-${i}`}>
+                <span className="text-[var(--text-secondary)]">
+                  {c.category} / {c.subsection}
+                </span>
+                {" · "}
+                {c.source}
+                {c.page != null ? ` p.${c.page}` : ""}: “{c.snippet}”
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <p className="text-[11px] text-[var(--text-muted)] m-0">{x.confidenceNote}</p>
+      <p className="text-[11px] text-[var(--text-muted)] m-0">{x.disclaimer}</p>
+    </section>
   );
 }

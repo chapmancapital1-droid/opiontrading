@@ -24,6 +24,8 @@ export {
   buildRiskMapsFromChain,
 } from "./engineScore";
 export { demoAccount, DEFAULT_DEMO_ACCOUNT } from "./demoAccount";
+export { explainStrategy, explanationToMarkdown } from "./explain";
+export type { StrategyExplanation, ExplainCitation, BrainExplainInput } from "./explain";
 export type {
   AccountState,
   BrainDecision,
