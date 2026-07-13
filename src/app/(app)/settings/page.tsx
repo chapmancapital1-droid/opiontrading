@@ -119,10 +119,10 @@ export default function SettingsPage() {
 
       {/* RH import */}
       <section className="rounded-xl border border-[var(--border)] bg-[var(--surface-2)] p-4 flex flex-col gap-3">
-        <h2 className="text-sm font-medium m-0">Robinhood history (CSV / paste)</h2>
+        <h2 className="text-sm font-medium m-0">Broker history (CSV / paste)</h2>
         <p className="text-xs text-[var(--text-secondary)] m-0">
-          Official export or activity paste only. <strong>Never</strong> enter your RH password here.
-          Used to see what you already did and process fix-list hints.
+          Official export or activity paste only. <strong>Never</strong> enter broker passwords here.
+          Used for process fix-list hints — optional.
         </p>
         <textarea
           className="w-full text-xs font-mono rounded-lg border border-[var(--border)] bg-[var(--surface-1)] px-2 py-2 min-h-[120px]"

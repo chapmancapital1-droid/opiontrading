@@ -15,7 +15,7 @@ export function OrderChecklistCard({ checklist, onSave }: { checklist: OrderChec
   return (
     <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-2)] p-5 print:border-0">
       <div className="flex items-center justify-between mb-3">
-        <h3 className="text-base font-medium">Robinhood order checklist</h3>
+        <h3 className="text-base font-medium">Order checklist (manual entry)</h3>
         <span className="text-xs text-[var(--text-muted)]">{checklist.contracts}× {checklist.strategyName}</span>
       </div>
 
@@ -56,7 +56,7 @@ export function OrderChecklistCard({ checklist, onSave }: { checklist: OrderChec
       </div>
 
       <p className="text-xs text-[var(--text-muted)] mt-3">
-        Estimates only. A limit order is not guaranteed to fill. Not investment advice. Not affiliated with or endorsed by Robinhood.
+        Estimates only. A limit order is not guaranteed to fill. Not investment advice. You enter every order yourself — this app never auto-trades.
       </p>
     </div>
   );

@@ -113,9 +113,9 @@ export default function CommandRitual() {
           href="/journal"
         />
         <PulseTile
-          label="RH import"
+          label="History import"
           value={rhRows ? `${rhRows} rows` : "None"}
-          hint="CSV/paste only — no password"
+          hint="CSV/paste from broker export"
           href="/settings"
         />
         <PulseTile

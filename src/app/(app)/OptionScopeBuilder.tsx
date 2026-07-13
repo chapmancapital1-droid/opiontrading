@@ -492,7 +492,7 @@ export default function OptionScopeBuilder() {
               forecastEV: mc.ev,
               checklistText: null,
             });
-            alert("Saved plan to Journal. Complete the open/close ritual after Robinhood fills.");
+            alert("Saved plan to Journal. Mark opened/closed after you fill in your broker.");
           }}
         />
       )}
