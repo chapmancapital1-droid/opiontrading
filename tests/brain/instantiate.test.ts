@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { instantiateStrategy, type ChainRow } from "@/brain/instantiate";
+import { instantiateStrategy, pickPreferredExpiration, type ChainRow } from "@/brain/instantiate";
 import { buildRiskMapsFromChain, scoreRecommendationsWithEngine } from "@/brain/engineScore";
 import { runTradingBrain } from "@/brain/selector";
 import { demoAccount } from "@/brain/demoAccount";
@@ -96,6 +96,34 @@ describe("instantiateStrategy", () => {
       chain: [],
     });
     expect(inst.ok).toBe(false);
+  });
+
+  it("reserves full strike collateral for CSP (not net of premium)", () => {
+    const inst = instantiateStrategy({
+      strategyId: "cash_secured_put",
+      symbol: "AAPL",
+      spot: 100,
+      expiration: "2026-08-21",
+      chain,
+    });
+    expect(inst.ok).toBe(true);
+    if (inst.legs[0]!.assetType === "option") {
+      expect(inst.collateralPerContract).toBe(inst.legs[0]!.strike * 100);
+    }
+  });
+});
+
+describe("pickPreferredExpiration", () => {
+  it("skips 0–6 DTE when a 7–45 DTE expiry exists", () => {
+    const now = new Date("2026-07-12T15:00:00.000Z").getTime();
+    const pick = pickPreferredExpiration(
+      ["2026-07-13", "2026-07-17", "2026-08-21", "2026-12-18"],
+      { minDte: 7, maxDte: 45, now }
+    );
+    expect(pick).not.toBeNull();
+    expect(pick!.dte).toBeGreaterThanOrEqual(7);
+    expect(pick!.dte).toBeLessThanOrEqual(45);
+    expect(pick!.expiration).not.toBe("2026-07-13");
   });
 });
 

@@ -18,7 +18,7 @@ export {
   allPassed,
   firstFailure,
 } from "./riskGates";
-export { instantiateStrategy, chainToRows } from "./instantiate";
+export { instantiateStrategy, chainToRows, pickPreferredExpiration } from "./instantiate";
 export {
   scoreRecommendationsWithEngine,
   buildRiskMapsFromChain,

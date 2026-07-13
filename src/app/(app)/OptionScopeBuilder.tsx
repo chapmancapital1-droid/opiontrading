@@ -82,11 +82,23 @@ function monteCarlo(legs, spot, t, sigma, r, q, driftMode, userDrift, sims, seed
 const usd = (n) => (n < 0 ? "-$" : "$") + Math.abs(n).toLocaleString("en-US", { maximumFractionDigits: 2 });
 const pct1 = (f) => (f * 100).toFixed(1) + "%";
 
-// ---- strategy templates (subset for the demo) ----
+// ---- strategy templates (must cover every brain strategyId for "Load in builder") ----
 const TEMPLATES = {
   bull_call_debit: { name: "Bull call debit spread", legs: (S) => [
     { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S), prem: 6.2, fees: 0 },
     { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 10, prem: 3.1, fees: 0 },
+  ]},
+  bear_put_debit: { name: "Bear put debit spread", legs: (S) => [
+    { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S), prem: 6.0, fees: 0 },
+    { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 10, prem: 3.0, fees: 0 },
+  ]},
+  bull_put_credit: { name: "Bull put credit spread", legs: (S) => [
+    { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 5, prem: 1.8, fees: 0 },
+    { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S) - 15, prem: 0.6, fees: 0 },
+  ]},
+  bear_call_credit: { name: "Bear call credit spread", legs: (S) => [
+    { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 5, prem: 1.7, fees: 0 },
+    { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S) + 15, prem: 0.55, fees: 0 },
   ]},
   covered_call: { name: "Covered call", legs: (S) => [
     { kind: "stk", side: "long", shares: 100, entry: round5(S), fees: 0 },
@@ -107,6 +119,9 @@ const TEMPLATES = {
   ]},
   long_call: { name: "Long call", legs: (S) => [
     { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S), prem: 5.0, fees: 0 },
+  ]},
+  long_put: { name: "Long put", legs: (S) => [
+    { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S), prem: 4.8, fees: 0 },
   ]},
 };
 function round5(x) { return Math.round(x / 5) * 5; }
@@ -263,17 +278,13 @@ export default function OptionScopeBuilder() {
       {live && ticker.trim() && (
         <BrainRecommendPanel
           symbol={ticker}
+          preferredExpiration={expiry || undefined}
           onSelectStrategy={(id) => {
-            // Map brain strategyId → builder template key when available
-            const map = {
-              bull_call_debit: "bull_call_debit",
-              covered_call: "covered_call",
-              cash_secured_put: "cash_secured_put",
-              long_straddle: "long_straddle",
-              iron_condor: "iron_condor",
-              long_call: "long_call",
-            };
-            if (map[id]) setTpl(map[id]);
+            if (TEMPLATES[id]) {
+              setTpl(id);
+            } else {
+              setLoadErr(`No builder template for strategy "${id}" yet — open Compare or pick a listed template.`);
+            }
           }}
         />
       )}

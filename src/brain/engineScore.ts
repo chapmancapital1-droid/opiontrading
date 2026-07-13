@@ -69,13 +69,13 @@ export function scoreRecommendationsWithEngine(
     })
     .filter((x): x is { label: string; legs: InstantiatedStrategy["legs"] } => x != null);
 
-  // compareStrategies caps at 3 — score in batches
+  // Score one strategy at a time so a single failure cannot blank a batch of 3.
   const rnDrift: DriftMode = { kind: "risk-neutral" };
   const rows = new Map<string, CompareRow>();
-  for (let i = 0; i < compareItems.length; i += 3) {
-    const batch = compareItems.slice(i, i + 3);
+  const engineErrors = new Map<string, string>();
+  for (const item of compareItems) {
     try {
-      const scored = compareStrategies(batch, {
+      const scored = compareStrategies([item], {
         spot: ctx.spot,
         tYears: Math.max(ctx.tYears, 1 / 365),
         sigma: Math.max(ctx.sigma, 0.05),
@@ -86,14 +86,23 @@ export function scoreRecommendationsWithEngine(
         seed: ctx.seed ?? 42,
       });
       for (const row of scored) rows.set(row.label, row);
-    } catch {
-      // Skip batch on engine edge-cases (NaN marks, degenerate hist); leave metrics null.
+    } catch (e) {
+      engineErrors.set(
+        item.label,
+        e instanceof Error ? e.message : "Engine score failed (unknown error)"
+      );
     }
   }
 
   return recs.map((r) => {
     const inst = instById.get(r.strategyId)!;
     const row = rows.get(r.strategyId);
+    const engErr = engineErrors.get(r.strategyId);
+    const baseNotes = [...inst.notes];
+    if (engErr) baseNotes.push(`Engine score failed: ${engErr}`);
+    if (!inst.ok) baseNotes.push("Could not instantiate from chain");
+    if (inst.ok && !row && !engErr) baseNotes.push("Engine metrics unavailable for this structure");
+
     const engine: EngineMetrics = row
       ? {
           strategyId: r.strategyId,
@@ -105,7 +114,7 @@ export function scoreRecommendationsWithEngine(
           netCashFlow: row.netCashFlow,
           breakEvens: row.breakEvens,
           instantiated: true,
-          notes: inst.notes,
+          notes: baseNotes,
         }
       : {
           strategyId: r.strategyId,
@@ -117,7 +126,7 @@ export function scoreRecommendationsWithEngine(
           netCashFlow: null,
           breakEvens: [],
           instantiated: inst.ok,
-          notes: inst.notes,
+          notes: baseNotes,
         };
 
     // Prefer engine max-loss for display when brain sizing had none

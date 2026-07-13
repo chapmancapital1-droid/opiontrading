@@ -21,6 +21,7 @@ import {
   chainToRows,
   buildRiskMapsFromChain,
   scoreRecommendationsWithEngine,
+  pickPreferredExpiration,
   type ScoredRecommendation,
   type BrainDecision,
   type AccountState,
@@ -49,6 +50,8 @@ type Phase = "idle" | "loading" | "error";
 
 export interface BrainRecommendPanelProps {
   symbol: string;
+  /** Prefer this expiry when set (builder-selected). */
+  preferredExpiration?: string;
   /** Optional account override (defaults to educational demo account). */
   account?: Partial<AccountState>;
   /** When user clicks a recommendation, apply that strategy template id. */
@@ -57,6 +60,7 @@ export interface BrainRecommendPanelProps {
 
 export default function BrainRecommendPanel({
   symbol,
+  preferredExpiration,
   account: accountOver,
   onSelectStrategy,
 }: BrainRecommendPanelProps) {
@@ -64,6 +68,7 @@ export default function BrainRecommendPanel({
   const { history, record } = useIvHistory(ticker);
   const [data, setData] = useState<Loaded | null>(null);
   const [nciTa, setNciTa] = useState<NciTaSnapshot | null>(null);
+  const [expiryNote, setExpiryNote] = useState("");
   const [phase, setPhase] = useState<Phase>("loading");
   const [err, setErr] = useState("");
 
@@ -80,8 +85,24 @@ export default function BrainRecommendPanel({
       try {
         const q = await dataClient.quote(ticker);
         const ex = await dataClient.expirations(ticker);
-        const expiry = ex.expirations[0];
-        if (!expiry) throw new Error(`No listed expirations for ${ticker}`);
+        const list = ex.expirations ?? [];
+        if (!list.length) throw new Error(`No listed expirations for ${ticker}`);
+
+        let expiry = preferredExpiration && list.includes(preferredExpiration)
+          ? preferredExpiration
+          : null;
+        let note = expiry
+          ? `Using builder-selected expiry ${expiry}`
+          : "";
+        if (!expiry) {
+          const pick = pickPreferredExpiration(list, { minDte: 7, maxDte: 45 });
+          if (!pick) throw new Error(`No usable expirations for ${ticker}`);
+          expiry = pick.expiration;
+          note = pick.note;
+        }
+        if (cancelled) return;
+        setExpiryNote(note);
+
         const [chainRes, evRes, newsRes, nciRes] = await Promise.all([
           dataClient.chain(ticker, expiry),
           dataClient.events(ticker).catch(() => ({ events: {} as EventData })),
@@ -102,6 +123,7 @@ export default function BrainRecommendPanel({
         const snap = nciRes?.snapshot ?? nciRes ?? null;
         setNciTa(snap && snap.symbol ? snap : null);
         setPhase("idle");
+        // Record IV once; avoid depending on `history` in scoring deps loop.
         const iv = atmImpliedVol(loaded.chain, loaded.quote.price);
         if (iv != null) record(iv, { spot: loaded.quote.price });
       } catch (e) {
@@ -114,7 +136,7 @@ export default function BrainRecommendPanel({
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ticker]);
+  }, [ticker, preferredExpiration]);
 
   const ctx = useMemo<MarketContext | null>(() => {
     if (!data) return null;
@@ -176,7 +198,7 @@ export default function BrainRecommendPanel({
       chain: rows,
       sigma,
       tYears,
-      simulations: 6_000,
+      simulations: 3_000,
       seed: 42,
     });
 
@@ -204,6 +226,14 @@ export default function BrainRecommendPanel({
           {decision?.version ?? "…"} · manual checklist only · not investment advice
         </span>
       </div>
+      {expiryNote && (
+        <div className="text-xs text-[var(--text-secondary)]">
+          Expiry: {ctx?.expiration ?? "—"}
+          {ctx ? ` (${Math.max(0, Math.round((new Date(ctx.expiration).getTime() - Date.now()) / 864e5))} DTE)` : ""}
+          {" · "}
+          {expiryNote}
+        </div>
+      )}
 
       {phase === "error" ? (
         <div className="text-sm text-[var(--text-danger)]">{err}</div>
@@ -333,7 +363,7 @@ function RecCard({
           tone={e.expectedPL != null && e.expectedPL >= 0 ? "pos" : "neg"}
         />
         <Metric
-          label="RoR"
+          label="Payoff RoR"
           value={e.returnOnRisk == null ? "—" : e.returnOnRisk.toFixed(2) + "x"}
         />
         <Metric
