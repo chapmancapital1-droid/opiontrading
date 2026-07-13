@@ -233,5 +233,6 @@ Prefer models good at **following constraints** (Qwen2.5-Instruct, Llama-3.1-Ins
 - Vision: `docs/design/00-VISION-HANDOFF.md`
 - Phase 5 explain: `src/brain/explain.ts`, `ROADMAP.md` Phase 5 / 5.1  
 - Live account: `src/data/alpacaTrading.ts`  
+- **Options-obsessed LM Studio directives (embed later):** `docs/research/LM_STUDIO_OPTIONS_BRAIN_DIRECTIVES.md`
 
 _End of backburner research. Do not implement until ~95% gate._
