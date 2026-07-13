@@ -1,6 +1,6 @@
 /**
  * OptionScope Trading Brain public API.
- * Phase 4 selector + portfolio growth allocator + risk gates.
+ * Phase 4 selector + portfolio growth allocator + risk gates + Phase 4.1 engine score.
  */
 
 export { runTradingBrain, evaluateCandidates } from "./selector";
@@ -18,6 +18,12 @@ export {
   allPassed,
   firstFailure,
 } from "./riskGates";
+export { instantiateStrategy, chainToRows } from "./instantiate";
+export {
+  scoreRecommendationsWithEngine,
+  buildRiskMapsFromChain,
+} from "./engineScore";
+export { demoAccount, DEFAULT_DEMO_ACCOUNT } from "./demoAccount";
 export type {
   AccountState,
   BrainDecision,
@@ -28,3 +34,5 @@ export type {
   SizedTrade,
   StrategyCandidate,
 } from "./types";
+export type { InstantiatedStrategy, ChainRow } from "./instantiate";
+export type { ScoredRecommendation, EngineMetrics } from "./engineScore";

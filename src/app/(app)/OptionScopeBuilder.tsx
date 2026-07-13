@@ -6,6 +6,7 @@ import { useState, useMemo } from "react";
 import { LineChart, Line, XAxis, YAxis, ReferenceLine, ReferenceDot, ResponsiveContainer, Tooltip, BarChart, Bar, Cell } from "recharts";
 import { dataClient } from "@/data/client";
 import MarketContextPanel from "@/components/MarketContextPanel";
+import BrainRecommendPanel from "@/components/BrainRecommendPanel";
 
 /* ============================================================================
    OptionScope — Strategy Builder + Analysis Results (working demo)
@@ -257,6 +258,25 @@ export default function OptionScopeBuilder() {
 
       {/* Phase 3: live quantitative market context for the loaded ticker */}
       {live && ticker.trim() && <MarketContextPanel symbol={ticker} />}
+
+      {/* Phase 4.1: trading brain — selector + live-chain instantiation + engine PoP/EV */}
+      {live && ticker.trim() && (
+        <BrainRecommendPanel
+          symbol={ticker}
+          onSelectStrategy={(id) => {
+            // Map brain strategyId → builder template key when available
+            const map = {
+              bull_call_debit: "bull_call_debit",
+              covered_call: "covered_call",
+              cash_secured_put: "cash_secured_put",
+              long_straddle: "long_straddle",
+              iron_condor: "iron_condor",
+              long_call: "long_call",
+            };
+            if (map[id]) setTpl(map[id]);
+          }}
+        />
+      )}
 
       {blocked && (
         <div style={{ ...card, background: "var(--bg-danger)", borderColor: "var(--border-danger)" }}>

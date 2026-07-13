@@ -106,10 +106,12 @@ Given `MarketContext` + the book-library rules:
 - Snapshot: `NCI_Brain_updated.txt` (+ `C:\NCI\Brain\NCI_Brain_updated.txt`)
 - Tests: `tests/brain/*` (portfolio, selector, growth-lock simulation)
 
-**Still open for Phase 4.1**
-- Instantiate strikes/expiries from live chain per entry rules
-- Score candidates with full engine (`src/lib/compare.ts` PoP / EV / RoR)
-- Wire `runTradingBrain` into builder UI
+### ✅ Phase 4.1 — Live chain instantiation + engine score + builder wire (done)
+- Instantiate strikes/premiums from live chain: `src/brain/instantiate.ts`
+- Score candidates with full engine (PoP / EV / RoR): `src/brain/engineScore.ts`
+- Wire `runTradingBrain` into builder UI: `BrainRecommendPanel` on builder after live load
+- Demo account sizing: `src/brain/demoAccount.ts`
+- Tests: `tests/brain/instantiate.test.ts`
 
 ### ✅ Phase 4.0b — NCI TA Pine bridge + book library index (done)
 - Pine source vendored: `pine/NCI_Complete_Trading_Assistant_v2.pine`

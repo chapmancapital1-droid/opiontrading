@@ -85,12 +85,16 @@ export function runMonteCarlo(p: MCParams): MCResult {
   // Histogram: 40 bins across [p1, p99] to avoid outlier squashing.
   const lo = percentile(sorted, 0.01), hi = percentile(sorted, 0.99);
   const bins = 40;
-  const width = (hi - lo) / bins || 1;
+  const span = Number.isFinite(hi - lo) ? hi - lo : 0;
+  const width = span > 0 ? span / bins : 1;
   const hist = Array.from({ length: bins }, (_, k) => ({ bin: lo + k * width, count: 0 }));
   for (const v of pls) {
+    if (!Number.isFinite(v)) continue;
     let idx = Math.floor((v - lo) / width);
+    if (!Number.isFinite(idx)) idx = 0;
     idx = Math.max(0, Math.min(bins - 1, idx));
-    hist[idx]!.count++;
+    const bin = hist[idx];
+    if (bin) bin.count++;
   }
 
   return {
