@@ -180,9 +180,29 @@ export default function OptionScopeBuilder() {
         if (atm.iv) setSigma(Number(atm.iv.toFixed(4)));
       }
       setDte(Math.max(1, Math.round((new Date(useExp).getTime() - Date.now()) / 86400000)));
-      setLive({ chain: rows, expiry: useExp, source: status.usingDemoFallback ? "demo" : status.id, freshness: q.quote.meta.freshness });
+      const chainSrc = status.chainSource || status.id || "demo";
+      const quoteSrc = status.quoteSource || q.quote.meta.source || status.id;
+      setLive({
+        chain: rows,
+        expiry: useExp,
+        source: chainSrc,
+        quoteSource: quoteSrc,
+        freshness: q.quote.meta.freshness,
+        fallback: !!status.usingDemoFallback,
+        note: status.lastError
+          ? `Options via backup (${chainSrc}). Primary: ${status.lastError}`
+          : null,
+      });
+      if (status.usingDemoFallback) {
+        setLoadErr(
+          `Live equity OK (${quoteSrc}) · option board from ${chainSrc} (primary options feed unavailable — synthetic marks around live spot).`
+        );
+      } else {
+        setLoadErr("");
+      }
     } catch (e) {
-      setLive(null); setLoadErr((e && e.message) || "Failed to load live data");
+      setLive(null);
+      setLoadErr((e && e.message) || "Failed to load live data");
     } finally {
       setLoading(false);
     }
@@ -269,7 +289,7 @@ export default function OptionScopeBuilder() {
 
 
   const dataBadge = live
-    ? `LIVE · ${live.source} · ${live.freshness} · exp ${live.expiry}`
+    ? `${live.fallback ? "HYBRID" : "LIVE"} · quote ${live.quoteSource || live.source} · chain ${live.source} · ${live.freshness} · exp ${live.expiry}`
     : "DEMO · load a ticker for listed contracts";
 
   return (
@@ -283,7 +303,9 @@ export default function OptionScopeBuilder() {
           </p>
         </div>
         <div className="flex flex-wrap gap-1.5 items-center">
-          <span className={`os-badge ${live ? "os-badge-ok" : ""}`}>{live ? "LIVE CHAIN" : "DEMO"}</span>
+          <span className={`os-badge ${live && !live.fallback ? "os-badge-ok" : live?.fallback ? "os-badge-warn" : ""}`}>
+            {live ? (live.fallback ? "HYBRID CHAIN" : "LIVE CHAIN") : "DEMO"}
+          </span>
           <span className="os-badge os-badge-accent">MODEL EST.</span>
           {brainNote && <span className="os-badge os-badge-warn">BRAIN LOCK</span>}
         </div>
@@ -335,7 +357,13 @@ export default function OptionScopeBuilder() {
                   Use demo
                 </button>
               )}
-              {loadErr && <span className="text-xs text-[var(--text-danger)]">{loadErr}</span>}
+              {loadErr && (
+                <span
+                  className={`text-xs ${live?.fallback ? "text-[var(--text-warning)]" : "text-[var(--text-danger)]"}`}
+                >
+                  {loadErr}
+                </span>
+              )}
             </div>
 
             <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))" }}>
