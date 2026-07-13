@@ -364,6 +364,43 @@ export function instantiateStrategy(input: InstantiateInput): InstantiatedStrate
       notes.push(`Long straddle ~${c.strike}/${p.strike}`);
       break;
     }
+    case "money_press_call_calendar":
+    case "money_press_put_calendar":
+    case "money_press_double_calendar": {
+      // Single-chain instantiate: use ATM as proxy; UI still prefers dual-expiry live load.
+      // Short "near" priced richer; long "far" uses slightly lower mark proxy.
+      const type: "call" | "put" =
+        strategyId === "money_press_put_calendar" ? "put" : "call";
+      const k = roundStrike(spot, step);
+      if (strategyId === "money_press_double_calendar") {
+        const c = nearest(chain, "call", k);
+        const p = nearest(chain, "put", k);
+        if (!c || !p) return fail("Need ATM call+put for double calendar");
+        const farCall = { ...c, mark: Math.max(0.05, (c.mark ?? 1) * 1.35) };
+        const farPut = { ...p, mark: Math.max(0.05, (p.mark ?? 1) * 1.35) };
+        legs = [
+          optLeg("short", "put", p, expiration),
+          optLeg("long", "put", farPut, expiration),
+          optLeg("short", "call", c, expiration),
+          optLeg("long", "call", farCall, expiration),
+        ];
+        notes.push(
+          `Money Press double calendar ATM~${k} (far marks proxied — load dual expiries in Trade Lab)`
+        );
+      } else {
+        const near = nearest(chain, type, k);
+        if (!near) return fail(`No ${type} for money press calendar`);
+        const far = {
+          ...near,
+          mark: Math.max(0.05, (near.mark ?? 1) * 1.4),
+        };
+        legs = [optLeg("short", type, near, expiration), optLeg("long", type, far, expiration)];
+        notes.push(
+          `Money Press ${type} calendar strike ${near.strike} (far premium proxied until dual-expiry chain)`
+        );
+      }
+      break;
+    }
     default:
       return fail(`No instantiator for strategyId=${strategyId}`);
   }

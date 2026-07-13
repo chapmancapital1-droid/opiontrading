@@ -20,22 +20,50 @@ import { addJournalPlan } from "@/lib/localJournal";
    ============================================================================ */
 
 // ---- engine (mirrors src/domain/payoff.ts + montecarlo.ts, JS form) ----
+// Money Press calendars: at front expiry short settles intrinsic; long keeps residual extrinsic.
 const optEntry = (l) => (l.side === "long" ? -1 : 1) * l.prem * l.qty * 100 - l.fees;
 const stkEntry = (l) => (l.side === "long" ? -1 : 1) * l.entry * l.shares - l.fees;
-const optExpiry = (l, s) => {
+/** Residual long-calendar value after front month expires (approx). */
+function residualLong(l, s, sigma) {
+  const tRem = Math.max(l.remainingT || 0, 0);
+  if (tRem <= 0) {
+    const intr = l.type === "call" ? Math.max(s - l.strike, 0) : Math.max(l.strike - s, 0);
+    return intr * l.qty * 100;
+  }
+  // Rough BS-ish ATM residual scaled by moneyness
+  const m = Math.abs(s - l.strike) / Math.max(s, 1);
+  const atm = 0.4 * s * Math.max(sigma, 0.1) * Math.sqrt(tRem);
+  const res = Math.max(0.01, atm * Math.exp(-m * 4));
+  return res * l.qty * 100;
+}
+const optExpiry = (l, s, sigma = 0.3) => {
+  // Far long in calendar: value remaining extrinsic + intrinsic
+  if (l.term === "far" && l.side === "long" && (l.remainingT || 0) > 0) {
+    const intr = l.type === "call" ? Math.max(s - l.strike, 0) : Math.max(l.strike - s, 0);
+    return residualLong({ ...l, remainingT: l.remainingT }, s, sigma); // residual already ~ full mark
+  }
+  if (l.term === "far" && l.side === "long") {
+    const intr = l.type === "call" ? Math.max(s - l.strike, 0) : Math.max(l.strike - s, 0);
+    return intr * l.qty * 100;
+  }
   const intr = l.type === "call" ? Math.max(s - l.strike, 0) : Math.max(l.strike - s, 0);
   return (l.side === "long" ? 1 : -1) * intr * l.qty * 100;
 };
 const stkExpiry = (l, s) => (l.side === "long" ? 1 : -1) * s * l.shares;
-function plAt(legs, s) {
+function plAt(legs, s, sigma = 0.3) {
   let t = 0;
-  for (const l of legs) t += l.kind === "opt" ? optEntry(l) + optExpiry(l, s) : stkEntry(l) + stkExpiry(l, s);
+  for (const l of legs) t += l.kind === "opt" ? optEntry(l) + optExpiry(l, s, sigma) : stkEntry(l) + stkExpiry(l, s);
   return t;
 }
 function netCash(legs) {
   return legs.reduce((t, l) => t + (l.kind === "opt" ? optEntry(l) : stkEntry(l)), 0);
 }
+function isCalendar(legs) {
+  return legs.some((l) => l.term === "near" || l.term === "far");
+}
 function tailSlopes(legs) {
+  // Calendars: after front expiry risk is long back-month — treat as defined by debit (no unlimited tails)
+  if (isCalendar(legs)) return { lower: 0, upper: 0 };
   let lower = 0, upper = 0;
   for (const l of legs) {
     if (l.kind === "stk") { const s = (l.side === "long" ? 1 : -1) * l.shares; lower += s; upper += s; }
@@ -45,23 +73,39 @@ function tailSlopes(legs) {
 }
 function bps(legs) { return [...new Set(legs.map((l) => (l.kind === "opt" ? l.strike : l.entry)))].sort((a, b) => a - b); }
 function bisect(f, a, b) { let lo = a, hi = b, fl = f(lo); for (let i = 0; i < 80; i++) { const m = (lo + hi) / 2, fm = f(m); if (fm === 0 || (hi - lo) / 2 < 1e-9) return m; if (Math.sign(fm) === Math.sign(fl)) { lo = m; fl = fm; } else hi = m; } return (lo + hi) / 2; }
-function breakEvens(legs) {
+function breakEvens(legs, sigma = 0.3) {
   const b = bps(legs); if (!b.length) return [];
   const lo0 = Math.min(...b), hi0 = Math.max(...b), { lower, upper } = tailSlopes(legs);
-  const probe = Math.max(Math.abs(plAt(legs, lo0)), Math.abs(plAt(legs, hi0)), 1);
+  const probe = Math.max(Math.abs(plAt(legs, lo0, sigma)), Math.abs(plAt(legs, hi0, sigma)), 1);
   const ru = upper !== 0 ? probe / Math.abs(upper) + 5 : 0, rd = lower !== 0 ? probe / Math.abs(lower) + 5 : 0;
   const span = Math.max(hi0 - lo0, 1), start = Math.max(0, lo0 - rd - span), end = hi0 + ru + span;
   const grid = []; for (let i = 0; i <= 800; i++) grid.push(start + ((end - start) * i) / 800);
-  const f = (x) => plAt(legs, x), roots = [];
+  const f = (x) => plAt(legs, x, sigma), roots = [];
   for (let i = 1; i < grid.length; i++) { const y0 = f(grid[i - 1]), y1 = f(grid[i]); if (y0 === 0) roots.push(grid[i - 1]); else if (Math.sign(y0) !== Math.sign(y1)) roots.push(bisect(f, grid[i - 1], grid[i])); }
   const out = []; for (const r of roots.sort((a, b) => a - b)) if (!out.some((v) => Math.abs(v - r) < 0.01)) out.push(Number(r.toFixed(2)));
   return out;
 }
-function extrema(legs) {
+function extrema(legs, sigma = 0.3) {
   const { upper } = tailSlopes(legs), b = bps(legs);
   const pts = new Set([0, ...b, (b.length ? Math.max(...b) : 100) * 3 + 100]);
+  // denser grid for calendars (peak near ATM)
+  if (isCalendar(legs) && b.length) {
+    const lo = Math.min(...b) * 0.7, hi = Math.max(...b) * 1.3;
+    for (let i = 0; i <= 40; i++) pts.add(lo + ((hi - lo) * i) / 40);
+  }
   let mx = -Infinity, mn = Infinity;
-  for (const x of pts) { const y = plAt(legs, x); if (y > mx) mx = y; if (y < mn) mn = y; }
+  for (const x of pts) { const y = plAt(legs, x, sigma); if (y > mx) mx = y; if (y < mn) mn = y; }
+  // Calendar: max loss capped at net debit (approx)
+  if (isCalendar(legs)) {
+    const debit = -Math.min(0, netCash(legs));
+    mn = Math.min(mn, -debit);
+    return {
+      maxProfit: Number(mx.toFixed(2)),
+      maxLoss: Number(Math.min(mn, -debit + 0.01).toFixed(2)),
+      unlimitedUp: false,
+      unlimitedDown: false,
+    };
+  }
   return { maxProfit: upper > 0 ? "unlimited" : Number(mx.toFixed(2)), maxLoss: upper < 0 ? "undefined" : Number(mn.toFixed(2)), unlimitedUp: upper > 0, unlimitedDown: upper < 0 };
 }
 // seeded RNG + normal
@@ -72,7 +116,7 @@ function monteCarlo(legs, spot, t, sigma, r, q, driftMode, userDrift, sims, seed
   const mu = driftMode === "rn" ? r - q : userDrift;
   const drift = (mu - 0.5 * sigma * sigma) * t, vol = sigma * Math.sqrt(t);
   const pls = new Float64Array(sims); let win = 0, loss = 0, sum = 0;
-  for (let i = 0; i < sims; i++) { const sT = spot * Math.exp(drift + vol * norm()); const pl = plAt(legs, sT); pls[i] = pl; sum += pl; if (pl > 0) win++; else if (pl < 0) loss++; }
+  for (let i = 0; i < sims; i++) { const sT = spot * Math.exp(drift + vol * norm()); const pl = plAt(legs, sT, sigma); pls[i] = pl; sum += pl; if (pl > 0) win++; else if (pl < 0) loss++; }
   const pp = win / sims, pl2 = loss / sims, ev = sum / sims;
   const sorted = Array.from(pls).sort((a, b) => a - b);
   const pct = (qq) => { const idx = (sorted.length - 1) * qq, lo = Math.floor(idx), hi = Math.ceil(idx); return lo === hi ? sorted[lo] : sorted[lo] + (sorted[hi] - sorted[lo]) * (idx - lo); };
@@ -87,54 +131,93 @@ const usd = (n) => (n < 0 ? "-$" : "$") + Math.abs(n).toLocaleString("en-US", { 
 const pct1 = (f) => (f * 100).toFixed(1) + "%";
 
 // ---- strategy templates (must cover every brain strategyId for "Load in builder") ----
+// Money Press calendars: short near (collect front premium) + long far same strike.
+// remainingT = years left on far leg when near expires (approx farDte-nearDte).
+function moneyPressCall(S, nearPrem, farPrem, remT) {
+  const k = round5(S);
+  return [
+    { kind: "opt", side: "short", type: "call", qty: 1, strike: k, prem: nearPrem, fees: 0, term: "near", label: "NEAR short call" },
+    { kind: "opt", side: "long", type: "call", qty: 1, strike: k, prem: farPrem, fees: 0, term: "far", label: "FAR long call", remainingT: remT },
+  ];
+}
+function moneyPressPut(S, nearPrem, farPrem, remT) {
+  const k = round5(S);
+  return [
+    { kind: "opt", side: "short", type: "put", qty: 1, strike: k, prem: nearPrem, fees: 0, term: "near", label: "NEAR short put" },
+    { kind: "opt", side: "long", type: "put", qty: 1, strike: k, prem: farPrem, fees: 0, term: "far", label: "FAR long put", remainingT: remT },
+  ];
+}
+
 const TEMPLATES = {
-  bull_call_debit: { name: "Bull call debit spread", legs: (S) => [
+  money_press_call_calendar: {
+    name: "Money Press — Call calendar",
+    group: "Money Press",
+    legs: (S) => moneyPressCall(S, 2.4, 4.1, 30 / 365),
+  },
+  money_press_put_calendar: {
+    name: "Money Press — Put calendar",
+    group: "Money Press",
+    legs: (S) => moneyPressPut(S, 2.35, 4.0, 30 / 365),
+  },
+  money_press_double_calendar: {
+    name: "Money Press — Double calendar",
+    group: "Money Press",
+    legs: (S) => [
+      ...moneyPressPut(S, 2.2, 3.8, 30 / 365),
+      ...moneyPressCall(S, 2.2, 3.8, 30 / 365),
+    ],
+  },
+  bull_call_debit: { name: "Bull call debit spread", group: "Verticals", legs: (S) => [
     { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S), prem: 6.2, fees: 0 },
     { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 10, prem: 3.1, fees: 0 },
   ]},
-  bear_put_debit: { name: "Bear put debit spread", legs: (S) => [
+  bear_put_debit: { name: "Bear put debit spread", group: "Verticals", legs: (S) => [
     { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S), prem: 6.0, fees: 0 },
     { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 10, prem: 3.0, fees: 0 },
   ]},
-  bull_put_credit: { name: "Bull put credit spread", legs: (S) => [
+  bull_put_credit: { name: "Bull put credit spread", group: "Verticals", legs: (S) => [
     { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 5, prem: 1.8, fees: 0 },
     { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S) - 15, prem: 0.6, fees: 0 },
   ]},
-  bear_call_credit: { name: "Bear call credit spread", legs: (S) => [
+  bear_call_credit: { name: "Bear call credit spread", group: "Verticals", legs: (S) => [
     { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 5, prem: 1.7, fees: 0 },
     { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S) + 15, prem: 0.55, fees: 0 },
   ]},
-  covered_call: { name: "Covered call", legs: (S) => [
+  covered_call: { name: "Covered call", group: "Stock + option", legs: (S) => [
     { kind: "stk", side: "long", shares: 100, entry: round5(S), fees: 0 },
     { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 5, prem: 2.5, fees: 0 },
   ]},
-  cash_secured_put: { name: "Cash-secured put", legs: (S) => [
+  cash_secured_put: { name: "Cash-secured put", group: "Stock + option", legs: (S) => [
     { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 5, prem: 2.0, fees: 0 },
   ]},
-  long_straddle: { name: "Long straddle", legs: (S) => [
+  long_straddle: { name: "Long straddle", group: "Volatility", legs: (S) => [
     { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S), prem: 4.0, fees: 0 },
     { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S), prem: 3.5, fees: 0 },
   ]},
-  iron_condor: { name: "Iron condor", legs: (S) => [
+  iron_condor: { name: "Iron condor", group: "Range", legs: (S) => [
     { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S) - 15, prem: 0.5, fees: 0 },
     { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 10, prem: 1.2, fees: 0 },
     { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 10, prem: 1.1, fees: 0 },
     { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S) + 15, prem: 0.4, fees: 0 },
   ]},
-  long_call: { name: "Long call", legs: (S) => [
+  long_call: { name: "Long call", group: "Directional", legs: (S) => [
     { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S), prem: 5.0, fees: 0 },
   ]},
-  long_put: { name: "Long put", legs: (S) => [
+  long_put: { name: "Long put", group: "Directional", legs: (S) => [
     { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S), prem: 4.8, fees: 0 },
   ]},
 };
 function round5(x) { return Math.round(x / 5) * 5; }
+function isMoneyPress(id) {
+  return String(id).startsWith("money_press_");
+}
 
 export default function OptionScopeBuilder() {
   const [tpl, setTpl] = useState("bull_call_debit");
   const [spot, setSpot] = useState(500);
   const [sigma, setSigma] = useState(0.30);
-  const [dte, setDte] = useState(30);
+  const [dte, setDte] = useState(14); // Money Press front month often ~1–3 weeks
+  const [farDte, setFarDte] = useState(45); // back month
   const [rate, setRate] = useState(0.045);
   const [divYield, setDivYield] = useState(0.005);
   const [driftMode, setDriftMode] = useState("rn");
@@ -210,31 +293,49 @@ export default function OptionScopeBuilder() {
 
   // Prefer brain-instantiated legs (exact engine structure); else template + live snap.
   const legs = useMemo(() => {
-    if (brainLegs && brainLegs.length) return brainLegs;
-    const base = TEMPLATES[tpl].legs(spot);
+    const remT = Math.max((farDte - dte) / 365, 7 / 365);
+    if (brainLegs && brainLegs.length) {
+      return brainLegs.map((l) =>
+        l.term === "far" && l.side === "long" ? { ...l, remainingT: l.remainingT ?? remT } : l
+      );
+    }
+    let base = TEMPLATES[tpl].legs(spot);
+    // Inject calendar residual horizon from UI far/near DTE
+    if (isMoneyPress(tpl)) {
+      base = base.map((l) =>
+        l.term === "far" ? { ...l, remainingT: remT } : l
+      );
+    }
     if (!live || !live.chain || !live.chain.length) return base;
     return base.map((l) => {
       if (l.kind !== "opt") return l;
       const cands = live.chain.filter((c) => c.type === l.type && c.mark != null);
       if (!cands.length) return l;
       const near = cands.reduce((b, c) => Math.abs(c.strike - l.strike) < Math.abs(b.strike - l.strike) ? c : b);
-      return { ...l, strike: near.strike, prem: near.mark };
+      // Far leg: if no dual chain, mark up near premium as proxy for longer DTE
+      if (l.term === "far") {
+        const farPrem = Math.max(near.mark * 1.35, near.mark + 0.4);
+        return { ...l, strike: near.strike, prem: Number(farPrem.toFixed(2)), remainingT: remT };
+      }
+      return { ...l, strike: near.strike, prem: near.mark, remainingT: l.remainingT };
     });
-  }, [tpl, spot, live, brainLegs]);
+  }, [tpl, spot, live, brainLegs, dte, farDte]);
 
   const analysis = useMemo(() => {
     const net = netCash(legs);
-    const be = breakEvens(legs);
-    const ex = extrema(legs);
-    const mc = monteCarlo(legs, spot, dte / 365, sigma, rate, divYield, driftMode, userDrift, sims, seed);
+    const be = breakEvens(legs, sigma);
+    const ex = extrema(legs, sigma);
+    // MC to front-month horizon for Money Press
+    const tFront = Math.max(dte / 365, 1 / 365);
+    const mc = monteCarlo(legs, spot, tFront, sigma, rate, divYield, driftMode, userDrift, sims, seed);
     return { net, be, ex, mc };
   }, [legs, spot, sigma, dte, rate, divYield, driftMode, userDrift, sims, seed]);
 
   const chartData = useMemo(() => {
     const b = bps(legs); const lo = Math.max(0, Math.min(...b) * 0.85), hi = Math.max(...b) * 1.15;
-    const out = []; for (let i = 0; i <= 60; i++) { const x = lo + ((hi - lo) * i) / 60; out.push({ x: Number(x.toFixed(2)), pl: Number(plAt(legs, x).toFixed(2)) }); }
+    const out = []; for (let i = 0; i <= 60; i++) { const x = lo + ((hi - lo) * i) / 60; out.push({ x: Number(x.toFixed(2)), pl: Number(plAt(legs, x, sigma).toFixed(2)) }); }
     return out;
-  }, [legs]);
+  }, [legs, sigma]);
 
   const { net, be, ex, mc } = analysis;
   const blocked = ex.unlimitedDown && !legs.some((l) => l.kind === "stk");
@@ -370,7 +471,15 @@ export default function OptionScopeBuilder() {
               <label className="os-label">
                 Strategy
                 <select className="os-input mt-1" value={tpl} onChange={(e) => { setTpl(e.target.value); setBrainLegs(null); setBrainNote(""); }}>
-                  {Object.entries(TEMPLATES).map(([k, v]) => <option key={k} value={k}>{v.name}</option>)}
+                  {["Money Press", "Verticals", "Range", "Volatility", "Stock + option", "Directional"].map((g) => (
+                    <optgroup key={g} label={g}>
+                      {Object.entries(TEMPLATES)
+                        .filter(([, v]) => (v.group || "Other") === g)
+                        .map(([k, v]) => (
+                          <option key={k} value={k}>{v.name}</option>
+                        ))}
+                    </optgroup>
+                  ))}
                 </select>
               </label>
               <label className="os-label">
@@ -382,10 +491,34 @@ export default function OptionScopeBuilder() {
                 <input className="w-full mt-2" type="range" min="0.05" max="1.2" step="0.01" value={sigma} onChange={(e) => setSigma(+e.target.value)} />
               </label>
               <label className="os-label">
-                DTE {dte}
+                {isMoneyPress(tpl) ? "Near DTE (short)" : "DTE"} {dte}
                 <input className="w-full mt-2" type="range" min="1" max="180" step="1" value={dte} onChange={(e) => setDte(+e.target.value)} />
               </label>
+              {isMoneyPress(tpl) && (
+                <label className="os-label">
+                  Far DTE (long) {farDte}
+                  <input
+                    className="w-full mt-2"
+                    type="range"
+                    min={Math.max(dte + 7, 14)}
+                    max="180"
+                    step="1"
+                    value={Math.max(farDte, dte + 7)}
+                    onChange={(e) => setFarDte(+e.target.value)}
+                  />
+                </label>
+              )}
             </div>
+
+            {isMoneyPress(tpl) && (
+              <div className="os-well mt-3 px-3 py-2 text-xs text-[var(--text-secondary)] leading-relaxed">
+                <strong className="text-[var(--text-accent)]">Money Press method:</strong> sell{" "}
+                <strong>near</strong> premium, buy <strong>far</strong> same strike — collect front-month
+                theta while the long hedges. Usually a <strong>net debit</strong>; max loss ≈ debit.
+                Best when price stays near the short strike into near expiry and front IV is rich.
+                Analysis P/L is at <em>near</em> expiration (far leg still has value).
+              </div>
+            )}
 
             {brainNote && (
               <div className="os-well mt-3 px-3 py-2 text-xs text-[var(--text-secondary)] flex flex-wrap items-center justify-between gap-2">
@@ -404,6 +537,7 @@ export default function OptionScopeBuilder() {
               <table className="w-full text-sm" style={{ fontVariantNumeric: "tabular-nums" }}>
                 <thead>
                   <tr className="text-left text-[10px] uppercase tracking-wide text-[var(--text-muted)] border-b" style={{ borderColor: "var(--border)" }}>
+                    <th className="py-2 pr-2 font-medium">Term</th>
                     <th className="py-2 pr-2 font-medium">Type</th>
                     <th className="py-2 pr-2 font-medium">Side</th>
                     <th className="py-2 pr-2 font-medium">Strike / entry</th>
@@ -414,6 +548,15 @@ export default function OptionScopeBuilder() {
                 <tbody>
                   {legs.map((l, i) => (
                     <tr key={i} className="border-b last:border-0" style={{ borderColor: "var(--border)" }}>
+                      <td className="py-2 pr-2">
+                        {l.term === "near" ? (
+                          <span className="os-badge os-badge-warn text-[10px]">NEAR {dte}d</span>
+                        ) : l.term === "far" ? (
+                          <span className="os-badge os-badge-accent text-[10px]">FAR {farDte}d</span>
+                        ) : (
+                          <span className="text-[var(--text-muted)]">—</span>
+                        )}
+                      </td>
                       <td className="py-2 pr-2">{l.kind === "opt" ? l.type : "stock"}</td>
                       <td className="py-2 pr-2">{l.side}</td>
                       <td className="py-2 pr-2 font-mono text-xs">{l.kind === "opt" ? `$${l.strike}` : `$${l.entry}`}</td>

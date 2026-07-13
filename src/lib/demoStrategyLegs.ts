@@ -44,6 +44,9 @@ function stk(spot: number): Leg {
 }
 
 export const COMPARE_STRATEGY_IDS = [
+  "money_press_call_calendar",
+  "money_press_put_calendar",
+  "money_press_double_calendar",
   "long_call",
   "long_put",
   "bull_call_debit",
@@ -59,6 +62,9 @@ export const COMPARE_STRATEGY_IDS = [
 export type CompareStrategyId = (typeof COMPARE_STRATEGY_IDS)[number];
 
 export const COMPARE_STRATEGY_LABELS: Record<CompareStrategyId, string> = {
+  money_press_call_calendar: "Money Press call calendar",
+  money_press_put_calendar: "Money Press put calendar",
+  money_press_double_calendar: "Money Press double calendar",
   long_call: "Long call",
   long_put: "Long put",
   bull_call_debit: "Bull call debit",
@@ -80,7 +86,21 @@ export function buildDemoLegs(
   const exp = new Date(Date.now() + Math.max(1, dte) * 864e5).toISOString().slice(0, 10);
   const w = Math.max(5, Math.round(S * 0.025));
 
+  const far = new Date(Date.now() + Math.max(dte + 30, 45) * 864e5).toISOString().slice(0, 10);
+
   switch (strategyId) {
+    case "money_press_call_calendar":
+      // Short near richer / long far — net debit calendar
+      return [opt("short", "call", S, 2.4, exp), opt("long", "call", S, 4.1, far)];
+    case "money_press_put_calendar":
+      return [opt("short", "put", S, 2.35, exp), opt("long", "put", S, 4.0, far)];
+    case "money_press_double_calendar":
+      return [
+        opt("short", "put", S, 2.2, exp),
+        opt("long", "put", S, 3.8, far),
+        opt("short", "call", S, 2.2, exp),
+        opt("long", "call", S, 3.8, far),
+      ];
     case "long_call":
       return [opt("long", "call", S, 5.0, exp)];
     case "long_put":

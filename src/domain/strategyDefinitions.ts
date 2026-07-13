@@ -154,6 +154,87 @@ export const STRATEGIES: StrategyDefinition[] = [
     sourceRefs: ["book_pdf:66-69"],
   },
   {
+    id: "money_press_call_calendar",
+    name: "Money Press — Call Calendar",
+    aliases: ["Call Calendar", "Long Call Calendar", "Money Press Call"],
+    summary:
+      "Sell near-term call, buy further call same strike — harvest front-month theta (Money Press premium method). Usually net debit; risk defined by debit.",
+    outlook: "neutral",
+    approval: "level3_spreads",
+    badges: {
+      risk: "defined",
+      cashFlow: "debit",
+      thetaTendency: "positive",
+      vegaTendency: "positive",
+      earlyAssignment: true,
+      sameExpiration: false,
+    },
+    slots: [
+      OPT("short_near_call", "short", "call", "Sell near-term call"),
+      OPT("long_far_call", "long", "call", "Buy further-term call"),
+    ],
+    warnings: [
+      "Different expirations: max loss ≈ net debit if front pin goes wrong and back loses value.",
+      "Best when front IV is rich vs back (calendar skew) and underlying stays near strike into front expiry.",
+      "Early assignment risk on short ITM near-term calls (especially into ex-div).",
+    ],
+    sourceRefs: ["money_press:calendar", "book_pdf:calendar-spreads"],
+  },
+  {
+    id: "money_press_put_calendar",
+    name: "Money Press — Put Calendar",
+    aliases: ["Put Calendar", "Long Put Calendar", "Money Press Put"],
+    summary:
+      "Sell near-term put, buy further put same strike — Money Press premium collection on the put side. Defined risk ≈ net debit.",
+    outlook: "neutral",
+    approval: "level3_spreads",
+    badges: {
+      risk: "defined",
+      cashFlow: "debit",
+      thetaTendency: "positive",
+      vegaTendency: "positive",
+      earlyAssignment: true,
+      sameExpiration: false,
+    },
+    slots: [
+      OPT("short_near_put", "short", "put", "Sell near-term put"),
+      OPT("long_far_put", "long", "put", "Buy further-term put"),
+    ],
+    warnings: [
+      "Stay near the short strike into front expiration for peak calendar value.",
+      "Assignment on short put creates long stock — plan cash/shares.",
+    ],
+    sourceRefs: ["money_press:calendar", "book_pdf:calendar-spreads"],
+  },
+  {
+    id: "money_press_double_calendar",
+    name: "Money Press — Double Calendar",
+    aliases: ["Double Calendar", "Money Press Twin"],
+    summary:
+      "Call calendar + put calendar around ATM — range Money Press collecting front premium on both sides. Defined risk ≈ total net debit.",
+    outlook: "range",
+    approval: "level3_spreads",
+    badges: {
+      risk: "defined",
+      cashFlow: "debit",
+      thetaTendency: "positive",
+      vegaTendency: "positive",
+      earlyAssignment: true,
+      sameExpiration: false,
+    },
+    slots: [
+      OPT("short_near_put", "short", "put", "Sell near put"),
+      OPT("long_far_put", "long", "put", "Buy far put"),
+      OPT("short_near_call", "short", "call", "Sell near call"),
+      OPT("long_far_call", "long", "call", "Buy far call"),
+    ],
+    warnings: [
+      "Higher capital (two calendars). Size for seed accounts carefully.",
+      "Profit zone is a band around spot; large moves hurt both sides.",
+    ],
+    sourceRefs: ["money_press:double-calendar"],
+  },
+  {
     id: "iron_butterfly", name: "Iron Butterfly", aliases: [],
     summary: "Sell an ATM straddle and buy protective wings; narrow range, higher credit than a condor.",
     outlook: "range", approval: "level3_spreads",

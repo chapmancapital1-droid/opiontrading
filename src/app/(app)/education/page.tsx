@@ -82,6 +82,11 @@ export default function EducationPage() {
           <li>
             <strong>CSP / covered call</strong> — capital-heavy; assignment path; often later-stage.
           </li>
+          <li>
+            <strong>Money Press calendars</strong> — sell near-term premium, buy further same strike;
+            harvest front theta while the long hedges. Usually net debit; max loss ≈ debit. Use Trade Lab
+            → Strategy group <em>Money Press</em>.
+          </li>
         </ul>
       </Concept>
 
