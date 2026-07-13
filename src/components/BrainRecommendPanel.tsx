@@ -23,10 +23,13 @@ import {
   scoreRecommendationsWithEngine,
   pickPreferredExpiration,
   explainStrategy,
+  mapLiveToAccountState,
+  demoAsLiveClient,
   type ScoredRecommendation,
   type BrainDecision,
   type AccountState,
   type StrategyExplanation,
+  type LiveAccountClient,
 } from "@/brain";
 import type { NciTaSnapshot } from "@/indicators/nciTa";
 import type { Leg } from "@/domain/types";
@@ -80,9 +83,29 @@ export default function BrainRecommendPanel({
   const { history, record } = useIvHistory(ticker);
   const [data, setData] = useState<Loaded | null>(null);
   const [nciTa, setNciTa] = useState<NciTaSnapshot | null>(null);
+  const [liveAcct, setLiveAcct] = useState<LiveAccountClient | null>(null);
   const [expiryNote, setExpiryNote] = useState("");
   const [phase, setPhase] = useState<Phase>("loading");
   const [err, setErr] = useState("");
+
+  // Live Alpaca paper/live equity for brain sizing (server keys only)
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("/api/alpaca/account");
+        const j = await res.json();
+        if (cancelled) return;
+        if (j?.ok && j.account) setLiveAcct(j.account as LiveAccountClient);
+        else setLiveAcct({ ...demoAsLiveClient(), note: j?.error || "Alpaca unavailable — using demo" });
+      } catch {
+        if (!cancelled) setLiveAcct(demoAsLiveClient());
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (!ticker) {
@@ -162,18 +185,28 @@ export default function BrainRecommendPanel({
     });
   }, [data, history, ticker]);
 
-  const account = useMemo(
-    () =>
-      demoAccount({
-        ...accountOver,
-        sharesHeld: {
-          ...demoAccount().sharesHeld,
-          ...(accountOver?.sharesHeld ?? {}),
-          [ticker]: accountOver?.sharesHeld?.[ticker] ?? demoAccount().sharesHeld?.[ticker] ?? 0,
-        },
-      }),
-    [accountOver, ticker]
-  );
+  const account = useMemo(() => {
+    const baseLive = liveAcct ?? demoAsLiveClient();
+    // Merge shares for current ticker if live has none (covered-call eligibility)
+    const sharesHeld = {
+      ...baseLive.sharesHeld,
+      ...(accountOver?.sharesHeld ?? {}),
+    };
+    if (ticker && sharesHeld[ticker] == null) {
+      // leave undefined — don't invent 100 shares
+    }
+    const mapOpts: Parameters<typeof mapLiveToAccountState>[1] = {
+      approvalProfile: accountOver?.approvalProfile ?? "level3_spreads",
+      growthMode: accountOver?.growthMode ?? "balanced",
+    };
+    if (accountOver?.dailyRealizedPL != null) mapOpts.dailyRealizedPL = accountOver.dailyRealizedPL;
+    const mapped = mapLiveToAccountState({ ...baseLive, sharesHeld }, mapOpts);
+    return demoAccount({
+      ...mapped,
+      ...accountOver,
+      sharesHeld: { ...mapped.sharesHeld, ...(accountOver?.sharesHeld ?? {}) },
+    });
+  }, [accountOver, ticker, liveAcct]);
 
   const { decision, scored } = useMemo(() => {
     if (!ctx || !data) return { decision: null as BrainDecision | null, scored: [] as ScoredRecommendation[] };
@@ -249,6 +282,30 @@ export default function BrainRecommendPanel({
           {decision?.version ?? "…"} · manual checklist only · not investment advice
         </span>
       </div>
+      {/* Live paper/live account strip */}
+      <div className="flex flex-wrap gap-2 text-xs items-center">
+        <Pill
+          ok={liveAcct?.source === "alpaca"}
+          text={
+            liveAcct?.source === "alpaca"
+              ? `Alpaca ${liveAcct.mode ?? "paper"} · ${liveAcct.status ?? "OK"} · equity ${usd(liveAcct.equity)} · cash ${usd(liveAcct.cash)}`
+              : liveAcct?.note || "Account: demo (connecting…)"
+          }
+        />
+        {liveAcct?.source === "alpaca" && liveAcct.buyingPower != null && (
+          <Pill ok={true} text={`Buying power ${usd(liveAcct.buyingPower)}`} />
+        )}
+        {liveAcct?.source === "alpaca" && (liveAcct.openOptionContracts ?? 0) > 0 && (
+          <Pill
+            ok={true}
+            text={`Open option lots ~${liveAcct.openOptionContracts} · risk proxy ${usd(liveAcct.openRiskDollars)}`}
+          />
+        )}
+      </div>
+      {liveAcct?.note && (
+        <div className="text-[11px] text-[var(--text-muted)]">{liveAcct.note}</div>
+      )}
+
       {expiryNote && (
         <div className="text-xs text-[var(--text-secondary)]">
           Expiry: {ctx?.expiration ?? "—"}

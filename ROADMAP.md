@@ -142,6 +142,12 @@ Given `MarketContext` + the book-library rules:
 - Builder load applies **exact instantiated legs** the engine scored
 - Optional future: LLM polish behind `AI_EXPLAIN_MODE=llm` without changing fact block
 
+### ✅ Phase 5.0b — Live Alpaca paper account sizing (done)
+- `GET /api/alpaca/account` → sanitized equity/cash/positions (server keys only)
+- Brain sizes contracts from live paper equity via `mapLiveToAccountState`
+- UI strip: Alpaca paper/live status, equity, cash, buying power
+- Still **manual checklist only** — never places orders
+
 ### 🤖 Phase 5.1 — Optional LLM polish (open)
 Wire SpaceXAI / Grok to rewrite the grounded markdown for tone only — must not
 mutate `facts` (PoP, strikes, size, max loss). Keep disclaimers mandatory.

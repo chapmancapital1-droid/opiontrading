@@ -26,6 +26,8 @@ export {
 export { demoAccount, DEFAULT_DEMO_ACCOUNT } from "./demoAccount";
 export { explainStrategy, explanationToMarkdown } from "./explain";
 export type { StrategyExplanation, ExplainCitation, BrainExplainInput } from "./explain";
+export { mapLiveToAccountState, demoAsLiveClient } from "./liveAccount";
+export type { LiveAccountClient, MapLiveAccountOpts } from "./liveAccount";
 export type {
   AccountState,
   BrainDecision,
