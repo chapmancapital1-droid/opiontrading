@@ -267,214 +267,319 @@ export default function OptionScopeBuilder() {
     });
   }, [ticker, tpl, domainLegs, net, ex, be, live]);
 
-  const card = { background: "var(--surface-2)", border: "0.5px solid var(--border)", borderRadius: 12, padding: "1rem 1.25rem" };
-  const metric = { background: "var(--surface-1)", borderRadius: 8, padding: "0.75rem 1rem" };
-  const mlabel = { fontSize: 13, color: "var(--text-secondary)", margin: 0 };
-  const mval = { fontSize: 22, fontWeight: 500, margin: "2px 0 0", color: "var(--text-primary)" };
+
+  const dataBadge = live
+    ? `LIVE · ${live.source} · ${live.freshness} · exp ${live.expiry}`
+    : "DEMO · load a ticker for listed contracts";
 
   return (
-    <div style={{ padding: "1rem 0", fontFamily: "var(--font-sans)", color: "var(--text-primary)", display: "flex", flexDirection: "column", gap: "1rem" }}>
-      <h2 className="sr-only">OptionScope strategy builder and analysis results</h2>
-
-      {/* Controls */}
-      <div style={card}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
-          <span style={{ fontSize: 16, fontWeight: 500 }}>Strategy builder</span>
-          <span style={{ fontSize: 12, color: live ? "var(--text-success)" : "var(--text-muted)", display: "flex", alignItems: "center", gap: 6 }}>
-            <i className="ti ti-clock" aria-hidden="true" />
-            {live ? `Live · ${live.source} · ${live.freshness} · exp ${live.expiry}` : "Demo prices — load a symbol for live contracts"}
-          </span>
+    <div className="zone-cockpit flex flex-col gap-4">
+      <header className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <div className="os-kicker">Trade Lab</div>
+          <h1 className="text-2xl font-medium tracking-tight m-0">Builder + brain cockpit</h1>
+          <p className="text-sm text-[var(--text-secondary)] mt-1 m-0">
+            Analyze · Explain · Load · Checklist. Model estimates only. No auto-trade.
+          </p>
         </div>
+        <div className="flex flex-wrap gap-1.5 items-center">
+          <span className={`os-badge ${live ? "os-badge-ok" : ""}`}>{live ? "LIVE CHAIN" : "DEMO"}</span>
+          <span className="os-badge os-badge-accent">MODEL EST.</span>
+          {brainNote && <span className="os-badge os-badge-warn">BRAIN LOCK</span>}
+        </div>
+      </header>
 
-        {/* Live data loader (Phase 2) */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", marginBottom: 12 }}>
-          <input
-            value={ticker}
-            onChange={(e) => setTicker(e.target.value)}
-            onKeyDown={(e) => { if (e.key === "Enter") loadLive(""); }}
-            placeholder="Ticker e.g. AAPL"
-            aria-label="Ticker"
-            style={{ fontSize: 13, padding: "6px 10px", borderRadius: 8, border: "0.5px solid var(--border)", background: "var(--surface-1)", color: "var(--text-primary)", width: 140 }}
-          />
-          <button
-            onClick={() => loadLive("")}
-            disabled={loading || !ticker.trim()}
-            style={{ fontSize: 13, padding: "6px 12px", borderRadius: 8, cursor: "pointer", border: "0.5px solid var(--border-accent)", background: "var(--bg-accent)", color: "var(--text-accent)", opacity: loading || !ticker.trim() ? 0.6 : 1 }}
-          >
-            {loading ? "Loading…" : "Load live chain"}
-          </button>
-          {expiries.length > 0 && (
-            <select
-              value={expiry}
-              onChange={(e) => { setExpiry(e.target.value); loadLive(e.target.value); }}
-              aria-label="Expiration"
-              style={{ fontSize: 13, padding: "6px 10px", borderRadius: 8, border: "0.5px solid var(--border)", background: "var(--surface-1)", color: "var(--text-primary)" }}
-            >
-              {expiries.map((x) => <option key={x} value={x}>{x}</option>)}
-            </select>
+      {/* Dual rail: analysis | brain */}
+      <div className="lab-layout">
+        {/* LEFT RAIL */}
+        <div className="flex flex-col gap-3 min-w-0">
+          {/* Controls panel */}
+          <section className="os-panel p-4">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <span className="text-sm font-medium">Structure &amp; market</span>
+              <span className="text-xs text-[var(--text-muted)] flex items-center gap-1.5">
+                <i className="ti ti-antenna" aria-hidden />
+                {dataBadge}
+              </span>
+            </div>
+
+            <div className="flex flex-wrap gap-2 items-center mb-3">
+              <input
+                className="os-input w-36"
+                value={ticker}
+                onChange={(e) => setTicker(e.target.value)}
+                onKeyDown={(e) => { if (e.key === "Enter") loadLive(""); }}
+                placeholder="Ticker e.g. AAPL"
+                aria-label="Ticker"
+              />
+              <button
+                type="button"
+                className="os-btn os-btn-primary"
+                onClick={() => loadLive("")}
+                disabled={loading || !ticker.trim()}
+              >
+                {loading ? "Loading…" : "Load live chain"}
+              </button>
+              {expiries.length > 0 && (
+                <select
+                  className="os-input w-auto"
+                  value={expiry}
+                  onChange={(e) => { setExpiry(e.target.value); loadLive(e.target.value); }}
+                  aria-label="Expiration"
+                >
+                  {expiries.map((x) => <option key={x} value={x}>{x}</option>)}
+                </select>
+              )}
+              {live && (
+                <button type="button" className="os-btn" onClick={() => { setLive(null); setLoadErr(""); setBrainLegs(null); setBrainNote(""); }}>
+                  Use demo
+                </button>
+              )}
+              {loadErr && <span className="text-xs text-[var(--text-danger)]">{loadErr}</span>}
+            </div>
+
+            <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))" }}>
+              <label className="os-label">
+                Strategy
+                <select className="os-input mt-1" value={tpl} onChange={(e) => { setTpl(e.target.value); setBrainLegs(null); setBrainNote(""); }}>
+                  {Object.entries(TEMPLATES).map(([k, v]) => <option key={k} value={k}>{v.name}</option>)}
+                </select>
+              </label>
+              <label className="os-label">
+                Spot ${spot}
+                <input className="w-full mt-2" type="range" min="50" max="700" step="5" value={spot} onChange={(e) => setSpot(+e.target.value)} />
+              </label>
+              <label className="os-label">
+                IV {(sigma * 100).toFixed(0)}%
+                <input className="w-full mt-2" type="range" min="0.05" max="1.2" step="0.01" value={sigma} onChange={(e) => setSigma(+e.target.value)} />
+              </label>
+              <label className="os-label">
+                DTE {dte}
+                <input className="w-full mt-2" type="range" min="1" max="180" step="1" value={dte} onChange={(e) => setDte(+e.target.value)} />
+              </label>
+            </div>
+
+            {brainNote && (
+              <div className="os-well mt-3 px-3 py-2 text-xs text-[var(--text-secondary)] flex flex-wrap items-center justify-between gap-2">
+                <span>Brain structure locked: <strong className="text-[var(--text-primary)]">{brainNote}</strong></span>
+                <button type="button" className="os-btn text-xs py-1" onClick={() => { setBrainLegs(null); setBrainNote(""); }}>
+                  Clear lock
+                </button>
+              </div>
+            )}
+          </section>
+
+          {/* Legs table */}
+          <section className="os-panel p-4">
+            <div className="text-sm font-medium mb-2">Legs</div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm" style={{ fontVariantNumeric: "tabular-nums" }}>
+                <thead>
+                  <tr className="text-left text-[10px] uppercase tracking-wide text-[var(--text-muted)] border-b" style={{ borderColor: "var(--border)" }}>
+                    <th className="py-2 pr-2 font-medium">Type</th>
+                    <th className="py-2 pr-2 font-medium">Side</th>
+                    <th className="py-2 pr-2 font-medium">Strike / entry</th>
+                    <th className="py-2 pr-2 font-medium">Qty</th>
+                    <th className="py-2 font-medium">Mark</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {legs.map((l, i) => (
+                    <tr key={i} className="border-b last:border-0" style={{ borderColor: "var(--border)" }}>
+                      <td className="py-2 pr-2">{l.kind === "opt" ? l.type : "stock"}</td>
+                      <td className="py-2 pr-2">{l.side}</td>
+                      <td className="py-2 pr-2 font-mono text-xs">{l.kind === "opt" ? `$${l.strike}` : `$${l.entry}`}</td>
+                      <td className="py-2 pr-2">{l.kind === "opt" ? l.qty : l.shares}</td>
+                      <td className="py-2 font-mono text-xs">{l.kind === "opt" ? `$${Number(l.prem).toFixed(2)}` : "—"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {blocked && (
+            <div className="os-panel p-3" style={{ background: "var(--bg-danger)", borderColor: "var(--border-danger)" }}>
+              <span className="text-sm text-[var(--text-danger)] flex gap-2 items-center">
+                <i className="ti ti-alert-triangle" aria-hidden />
+                Undefined-risk position blocked in companion mode.
+              </span>
+            </div>
           )}
-          {live && <button onClick={() => { setLive(null); setLoadErr(""); }} style={{ fontSize: 12, padding: "6px 10px", borderRadius: 8, cursor: "pointer", border: "0.5px solid var(--border)", background: "transparent", color: "var(--text-secondary)" }}>Use demo</button>}
-          {loadErr && <span style={{ fontSize: 12, color: "var(--text-danger)" }}>{loadErr}</span>}
-        </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12 }}>
-          <Field label="Strategy">
-            <select value={tpl} onChange={(e) => setTpl(e.target.value)} style={{ width: "100%" }}>
-              {Object.entries(TEMPLATES).map(([k, v]) => <option key={k} value={k}>{v.name}</option>)}
-            </select>
-          </Field>
-          <Field label={`Underlying price: $${spot}`}><input type="range" min="50" max="700" step="5" value={spot} onChange={(e) => setSpot(+e.target.value)} style={{ width: "100%" }} /></Field>
-          <Field label={`Implied vol: ${(sigma * 100).toFixed(0)}%`}><input type="range" min="0.05" max="1.2" step="0.01" value={sigma} onChange={(e) => setSigma(+e.target.value)} style={{ width: "100%" }} /></Field>
-          <Field label={`Days to expiry: ${dte}`}><input type="range" min="1" max="180" step="1" value={dte} onChange={(e) => setDte(+e.target.value)} style={{ width: "100%" }} /></Field>
-        </div>
-      </div>
-
-      {/* Phase 3: live quantitative market context for the loaded ticker */}
-      {live && ticker.trim() && <MarketContextPanel symbol={ticker} />}
-
-      {/* Phase 4.1: trading brain — selector + live-chain instantiation + engine PoP/EV */}
-      {live && ticker.trim() && (
-        <BrainRecommendPanel
-          symbol={ticker}
-          preferredExpiration={expiry || undefined}
-          onSelectStrategy={(payload) => {
-            const id = typeof payload === "string" ? payload : payload.strategyId;
-            if (TEMPLATES[id]) setTpl(id);
-            else setLoadErr(`No builder template for strategy "${id}" — structure still applied if legs provided.`);
-
-            // Prefer exact engine legs when provided (domain → builder shape)
-            const domainLegs = typeof payload === "object" ? payload.legs : null;
-            if (domainLegs && domainLegs.length) {
-              const mapped = domainLegs.map((l) => {
-                if (l.assetType === "stock") {
-                  return { kind: "stk", side: l.side, shares: l.shares, entry: l.entryPrice, fees: l.feesTotal || 0 };
-                }
-                return {
-                  kind: "opt",
-                  side: l.side,
-                  type: l.optionType,
-                  qty: l.contracts,
-                  strike: l.strike,
-                  prem: l.premiumPerShare,
-                  fees: l.feesTotal || 0,
-                };
-              });
-              setBrainLegs(mapped);
-              setBrainNote(typeof payload === "object" ? (payload.legsNote || payload.name || id) : id);
-              if (typeof payload === "object" && payload.expiration) {
-                setExpiry(payload.expiration);
-                setDte(Math.max(1, Math.round((new Date(payload.expiration).getTime() - Date.now()) / 86400000)));
-              }
-            } else {
-              setBrainLegs(null);
-              setBrainNote("");
-            }
-          }}
-        />
-      )}
-
-      {brainNote && (
-        <div style={{ ...card, fontSize: 13, color: "var(--text-secondary)" }}>
-          Brain structure locked: <strong>{brainNote}</strong>
-          {" · "}
-          <button
-            type="button"
-            onClick={() => { setBrainLegs(null); setBrainNote(""); }}
-            style={{ fontSize: 12, cursor: "pointer", border: "0.5px solid var(--border)", borderRadius: 6, padding: "2px 8px", background: "transparent", color: "var(--text-accent)" }}
-          >
-            Clear · use template snap
-          </button>
-        </div>
-      )}
-
-      {blocked && (
-        <div style={{ ...card, background: "var(--bg-danger)", borderColor: "var(--border-danger)" }}>
-          <span style={{ color: "var(--text-danger)", fontSize: 14, display: "flex", gap: 8, alignItems: "center" }}>
-            <i className="ti ti-alert-triangle" aria-hidden="true" /> Undefined-risk position. Blocked in Robinhood companion mode — available only in the labeled educational sandbox.
-          </span>
-        </div>
-      )}
-
-      {/* Key metrics */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12 }}>
-        <Metric label={net < 0 ? "Net debit" : "Net credit"} value={usd(Math.abs(net))} m={metric} l={mlabel} v={mval} />
-        <Metric label="Max profit" value={ex.maxProfit === "unlimited" ? "Unlimited" : usd(ex.maxProfit)} m={metric} l={mlabel} v={{ ...mval, color: "var(--text-success)" }} />
-        <Metric label="Max loss" value={ex.maxLoss === "undefined" ? "Undefined" : usd(ex.maxLoss)} m={metric} l={mlabel} v={{ ...mval, color: "var(--text-danger)" }} />
-        <Metric label="Break-even(s)" value={be.length ? be.map((x) => "$" + x).join(", ") : "—"} m={metric} l={mlabel} v={{ ...mval, fontSize: 18 }} />
-      </div>
-
-      {/* Payoff chart */}
-      <div style={card}>
-        <div style={{ fontSize: 14, fontWeight: 500, marginBottom: 8 }}>Expiration payoff</div>
-        <div style={{ width: "100%", height: 260 }}>
-          <ResponsiveContainer>
-            <LineChart data={chartData} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
-              <XAxis dataKey="x" tick={{ fontSize: 11, fill: "var(--text-muted)" }} tickFormatter={(v) => "$" + v} />
-              <YAxis tick={{ fontSize: 11, fill: "var(--text-muted)" }} tickFormatter={(v) => (v < 0 ? "-$" : "$") + Math.abs(v)} width={54} />
-              <Tooltip formatter={(v) => usd(v)} labelFormatter={(v) => "Price $" + v} contentStyle={{ fontSize: 12, borderRadius: 8, border: "0.5px solid var(--border)" }} />
-              <ReferenceLine y={0} stroke="var(--border-strong)" />
-              <ReferenceLine x={round5(spot)} stroke="#378add" strokeDasharray="4 3" label={{ value: "spot", fontSize: 10, fill: "#378add" }} />
-              {be.map((b) => <ReferenceDot key={b} x={b} y={0} r={4} fill="#eda100" stroke="none" />)}
-              <Line type="monotone" dataKey="pl" stroke="#1d9e75" strokeWidth={2} dot={false} />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-        <div style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 4 }}>
-          Green line = P/L at expiration. Blue dash = current price. Amber dots = break-even(s).
-        </div>
-      </div>
-
-      {/* Probability panel */}
-      <div style={card}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12, flexWrap: "wrap", gap: 8 }}>
-          <span style={{ fontSize: 14, fontWeight: 500 }}>Probability &amp; expected value</span>
-          <div style={{ display: "flex", gap: 6 }}>
-            <button onClick={() => setDriftMode("rn")} style={pill(driftMode === "rn")}>Market-implied</button>
-            <button onClick={() => setDriftMode("user")} style={pill(driftMode === "user")}>User assumption</button>
+          {/* Metrics strip */}
+          <div className="grid gap-2" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))" }}>
+            <div className="os-metric">
+              <div className="os-metric-label">{net < 0 ? "Net debit" : "Net credit"}</div>
+              <div className="os-metric-value">{usd(Math.abs(net))}</div>
+            </div>
+            <div className="os-metric">
+              <div className="os-metric-label">Max profit</div>
+              <div className="os-metric-value text-[var(--text-success)]">{ex.maxProfit === "unlimited" ? "Unlimited" : usd(ex.maxProfit)}</div>
+            </div>
+            <div className="os-metric">
+              <div className="os-metric-label">Max loss</div>
+              <div className="os-metric-value text-[var(--text-danger)]">{ex.maxLoss === "undefined" ? "Undefined" : usd(ex.maxLoss)}</div>
+            </div>
+            <div className="os-metric">
+              <div className="os-metric-label">Break-even(s)</div>
+              <div className="os-metric-value text-base">{be.length ? be.map((x) => "$" + x).join(", ") : "—"}</div>
+            </div>
           </div>
+
+          {/* Payoff */}
+          <section className="os-panel p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm font-medium">Expiration payoff</span>
+              <span className="os-badge text-[10px]">ENGINE</span>
+            </div>
+            <div className="rounded-lg border overflow-hidden" style={{ borderColor: "var(--border)", background: "var(--surface-1)", height: 260 }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={chartData} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
+                  <XAxis dataKey="x" tick={{ fontSize: 11, fill: "var(--text-muted)" }} tickFormatter={(v) => "$" + v} />
+                  <YAxis tick={{ fontSize: 11, fill: "var(--text-muted)" }} tickFormatter={(v) => (v < 0 ? "-$" : "$") + Math.abs(v)} width={54} />
+                  <Tooltip formatter={(v) => usd(v)} labelFormatter={(v) => "Price $" + v} contentStyle={{ fontSize: 12, borderRadius: 8, border: "0.5px solid var(--border)", background: "var(--surface-2)" }} />
+                  <ReferenceLine y={0} stroke="var(--border-strong)" />
+                  <ReferenceLine x={round5(spot)} stroke="var(--text-accent)" strokeDasharray="4 3" />
+                  {be.map((b) => <ReferenceDot key={b} x={b} y={0} r={4} fill="var(--text-warning)" stroke="none" />)}
+                  <Line type="monotone" dataKey="pl" stroke="var(--text-success)" strokeWidth={2} dot={false} />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+            <p className="text-[11px] text-[var(--text-muted)] mt-2 m-0">Green = P/L at expiration. Blue dash = spot. Amber = break-evens.</p>
+          </section>
+
+          {/* Probability */}
+          <section className="os-panel p-4">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <span className="text-sm font-medium">Probability &amp; expected value</span>
+              <div className="flex gap-1.5">
+                <button type="button" className={`os-btn text-xs py-1 ${driftMode === "rn" ? "os-btn-primary" : ""}`} onClick={() => setDriftMode("rn")}>Market-implied</button>
+                <button type="button" className={`os-btn text-xs py-1 ${driftMode === "user" ? "os-btn-primary" : ""}`} onClick={() => setDriftMode("user")}>User assumption</button>
+              </div>
+            </div>
+            {driftMode === "user" && (
+              <label className="os-label mb-3 block">
+                Expected annual return: {(userDrift * 100).toFixed(0)}%
+                <input className="w-full mt-1" type="range" min="-0.3" max="0.5" step="0.01" value={userDrift} onChange={(e) => setUserDrift(+e.target.value)} />
+              </label>
+            )}
+            <div className="grid gap-2 mb-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(110px, 1fr))" }}>
+              <div className="os-metric">
+                <div className="os-metric-label">Model PoP</div>
+                <div className="os-metric-value text-[var(--text-success)]">{pct1(mc.pp)}</div>
+                <div className="text-[10px] text-[var(--text-muted)]">estimate</div>
+              </div>
+              <div className="os-metric">
+                <div className="os-metric-label">Model P(loss)</div>
+                <div className="os-metric-value text-[var(--text-danger)]">{pct1(mc.pl)}</div>
+              </div>
+              <div className="os-metric">
+                <div className="os-metric-label">Model EV</div>
+                <div className={`os-metric-value ${mc.ev >= 0 ? "text-[var(--text-success)]" : "text-[var(--text-danger)]"}`}>{usd(mc.ev)}</div>
+              </div>
+              <div className="os-metric">
+                <div className="os-metric-label">Median</div>
+                <div className="os-metric-value">{usd(mc.median)}</div>
+              </div>
+            </div>
+            <div className="os-well px-3 py-2 text-xs text-[var(--text-secondary)] mb-3">
+              95% CI on model PoP: <strong className="text-[var(--text-primary)]">{pct1(mc.ci[0])} – {pct1(mc.ci[1])}</strong>
+              {" · "}5th {usd(mc.p5)} · 95th {usd(mc.p95)} · {sims.toLocaleString()} sims
+            </div>
+            <div className="rounded-lg border overflow-hidden" style={{ borderColor: "var(--border)", background: "var(--surface-1)", height: 140 }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={mc.hist} margin={{ top: 4, right: 8, bottom: 0, left: 4 }}>
+                  <XAxis dataKey="x" tick={{ fontSize: 10, fill: "var(--text-muted)" }} tickFormatter={(v) => "$" + Math.round(v)} />
+                  <YAxis hide />
+                  <ReferenceLine x={0} stroke="var(--border-strong)" />
+                  <Tooltip formatter={(v) => v + " sims"} labelFormatter={(v) => "≈ " + usd(v)} contentStyle={{ fontSize: 12, borderRadius: 8, background: "var(--surface-2)", border: "1px solid var(--border)" }} />
+                  <Bar dataKey="count">
+                    {mc.hist.map((d, i) => <Cell key={i} fill={d.x >= 0 ? "var(--text-success)" : "var(--text-danger)"} />)}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </section>
+
+          {/* Model assumptions */}
+          <section className="os-panel p-4">
+            <div className="text-sm font-medium mb-3">Model assumptions</div>
+            <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))" }}>
+              <label className="os-label">Rate {(rate * 100).toFixed(1)}%
+                <input className="w-full mt-1" type="range" min="0" max="0.1" step="0.001" value={rate} onChange={(e) => setRate(+e.target.value)} />
+              </label>
+              <label className="os-label">Div yield {(divYield * 100).toFixed(1)}%
+                <input className="w-full mt-1" type="range" min="0" max="0.06" step="0.001" value={divYield} onChange={(e) => setDivYield(+e.target.value)} />
+              </label>
+              <label className="os-label">Sims {sims.toLocaleString()}
+                <input className="w-full mt-1" type="range" min="1000" max="50000" step="1000" value={sims} onChange={(e) => setSims(+e.target.value)} />
+              </label>
+              <label className="os-label">Seed
+                <input className="os-input mt-1" type="number" value={seed} onChange={(e) => setSeed(+e.target.value || 0)} />
+              </label>
+            </div>
+          </section>
         </div>
 
-        {driftMode === "user" && (
-          <div style={{ marginBottom: 12 }}>
-            <Field label={`Expected annual return: ${(userDrift * 100).toFixed(0)}%`}>
-              <input type="range" min="-0.3" max="0.5" step="0.01" value={userDrift} onChange={(e) => setUserDrift(+e.target.value)} style={{ width: "100%" }} />
-            </Field>
-            <p style={{ fontSize: 11, color: "var(--text-muted)", margin: "4px 0 0" }}>Changing expected return materially changes the probability. This is your view, not a forecast.</p>
+        {/* RIGHT RAIL — sticky brain */}
+        <aside className="lab-brain-rail flex flex-col gap-3 min-w-0">
+          <div className="lab-brain-sticky flex flex-col gap-3">
+            <div className="os-panel p-3">
+              <div className="os-kicker mb-1">Brain rail</div>
+              <p className="text-xs text-[var(--text-secondary)] m-0">
+                Load a live chain to rank structures under empire policy. Click Load in builder to lock legs.
+              </p>
+            </div>
+            {ticker.trim() ? (
+              <>
+                {live && <MarketContextPanel symbol={ticker} />}
+                <BrainRecommendPanel
+                  symbol={ticker}
+                  preferredExpiration={expiry || undefined}
+                  onSelectStrategy={(payload) => {
+                    const id = typeof payload === "string" ? payload : payload.strategyId;
+                    if (TEMPLATES[id]) setTpl(id);
+                    else setLoadErr(`No template for "${id}" — legs applied if present.`);
+                    const dLegs = typeof payload === "object" ? payload.legs : null;
+                    if (dLegs && dLegs.length) {
+                      const mapped = dLegs.map((l) => {
+                        if (l.assetType === "stock") {
+                          return { kind: "stk", side: l.side, shares: l.shares, entry: l.entryPrice, fees: l.feesTotal || 0 };
+                        }
+                        return {
+                          kind: "opt",
+                          side: l.side,
+                          type: l.optionType,
+                          qty: l.contracts,
+                          strike: l.strike,
+                          prem: l.premiumPerShare,
+                          fees: l.feesTotal || 0,
+                        };
+                      });
+                      setBrainLegs(mapped);
+                      setBrainNote(typeof payload === "object" ? (payload.legsNote || payload.name || id) : id);
+                      if (typeof payload === "object" && payload.expiration) {
+                        setExpiry(payload.expiration);
+                        setDte(Math.max(1, Math.round((new Date(payload.expiration).getTime() - Date.now()) / 86400000)));
+                      }
+                    } else {
+                      setBrainLegs(null);
+                      setBrainNote("");
+                    }
+                  }}
+                />
+              </>
+            ) : (
+              <div className="os-panel p-6 text-sm text-[var(--text-muted)]">
+                Enter a ticker and load the live chain to activate market context + trading brain.
+              </div>
+            )}
           </div>
-        )}
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12, marginBottom: 12 }}>
-          <Metric label="Prob. of profit" value={pct1(mc.pp)} m={metric} l={mlabel} v={{ ...mval, color: "var(--text-success)" }} />
-          <Metric label="Prob. of loss" value={pct1(mc.pl)} m={metric} l={mlabel} v={{ ...mval, color: "var(--text-danger)" }} />
-          <Metric label="Expected P/L" value={usd(mc.ev)} m={metric} l={mlabel} v={{ ...mval, color: mc.ev >= 0 ? "var(--text-success)" : "var(--text-danger)" }} />
-          <Metric label="Median outcome" value={usd(mc.median)} m={metric} l={mlabel} v={mval} />
-        </div>
-
-        <div style={{ fontSize: 12, color: "var(--text-secondary)", background: "var(--surface-1)", borderRadius: 8, padding: "8px 12px", marginBottom: 12 }}>
-          <i className="ti ti-target-arrow" aria-hidden="true" style={{ marginRight: 6 }} />
-          95% confidence interval on prob. of profit: <strong>{pct1(mc.ci[0])} – {pct1(mc.ci[1])}</strong> (±{(mc.se * 196).toFixed(1)} pts) at {sims.toLocaleString()} sims, seed {seed}.
-          <span style={{ display: "block", marginTop: 4, color: "var(--text-muted)" }}>5th pct: {usd(mc.p5)} · 95th pct: {usd(mc.p95)}. GBM, fixed volatility — real markets differ.</span>
-        </div>
-
-        <div style={{ width: "100%", height: 140 }}>
-          <ResponsiveContainer>
-            <BarChart data={mc.hist} margin={{ top: 4, right: 8, bottom: 0, left: 4 }}>
-              <XAxis dataKey="x" tick={{ fontSize: 10, fill: "var(--text-muted)" }} tickFormatter={(v) => "$" + Math.round(v)} />
-              <YAxis hide />
-              <ReferenceLine x={0} stroke="var(--border-strong)" />
-              <Tooltip formatter={(v) => v + " sims"} labelFormatter={(v) => "≈ " + usd(v)} contentStyle={{ fontSize: 12, borderRadius: 8 }} />
-              <Bar dataKey="count">
-                {mc.hist.map((d, i) => <Cell key={i} fill={d.x >= 0 ? "#1d9e75" : "#e24b4a"} />)}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-        <div style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 4 }}>
-          Monte Carlo outcome distribution. Green = profit, red = loss. Model estimates only — not guarantees.
-        </div>
+        </aside>
       </div>
 
-      {/* Robinhood checklist — own the decision */}
+      {/* Full-width checklist climax */}
       {!blocked && (
         <OrderChecklistCard
           checklist={checklist}
@@ -492,38 +597,17 @@ export default function OptionScopeBuilder() {
               forecastEV: mc.ev,
               checklistText: null,
             });
-            alert("Saved plan to Journal. Mark opened/closed after you fill in your broker.");
+            alert("Saved plan to Journal. Mark opened/closed after your broker fill.");
           }}
         />
       )}
 
-      {/* Simulation controls */}
-      <div style={card}>
-        <div style={{ fontSize: 14, fontWeight: 500, marginBottom: 12 }}>Model assumptions</div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12 }}>
-          <Field label={`Risk-free rate: ${(rate * 100).toFixed(1)}%`}><input type="range" min="0" max="0.1" step="0.001" value={rate} onChange={(e) => setRate(+e.target.value)} style={{ width: "100%" }} /></Field>
-          <Field label={`Dividend yield: ${(divYield * 100).toFixed(1)}%`}><input type="range" min="0" max="0.06" step="0.001" value={divYield} onChange={(e) => setDivYield(+e.target.value)} style={{ width: "100%" }} /></Field>
-          <Field label={`Simulations: ${sims.toLocaleString()}`}><input type="range" min="1000" max="50000" step="1000" value={sims} onChange={(e) => setSims(+e.target.value)} style={{ width: "100%" }} /></Field>
-          <Field label={`Seed: ${seed}`}><input type="number" value={seed} onChange={(e) => setSeed(+e.target.value || 0)} style={{ width: "100%" }} /></Field>
-        </div>
-      </div>
-
-      {/* Persistent disclosure */}
-      <div style={{ ...card, background: "var(--bg-warning)", borderColor: "var(--border-warning)" }}>
-        <p style={{ fontSize: 12, color: "var(--text-warning)", margin: 0, lineHeight: 1.6 }}>
-          <strong>Options involve significant risk.</strong> You can lose your full premium and, for some strategies, more. Probabilities are model estimates based on the assumptions shown, not guarantees. Volatility, liquidity, rates, and prices change. Simulated results are not actual results. This is not personalized investment, legal, or tax advice. Not affiliated with or endorsed by Robinhood.
+      <div className="os-panel p-3" style={{ background: "var(--bg-warning)", borderColor: "var(--border-warning)" }}>
+        <p className="text-xs text-[var(--text-warning)] m-0 leading-relaxed">
+          <strong>Options involve significant risk.</strong> Probabilities are model estimates under stated assumptions, not guarantees.
+          This app never places orders. Educational companion only — not investment advice.
         </p>
       </div>
     </div>
   );
-}
-
-function Field({ label, children }) {
-  return <div><label style={{ fontSize: 12, color: "var(--text-secondary)", display: "block", marginBottom: 4 }}>{label}</label>{children}</div>;
-}
-function Metric({ label, value, m, l, v }) {
-  return <div style={m}><p style={l}>{label}</p><p style={v}>{value}</p></div>;
-}
-function pill(active) {
-  return { fontSize: 12, padding: "4px 10px", borderRadius: 8, cursor: "pointer", border: active ? "0.5px solid var(--border-accent)" : "0.5px solid var(--border)", background: active ? "var(--bg-accent)" : "transparent", color: active ? "var(--text-accent)" : "var(--text-secondary)" };
 }

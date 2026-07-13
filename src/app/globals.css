@@ -332,6 +332,32 @@ a {
   background: transparent;
 }
 
+/* Trade Lab dual-rail cockpit */
+.lab-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: var(--space-4);
+  align-items: start;
+}
+@media (max-width: 1100px) {
+  .lab-layout {
+    grid-template-columns: 1fr;
+  }
+  .lab-brain-sticky {
+    position: static !important;
+  }
+}
+.lab-brain-rail {
+  min-width: 0;
+}
+.lab-brain-sticky {
+  position: sticky;
+  top: var(--space-4);
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  padding-bottom: var(--space-4);
+}
+
 /* Print checklist */
 @media print {
   .os-shell-nav,
