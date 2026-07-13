@@ -42,9 +42,11 @@ describe("portfolio policy invariants", () => {
 describe("sizePosition — account growth risk lock", () => {
   it("sizes so max loss ≤ 1% equity in balanced mode", () => {
     // max loss $100/contract, equity $10k → 1% = $100 → 1 contract
+    // empireMode false: pure PORTFOLIO_POLICY balanced math
     const s = sizePosition({
       account: baseAccount(),
       maxLossPerContract: 100,
+      empireMode: false,
     });
     expect(s.contracts).toBe(1);
     expect(s.riskDollars).toBe(100);
@@ -56,9 +58,20 @@ describe("sizePosition — account growth risk lock", () => {
     const s = sizePosition({
       account: baseAccount(),
       maxLossPerContract: 50,
+      empireMode: false,
     });
     expect(s.contracts).toBe(2);
     expect(s.riskDollars).toBeLessThanOrEqual(10_000 * 0.02);
+  });
+
+  it("empire stage1 tightens risk vs balanced (0.75% target at $10k)", () => {
+    const s = sizePosition({
+      account: baseAccount(),
+      maxLossPerContract: 100,
+      empireMode: true,
+    });
+    // 0.75% of 10k = $75 < $100 → 0 contracts
+    expect(s.contracts).toBe(0);
   });
 
   it("returns 0 contracts when even 1 lot exceeds risk budget", () => {
@@ -168,10 +181,10 @@ describe("projectGrowthPath — multi-trade compounding", () => {
 });
 
 describe("remainingRiskBudget", () => {
-  it("is equity * openRiskBudgetPct − openRisk", () => {
+  it("is min(policy, empire) openRiskBudgetPct − openRisk", () => {
     const a = baseAccount({ equity: 10_000, openRiskDollars: 500, growthMode: "balanced" });
-    // 20% of 10k = 2000 − 500 = 1500
-    expect(remainingRiskBudget(a)).toBe(1500);
+    // stage1 empire 12% of 10k = 1200 − 500 = 700 (tighter than balanced 20%)
+    expect(remainingRiskBudget(a)).toBe(700);
   });
 });
 

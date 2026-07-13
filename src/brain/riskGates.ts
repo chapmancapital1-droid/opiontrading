@@ -5,6 +5,7 @@
 
 import type { Liquidity, MarketContext } from "@/lib/marketContext";
 import { PORTFOLIO_POLICY } from "@/knowledge/portfolioPolicy";
+import { getEmpirePhaseLimits } from "@/knowledge/empirePolicy";
 import type { GrowthMode, StrategyRule } from "@/knowledge/types";
 import type { AccountState, RiskGateResult } from "./types";
 
@@ -12,13 +13,17 @@ const LIQUIDITY_RANK: Record<Liquidity, number> = { tight: 0, normal: 1, wide: 2
 
 export function remainingRiskBudget(account: AccountState, mode: GrowthMode = account.growthMode): number {
   const g = PORTFOLIO_POLICY.growthModes[mode];
-  const budget = account.equity * g.openRiskBudgetPct;
+  const emp = getEmpirePhaseLimits(account.equity);
+  const budgetPct = Math.min(g.openRiskBudgetPct, emp.openRiskBudgetPct);
+  const budget = account.equity * budgetPct;
   return Math.max(0, budget - account.openRiskDollars);
 }
 
 export function evaluateAccountGates(account: AccountState): RiskGateResult[] {
   const policy = PORTFOLIO_POLICY;
   const g = policy.growthModes[account.growthMode];
+  const emp = getEmpirePhaseLimits(account.equity);
+  const maxCampaigns = Math.min(g.maxOpenCampaigns, emp.maxOpenCampaigns);
   const results: RiskGateResult[] = [];
 
   if (!(account.equity > 0) || !Number.isFinite(account.equity)) {
@@ -28,15 +33,20 @@ export function evaluateAccountGates(account: AccountState): RiskGateResult[] {
       message: "Account equity must be a positive finite number.",
     });
   } else {
-    results.push({ passed: true, code: "EQUITY_OK", message: "Equity is valid." });
+    results.push({
+      passed: true,
+      code: "EQUITY_OK",
+      message: `Equity valid · empire phase ${emp.phase} (${emp.label}).`,
+    });
   }
 
-  const dailyHalt = account.equity * policy.hardGates.dailyLossHaltPct;
+  const dailyHaltPct = Math.min(policy.hardGates.dailyLossHaltPct, emp.dailyLossHaltPct);
+  const dailyHalt = account.equity * dailyHaltPct;
   if (account.dailyRealizedPL <= -dailyHalt) {
     results.push({
       passed: false,
       code: "DAILY_LOSS_HALT",
-      message: `Daily realized loss ${account.dailyRealizedPL.toFixed(2)} hit ${policy.hardGates.dailyLossHaltPct * 100}% circuit breaker.`,
+      message: `Daily realized loss ${account.dailyRealizedPL.toFixed(2)} hit ${dailyHaltPct * 100}% empire circuit breaker.`,
     });
   } else {
     results.push({
@@ -46,11 +56,11 @@ export function evaluateAccountGates(account: AccountState): RiskGateResult[] {
     });
   }
 
-  if (account.openCampaigns >= g.maxOpenCampaigns) {
+  if (account.openCampaigns >= maxCampaigns) {
     results.push({
       passed: false,
       code: "MAX_CAMPAIGNS",
-      message: `Open campaigns ${account.openCampaigns} >= max ${g.maxOpenCampaigns} for ${account.growthMode}.`,
+      message: `Open campaigns ${account.openCampaigns} >= max ${maxCampaigns} for empire ${emp.phase}.`,
     });
   } else {
     results.push({
@@ -113,6 +123,22 @@ export function evaluateRuleGates(
     });
   } else {
     results.push({ passed: true, code: "RISK_CLASS_OK", message: `Risk class ${rule.riskProfile} allowed.` });
+  }
+
+  // Empire phase strategy block (e.g. CSP at seed)
+  const emp = getEmpirePhaseLimits(account.equity);
+  if (emp.blockedStrategyIds.includes(rule.strategyId)) {
+    results.push({
+      passed: false,
+      code: "EMPIRE_PHASE_BLOCK",
+      message: `${rule.strategyId} blocked in empire phase ${emp.phase} (usually unaffordable or too capital-heavy). ${emp.note}`,
+    });
+  } else {
+    results.push({
+      passed: true,
+      code: "EMPIRE_PHASE_OK",
+      message: `Strategy allowed in empire phase ${emp.phase}.`,
+    });
   }
 
   // Liquidity

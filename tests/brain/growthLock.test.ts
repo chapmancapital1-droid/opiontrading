@@ -55,6 +55,7 @@ describe("growth lock simulation — options profits → portfolio", () => {
         account: acct,
         maxLossPerContract: 90,
         collateralPerContract: 500,
+        empireMode: false, // pure balanced policy for compound sim
       });
       expect(sized.contracts).toBeGreaterThanOrEqual(1);
 

@@ -121,11 +121,11 @@ describe("runTradingBrain — end-to-end growth lock", () => {
       context: ctx(),
       account: account(),
       maxLossByStrategyId: {
-        // Sized relative to $10k equity (1% target = $100)
-        cash_secured_put: 90,
-        bull_put_credit: 80,
-        iron_condor: 70,
-        bear_call_credit: 80,
+        // empire stage1 @ $10k: 0.75% ≈ $75 — max losses under ceiling so size ≥ 1
+        cash_secured_put: 70,
+        bull_put_credit: 60,
+        iron_condor: 50,
+        bear_call_credit: 60,
       },
       collateralByStrategyId: {
         cash_secured_put: 4_800,
@@ -149,12 +149,12 @@ describe("runTradingBrain — end-to-end growth lock", () => {
     const d = runTradingBrain({
       context: ctx(),
       account: account({ cash: 10_000, equity: 10_000 }),
-      maxLossByStrategyId: { cash_secured_put: 100 }, // small max loss → risk allows size
+      // empire stage1 risk ~$75 → max loss $50 allows 1 lot
+      maxLossByStrategyId: { cash_secured_put: 50 },
       collateralByStrategyId: { cash_secured_put: 5_000 },
     });
     const csp = d.recommendations.find((r) => r.strategyId === "cash_secured_put");
     expect(csp).toBeTruthy();
-    // risk target 1% of 10k = 100 → 1 contract by risk; cash allows 2 of 5k → risk wins at 1
     expect(csp!.suggestedContracts).toBe(1);
   });
 
@@ -179,10 +179,11 @@ describe("runTradingBrain — end-to-end growth lock", () => {
     expect(d.recommendations).toHaveLength(0);
   });
 
-  it("accountSnapshot remainingRiskBudget matches policy math", () => {
+  it("accountSnapshot remainingRiskBudget matches empire-capped policy math", () => {
     const a = account({ openRiskDollars: 400 });
     const d = runTradingBrain({ context: ctx(), account: a });
-    expect(d.accountSnapshot.remainingRiskBudget).toBe(10_000 * 0.2 - 400);
+    // stage1 empire 12% of 10k − 400
+    expect(d.accountSnapshot.remainingRiskBudget).toBe(10_000 * 0.12 - 400);
   });
 });
 

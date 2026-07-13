@@ -1,13 +1,13 @@
 import Link from "next/link";
 
 const NAV = [
-  { href: "/dashboard", label: "Dashboard", icon: "ti-layout-dashboard" },
-  { href: "/builder", label: "Strategy builder", icon: "ti-tools" },
+  { href: "/dashboard", label: "Command", icon: "ti-layout-dashboard" },
+  { href: "/builder", label: "Trade Lab", icon: "ti-tools" },
   { href: "/compare", label: "Compare", icon: "ti-columns" },
-  { href: "/saved", label: "Saved trades", icon: "ti-bookmark" },
-  { href: "/journal", label: "Trade journal", icon: "ti-notebook" },
+  { href: "/saved", label: "Saved", icon: "ti-bookmark" },
+  { href: "/journal", label: "Journal", icon: "ti-notebook" },
   { href: "/settings", label: "Settings", icon: "ti-settings" },
-  { href: "/education", label: "Education & risk", icon: "ti-shield" },
+  { href: "/education", label: "Education", icon: "ti-shield" },
 ];
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
@@ -15,6 +15,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen flex flex-col md:flex-row">
       <nav className="md:w-56 border-r border-[var(--border)] p-3 shrink-0">
         <div className="font-medium text-lg px-2 py-3">OptionScope</div>
+        <div className="text-[10px] text-[var(--text-muted)] px-2 -mt-2 mb-2">
+          Empire companion · personal
+        </div>
         <ul className="space-y-1">
           {NAV.map((n) => (
             <li key={n.href}>
@@ -25,12 +28,13 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           ))}
         </ul>
       </nav>
-      <main className="flex-1 p-4 md:p-6 max-w-4xl">
+      <main className="flex-1 p-4 md:p-6 max-w-6xl w-full">
         {children}
         <footer className="mt-10 text-xs text-[var(--text-muted)] border-t border-[var(--border)] pt-4">
-          Educational tool. Not investment advice. Not affiliated with or endorsed by Robinhood.{" "}
+          Educational companion for personal process only. Not investment advice. Not affiliated with Robinhood.
+          No auto-trade. See · Trust · Own.{" "}
           <a className="underline" href="https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document" target="_blank" rel="noreferrer">
-            Characteristics and Risks of Standardized Options
+            OCC options disclosure
           </a>
         </footer>
       </main>

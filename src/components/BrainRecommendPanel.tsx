@@ -18,6 +18,7 @@ import type { NewsItem } from "@/data/news/types";
 import {
   runTradingBrain,
   demoAccount,
+  seedAccount,
   chainToRows,
   buildRiskMapsFromChain,
   scoreRecommendationsWithEngine,
@@ -31,6 +32,8 @@ import {
   type StrategyExplanation,
   type LiveAccountClient,
 } from "@/brain";
+import { loadPersonalAccount } from "@/lib/personalAccount";
+import { getEmpirePhaseLimits, zeroSizeCoach } from "@/knowledge/empirePolicy";
 import type { NciTaSnapshot } from "@/indicators/nciTa";
 import type { Leg } from "@/domain/types";
 import { STRATEGY_RULES } from "@/knowledge/strategyRules";
@@ -87,19 +90,55 @@ export default function BrainRecommendPanel({
   const [expiryNote, setExpiryNote] = useState("");
   const [phase, setPhase] = useState<Phase>("loading");
   const [err, setErr] = useState("");
+  const [personalReady, setPersonalReady] = useState(false);
 
-  // Live Alpaca paper/live equity for brain sizing (server keys only)
+  // Personal seed profile + optional Alpaca paper
   useEffect(() => {
     let cancelled = false;
+    setPersonalReady(true);
     (async () => {
+      const profile = loadPersonalAccount();
       try {
         const res = await fetch("/api/alpaca/account");
         const j = await res.json();
         if (cancelled) return;
-        if (j?.ok && j.account) setLiveAcct(j.account as LiveAccountClient);
-        else setLiveAcct({ ...demoAsLiveClient(), note: j?.error || "Alpaca unavailable — using demo" });
+        if (j?.ok && j.account && profile.equitySource === "alpaca_paper") {
+          setLiveAcct(j.account as LiveAccountClient);
+        } else if (j?.ok && j.account) {
+          const acc = j.account as LiveAccountClient;
+          setLiveAcct({
+            ...acc,
+            note:
+              profile.equitySource === "manual_seed"
+                ? `Sizing from manual seed $${profile.manualEquity} (Alpaca paper visible but not primary)`
+                : acc.note ?? "Alpaca connected",
+          });
+        } else {
+          setLiveAcct({
+            source: "demo",
+            equity: profile.manualEquity,
+            cash: profile.manualCash,
+            sharesHeld: {},
+            openRiskDollars: 0,
+            openCampaigns: 0,
+            dailyRealizedPL: 0,
+            note: "Using personal seed equity from Settings",
+          });
+        }
       } catch {
-        if (!cancelled) setLiveAcct(demoAsLiveClient());
+        if (!cancelled) {
+          const profile = loadPersonalAccount();
+          setLiveAcct({
+            source: "demo",
+            equity: profile.manualEquity,
+            cash: profile.manualCash,
+            sharesHeld: {},
+            openRiskDollars: 0,
+            openCampaigns: 0,
+            dailyRealizedPL: 0,
+            note: "Seed account (offline)",
+          });
+        }
       }
     })();
     return () => {
@@ -186,27 +225,29 @@ export default function BrainRecommendPanel({
   }, [data, history, ticker]);
 
   const account = useMemo(() => {
-    const baseLive = liveAcct ?? demoAsLiveClient();
-    // Merge shares for current ticker if live has none (covered-call eligibility)
-    const sharesHeld = {
-      ...baseLive.sharesHeld,
-      ...(accountOver?.sharesHeld ?? {}),
-    };
-    if (ticker && sharesHeld[ticker] == null) {
-      // leave undefined — don't invent 100 shares
+    const profile = personalReady ? loadPersonalAccount() : null;
+    const useAlpaca = profile?.equitySource === "alpaca_paper" && liveAcct?.source === "alpaca";
+
+    if (useAlpaca && liveAcct) {
+      const sharesHeld = { ...liveAcct.sharesHeld, ...(accountOver?.sharesHeld ?? {}) };
+      const mapOpts: Parameters<typeof mapLiveToAccountState>[1] = {
+        approvalProfile: accountOver?.approvalProfile ?? profile?.approvalProfile ?? "level3_spreads",
+        growthMode: accountOver?.growthMode ?? getEmpirePhaseLimits(liveAcct.equity).growthMode,
+      };
+      if (accountOver?.dailyRealizedPL != null) mapOpts.dailyRealizedPL = accountOver.dailyRealizedPL;
+      const mapped = mapLiveToAccountState({ ...liveAcct, sharesHeld }, mapOpts);
+      return demoAccount({ ...mapped, ...accountOver, sharesHeld });
     }
-    const mapOpts: Parameters<typeof mapLiveToAccountState>[1] = {
-      approvalProfile: accountOver?.approvalProfile ?? "level3_spreads",
-      growthMode: accountOver?.growthMode ?? "balanced",
-    };
-    if (accountOver?.dailyRealizedPL != null) mapOpts.dailyRealizedPL = accountOver.dailyRealizedPL;
-    const mapped = mapLiveToAccountState({ ...baseLive, sharesHeld }, mapOpts);
-    return demoAccount({
-      ...mapped,
+
+    const equity = profile?.manualEquity ?? 500;
+    const cash = profile?.manualCash ?? equity;
+    return seedAccount(equity, {
+      cash,
+      approvalProfile: profile?.approvalProfile ?? "level3_spreads",
+      sharesHeld: accountOver?.sharesHeld ?? {},
       ...accountOver,
-      sharesHeld: { ...mapped.sharesHeld, ...(accountOver?.sharesHeld ?? {}) },
     });
-  }, [accountOver, ticker, liveAcct]);
+  }, [accountOver, ticker, liveAcct, personalReady]);
 
   const { decision, scored } = useMemo(() => {
     if (!ctx || !data) return { decision: null as BrainDecision | null, scored: [] as ScoredRecommendation[] };
@@ -366,6 +407,7 @@ export default function BrainRecommendPanel({
                 <RecCard
                   key={r.ruleId}
                   r={r}
+                  equity={account.equity}
                   explainOpen={explainOpen === r.strategyId}
                   onExplain={() =>
                     setExplainOpen((cur) => (cur === r.strategyId ? null : r.strategyId))
@@ -419,11 +461,13 @@ function Pill({ ok, text }: { ok: boolean; text: string }) {
 
 function RecCard({
   r,
+  equity,
   onSelect,
   onExplain,
   explainOpen,
 }: {
   r: ScoredRecommendation;
+  equity: number;
   onSelect?: () => void;
   onExplain?: () => void;
   explainOpen?: boolean;
@@ -499,6 +543,16 @@ function RecCard({
           tone="neg"
         />
       </div>
+
+      {r.suggestedContracts < 1 && r.maxLossPerContract != null && r.maxLossPerContract > 0 && (
+        <div className="text-[11px] text-[var(--text-warning)] rounded-md bg-[var(--bg-warning)] px-2 py-1.5">
+          {zeroSizeCoach({
+            equity,
+            maxLossPerContract: r.maxLossPerContract,
+            strategyId: r.strategyId,
+          })}
+        </div>
+      )}
 
       {e.notes.length > 0 && (
         <div className="text-[11px] text-[var(--text-secondary)]">

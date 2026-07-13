@@ -6,12 +6,13 @@ import TradingViewTimeline from "@/components/TradingViewTimeline";
 import MarketSummary from "@/components/MarketSummary";
 import MarketSnapshot from "@/components/MarketSnapshot";
 import MarketContextPanel from "@/components/MarketContextPanel";
+import CommandRitual from "@/components/CommandRitual";
 
 const QUICK = [
-  { href: "/builder", title: "Strategy builder", desc: "Payoff, Greeks, and probability for a trade." },
-  { href: "/compare", title: "Compare strategies", desc: "Put strategies side by side on risk/reward." },
-  { href: "/journal", title: "Trade journal", desc: "Log trades and score forecast vs. outcome." },
-  { href: "/education", title: "Education & risk", desc: "How the probabilities are built — and their limits." },
+  { href: "/builder", title: "Trade Lab", desc: "Brain rank, payoff, checklist — own the decision." },
+  { href: "/journal", title: "Trade journal", desc: "Plan → open → close. Forecast vs outcome." },
+  { href: "/settings", title: "Seed & RH import", desc: "Set $500 equity truth · paste RH history." },
+  { href: "/education", title: "Education & risk", desc: "Empire field manual · process over prediction." },
 ];
 
 export default function Dashboard() {
@@ -21,7 +22,7 @@ export default function Dashboard() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between flex-wrap gap-2">
-        <h1 className="text-2xl font-medium">Dashboard</h1>
+        <h1 className="text-2xl font-medium">Command</h1>
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -45,6 +46,8 @@ export default function Dashboard() {
           </button>
         </form>
       </div>
+
+      <CommandRitual />
 
       <MarketSnapshot symbol={symbol} />
 

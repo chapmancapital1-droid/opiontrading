@@ -13,6 +13,7 @@
  */
 
 import { PORTFOLIO_POLICY } from "@/knowledge/portfolioPolicy";
+import { empirePrefersStrategy, getEmpirePhaseLimits } from "@/knowledge/empirePolicy";
 import { STRATEGY_RULES } from "@/knowledge/strategyRules";
 import type { StrategyRule } from "@/knowledge/types";
 import type { MarketContext } from "@/lib/marketContext";
@@ -83,7 +84,7 @@ function scoreRule(
     }
   }
 
-  // Growth primary boost when account mode wants income/growth engines
+  // Growth primary boost (empire stage adjusts preference in evaluateCandidates)
   if (rule.growthPrimary) {
     score += 0.08;
     reasons.push("Growth-primary income engine");
@@ -160,8 +161,21 @@ export function evaluateCandidates(
   rules: readonly StrategyRule[] = STRATEGY_RULES,
   nciTa?: NciTaSnapshot | null
 ): StrategyCandidate[] {
+  const emp = getEmpirePhaseLimits(account.equity);
   return rules.map((rule) => {
-    const { score, reasons, rejects } = scoreRule(rule, context, nciTa);
+    const { score: base, reasons, rejects } = scoreRule(rule, context, nciTa);
+    let score = base;
+    // Seed: prefer micro defined-risk templates over capital-heavy income engines
+    // Only adjust when the rule already matched market context (base > 0)
+    if (base > 0 && (emp.phase === "seed" || emp.phase === "stage1")) {
+      if (empirePrefersStrategy(rule.strategyId, account.equity)) {
+        score += 0.1;
+        reasons.push(`Empire ${emp.phase}: preferred micro/affordable structure`);
+      } else if (rule.growthPrimary && emp.phase === "seed") {
+        score -= 0.06;
+        reasons.push("Empire seed: deprioritize capital-heavy growth-primary until equity scales");
+      }
+    }
     const gates = evaluateRuleGates(rule, context, account);
     const gateFail = firstFailure(gates);
     if (gateFail) {
@@ -170,7 +184,7 @@ export function evaluateCandidates(
     const eligible = score > 0 && allPassed(gates);
     return {
       rule,
-      matchScore: eligible ? score : 0,
+      matchScore: eligible ? Number(score.toFixed(4)) : 0,
       matchReasons: reasons,
       rejectReasons: rejects,
       eligible,

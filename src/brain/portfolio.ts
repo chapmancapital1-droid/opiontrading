@@ -6,6 +6,7 @@
  */
 
 import { PORTFOLIO_POLICY } from "@/knowledge/portfolioPolicy";
+import { empireRiskCeiling } from "@/knowledge/empirePolicy";
 import type { GrowthMode } from "@/knowledge/types";
 import type { AccountState, ProfitAllocation, SizedTrade } from "./types";
 import { remainingRiskBudget } from "./riskGates";
@@ -13,6 +14,7 @@ import { remainingRiskBudget } from "./riskGates";
 /**
  * Size contracts so that modeled max loss ≤ per-trade risk target/cap
  * and remaining open-risk budget. Cash-secured structures also limited by cash.
+ * Uses empire seed overlay when equity is in seed/stage1 (stricter than default).
  *
  * @param maxLossPerContract positive dollars of max loss for 1 contract (1-lot)
  * @param collateralPerContract optional collateral lock for 1-lot (CSP / spread width)
@@ -22,10 +24,13 @@ export function sizePosition(args: {
   maxLossPerContract: number;
   collateralPerContract?: number | null;
   growthMode?: GrowthMode;
+  /** When true (default), apply empire capital-phase risk ceilings */
+  empireMode?: boolean;
 }): SizedTrade {
   const mode = args.growthMode ?? args.account.growthMode;
   const g = PORTFOLIO_POLICY.growthModes[mode];
   const equity = args.account.equity;
+  const useEmpire = args.empireMode !== false;
 
   if (!(equity > 0) || !(args.maxLossPerContract > 0) || !Number.isFinite(args.maxLossPerContract)) {
     return {
@@ -37,14 +42,21 @@ export function sizePosition(args: {
     };
   }
 
-  const perTradeCap = equity * g.perTradeRiskCapPct;
-  const perTradeTarget = equity * g.perTradeRiskPct;
-  const riskLimit = Math.min(perTradeCap, perTradeTarget);
-  const remBudget = remainingRiskBudget(args.account, mode);
-  const riskCeiling = Math.min(riskLimit, remBudget);
+  let perTradeCap = equity * g.perTradeRiskCapPct;
+  let perTradeTarget = equity * g.perTradeRiskPct;
+  let remBudget = remainingRiskBudget(args.account, mode);
+  let absoluteCap = equity * PORTFOLIO_POLICY.hardGates.absoluteMaxLossPct;
 
-  // Absolute hard gate: single trade max loss never > absoluteMaxLossPct of equity
-  const absoluteCap = equity * PORTFOLIO_POLICY.hardGates.absoluteMaxLossPct;
+  if (useEmpire) {
+    const emp = empireRiskCeiling(equity, args.account.openRiskDollars);
+    perTradeTarget = Math.min(perTradeTarget, equity * emp.phase.perTradeRiskPct);
+    perTradeCap = Math.min(perTradeCap, equity * emp.phase.perTradeRiskCapPct);
+    remBudget = Math.min(remBudget, emp.remainingBudget);
+    absoluteCap = Math.min(absoluteCap, emp.absolute);
+  }
+
+  const riskLimit = Math.min(perTradeCap, perTradeTarget);
+  const riskCeiling = Math.min(riskLimit, remBudget);
   const hardCeiling = Math.min(riskCeiling, absoluteCap);
 
   let byRisk = Math.floor(hardCeiling / args.maxLossPerContract);

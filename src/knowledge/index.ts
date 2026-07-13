@@ -8,6 +8,16 @@ export type {
 } from "./types";
 export { PORTFOLIO_POLICY, assertPolicyInvariants } from "./portfolioPolicy";
 export {
+  resolveCapitalPhase,
+  getEmpirePhaseLimits,
+  empireRiskCeiling,
+  empireBlocksStrategy,
+  empirePrefersStrategy,
+  zeroSizeCoach,
+  ladderProgress,
+} from "./empirePolicy";
+export type { CapitalPhase, EmpirePhaseLimits } from "./empirePolicy";
+export {
   STRATEGY_RULES,
   getRuleById,
   getRulesByStrategyId,

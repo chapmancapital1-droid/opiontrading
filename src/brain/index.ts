@@ -23,7 +23,7 @@ export {
   scoreRecommendationsWithEngine,
   buildRiskMapsFromChain,
 } from "./engineScore";
-export { demoAccount, DEFAULT_DEMO_ACCOUNT } from "./demoAccount";
+export { demoAccount, DEFAULT_DEMO_ACCOUNT, DEFAULT_SEED_ACCOUNT, seedAccount } from "./demoAccount";
 export { explainStrategy, explanationToMarkdown } from "./explain";
 export type { StrategyExplanation, ExplainCitation, BrainExplainInput } from "./explain";
 export { mapLiveToAccountState, demoAsLiveClient } from "./liveAccount";

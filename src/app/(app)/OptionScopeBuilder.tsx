@@ -7,7 +7,10 @@ import { LineChart, Line, XAxis, YAxis, ReferenceLine, ReferenceDot, ResponsiveC
 import { dataClient } from "@/data/client";
 import MarketContextPanel from "@/components/MarketContextPanel";
 import BrainRecommendPanel from "@/components/BrainRecommendPanel";
+import { OrderChecklistCard } from "@/components/OrderChecklistCard";
 import { pickPreferredExpiration } from "@/brain";
+import { buildChecklist } from "@/lib/orderChecklist";
+import { addJournalPlan } from "@/lib/localJournal";
 
 /* ============================================================================
    OptionScope — Strategy Builder + Analysis Results (working demo)
@@ -216,6 +219,54 @@ export default function OptionScopeBuilder() {
   const { net, be, ex, mc } = analysis;
   const blocked = ex.unlimitedDown && !legs.some((l) => l.kind === "stk");
 
+  // Domain-shaped legs for Robinhood checklist
+  const domainLegs = useMemo(() => {
+    return legs.map((l) => {
+      if (l.kind === "stk") {
+        return {
+          assetType: "stock",
+          side: l.side,
+          shares: l.shares,
+          entryPrice: l.entry,
+          feesTotal: l.fees || 0,
+          quoteTimestamp: null,
+        };
+      }
+      return {
+        assetType: "option",
+        side: l.side,
+        optionType: l.type,
+        contracts: l.qty,
+        strike: l.strike,
+        expiration: expiry || new Date(Date.now() + dte * 864e5).toISOString().slice(0, 10),
+        premiumPerShare: l.prem,
+        multiplier: 100,
+        impliedVol: sigma,
+        exerciseStyle: "american",
+        feesTotal: l.fees || 0,
+        quoteTimestamp: null,
+      };
+    });
+  }, [legs, expiry, dte, sigma]);
+
+  const checklist = useMemo(() => {
+    const sym = (ticker.trim() || "DEMO").toUpperCase().split(":").pop();
+    const perShare = net / 100;
+    return buildChecklist({
+      underlying: sym,
+      strategyName: TEMPLATES[tpl]?.name || tpl,
+      legs: domainLegs,
+      netCashFlow: net,
+      perShareNet: perShare,
+      maxLoss: ex.maxLoss,
+      collateral: null,
+      breakEvens: be,
+      quoteTimestamp: live?.freshness ? new Date().toISOString() : null,
+      plannedProfitTarget: typeof ex.maxProfit === "number" ? ex.maxProfit * 0.5 : null,
+      plannedLossLimit: typeof ex.maxLoss === "number" ? Math.abs(ex.maxLoss) : null,
+    });
+  }, [ticker, tpl, domainLegs, net, ex, be, live]);
+
   const card = { background: "var(--surface-2)", border: "0.5px solid var(--border)", borderRadius: 12, padding: "1rem 1.25rem" };
   const metric = { background: "var(--surface-1)", borderRadius: 8, padding: "0.75rem 1rem" };
   const mlabel = { fontSize: 13, color: "var(--text-secondary)", margin: 0 };
@@ -418,8 +469,33 @@ export default function OptionScopeBuilder() {
             </BarChart>
           </ResponsiveContainer>
         </div>
-        <div style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 4 }}>Monte Carlo outcome distribution. Green = profit, red = loss.</div>
+        <div style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 4 }}>
+          Monte Carlo outcome distribution. Green = profit, red = loss. Model estimates only — not guarantees.
+        </div>
       </div>
+
+      {/* Robinhood checklist — own the decision */}
+      {!blocked && (
+        <OrderChecklistCard
+          checklist={checklist}
+          onSave={() => {
+            const sym = (ticker.trim() || "DEMO").toUpperCase().split(":").pop();
+            addJournalPlan({
+              underlying: sym,
+              strategy: tpl,
+              title: `${TEMPLATES[tpl]?.name || tpl} ${sym}`,
+              thesis: brainNote || "From Trade Lab checklist",
+              legsNote: brainNote || legs.map((l) => (l.kind === "opt" ? `${l.side} ${l.type} ${l.strike}` : `stock ${l.shares}`)).join("; "),
+              plannedMaxLoss: typeof ex.maxLoss === "number" ? Math.abs(ex.maxLoss) : null,
+              plannedContracts: 1,
+              forecastPoP: mc.pp,
+              forecastEV: mc.ev,
+              checklistText: null,
+            });
+            alert("Saved plan to Journal. Complete the open/close ritual after Robinhood fills.");
+          }}
+        />
+      )}
 
       {/* Simulation controls */}
       <div style={card}>
