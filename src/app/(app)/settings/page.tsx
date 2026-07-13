@@ -1,7 +1,8 @@
 export const metadata = { title: "Settings — OptionScope" };
 
 const ROWS: [string, string, string][] = [
-  ["Market data provider", "MARKET_DATA_PROVIDER", "demo | polygon | openbb"],
+  ["Market data provider", "MARKET_DATA_PROVIDER", "demo | polygon | openbb | alpaca"],
+  ["Alpaca key id (server)", "ALPACA_API_KEY_ID", "paper or live key — never NEXT_PUBLIC_"],
   ["OpenBB base URL", "OPENBB_BASE_URL", "http://localhost:8000"],
   ["OpenBB downstream provider", "OPENBB_API_PROVIDER", "cboe (free), polygon, tradier, …"],
   ["News provider", "NEWS_PROVIDER", "none | openbb"],
