@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OptionScope — Dashboard Command Center</title>
+  <style>
+    :root {
+      --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, "Cascadia Code", "Segoe UI Mono", Consolas, monospace;
+      --surface-1: #171a20;
+      --surface-2: #1e222a;
+      --border: #2b303a;
+      --border-strong: #3c434f;
+      --border-accent: #4a97e0;
+      --border-danger: #6b3a39;
+      --border-warning: #6b5a2a;
+      --text-primary: #eef1f5;
+      --text-secondary: #b6bdc8;
+      --text-muted: #7c8593;
+      --text-success: #3fb98d;
+      --text-danger: #e8615f;
+      --text-warning: #d8bd6b;
+      --text-accent: #6aa9e6;
+      --bg-accent: #16263a;
+      --bg-danger: #2e1b1b;
+      --bg-warning: #2c2413;
+      --bg-success: #152820;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --shadow-card: 0 1px 0 rgb(0 0 0 / 0.25);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--surface-1);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    a { color: var(--text-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    button, input { font: inherit; color: inherit; }
+    .app {
+      display: flex;
+      min-height: 100vh;
+    }
+    /* Sidebar */
+    .nav {
+      width: 224px;
+      flex-shrink: 0;
+      border-right: 1px solid var(--border);
+      background: var(--surface-2);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 8px 20px;
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .scope {
+      width: 22px; height: 22px;
+      border: 1.5px solid var(--text-accent);
+      border-radius: 50%;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .scope::after {
+      content: "";
+      position: absolute;
+      width: 6px; height: 1.5px;
+      background: var(--text-accent);
+      right: -2px; top: 5px;
+      transform: rotate(-35deg);
+      border-radius: 1px;
+    }
+    .nav a.item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13.5px;
+      border-left: 2px solid transparent;
+    }
+    .nav a.item:hover { background: var(--surface-1); text-decoration: none; }
+    .nav a.item.active {
+      background: var(--bg-accent);
+      color: var(--text-accent);
+      border-left-color: var(--border-accent);
+    }
+    .nav .ico {
+      width: 18px; text-align: center; opacity: 0.85; font-size: 12px;
+    }
+    .nav-foot {
+      margin-top: auto;
+      padding: 12px 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    /* Main */
+    .main {
+      flex: 1;
+      padding: 24px 28px 40px;
+      max-width: 1440px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .subhead {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .sym-form {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .sym-form input {
+      width: 200px;
+      padding: 8px 12px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text-primary);
+    }
+    .sym-form input:focus {
+      outline: 2px solid var(--border-accent);
+      outline-offset: 2px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: transparent;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .btn:focus-visible {
+      outline: 2px solid var(--border-accent);
+      outline-offset: 2px;
+    }
+    .btn-accent {
+      border-color: var(--border-accent);
+      background: var(--bg-accent);
+      color: var(--text-accent);
+    }
+    .btn-accent:hover { filter: brightness(1.08); }
+    .btn-ghost:hover { background: var(--surface-2); }
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .badge-live { background: var(--bg-accent); color: var(--text-accent); }
+    .badge-demo { background: var(--surface-1); color: var(--text-muted); border: 1px dashed var(--border-strong); }
+    .badge-paper { background: var(--bg-warning); color: var(--text-warning); }
+    .badge-model { background: var(--surface-1); color: var(--text-secondary); border: 1px solid var(--border); }
+    .badge-growth { color: var(--text-accent); background: transparent; letter-spacing: 0.04em; font-size: 11px; font-weight: 500; text-transform: none; padding: 0; }
+    /* Cards */
+    .card {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      border-radius: var(--radius-lg);
+      padding: 12px;
+      box-shadow: var(--shadow-card);
+    }
+    .card-h {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .card-title { font-size: 14px; font-weight: 500; }
+    .muted { color: var(--text-muted); font-size: 12px; }
+    /* Account strip */
+    .account {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 8px 20px;
+    }
+    .acct-badge-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .acct-metric {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 100px;
+    }
+    .acct-metric .lbl { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+    .acct-metric .val { font-size: 16px; font-weight: 500; font-variant-numeric: tabular-nums; }
+    /* Tiles */
+    .tile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+    }
+    .tile {
+      background: var(--surface-1);
+      border-radius: var(--radius-md);
+      padding: 8px 12px;
+    }
+    .tile .lbl { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-bottom: 4px; }
+    .tile .val { font-size: 18px; font-weight: 500; font-variant-numeric: tabular-nums; }
+    .tile .val.sm { font-size: 15px; }
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 2px 10px;
+      border-radius: 999px;
+    }
+    .pill-ok { background: var(--bg-success); color: var(--text-success); }
+    .pill-warn { background: var(--bg-warning); color: var(--text-warning); }
+    .pill-neg { background: var(--bg-danger); color: var(--text-danger); }
+    .pill-neu { background: var(--surface-2); color: var(--text-secondary); border: 1px solid var(--border); }
+    /* Workspace */
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 16px;
+    }
+    @media (max-width: 1100px) {
+      .workspace { grid-template-columns: 1fr; }
+      .nav { display: none; }
+    }
+    .chart-fake {
+      height: 420px;
+      border-radius: var(--radius-md);
+      background:
+        linear-gradient(180deg, transparent 0%, transparent 49.5%, rgba(124,133,147,0.25) 49.5%, rgba(124,133,147,0.25) 50.5%, transparent 50.5%),
+        linear-gradient(90deg, var(--surface-1) 1px, transparent 1px),
+        linear-gradient(var(--surface-1) 1px, transparent 1px),
+        var(--surface-1);
+      background-size: 100% 100%, 48px 48px, 48px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .chart-line {
+      position: absolute;
+      inset: 40px 24px 48px 48px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 160' preserveAspectRatio='none'%3E%3Cpath d='M0 110 C40 100 60 80 100 90 S160 130 200 100 S280 40 320 55 S380 90 400 70' fill='none' stroke='%236aa9e6' stroke-width='2'/%3E%3Cpath d='M0 110 C40 100 60 80 100 90 S160 130 200 100 S280 40 320 55 S380 90 400 70 L400 160 L0 160 Z' fill='%2316263a' opacity='0.55'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+    }
+    .chart-labels {
+      position: absolute;
+      left: 12px; top: 36px;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    .news-list { display: flex; flex-direction: column; gap: 0; max-height: 420px; overflow: auto; }
+    .news-item {
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .news-item:last-child { border-bottom: 0; }
+    .news-item .t { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+    .news-item .m { font-size: 11px; color: var(--text-muted); }
+    /* Brain preview */
+    .rank {
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .rank-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .rank-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+    @media (max-width: 700px) {
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+    }
+    .metric {
+      background: var(--surface-2);
+      border-radius: var(--radius-md);
+      padding: 8px 10px;
+    }
+    .metric .lbl { font-size: 10px; color: var(--text-muted); font-weight: 500; }
+    .metric .val { font-size: 15px; font-weight: 500; font-variant-numeric: tabular-nums; margin-top: 2px; }
+    .metric .val.pos { color: var(--text-success); }
+    .metric .val.neg { color: var(--text-danger); }
+    .metric .hint { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+    /* Journey */
+    .rails {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .rail {
+      display: block;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      color: inherit;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .rail:hover { background: var(--surface-1); text-decoration: none; }
+    .rail .t { font-weight: 500; margin-bottom: 4px; }
+    .rail .d { font-size: 13px; color: var(--text-secondary); }
+    .footer-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      margin-top: 8px;
+    }
+    .gate-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .stack { display: flex; flex-direction: column; gap: 10px; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <nav class="nav" aria-label="Primary">
+      <div class="brand"><span class="scope" aria-hidden="true"></span> OptionScope</div>
+      <a class="item active" href="#"><span class="ico">▣</span> Command</a>
+      <a class="item" href="builder-brain-cockpit.html"><span class="ico">⬡</span> Trade Lab</a>
+      <a class="item" href="#"><span class="ico">▤</span> Compare</a>
+      <a class="item" href="#"><span class="ico">☆</span> Saved</a>
+      <a class="item" href="journal-ritual.html"><span class="ico">☰</span> Journal</a>
+      <a class="item" href="#"><span class="ico">⚙</span> Settings</a>
+      <a class="item" href="#"><span class="ico">⛨</span> Education</a>
+      <div class="nav-foot">Manual checklist only.<br />Not investment advice.</div>
+    </nav>
+
+    <main class="main">
+      <header class="header">
+        <div>
+          <h1>Command center</h1>
+          <p class="subhead">Clarity before capital · morning read for AAPL</p>
+        </div>
+        <form class="sym-form" onsubmit="return false;">
+          <label class="visually-hidden" for="sym" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Symbol</label>
+          <input id="sym" value="NASDAQ:AAPL" spellcheck="false" />
+          <button type="submit" class="btn btn-accent">Load chart</button>
+        </form>
+      </header>
+
+      <!-- Account strip -->
+      <section class="card account" aria-label="Account">
+        <div class="acct-badge-row">
+          <span class="badge badge-paper">Paper</span>
+          <span class="badge badge-live">Live data</span>
+          <span class="muted">Alpaca paper · ACTIVE</span>
+        </div>
+        <div class="acct-metric">
+          <span class="lbl">Equity</span>
+          <span class="val">$24,180</span>
+        </div>
+        <div class="acct-metric">
+          <span class="lbl">Cash</span>
+          <span class="val">$6,420</span>
+        </div>
+        <div class="acct-metric">
+          <span class="lbl">Buying power</span>
+          <span class="val">$12,100</span>
+        </div>
+        <div class="acct-metric">
+          <span class="lbl">Risk budget left</span>
+          <span class="val">$1,800</span>
+        </div>
+        <div class="acct-metric">
+          <span class="lbl">Open option risk</span>
+          <span class="val">~$640</span>
+        </div>
+      </section>
+
+      <!-- Snapshot -->
+      <section class="card" aria-label="Market snapshot">
+        <div class="card-h">
+          <span class="card-title">Market snapshot · AAPL</span>
+          <span class="muted"><span class="badge badge-live">Live</span> · polygon · 12s ago</span>
+        </div>
+        <div class="tile-grid">
+          <div class="tile">
+            <div class="lbl">Spot</div>
+            <div class="val">$198.42</div>
+          </div>
+          <div class="tile">
+            <div class="lbl">ATM implied vol</div>
+            <div class="val">22.4%</div>
+          </div>
+          <div class="tile">
+            <div class="lbl">Nearest expiry</div>
+            <div class="val sm">2026-07-18 <span class="muted">· 48 total</span></div>
+          </div>
+          <div class="tile">
+            <div class="lbl">Next earnings</div>
+            <div class="val sm">2026-07-31</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Context -->
+      <section class="card" aria-label="Market context">
+        <div class="card-h">
+          <span class="card-title">Market context · signals the brain reads</span>
+          <span class="muted">Seven inputs · educational</span>
+        </div>
+        <div class="tile-grid">
+          <div class="tile">
+            <div class="lbl">IV rank</div>
+            <div class="val">38</div>
+          </div>
+          <div class="tile">
+            <div class="lbl">IV trend</div>
+            <div class="val sm"><span class="pill pill-ok">Low</span></div>
+          </div>
+          <div class="tile">
+            <div class="lbl">Spot trend</div>
+            <div class="val sm"><span class="pill pill-ok">Up ↑</span></div>
+          </div>
+          <div class="tile">
+            <div class="lbl">Expected move</div>
+            <div class="val">±$4.10</div>
+          </div>
+          <div class="tile">
+            <div class="lbl">Liquidity</div>
+            <div class="val sm"><span class="pill pill-ok">Tight</span></div>
+          </div>
+          <div class="tile">
+            <div class="lbl">Events</div>
+            <div class="val sm"><span class="pill pill-warn">Earnings</span></div>
+          </div>
+          <div class="tile">
+            <div class="lbl">News sentiment</div>
+            <div class="val sm"><span class="pill pill-neu">Neutral</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chart + news -->
+      <div class="workspace">
+        <section class="card" aria-label="Live chart">
+          <div class="card-h" style="margin-bottom:8px;">
+            <span class="card-title">Live chart · NASDAQ:AAPL</span>
+            <span class="muted">Live market data by TradingView</span>
+          </div>
+          <div class="chart-fake" role="img" aria-label="Stylized price chart placeholder">
+            <div class="chart-labels"><span>202</span><span>198</span><span>194</span></div>
+            <div class="chart-line"></div>
+          </div>
+        </section>
+        <section class="card" aria-label="News">
+          <div class="card-h">
+            <span class="card-title">News · AAPL</span>
+            <span class="muted">Top stories</span>
+          </div>
+          <div class="news-list">
+            <div class="news-item">
+              <div class="t">Apple suppliers steady ahead of summer product cycle</div>
+              <div class="m">2h · Reuters</div>
+            </div>
+            <div class="news-item">
+              <div class="t">Options: put/call skew softens on mega-cap tech</div>
+              <div class="m">4h · Market desk</div>
+            </div>
+            <div class="news-item">
+              <div class="t">Services growth offsets hardware caution in note</div>
+              <div class="m">6h · Street research</div>
+            </div>
+            <div class="news-item">
+              <div class="t">Implied move into earnings still building</div>
+              <div class="m">Yesterday</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Brain preview -->
+      <section class="card" aria-label="Trading brain preview">
+        <div class="card-h">
+          <span class="card-title">Brain pulse · top structures</span>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <span class="muted">v4.1 · manual checklist only</span>
+            <a class="btn btn-accent" href="builder-brain-cockpit.html">Open full brain in Trade Lab</a>
+          </div>
+        </div>
+        <div class="gate-row">
+          <span class="pill pill-ok">Account gates OK</span>
+          <span class="pill pill-ok">NCI UP 68% · trigger hold</span>
+          <span class="pill pill-neu">Context medium · risk budget $1,800</span>
+          <span class="badge badge-paper">Sized on paper</span>
+        </div>
+        <div class="stack">
+          <article class="rank" aria-label="Rank 1: Bull put credit spread">
+            <div class="rank-top">
+              <div>
+                <div style="font-weight:500;">#1 · Bull put credit spread <span class="badge-growth">growth-primary</span></div>
+                <div class="muted" style="margin-top:2px;">score 0.86 · income engine · 2 contracts · risk $420</div>
+              </div>
+              <div class="rank-actions">
+                <button type="button" class="btn btn-ghost">Explain (AI)</button>
+                <a class="btn btn-accent" href="builder-brain-cockpit.html">Load in Lab</a>
+              </div>
+            </div>
+            <div class="metrics">
+              <div class="metric">
+                <div class="lbl">Model PoP</div>
+                <div class="val">68.2%</div>
+                <div class="hint">model estimate</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Model EV</div>
+                <div class="val pos">+$42</div>
+                <div class="hint">model estimate</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Payoff RoR</div>
+                <div class="val">0.31×</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Max loss / lot</div>
+                <div class="val neg">$210</div>
+              </div>
+            </div>
+          </article>
+          <article class="rank" aria-label="Rank 2: Covered call">
+            <div class="rank-top">
+              <div>
+                <div style="font-weight:500;">#2 · Covered call <span class="badge-growth">growth-primary</span></div>
+                <div class="muted" style="margin-top:2px;">score 0.79 · income on shares · size 0 (no share lot mapped)</div>
+              </div>
+              <div class="rank-actions">
+                <button type="button" class="btn btn-ghost">Explain (AI)</button>
+                <a class="btn btn-accent" href="builder-brain-cockpit.html">Load in Lab</a>
+              </div>
+            </div>
+            <div class="metrics">
+              <div class="metric">
+                <div class="lbl">Model PoP</div>
+                <div class="val">71.0%</div>
+                <div class="hint">model estimate</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Model EV</div>
+                <div class="val pos">+$28</div>
+                <div class="hint">model estimate</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Payoff RoR</div>
+                <div class="val">—</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Max loss / lot</div>
+                <div class="val neg">Share path</div>
+              </div>
+            </div>
+          </article>
+          <article class="rank" aria-label="Rank 3: Bull call debit spread">
+            <div class="rank-top">
+              <div>
+                <div style="font-weight:500;">#3 · Bull call debit spread</div>
+                <div class="muted" style="margin-top:2px;">score 0.71 · directional growth · 1 contract · risk $310</div>
+              </div>
+              <div class="rank-actions">
+                <button type="button" class="btn btn-ghost">Explain (AI)</button>
+                <a class="btn btn-accent" href="builder-brain-cockpit.html">Load in Lab</a>
+              </div>
+            </div>
+            <div class="metrics">
+              <div class="metric">
+                <div class="lbl">Model PoP</div>
+                <div class="val">54.5%</div>
+                <div class="hint">model estimate</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Model EV</div>
+                <div class="val pos">+$18</div>
+                <div class="hint">model estimate</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Payoff RoR</div>
+                <div class="val">0.58×</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Max loss / lot</div>
+                <div class="val neg">$310</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Journey rails -->
+      <section class="rails" aria-label="Continue">
+        <a class="rail" href="builder-brain-cockpit.html">
+          <div class="t">Trade Lab</div>
+          <div class="d">Payoff, Greeks, probability — load brain legs exactly.</div>
+        </a>
+        <a class="rail" href="#">
+          <div class="t">Compare</div>
+          <div class="d">Side-by-side risk, model PoP/EV, and capital.</div>
+        </a>
+        <a class="rail" href="journal-ritual.html">
+          <div class="t">Journal</div>
+          <div class="d">Score forecast vs outcome. Calibration over ego.</div>
+        </a>
+        <a class="rail" href="#">
+          <div class="t">Education</div>
+          <div class="d">How estimates are built — and their limits.</div>
+        </a>
+      </section>
+
+      <p class="footer-note">
+        Chart is live market data for reference. Option quotes and chains come from your configured provider.
+        Educational analysis only — not investment advice. Not affiliated with Robinhood.
+        Model PoP and EV are model estimates, not guarantees.
+      </p>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OptionScope — Journal Ritual</title>
+  <style>
+    :root {
+      --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --surface-1: #171a20;
+      --surface-2: #1e222a;
+      --border: #2b303a;
+      --border-accent: #4a97e0;
+      --text-primary: #eef1f5;
+      --text-secondary: #b6bdc8;
+      --text-muted: #7c8593;
+      --text-success: #3fb98d;
+      --text-danger: #e8615f;
+      --text-warning: #d8bd6b;
+      --text-accent: #6aa9e6;
+      --bg-accent: #16263a;
+      --bg-danger: #2e1b1b;
+      --bg-warning: #2c2413;
+      --bg-success: #152820;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; min-height: 100%;
+      background: var(--surface-1); color: var(--text-primary);
+      font-family: var(--font-sans); font-size: 14px; line-height: 1.45;
+    }
+    a { color: var(--text-accent); text-decoration: none; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    .app { display: flex; min-height: 100vh; }
+    .nav {
+      width: 224px; flex-shrink: 0; border-right: 1px solid var(--border);
+      background: var(--surface-2); padding: 12px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 8px 20px; font-size: 17px; font-weight: 500;
+    }
+    .scope {
+      width: 22px; height: 22px; border: 1.5px solid var(--text-accent);
+      border-radius: 50%; position: relative;
+    }
+    .scope::after {
+      content: ""; position: absolute; width: 6px; height: 1.5px;
+      background: var(--text-accent); right: -2px; top: 5px; transform: rotate(-35deg);
+    }
+    .nav a.item {
+      display: block; padding: 8px 10px; border-radius: var(--radius-md);
+      color: var(--text-secondary); text-decoration: none; font-size: 13.5px;
+      border-left: 2px solid transparent; margin-bottom: 2px;
+    }
+    .nav a.item:hover { background: var(--surface-1); }
+    .nav a.item.active {
+      background: var(--bg-accent); color: var(--text-accent); border-left-color: var(--border-accent);
+    }
+    .main { flex: 1; padding: 24px 28px 48px; max-width: 960px; }
+    h1 { margin: 0; font-size: 24px; font-weight: 500; letter-spacing: -0.02em; }
+    .sub { margin: 6px 0 0; color: var(--text-secondary); font-size: 13px; max-width: 52ch; }
+    .header {
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      align-items: flex-end; gap: 16px; margin-bottom: 20px;
+    }
+    .seg {
+      display: inline-flex; padding: 3px; background: var(--surface-2);
+      border: 1px solid var(--border); border-radius: var(--radius-md); gap: 2px;
+    }
+    .seg button {
+      border: 0; background: transparent; color: var(--text-secondary);
+      padding: 6px 12px; border-radius: 6px; font-size: 12.5px; font-weight: 500;
+    }
+    .seg button.on {
+      background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--border);
+    }
+    .btn {
+      border: 1px solid var(--border-accent); background: var(--bg-accent);
+      color: var(--text-accent); border-radius: var(--radius-md);
+      padding: 8px 14px; font-size: 13px; font-weight: 500;
+    }
+    .btn-ghost {
+      border: 1px solid var(--border); background: transparent; color: var(--text-secondary);
+      border-radius: var(--radius-md); padding: 8px 14px; font-size: 13px;
+    }
+    .calib {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px; margin-bottom: 20px;
+    }
+    .tile {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 12px 14px;
+    }
+    .tile .lbl { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+    .tile .val { font-size: 20px; font-weight: 500; font-variant-numeric: tabular-nums; margin-top: 4px; }
+    .tile .hint { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+    .val.pos { color: var(--text-success); }
+    .stack { display: flex; flex-direction: column; gap: 10px; }
+    .entry {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 14px 16px;
+      display: grid; grid-template-columns: 1fr auto; gap: 8px 16px;
+    }
+    .entry:hover { border-color: #3c434f; }
+    .entry h3 { margin: 0; font-size: 14px; font-weight: 500; }
+    .meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+    .pl { font-size: 18px; font-weight: 500; font-variant-numeric: tabular-nums; text-align: right; }
+    .pl.pos { color: var(--text-success); }
+    .pl.neg { color: var(--text-danger); }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; grid-column: 1 / -1; }
+    .chip {
+      font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: 999px;
+    }
+    .chip-ok { background: var(--bg-success); color: var(--text-success); }
+    .chip-warn { background: var(--bg-warning); color: var(--text-warning); }
+    .chip-neu { background: var(--surface-1); color: var(--text-secondary); }
+    .chip-model {
+      background: var(--surface-1); color: var(--text-secondary);
+      border: 1px solid var(--border); font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .detail {
+      margin-top: 20px; border: 1px solid var(--border-accent);
+      background: var(--surface-2); border-radius: var(--radius-lg); padding: 18px;
+    }
+    .detail h2 { margin: 0 0 4px; font-size: 16px; font-weight: 500; }
+    .cols {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px;
+    }
+    @media (max-width: 800px) {
+      .cols { grid-template-columns: 1fr; }
+      .nav { display: none; }
+    }
+    .panel {
+      background: var(--surface-1); border-radius: var(--radius-md); padding: 12px;
+    }
+    .panel h4 {
+      margin: 0 0 8px; font-size: 12px; font-weight: 500;
+      color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .row {
+      display: flex; justify-content: space-between; font-size: 13px; padding: 3px 0;
+    }
+    .row span:first-child { color: var(--text-secondary); }
+    .note {
+      margin-top: 12px; font-size: 13px; color: var(--text-secondary);
+      border-top: 1px solid var(--border); padding-top: 12px;
+    }
+    .footer-note {
+      margin-top: 28px; font-size: 11px; color: var(--text-muted);
+      border-top: 1px solid var(--border); padding-top: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <nav class="nav" aria-label="Primary">
+      <div class="brand"><span class="scope" aria-hidden="true"></span> OptionScope</div>
+      <a class="item" href="dashboard-command-center.html">Command</a>
+      <a class="item" href="builder-brain-cockpit.html">Trade Lab</a>
+      <a class="item" href="#">Compare</a>
+      <a class="item" href="#">Saved</a>
+      <a class="item active" href="#">Journal</a>
+      <a class="item" href="#">Settings</a>
+      <a class="item" href="#">Education</a>
+    </nav>
+
+    <main class="main">
+      <header class="header">
+        <div>
+          <h1>Trade journal</h1>
+          <p class="sub">Forecast vs outcome — calibration over ego. The brain gets smarter when you close the loop.</p>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+          <div class="seg" role="group" aria-label="Period">
+            <button type="button">7d</button>
+            <button type="button" class="on">30d</button>
+            <button type="button">YTD</button>
+            <button type="button">All</button>
+          </div>
+          <button type="button" class="btn">New entry</button>
+        </div>
+      </header>
+
+      <section class="calib" aria-label="Calibration strip">
+        <div class="tile">
+          <div class="lbl">Closed trades</div>
+          <div class="val">12</div>
+          <div class="hint">last 30 days</div>
+        </div>
+        <div class="tile">
+          <div class="lbl">Win rate</div>
+          <div class="val">66.7%</div>
+          <div class="hint">8 wins · 4 losses</div>
+        </div>
+        <div class="tile">
+          <div class="lbl">Avg model PoP at entry</div>
+          <div class="val">61%</div>
+          <div class="hint">model estimate · not a promise</div>
+        </div>
+        <div class="tile">
+          <div class="lbl">Forecast alignment</div>
+          <div class="val" style="font-size:18px;">9 / 12</div>
+          <div class="hint">outcome matched bias</div>
+        </div>
+        <div class="tile">
+          <div class="lbl">Realized P&amp;L</div>
+          <div class="val pos">+$1,240</div>
+          <div class="hint">paper · educational</div>
+        </div>
+      </section>
+
+      <section class="stack" aria-label="Entries">
+        <article class="entry">
+          <div>
+            <h3>AAPL · Bull put credit</h3>
+            <div class="meta">Opened Jun 2 · Closed Jun 12 · 2 lots · paper</div>
+          </div>
+          <div class="pl pos">+$186</div>
+          <div class="chips">
+            <span class="chip chip-model">Model est. PoP 68%</span>
+            <span class="chip chip-ok">Outcome WIN</span>
+            <span class="chip chip-ok">Forecast aligned</span>
+            <span class="chip chip-neu">Emotion: calm</span>
+          </div>
+        </article>
+
+        <article class="entry" style="border-color: var(--border-accent);">
+          <div>
+            <h3>NVDA · Bear call credit</h3>
+            <div class="meta">Opened Jun 18 · Closed Jun 20 · 1 lot · paper</div>
+          </div>
+          <div class="pl neg">−$410</div>
+          <div class="chips">
+            <span class="chip chip-model">Model est. PoP 59%</span>
+            <span class="chip chip-warn">Outcome LOSS</span>
+            <span class="chip chip-warn">Optimistic vs model</span>
+            <span class="chip chip-neu">Emotion: rushed</span>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div>
+            <h3>SPY · Iron condor</h3>
+            <div class="meta">Opened May 28 · Closed Jun 6 · 1 lot · paper</div>
+          </div>
+          <div class="pl pos">+$92</div>
+          <div class="chips">
+            <span class="chip chip-model">Model est. PoP 64%</span>
+            <span class="chip chip-ok">Outcome WIN</span>
+            <span class="chip chip-ok">Forecast aligned</span>
+          </div>
+        </article>
+      </section>
+
+      <!-- Ritual detail -->
+      <section class="detail" aria-label="Entry detail ritual">
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+          <div>
+            <h2>NVDA · Bear call credit — review</h2>
+            <p class="sub" style="margin-top:4px;">Close the loop: what the model said vs what the market did.</p>
+          </div>
+          <button type="button" class="btn-ghost">Export note</button>
+        </div>
+        <div class="cols">
+          <div class="panel">
+            <h4>What I planned</h4>
+            <div class="row"><span>Structure</span><span>Short 140c / long 145c</span></div>
+            <div class="row"><span>Model PoP</span><span>59% · estimate</span></div>
+            <div class="row"><span>Model EV</span><span>+$18 · estimate</span></div>
+            <div class="row"><span>Max loss</span><span>$482</span></div>
+            <div class="row"><span>Plan exit</span><span>50% credit / 21 DTE</span></div>
+          </div>
+          <div class="panel">
+            <h4>What happened</h4>
+            <div class="row"><span>Exit reason</span><span>Gap through short strike</span></div>
+            <div class="row"><span>Hold</span><span>2 days</span></div>
+            <div class="row"><span>Realized</span><span style="color:var(--text-danger);">−$410</span></div>
+            <div class="row"><span>vs max loss</span><span>85% of planned risk</span></div>
+            <div class="row"><span>Process?</span><span>Exited near plan · entry rushed</span></div>
+          </div>
+        </div>
+        <div class="panel" style="margin-top:12px;">
+          <h4>Score</h4>
+          <div class="chips" style="margin-bottom:8px;">
+            <span class="chip chip-warn">Optimistic vs model PoP</span>
+            <span class="chip chip-neu">Process partial</span>
+          </div>
+          <p class="note" style="border:0;padding:0;margin:0;">
+            Note: Entered 8 minutes after open on headline heat. Brain ranked this #3; I skipped higher-ranked credit on SPY.
+            Lesson: wait for checklist confirmation before RH — dignity of the process.
+          </p>
+        </div>
+      </section>
+
+      <p class="footer-note">
+        Journal is for calibration, not self-punishment. Model PoP/EV at entry are model estimates.
+        Educational only — not investment advice. Persistence requires Supabase when wired in production.
+      </p>
+    </main>
+  </div>
+</body>
+</html>

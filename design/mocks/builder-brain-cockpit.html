@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OptionScope — Builder + Brain Cockpit</title>
+  <style>
+    :root {
+      --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, "Cascadia Code", "Segoe UI Mono", Consolas, monospace;
+      --surface-1: #171a20;
+      --surface-2: #1e222a;
+      --border: #2b303a;
+      --border-strong: #3c434f;
+      --border-accent: #4a97e0;
+      --text-primary: #eef1f5;
+      --text-secondary: #b6bdc8;
+      --text-muted: #7c8593;
+      --text-success: #3fb98d;
+      --text-danger: #e8615f;
+      --text-warning: #d8bd6b;
+      --text-accent: #6aa9e6;
+      --bg-accent: #16263a;
+      --bg-danger: #2e1b1b;
+      --bg-warning: #2c2413;
+      --bg-success: #152820;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--surface-1);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    a { color: var(--text-accent); text-decoration: none; }
+    button, input, select { font: inherit; color: inherit; }
+    .app { display: flex; min-height: 100vh; }
+    .nav {
+      width: 224px; flex-shrink: 0;
+      border-right: 1px solid var(--border);
+      background: var(--surface-2);
+      padding: 12px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 8px 20px; font-size: 17px; font-weight: 500;
+    }
+    .scope {
+      width: 22px; height: 22px;
+      border: 1.5px solid var(--text-accent);
+      border-radius: 50%; position: relative;
+    }
+    .scope::after {
+      content: ""; position: absolute;
+      width: 6px; height: 1.5px; background: var(--text-accent);
+      right: -2px; top: 5px; transform: rotate(-35deg);
+    }
+    .nav a.item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 10px; border-radius: var(--radius-md);
+      color: var(--text-secondary); text-decoration: none;
+      font-size: 13.5px; border-left: 2px solid transparent; margin-bottom: 2px;
+    }
+    .nav a.item:hover { background: var(--surface-1); }
+    .nav a.item.active {
+      background: var(--bg-accent); color: var(--text-accent);
+      border-left-color: var(--border-accent);
+    }
+    .main {
+      flex: 1; padding: 20px 24px 48px;
+      max-width: 1440px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .header {
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      align-items: flex-start; gap: 12px;
+    }
+    h1 { margin: 0; font-size: 22px; font-weight: 500; letter-spacing: -0.02em; }
+    .sub { margin: 4px 0 0; color: var(--text-secondary); font-size: 13px; }
+    .badges { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .badge {
+      display: inline-flex; padding: 2px 8px; border-radius: 999px;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .badge-live { background: var(--bg-accent); color: var(--text-accent); }
+    .badge-paper { background: var(--bg-warning); color: var(--text-warning); }
+    .badge-model { background: var(--surface-1); color: var(--text-secondary); border: 1px solid var(--border); }
+    .card {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      border-radius: var(--radius-lg);
+      padding: 12px;
+    }
+    .card-h {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 8px; flex-wrap: wrap; margin-bottom: 10px;
+    }
+    .card-title { font-size: 14px; font-weight: 500; }
+    .muted { color: var(--text-muted); font-size: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 7px 12px; border-radius: var(--radius-md);
+      border: 1px solid var(--border); background: transparent;
+      cursor: pointer; font-size: 12.5px; font-weight: 500;
+    }
+    .btn:focus-visible { outline: 2px solid var(--border-accent); outline-offset: 2px; }
+    .btn-accent {
+      border-color: var(--border-accent);
+      background: var(--bg-accent); color: var(--text-accent);
+    }
+    .btn-strong { border-color: var(--border-strong); }
+    .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+    .pill {
+      display: inline-block; font-size: 12px; font-weight: 500;
+      padding: 4px 10px; border-radius: 999px;
+    }
+    .pill-ok { background: var(--bg-success); color: var(--text-success); }
+    .pill-warn { background: var(--bg-warning); color: var(--text-warning); }
+    .pill-neg { background: var(--bg-danger); color: var(--text-danger); }
+    .pill-neu { background: var(--surface-1); color: var(--text-secondary); }
+    .account {
+      display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center;
+    }
+    .account .val { font-variant-numeric: tabular-nums; font-weight: 500; }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 14px;
+      align-items: start;
+    }
+    @media (max-width: 1100px) {
+      .layout { grid-template-columns: 1fr; }
+      .nav { display: none; }
+    }
+    /* Legs */
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr auto;
+      gap: 8px; margin-bottom: 10px;
+    }
+    @media (max-width: 700px) {
+      .field-row { grid-template-columns: 1fr 1fr; }
+    }
+    label.fld { display: flex; flex-direction: column; gap: 4px; font-size: 11px; color: var(--text-muted); font-weight: 500; }
+    input, select {
+      padding: 8px 10px; border-radius: var(--radius-md);
+      border: 1px solid var(--border); background: var(--surface-1);
+    }
+    input:focus, select:focus {
+      outline: 2px solid var(--border-accent); outline-offset: 1px;
+    }
+    table.legs {
+      width: 100%; border-collapse: collapse; font-size: 13px;
+      margin: 8px 0 12px;
+    }
+    table.legs th {
+      text-align: left; font-size: 11px; color: var(--text-muted);
+      font-weight: 500; padding: 6px 8px; border-bottom: 1px solid var(--border);
+    }
+    table.legs td {
+      padding: 8px; border-bottom: 1px solid var(--border);
+      font-variant-numeric: tabular-nums;
+    }
+    table.legs tr:last-child td { border-bottom: 0; }
+    .mono { font-family: var(--font-mono); font-size: 12.5px; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+    /* Payoff fake */
+    .payoff {
+      height: 260px; border-radius: var(--radius-md);
+      background: var(--surface-1); position: relative; overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .payoff svg { width: 100%; height: 100%; display: block; }
+    .result-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 8px; margin-top: 10px;
+    }
+    .metric {
+      background: var(--surface-1); border-radius: var(--radius-md); padding: 8px 10px;
+    }
+    .metric .lbl { font-size: 10px; color: var(--text-muted); font-weight: 500; }
+    .metric .val { font-size: 16px; font-weight: 500; font-variant-numeric: tabular-nums; margin-top: 2px; }
+    .metric .val.pos { color: var(--text-success); }
+    .metric .val.neg { color: var(--text-danger); }
+    .metric .hint { font-size: 10px; color: var(--text-muted); }
+    /* Brain */
+    .brain-stack { display: flex; flex-direction: column; gap: 10px; }
+    .rank {
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px;
+    }
+    .rank.selected { border-color: var(--border-accent); background: #1a2432; }
+    .rank-top {
+      display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+    }
+    .growth { color: var(--text-accent); font-size: 11px; margin-left: 6px; }
+    .rank-metrics {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin-top: 8px;
+    }
+    details.why {
+      margin-top: 8px; font-size: 12px; color: var(--text-secondary);
+    }
+    details.why summary { cursor: pointer; color: var(--text-muted); }
+    .explain {
+      border: 1px solid var(--border-accent);
+      background: var(--surface-1);
+      border-radius: var(--radius-md);
+      padding: 12px;
+    }
+    .explain h3 { margin: 4px 0 8px; font-size: 14px; font-weight: 500; }
+    .explain ul { margin: 4px 0 8px; padding-left: 18px; color: var(--text-secondary); font-size: 12.5px; }
+    .cite { font-size: 11px; color: var(--text-muted); }
+    /* Checklist */
+    .checklist {
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--border-accent);
+      background: var(--surface-2);
+      border-radius: var(--radius-lg);
+      padding: 16px 18px;
+    }
+    .checklist h2 {
+      margin: 0; font-size: 16px; font-weight: 500;
+    }
+    .cl-row {
+      display: flex; justify-content: space-between; gap: 12px;
+      font-size: 13px; padding: 3px 0;
+    }
+    .cl-row dt { color: var(--text-secondary); }
+    .cl-row dd { margin: 0; font-variant-numeric: tabular-nums; }
+    .cl-legs {
+      list-style: decimal; padding: 12px 0 12px 20px; margin: 10px 0;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .cl-legs li {
+      display: flex; justify-content: space-between; padding: 4px 0; font-size: 13px;
+    }
+    .confirm {
+      display: flex; align-items: center; gap: 10px;
+      margin: 14px 0 12px; font-size: 13px; min-height: 44px;
+    }
+    .confirm input { width: 18px; height: 18px; accent-color: var(--text-accent); }
+    .footer-note {
+      font-size: 11px; color: var(--text-muted);
+      border-top: 1px solid var(--border); padding-top: 14px;
+    }
+    .gate-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <nav class="nav" aria-label="Primary">
+      <div class="brand"><span class="scope" aria-hidden="true"></span> OptionScope</div>
+      <a class="item" href="dashboard-command-center.html">▣ Command</a>
+      <a class="item active" href="#">⬡ Trade Lab</a>
+      <a class="item" href="#">▤ Compare</a>
+      <a class="item" href="#">☆ Saved</a>
+      <a class="item" href="journal-ritual.html">☰ Journal</a>
+      <a class="item" href="#">⚙ Settings</a>
+      <a class="item" href="#">⛨ Education</a>
+    </nav>
+
+    <main class="main">
+      <header class="header">
+        <div>
+          <h1>Trade Lab</h1>
+          <p class="sub">Bull put credit spread · AAPL · exp 2026-08-15 · 34 DTE · 2 contracts</p>
+        </div>
+        <div class="badges">
+          <span class="badge badge-live">Live chain</span>
+          <span class="badge badge-paper">Paper size</span>
+          <span class="badge badge-model">Model est. on PoP/EV</span>
+        </div>
+      </header>
+
+      <section class="card account" aria-label="Account strip">
+        <span class="pill pill-ok">Alpaca paper · equity $24,180</span>
+        <span class="pill pill-neu">Cash $6,420 · BP $12,100</span>
+        <span class="pill pill-neu">Risk budget <span class="val">$1,800</span></span>
+        <span class="muted">Educational sizing only · never auto-trades</span>
+      </section>
+
+      <div class="layout">
+        <!-- LEFT: structure + truth -->
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <section class="card" aria-label="Structure">
+            <div class="card-h">
+              <span class="card-title">Structure</span>
+              <span class="muted">Templates · live legs from brain</span>
+            </div>
+            <div class="field-row">
+              <label class="fld">Underlying
+                <input value="AAPL" class="mono" />
+              </label>
+              <label class="fld">Expiration
+                <select>
+                  <option>2026-08-15 (34 DTE)</option>
+                  <option>2026-07-18</option>
+                </select>
+              </label>
+              <label class="fld">Contracts
+                <input type="number" value="2" min="1" />
+              </label>
+              <div style="align-self:end;">
+                <button type="button" class="btn btn-accent" style="padding:9px 16px;">Analyze</button>
+              </div>
+            </div>
+            <table class="legs">
+              <thead>
+                <tr>
+                  <th>Side</th><th>Type</th><th>Strike</th><th>Premium</th><th>Qty</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sell</td><td>Put</td><td class="mono">$190</td><td class="mono">1.80</td><td>2</td>
+                </tr>
+                <tr>
+                  <td>Buy</td><td>Put</td><td class="mono">$180</td><td class="mono">0.65</td><td>2</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="muted" style="margin:0;">Net credit ≈ $1.15 / share · max loss defined by width − credit.</p>
+          </section>
+
+          <section class="card" aria-label="Payoff">
+            <div class="card-h">
+              <span class="card-title">Payoff at expiration</span>
+              <span class="muted">Spot marker · break-evens labeled</span>
+            </div>
+            <div class="payoff" role="img" aria-label="Payoff diagram">
+              <svg viewBox="0 0 560 260" preserveAspectRatio="none" aria-hidden="true">
+                <!-- grid -->
+                <line x1="40" y1="20" x2="40" y2="220" stroke="#2b303a" />
+                <line x1="40" y1="120" x2="540" y2="120" stroke="#7c8593" stroke-dasharray="4 4" opacity="0.7" />
+                <line x1="40" y1="220" x2="540" y2="220" stroke="#2b303a" />
+                <!-- payoff path: credit spread -->
+                <path d="M40 200 L160 200 L240 40 L540 40" fill="none" stroke="#6aa9e6" stroke-width="2.5" />
+                <path d="M40 200 L160 200 L240 40 L540 40 L540 220 L40 220 Z" fill="#16263a" opacity="0.45" />
+                <!-- BE -->
+                <circle cx="210" cy="120" r="4" fill="#d8bd6b" />
+                <text x="218" y="112" fill="#d8bd6b" font-size="11" font-family="system-ui">BE 188.85</text>
+                <!-- spot -->
+                <line x1="320" y1="20" x2="320" y2="220" stroke="#6aa9e6" stroke-dasharray="3 3" opacity="0.6" />
+                <text x="326" y="36" fill="#6aa9e6" font-size="11" font-family="system-ui">Spot 198.42</text>
+                <text x="48" y="36" fill="#3fb98d" font-size="11" font-family="system-ui">+ credit zone</text>
+                <text x="48" y="210" fill="#e8615f" font-size="11" font-family="system-ui">max loss</text>
+              </svg>
+            </div>
+            <div class="result-strip">
+              <div class="metric">
+                <div class="lbl">Max profit</div>
+                <div class="val pos">$230</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Max loss</div>
+                <div class="val neg">$1,770</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Break-even</div>
+                <div class="val" style="font-size:15px;">$188.85</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Model PoP</div>
+                <div class="val">68.2%</div>
+                <div class="hint">model estimate</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Model EV</div>
+                <div class="val pos">+$84</div>
+                <div class="hint">model estimate · 2 lots</div>
+              </div>
+              <div class="metric">
+                <div class="lbl">Payoff RoR</div>
+                <div class="val">0.13×</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Checklist -->
+          <section class="checklist" aria-label="Robinhood order checklist">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
+              <h2>Robinhood order checklist</h2>
+              <span class="muted">2× Bull put credit</span>
+            </div>
+            <dl style="margin:10px 0 0;">
+              <div class="cl-row"><dt>Underlying</dt><dd>AAPL</dd></div>
+              <div class="cl-row"><dt>Expiration</dt><dd>2026-08-15</dd></div>
+            </dl>
+            <ol class="cl-legs">
+              <li><span>Sell $190 put</span><span class="muted">× 2</span></li>
+              <li><span>Buy $180 put</span><span class="muted">× 2</span></li>
+            </ol>
+            <dl>
+              <div class="cl-row"><dt>Est. net credit</dt><dd>$230 total</dd></div>
+              <div class="cl-row"><dt>Max modeled loss</dt><dd style="color:var(--text-danger);font-weight:500;">$1,770</dd></div>
+              <div class="cl-row"><dt>Est. collateral</dt><dd>$2,000</dd></div>
+              <div class="cl-row"><dt>Break-even(s)</dt><dd>$188.85</dd></div>
+              <div class="cl-row"><dt>Quote time</dt><dd>2026-07-12 14:02 ET</dd></div>
+              <div class="cl-row"><dt>Profit target</dt><dd>50% credit · ~$115</dd></div>
+              <div class="cl-row"><dt>Loss limit</dt><dd>2× credit · discretionary</dd></div>
+            </dl>
+            <label class="confirm">
+              <input type="checkbox" checked />
+              I reviewed max loss, BEs, and that fills are not guaranteed.
+            </label>
+            <div class="actions">
+              <button type="button" class="btn btn-strong">Copy checklist</button>
+              <button type="button" class="btn">Print / PDF</button>
+              <button type="button" class="btn">Save to journal</button>
+              <button type="button" class="btn">Save analysis</button>
+            </div>
+            <p class="muted" style="margin:12px 0 0;">
+              Estimates only. A limit order is not guaranteed to fill. Not investment advice.
+              Not affiliated with or endorsed by Robinhood. <strong style="color:var(--text-secondary);font-weight:500;">No place-trade action — you execute manually.</strong>
+            </p>
+          </section>
+        </div>
+
+        <!-- RIGHT: brain -->
+        <div class="brain-stack">
+          <section class="card" aria-label="Trading brain">
+            <div class="card-h">
+              <span class="card-title">Trading brain · AAPL</span>
+              <span class="muted">v4.1 · not advice</span>
+            </div>
+            <div class="gate-row" style="margin-bottom:10px;">
+              <span class="pill pill-ok">Account gates OK</span>
+              <span class="pill pill-ok">NCI UP 68%</span>
+              <span class="pill pill-warn">Earnings in window</span>
+              <span class="pill pill-neu">Context medium</span>
+            </div>
+            <p class="muted" style="margin:0 0 10px;">Expiry 2026-08-15 (34 DTE) · using builder-selected expiry</p>
+
+            <article class="rank selected" aria-label="Rank 1 selected">
+              <div class="rank-top">
+                <div>
+                  <div style="font-weight:500;font-size:13px;">#1 · Bull put credit <span class="growth">growth-primary</span></div>
+                  <div class="muted">score 0.86 · 2 cts · risk $1,770</div>
+                </div>
+                <div style="display:flex;gap:6px;">
+                  <button type="button" class="btn">Hide AI</button>
+                  <button type="button" class="btn btn-accent">Loaded</button>
+                </div>
+              </div>
+              <div class="rank-metrics">
+                <div class="metric">
+                  <div class="lbl">Model PoP</div>
+                  <div class="val" style="font-size:15px;">68.2%</div>
+                  <div class="hint">model estimate</div>
+                </div>
+                <div class="metric">
+                  <div class="lbl">Model EV</div>
+                  <div class="val pos" style="font-size:15px;">+$84</div>
+                  <div class="hint">model estimate</div>
+                </div>
+                <div class="metric">
+                  <div class="lbl">Payoff RoR</div>
+                  <div class="val" style="font-size:15px;">0.13×</div>
+                </div>
+                <div class="metric">
+                  <div class="lbl">Max loss / lot</div>
+                  <div class="val neg" style="font-size:15px;">$885</div>
+                </div>
+              </div>
+              <div class="muted" style="margin-top:6px;">Strikes: short 190 put · long 180 put · credit ~1.15</div>
+              <details class="why" open>
+                <summary>Why this rank · entry / exit · Robinhood path</summary>
+                <ul style="margin:6px 0;padding-left:18px;">
+                  <li>IV rank mid · credit structures preferred when trend up</li>
+                  <li>Liquidity tight at 190/180 Aug</li>
+                  <li>Growth-primary income engine under balanced mode</li>
+                </ul>
+                <div><strong>Entry:</strong> mid ≤ 1.15 · avoid open into first 15m</div>
+                <div style="margin-top:4px;"><strong>Exit:</strong> 50% credit · 21 DTE manage · earnings discretion</div>
+                <div class="muted" style="margin-top:4px;">RH: Legs → credit put spread → limit credit</div>
+                <div class="muted" style="margin-top:4px;">Source: strategy rules · Natenberg / tasty-style income notes</div>
+              </details>
+            </article>
+
+            <article class="rank" style="margin-top:8px;" aria-label="Rank 2">
+              <div class="rank-top">
+                <div>
+                  <div style="font-weight:500;font-size:13px;">#2 · Iron condor</div>
+                  <div class="muted">score 0.74 · 1 ct · risk $620</div>
+                </div>
+                <div style="display:flex;gap:6px;">
+                  <button type="button" class="btn">Explain (AI)</button>
+                  <button type="button" class="btn btn-accent">Load in Lab</button>
+                </div>
+              </div>
+              <div class="rank-metrics">
+                <div class="metric">
+                  <div class="lbl">Model PoP</div>
+                  <div class="val" style="font-size:15px;">62.0%</div>
+                  <div class="hint">model estimate</div>
+                </div>
+                <div class="metric">
+                  <div class="lbl">Model EV</div>
+                  <div class="val" style="font-size:15px;">+$22</div>
+                  <div class="hint">model estimate</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="rank" style="margin-top:8px;" aria-label="Rank 3">
+              <div class="rank-top">
+                <div>
+                  <div style="font-weight:500;font-size:13px;">#3 · Bull call debit</div>
+                  <div class="muted">score 0.71 · 1 ct · risk $310</div>
+                </div>
+                <div style="display:flex;gap:6px;">
+                  <button type="button" class="btn">Explain (AI)</button>
+                  <button type="button" class="btn btn-accent">Load in Lab</button>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section class="explain" aria-label="AI explanation">
+            <div style="display:flex;justify-content:space-between;gap:8px;">
+              <div class="muted" style="color:var(--text-accent);font-weight:500;font-size:12px;">Catalog-grounded explainer</div>
+              <button type="button" class="btn" style="padding:4px 8px;">Close</button>
+            </div>
+            <h3>Defined-risk credit while trend supports the short put</h3>
+            <p style="margin:0 0 8px;font-size:13px;color:var(--text-secondary);">
+              With spot trend up and IV not elevated, a bull put credit matches the growth-primary income path:
+              collect premium with a known max loss, sized to remaining risk budget on paper equity.
+            </p>
+            <div style="font-size:12px;font-weight:500;margin-bottom:2px;">Why now</div>
+            <ul>
+              <li>NCI master direction aligned with bullish credit bias</li>
+              <li>Width $10 keeps max loss legible vs undefined short naked risk</li>
+              <li>Earnings flagged — reduce size or skip if you don’t want gap risk</li>
+            </ul>
+            <div style="font-size:12px;font-weight:500;margin-bottom:2px;">Risks &amp; exits</div>
+            <ul>
+              <li>Gap through short strike into earnings week</li>
+              <li>Early assignment near ex-div if deep ITM (puts less common but manage)</li>
+              <li>Exit 50% or at loss limit — process over hope</li>
+            </ul>
+            <div style="font-size:12px;font-weight:500;margin-bottom:4px;">Book library citations</div>
+            <p class="cite">
+              Income / credit spreads · Source: strategy catalog — “Define max loss before entry; credit is not free money.”
+            </p>
+            <p class="cite" style="margin-top:8px;">
+              Confidence: medium (context medium · model PoP/EV are estimates). Educational only — not investment advice.
+            </p>
+          </section>
+
+          <section class="card" aria-label="Market context compact">
+            <div class="card-h">
+              <span class="card-title">Context snapshot</span>
+              <span class="badge badge-live">Live</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;">
+              <span class="pill pill-neu">IV rank 38</span>
+              <span class="pill pill-ok">IV low</span>
+              <span class="pill pill-ok">Spot up</span>
+              <span class="pill pill-ok">Liq tight</span>
+              <span class="pill pill-warn">Earnings</span>
+              <span class="pill pill-neu">News neutral</span>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <p class="footer-note">
+        Educational tool. Not investment advice. Model probability of profit and expected value are <strong style="font-weight:500;color:var(--text-secondary);">model estimates</strong>, not predictions.
+        OptionScope never places orders and never asks for your Robinhood password.
+        See OCC Characteristics and Risks of Standardized Options.
+      </p>
+    </main>
+  </div>
+</body>
+</html>
