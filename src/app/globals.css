@@ -3,20 +3,80 @@
 @tailwind utilities;
 
 /* ============================================================================
-   OptionScope design tokens. Referenced across the UI via var(--token).
-   Light is the default; dark applies under prefers-color-scheme or .dark.
+   OptionScope — calm cockpit tokens (Agency design system)
+   Dark-first for trading surfaces; light via data-theme="light"
    ============================================================================ */
+
 :root {
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Segoe UI Mono", Consolas, monospace;
 
+  /* Dark cockpit (default) */
+  --surface-0: #12151a;
+  --surface-1: #171a20;
+  --surface-2: #1e222a;
+  --surface-3: #262b35;
+
+  --border: #2b303a;
+  --border-strong: #3c434f;
+  --border-accent: #4a97e0;
+  --border-danger: #6b3a39;
+  --border-warning: #6b5a2a;
+  --border-success: #1e4a38;
+
+  --text-primary: #eef1f5;
+  --text-secondary: #b6bdc8;
+  --text-muted: #7c8593;
+  --text-success: #3fb98d;
+  --text-danger: #e8615f;
+  --text-warning: #d8bd6b;
+  --text-accent: #6aa9e6;
+
+  --bg-accent: #16263a;
+  --bg-danger: #2e1b1b;
+  --bg-warning: #2c2413;
+  --bg-success: #152820;
+
+  --brand: #2a6cb8;
+  --brand-bright: #5a9fd9;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --shadow-card: 0 1px 0 rgb(0 0 0 / 0.28), 0 8px 24px rgb(0 0 0 / 0.18);
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.2);
+
+  --nav-width: 14rem;
+  --tab-height: 56px;
+
+  color-scheme: dark;
+}
+
+/* Light theme override */
+:root[data-theme="light"],
+html[data-theme="light"] {
+  color-scheme: light;
+  --surface-0: #eef0f3;
   --surface-1: #f4f5f7;
   --surface-2: #ffffff;
+  --surface-3: #e8eaef;
 
   --border: #e2e5ea;
   --border-strong: #c3c8d0;
   --border-accent: #378add;
   --border-danger: #e5b4b3;
   --border-warning: #e6d3a3;
+  --border-success: #b3d9c8;
 
   --text-primary: #14181f;
   --text-secondary: #4a515c;
@@ -29,39 +89,258 @@
   --bg-accent: #eaf3fb;
   --bg-danger: #fbeceb;
   --bg-warning: #fbf5e6;
+  --bg-success: #e8f6f0;
+
+  --brand: #2a6cb8;
+  --brand-bright: #378add;
+
+  --shadow-card: 0 1px 0 rgb(0 0 0 / 0.04), 0 8px 24px rgb(15 23 42 / 0.06);
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.05);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --surface-1: #171a20;
-    --surface-2: #1e222a;
-
-    --border: #2b303a;
-    --border-strong: #3c434f;
-    --border-accent: #4a97e0;
-    --border-danger: #6b3a39;
-    --border-warning: #6b5a2a;
-
-    --text-primary: #eef1f5;
-    --text-secondary: #b6bdc8;
-    --text-muted: #7c8593;
-    --text-success: #3fb98d;
-    --text-danger: #e8615f;
-    --text-warning: #d8bd6b;
-    --text-accent: #6aa9e6;
-
-    --bg-accent: #16263a;
-    --bg-danger: #2e1b1b;
-    --bg-warning: #2c2413;
+/* System preference when no explicit theme (still prefer dark for trading) */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    /* keep dark default for cockpit unless user picks light */
   }
 }
 
-/* Explicit theme override wins over the media query in both directions. */
-:root[data-theme="light"] { color-scheme: light; }
-:root[data-theme="dark"] { color-scheme: dark; }
-
-html, body {
+html,
+body {
+  margin: 0;
+  min-height: 100%;
   background: var(--surface-1);
   color: var(--text-primary);
   font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--text-accent);
+}
+
+/* ---------- Layout zones ---------- */
+.zone-cockpit {
+  width: 100%;
+  max-width: none;
+}
+.zone-reading {
+  width: 100%;
+  max-width: 48rem;
+}
+.zone-form {
+  width: 100%;
+  max-width: 40rem;
+}
+.zone-list {
+  width: 100%;
+  max-width: 56rem;
+}
+@media (min-width: 1280px) {
+  .zone-list {
+    max-width: none;
+  }
+}
+
+/* ---------- Components ---------- */
+@layer components {
+  .os-panel {
+    @apply rounded-xl border;
+    background: var(--surface-2);
+    border-color: var(--border);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .os-panel-accent {
+    @apply rounded-xl border;
+    background: var(--surface-2);
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-card);
+  }
+
+  .os-well {
+    @apply rounded-lg;
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+  }
+
+  .os-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium;
+    background: var(--surface-3);
+    color: var(--text-secondary);
+  }
+  .os-badge-ok {
+    background: var(--bg-success);
+    color: var(--text-success);
+  }
+  .os-badge-warn {
+    background: var(--bg-warning);
+    color: var(--text-warning);
+  }
+  .os-badge-danger {
+    background: var(--bg-danger);
+    color: var(--text-danger);
+  }
+  .os-badge-accent {
+    background: var(--bg-accent);
+    color: var(--text-accent);
+  }
+
+  .os-btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors;
+    border: 1px solid var(--border);
+    background: var(--surface-3);
+    color: var(--text-secondary);
+  }
+  .os-btn:hover {
+    border-color: var(--border-strong);
+    color: var(--text-primary);
+  }
+  .os-btn-primary {
+    border-color: var(--border-accent);
+    background: var(--bg-accent);
+    color: var(--text-accent);
+  }
+  .os-btn-primary:hover {
+    filter: brightness(1.08);
+  }
+  .os-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .os-input {
+    @apply w-full rounded-lg px-2.5 py-1.5 text-sm;
+    border: 1px solid var(--border);
+    background: var(--surface-1);
+    color: var(--text-primary);
+  }
+  .os-input:focus {
+    outline: none;
+    border-color: var(--border-accent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--brand-bright) 25%, transparent);
+  }
+
+  .os-label {
+    @apply block text-xs mb-1;
+    color: var(--text-secondary);
+  }
+
+  .os-kicker {
+    @apply text-xs font-medium tracking-wide uppercase;
+    color: var(--text-accent);
+    letter-spacing: 0.06em;
+  }
+
+  .os-nav-item {
+    @apply flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-sm no-underline transition-colors;
+    color: var(--text-secondary);
+    border-left: 2px solid transparent;
+  }
+  .os-nav-item:hover {
+    background: var(--surface-1);
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .os-nav-item-active {
+    background: var(--bg-accent);
+    color: var(--text-accent);
+    border-left-color: var(--border-accent);
+  }
+
+  .os-scope-mark {
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid var(--text-accent);
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .os-scope-mark::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 1.5px;
+    background: var(--text-accent);
+    right: -2px;
+    top: 5px;
+    transform: rotate(-35deg);
+    border-radius: 1px;
+  }
+
+  .os-metric {
+    @apply rounded-lg px-3 py-2;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+  }
+  .os-metric-label {
+    @apply text-[10px] uppercase tracking-wide;
+    color: var(--text-muted);
+  }
+  .os-metric-value {
+    @apply text-sm font-medium mt-0.5;
+    color: var(--text-primary);
+  }
+
+  /* Mobile bottom tab bar */
+  .os-tabbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    display: flex;
+    height: calc(var(--tab-height) + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: var(--surface-2);
+    border-top: 1px solid var(--border);
+  }
+  .os-tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    font-size: 10px;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-top: 2px solid transparent;
+    padding-top: 4px;
+  }
+  .os-tab-active {
+    color: var(--text-accent);
+    border-top-color: var(--border-accent);
+  }
+  .os-tab i {
+    font-size: 18px;
+  }
+}
+
+/* Scrollbars (webkit) */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Print checklist */
+@media print {
+  .os-shell-nav,
+  .os-tabbar,
+  .print\:hidden {
+    display: none !important;
+  }
+  body {
+    background: white;
+    color: black;
+  }
 }

@@ -45,9 +45,10 @@ export default function ComparePage() {
   }, [slots, spot, sigma, dte, sortKey]);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="zone-cockpit flex flex-col gap-4">
       <div>
-        <h1 className="text-2xl font-medium">Compare</h1>
+        <div className="os-kicker">Analysis</div>
+        <h1 className="text-2xl font-medium tracking-tight m-0">Compare</h1>
         <p className="text-sm text-[var(--text-secondary)] mt-1">
           Side-by-side payoff + Monte Carlo (model estimates). Up to three structures. Demo marks —
           load live chain in{" "}
@@ -59,7 +60,7 @@ export default function ComparePage() {
       </div>
 
       {/* Controls */}
-      <section className="rounded-xl border border-[var(--border)] bg-[var(--surface-2)] p-4 flex flex-col gap-3">
+      <section className="os-panel p-4 flex flex-col gap-3">
         <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
           {[0, 1, 2].map((i) => (
             <label key={i} className="text-xs text-[var(--text-secondary)]">
@@ -143,7 +144,7 @@ export default function ComparePage() {
           Pick at least one strategy slot to compare.
         </div>
       ) : (
-        <div className="overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--surface-2)]">
+        <div className="overflow-x-auto os-panel">
           <table className="w-full text-sm min-w-[640px]">
             <thead>
               <tr className="text-left text-[var(--text-muted)] border-b border-[var(--border)]">
