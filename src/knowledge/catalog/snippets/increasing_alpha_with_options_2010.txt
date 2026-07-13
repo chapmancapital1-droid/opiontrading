@@ -1,0 +1,262 @@
+INCREASING
+ALPHA WITH
+OPTIONS
+ffirs.indd i 7/29/10 7:40:51 AM
+INCREASING
+ALPHA WITH
+OPTIONS
+Trading Strategies Using Technical
+Analysis and Market Indicators
+S H. F , CMT
+COTT ULLMAN
+ffirs.indd iii 7/29/10 7:40:51 AM
+Copyright © 2010 by Scott H. Fullman. All rights reserved.
+Increasing Alpha is a trademark of Fullman Technologies, Inc.
+Published by John Wiley & Sons, Inc., Hoboken, New Jersey.
+Published simultaneously in Canada.
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted in
+any form or by any means, electronic, mechanical, photocopying, recording, scanning, or other-
+wise, except as permitted under Section 107 or 108 of the 1976 United States Copyright Act,
+without either the prior written permission of the Publisher, or authorization through payment
+of the appropriate per-copy fee to the Copyright Clearance Center, Inc., 222 Rosewood Drive,
+Danvers, MA 01923, (978) 750-8400, fax (978) 646-8600, or on the Web at www.copyright
+.com. Requests to the Publisher for permission should be addressed to the Permissions
+Department, John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ 07030, (201) 748-6011,
+fax (201) 748-6008, or online at http://www.wiley.com/go/permissions.
+Limit of Liability/Disclaimer of Warranty: While the publisher and author have used their best
+efforts in preparing this book, they make no representations or warranties with respect to the
+accuracy or completeness of the contents of this book and specifi cally disclaim any implied
+warranties of merchantability or fi tness for a particular purpose. No warranty may be created
+or extended by sales representatives or written sales materials. The advice and strategies con-
+tained herein may not be suitable for your situation. You should consult with a professional
+where appropriate. Neither the publisher nor author shall be liable for any loss of profi t or
+any other commercial damages, including but not limited to special, incidental, consequential,
+or other damages.
+For general information on our other products and services or for technical support, please
+contact our Customer Care Department within the United States at (800) 762-2974, outside
+the United States at (317) 572-3993 or fax (317) 572-4002.
+Wiley also publishes its books in a variety of electronic formats. Some content that appears in
+print may not be available in electronic books. For more information about Wiley products,
+visit our web site at www.wiley.com.
+ISBN 978-1-576-60365-9 (cloth); 978-0-470-87910-8 (ebk); 978-0-470-93673-3 (ebk);
+978-0-470-93674-0 (ebk)
+Printed in the United States of America
+10 9 8 7 6 5 4 3 2 1
+ffirs.indd iv 7/29/10 7:40:51 AM
+Technical analysis involves learning from history and experience in
+order to project into the future. I therefore dedicate this book to the late
+William H. Fullman, Jr., Sandie Fullman, James Boyd Taylor, and Doris
+J. Taylor, who my wife and I have learned countless lessons from, and to
+our children Jonathan William Fullman and Daniel Scott Fullman, who
+we have taught and loved using those life experiences.
+ffirs.indd v 7/29/10 7:40:51 AM
+Contents
+Acknowledgments xi
+Introduction xiii
+1 Why Technical Analysis? 1
+Bases 3
+Fundamentals vs. Technicals 6
+Tops 8
+2 The Basics of Technical Analysis 13
+Understanding Chart Types 13
+Trend Properties 16
+The Trend Is Your Friend 18
+Volatile or Negative Markets 20
+Primary and Secondary Trends 20
+First Strategy 22
+Put Hedges 24
+Implied Volatility 24
+Seasonal Trends 25
+Cyclical Trends 25
+Moves within Moves 27
+Nontrends 28
+Understanding the Properties of Trends 29
+3 Trends and Their Ends 33
+Elliott Waves and Common Trend Analysis 34
+Nesting Patterns 37
+Continuation Patterns 38
+vii
+CONTENTS.indd vii 7/29/10 10:12:03 AM
+viii Contents
+Continuation or Reversal? 39
+Opposing Reversal Patterns 41
+4 Building Strategies around Reversal and
+Continuation Patterns 45
+Spotting Reversal and Continuation Patterns 45
+Confi rming Patterns Using Different Time Frames 45
+Building Pattern-Based Strategies 49
+More Complex Patterns: The Double Top 51
+Continuation Patterns 56
+An Amazon.Com Example 59
+5 Oscillators 63
+Oscillator Types 64
+Stochastic Oscillator 66
+Commodity Channel Index 67
+Bollinger Bands 68
+6 Oscillators and Strategies 71
+Technical Indicators 73
+Relative Performance 76
+Finding the Strongest or Weakest Stocks 78
+Money Flow and On-Balance Volume 81
+7 Relative Performance 83
+Look at the Board 85
+8 ETF Strategies 89
+Pairs 94
+9 Effi cient Pricing—Mostly 99
+Exploiting Small Pricing Ineffi ciencies 99
+10 The Subprime Mortgage Crisis and Options 107
+Managing Delta 108
+Delta Relationships of Stocks and Options 109
+11 The Other Greeks 115
+Other Products 117
+Ex-Dividend Trades 118
+Getting Information from the Exchange Floor 119
+CONTENTS.indd viii 7/29/10 10:12:04 AM
+CONTENTS ix
+12 When Conditions Change 121
+Routine Changes 121
+The Extremes 123
+Meet the New Rules 125
+13 The Changing Environment 129
+Controlling Risk, Fixing Problems 130
+Using Global Markets 134
+14 Using Options to Protect Capital 137
+What Doesn’t Work 137
+Single Security Hedges 138
+Collar Hedges for Long Stock Positions 142
+Other Hedges for Offsetting High Volatility Levels 144
+Stock Replacement Therapy 148
+15 Hedging the Broad Portfolio 157
+Reducing Hedge Costs 161
+Pairing Up 164
+Hedging Short Portfolios 165
+Other Hedge Types 168
+16 When to Invest, When to Trade 171
+Investors and Investment Markets 171
+Trading an Investment Trend 172
+The Trading Market 177
+Japanese Candlesticks 182
+Other Investment and Trading Opportunities 184
+Upcoming Events 185
+Mergers and Acquisitions 187
+17 All About Resources 189
+Abundance of Resources 189
+Bloomberg Professional Service 189
+MetaStock Professional Service 192
+SuperCharts, Worden Brothers, and Others 193
+Chart Books 193
+Scanning Techniques 193
+Options Resources 198
+Other Helpful Resources from Bloomberg 198
+iVolatility 198
+CONTENTS.indd ix 7/29/10 10:12:04 AM
+x Contents
+Resources for Smaller Funds 200
+Risk and Position Monitoring 203
+Different Funds, Different Vendors 206
+Other Information Sources 207
+Appendix: Information Sources 209
+Index 211
+CONTENTS.indd x 7/29/10 10:12:04 AM
+Acknowledgments
+M y wife, Deborah, her understanding with the time consuming writing
+and editing deadlines.
+M ichael Ham, a colleague that has taught me much and who reviewed
+my work and been there to bounce questions off of.
+I ngrid Case, who edited the book and made insightful changes and
+suggestions.
+Steven Isaacs, project manager at Bloomberg Press, for all of his help
+in producing this work.
+T he CEOs of WJB Capital Group, Craig Rothfeld and Michael
+Romano, for their support in both writing this book and the work I do
+for the fi rm and its clients each and every day.
+Adam Futterman, head of derivatives trading, and the derivatives
+trading team at WJB Capital Group for their insight on what clients are
+looking for today.
+J ohn Roque and Adolfo Rueda, our technical team, for their insights
+and inspiration.
+My colleagues at WJB Capital for all of their efforts and conversa-
+tions that led me to the decision to write this book.
+J ohn and Debbie Cirenza, Ray Dempsey, Michael Eisenberg, and
+Carl Romick for their never ending input on the trading pits.
+M y friends and associates at the Market Technicians Association
+(MTA), with whom I frequently consult in respect to the markets and
+forms of analysis.
+M y many friends, colleagues, and associates at the options exchanges
+and in the industry, whom I have learned a lot from and shared ideas with
+over the years.
+xi
+flast.indd xi 7/29/10 7:41:13 AM
+Introduction
+Welcome to the world of twenty - fi rst – century investing, a world
+of intertwined derivative products, analysis methods, and global mar-
+kets in which countries ’ politics, currencies, debt, and equities all
+interact.
+In this new world of investing, managers deal with a variety of dynam-
+ics, products, analyses, and risk controls. As ever, professional managers
+concern themselves with resource availability and cost as they chase above -
+b enchmark performance and profi ts — called a lpha — and compete against
+other managers for new investment dollars. Many investment managers
+focus on performance during most of their waking hours.
+I n doing so, they seek to balance risk against the possibility of
+reward. Investment managers have always done this, of course, but the
+job grew more complicated during the 1990s, when hedge funds and
+mutual funds grew increasingly popular. The latter part of the decade,
+particularly in the United States, was characterized by impressive mar-
+ket performance, the result of growth in technology and the Internet, as
+well as fi nancial service sector expansion. Hedge and mutual funds paid
+top managers attractive compensation, which helped increase both the
+number of funds and the competition among them.
+Hedge and mutual funds examined every aspect of their businesses,
+trying to maximize growth and performance. Many developed new tech-
+niques. Some of these resulted from new products, such as exchange -
+t raded funds (ETF). Others came from new analysis applications, such
+as pair trades that are derived from quantitative comparisons of two or
+xiii
+flast.indd xiii 7/29/10 7:41:13 AM
+xiv Introduction
+more companies within the same group. Fund managers expanded the
+ways they used arbitrage, short selling, and other traditional strategies.
+M ore and more funds were managed from the United States and
+Europe, though many were registered in other countries, allowing mana-
+gers to attract more money from overseas and pay lower taxes.
+The best - performing funds attracted more capital than their compe-
+tition, boosting managers’ compensation even higher. Chasing ever- b etter
+returns, some fund managers deviated from their normal practices and
+directives, overleveraging and taking on extra risk. Sometimes that risk
+was excessive or highly concentrated in a single market, sector, industry
+group, or security.
+Markets collapsed from the subprime mortgage crisis, which resulted
+in a sharp sell - off and contraction in the credit markets. Most funds lost
+money; those that were overleveraged and had taken on additional risk
+often lost more than did their more conservative fellows. Some went out
+of business, while others faced dwindling client bases.
+Derivatives strategists —i ncluding me— l earned a lot from this period.
+Strategists saw that new strategies— and new uses of older strategies—
+can help investors generate better profi ts at lower risk levels. In this
+book, I will examine useful analytical techniques, showing readers how
+to create alpha — profi ts — while also protecting positions from adverse
+market changes.
+The Prime Directive
+Star Trek fans may remember the “ prime directive, ” the most impor-
+tant rule for anyone in Star Fleet Command. It stated, “ N o one shall
+interfere in the governance and development of life on other planets.”
+Starship captains and crews would sacrifi ce their own lives to obey the
+prime directive.
+I n investment management, protecting capital and assets should
+be the prime directive. People entrust managers with their money in
+amounts that — whether they seem large or small to the manager — are
+signifi cant to asset owners, who worked hard to earn them. From com-
+peting choices, asset holders choose managers in whom they have some
+confi dence, basing their selections on factors that include track record,
+education, references, and experience. Investment managers should
+take clients’ trust very seriously, carefully considering their mandates
+flast.indd xiv 7/29/10 7:41:14 AM
+INTRODUCTION xv
+and investment positions— a nd the potential for quick changes in market
+conditions.
+C apital preservation is good for clients, but it’ s also good for managers.
+Strategies that preserve capital before pursuing profi t may encourage
+clients to keep money in a fund during a downturn and can offer better
+profi ts in a rough market than can more risk - oriented tactics. Defensive
+strategies and reduced losses may also attrac

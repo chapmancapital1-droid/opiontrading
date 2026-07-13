@@ -1,0 +1,1032 @@
+// ╔══════════════════════════════════════════════════════════════════════╗
+// ║  NCI Complete Trading Assistant  v2.0                              ║
+// ║  GangsterNerds LLC | NerdCommand Trading Division                  ║
+// ║                                                                    ║
+// ║  SIGNAL LAYERS (all 5 combined into one master score):             ║
+// ║  1. SuperBias       — 24 MTF confluence signals                   ║
+// ║  2. Companion v1    — 7-voter HTF + momentum scorer               ║
+// ║  3. ConfluenceBridge— 6-TF EMA alignment (iCustom equivalent)     ║
+// ║  4. SuperBrain Ports— 11 strategy port votes                      ║
+// ║  5. SuperBrain Voters—15 indicator voters                         ║
+// ║                                                                    ║
+// ║  6. RoboTrick Fade  — EA mirror: 4 reversion voters + trend gate ║
+// ║     (matches NCI_RoboTrick_Auto_v2.mq4 — GBPUSD H1 / AUD+JPY H4) ║
+// ║                                                                    ║
+// ║  ENTRY: Two-step 24-3 → 24-2 ARM/FIRE trigger                    ║
+// ║  EXIT:  FIXED 15-pip trail  OR  EMA(8/15) cross                  ║
+// ║  USE ON: M5 chart for entries, M15 for exit management            ║
+// ║  ROBOTRICK LAYER: use on H1 (GBPUSD) or H4 (AUDUSD/USDJPY) chart  ║
+// ╚══════════════════════════════════════════════════════════════════════╝
+//@version=5
+indicator("NCI Complete Trading Assistant", shorttitle="NCI TA", overlay=true,
+          max_labels_count=500, max_lines_count=100)
+
+// ══════════════════════════════════════════════════════════════════════
+// INPUTS
+// ══════════════════════════════════════════════════════════════════════
+g_sm = "━━━ ARM/FIRE Trigger ━━━"
+i_arm   = input.int(18,  "ARM  (net ≥ +N, bear_count=3)",  minval=1, maxval=24, group=g_sm, tooltip="24-3 level: only 3 of 24 SuperBias signals are bearish")
+i_fire  = input.int(20,  "FIRE (net ≥ +N, bear_count=2)",  minval=1, maxval=24, group=g_sm, tooltip="24-2 level: only 2 of 24 SuperBias signals are bearish")
+i_tout  = input.int(5,   "ARM timeout (M5 bars)",           minval=1, maxval=50,  group=g_sm, tooltip="Reset to WAITING if FIRE not seen within N bars. Default 5 = 25 min on M5")
+i_skip  = input.bool(true,"Skip-through to FIRE allowed",                          group=g_sm)
+
+g_co = "━━━ Companion v1 (7-voter) ━━━"
+i_cfast = input.int(20,  "HTF EMA Fast",      group=g_co)
+i_cslow = input.int(50,  "HTF EMA Slow",      group=g_co)
+i_rbull = input.float(52,"RSI Bull level",    group=g_co)
+i_rbear = input.float(48,"RSI Bear level",    group=g_co)
+i_cgate = input.int(5,   "Gate (of 7)",       minval=1, maxval=7, group=g_co)
+
+g_cb = "━━━ ConfluenceBridge (6-TF) ━━━"
+i_cbf   = input.int(21,  "EMA Fast",          group=g_cb)
+i_cbs   = input.int(55,  "EMA Slow",          group=g_cb)
+i_cbg   = input.int(4,   "Gate (of 6)",       minval=1, maxval=6, group=g_cb)
+
+g_mk = "━━━ Market Type ━━━"
+i_mkt    = input.string("Auto", "Instrument mode", options=["Auto","Forex","Stocks/Other"], group=g_mk, tooltip="Auto detects forex vs stocks/crypto/indices from the symbol. Forex: UTC session window + pip-based exits. Stocks/Other: exchange regular hours + ATR-based exits")
+i_sessfx = input.session("0800-2200", "Forex session (UTC)", group=g_mk)
+i_atrx_sl= input.float(2.0, "Stocks: stop = ATR ×",     group=g_mk, tooltip="Non-forex exit distances are ATR(14) multiples instead of pips")
+i_atrx_tr= input.float(1.5, "Stocks: trail = ATR ×",    group=g_mk)
+
+g_sb2 = "━━━ SuperBrain Gates ━━━"
+i_adx   = input.float(22, "Min ADX",           group=g_sb2)
+i_fer   = input.float(0.35,"Min FER",          group=g_sb2, tooltip="Fractal Efficiency Ratio floor. 0.35 = moderate direction. Higher = requires cleaner trend")
+i_kin   = input.float(0.50,"Min Kinetic",      group=g_sb2, tooltip="Volume × price-move composite. 0.50 = moderate momentum")
+i_minsig= input.int(5,    "Min port votes",    minval=1, maxval=11, group=g_sb2, tooltip="SuperBrain ports needed to qualify (of 11)")
+i_sess  = input.bool(true, "Session filter ON",   group=g_sb2, tooltip="Forex: the UTC window above. Stocks: exchange regular trading hours")
+
+g_ex = "━━━ Exit ━━━"
+i_xmode = input.string("FIXED","Exit mode", options=["FIXED","DYNAMIC"], group=g_ex)
+i_trail = input.float(15, "Fixed trail (pips)",          group=g_ex)
+i_tact  = input.float(2.0,"Trail activation (× spread)", group=g_ex)
+i_ef    = input.int(8,    "Dynamic EMA fast",            group=g_ex)
+i_es    = input.int(15,   "Dynamic EMA slow",            group=g_ex)
+
+g_lv = "━━━ Level 2 Grid ━━━"
+i_levels = input.bool(true, "Plot pivot/S-R lines",   group=g_lv)
+i_fibs   = input.bool(true, "Plot fib 38.2/50/61.8",  group=g_lv)
+i_smas   = input.bool(false,"Plot SMA 21/34/233",     group=g_lv)
+
+g_rt = "━━━ RoboTrick Fade (EA mirror) ━━━"
+i_rt_on    = input.bool(true, "RoboTrick fade layer ON", group=g_rt, tooltip="Mirrors NCI_RoboTrick_Auto_v2 EA exactly. Mean-reversion: fires AGAINST exhausted moves. Backtest 2026-07-04 real bars: GBPUSD H1 PF 2.73, AUDUSD H4 PF 2.30, USDJPY H4 PF 1.77. Use on H1/H4 — loose votes and lower TFs tested NEGATIVE")
+i_rt_votes = input.int(3, "Reversion votes needed (of 4)", minval=2, maxval=4, group=g_rt, tooltip="3 = validated strict setting. Do not loosen without new sim evidence")
+i_rt_slx   = input.float(2.0, "SL = ATR ×", group=g_rt, tooltip="GBPUSD H1: 2.0 | AUDUSD/USDJPY H4: 3.0")
+i_rt_tpm   = input.string("BB-mid", "TP mode", options=["BB-mid","1.5R"], group=g_rt, tooltip="GBPUSD H1 + USDJPY H4: BB-mid | AUDUSD H4: 1.5R")
+i_rt_arrows= input.bool(true, "Show fade arrows", group=g_rt)
+i_rt_lvls  = input.bool(true, "Show SL/TP preview levels", group=g_rt)
+
+g_vi = "━━━ Visual ━━━"
+i_panel  = input.bool(true,  "Show dashboard panel",       group=g_vi)
+i_lbls   = input.bool(true,  "Show signal arrows",         group=g_vi)
+i_bg     = input.bool(true,  "Shade ARMED state bars",     group=g_vi)
+i_emas   = input.bool(true,  "Show EMA lines on chart",    group=g_vi)
+i_ppos   = input.string("top_right","Panel position", options=["top_right","top_left","bottom_right","bottom_left"], group=g_vi)
+
+// ══════════════════════════════════════════════════════════════════════
+// UTILITY
+// ══════════════════════════════════════════════════════════════════════
+// Instrument mode — auto-detect forex vs everything else
+is_fx = i_mkt == "Forex" or (i_mkt == "Auto" and syminfo.type == "forex")
+
+// Session filter:
+//  forex        → configurable UTC window (default London+NY 08-22)
+//  stocks/other → the exchange's own regular session, in its own timezone
+sess_fx_ok  = not na(time(timeframe.period, i_sessfx, "UTC+0"))
+sess_stk_ok = not na(time(timeframe.period, session.regular, syminfo.timezone))
+sess_ok = not i_sess or (is_fx ? sess_fx_ok : sess_stk_ok)
+
+// EMA cross vote helper — returns +1 (bull) or -1 (bear)
+ema_vote(tf, f, s) =>
+    fv = request.security(syminfo.tickerid, tf, ta.ema(close, f), lookahead=barmerge.lookahead_off)
+    sv = request.security(syminfo.tickerid, tf, ta.ema(close, s), lookahead=barmerge.lookahead_off)
+    fv > sv ? 1 : -1
+
+// Direction shorthand
+dir_arrow(v) => v == 1 ? "▲" : "▼"
+dir_col(v)   => v == 1 ? color.lime : color.red
+fmt(x)       => str.tostring(x, format.mintick)
+smaa(x)      => x == 1 ? "▲" : "▼"
+
+// ══════════════════════════════════════════════════════════════════════
+// SUPERBRAIN FUNDAMENTALS  (FER, Kinetic, ABC Stage, VWAP, Pivot)
+// ══════════════════════════════════════════════════════════════════════
+// FER — Kaufman Fractal Efficiency Ratio (10-bar)
+fer_net = math.abs(close[1] - close[11])
+fer_sum = math.abs(close[1]-close[2]) + math.abs(close[2]-close[3]) +
+          math.abs(close[3]-close[4]) + math.abs(close[4]-close[5]) +
+          math.abs(close[5]-close[6]) + math.abs(close[6]-close[7]) +
+          math.abs(close[7]-close[8]) + math.abs(close[8]-close[9]) +
+          math.abs(close[9]-close[10])+ math.abs(close[10]-close[11])
+fer = fer_sum > 0 ? fer_net / fer_sum : 0.0
+
+// Kinetic — volume × price-move momentum (0..1)
+dp_kin    = math.abs(close[1] - close[2])
+atr_kin   = ta.atr(14)[1]
+move_n    = atr_kin > 0 ? math.min(dp_kin / atr_kin, 1.0) : 0.0
+vol_avg20 = ta.sma(volume, 20)[1]
+vol_n     = vol_avg20 > 0 ? math.min(volume[1] / (2.0 * vol_avg20), 1.0) : 0.5
+kinetic   = 0.5 * move_n + 0.5 * vol_n
+
+// ABC Stage — market phase detection
+[dmiP_, dmiM_, adx_cur] = ta.dmi(14, 14)
+atr_cur   = ta.atr(14)
+atr_prev6 = ta.atr(14)[5]
+adx_prev3 = adx_cur[2]
+abc_stage = adx_cur < 18 ? 0 : (atr_cur > atr_prev6 and adx_cur >= adx_prev3) ? 1 : 2
+// 0=A_CONSOLIDATION  1=B_EXPANSION  2=C_CONTRACTION
+abc_label = abc_stage == 1 ? "B EXPANSION ▲" : abc_stage == 2 ? "C CONTRACTION ▼" : "A CONSOLIDATION ─"
+abc_col   = abc_stage == 1 ? color.lime : abc_stage == 2 ? color.red : color.gray
+abc_ok    = abc_stage != 2   // contraction = avoid entry
+
+// VWAP
+vwap_val = ta.vwap
+
+// Daily levels (pivot, yesterday high/low/close)
+d1_prev_h = request.security(syminfo.tickerid, "D", high[1],   lookahead=barmerge.lookahead_off)
+d1_prev_l = request.security(syminfo.tickerid, "D", low[1],    lookahead=barmerge.lookahead_off)
+d1_prev_c = request.security(syminfo.tickerid, "D", close[1],  lookahead=barmerge.lookahead_off)
+d1_pivot  = (d1_prev_h + d1_prev_l + d1_prev_c) / 3
+
+// ── LEVEL 2 GRID (from NCI_MasterDashboard.mq4) ──────────────────────
+lvl_r1 = 2 * d1_pivot - d1_prev_l
+lvl_s1 = 2 * d1_pivot - d1_prev_h
+lvl_r2 = d1_pivot + (d1_prev_h - d1_prev_l)
+lvl_s2 = d1_pivot - (d1_prev_h - d1_prev_l)
+lvl_r3 = d1_prev_h + 2 * (d1_pivot - d1_prev_l)
+lvl_s3 = d1_prev_l - 2 * (d1_prev_h - d1_pivot)
+y_rng   = d1_prev_h - d1_prev_l
+fib_382 = d1_prev_l + 0.382 * y_rng
+fib_500 = d1_prev_l + 0.500 * y_rng
+fib_618 = d1_prev_l + 0.618 * y_rng
+day_pos_pct = y_rng > 0 ? 100 * (close - d1_prev_l) / y_rng : 50.0
+
+// SMA position stack (chart TF, as in MasterDashboard)
+sma21_v  = ta.sma(close, 21)
+sma34_v  = ta.sma(close, 34)
+sma233_v = ta.sma(close, 233)
+sma21_pos  = close > sma21_v  ? 1 : -1
+sma34_pos  = close > sma34_v  ? 1 : -1
+sma233_pos = close > sma233_v ? 1 : -1
+sma_sum = sma21_pos + sma34_pos + sma233_pos
+
+// ══════════════════════════════════════════════════════════════════════
+// MTF DATA — BATCHED PER TIMEFRAME
+// ══════════════════════════════════════════════════════════════════════
+// Weekly (Companion only)
+[w1_cf, w1_cs] = request.security(syminfo.tickerid, "W",
+     [ta.ema(close, i_cfast), ta.ema(close, i_cslow)], lookahead=barmerge.lookahead_off)
+
+// Daily (Companion + SuperBias + CB + Pivot)
+[d1_cf, d1_cs, d1_e21, d1_e55, d1_cl1] = request.security(syminfo.tickerid, "D",
+     [ta.ema(close, i_cfast), ta.ema(close, i_cslow),
+     ta.ema(close, 21),      ta.ema(close, 55), close[1]], lookahead=barmerge.lookahead_off)
+
+// H4 (Companion + SuperBias + CB + Vegas tunnel)
+[h4_cf, h4_cs, h4_e21, h4_e55, h4_rsi, h4_macd, h4_e50, h4_e144, h4_e169, h4_close] =
+     request.security(syminfo.tickerid, "240",
+     [ta.ema(close, i_cfast), ta.ema(close, i_cslow),
+     ta.ema(close, 21),      ta.ema(close, 55), ta.rsi(close, 14),
+     ta.ema(close,12) - ta.ema(close,26),
+     ta.ema(close, 50),      ta.ema(close, 144), ta.ema(close, 169), close],
+     lookahead=barmerge.lookahead_off)
+
+// H1 (Companion + SuperBias + CB + SuperBrain voter 5 EMA34 slope)
+[h1_cf, h1_cs, h1_e21, h1_e55, h1_rsi, h1_macd, h1_e100, h1_e34, h1_e34_lag] =
+     request.security(syminfo.tickerid, "60",
+     [ta.ema(close, i_cfast), ta.ema(close, i_cslow),
+     ta.ema(close, 21),      ta.ema(close, 55), ta.rsi(close, 14),
+     ta.ema(close,12) - ta.ema(close,26),
+     ta.ema(close, 100),     ta.ema(close, 34), ta.ema(close, 34)[2]],
+     lookahead=barmerge.lookahead_off)
+
+// M15 (SuperBias + CB)
+[m15_e21, m15_e55] = request.security(syminfo.tickerid, "15",
+     [ta.ema(close, 21), ta.ema(close, 55)], lookahead=barmerge.lookahead_off)
+
+// M5 CB (separate if CB EMAs differ from 21/55)
+[m5_cbf, m5_cbs] = request.security(syminfo.tickerid, "5",
+     [ta.ema(close, i_cbf), ta.ema(close, i_cbs)], lookahead=barmerge.lookahead_off)
+
+// M1 CB
+[m1_cbf, m1_cbs] = request.security(syminfo.tickerid, "1",
+     [ta.ema(close, i_cbf), ta.ema(close, i_cbs)], lookahead=barmerge.lookahead_off)
+
+// ══════════════════════════════════════════════════════════════════════
+// SUPERBRAIN — 11 PORTS
+// Source: SuperBrain_GodMode.mq4 ScorePorts()
+// Each port: +1 bull / -1 bear / 0 neutral → bull+bear ≤ 11
+// ══════════════════════════════════════════════════════════════════════
+// Port 1 — Channel Breakout (Donchian 20)
+don_hh    = ta.highest(high, 21)[1]
+don_ll    = ta.lowest(low,  21)[1]
+p1        = close[1] > don_hh ? 1 : close[1] < don_ll ? -1 : 0
+
+// Port 2 — Kinetic Momentum
+p2        = kinetic >= i_kin ? (close[1] > close[3] ? 1 : -1) : 0
+
+// Port 3 — PRISM Dual SuperTrend (two param sets; fire when both agree)
+atr14     = ta.atr(14)[1]
+mid_bar   = (high[1] + low[1]) / 2
+st_up_a   = mid_bar + 3.0 * atr14
+st_dn_a   = mid_bar - 3.0 * atr14
+st_up_b   = mid_bar + 2.0 * atr14
+st_dn_b   = mid_bar - 2.0 * atr14
+sdir_a    = close[1] > st_up_a ? 1 : close[1] < st_dn_a ? -1 : (ta.ema(close, 10)[1] > ta.ema(close, 10)[3] ? 1 : -1)
+sdir_b    = close[1] > st_up_b ? 1 : close[1] < st_dn_b ? -1 : (ta.ema(close, 20)[1] > ta.ema(close, 20)[3] ? 1 : -1)
+p3        = sdir_a == sdir_b ? sdir_a : 0
+
+// Port 4 — KAMA Regime (EMA34 slope, gated by ADX ≥ 18)
+e34_1     = ta.ema(close, 34)[1]
+e34_4     = ta.ema(close, 34)[4]
+p4        = adx_cur >= 18 ? (e34_1 > e34_4 ? 1 : -1) : 0
+
+// Port 5 — MA Ribbon (EMA 8 > 21 > 55 full stack)
+e8_1      = ta.ema(close, 8)[1]
+e21_1     = ta.ema(close, 21)[1]
+e55_1     = ta.ema(close, 55)[1]
+p5        = (e8_1 > e21_1 and e21_1 > e55_1) ? 1 : (e8_1 < e21_1 and e21_1 < e55_1) ? -1 : 0
+
+// Port 6 — HTF Confirmation (H4 EMA21 slope)
+p6        = h4_e21 > h4_cf ? 1 : -1   // using H4 EMA21 vs Companion fast as slope proxy
+
+// Port 7 — S/R Logistic (close vs daily pivot)
+p7        = close[1] > d1_pivot ? 1 : -1
+
+// Port 8 — VWAP Band (close vs session VWAP)
+p8        = close[1] > vwap_val[1] ? 1 : -1
+
+// Port 9 — Volume Profile (volume spike + direction)
+p9        = volume[1] > vol_avg20 ? (close[1] > open[1] ? 1 : -1) : 0
+
+// Port 10 — Candle Pattern (engulfing + pin bar)
+o1  = open[1]
+c1  = close[1]
+h1b = high[1]
+l1b = low[1]
+o2  = open[2]
+c2  = close[2]
+body_sz   = math.abs(c1 - o1)
+rng_sz    = h1b - l1b
+bull_eng  = c1 > o1 and c2 < o2 and c1 >= o2 and o1 <= c2
+bear_eng  = c1 < o1 and c2 > o2 and c1 <= o2 and o1 >= c2
+up_wick   = h1b - math.max(o1, c1)
+dn_wick   = math.min(o1, c1) - l1b
+bull_pin  = rng_sz > 0 and dn_wick > 2 * body_sz and c1 > o1
+bear_pin  = rng_sz > 0 and up_wick > 2 * body_sz and c1 < o1
+p10       = bull_eng or bull_pin ? 1 : bear_eng or bear_pin ? -1 : 0
+
+// Port 11 — Peer Correlation (placeholder: H4 bias as proxy)
+p11       = h4_e21 > h4_e55 ? 1 : -1
+
+// Tally ports
+sb_port_bull = (p1==1?1:0)+(p2==1?1:0)+(p3==1?1:0)+(p4==1?1:0)+(p5==1?1:0)+
+               (p6==1?1:0)+(p7==1?1:0)+(p8==1?1:0)+(p9==1?1:0)+(p10==1?1:0)+(p11==1?1:0)
+sb_port_bear = (p1==-1?1:0)+(p2==-1?1:0)+(p3==-1?1:0)+(p4==-1?1:0)+(p5==-1?1:0)+
+               (p6==-1?1:0)+(p7==-1?1:0)+(p8==-1?1:0)+(p9==-1?1:0)+(p10==-1?1:0)+(p11==-1?1:0)
+ports_ok_buy  = sb_port_bull >= i_minsig and sb_port_bull > sb_port_bear
+ports_ok_sell = sb_port_bear >= i_minsig and sb_port_bear > sb_port_bull
+
+// ══════════════════════════════════════════════════════════════════════
+// SUPERBRAIN — 15 VOTERS
+// Source: SuperBrain_GodMode.mq4 ScoreVoters()
+// Each voter: +1 / -1 / 0 (some abstain)
+// ══════════════════════════════════════════════════════════════════════
+// V0  DMA — close vs displaced SMA21 (shift 3)
+v_dma    = close[1] > ta.sma(close, 21)[3] ? 1 : -1
+
+// V1  Stochastic K vs D
+stk      = ta.stoch(close, high, low, 8)
+std      = ta.sma(stk, 3)
+v_stoch  = stk[1] > std[1] ? 1 : -1
+
+// V2  RSI Divergence (RSI vs price over 5 bars)
+rsi14    = ta.rsi(close, 14)
+v_div    = 0
+if close[1] > close[5] and rsi14[1] < rsi14[5]
+    v_div := -1   // bearish divergence
+else if close[1] < close[5] and rsi14[1] > rsi14[5]
+    v_div := 1    // bullish divergence
+
+// V3  Candle pattern (reuse p10 logic)
+v_candle = p10
+
+// V4  ATR Expansion — ATR rising gated by candle direction
+v_atr    = ta.atr(14)[1] > ta.atr(14)[5] ? (close[1] > open[1] ? 1 : -1) : 0
+
+// V5  HTF H1 EMA34 slope
+v_htf    = h1_e34 > h1_e34_lag ? 1 : -1
+
+// V6  Robotrick — EMA5 vs EMA13 (fast ribbon)
+v_robot  = ta.ema(close, 5)[1] > ta.ema(close, 13)[1] ? 1 : -1
+
+// V7  Volume — spike + candle direction
+v_vol    = volume[1] > vol_avg20 ? (close[1] > open[1] ? 1 : -1) : 0
+
+// V8  RSI Slope — RSI[1] vs RSI[3]
+v_rsis   = rsi14[1] > rsi14[3] ? 1 : -1
+
+// V9  MACD — main vs signal on current TF
+[macd_main, macd_sig, macdH_] = ta.macd(close, 12, 26, 9)
+v_macd   = macd_main[1] > macd_sig[1] ? 1 : -1
+
+// V10 Day Range Position — where is close in yesterday's H-L range?
+d1_rng   = d1_prev_h - d1_prev_l
+d1_pos   = d1_rng > 0 ? (close[1] - d1_prev_l) / d1_rng : 0.5
+v_drange = d1_pos > 0.55 ? 1 : d1_pos < 0.45 ? -1 : 0
+
+// V11 MTF Stack — M15 + H1 + H4 EMA21/55 must ALL agree
+mtf_m15 = m15_e21 > m15_e55 ? 1 : -1
+mtf_h1  = h1_e21  > h1_e55  ? 1 : -1
+mtf_h4  = h4_e21  > h4_e55  ? 1 : -1
+v_mtf   = (mtf_m15 == mtf_h1 and mtf_h1 == mtf_h4) ? mtf_m15 : 0
+
+// V12 TTF — Trend Trigger Factor (15-bar lookback)
+ttf_hh  = ta.highest(high, 15)[1]
+ttf_ll  = ta.lowest(low,  15)[1]
+ttf_hh2 = ta.highest(high, 15)[15]
+ttf_ll2 = ta.lowest(low,  15)[15]
+ttf_bp  = ttf_hh - ttf_ll2
+ttf_sp  = ttf_hh2 - ttf_ll
+ttf_d   = 0.5 * (ttf_bp + ttf_sp)
+ttf_val = ttf_d > 0 ? 100 * (ttf_bp - ttf_sp) / ttf_d : 0
+v_ttf   = ttf_val > 30 ? 1 : ttf_val < -30 ? -1 : 0
+
+// V13 Vegas H4 Tunnel — price vs H4 EMA144 and EMA169
+v_vegas = (h4_close > h4_e144 and h4_close > h4_e169) ? 1 :
+          (h4_close < h4_e144 and h4_close < h4_e169) ? -1 : 0
+
+// V14 FER Directional — if FER ≥ floor, use 6-bar price direction
+v_fer   = fer >= i_fer ? (close[1] > close[6] ? 1 : -1) : 0
+
+// Tally voters
+sb_vot_bull = (v_dma==1?1:0)+(v_stoch==1?1:0)+(v_div==1?1:0)+(v_candle==1?1:0)+
+              (v_atr==1?1:0)+(v_htf==1?1:0)+(v_robot==1?1:0)+(v_vol==1?1:0)+
+              (v_rsis==1?1:0)+(v_macd==1?1:0)+(v_drange==1?1:0)+(v_mtf==1?1:0)+
+              (v_ttf==1?1:0)+(v_vegas==1?1:0)+(v_fer==1?1:0)
+sb_vot_bear = (v_dma==-1?1:0)+(v_stoch==-1?1:0)+(v_div==-1?1:0)+(v_candle==-1?1:0)+
+              (v_atr==-1?1:0)+(v_htf==-1?1:0)+(v_robot==-1?1:0)+(v_vol==-1?1:0)+
+              (v_rsis==-1?1:0)+(v_macd==-1?1:0)+(v_drange==-1?1:0)+(v_mtf==-1?1:0)+
+              (v_ttf==-1?1:0)+(v_vegas==-1?1:0)+(v_fer==-1?1:0)
+
+// ══════════════════════════════════════════════════════════════════════
+// SUPERBIAS — 24 SIGNALS
+// Source: NCI_SuperBias.mq4 — ALL return +1 or -1, never zero
+// bull + bear = 24 always
+// ══════════════════════════════════════════════════════════════════════
+sb_e8   = ta.ema(close, 8)
+sb_e21  = ta.ema(close, 21)
+sb_e55  = ta.ema(close, 55)
+sb_e100 = ta.ema(close, 100)
+sb_s200 = ta.sma(close, 200)
+sb_e5   = ta.ema(close, 5)
+sb_e13  = ta.ema(close, 13)
+[sb_dip, sb_dim, sb_adx] = ta.dmi(14, 14)
+sb_stk  = ta.stoch(close, high, low, 8)
+sb_cci  = ta.cci(close, 14)
+sb_mom  = ta.mom(close, 14)
+h1_macd_z = h1_macd > 0
+h4_macd_z = h4_macd > 0
+
+int sb_bull =
+     (close > sb_e21   ? 1 : 0) + (sb_e8 > sb_e21     ? 1 : 0) +
+     (sb_e21 > sb_e55  ? 1 : 0) + (sb_e55 > sb_e100   ? 1 : 0) +
+     (close > sb_s200  ? 1 : 0) + (rsi14 > 50          ? 1 : 0) +
+     (macd_main > macd_sig ? 1:0)+ (sb_dip > sb_dim    ? 1 : 0) +
+     (m15_e21 > m15_e55? 1 : 0) + (h1_e21 > h1_e55    ? 1 : 0) +
+     (h4_e21 > h4_e55  ? 1 : 0) + (d1_e21 > d1_e55    ? 1 : 0) +
+     (h1_rsi > 50      ? 1 : 0) + (h4_rsi > 50         ? 1 : 0) +
+     (sb_stk > 50      ? 1 : 0) + (sb_cci > 0          ? 1 : 0) +
+     (sb_mom > 0       ? 1 : 0) + (close > d1_cl1      ? 1 : 0) +
+     (close > d1_pivot ? 1 : 0) + (sb_e5 > sb_e13      ? 1 : 0) +
+     (h1_macd_z        ? 1 : 0) + (h4_macd_z           ? 1 : 0) +
+     (close > h1_e100  ? 1 : 0) + (close > h4_e50      ? 1 : 0)
+
+int sb_bear = 24 - sb_bull
+int sb_net  = sb_bull - sb_bear     // range -24..+24
+
+// ══════════════════════════════════════════════════════════════════════
+// COMPANION V1 — 7-VOTER
+// Source: NCI_Companion_v1.mq4 (Terminal 46A834A4)
+// ══════════════════════════════════════════════════════════════════════
+cv_w1 = w1_cf > w1_cs ? 1 : -1
+cv_d1 = d1_cf > d1_cs ? 1 : -1
+cv_h4 = h4_cf > h4_cs ? 1 : -1
+cv_h1 = h1_cf > h1_cs ? 1 : -1
+
+comp_buy  = (cv_w1==1?1:0)+(cv_d1==1?1:0)+(cv_h4==1?1:0)+(cv_h1==1?1:0) +
+             (rsi14 > i_rbull ? 1 : 0) + (stk[0] > 50 ? 1 : 0) + (ta.cci(close,20) > 100 ? 1 : 0)
+comp_sell = (cv_w1==-1?1:0)+(cv_d1==-1?1:0)+(cv_h4==-1?1:0)+(cv_h1==-1?1:0) +
+             (rsi14 < i_rbear ? 1 : 0) + (stk[0] <= 50 ? 1 : 0) + (ta.cci(close,20) < -100 ? 1 : 0)
+
+comp_ok_buy  = comp_buy  >= i_cgate and close > open
+comp_ok_sell = comp_sell >= i_cgate and close < open
+
+// ══════════════════════════════════════════════════════════════════════
+// CONFLUENCE BIAS BRIDGE — 6-TF
+// Source: NCI_ConfluenceBias_Bridge.mq4
+// ══════════════════════════════════════════════════════════════════════
+cb_m1   = m1_cbf  > m1_cbs  ? 1 : -1
+cb_m5   = m5_cbf  > m5_cbs  ? 1 : -1
+cb_m15  = m15_e21 > m15_e55 ? 1 : -1    // reuse SuperBias M15 (same 21/55 if default)
+cb_h1   = h1_e21  > h1_e55  ? 1 : -1
+cb_h4   = h4_e21  > h4_e55  ? 1 : -1
+cb_d1   = d1_e21  > d1_e55  ? 1 : -1
+
+cb_bull = (cb_m1==1?1:0)+(cb_m5==1?1:0)+(cb_m15==1?1:0)+(cb_h1==1?1:0)+(cb_h4==1?1:0)+(cb_d1==1?1:0)
+cb_bear = 6 - cb_bull
+cb_ok_buy  = cb_bull >= i_cbg
+cb_ok_sell = cb_bear >= i_cbg
+
+// ══════════════════════════════════════════════════════════════════════
+// HARD GATES & COMPOSITE SCORE
+// ══════════════════════════════════════════════════════════════════════
+gate_adx  = sb_adx >= i_adx
+gate_fer  = fer    >= i_fer
+gate_kin  = kinetic >= i_kin
+gate_sess = sess_ok
+gate_abc  = abc_ok
+all_gates = gate_adx and gate_fer and gate_kin and gate_sess and gate_abc
+
+full_ok_buy  = comp_ok_buy  and cb_ok_buy  and ports_ok_buy  and all_gates
+full_ok_sell = comp_ok_sell and cb_ok_sell and ports_ok_sell and all_gates
+
+// Master Score — normalized net across all 5 layers
+// SuperBias: net/24 (max 1.0), Companion: (buy-sell)/7, CB: (bull-bear)/6
+// Ports: (bull-bear)/11, Voters: (bull-bear)/15
+ms_sb    = sb_net / 24.0
+ms_co    = (comp_buy - comp_sell) / 7.0
+ms_cb    = (cb_bull  - cb_bear) / 6.0
+ms_ports = (sb_port_bull - sb_port_bear) / 11.0
+ms_votes = (sb_vot_bull  - sb_vot_bear) / 15.0
+master   = (ms_sb + ms_co + ms_cb + ms_ports + ms_votes) / 5.0   // -1..+1
+master_pct = math.round(master * 100)
+
+master_dir = master > 0.15 ? 1 : master < -0.15 ? -1 : 0
+master_str = math.abs(master_pct)
+master_txt = master_dir == 1 ? "BULL" : master_dir == -1 ? "BEAR" : "FLAT"
+master_col = master_dir == 1 ? (master_pct > 50 ? color.lime : color.new(color.lime, 40)) :
+             master_dir == -1 ? (master_pct < -50 ? color.red : color.new(color.red, 40)) :
+             color.gray
+
+// ══════════════════════════════════════════════════════════════════════
+// STATE MACHINE  — ARM / FIRE trigger
+// ══════════════════════════════════════════════════════════════════════
+var int  sm     = 0
+var int  sm_bar = 0
+var int  prev_sm = 0
+
+sb_arm_b  = sb_net >=  i_arm
+sb_fire_b = sb_net >=  i_fire
+sb_arm_s  = sb_net <= -i_arm
+sb_fire_s = sb_net <= -i_fire
+timed_out = (bar_index - sm_bar) >= i_tout
+
+bool fire_buy  = false
+bool fire_sell = false
+prev_sm := sm
+
+if sm == 0
+    if i_skip and sb_fire_b and full_ok_buy
+        fire_buy  := true
+    else if i_skip and sb_fire_s and full_ok_sell
+        fire_sell := true
+    else if sb_arm_b and not sb_fire_b
+        sm    := 1
+        sm_bar := bar_index
+    else if sb_arm_s and not sb_fire_s
+        sm    := 2
+        sm_bar := bar_index
+else if sm == 1
+    if timed_out or not sb_arm_b
+        sm := 0
+    else if sb_fire_b and full_ok_buy
+        fire_buy  := true
+        sm := 0
+else if sm == 2
+    if timed_out or not sb_arm_s
+        sm := 0
+    else if sb_fire_s and full_ok_sell
+        fire_sell := true
+        sm := 0
+
+arm_buy_new  = sm == 1 and prev_sm != 1
+arm_sell_new = sm == 2 and prev_sm != 2
+arm_active   = sm == 1 or sm == 2
+
+// ══════════════════════════════════════════════════════════════════════
+// ROBOTRICK FADE LAYER — exact mirror of NCI_RoboTrick_Auto_v2.mq4
+// Mean-reversion: >= N of 4 reversion voters at extremes, EMA20/50
+// trend must NOT oppose the fade. Counter-trend BY DESIGN — it will
+// often fire against SuperBias/Master (filter test proved bias must
+// NOT gate it: ROBOTRICK_BIAS_FILTER_RESULTS.md).
+// ══════════════════════════════════════════════════════════════════════
+// Voter 1 — Bollinger(20,2) extreme
+[rt_bbmid, rt_bbup, rt_bblo] = ta.bb(close, 20, 2.0)
+rt_v_bb = close <= rt_bblo ? 1 : close >= rt_bbup ? -1 : 0
+
+// Voter 2 — CCI(14) beyond ±100 and turning back
+rt_cci  = ta.cci(hlc3, 14)
+rt_v_cci = rt_cci < -100 and rt_cci > rt_cci[1] ? 1 :
+           rt_cci >  100 and rt_cci < rt_cci[1] ? -1 : 0
+
+// Voter 3 — Slow Stoch(14,3) at extreme  (MT4 iStochastic 14,3,3 MAIN)
+rt_stk  = ta.sma(ta.stoch(close, high, low, 14), 3)
+rt_v_stk = rt_stk < 20 ? 1 : rt_stk > 80 ? -1 : 0
+
+// Voter 4 — MACD(12,26,9) main turning below/above zero
+[rt_macd, rt_macds, rt_macdh] = ta.macd(close, 12, 26, 9)
+rt_v_macd = rt_macd > rt_macd[1] and rt_macd < 0 ? 1 :
+            rt_macd < rt_macd[1] and rt_macd > 0 ? -1 : 0
+
+// Trend gate — EMA20/50 must not point WITH the exhausted move
+rt_ema20 = ta.ema(close, 20)
+rt_ema50 = ta.ema(close, 50)
+rt_trend = rt_ema20 > rt_ema50 ? 1 : rt_ema20 < rt_ema50 ? -1 : 0
+
+rt_buyv  = (rt_v_bb == 1 ? 1 : 0) + (rt_v_cci == 1 ? 1 : 0) + (rt_v_stk == 1 ? 1 : 0) + (rt_v_macd == 1 ? 1 : 0)
+rt_sellv = (rt_v_bb == -1 ? 1 : 0) + (rt_v_cci == -1 ? 1 : 0) + (rt_v_stk == -1 ? 1 : 0) + (rt_v_macd == -1 ? 1 : 0)
+
+rt_sig   = not i_rt_on ? 0 :
+           rt_buyv  >= i_rt_votes and rt_trend != 1  ?  1 :
+           rt_sellv >= i_rt_votes and rt_trend != -1 ? -1 : 0
+rt_fire_buy  = rt_sig ==  1 and rt_sig[1] != 1     // first bar of signal
+rt_fire_sell = rt_sig == -1 and rt_sig[1] != -1
+rt_blocked   = i_rt_on and rt_sig == 0 and
+               ((rt_buyv >= i_rt_votes and rt_trend == 1) or
+                (rt_sellv >= i_rt_votes and rt_trend == -1))
+
+// SL/TP preview — same math as the EA
+rt_atr = ta.atr(14)
+rt_sl  = rt_sig != 0 ? close - rt_sig * i_rt_slx * rt_atr : na
+rt_tp_mean = rt_bbmid
+rt_tp_r    = rt_sig != 0 ? close + rt_sig * 1.5 * i_rt_slx * rt_atr : na
+rt_tp  = rt_sig == 0 ? na :
+         i_rt_tpm == "BB-mid" ?
+           (rt_sig == 1 and rt_tp_mean > close ? rt_tp_mean :
+            rt_sig == -1 and rt_tp_mean < close ? rt_tp_mean : na) :
+         rt_tp_r
+// bias-quality hint (display-only; from filter test: fades with bias
+// not fully pinned against them ran ~88% WR on GBPUSD H1, n=9)
+rt_quality = rt_sig != 0 and rt_sig * sb_net >= -16
+
+// ══════════════════════════════════════════════════════════════════════
+// EXIT SIGNALS (EMA cross on M5 chart, check on M15 closes)
+// ══════════════════════════════════════════════════════════════════════
+ema_f_exit  = ta.ema(close, i_ef)
+ema_s_exit  = ta.ema(close, i_es)
+dyn_exit_l  = ta.crossunder(ema_f_exit, ema_s_exit)
+dyn_exit_s  = ta.crossover(ema_f_exit, ema_s_exit)
+
+// ══════════════════════════════════════════════════════════════════════
+// EMA LINES ON CHART
+// ══════════════════════════════════════════════════════════════════════
+ema8_line  = ta.ema(close, 8)
+ema21_line = ta.ema(close, 21)
+ema55_line = ta.ema(close, 55)
+
+plot(i_emas ? ema8_line  : na, "EMA 8",  color=color.new(color.aqua,   20), linewidth=1)
+plot(i_emas ? ema21_line : na, "EMA 21", color=color.new(color.yellow, 20), linewidth=2)
+plot(i_emas ? ema55_line : na, "EMA 55", color=color.new(color.orange, 20), linewidth=2)
+plot(i_xmode=="DYNAMIC" ? ema_f_exit : na, "Exit EMA Fast", color=color.new(color.white, 30), linewidth=1, style=plot.style_line)
+plot(i_xmode=="DYNAMIC" ? ema_s_exit : na, "Exit EMA Slow", color=color.new(color.silver,50), linewidth=1, style=plot.style_line)
+
+// Level 2 Grid — pivot ladder (stepped lines, only on intraday TFs)
+intraday = timeframe.isintraday
+plot(i_levels and intraday ? d1_pivot : na, "Pivot", color=color.new(color.silver, 20), style=plot.style_linebr, linewidth=2)
+plot(i_levels and intraday ? lvl_r1 : na, "R1", color=color.new(color.red, 45), style=plot.style_linebr)
+plot(i_levels and intraday ? lvl_r2 : na, "R2", color=color.new(color.red, 60), style=plot.style_linebr)
+plot(i_levels and intraday ? lvl_r3 : na, "R3", color=color.new(color.red, 75), style=plot.style_linebr)
+plot(i_levels and intraday ? lvl_s1 : na, "S1", color=color.new(color.lime, 45), style=plot.style_linebr)
+plot(i_levels and intraday ? lvl_s2 : na, "S2", color=color.new(color.lime, 60), style=plot.style_linebr)
+plot(i_levels and intraday ? lvl_s3 : na, "S3", color=color.new(color.lime, 75), style=plot.style_linebr)
+plot(i_fibs and intraday ? fib_382 : na, "Fib 38.2", color=color.new(color.aqua, 55), style=plot.style_linebr)
+plot(i_fibs and intraday ? fib_500 : na, "Fib 50",   color=color.new(color.aqua, 40), style=plot.style_linebr)
+plot(i_fibs and intraday ? fib_618 : na, "Fib 61.8", color=color.new(color.aqua, 55), style=plot.style_linebr)
+plot(i_smas ? sma21_v  : na, "SMA 21",  color=color.new(color.fuchsia, 40))
+plot(i_smas ? sma34_v  : na, "SMA 34",  color=color.new(color.purple, 40))
+plot(i_smas ? sma233_v : na, "SMA 233", color=color.new(color.gray, 30), linewidth=2)
+
+// ══════════════════════════════════════════════════════════════════════
+// BACKGROUND & ARROWS
+// ══════════════════════════════════════════════════════════════════════
+bgcolor(i_bg and sm == 1 ? color.new(color.lime, 93) : na, title="ARMED BUY bg")
+bgcolor(i_bg and sm == 2 ? color.new(color.red,  93) : na, title="ARMED SELL bg")
+bgcolor(fire_buy  ? color.new(color.lime, 80) : na, title="FIRE BUY flash")
+bgcolor(fire_sell ? color.new(color.red,  80) : na, title="FIRE SELL flash")
+
+// Master trend background (subtle)
+bgcolor(not arm_active and not fire_buy and not fire_sell and master_dir == 1  ?
+         color.new(color.teal, 97) : na, title="Bull trend bg")
+bgcolor(not arm_active and not fire_buy and not fire_sell and master_dir == -1 ?
+         color.new(color.maroon, 97) : na, title="Bear trend bg")
+
+// FIRE signals — large arrows
+plotshape(fire_buy  and i_lbls, "◆ FIRE BUY",
+          shape.triangleup, location.belowbar, color.lime,
+          size=size.large, text="◆ BUY", textcolor=color.lime)
+plotshape(fire_sell and i_lbls, "◆ FIRE SELL",
+          shape.triangledown, location.abovebar, color.red,
+          size=size.large, text="◆ SELL", textcolor=color.red)
+
+// ARM markers — medium circles
+plotshape(arm_buy_new  and i_lbls, "○ ARM BUY",
+          shape.circle, location.belowbar, color.new(color.lime, 40),
+          size=size.small, text="arm ↑", textcolor=color.new(color.lime, 20))
+plotshape(arm_sell_new and i_lbls, "○ ARM SELL",
+          shape.circle, location.abovebar, color.new(color.red, 40),
+          size=size.small, text="arm ↓", textcolor=color.new(color.red, 20))
+
+// SuperBrain standalone signal arrows (smaller, secondary)
+sb_brain_buy  = ports_ok_buy  and sb_vot_bull > sb_vot_bear and gate_adx and gate_sess
+sb_brain_sell = ports_ok_sell and sb_vot_bear > sb_vot_bull and gate_adx and gate_sess
+plotshape(sb_brain_buy  and not fire_buy  and i_lbls, "Brain BUY",
+          shape.triangleup, location.belowbar, color.new(color.lime, 50),
+          size=size.tiny, text="B", textcolor=color.new(color.lime,30))
+plotshape(sb_brain_sell and not fire_sell and i_lbls, "Brain SELL",
+          shape.triangledown, location.abovebar, color.new(color.red, 50),
+          size=size.tiny, text="B", textcolor=color.new(color.red,30))
+
+// RoboTrick fade signals — diamonds (counter-trend, distinct from FIRE)
+plotshape(i_rt_on and i_rt_arrows and rt_fire_buy, "◇ FADE BUY",
+          shape.diamond, location.belowbar, color.aqua,
+          size=size.small, text="FADE", textcolor=color.aqua)
+plotshape(i_rt_on and i_rt_arrows and rt_fire_sell, "◇ FADE SELL",
+          shape.diamond, location.abovebar, color.fuchsia,
+          size=size.small, text="FADE", textcolor=color.fuchsia)
+
+// RoboTrick SL/TP preview levels (only while a fade signal is live)
+plot(i_rt_on and i_rt_lvls ? rt_sl : na, "RoboTrick SL",
+     color=color.new(color.red, 25),  style=plot.style_linebr, linewidth=1)
+plot(i_rt_on and i_rt_lvls ? rt_tp : na, "RoboTrick TP",
+     color=color.new(color.lime, 25), style=plot.style_linebr, linewidth=1)
+
+// Exit signals (DYNAMIC mode)
+plotshape(i_xmode=="DYNAMIC" and dyn_exit_l and i_lbls, "EXIT Long",
+          shape.xcross, location.abovebar, color.orange,
+          size=size.small, text="EXIT", textcolor=color.orange)
+plotshape(i_xmode=="DYNAMIC" and dyn_exit_s and i_lbls, "EXIT Short",
+          shape.xcross, location.belowbar, color.orange,
+          size=size.small, text="EXIT", textcolor=color.orange)
+
+// ══════════════════════════════════════════════════════════════════════
+// DASHBOARD PANEL
+// ══════════════════════════════════════════════════════════════════════
+ppos = i_ppos == "top_right"    ? position.top_right    :
+       i_ppos == "top_left"     ? position.top_left     :
+       i_ppos == "bottom_right" ? position.bottom_right : position.bottom_left
+
+var table dash = table.new(ppos, 3, 50,
+     bgcolor      = color.new(#05050f, 90),
+     border_color = color.new(color.gray, 75),
+     border_width = 1,
+     frame_color  = color.new(color.gray, 55),
+     frame_width  = 1)
+
+// Cell helper shorthand
+C(col, row, txt, tc, bg) =>
+    table.cell(dash, col, row, txt, text_color=tc, text_size=size.small,
+               text_halign=text.align_center, bgcolor=bg)
+CL(col, row, txt, tc) =>
+    table.cell(dash, col, row, " " + txt, text_color=tc, text_size=size.small,
+               text_halign=text.align_left, bgcolor=color.new(#05050f, 88))
+CR(col, row, txt, tc) =>
+    table.cell(dash, col, row, txt + " ", text_color=tc, text_size=size.small,
+               text_halign=text.align_right, bgcolor=color.new(#05050f, 88))
+HDR(row, txt) =>
+    table.cell(dash, 0, row, " " + txt, text_color=color.new(color.white,20),
+               text_size=size.small, text_halign=text.align_left, bgcolor=color.new(#151535, 65))
+    table.cell(dash, 1, row, "", bgcolor=color.new(#151535, 65))
+    table.cell(dash, 2, row, "", bgcolor=color.new(#151535, 65))
+
+if i_panel and barstate.islast
+
+    // ── ROW 0: Master header ─────────────────────────────────────────
+    C(0, 0, "NCI TRADING ASSISTANT", color.white, color.new(#0a0a2a, 60))
+    C(1, 0, master_txt + "  " + str.tostring(master_str) + "%", master_col, color.new(#0a0a2a, 60))
+    C(2, 0, sess_ok ? "▶ SESSION" : "■ CLOSED", sess_ok ? color.lime : color.gray, color.new(#0a0a2a,60))
+
+    // ── ROW 1: MTF Trend Bar ─────────────────────────────────────────
+    HDR(1, "━ TIMEFRAME TREND  (EMA " + str.tostring(i_cbf) + "/" + str.tostring(i_cbs) + ")")
+
+    // TF direction row: 6 cells across rows 2-3
+    // Using 3 cols × 2 rows to show all 6 TFs
+    // Row 2: M1 | M5 | M15
+    // Row 3: H1 | H4 | D1
+    m1_col  = cb_m1  == 1 ? color.lime : color.red
+    m5_col  = cb_m5  == 1 ? color.lime : color.red
+    m15_col = cb_m15 == 1 ? color.lime : color.red
+    h1_col  = cb_h1  == 1 ? color.lime : color.red
+    h4_col  = cb_h4  == 1 ? color.lime : color.red
+    d1_col  = cb_d1  == 1 ? color.lime : color.red
+
+    C(0,2, "M1  " + dir_arrow(cb_m1),  m1_col,  color.new(cb_m1==1  ? color.green : color.maroon, 75))
+    C(1,2, "M5  " + dir_arrow(cb_m5),  m5_col,  color.new(cb_m5==1  ? color.green : color.maroon, 75))
+    C(2,2, "M15 " + dir_arrow(cb_m15), m15_col, color.new(cb_m15==1 ? color.green : color.maroon, 75))
+    C(0,3, "H1  " + dir_arrow(cb_h1),  h1_col,  color.new(cb_h1==1  ? color.green : color.maroon, 75))
+    C(1,3, "H4  " + dir_arrow(cb_h4),  h4_col,  color.new(cb_h4==1  ? color.green : color.maroon, 75))
+    C(2,3, "D1  " + dir_arrow(cb_d1),  d1_col,  color.new(cb_d1==1  ? color.green : color.maroon, 75))
+
+    // HTF alignment from Companion
+    HDR(4, "━ HTF ALIGNMENT  (EMA " + str.tostring(i_cfast) + "/" + str.tostring(i_cslow) + ")")
+    C(0,5, "W1 " + dir_arrow(cv_w1), dir_col(cv_w1), color.new(cv_w1==1?color.green:color.maroon,78))
+    C(1,5, "D1 " + dir_arrow(cv_d1), dir_col(cv_d1), color.new(cv_d1==1?color.green:color.maroon,78))
+    C(2,5, "H4 " + dir_arrow(cv_h4) + "  H1 " + dir_arrow(cv_h1),
+             cv_h4 == cv_h1 ? dir_col(cv_h4) : color.gray,
+             color.new(#05050f,88))
+
+    // ── SUPERBIAS ────────────────────────────────────────────────────
+    HDR(6, "━ SUPERBIAS  (24 signals)")
+    sb_bar_filled = math.round(10.0 * math.abs(sb_net) / 24.0)
+    sb_bar_str = ""
+    for _i = 0 to 9
+        sb_bar_str := sb_bar_str + (_i < sb_bar_filled ? "█" : "░")
+    sb_col2 = sb_net > 0 ? color.lime : sb_net < 0 ? color.red : color.gray
+    sb_dir_t = sb_net > 0 ? "BULL" : sb_net < 0 ? "BEAR" : "FLAT"
+
+    CL(0,7, "Bull / Bear", color.silver)
+    C(1,7, str.tostring(sb_bull) + " / " + str.tostring(sb_bear), sb_col2, color.new(#05050f,88))
+    C(2,7, sb_bar_str, sb_col2, color.new(#05050f,88))
+
+    bear_cnt = sb_bear
+    bull_cnt = sb_bull
+    arm_lbl  = bear_cnt <= 2 ? "◆ FIRE  (" + str.tostring(bear_cnt) + " bears)" :
+               bear_cnt <= 3 ? "○ ARMED (" + str.tostring(bear_cnt) + " bears)" :
+                               str.tostring(bear_cnt) + " bears  (ARM @3)"
+    arm_lc   = bear_cnt <= 2 ? color.lime : bear_cnt <= 3 ? color.new(color.lime,30) : color.new(color.gray,30)
+    CL(0,8, "BUY trigger", color.silver)
+    C(1,8, arm_lbl, arm_lc, color.new(#05050f,88))
+    C(2,8, sb_net > 0 ? "net +" + str.tostring(sb_net) : "net " + str.tostring(sb_net),
+           sb_col2, color.new(#05050f,88))
+
+    // ── SUPERBRAIN PORTS ─────────────────────────────────────────────
+    HDR(9, "━ SUPERBRAIN PORTS  (11 strategies)")
+    pb_col = sb_port_bull > sb_port_bear ? color.lime : sb_port_bear > sb_port_bull ? color.red : color.gray
+    CL(0,10, "Bull / Bear", color.silver)
+    C(1,10, str.tostring(sb_port_bull) + " / " + str.tostring(sb_port_bear), pb_col, color.new(#05050f,88))
+    port_gate_s = ports_ok_buy ? "BUY ✓" : ports_ok_sell ? "SELL ✓" : "✗ need " + str.tostring(i_minsig)
+    port_gate_c = ports_ok_buy ? color.lime : ports_ok_sell ? color.red : color.new(color.gray,30)
+    C(2,10, port_gate_s, port_gate_c, color.new(#05050f,88))
+
+    // Port detail row (icon per port)
+    p_str = (p1==1?"▲":p1==-1?"▼":"─") + (p2==1?"▲":p2==-1?"▼":"─") +
+             (p3==1?"▲":p3==-1?"▼":"─") + (p4==1?"▲":p4==-1?"▼":"─") +
+             (p5==1?"▲":p5==-1?"▼":"─") + (p6==1?"▲":p6==-1?"▼":"─") +
+             (p7==1?"▲":p7==-1?"▼":"─") + (p8==1?"▲":p8==-1?"▼":"─") +
+             (p9==1?"▲":p9==-1?"▼":"─") + (p10==1?"▲":p10==-1?"▼":"─") +
+             (p11==1?"▲":p11==-1?"▼":"─")
+    CL(0,11, "Ch·Ki·PR·KA·Ri·H4·SR·VP·Vl·Cn·Pr", color.new(color.gray,30))
+    C(1,11, p_str, pb_col, color.new(#05050f,88))
+    C(2,11, "", color.new(#05050f,88), color.new(#05050f,88))
+
+    // ── SUPERBRAIN VOTERS ────────────────────────────────────────────
+    HDR(12, "━ SUPERBRAIN VOTERS  (15 indicators)")
+    vb_col = sb_vot_bull > sb_vot_bear ? color.lime : sb_vot_bear > sb_vot_bull ? color.red : color.gray
+    CL(0,13, "Bull / Bear", color.silver)
+    C(1,13, str.tostring(sb_vot_bull) + " / " + str.tostring(sb_vot_bear), vb_col, color.new(#05050f,88))
+    vot_net = sb_vot_bull - sb_vot_bear
+    C(2,13, vot_net > 0 ? "net +" + str.tostring(vot_net) : "net " + str.tostring(vot_net),
+             vb_col, color.new(#05050f,88))
+
+    v_str = (v_dma==1?"▲":v_dma==-1?"▼":"─") + (v_stoch==1?"▲":v_stoch==-1?"▼":"─") +
+             (v_div==1?"▲":v_div==-1?"▼":"─")  + (v_candle==1?"▲":v_candle==-1?"▼":"─") +
+             (v_atr==1?"▲":v_atr==-1?"▼":"─")  + (v_htf==1?"▲":v_htf==-1?"▼":"─") +
+             (v_robot==1?"▲":v_robot==-1?"▼":"─")+(v_vol==1?"▲":v_vol==-1?"▼":"─") +
+             (v_rsis==1?"▲":v_rsis==-1?"▼":"─")+(v_macd==1?"▲":v_macd==-1?"▼":"─") +
+             (v_drange==1?"▲":v_drange==-1?"▼":"─")+(v_mtf==1?"▲":v_mtf==-1?"▼":"─") +
+             (v_ttf==1?"▲":v_ttf==-1?"▼":"─")  + (v_vegas==1?"▲":v_vegas==-1?"▼":"─") +
+             (v_fer==1?"▲":v_fer==-1?"▼":"─")
+    CL(0,14, "DM·St·Dv·Cn·AT·H1·Ro·Vl·RS·MC·DR·MS·TF·Vg·FR", color.new(color.gray,30))
+    C(1,14, v_str, vb_col, color.new(#05050f,88))
+    C(2,14, "", color.new(#05050f,88), color.new(#05050f,88))
+
+    // ── COMPANION V1 ─────────────────────────────────────────────────
+    HDR(15, "━ COMPANION v1  (7-voter HTF + momentum)")
+    c_col = comp_buy >= i_cgate ? color.lime : comp_sell >= i_cgate ? color.red : color.gray
+    c_sig = comp_buy >= i_cgate ? "BUY ✓" : comp_sell >= i_cgate ? "SELL ✓" : "WAIT"
+    CL(0,16, "Buy / Sell", color.silver)
+    C(1,16, str.tostring(comp_buy) + "B / " + str.tostring(comp_sell) + "S  (need " + str.tostring(i_cgate) + ")", c_col, color.new(#05050f,88))
+    C(2,16, c_sig, c_col, color.new(#05050f,88))
+
+    htf_str = "W1:" + dir_arrow(cv_w1) + " D1:" + dir_arrow(cv_d1) + " H4:" + dir_arrow(cv_h4) + " H1:" + dir_arrow(cv_h1)
+    CL(0,17, "HTF alignment", color.new(color.gray,20))
+    C(1,17, htf_str, c_col, color.new(#05050f,88))
+    rsi_lbl = rsi14 > i_rbull ? "RSI▲" : rsi14 < i_rbear ? "RSI▼" : "RSI─"
+    stk_lbl = stk[0] > 50 ? "STK▲" : "STK▼"
+    cci20   = ta.cci(close, 20)
+    cci_lbl = cci20 > 100 ? "CCI▲" : cci20 < -100 ? "CCI▼" : "CCI─"
+    C(2,17, rsi_lbl + " " + stk_lbl + " " + cci_lbl, c_col, color.new(#05050f,88))
+
+    // ── CONFLUENCE BRIDGE ────────────────────────────────────────────
+    HDR(18, "━ CONFLUENCE BRIDGE  (6-TF EMA " + str.tostring(i_cbf) + "/" + str.tostring(i_cbs) + ")")
+    cb_col2 = cb_bull >= i_cbg ? color.lime : cb_bear >= i_cbg ? color.red : color.gray
+    cb_sig = cb_bull >= i_cbg ? "BULL ✓" : cb_bear >= i_cbg ? "BEAR ✓" : "MIXED"
+    CL(0,19, "Bull / Bear TFs", color.silver)
+    C(1,19, str.tostring(cb_bull) + " bull  " + str.tostring(cb_bear) + " bear", cb_col2, color.new(#05050f,88))
+    C(2,19, cb_sig, cb_col2, color.new(#05050f,88))
+
+    // ── STATE MACHINE ────────────────────────────────────────────────
+    HDR(20, "━ TRIGGER STATE  (24-3 → 24-2)")
+    sm_txt = sm == 1 ? "○ ARMED BUY" : sm == 2 ? "○ ARMED SELL" : "● WAITING"
+    sm_col = sm == 1 ? color.new(color.lime,20) : sm == 2 ? color.new(color.red,20) : color.gray
+    fire_this_bar = fire_buy or fire_sell
+    sm_right = fire_buy ? "◆ FIRED BUY" : fire_sell ? "◆ FIRED SELL" : ""
+    sm_right_c = fire_buy ? color.lime : fire_sell ? color.red : color.gray
+    CL(0,21, "State", color.silver)
+    C(1,21, sm_txt, sm_col, color.new(#05050f,88))
+    C(2,21, sm_right, sm_right_c, color.new(#05050f,88))
+    tmr = (sm==1 or sm==2) ? str.tostring(bar_index - sm_bar) + " / " + str.tostring(i_tout) + " bars" : "—"
+    CL(0,22, "ARM timer", color.silver)
+    C(1,22, tmr, color.new(color.silver,20), color.new(#05050f,88))
+    C(2,22, i_skip ? "skip-thru ON" : "sequential", color.new(color.gray,30), color.new(#05050f,88))
+
+    // ── MARKET PHASE ─────────────────────────────────────────────────
+    HDR(23, "━ MARKET PHASE  (ABC Stage)")
+    CL(0,24, "Phase", color.silver)
+    C(1,24, abc_label, abc_col, color.new(#05050f,88))
+    C(2,24, abc_ok ? "ENTRY OK" : "AVOID", abc_ok ? color.lime : color.red, color.new(#05050f,88))
+
+    // ── GATE STATUS ──────────────────────────────────────────────────
+    HDR(25, "━ HARD GATES")
+    adx_c  = gate_adx  ? color.lime : color.red
+    fer_c  = gate_fer  ? color.lime : color.red
+    kin_c  = gate_kin  ? color.lime : color.red
+    sess_c = gate_sess ? color.lime : color.gray
+    abc_c2 = gate_abc  ? color.lime : color.red
+
+    CL(0,26, "ADX", color.silver)
+    C(1,26, str.tostring(math.round(sb_adx, 1)) + " (need " + str.tostring(i_adx) + ")", adx_c, color.new(#05050f,88))
+    C(2,26, gate_adx ? "✓" : "✗", adx_c, color.new(#05050f,88))
+
+    CL(0,27, "FER", color.silver)
+    C(1,27, str.tostring(math.round(fer, 3)) + " (need " + str.tostring(i_fer) + ")", fer_c, color.new(#05050f,88))
+    C(2,27, gate_fer ? "✓" : "✗", fer_c, color.new(#05050f,88))
+
+    CL(0,28, "Kinetic", color.silver)
+    C(1,28, str.tostring(math.round(kinetic, 2)) + " (need " + str.tostring(i_kin) + ")", kin_c, color.new(#05050f,88))
+    C(2,28, gate_kin ? "✓" : "✗", kin_c, color.new(#05050f,88))
+
+    CL(0,29, "Session", color.silver)
+    sess_lbl = is_fx ? "LONDON / NY  ACTIVE" : "MARKET HOURS  ACTIVE"
+    C(1,29, sess_ok ? sess_lbl : "SESSION CLOSED", sess_c, color.new(#05050f,88))
+    C(2,29, sess_ok ? "✓" : "✗", sess_c, color.new(#05050f,88))
+
+    CL(0,30, "ABC Phase", color.silver)
+    C(1,30, abc_ok ? "OK (no contraction)" : "C_CONTRACTION", abc_c2, color.new(#05050f,88))
+    C(2,30, abc_ok ? "✓" : "✗", abc_c2, color.new(#05050f,88))
+
+    // All gates summary
+    all_c = all_gates ? color.lime : color.red
+    C(0,31, "ALL GATES", color.white, color.new(all_gates ? color.green : color.maroon, 65))
+    C(1,31, all_gates ? "✓  PASS — ENTRIES ALLOWED" : "✗  BLOCKED", all_c, color.new(all_gates ? color.green : color.maroon, 65))
+    C(2,31, "", color.new(#05050f,88), color.new(all_gates ? color.green : color.maroon, 65))
+
+    // ── EXIT SECTION ─────────────────────────────────────────────────
+    HDR(32, "━ EXIT  [" + i_xmode + "]")
+    if i_xmode == "FIXED"
+        CL(0,33, "Fixed trail", color.silver)
+        trail_txt = is_fx ?
+             str.tostring(i_trail) + " pips, activates at " + str.tostring(i_tact) + "× spread profit" :
+             "stop " + fmt(atr_cur * i_atrx_sl) + " (" + str.tostring(i_atrx_sl) + "×ATR)  trail " + fmt(atr_cur * i_atrx_tr) + " (" + str.tostring(i_atrx_tr) + "×ATR)"
+        C(1,33, trail_txt, color.silver, color.new(#05050f,88))
+        C(2,33, "Check M15 closes", color.new(color.gray,20), color.new(#05050f,88))
+    else
+        ema_cross_now = dyn_exit_l or dyn_exit_s
+        x_col = ema_cross_now ? color.orange : color.gray
+        x_lbl = dyn_exit_l ? "EXIT LONG ◄ EMA cross" : dyn_exit_s ? "EXIT SHORT ◄ EMA cross" : "Holding"
+        CL(0,33, "EMA " + str.tostring(i_ef) + "/" + str.tostring(i_es), color.silver)
+        C(1,33, x_lbl, x_col, color.new(#05050f,88))
+        e_rel = ema_f_exit > ema_s_exit ? "EMA" + str.tostring(i_ef) + " above" : "EMA" + str.tostring(i_ef) + " below"
+        C(2,33, e_rel, ema_f_exit > ema_s_exit ? color.lime : color.red, color.new(#05050f,88))
+
+    // ── MASTER SUMMARY ───────────────────────────────────────────────
+    HDR(34, "━ MASTER SCORE  (all 5 layers)")
+    score_bar = ""
+    for _i = 0 to 9
+        _thresh = (_i - 4.5) / 5.0
+        score_bar := score_bar + (master > _thresh ? "█" : "░")
+    C(0,35, "MASTER", color.white, color.new(master_dir==1?color.green:master_dir==-1?color.maroon:color.gray, 65))
+    C(1,35, master_txt + "  " + str.tostring(master_str) + "%  " + score_bar, master_col,
+             color.new(master_dir==1?color.green:master_dir==-1?color.maroon:color.gray, 65))
+    C(2,35, master_dir == 1 ? "BUY BIAS ▲" : master_dir == -1 ? "SELL BIAS ▼" : "NEUTRAL ─",
+             master_col, color.new(master_dir==1?color.green:master_dir==-1?color.maroon:color.gray, 65))
+
+    // ── LEVEL 2 GRID (MasterDashboard) ───────────────────────────────
+    HDR(36, "━ LEVEL 2 GRID")
+    CL(0,37, "Pivot", color.silver)
+    C(1,37, fmt(d1_pivot) + "   pos " + str.tostring(math.round(day_pos_pct)) + "% of D1",
+             close > d1_pivot ? color.lime : color.red, color.new(#05050f,88))
+    pos_note = day_pos_pct > 55 ? "upper range ▲" : day_pos_pct < 45 ? "lower range ▼" : "mid range ─"
+    C(2,37, pos_note, day_pos_pct > 55 ? color.lime : day_pos_pct < 45 ? color.red : color.gray, color.new(#05050f,88))
+
+    CL(0,38, "R1 · R2 · R3", color.new(color.red,20))
+    C(1,38, fmt(lvl_r1) + "  " + fmt(lvl_r2) + "  " + fmt(lvl_r3), color.new(color.red,20), color.new(#05050f,88))
+    C(2,38, "", color.new(#05050f,88), color.new(#05050f,88))
+    CL(0,39, "S1 · S2 · S3", color.new(color.lime,20))
+    C(1,39, fmt(lvl_s1) + "  " + fmt(lvl_s2) + "  " + fmt(lvl_s3), color.new(color.lime,20), color.new(#05050f,88))
+    C(2,39, "", color.new(#05050f,88), color.new(#05050f,88))
+
+    CL(0,40, "Y High/Low/Close", color.silver)
+    C(1,40, fmt(d1_prev_h) + "  " + fmt(d1_prev_l) + "  " + fmt(d1_prev_c), color.new(color.silver,20), color.new(#05050f,88))
+    C(2,40, "", color.new(#05050f,88), color.new(#05050f,88))
+
+    CL(0,41, "Fib 38.2 · 50 · 61.8", color.new(color.aqua,20))
+    C(1,41, fmt(fib_382) + "  " + fmt(fib_500) + "  " + fmt(fib_618), color.new(color.aqua,20), color.new(#05050f,88))
+    C(2,41, "", color.new(#05050f,88), color.new(#05050f,88))
+
+    sma_col = sma_sum >= 3 ? color.lime : sma_sum <= -3 ? color.red : color.gray
+    CL(0,42, "SMA stack", color.silver)
+    C(1,42, "21 " + smaa(sma21_pos) + "   34 " + smaa(sma34_pos) + "   233 " + smaa(sma233_pos), sma_col, color.new(#05050f,88))
+    C(2,42, sma_sum >= 3 ? "ALL ABOVE ✓" : sma_sum <= -3 ? "ALL BELOW ✓" : "MIXED", sma_col, color.new(#05050f,88))
+
+    stoch_note = stk[0] < 20 ? "OVERSOLD" : stk[0] > 80 ? "OVERBOUGHT" : "neutral"
+    stoch_col2 = stk[0] < 20 ? color.lime : stk[0] > 80 ? color.red : color.gray
+    CL(0,43, "Stoch cycle", color.silver)
+    C(1,43, "K " + str.tostring(math.round(stk[0],1)) + "  D " + str.tostring(math.round(std[0],1)) + "  " + stoch_note, stoch_col2, color.new(#05050f,88))
+    // trade-against-bias warning (MasterDashboard warn logic: 3+ voters oppose)
+    opp_votes = master_dir == 1 ? sb_vot_bear : master_dir == -1 ? sb_vot_bull : 0
+    warn_txt = master_dir != 0 and opp_votes >= 5 ? "(!) " + str.tostring(opp_votes) + "/15 OPPOSE" : ""
+    C(2,43, warn_txt, color.orange, color.new(#05050f,88))
+
+    // ── ROBOTRICK FADE (EA mirror) ───────────────────────────────────
+    if i_rt_on
+        HDR(44, "━ ROBOTRICK FADE  (EA mirror — mean reversion)")
+
+        rt_state_txt = rt_sig == 1 ? "◇ SIGNAL: BUY FADE" :
+                       rt_sig == -1 ? "◇ SIGNAL: SELL FADE" :
+                       rt_blocked ? "VOTES IN — TREND BLOCKS" : "WAITING"
+        rt_state_col = rt_sig == 1 ? color.aqua : rt_sig == -1 ? color.fuchsia :
+                       rt_blocked ? color.orange : color.gray
+        rt_v_str = "BB" + (rt_v_bb==1?"▲":rt_v_bb==-1?"▼":"─") +
+                   " CCI" + (rt_v_cci==1?"▲":rt_v_cci==-1?"▼":"─") +
+                   " STO" + (rt_v_stk==1?"▲":rt_v_stk==-1?"▼":"─") +
+                   " MACD" + (rt_v_macd==1?"▲":rt_v_macd==-1?"▼":"─")
+        CL(0,45, "State", color.silver)
+        C(1,45, rt_state_txt, rt_state_col, color.new(#05050f,88))
+        C(2,45, str.tostring(rt_buyv) + "B / " + str.tostring(rt_sellv) + "S  (need " + str.tostring(i_rt_votes) + ")",
+                rt_buyv >= i_rt_votes or rt_sellv >= i_rt_votes ? color.orange : color.new(color.gray,30),
+                color.new(#05050f,88))
+
+        rt_tr_txt = rt_trend == 1 ? "up (blocks BUY fade)" : rt_trend == -1 ? "dn (blocks SELL fade)" : "flat"
+        CL(0,46, "Voters", color.silver)
+        C(1,46, rt_v_str, rt_state_col == color.gray ? color.new(color.silver,20) : rt_state_col, color.new(#05050f,88))
+        C(2,46, "EMA20/50 " + (rt_trend==1?"▲ ":rt_trend==-1?"▼ ":"─ ") + rt_tr_txt,
+                rt_trend == 1 ? color.lime : rt_trend == -1 ? color.red : color.gray,
+                color.new(#05050f,88))
+
+        rt_lvl_txt = rt_sig != 0 ?
+             "SL " + fmt(rt_sl) + "  TP " + (na(rt_tp) ? "n/a (mean behind)" : fmt(rt_tp)) : "—"
+        rt_q_txt   = rt_sig == 0 ? "counter-trend: fires AGAINST bias by design" :
+                     rt_quality ? "quality ✓ bias not pinned" : "(!) bias fully pinned against"
+        rt_q_col   = rt_sig == 0 ? color.new(color.gray,40) :
+                     rt_quality ? color.lime : color.orange
+        CL(0,47, "SL/TP (" + i_rt_tpm + ", " + str.tostring(i_rt_slx) + "×ATR)", color.silver)
+        C(1,47, rt_lvl_txt, rt_sig != 0 ? color.new(color.silver,10) : color.new(color.gray,40), color.new(#05050f,88))
+        C(2,47, rt_q_txt, rt_q_col, color.new(#05050f,88))
+
+    // Bottom info bar
+    CL(0,48, "M5 entry · M15 manage · RoboTrick on H1/H4 · " + syminfo.ticker + " · " + (is_fx ? "FOREX" : "STOCKS/OTHER"), color.new(color.gray,40))
+    C(1,48, "", color.new(#05050f,88), color.new(#05050f,88))
+    C(2,48, "", color.new(#05050f,88), color.new(#05050f,88))
+
+// ══════════════════════════════════════════════════════════════════════
+// ALERTS
+// ══════════════════════════════════════════════════════════════════════
+alertcondition(fire_buy,
+     "NCI ◆ FIRE BUY  — ENTER LONG",
+     "NCI: BUY signal. All 5 layers aligned. Enter LONG next M5 open. magic 24151")
+
+alertcondition(fire_sell,
+     "NCI ◆ FIRE SELL  — ENTER SHORT",
+     "NCI: SELL signal. All 5 layers aligned. Enter SHORT next M5 open. magic 24151")
+
+alertcondition(arm_buy_new,
+     "NCI ○ ARM BUY  — Watching",
+     "NCI: BUY armed. SuperBias bear=3 (net +18). Watching for FIRE at bear=2.")
+
+alertcondition(arm_sell_new,
+     "NCI ○ ARM SELL  — Watching",
+     "NCI: SELL armed. SuperBias bull=3 (net -18). Watching for FIRE at bull=2.")
+
+alertcondition(i_xmode == "DYNAMIC" and dyn_exit_l,
+     "NCI EXIT Long  — EMA cross",
+     "NCI: EXIT LONG. EMA fast crossed below slow on M5. Close position.")
+
+alertcondition(i_xmode == "DYNAMIC" and dyn_exit_s,
+     "NCI EXIT Short  — EMA cross",
+     "NCI: EXIT SHORT. EMA fast crossed above slow on M5. Close position.")
+
+alertcondition(all_gates and master_dir == 1 and not arm_active,
+     "NCI Bull Condition Active",
+     "NCI: All gates green + strong bull bias. Stay alert for ARM/FIRE trigger.")
+
+alertcondition(all_gates and master_dir == -1 and not arm_active,
+     "NCI Bear Condition Active",
+     "NCI: All gates green + strong bear bias. Stay alert for ARM/FIRE trigger.")
+
+alertcondition(rt_fire_buy,
+     "NCI ◇ ROBOTRICK FADE BUY",
+     "RoboTrick: BUY fade. 3+ reversion voters at lower extremes, trend not up. Mirrors EA magic 24930-32. SL/TP on dashboard.")
+
+alertcondition(rt_fire_sell,
+     "NCI ◇ ROBOTRICK FADE SELL",
+     "RoboTrick: SELL fade. 3+ reversion voters at upper extremes, trend not down. Mirrors EA magic 24930-32. SL/TP on dashboard.")

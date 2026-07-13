@@ -1,0 +1,298 @@
+ptg5934432
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+OPTIONS
+TRADING FOR THE
+CONSERVATIVE
+INVESTOR
+ptg5934432
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+This page intentionally left blank
+ptg5934432
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+OPTIONS
+TRADING FOR THE
+CONSERVATIVE
+INVESTOR
+INCREASING PROFITS ptg5934432
+WITHOUT INCREASING
+YOUR RISK
+Michael C. Thomsett
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+Vice President,Publisher:Tim Moore
+Associate Publisher and Director ofMarketing:Amy Neidlinger
+Executive Editor:Jim Boyd
+Editorial Assistant:Pamela Boland
+Operations Manager:Gina Kanouse
+Senior Marketing Manager:Julie Phifer
+Publicity Manager:Laura Czaja
+Assistant Marketing Manager:Megan Colvin
+Cover Designer:Alan Clements
+Managing Editor:Kristy Hart
+Project Editors: Julie Anderson and Jovana San Nicolas-Shirley
+Copy Editor:Karen Gill
+Proofreader:Dan Knott
+Indexer:Michael C.Thomsett
+Senior Compositor:Gloria Schurick
+Manufacturing Buyer:Dan Uhrig
+©2010 by Pearson Education,Inc.
+Publishing as FT Press
+Upper Saddle River,New Jersey 07458
+This book is sold with the understanding that neither the author nor the publisher is engaged
+in rendering legal,accounting,or other professional services or advice by publishing this
+book.Each individual situation is unique.Thus,iflegal or financial advice or other expert
+assistance is required in a specific situation,the services ofa competent professional should
+be sought to ensure that the situation has been evaluated carefully and appropriately.The
+author and the publisher disclaim any liability,loss,or risk resulting directly or indirectly,
+from the use or application ofany ofthe contents ofthis book.
+FT Press offers excellent discounts on this book when ordered in quantity for bulk purchases
+or special sales.For more information,please contact U.S.Corporate and Government Sales,
+1-800-382-3419,corpsales@pearsontechgroup.com.For sales outside the U.S.,please contact
+International Sales at international@pearson.com. ptg5934432
+Company and product names mentioned herein are the trademarks or registered trademarks of
+their respective owners.
+All rights reserved.No part ofthis book may be reproduced,in any form or by any means,
+without permission in writing from the publisher.
+Printed in the United States ofAmerica
+First Printing January 2010
+ISBN-10:0-13-704200-0
+ISBN-13:978-0-13-704200-5
+Pearson Education LTD.
+Pearson Education Australia PTY,Limited.
+Pearson Education Singapore,Pte.Ltd.
+Pearson Education North Asia,Ltd.
+Pearson Education Canada,Ltd.
+Pearson Educación de Mexico,S.A.de C.V.
+Pearson Education—Japan
+Pearson Education Malaysia,Pte.Ltd.
+Library ofCongress Cataloging-in-Publication Data
+Thomsett,Michael C.
+Options trading for the conservative investor :increasing profits without increasing your risk /
+Michael C.Thomsett.— 2nd ed.
+p.cm.
+Includes bibliographical references and index.
+ISBN 978-0-13-704200-5 (hardback :alk.paper) 1. Stock options.2. Options (Finance) 3.
+Investments.4. Risk management. I.Title.
+HG6042.T462 2010
+332.63’2283—dc22
+2009036159
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+CONTENTS
+ACKNOWLEDGMENTS . . . . . . . . . . . .xi
+ABOUT THE AUTHOR . . . . . . . . . . . .xii
+PREFACE . . . . . . . . . . . . . . . . . . . . . . .xiii
+CHAPTER 1:SETTING THE GROUND RULES . . . .1
+The Ground Rules . . . . . . . . . . . . . . .2
+A Model Portfolio . . . . . . . . . . . . . . .4
+CHAPTER 2:OPTION BASICS . . . . . . . . . . . . . . . . . .7
+ptg5934432
+The Workings of Option
+Contracts . . . . . . . . . . . . . . . . . . . . .8
+Long and Short . . . . . . . . . . . . . . . .13
+Calls and Call Strategies . . . . . . . . .17
+Puts and Put Strategies . . . . . . . . . .22
+Listed Options and LEAPS
+Options . . . . . . . . . . . . . . . . . . . . . .28
+Coordinating Strategies with
+Portfolio Goals . . . . . . . . . . . . . . . .32
+Option and Stock Volatility:
+The Central Element of Risk . . . .35
+v
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+Trading Costs in the Option
+Analysis . . . . . . . . . . . . . . . . . . . . . .46
+Tax Rules for Options:
+An Overview . . . . . . . . . . . . . . . . . .47
+The Importance of Professional
+Advice and Tax Planning . . . . . . . .48
+CHAPTER 3:OPTIONS IN CONTEXT . . . . . . . . . . .51
+The Nature of Risk and Reward . . .52
+Perceptions about Options . . . . . . .60
+Short Positions: Naked or
+Covered . . . . . . . . . . . . . . . . . . . . . .63
+Margin Requirements and
+Trading Restrictions . . . . . . . . . . .68
+ptg5934432
+Return Calculations: Seeking
+Valid Comparisons . . . . . . . . . . . . .70
+Long-Term Goals as a
+Guiding Force . . . . . . . . . . . . . . . . .80
+Exercise as a Desirable Outcome . .82
+CHAPTER 4:MANAGING PROFITS
+AND LOSSES . . . . . . . . . . . . . . . . . . . . .85
+Your Conservative Dilemma . . . . . .87
+Managing Profits with Options . . .89
+Overcoming the Profit-Taking
+Problem . . . . . . . . . . . . . . . . . . . . .92
+vi
+OPTIONS TRADING FOR THE CONSERVATIVE INVESTOR
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+Managing the Inertia Problem . . . .99
+Taxes and Profits . . . . . . . . . . . . . .102
+CHAPTER 5:OPTIONS AS CASH
+GENERATORS . . . . . . . . . . . . . . . . . .107
+The Covered Call Concept . . . . . .108
+Examples: Ten Stocks and
+Covered Calls . . . . . . . . . . . . . . . .110
+Smart Conservative Ground
+Rules . . . . . . . . . . . . . . . . . . . . . . .115
+A Conservative Approach . . . . . . .121
+Tax Ramifications of
+Covered Calls . . . . . . . . . . . . . . . .125
+Rolling Forward and Up: ptg5934432
+Exercise Avoidance . . . . . . . . . . . .130
+The Exercise Acceptance
+Strategy . . . . . . . . . . . . . . . . . . . . .131
+CHAPTER 6:ALTERNATIVES TO STOCK
+PURCHASE . . . . . . . . . . . . . . . . . . . .133
+Leverage and Options . . . . . . . . . .134
+The Long-Call Contingent-
+Purchase Strategy . . . . . . . . . . . . .137
+The Covered Long Call . . . . . . . . .140
+Short Puts and Contingent
+Purchase . . . . . . . . . . . . . . . . . . . .144
+vii
+Contents
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+Rescue Strategy Using Calls . . . . .148
+Rescue Strategy Using Puts . . . . . .154
+Covered Calls for
+Contingent Sale . . . . . . . . . . . . . .155
+CHAPTER 7:OPTION STRATEGIES IN DOWN
+MARKETS . . . . . . . . . . . . . . . . . . . . . .157
+Thinking Outside the
+Market Box . . . . . . . . . . . . . . . . . .158
+The Long Put:
+The Overlooked Option . . . . . . .161
+Short Puts: A Variety of
+Strategies . . . . . . . . . . . . . . . . . . . .165
+Comparing Rates of Return for
+ptg5934432
+Dissimilar Strike Prices . . . . . . . .170
+Using Calls in Down Markets . . . .172
+Evaluating Your Stock Positions . .175
+Stock Positions and Risk
+Evaluation . . . . . . . . . . . . . . . . . . .180
+Options and Downside Risk . . . . .182
+Option Planning with
+Loss Carryover . . . . . . . . . . . . . . .185
+CHAPTER 8:COMBINATION CONSERVATIVE
+TECHNIQUES . . . . . . . . . . . . . . . . . .189
+Spread Techniques . . . . . . . . . . . . .190
+viii
+OPTIONS TRADING FOR THE CONSERVATIVE INVESTOR
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+Straddle Techniques . . . . . . . . . . . .192
+Long or Short Positions . . . . . . . . .194
+Theory Versus Practice . . . . . . . . .196
+Tax Problems with Combination
+Strategies . . . . . . . . . . . . . . . . . . . .199
+The Ultimate High-Return
+Strategy . . . . . . . . . . . . . . . . . . . . .200
+Examples of the Strategy in
+Practice . . . . . . . . . . . . . . . . . . . . .202
+Outcome Scenarios . . . . . . . . . . . .211
+The Augmented Strategy:
+A Short Straddle . . . . . . . . . . . . . .213
+Rescue Strategies . . . . . . . . . . . . . .218
+ptg5934432
+CHAPTER 9:STOCK SELECTION AND THE
+OPTION CONTRACT . . . . . . . . . . .221
+Remembering Your Conservative
+Profile as a Priority . . . . . . . . . . . .223
+Dangers and Pitfalls in Using
+Options . . . . . . . . . . . . . . . . . . . . .224
+Temptation to Select Most
+Volatile Stocks . . . . . . . . . . . . . . .226
+Creating Sensible Conservative
+Standards . . . . . . . . . . . . . . . . . . .228
+Maintaining Fundamental
+Clarity . . . . . . . . . . . . . . . . . . . . . .232
+ix
+Contents
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+The Importance of Taxes in the
+Option Equation . . . . . . . . . . . . .235
+Option Volatility to
+Judge Stocks . . . . . . . . . . . . . . . . .236
+APPENDIX: OPTION TRADING STRATEGIES . .239
+GLOSSARY . . . . . . . . . . . . . . . . . . . . .243
+INDEX . . . . . . . . . . . . . . . . . . . . . . . . .249
+ptg5934432
+x
+OPTIONS TRADING FOR THE CONSERVATIVE INVESTOR
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+ACKNOWLEDGMENTS
+Many thanks to Michael Panzner,Rudy Morando,Harry Domash,
+and Steve Kursh, all of whom added to this project with their
+suggestions. Also, I am most grateful to my editor, Jim Boyd, for his
+steady hand and guidance.
+ptg5934432
+xi
+Acknowledgments
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+ABOUT THE AUTHOR
+Michael C.Thomsett has published more than 70 books on investing
+and business topics, including Stock Profits: Getting to the Core (FT
+Press,2004) and many other books concerning options and stock mar-
+ket investing. His best-selling book Getting Started in Options (John
+Wiley & Sons, 2009) is in its 8th edition and has sold more than
+250,000 copies. He has written many other books published by John
+Wiley & Sons, Amacom Books, and Dearborn. Thomsett lives in
+Nashville,Tennessee.
+ptg5934432
+xii
+OPTIONS TRADING FOR THE CONSERVATIVE INVESTOR
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+PREFACE
+The Elusive Goal: Low Risk and High Yield
+There is good news about the market. Recent stock market trends
+have been troubling for just about everyone invested in stocks.The
+traditional approach of buy-and-hold and the trusted technique of
+value investing based on a study of the fundamentals seemed to fall
+apart beginning in 2008. Does this mean that buy-and-hold is dead?
+Not at all. The cyclical nature of the market simply went through a
+strong bear cycle, but the strength of the American stock market has
+shown time and again that downward movements are temporary and
+are always followed by record-breaking upward-moving markets.
+In the meantime,however,you may have seen most of your retirement
+savings and personal portfolio disappear.The staggering losses in even
+the best-known value investments brought into question the basic ptg5934432
+“safe” philosophy of the market. To protect yourself in this kind of
+volatile and uncertain environment,you need strategies to hedge loss-
+es; create extra sources of income; and most of all, reduce risk while
+increasing net yield.
+Is it even possible to match low risk with high yield in the volatile mar-
+kets that have dominated recent years? Most experts question the idea
+that risk-averse investors can outperform the market averages.
+However, this book challenges the conventional wisdom by demon-
+strating how conservative investors can exploit a narrow band ofpoten-
+tial strategies, dramatically increase yields, and, at the same time,
+manage risks within their self-defined risk limitations.
+To some conservative investors,options are too exotic and too risky.If
+a range of strategies is too much trouble or contains too many pitfalls,
+it is not worth pursuing.But a basic premise in this book is that a con-
+servative investor is not necessarily someone who does not want to
+expand beyond a well-understood and short list ofinvestment possibil-
+ities.Being a conservative investor does not necessarily mean that you
+xiii
+Preface
+From the Library of Lee Bogdanoff
+Download at WoweBook.Com
+are unwilling to examine new ideas, expand your portfolio, or take
+acceptable risks.It just means that you are not interested in speculation
+or in exposing yourself to the possibilities of high risk.
+Investors tend to be aware ofthe potential for high returns without also
+acknowledging that such strategies are usually acco

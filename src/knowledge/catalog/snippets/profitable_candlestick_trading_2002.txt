@@ -1,0 +1,196 @@
+PROFITABLE
+CANDLESTICK TRADING
+Pinpointing Market
+Opportunities to Maximize Profits
+Stephen Bigalow
+John Wiley & Sons, Inc.
+New York • Chichester • Weinheim • Brisbane • Singapore • Toronto
+PROFITABLE
+CANDLESTICK TRADING
+Copyright © 2002 by StephenBigalow. All rights reserved.
+Published by John Wiley & Sons, Inc.
+No part of this publication may be reproduced, stored in a retrieval system, or
+transmitted in any form or by any means, electronic, mechanical, photocopying,
+recording, scanning or otherwise, except as permitted under Section 107 or 108 of
+the 1976 United States Copyright Act, without either the prior written
+permission of the Publisher, or authorization through payment of the appropriate
+per-copy fee to the Copyright Clearance Center, 222 Rosewood Drive, Danvers,
+MA 01923, (978) 750-8400, fax (978) 750-4744. Requests to the Publisher for
+permission should be addressed to the Permissions Department, John Wiley &
+Sons, Inc., 605 Third Avenue, New York, NY 10158-0012, (212) 850-6011,
+fax (212) 850-6008, E-Mail: PERMREQ@WILEY.COM.
+This publication is designed to provide accurate and authoritative information in
+regard to the subject matter covered. It is sold with the understanding that the
+publisher is not engaged in rendering professional services. If professional advice
+or other expert assistance is required, the services of a competent professional
+person should be sought.
+This title is also available in print as ISBN 0-471-02466-X. Some content that appears
+in the print version of this book may not be available in this electronic edition.
+For more information about Wiley products, visit our web site at www.Wiley.com.
+ACKNOWLEDGMENTS
+This book was made possible through the influences and inspiration of many
+people. It is hard to decide who to mention first due to the integral input of
+all during the process of writing this book.
+My first and foremost thanks goes to my mother June Bigalow who has
+always been there to support my endeavors. I am also blessed with a great
+and supportive brother and sister, along with their families. Their support
+through this effort has been greatly appreciated.
+I am forever grateful for the encouragement from friends and business
+acquaintances, who have since become good friends, for their parts in advanc-
+ing the progress of this book. Drew and Dee Dee Vickers, Dan Dubose, Daryl
+and Barbara Thompson have been great inspirers. Wally and Rose Ann
+Peckham provided great coaching as well as a refuge to clear the mind for
+the next go-round of typing. Mark Storey has been a constant source of inno-
+vative ideas and procedures through the years for the development of invest-
+ment programs. Ken Melber has patiently gone through the experience of
+actual trading programs, sorting out the good and bad, and finally benefiting
+from the establishment of trading rules. Dave Goddard lent his genius in sta-
+tistical analysis whenever was requested.
+Professor Abbie Smith, of Chicago University, receives my thanks for
+being the initial inspiration for writing this book. Mike Harper, President of
+the Houston chapter of the Market Technicians Association, has been a great
+help with his extensive background in Elliot Wave analysis.
+Many thanks go to my friends and associates at Enron Corporation in
+Houston, Texas. Mike Roberts has my heartfelt thanks for the work he did
+way above the call of duty. His many hours of editing and format suggestions
+will never be forgotten. I don’t know what I would have done without his
+gracious assistance. Vince Kaminski and Gary Hickerson contributed invalu-
+able access to functional trading concepts and research integration along with
+intellectual encouragement. Consulting with the experts at Enron
+Corporation, a high-class, well-run operation, was a fantastic experience
+while writing the book. And it produced a great number of strong friendships.
+v
+vi Profitable Candlestick Trading
+Many thanks go to my Cornell University, DU fraternity buddies for their
+encouragement and insights. Their inspiration to put my best foot forward
+acted as a goal for me throughout my many hours of hunt-and-peck typing.
+Thanks to the CQG Company for providing clear and easy to work with
+charts. Also thanks to TC2000 for providing an efficient search software pro-
+gram.
+A special thanks goes out to my agent, Robert Deforio, for his guidance
+in working with publishers. And I feel fortunate to have worked with
+Claudio Campuzano at John Wiley & Sons, Inc. His counseling and guidance
+has made the experience of publishing this book a pleasant one. Marie
+Garcarz is greatly appreciated for her valued advice and direction.
+To keep from possibly blemishing any reputations associated with those
+acknowledged as providing something toward the completion of this book,
+it should be noted that any factual errors or omissions found within this book
+are solely my responsibility.
+CONTENTS
+Chapter 1 Introduction 1
+Chapter 2 The Reversal Patterns 19
+Chapter 3 Continuation Patterns 103
+Chapter 4 Major Signals Explained 129
+Chapter 5 Finding and Learning the Signals Made Easy 153
+Chapter 6 Common Patterns 161
+Chapter 7 Revolutionizing Investor Psychology 185
+Chapter 8 Analyzing Profitable Trades 203
+Chapter 9 Maximizing Profits 221
+Chapter 10 Trading Programs 239
+Chapter 11 Using Candlesticks to Improve Elliot Wave Analysis 259
+Chapter 12 Option Trading Refined 273
+Chapter 13 Candlesticks with Commodities and Futures 283
+Chapter 14 The Ultimate Investment Program 289
+vii
+viii Contents
+Chapter 15 Candlestick Trading Rules 301
+Chapter 16 Conclusion 307
+Glossary 311
+Index 317
+PREFACE
+Japanese Candlestick charting and analysis is one of the most effective tech-
+nical methodologies in the universe of technical analysis. This bold state-
+ment is consistent with the same statements that were made one to two
+decades ago in books written about Candlesticks when they were first intro-
+duced into the United States. The exact same problems that appeared to keep
+the Candlestick method out of the limelight back then have persisted to
+make Candlesticks still a fairly underused method today. Through the years,
+the number of people who have become proficient users of Candlestick analy-
+sis has been minimal. Nearly two decades of using the signals have produced
+two basic revelations: the signals are extremely accurate, and it is unusual
+that more people have not become advocates of the technique.
+One of the most powerful investment techniques has been sitting in front
+of the U.S. investment community, yet it has not exploded in popularity as
+one would expect. Years of informal surveys have reached this conclusion.
+There is a definite perception about Candlestick trading. It is seen as requir-
+ing a long time to learn and become proficient at it. That is the major rea-
+son the majority of investors have stayed away from Candlesticks. That
+misconception is what spurred the writing of this book. Other books on the
+topic were written nearly a decade ago. Those books were informational and
+well written, however, they were published in somewhat of a vacuum. Once
+the books were read, each investor was out there on his or her own. The num-
+ber of people to confer with after first becoming exposed to the Candlestick
+method was minimal. The ideas were new in the United States and there
+were few places to turn to for guidance.
+For the past two decades, most investors have been aware of Candlesticks.
+The most common statement is, “They know about Candlesticks; they just
+don’t know how they work.” An extremely high percentage of chart follow-
+ers have the Candlestick formations on their charts versus the standard bar
+charts. This is due to the favorable visual impact. The illustrative properties
+of the Candlestick chart make viewing much easier.
+Four hundred years of research by profitable Japanese rice traders was the
+inception of statistical analysis. What may take computers one afternoon to
+ix
+x Preface
+perform, the Japanese rice traders assembled over centuries of time. However,
+there is a definite benefit involved with human interpretation of these sig-
+nals. The Japanese traders were able to describe the investor sentiment
+behind the formation of the signals. This becomes an extremely powerful
+asset for exploiting profits from markets that involve human emotions.
+Being thoroughly convinced that Candlestick analysis surpasses all other
+technical analysis induced me to eliminate the misperceptions. Japanese
+Candlesticks is definitely not a passing fad. It is here stay and effectively
+extract profits from the trading markets—profits for those who take the lit-
+tle time required to become acquainted with the Candlestick thinking
+process.
+Not only does the knowledge of what a signal looks like benefit the can-
+dlestick educated investor, but learning the common-sense psychology that
+formed the signal provides the investor with a whole new perspective into
+successful investing. Somebody is making huge profits in the markets. It is
+not the conventional wisdom advocates, buy and hold. The big winners are
+those who have developed successful methods for interpreting when to buy
+and sell. Candlestick analysis is that method. Read this book and your invest-
+ment abilities will be forever improved, improved to the point of not just con-
+stantly exceeding market averages, but being able to exploit the indications
+of the signals to amass extraordinary profits.
+Once you learn the Japanese Candlestick technique, your understanding
+of how investment markets work will dramatically alter your investment
+psychology. The probabilities of producing magnificent profits will always
+be in your favor. Learn Candlesticks and reap the knowledge that has led to
+centuries of successful trading.
+Stephen W. Bigalow
+Houston, Texas
+Chapter 1
+INTRODUCTION
+The learning of books, that you do not make your own wisdom, is
+money in the hands of another in time of need. Japanese Proverb
+Japanese Candlestick analysis is a highly effective, but under-used invest-
+ment decision-making technique. Most people in the United States’ invest-
+ment community are aware of Candlestick analysis, but few understand how
+or why it actually works. Candlestick charts reveal many insights using well-
+recognized Japanese candlestick formations, yet few people understand
+the ramifications or significance of the signals that are clearly and reliably
+displayed.
+This book was written to educate investors on how to use the Japanese
+Candlestick technique profitably. The easy-to-follow procedures detailed in
+this book provide the reader with profit-making techniques that can be
+learned quickly. More importantly, learning the principles of market psy-
+chology underlying the Candlestick methodology will revolutionize the
+reader’s overall investment psyche forever. While this may sound bold and
+far-fetched, fortunes have been made using the Japanese Candlestick tech-
+niques. Knowing how to use the candlesticks and why they work will imme-
+diately improve the reader’s investment profitability and permanently alter
+overall investment perceptions. This newly acquired perception will produce
+consistent profits along with an associated mental re-programming designed
+to maximize investment returns. Once an investor becomes convinced of the
+reliability of the Candlestick methodology, that investor also acquires a pre-
+programmed investment discipline. As a result, Candlesticks add a whole
+new dimension to enhancing the investor’s profit-making abilities.
+Most readers will be surprised at how the knowledge gained from a close
+reading of this book dramatically enhances investment abilities across all
+investment vehicles and over all trading timeframes. More than 400 years
+of refined reversal-identification and trend continuity projection is now at
+the reader’s disposal. Mastering the candlestick methodology will be the next
+major step for maximizing investment returns.
+Why aren’t the Candlestick signals used more? Why, if the signals demon-
+strate such a high degr

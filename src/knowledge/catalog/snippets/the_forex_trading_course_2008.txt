@@ -1,0 +1,215 @@
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+The Forex
+Trading Course
+A Self-Study Guide to Becoming
+A Successful Currency Trader
+ABE COFNAS
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+The Forex
+Trading Course
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+Foundedin1807,JohnWiley&Sonsistheoldestindependentpublishingcompanyinthe
+UnitedStates.WithofficesinNorthAmerica,Europe,Australia,andAsia,Wileyisglob-
+allycommittedtodevelopingandmarketingprintandelectronicproductsandservices
+forourcustomers’professionalandpersonalknowledgeandunderstanding.
+TheWileyTradingseriesfeaturesbooksbytraderswhohavesurvivedthemarket’s
+ever-changing temperament and have prospered—some by reinventing systems, others
+by getting back to basics. Whether a novice trader, professional, or somewhere in be-
+tween, these books will provide the advice and strategies needed to prosper today and
+wellintothefuture.
+Foralistofavailabletitles,visitourWebsiteatwww.WileyFinance.com.
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+The Forex
+Trading Course
+A Self-Study Guide to Becoming
+A Successful Currency Trader
+ABE COFNAS
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+Copyright(cid:1)C 2008byAbeCofnas.Allrightsreserved.
+PublishedbyJohnWiley&Sons,Inc.,Hoboken,NewJersey.
+PublishedsimultaneouslyinCanada.
+WileyBicentennialLogo:RichardJ.Pacifico
+Nopartofthispublicationmaybereproduced,storedinaretrievalsystem,ortransmittedinanyformorby
+anymeans,electronic,mechanical,photocopying,recording,scanning,orotherwise,exceptaspermittedunder
+Section107or108ofthe1976UnitedStatesCopyrightAct,withouteitherthepriorwrittenpermissionofthe
+Publisher,orauthorizationthroughpaymentoftheappropriateper-copyfeetotheCopyrightClearanceCenter,
+Inc.,222RosewoodDrive,Danvers,MA01923,(978)750-8400,fax(978)646-8600,oronthewebat
+www.copyright.com.RequeststothePublisherforpermissionshouldbeaddressedtothePermissions
+Department,JohnWiley&Sons,Inc.,111RiverStreet,Hoboken,NJ07030,(201)748-6011,fax(201)748-6008,
+oronlineatwww.wiley.com/go/permissions.
+LimitofLiability/DisclaimerofWarranty:Whilethepublisherandauthorhaveusedtheirbesteffortsin
+preparingthisbook,theymakenorepresentationsorwarrantieswithrespecttotheaccuracyorcompleteness
+ofthecontentsofthisbookandspecificallydisclaimanyimpliedwarrantiesofmerchantabilityorfitnessfora
+particularpurpose.Nowarrantymaybecreatedorextendedbysalesrepresentativesorwrittensalesmaterials.
+Theadviceandstrategiescontainedhereinmaynotbesuitableforyoursituation.Youshouldconsultwitha
+professionalwhereappropriate.Neitherthepublishernorauthorshallbeliableforanylossofprofitorany
+othercommercialdamages,includingbutnotlimitedtospecial,incidental,consequential,orotherdamages.
+Forgeneralinformationonourotherproductsandservicesorfortechnicalsupport,pleasecontactour
+CustomerCareDepartmentwithintheUnitedStatesat(800)762-2974,outsidetheUnitedStatesat(317)
+572-3993orfax(317)572-4002.
+Wileyalsopublishesitsbooksinavarietyofelectronicformats.Somecontentthatappearsinprintmaynotbe
+availableinelectronicbooks.FormoreinformationaboutWileyproducts,visitourwebsiteatwww.wiley.com.
+Figures1.1,3.1,and5.5arereprintedwithpermissionofCQG,Inc.(cid:1)C 2006Allrightsreservedworldwide.
+LibraryofCongressCataloging-in-PublicationData:
+Cofnas,Abe,1950–
+TheForextradingcourse:aself-studyguidetobecomingasuccessful
+currencytrader/AbeCofnas.
+p.cm.—(Wileytradingseries)
+Includesindex.
+ISBN978-0-470-13764-2(pbk.)
+1.Foreignexchangefutures. 2.Foreignexchangemarket. 3.Speculation.
+I.Title.
+HG3853.C642008
+332.4(cid:2)5–dc22 2007019251
+PrintedintheUnitedStatesofAmerica
+10 9 8 7 6 5 4 3 2 1
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+Thisbookisdedicatedtomystudentsthroughouttheworld,whohavethe
+couragetotakeonthechallengeofforextrading.Ihavelearnedmuchfrom
+themabouttradingandaboutthehumancondition.
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+Contents
+Foreword ix
+Preface xi
+Acknowledgments xiii
+About the Author xv
+PART I What Drives the Forex Market? 1
+CHAPTER 1 The Fundamentals of Forex 3
+CHAPTER 2 The Role of Inflation 15
+CHAPTER 3 Exploiting Information About Economic Growth 19
+CHAPTER 4 The China Factor 27
+CHAPTER 5 The Commodities Connection 33
+CHAPTER 6 How Business Confidence and Consumer Sentiment
+Affect the Market 41
+CHAPTER 7 Fundamental Personalities of Currencies 43
+CHAPTER 8 The Personality and Performance of the U.S. Dollar 69
+CHAPTER 9 Conducting Your Own Fundamental Analysis 75
+PART II Timing the Trade with Technical Analysis 79
+CHAPTER 10 Mapping Price Action 81
+CHAPTER 11 Finding Significant Support and Resistance 91
+vii
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+viii CONTENTS
+CHAPTER 12 Volatility in Forex and Its Dimensions 105
+CHAPTER 13 Chart Formations and Price Patterns You
+Should Know 131
+CHAPTER 14 Trading Styles and Setups 143
+CHAPTER 15 Alternative Setups and Trading Strategies 161
+PART III Putting It Together 171
+CHAPTER 16 The Right Way To Use Simulation Accounts 173
+CHAPTER 17 Strategies and Challenges for Different
+Account Sizes 177
+CHAPTER 18 The Path to Success in Forex Trading 189
+CHAPTER 19 Test Your Forex IQ 195
+APPENDIX SelectedFuturesColumns 201
+Index 207
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+Foreword
+O
+ver30yearsago,AbeCofnaswasastudentofmineattheUniversityofCalifornia
+at Berkeley. At the time, I am certain to have delivered a long-held admonition:
+95 percent of what you read in economics will be either wrong or irrelevant. I
+am pleased to report that The Forex Trading Course falls into the 5 percent residual
+categoryofmaterialsthatareworthreading.
+Inadditiontosatisfyingthosewithahealthyobsessiontoworkonimprovingtheir
+professionalskills,TheForexTradingCoursewillforcereaderstothinkoutsidethebox
+and to develop an appetite for the pursuit of knowledge about trading. This, of course,
+isthemostimportantaspectofthebookandremindsmeofanobservationmadebySir
+HughRigby,surgeontoKingGeorgeV.SirHughwasonceasked,“Whatmakesagreat
+surgeon?”Hereplied,“Thereisn’tmuchtochoosebetweensurgeonsinmanualdexterity.
+Whatdistinguishesagreatsurgeoniswhoknowsmorethanothersurgeons.”Thesame
+canbesaidfortraders.
+In the interest of putting the reader a leg up, an understanding of the structure
+of exchange-rate regimes is essential. There are three distinct types of exchange-rate
+regimes—floating, fixed, and pegged—each with different characteristics and different
+results.
+Hanke’sFXTrichotomy
+Conflictsbetween
+Sourceof Exchange-Rate Balance-of-
+Typeof Exchange- Monetary Monetary andMonetary Payments Exchange
+Regime RatePolicy Policy Base Policy Crisis Controls
+Floating No Yes Domestic No No No
+Fixed Yes No Foreign No No No
+Pegged Yes Yes Domestic Yes Yes Maybe
+andForeign
+ix
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+x FOREWORD
+Although floating and fixed rates appear dissimilar, they are members of the same
+free-marketfamily.Bothoperatewithoutexchangecontrolsandarefree-marketmech-
+anisms for balance-of-payments adjustments. With a floating rate, a central bank sets a
+monetarypolicybuthasnoexchange-ratepolicy—theexchangerateisonautopilot.In
+consequence, the monetary base is determined domestically by a central bank. With a
+fixedrate,therearetwopossibilities:eitheracurrencyboardsetstheexchangeratebut
+hasnomonetarypolicy—themoneysupplyisonautopilot—oracountryis“dollarized”
+and uses a foreign currency as its own. In consequence, under a fixed-rate regime, a
+country’smonetarybaseisdeterminedbythebalanceofpayments,movinginaone-to-
+onecorrespondencewithchangesinitsforeignreserves.Withbothofthesefree-market,
+exchange-ratemechanisms,therecannotbeconflictsbetweenmonetaryandexchange-
+ratepolicies,andbalance-of-paymentscrisescannotreartheiruglyheads.Indeed,under
+floating- and fixed-rate regimes, market forces act to automatically rebalance financial
+flowsandavertbalance-of-paymentscrises.
+Fixed and pegged rates appear to be the same. However, they are fundamentally
+different:pegged-ratesystemsoftenemployexchangecontrolsandarenotfree-market
+mechanisms for international balance-of-payments adjustments. Pegged rates require a
+centralbanktomanageboththeexchangerateandmonetarypolicy.Withapeggedrate,
+themonetarybasecontainsbothdomesticandforeigncomponents.Unlikefloatingand
+fixedrates,peggedratesinvariablyresultinconflictsbetweenmonetaryandexchange-
+rate policies. For example, when capital inflows become “excessive” under a pegged
+system, a central bank often attempts to sterilize the ensuing increase in the foreign
+component of the monetary base by selling bonds, reducing the domestic component
+of the base. And when outflows become “excessive,” a central bank attempts to offset
+the decrease in the foreign component of the base by buying bonds, increasing the do-
+mesticcomponent of themonetary base. Balance-of-payments criseserupt as acentral
+bank begins to offset more and more of the reduction in the foreign component of the
+monetarybasewithdomesticallycreatedbasemoney.Whenthisoccurs,itisonlyamat-
+ter of time before currency speculators spot the contradictions between exchange-rate
+andmonetarypolicies(astheydidintheAsianfinancialcrisisof1997–1998)andforcea
+devaluationortheimpositionofexchangecontrols.
+SteveH.Hanke
+ProfessorofAppliedEconomics
+JohnsHopkinsUniversity
+Baltimore
+July2007
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+Preface
+A
+s forex’s popularity increases to unprecedented levels, people around the world
+areconsideringitspotential.Therearemanyreasonsforitspopularity.First,we
+are truly in an online revolution, powered by the globalization of the Internet.
+From your desktop—whether at home, an airport, or at an Internet cafe´—you can ac-
+tuallytradeanyoftheworld’scurrencies.Theimplicationsareprofound.Peoplecanbe
+liberated from the confines of one’s economy and engage in a new profession—forex
+trading. Additionally, globalization of the world’s economies has created great uncer-
+tainty regarding individual career paths. Individuals can no longer expect to work for
+oneemployer.BabyBoomersarefacingtheopportunityandchallengeofpost-retirement
+careers.
+In response to forex’s popularity, many new trading firms and training firms have
+arisen to supply services to this new group of aspiring forex traders. The result has
+been a cacophony of information overload, instant gurus, and instant trading solu-
+tions that appeal to those looking for shortcuts to success. These programs essen-
+tially confuse people and divert them from a realistic approach to training in forex
+trading.
+This book is written for the purpose of providing a getting started guide in forex
+trading.It,however,isnotonlyforthepersonnewtoforex,butforthosewhohavetried
+totradeforexbutreceivedmixedresultsthroughtrialanderror.Itisalsoforthosewho
+have experience in trading other markets and seek to apply that experience to forex.
+They will be able to build upon their experience and gain new insights into how to ap-
+proach forex. Those who have achieved a level of initial success but seek to optimize
+theirperformancewillfindtrainingstrategiesandtacticsparticularlyuseful.
+The underlying premise of this book is that traders are not born—they evolve. Our
+goalistosharpentheinsightsandtheskillsofthereaderbyprovidingbothfundamental
+andtechnicalknowledgethatarecommontosuccessfultraders.Anunderlyingphiloso-
+phyofthisbookisthatsuccessfulforextradingrequiresatotalapproachthatintegrates
+fundamentals,technicalanalysis,andpsychology.
+xi
+FM JWPR051-Cofnas(JWBK051-Cofnas) August22,2007 7:45 CharCount=
+xii PREFACE
+Thebookisorganizedasaself-pacedsourcebook.Eachchaptertopicisinessence
+amoduleofknowledge,whichcanbereadindividuallyorsequentially.
+(cid:1)
+PartI(Chapters1–9)focusesontheforcesthatmoveprices,alsoknownasfunda-
+mentals. The topics included in the fundamentals show the reader how to use fun-
+damentalkn

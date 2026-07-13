@@ -1,0 +1,260 @@
+T R A D E S E C R E T S
+TTThhheee FFFooouuurrr
+BBBiiiggggggeeesssttt
+MMMiiissstttaaakkkeeesss
+F U T U R E S T R A D I N G
+in
+J AY K A E P P E L
+DIRECTOR OF RESEARCH, ESSEX TRADING COMPANY, LTD.
+The Four Biggest Mistakes in Futures Trading 1
+THE FOUR BIGGEST
+MISTAKES IN
+FUTURES TRADING
+BY JAY KAEPPEL
+Copyright © 2000 by Jay Kaeppel
+Published by Marketplace Books.
+All rights reserved.
+Reproduction or translation of any part of this work
+beyond that permitted by section 107 or 108 of the 1976
+United States Copyright Act without the permission of the
+copyright owner is unlawful. Requests for permission or
+further information should be addressed to the Permissions
+Department at Traders’ Library.
+(Phone #800-272-2855 extension T155)
+This publication is designed to provide accurate and
+authoritative information in regard to the subject matter
+covered. It is sold with the understanding that neither the
+author nor the publisher is engaged in rendering legal,
+accounting, or other professional service. If legal advice
+or other expert assistance is required, the services of a
+competent professional person should be sought.
+From a Declaration of Principles jointly adopted by
+a Committee of the American Bar Association and a
+Committee of Publishers.
+This book, along with other books, are available at
+discounts that make it realistic to provide them as
+gifts to your customers, clients, and staff. For more
+information on these long lasting, cost effective
+premiums, please call John Boyer at 800.424.4550
+or e-mail him at john@traderslibrary.com.
+ISBN 1-883272-08-4
+Printed in the United States of America.
+The Four Biggest Mistakes in Futures Trading 3
+T
+o Maggie, Jenny and Jimmy
+d
+S
+pecial thanks to David and Suzanne
+ConThte eFounr Btiggsest Mistakes in Futures Trading 5
+INTRODUCTION 1
+The Bad News, The Worse News, The Good News and
+The Better News 1
+Why So Many Fail 1
+What Sets Futures Trading Apart 2
+Attacking From The Bottom Up Versus The Top Down 3
+One Word of Warning 4
+Topics To Be Covered 5
+MISTAKE #1: LACK OF A TRADING PLAN 7
+What is Mistake #1 7
+Why Do Traders Make Mistake #1 8
+The Recipe For Trading Success
+(That Nobody Wants To Hear) 10
+How To Avoid Mistake #1 11
+The Litmus Test 12
+How Much Capital Will You Commit To Futures Trading 13
+What Market or Markets Will You Trade 14
+What Type of Trading Time Frame Is Best For You 16
+What Type of Trading Method Will You Use 20
+What Criteria Will You Use To Enter a Trade 21
+What Criteria Will You Use To Exit A Trade With A Profit 22
+What Criteria Will You Use To Exit A Trade With A Loss 23
+A Word Of Advice: Adhere to the Four Cornerstones 25
+Go With The Trend 25
+Cut Your Losses 26
+Let Your Profits Run / Don’t Let Big Winners Get Away 26
+Summary 27
+MISTAKE #2 : USING TOO MUCH LEVERAGE 29
+What is Mistake #2 29
+Understanding Leverage 31
+Why Do Traders Make Mistake #2 34
+How To Avoid Mistake #2 35
+The Role of Mechanical Trading Systems 37
+Determining The Amount of Capital Required 37
+Single Market Factor #1: Optimal f 37
+Calculating Optimal f 39
+Single Market Factor #2: Largest Overnight Gap 40
+Single Market Factor #3: Maximum Drawdown 43
+6 The Four Biggest Mistakes in Futures Trading
+One Caveat to Analyzing Trading System Results 45
+Arriving at a Suggested Dollar Value Per Contract 46
+Arriving at an “Aggressive” Suggested Account Size 48
+Arriving at a “Conservative” Suggested Account Size 49
+Arriving at an “Optimum” Suggested Account Size
+for Your Portfolio 50
+Digging a Little Deeper 51
+Summary 52
+MISTAKE #3: FAILURE TO CONTROL RISK 55
+What is Mistake #3 55
+Why Do Traders Make Mistake #3 56
+How To Avoid Mistake #3 58
+Risk Control Method #1: Diversification
+Among Different Markets 60
+Risk Control Method #2: Diversification Among
+Trading Time Frames and Methods 63
+Risk Control Method #3: Proper Account Sizing 65
+Risk Control Method #4: Margin-to-Equity Ratio 66
+Risk Control Method #5: Stop-Loss Orders 69
+Placing a Stop-Loss Order In the Market Place 69
+Using Mental Stops 71
+Not Using Stop-Loss Orders At All 73
+The One Important Benefit of Stop-Loss Orders 74
+Summary 75
+MISTAKE #4: LACK OF DISCIPLINE 77
+What is Mistake #4 77
+Why Do Traders Make Mistake #4 81
+How To Avoid Mistake #4 82
+Overcoming The IQ Obstacle 83
+A Word of Advice: Don’t Think, React 85
+Avoid Simple Traps 87
+The Cure for “Woulda, Shoulda, Coulda” 89
+System Development versus System “Tinkering” 91
+Asking The Right Question 93
+Summary 96
+CONCLUSION 98
+APPENDIX A: Mathematical Formula for Standard Deviation 103
+Standard Deviations 103
+(cid:84)(cid:72)(cid:69) (cid:70)(cid:79)(cid:85)(cid:82) (cid:66)(cid:73)(cid:71)(cid:71)(cid:69)(cid:83)(cid:84) (cid:77)(cid:73)(cid:83)(cid:84)(cid:65)(cid:75)(cid:69)(cid:83) (cid:73)(cid:78) (cid:70)(cid:85)(cid:84)(cid:85)(cid:82)(cid:69)(cid:83) (cid:84)(cid:82)(cid:65)(cid:68)(cid:73)(cid:78)(cid:71)
+INTRODUCTION
+The Bad News, The Worse News,
+The Good News and The Better News
+First the bad news: best estimates suggest that 90% of
+individuals who trade commodity futures lose money doing
+so. Now for the worse news: This estimate may be too low.
+The sad fact is that somewhere along the way the majority
+of traders make one or more critical mistakes in their
+trading, which cause their losses to exceed their winnings.
+The good news is that the mistakes that cause most losing
+traders to fail are quite common and readily identified.
+These mistakes will be detailed in this book. The better
+news is that by being aware of the potential for making
+these mistakes and by taking steps to avoid them, you can
+make a great leap towards becoming a more consistently
+profitable trader. The information contained in this book
+will help you to become a more successful trader – not
+necessarily by teaching you to be a “good” trader, but by
+teaching you how not to be a “bad” trader.
+Why So Many Fail
+To generalize using the broadest stroke possible, the high
+rate of failure among futures traders can be attributed
+primarily to three factors:
+(cid:49)
+(cid:84)(cid:82)(cid:65)(cid:68)(cid:69) (cid:83)(cid:69)(cid:67)(cid:82)(cid:69)(cid:84)(cid:83)
+• The lure of easy money
+• The lure of excitement
+• An utter lack of preparedness to deal with the potential
+downside
+Unfortunately, it seems that many individuals are lured into
+futures trading for a lot of the wrong reasons. To draw
+an appropriate analogy regarding futures markets and
+futures traders, consider the following scenario.
+Suppose someone offered anyone who shows up the
+opportunity to drive an Indy race car around the track
+with the promise that the person with the fastest time will
+receive a $10,000,000 prize. Will a lot of people show
+up to take a shot? You bet. Will most of them be truly
+prepared for what they are about to do? Not likely. Will
+someone win the $10,000,000? Of course. Will 90% of
+the drivers fail to make it to the finish line?
+Welcome to the exciting world of commodities speculation!
+What Sets Futures Trading Apart
+The staggering rate of failure among futures traders raises
+several extremely relevant questions:
+1)What is it about futures trading that causes such a high
+percentage of participants to fail?
+2)Is there a way to avoid the pitfalls that claim so many
+traders?
+3)If the failure rate is so high, why does anybody bother
+trading futures in the first place?
+(cid:50)
+(cid:84)(cid:72)(cid:69) (cid:70)(cid:79)(cid:85)(cid:82) (cid:66)(cid:73)(cid:71)(cid:71)(cid:69)(cid:83)(cid:84) (cid:77)(cid:73)(cid:83)(cid:84)(cid:65)(cid:75)(cid:69)(cid:83) (cid:73)(cid:78) (cid:70)(cid:85)(cid:84)(cid:85)(cid:82)(cid:69)(cid:83) (cid:84)(cid:82)(cid:65)(cid:68)(cid:73)(cid:78)(cid:71)
+What is it about futures trading that causes so many people
+to fail? People who have been successful in every other
+endeavor in life start trading futures and quickly watch the
+equity in their trading accounts vanish. Why is this? The
+answer is really very simple. It is because futures trading
+is unlike any other endeavor in life. If this sounds like an
+overstatement, rest assured it is not.
+There are several factors that set futures trading apart from
+other forms of investment. To begin with, unlike the stock
+market, where rising prices can make any number of people
+richer, futures trading is a “zero sum” game. This means
+that for every dollar you make trading, somebody else is
+losing a dollar. If it is true that 90% of traders lose money,
+then we must conclude that a small minority of traders are
+making all the money at the expense of the vast majority.
+Secondly, the futures markets involve a great deal more
+leverage than most other types of investments. To put it
+into comparative terms, if the stock market were a race car,
+then the futures markets would be a rocket ship. While a
+car going 200 miles hour is certainly “fast,” its speed pales
+in comparison to that of a rocket ship traveling 3,000 miles
+an hour. Finally, futures trading offers speculators the
+opportunity to generate spectacularly exciting rates of return,
+far beyond those available from other forms of investment.
+Maybe that is part of the problem.
+Attacking From The Bottom Up
+Versus The Top Down
+Many outstanding books have been written that focus on
+successful traders and how they have achieved their
+(cid:51)
+(cid:84)(cid:82)(cid:65)(cid:68)(cid:69) (cid:83)(cid:69)(cid:67)(cid:82)(cid:69)(cid:84)(cid:83)
+successes. There is much to be learned from these books.
+The only real problem with books that focus on successful
+traders is the reader can come away with a false sense of
+security. People may assume that by emulating the greatest
+traders around they can be just as successful. But is that
+a realistic expectation? Just because you know how
+someone else succeeded in a particular field of endeavor
+does not necessarily mean that you can duplicate his or her
+success. Just because you read a book about how Warren
+Buffet selects stocks doesn’t mean that you are destined to
+be as good at it as he is. Yet this is how a lot of people
+approach investing. They read a book or look at an ad
+that tells them “how easy it is” to make money and later
+on they are that much more surprised when they find out
+that it is not so easy after all. There is much to be gained
+by learning from and attempting to emulate traders who
+have enjoyed a great deal of success. The danger is in
+assuming that you will enjoy the same type of success
+without paying some dues along the way.
+This book takes the opposite view. Instead of focusing on
+the traits that allow 10% of futures traders to be successful,
+this book focuses on the most common and costliest pitfalls
+that claim the 90% of traders who lose money. Consider
+this the “how not to” lesson. By avoiding the mistakes
+detailed in this book you clear your path of the major
+obstacles that doom the majority of futures traders to
+failure.
+(cid:52)
+(cid:84)(cid:72)(cid:69) (cid:70)(cid:79)(cid:85)(cid:82) (cid:66)(cid:73)(cid:71)(cid:71)(cid:69)(cid:83)(cid:84) (cid:77)(cid:73)(cid:83)(cid:84)(cid:65)(cid:75)(cid:69)(cid:83) (cid:73)(cid:78) (cid:70)(cid:85)(cid:84)(cid:85)(cid:82)(cid:69)(cid:83) (cid:84)(cid:82)(cid:65)(cid:68)(cid:73)(cid:78)(cid:71)
+One Word of Warning
+If you are presently trading futures unsuccessfully or have
+done so in the past, you may be about to take a cold, hard
+look in the mirror and you may not like what you see.
+But as with anything else that might cause you to look in
+the mirror, the most important question to answer is not
+“do I like what I see?” The more important question to
+answer is “if I don’t like what I see, am I willing to change
+my ways?” Generating a positive response to this question,
+as well as offering some guidance as to where to start, is
+the primary purpose of this book.
+Topics To Be Covered
+I. The Four Biggest Mistakes In Futures Trading
+1. Lack of a Trading Plan
+2. Using Too Much Leverage
+3. Failure to Control Risk
+4. Lack of Discipline
+II. Why Do Traders Make This Mistake
+III. How To Avoid This Mistake
+For each of the four biggest mistakes in futures trading we
+will first discuss what the mistak

@@ -1,0 +1,235 @@
+P-00_4218 4/26/04 3:32 PM Page iii
+A
+Complete
+Guide to
+Technical
+Trading
+Tactics
+How to Profit Using Pivot
+Points,Candlesticks &
+Other Indicators
+JOHN L. PERSON
+John Wiley &Sons, Inc.
+P-00_4218 4/26/04 3:32 PM Page viii
+P-00_4218 4/26/04 3:32 PM Page i
+A
+Complete
+Guide to
+Technical
+Trading
+Tactics
+P-00_4218 4/26/04 3:32 PM Page ii
+Founded in 1807, John Wiley & Sons is the oldest independent publishing
+company in the United States. With offices in North America, Europe, Aus-
+tralia, and Asia, Wiley is globally committed to developing and marketing
+print and electronic products and services for our customers’ professional
+and personal knowledge and understanding.
+The Wiley Trading series features books by traders who have survived the
+market’s ever-changing temperament and have prospered—some by rein-
+venting systems, others by getting back to basics. Whether a novice trader,
+professional, or somewhere in-between, these books will provide the ad-
+vice and strategies needed to prosper today and well into the future.
+For a list of available titles, visit our web site at www.WileyFinance.com.
+P-00_4218 4/26/04 3:32 PM Page iii
+A
+Complete
+Guide to
+Technical
+Trading
+Tactics
+How to Profit Using Pivot
+Points,Candlesticks &
+Other Indicators
+JOHN L. PERSON
+John Wiley &Sons, Inc.
+P-00_4218 4/26/04 3:32 PM Page iv
+Copyright © 2004 by John L. Person. All rights reserved.
+Published by John Wiley & Sons, Inc., Hoboken, New Jersey.
+Published simultaneously in Canada.
+No part of this publication may be reproduced, stored in a retrieval system, or
+transmitted in any form or by any means, electronic, mechanical, photocopying,
+recording, scanning, or otherwise, except as permitted under Section 107 or 108 of
+the 1976 United States Copyright Act, without either the prior written permission
+of the Publisher, or authorization through payment of the appropriate per-copy fee
+to the Copyright Clearance Center, Inc., 222 Rosewood Drive, Danvers, MA 01923,
+978-750-8400, fax 978-646-8600, or on the web at www.copyright.com. Requests to
+the Publisher for permission should be addressed to the Permissions Department,
+John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ 07030, 201-748-6011, fax
+201-748-6008.
+Limit of Liability/Disclaimer of Warranty: While the publisher and author have used
+their best efforts in preparing this book, they make no representations or war-
+ranties with respect to the accuracy or completeness of the contents of this book
+and specifically disclaim any implied warranties of merchantability or fitness for a
+particular purpose. No warranty may be created or extended by sales representa-
+tives or written sales materials. The advice and strategies contained herein may not
+be suitable for your situation. You should consult with a professional where appro-
+priate. Neither the publisher nor author shall be liable for any loss of profit or any
+other commercial damages, including but not limited to special, incidental, conse-
+quential, or other damages.
+For general information on our other products and services, or technical support,
+contact our Customer Care Department within the United States at 800-762-2974,
+outside the United States at 317-572-3993 or fax 317-572-4002.
+Wiley also publishes its books in a variety of electronic formats. Some content that
+appears in print may not be available in electronic books.
+For more information about Wiley products, visit our web site at www.wiley.com.
+Library of Congress Cataloging-in-Publication Data
+Person, John L.
+A complete guide to technical trading tactics : how to profit using pivot
+points, candlesticks & other indicators / John L. Person
+p. cm.
+“Published simultaneously in Canada.”
+Includes bibliographical references and index.
+ISBN 0-471-58455-X (cloth)
+1. Stocks—Charts, diagrams, etc. 2. Investment analysis. 3. Futures.
+4. Options (Finance) I. Title.
+HG4638 .P47 2004
+332.63′2042—dc22
+2003026687
+Printed in the United States of America
+10 9 8 7 6 5 4 3 2 1
+P-00_4218 4/26/04 3:32 PM Page v
+Contents
+Preface ix
+Acknowledgments xv
+CHAPTER 1 Introduction to Futures and Options:
+Understanding the Mechanics 1
+How the markets work, the elevator analogy, product for the times, important
+terminology such as margin, contract specifications, and leverage
+CHAPTER 2 Fundamentals:
+The Market Driver 19
+Supply and demand issues, economic growth and productivity effects, major eco-
+nomic reports and their in role in market prices
+CHAPTER 3 Technical Analysis:
+The Art of Charts 33
+Western-style bar charts and key reversals, point-and-figure charts that focus only
+on price, market profiling, price and time analysis
+CHAPTER 4 Candle Charts:
+Lighting the Path 43
+Enlightening charting technique and its colorfully named patterns—hammers,
+stars, spinning tops, dojis, hanging man, and others—powerful reversal patterns,
+reliable continuation patterns, key examples in the dollar and bonds
+v
+P-00_4218 4/26/04 3:32 PM Page vi
+vi CONTENTS
+CHAPTER 5 Chart Analysis:
+Volume, Open Interest, Price Patterns 67
+Volume and open interest rules for traders, M tops and W bottoms, trend lines,
+measuring patterns, the head-and-shoulders, triangles, pennants and flags, dia-
+monds, wedges, funnels, gaps, islands, rounded bottoms, oops signals, opening
+range breakouts
+CHAPTER 6 Pivot Point Analysis:
+A Powerful Weapon 93
+The pivot point formula for target trading, calculating support and resistance lev-
+els, importance of multiple verification from several sources, the P3T trading tech-
+nique, weekly and monthly charts and numbers, risk management techniques
+CHAPTER 7 Day-Trading, Swing Trading:
+Acting on Analysis 113
+Trading to bounce off target numbers, calling tops and bottoms, weekly chart
+magnets, harami cross and other candle clues to market reversals, pivot points
+save the day, lining up the stars, the verify-verify-verify approach
+CHAPTER 8 Technical Indicators:
+Confirming Evidence 135
+Moving averages and trends, simple rules with averages, tweaking and visualizing
+MACD, stochastics, false signals, Gann’s key numbers, Fibonacci ratios and projec-
+tions, time counts for cycles, Elliott wave and its clues
+CHAPTER 9 Market Sentiment:
+What Traders Are Thinking 161
+Getting a market consensus from contrary opinion, Commitments of Traders
+reports, margin rate changes, Market Vane Bullish Consensusreport, put-to-call
+ratios, volatility index (VIX), when the boat is tipping over, media effect
+CHAPTER 10 Order Placement:
+Executing the Plan 171
+Importance of getting an order right, online platform concerns, impact of market
+conditions on orders, 14 top order entry selections you need to know, orders in
+after-hours trading, spreading concepts
+P-00_4218 4/26/04 3:32 PM Page vii
+Contents vii
+CHAPTER 11 The Mental Game:
+Inside the Trader 189
+Conquering fear, learning discipline, improving confidence, suggestions for suc-
+cess, I’ll-think-about-it syndrome, the paper trader, fear and greed factors, becom-
+ing a specialist, setting up an investment diary, setting a positive mind frame,
+dealing with adrenaline, establishing goals, positive affirmations, stress relief
+techniques, rewarding success to build success
+CHAPTER 12 The Tactical Trader:
+Tips and Techniques That Work 203
+Pyramiding approaches, scale trading, stop reversals, breakouts, momentum trad-
+ing, the Friday 10:30 a.m. rule, stop placement near a magnet, trading multiple
+contracts
+CHAPTER 13 Options:
+A Primer 217
+What options are and how to use them with futures, simple puts and calls,
+options premiums, the Greeks, comparison shopping, strangles and straddles,
+eight top option spreads, delta neutral techniques
+CHAPTER 14 Closing Bell:
+My Top 10 List 235
+What the experts suggest, top 10 trading thoughts, measuring success
+Glossary 241
+Bibliography 253
+Index 255
+P-00_4218 4/26/04 3:32 PM Page viii
+P-00_4218 4/26/04 3:32 PM Page ix
+Preface
+T
+he purpose of this book is to share some of the tips, techniques, and
+observations that have worked for me and other highly successful
+traders. After nearly 23 years as a registered broker in the futures and
+options field, I have come to know quite a few successful traders and have
+personally made many successful trades. I have also experienced my share
+of disasters and have known traders and investors who were doomed for
+permanent failure. Therefore, I am writing this book to help the new indi-
+vidual investor understand the mechanics of the markets and to serve as a
+refresher for the seasoned veteran trader.
+Most of the trade examples demonstrated in this book were direct trade
+recommendations from either The Bottom Line Financial and Futures
+Weekly Newsletteror those that appeared in the daily Dow report provided
+through the Chicago Board of Trade web site and at www.nationalfutures
+.com. Rather than demonstrating just one methodology of trading tactics
+using pivot point analysis, I wanted to show through various techniques how
+you can implement these calculations with other methods and indicators.
+Much of what I have learned over the course of 23 years in the industry did
+come from hard work and, I must admit, being around the right people at the
+right time. I do not want you to abandon your knowledge of traditional tech-
+nical analysis techniques. I would just like you to be open to integrating the
+numbers to help you confirm, validate, and identify entry and exit points
+when trading.
+I also want to relay the message that mathematically calculated support
+and resistance numbers, or pivot points, work on different markets and
+should be derived from different time frames—not only from a daily basis,
+but also from a weekly and monthly time frame.
+In addition, as most of the readers either know or will find out, trading
+is also a combination of strong emotional and personal characteristics.
+Through my experience and observations, I want to share and explain what
+ix
+P-00_4218 4/26/04 3:32 PM Page x
+x PREFACE
+works and what does not but, more important, to disclose why things go
+wrong when they do for those who failed. I believe it is important to take an
+inventory, so to speak, when things go right to capitalize on that experience
+by examining what you did so the results can be repeated. It is just as im-
+portant to examine what went wrong so you can learn from the experi-
+ence. By sharing with you the experiences and techniques that I and other
+professional traders have learned, the hope is that you will benefit and be-
+come a more profitable trader.
+I firmly believe that traders from all different levels of experience will
+benefit from the information contained in this book, whether it is actually
+gaining a new understanding or a new technique or refreshing, reviewing,
+or reviving your memory about tactics, strategies, or trading techniques
+that an advanced trader may have forgotten.
+My professional history may explain my qualifications for writing this
+book. I started in this business as a runner on the floor of the Chicago Mer-
+cantile Exchange in 1979. To illustrate a reference point in time, the Dow
+Jones Industrial Average was near the 900 level. The S&P 500 Index futures
+contract did not even exist back then. I became a registered commodity
+broker in 1982 and worked up through the ranks in the industry as I was
+studying economics at Loyola University. The head of the research depart-
+ment at the firm where I worked was George C. Lane. He, of course, is
+credited with developing the oscillator system known as stochastics. He
+was the first boss who tutored me in the art of technical analysis. Little did
+I know at that time that a true master of technical analysis was going to be
+responsible for helping to create the intrigue, financial rewards, and pas-
+sion for the futures industry that I have had throughout all these years.
+Granted, there were other individuals who had an influence on my ca-
+reer. Jack F., an old member of the Chicago Board of Trade, helped me un-
+derstand the importance of moving averages and the aspect of long-term
+charts. Back in 1985 and 1986 in what I call the grea

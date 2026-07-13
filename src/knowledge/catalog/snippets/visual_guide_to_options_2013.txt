@@ -1,0 +1,183 @@
+Visual Guide to
+Options
+Since 1996, Bloomberg Press has published books for finance professionals on investing, economics, and policy
+affecting investors. Titles are written by leading practitioners and authorities, and have been translated into
+more than 20 languages.
+The Bloomberg Financial Series provides both core reference knowledge and actionable information for fi-
+nance professionals. The books are written by experts familiar with the work flows, challenges, and demands of
+investment professionals who trade the markets, manage money, and analyze investments in their capacity of
+growing and protecting wealth, hedging risk, and generating revenue.
+Books in the series include:
+Visual Guide to Candlestick Charting by Michael Thomsett
+Visual Guide to Municipal Bonds by Robert Doty
+Visual Guide to Financial Markets by David Wilson
+Visual Guide to Chart Patterns by Thomas N. Bulkowski
+Visual Guide to ETFs by David Abner
+Visual Guide to Options by Jared Levy
+For more information, please visit our Web site at www.wiley.com/go/bloombergpress.
+Visual Guide to
+Options
+Jared A. Levy
+BLOOMBERG PRESS
+An Imprint of
+Cover image: Waves © Peter Firus/ istockphoto, chart courtesy of Jared Levy
+Cover design: C. Wallace
+Copyright ©2013 by Jared A. Levy. All rights reserved.
+Published by John Wiley & Sons, Inc., Hoboken, New Jersey.
+Published simultaneously in Canada.
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form or by any means, electron-
+ic, mechanical, photocopying, recording, scanning, or otherwise, except as permitted under Section 107 or 108 of the 1976 United
+States Copyright Act, without either the prior written permission of the Publisher, or authorization through payment of the ap-
+propriate per-copy fee to the Copyright Clearance Center, Inc., 222 Rosewood Drive, Danvers, MA 01923, (978) 750-8400, fax (978)
+646-8600, or on the Web at www.copyright.com. Requests to the Publisher for permission should be addressed to the Permissions
+Department, John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ 07030, (201) 748-6011, fax (201) 748-6008, or online at http://
+www.wiley.com/go/permissions.
+Limit of Liability/Disclaimer of Warranty: While the publisher and author have used their best efforts in preparing this book, they
+make no representations or warranties with respect to the accuracy or completeness of the contents of this book and specifically
+disclaim any implied warranties of merchantability or fitness for a particular purpose. No warranty may be created or extended
+by sales representatives or written sales materials. The advice and strategies contained herein may not be suitable for your
+situation. You should consult with a professional where appropriate. Neither the publisher nor author shall be liable for any loss
+of profit or any other commercial damages, including but not limited to special, incidental, consequential, or other damages.
+All charts reprinted with permission from Bloomberg. Copyright 2012 Bloomberg L.P. All rights reserved.
+For general information on our other products and services or for technical support, please contact our Customer Care
+Department within the United States at (800) 762-2974, outside the United States at (317) 572-3993 or fax (317) 572-4002.
+Wiley publishes in a variety of print and electronic formats and by print-on-demand. Some material included with standard print
+versions of this book may not be included in e-books or in print-on-demand. If this book refers to media such as a CD or DVD
+that is not included in the version you purchased, you may download this material at http://booksupport.wiley.com. For more
+information about Wiley products, visit www.wiley.com.
+Library of Congress Cataloging-in-Publication Data:
+Levy, Jared, 1976
+Visual guide to options/Jared A. Levy.
+p. cm. — (Bloomberg press series)
+Includes index.
+ISBN 978-1-118-19666-3 (pbk.); 978-1-118-22774-9 (ebk); 978-1-118-26531-4 (ebk);
+978-1-118-24062-5 (ebk)
+1. Options (Finance). I. Title.
+HG6024.A3L484 2013
+332.64´ 53—dc23
+2012030699
+Printed in the United States of America
+10 9 8 7 6 5 4 3 2 1
+Don’t Be Afraid to Take Risks
+Load the ship and set out. No one knows for certain whether the vessel will
+sink or reach the harbor. Cautious people say, “I’ll do nothing until I can be
+sure.” Merchants know better. If you do nothing, you lose. Don’t be one of those
+merchants who won’t risk the ocean.
+—Rumi
+Think Outside the Box
+. . . a new type of thinking is essential if mankind is to
+survive and move toward higher levels.
+—Albert Einstein
+Be Prepared
+If you know the enemy and know yourself, you need not fear the result of a
+hundred battles. If you know yourself but not the enemy, for every victory gained
+you will also suffer a defeat. If you know neither the enemy nor yourself, you will
+succumb in every battle.
+—Sun Tzu
+Ask Questions
+A wise man can learn more from a foolish question than a
+fool can learn from a wise answer.
+—Bruce Lee
+Don’t Give Up
+The world ain’t all sunshine and rainbows. It’s a very mean and nasty place and
+I don’t care how tough you are it will beat you to your knees and keep you there
+permanently if you let it. You, me, or nobody is gonna hit as hard as life. But it ain’t
+about how hard ya hit. It’s about how hard you can get hit and keep moving forward;
+how much you can take and keep moving forward. That’s how winning is done!
+—Rocky
+Contents
+How to Use This Book ix (cid:31) Chapter 5: Visualizing and Trading Vertical Spreads 233
+Acknowledgments xi
+(cid:31) Chapter 6: Visualizing and Trading Butterfl ies,
+Introduction xiii
+Condors, and Complex Spreads 287
+(cid:31) Chapter 1: The World of Options 1
+(cid:31) Chapter 7: Managing Your Risk: Tactics, Tips,
+and Volatility Tricks 329
+(cid:31) Chapter 2: Tools and Knowledge for Trading
+Appendix: Bloomberg Functionality Cheat Sheet 375
+Options Professionally 51
+About the Author 377
+(cid:31) Chapter 3: Visualizing the Greeks 105 Index 379
+(cid:31) Chapter 4: Visualizing Basic Strategies:
+Trading Calls and Puts 139
+vii
+How  ﻿to  ﻿Use  ﻿This  ﻿Book
+The Visual Guide series is meant to serve as the all- ■ Do It Yourself: Worksheets, formulas, and
+encompassing, yet easy-to-follow, guide on today’s calculations.
+most relevant fi nance and trading topics. Th e content ■ Bloomberg Functionality Cheat Sheet: For
+truly lives up to the series name by being highly visual; Bloomberg terminal users, a back-of-the-book
+all charts are in color and presented in a large format summary of relevant functions for the topics and
+for ease of use and readability. Other strong visual at- tools discussed.
+tributes include consistent elements that function as
+For e-reader users, the Visual Guide series is avail-
+additional learning aids for the reader:
+able as an enhanced e-book and off ers special features,
+■ Key Points: Primary ideas and takeaways, designed like an interactive Test Yourself section where readers
+to help the reader skim through defi nitions and can test their newly honed knowledge and skills. Th e
+text. enhanced e-book version also includes video tutori-
+■ Defi nitions: Terminology and technical concepts als and special pop-up features. It can be purchased
+that arise in the discussion. wherever e-books are sold.
+■ Step-by-Step: Tutorials designed to ensure that
+readers understand and can execute each section
+of a multiphase process.
+ix
+Acknowledgments
+Nothing truly meaningful in life is created or even me a chance to get a better view of the beautiful exis-
+possible if not for the trials and tribulations that tence I have been fortunate enough to live.
+shape us as humans. Th ank you.
+I’m most gracious to life’s mountains that have
+stood before me, challenged me, and ultimately given
+xi
+Introduction
+My goal for this guide is to allow you to open to techniques, and processes in this book are not the
+just about any point in the book and fi nd a use- only solution, but they have worked for me for many
+ful tip, method, or actionable idea that you can ap- years and may make a good addition to your existing
+ply immediately, without having to go back and read repertoire. No one has “the secret sauce”; you simply
+too far. need a viable action plan and a sound risk and psy-
+Most of us believe we are free thinkers, but it’s chological management system.
+important to realize that on some level, information Although there is no perfect way to trade options,
+fl ows into our minds through fi lters or biased chan- there are many wrong ways to do it. I learned some
+nels. Th e specifi c publications you read or websites valuable (and costly) lessons along the way; I hope to
+you browse dictate your information sources. As you show you where I screwed it up so that you can avoid
+structure your investment thesis and strategy, don’t the major pitfalls of bad options trading.
+ever be afraid to break your normal pattern and look Th is book expands on the focus of my fi rst book,
+for alternative methods of gathering information, sta- Your Options Handbook, and details more of the nu-
+tistics, and strategy. anced techniques and analysis that professionals use
+Depending on your particular exposure or experi- to get an edge on the market. Th e goal of this text is
+ence with trading options, you are going to have pre- to help you to truly understand risk, order fl ow, and
+conceived notions about how useful they are to you. volume as well as execution and strategy.
+Even if you have been an extremely successful options Even with Bloomberg being one of the best infor-
+trader, keep your mind open to looking at the option mation sources out there, don’t be discouraged if you
+markets and their risk in a diff erent way. Th e ideas, don’t have access to a terminal. Th e bulk of strategies,
+xiii
+xiv ■ Introduction  ﻿   ﻿
+tools, and techniques contained in these pages can be completely comfortable with a concept or strategy,
+utilized and applied in many forms. be sure to research it further and ask questions! I am
+Also realize that this book couldn’t possibly con- available at www.jaredlevy.com if you need a help-
+tain every single thing you need to know about op- ing hand or if you are looking for further depth on a
+tions, so if you have a question or if you don’t feel subject.
+Visual Guide to
+Options
+1111
+C H A P T E R
+The World of Options
+There are infi nite ways that options can be utilized the previous day, I could reset and remain fl exible in
+in your investment portfolio. Whether you are an my strategy.
+individual writing covered calls on 200 shares of IBM, Option traders tend to have an “if, then” attitude
+a hedge fund manager with billions in assets that need because of our ability to be elastic with our hypoth-
+to be protected against volatility or “tail risk,” or any- esis and adjust positions as events, news, and data
+where in between, there is a place for options in your change. Th is mind-set is usually in stark contrast to
+account, period. a regular stock trader, who needs to be more rigid in
+To get the most from the options markets, it is best predictions and theses. I certainly prefer the fl exibility
+to fully understand the underlying securities from options off er, because I still have yet to meet a person
+which they are valued and then take on the options who knows exactly where a stock is going, not to men-
+themselves. Th e trends, abnormalities, and patterns tion that I always like contingency plans. As an option
+that emerge in the options markets get their cues from trader you always have the choice of getting or giving
+KEY POINT:
+their underlying security. Because of this, you must odds depending on the situation.
+never look at an option (strategy) in a vacuum. As a professional with a trained eye I can look at an Options traders can use certain
+strategies to take a neutral posi-
+When I was trading on the fl oor, I tended to end option chain on just about any security and surmise a
+tion in a stock or can employ pro-
+my trading day delta-neutral—or not having a “di- gen

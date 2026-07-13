@@ -1,0 +1,151 @@
+T H E E Q U I T Y
+O P T I O N S
+S T R AT E G Y
+G U I D E
+JANUARY 2001
+Table of Contents
+Introduction 2
+Option Terms and Concepts 4
+(cid:2) What is an Option? 4
+(cid:2) Long 4
+(cid:2) Short 4
+(cid:2) Open 4
+(cid:2) Close 5
+(cid:2) Leverage and Risk 5
+(cid:2) In-the-money,At-the-money,Out-of-the-money 5
+(cid:2) Time Decay 6
+(cid:2) Expiration Day 6
+(cid:2) Exercise 6
+(cid:2) Assignment 6
+(cid:2) What’s the Net? 7
+(cid:2) Early Exercise/Assignment 7
+(cid:2) Volatility 7
+Strategies 8
+(cid:2) Long Call 8
+(cid:2) Long Put 10
+(cid:2) Married Put 12
+(cid:2) Protective Put 14
+(cid:2) Covered Call 16
+(cid:2) Covered Put 18
+(cid:2) Bull Call Spread 20
+(cid:2) Bear Put Spread 22
+(cid:2) Collar 24
+Glossary 26
+For More Information 28
+1
+Introduction
+The purpose of this booklet is to provide an introduction to that there are matching orders from a buyer and a seller,it
+some of the basic equity option strategies available to option severs the link between the parties.In effect,OCC becomes
+and/or stock investors.Exchange-traded options have the buyer to the seller and the seller to the buyer.As a result,
+many benefits including flexibility,leverage,limited risk for the seller can buy back the same option he has written,clos-
+buyers employing these strategies,and contract performance ing out the initial transaction and terminating his obligation
+guaranteed by The Options Clearing Corporation (OCC). to deliver the underlying stock or exercise value of the option
+Options allow you to participate in price movements with- to OCC;this will in no way affect the right of the original
+out committing the large amount of funds needed to buy buyer to sell,hold or exercise his option.All premium and
+stock outright.Options can also be used to hedge a stock settlement payments are made to and paid by OCC.
+position,to acquire or sell stock at a purchase price more Whether you are a conservative or growth-oriented
+favorable than the current market price,or,in the case of investor,or even a short-term,aggressive trader,your broker
+writing (selling) options,to earn premium income.Options can help you select an appropriate options strategy.The
+give you options.You’re not just limited to buying,selling strategies presented in this booklet do not cover all,or even
+or staying out of the market.With options,you can tailor a significant number,of the possible strategies utilizing
+your position to your own financial situation,stock market options.These are the most basic strategies,however,and
+outlook and risk tolerance. will serve well as building blocks for more complex strategies.
+All option contracts traded on U.S.securities exchanges Despite their many benefits,options are not suitable
+are issued,guaranteed and cleared by OCC.OCC is a regis- for all investors.Individuals should not enter into option
+tered clearing corporation with the Securities and Exchange transactions until they have read and understood the risk
+Commission (SEC) and has received a ‘AAA’rating from disclosure document,Characteristics and Risks ofStandard-
+Standard & Poor’s Corporation.The ‘AAA’rating relates ized Options,which outlines the purposes and risks thereof.
+to OCC’s ability to fulfill its obligations as counterparty for Further,if you have only limited or no experience with
+options trades. options,or have only a limited understanding of the terms
+OCC is the common clearing entity for all securities of option contracts and basic option pricing theory,you
+exchange-traded option transactions.Once OCC is satisfied should examine closely another industry document,
+2
+Understanding Stock Options.These documents,and many en both you and your tax advisor on option strategies and
+others,can be obtained from your brokerage firm or by either the issue of taxes.This booklet can also be obtained from
+calling 1-888-OPTIONS or visiting www.888options.com. your brokerage firm or by either calling 1-888-OPTIONS
+An investor who desires to utilize options should have well- or visiting www.888options.com.
+defined investment objectives suited to his particular finan- All strategy examples described in this book assume
+cial situation and a plan for achieving these objectives. the use of regular,listed,American-style equity options,and
+Options are currently traded on the following U.S. do not take into consideration margin requirements,transac-
+exchanges:The American Stock Exchange (AMEX), tion and commission costs,or taxes in their profit and loss
+the Chicago Board Options Exchange,Inc.(CBOE),the calculations.You should be aware that in addition to Federal
+International Securities Exchange (ISE),the Pacific Ex- margin requirements,each brokerage firm may have its own
+change,Inc.(PCX),and the Philadelphia Stock Exchange, margin rules that can be more detailed,specific or restric-
+Inc.(PHLX).Like trading in stocks,options trading is tive.In addition,each brokerage firm may have its own
+regulated by the SEC.These exchanges seek to provide guidelines with respect to commissions and transaction
+competitive,liquid,and orderly markets for the purchase costs.It is up to you to become fully informed on the
+and sale of standardized options.It must be noted that, specific procedures,rules and/or fee and commission
+despite the efforts of each exchange to provide liquid schedules of your specific brokerage firm(s).
+markets,under certain conditions it may be difficult or The successful use of options requires a willingness to
+impossible to liquidate an option position.Please refer learn what they are,how they work,and what risks are asso-
+to the disclosure document for further discussion on ciated with particular options strategies.Individuals seeking
+this matter. expanded investment opportunities in today’s markets will
+There are tax ramifications of buying or selling find options trading challenging,often fast moving,and
+options that should be discussed thoroughly with a broker potentially rewarding.
+and/or tax advisor before engaging in option transactions.
+OCC publishes another document,Taxes & Investing:A
+Guide for the Individual Investor,which can serve to enlight-
+3
+Option Terms and Concepts
+What is an Option? the right to sell 100 shares of a stock,and are holding that
+Although this level of knowledge is assumed,a brief review right in your account,you are long a put contract.If you
+of equity option basics is in order: have purchased 1,000 shares of stock and are holding that
+(cid:2) An equity option is a contract which conveys to its holder stock in your brokerage account,or elsewhere,you are long
+the right,but not the obligation,to buy (in the case of a 1,000 shares of stock.
+call) or sell (in the case of a put) shares of the underlying When you are long an equity option contract:
+security at a specified price (the strike price) on or before (cid:2) You have the right to exercise that option at any time prior
+a given date (expiration day).After this given date,the to its expiration.
+option ceases to exist.The seller of an option is,in turn, (cid:2) Your potential loss is limited to the amount you paid for
+obligated to sell (in the case a call) or buy (in the case of a the option contract.
+put) the shares to (or from) the buyer of the option at the
+specified price upon the buyer’s request.
+(cid:2) Equity option contracts usually represent 100 shares of the Short
+underlying stock. With respect to this booklet’s usage of the word,short
+(cid:2) Strike prices (or exercise prices) are the stated price per share describes a position in options in which you have written a
+for which the underlying security may be purchased (in contract (sold one that you did not own).In return,you now
+the case of a call) or sold (in the case of a put) by the have the obligations inherent in the terms of that option
+option holder upon exercise of the option contract.The contract.If the owner exercises the option,you have an obli-
+strike price,a fixed specification of an option contract, gation to meet.If you have sold the right to buy 100 shares
+should not be confused with the premium,the price at of a stock to someone else,you are short a call contract.If
+which the contract trades,which fluctuates daily. you have sold the right to sell 100 shares of a stock to some-
+(cid:2) Equity option strike prices are listed in increments of one else,you are short a put contract.When you write an
+21/,5,or 10 points,depending on their price level. option contract you are,in a sense,creating it.The writer of
+2
+(cid:2) Adjustments to an equity option contract’s size and/ an option collects and keeps the premium received from its
+or strike price may be made to account for stock splits initial sale.
+or mergers. When you are short (i.e.,the writer of) an equity
+(cid:2) Generally,at any given time a particular equity option option contract:
+can be bought with one of four expiration dates. (cid:2) You can be assigned an exercise notice at any time during
+(cid:2) Equity option holders do not enjoy the rights due the life of the option contract.All option writers should
+stockholders – e.g.,voting rights,regular cash or special be aware that assignment prior to expiration is a distinct
+dividends,etc.A call holder must exercise the option possibility.
+and take ownership of underlying shares to be eligible (cid:2) Your potential loss on a short call is theoretically unlimit-
+for these rights. ed.For a put,the risk of loss is limited by the fact that the
+(cid:2) Buyers and sellers in the exchange markets,where all trad- stock cannot fall below zero in price.Although technically
+ing is conducted in the competitive manner of an auction limited,this potential loss could still be quite large if the
+market,set option prices. underlying stock declines significantly in price.
+Long Open
+With respect to this booklet’s usage of the word,long An opening transaction is one that adds to,or creates a new
+describes a position (in stock and/or options) in which you trading position.It can be either a purchase or a sale.With
+have purchased and own that security in your brokerage respect to an option transaction,consider both:
+account.For example,if you have purchased the right to buy (cid:2) Opening purchase – a transaction in which the purchaser’s
+100 shares of a stock,and are holding that right in your intention is to create or increase a long position in a given
+account,you are long a call contract.If you have purchased series of options.
+4
+(cid:2) Opening sale – a transaction in which the seller’s intention In-the-money, At-the-money,
+is to create or increase a short position in a given series of Out-of-the-money
+options. The strike price,or exercise price,of an option determines
+whether that contract is in-the-money,at-the-money,or out-
+of-the-money.If the strike price of a call option is less than
+Close the current market price of the underlying security,the call
+A closing transaction is one that reduces or eliminates an is said to be in-the-money because the holder of this call has
+existing position by an appropriate offsetting purchase or the right to buy the stock at a price which is less than the
+sale.With respect to an option transaction: price he would have to pay to buy the stock in the stock
+(cid:2) Closing purchase – a transaction in which the purchaser’s market.Likewise,if a put option has a strike price that is
+intention is to reduce or eliminate a short position in a greater than the current market price of the underlying
+given series of options.This transaction is frequently security,it is also said to be in-the-money because the hold-
+referred to as “covering”a short position. er of this put has the right to sell the stock at a price which
+(cid:2) Closing sale – a transaction in which the seller’s intention is greater than the price he would receive selling the stock in
+is to reduce or eliminate a long position in a given series of the stock market.The converse of in-the-money is,not sur-
+options. prisingly,out-of-the-money.If the strike price equals the
+Note:An investor does not close out a long call pos

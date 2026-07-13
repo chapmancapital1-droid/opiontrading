@@ -21,3 +21,5 @@ yarn-debug.log*
 yarn-error.log*
 tsconfig.tsbuildinfo
 next-env.d.ts
+# runtime
+.data/

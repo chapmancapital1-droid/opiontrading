@@ -1,0 +1,299 @@
+S G
+tudy uide for
+t N
+he ew
+t L
+radiNG for a iviNG
+The Wiley Trading series features books by traders who have survived the
+market’s ever-changing environment and have prospered—some by reinvent-
+ing systems, others by getting back to basics. Whether you are a novice trader,
+professional or someone in-between, these books will deliver the advice and
+strategies you need to prosper today and in the future. For more on this series,
+visit our website at www.WileyTrading.com.
+Founded in 1807, John Wiley & Sons is the oldest independent publishing
+company in the United States. With offices in North America, Europe, Australia
+and Asia, Wiley is globally committed to developing and marketing print and
+electronic products and services for our customers’ professional and personal
+knowledge and understanding.
+S G
+tudy uide for
+t N
+he ew
+t
+radiNG for a
+L
+iviNG
+Psychology • Discipline
+Trading Tools and Systems
+Risk Control • Trade Management
+Dr. Alexander Elder
+www.elder.com
+www.spiketrade.com
+Cover design: Paul DiNovo
+Copyright © 2014 by by Dr. Alexander Elder. All rights reserved.
+Published by John Wiley & Sons, Inc., Hoboken, New Jersey.
+Published simultaneously in Canada.
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form or
+by any means, electronic, mechanical, photocopying, recording, scanning, or otherwise, except as permitted
+under Section 107 or 108 of the 1976 United States Copyright Act, without either the prior written permis-
+sion of the Publisher, or authorization through payment of the appropriate per-copy fee to the Copyright
+Clearance Center, Inc., 222 Rosewood Drive, Danvers, MA 01923, (978) 750-8400, fax (978) 646-8600,
+or on the Web at www.copyright.com. Requests to the Publisher for permission should be addressed to the
+Permissions Department, John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ 07030, (201) 748-6011,
+fax (201) 748-6008, or online at http://www.wiley.com/go/permissions.
+Limit of Liability/Disclaimer of Warranty: While the publisher and author have used their best efforts in
+preparing this book, they make no representations or warranties with respect to the accuracy or completeness
+of the contents of this book and specifically disclaim any implied warranties of merchantability or fitness for a
+particular purpose. No warranty may be created or extended by sales representatives or written sales materi-
+als. The advice and strategies contained herein may not be suitable for your situation. You should consult with
+a professional where appropriate. Neither the publisher nor author shall be liable for any loss of profit or any
+other commercial damages, including but not limited to special, incidental, consequential, or other damages.
+For general information on our other products and services or for technical support, please contact our
+Customer Care Department within the United States at (800) 762-2974, outside the United States at
+(317) 572-3993 or fax (317) 572-4002.
+Wiley publishes in a variety of print and electronic formats and by print-on-demand. Some material included
+with standard print versions of this book may not be included in e-books or in print-on-demand. If this book
+refers to media such as a CD or DVD that is not included in the version you purchased, you may download this
+material at http://booksupport.wiley.com. For more information about Wiley products, visit www.wiley.com.
+Library of Congress Cataloging-in-Publication Data:
+ISBN 978-1-118-46745-9 (Paperback)
+ISBN 978-1-118-98470-3 (ebk)
+ISBN 978-1-118-98471-0 (ebk)
+Printed in the United States of America
+10 9 8 7 6 5 4 3 2 1
+CCOONNTTEENNTTSS
+About This Study Guide ix
+PART I QueStioNS aNd ratiNG ScaLeS 1
+Introduction 3
+ONE Individual Psychology 7
+TWO Mass Psychology 13
+THREE Classical Chart Analysis 19
+FOUR Computerized Technical Analysis 27
+FIVE Volume and Time 37
+SIX General Market Indicators 49
+SEVEN Trading Systems 57
+EIGHT Trading Vehicles 65
+NINE Risk Management 71
+TEN Practical Details 79
+ELEVEN Good Record-Keeping 85
+v
+vi Contents
+PART II aNSwerS aNd commeNtS 89
+Introduction 91
+ONE Individual Psychology 95
+TWO Mass Psychology 99
+THREE Classical Chart Analysis 103
+FOUR Computerized Technical Analysis 107
+FIVE Volume and Time 113
+SIX General Market Indicators 119
+SEVEN Trading Systems 123
+EIGHT Trading Vehicles 129
+NINE Risk Management 133
+TEN Practical Details 137
+ELEVEN Good Record-Keeping 141
+Afterword 145
+Sources 147
+About the Author 149
+ABOUT THIS STUDY GUIDE
+E
+xperienced traders seem to glide through the markets, swinging into and out
+of trades. Their trading appears effortless, like downhill skiing on TV. The
+illusion of ease vanishes when you clamp on a pair of skis and discover the bumps on
+the slope. If you want to improve your trading skills, you have to work, study, and
+do your homework.
+I created this Study Guide to help you grow and succeed as a trader. It is based on
+my years of experience as a trader and teacher of traders. The more you study the
+markets and your reactions to them, the more likely you are to succeed. You need to
+learn more about yourself as well as the markets—good traders always learn.
+Each question in this Guide is linked to a specific chapter in The New Trading for
+a Living—psychology, risk management, indicators, and so on. Write down your
+answers and compare them with those in the book. When answering chart-related
+questions, cover each chart with a sheet of paper and move it slowly from left to
+right to imitate the unfolding of market action. Practice dealing with the uncertainty
+of the markets while working with this Guide.
+This Guide asks questions and provides answers—but reasonable people may dis-
+agree with some of them. Trading is partly a science and partly an art—partly objec-
+tive and partly subjective. Let this Guide challenge you to think deeper about the
+markets and your reactions to them.
+I am grateful to Henry Abelman and Jeff Parker, both repeat winners of SpikeTrade’s
+Eagle Eye award, for reviewing all questions and answers. Carol Keegan Kayne did
+the final check for clarity and precision.
+vii
+viii ABOUT THIS STUDY GUIDE
+Thanks to my former professors and students at the universities in Estonia
+and the United States for providing many opportunities to teach and develop my
+educational style. Thanks to the members of SpikeTrade.com, who keep sending me
+trading-related questions. Posting answers to them week after week keeps me on
+my toes.
+I hope this Guide helps you to sharpen your skills and to become a better, more
+confident trader.
+Dr. Alexander Elder
+New York–Vermont, 2014
+S G
+tudy uide for
+t N
+he ew
+t L
+radiNG for a iviNG
+PART 1
+Questions
+and
+Rating Scales
+Introduction
+T
+o win in trading, you must outperform masses of competitors. The majority
+must lose in order to pay those who win. To become a successful trader, you
+must beat the odds against you. You must learn to think and act differently from the
+market crowd.
+The New Trading for a Living contains several unorthodox trading ideas. The aim of
+this Introduction is to pause at the beginning of the journey and to see whether you
+are in tune with some of the unconventional thinking about trading.
+Questions Trial 1 Trial 2 Trial 3 Trial 4 Trial 5
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Correct
+answers
+3
+4 QUESTIONS
+Question 0-1
+Which of the following methods of making trading decisions can serve traders well
+in the long run?
+I. Fundamental analysis
+II. Inside information
+III. Hunches and tips
+IV. Technical analysis
+A. I and II
+B. II and III
+C. I and IV
+D. III and IV
+Question 0-2
+Which of the following isn’t needed for trading success?
+A. Trading psychology
+B. Analytic method
+C. Connections with market insiders
+D. Money management method
+Question 0-3
+The best approach to reading a book on trading is to
+A. test all the ideas that interest you on your own market data.
+B. incorporate all the ideas in your work.
+C. not trust what you read—why would anyone share good trading ideas?
+D. ask other traders whether the ideas in the book worked for them.
+Question 0-4
+Which of the following is not a major cause of trading losses?
+A. Slippage
+B. Commissions
+C. Emotional trading
+D. Theft
+Question 0-5
+Trader Jim and Trader John take the opposite sides of a trade. Both pay commis-
+sions, and both get hit with slippage. Trader Jim, the winner, collects $920, while
+Trader John, the loser, is out $1080. The result of this trade illustrates the fact that
+trading is a:
+INTRODUCTION 5
+A. Zero-sum game
+B. Positive expectations game
+C. Random Walk
+D. Minus-sum game
+Question 0-6
+You find a stock trading at $20 and plan to buy 100 shares. Your broker will charge a
+commission of $10. Which of the following statements is incorrect?
+A. When dealing with thousands of dollars, don’t quibble about $10.
+B. You need to make 1% profit to avoid losing money on this trade.
+C. Using 50% margin, you need to make more than 2% profit to avoid losing money
+on this trade.
+Question 0-7
+You place a market order to buy 100 shares of a rising stock that currently trades at
+$20. Your order gets filled at $20.08. Your slippage on the trade is
+A. 80 cents
+B. $8
+C. $16
+D. $80
+Question 0-8
+The stock you bought in Question 7 rallied to $22. You expect the rally to continue
+but raise your stop to $21 to protect half of your paper profit. The stock sinks and
+hits your stop—you get filled at $20.88. Your slippage on this trade represents what
+percentage of your gross profit?
+A. 5 percent
+B. 10 percent
+C. 25 percent
+D. 50 percent
+Question 0-9
+In the trade described in Questions 7 and 8, the trading industry took what percent-
+age of your gross gain?
+A. 25 percent
+B. 50 percent
+C. 75 percent
+D. 100 percent
+ONE
+Individual Psychology
+Y
+our greatest danger in trading comes from the person holding this book—you.
+Our emotions often tip the scale between winning and losing. If you can stay
+cool and make rational decisions, trading profits will follow.
+A professional trader is calm and collected. He knows what he’ll do if the market
+goes up, down, or sideways. On days when he is not sure, he stays out, patiently
+monitoring the market from the sidelines. A pro feels in control.
+If you feel giddy with joy when the market goes your way but freeze in fear when
+it swings against you, your actions will be emotional and your account will suffer.
+When the mind becomes clouded by greed or fear, even the best trading systems fly
+out the window. The questions that follow are designed to help you focus on trading
+psychology.
+77
+8 QUESTIONS
+Questions Trial 1 Trial 2 Trial 3 Trial 4 Trial 5
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+Correct
+answers
+INDIVIDUAL PSYCHOLOGY 9
+Question 1-1
+A successful trader’s attitude toward risk is usually one of
+A. avoiding risk.
+B. thriving on risk.
+C. enjoying risky situations, even though losses hurt.
+D. measuring each risk.
+Question 1-2
+The goal of a successful trader is to
+A. become the best trader he can.
+B. make more money than other traders.
+C. buy things that will set him above other traders.
+D. win respect of family and friends.
+Question 1-3
+A trader on a losing streak has lost 20 percent of his account. He would best be
+advised to
+A. subscribe to a newsletter with a verified track record.
+B. purchase a trading system with a history of profitability and low drawdowns.
+C. stop trading until he has analyzed his losing trades and determined their causes.
+D. continue to trade because the laws of probability indicate a likely turn in his favor.
+Question 1-4
+Having a large trading account is desirable for all of the following reasons except that
+A. you can afford to lose more.
+B. you can diversify among more markets.
+C. you can trade different systems.
+D. your expenses represent a smaller percentage of your account.
+Question 1-5
+Which two of the following statements about commercially sold trading systems are
+most accurate?
+I. A track record provides confidence that a system will continue to perform well.
+II. The fact that a system is sold by a prominent trader provides an extra margin

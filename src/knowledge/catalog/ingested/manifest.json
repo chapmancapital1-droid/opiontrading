@@ -1,0 +1,4960 @@
+{
+  "version": "1.0.0",
+  "ingestedAt": "2026-07-11T19:24:41.075499+00:00",
+  "pdfCount": 100,
+  "booksOk": 98,
+  "booksFailed": 2,
+  "entryCount": 2270,
+  "seedCountExport": 36,
+  "seedCountAll": 332,
+  "categoryCounts": {
+    "Trading Strategies": 721,
+    "Risk Management": 1024,
+    "Core Foundations": 529,
+    "Python & Automation": 7,
+    "Numerical Methods": 77
+  },
+  "books": [
+    {
+      "title": "101 Option Trading Secrets  (2001)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\101 Option Trading Secrets  (2001).pdf",
+      "bytes": 3305164,
+      "pages_read": 41,
+      "status": "ok",
+      "entries": 14,
+      "top_keywords": [
+        [
+          "implied volatility",
+          2
+        ],
+        [
+          "delta",
+          2
+        ],
+        [
+          "credit spread",
+          2
+        ],
+        [
+          "straddle",
+          1
+        ],
+        [
+          "covered call",
+          1
+        ],
+        [
+          "naked put",
+          1
+        ],
+        [
+          "debit spread",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "bull_put_credit",
+          4
+        ],
+        [
+          "cash_secured_put",
+          3
+        ],
+        [
+          "iron_condor",
+          2
+        ],
+        [
+          "bear_call_credit",
+          2
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "bull_call_debit",
+          1
+        ],
+        [
+          "bear_put_debit",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\101_option_trading_secrets_2001.txt"
+    },
+    {
+      "title": "17 Proven Currency Trading Strategies (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\17 Proven Currency Trading Strategies (2013).pdf",
+      "bytes": 27775290,
+      "pages_read": 24,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\17_proven_currency_trading_strategies_2013.txt"
+    },
+    {
+      "title": "18 Trading Champions Share Their Keys To Top Trading Profits (1996)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Master Traders Collection\\18 Trading Champions Share Their Keys To Top Trading Profits (1996).pdf",
+      "bytes": 2237748,
+      "pages_read": 19,
+      "status": "ok",
+      "entries": 10,
+      "top_keywords": [
+        [
+          "rolling",
+          2
+        ],
+        [
+          "delta",
+          1
+        ],
+        [
+          "the wheel",
+          1
+        ],
+        [
+          "margin requirement",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          3
+        ],
+        [
+          "bull_put_credit",
+          2
+        ],
+        [
+          "cash_secured_put",
+          2
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 5,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\18_trading_champions_share_their_keys_to_top_trading_profits_1996.txt"
+    },
+    {
+      "title": "25 Rules Of Day Trading (2003)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\25 Rules Of Day Trading (2003).pdf",
+      "bytes": 124738,
+      "pages_read": 6,
+      "status": "ok",
+      "entries": 2,
+      "top_keywords": [
+        [
+          "the wheel",
+          1
+        ],
+        [
+          "defined risk",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "cash_secured_put",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "bull_put_credit",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\25_rules_of_day_trading_2003.txt"
+    },
+    {
+      "title": "30 Great Investing Minds (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\30 Great Investing Minds (2002).pdf",
+      "bytes": 1299323,
+      "pages_read": 76,
+      "status": "ok",
+      "entries": 41,
+      "top_keywords": [
+        [
+          "risk management",
+          11
+        ],
+        [
+          "earnings",
+          11
+        ],
+        [
+          "rolling",
+          2
+        ],
+        [
+          "straddle",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          12
+        ],
+        [
+          "iron_condor",
+          11
+        ],
+        [
+          "covered_call",
+          2
+        ],
+        [
+          "bull_put_credit",
+          2
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\30_great_investing_minds_2002.txt"
+    },
+    {
+      "title": "6.1 Trading Mindset",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Options Trading MasterClass Options With Technical Analysis\\[TutsNode.com] - Options Trading MasterClass\\1. Introduction\\6.1 Trading Mindset.pdf",
+      "bytes": 30992129,
+      "pages_read": 0,
+      "status": "no_text",
+      "entries": 0
+    },
+    {
+      "title": "A Complete Guide to Day Trading (2008)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\A Complete Guide to Day Trading (2008).pdf",
+      "bytes": 1512761,
+      "pages_read": 80,
+      "status": "ok",
+      "entries": 5,
+      "top_keywords": [
+        [
+          "rolling",
+          2
+        ],
+        [
+          "earnings",
+          1
+        ],
+        [
+          "risk management",
+          1
+        ],
+        [
+          "margin requirement",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          2
+        ],
+        [
+          "bull_put_credit",
+          2
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ],
+        [
+          "cash_secured_put",
+          1
+        ]
+      ],
+      "seed_count": 5,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\a_complete_guide_to_day_trading_2008.txt"
+    },
+    {
+      "title": "A Short Course in Technical Trading (2003)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\A Short Course in Technical Trading (2003).pdf",
+      "bytes": 6762972,
+      "pages_read": 34,
+      "status": "ok",
+      "entries": 3,
+      "top_keywords": [
+        [
+          "rolling",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "bull_put_credit",
+          1
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\a_short_course_in_technical_trading_2003.txt"
+    },
+    {
+      "title": "Adler S. Day Trading with ChatGPT. Test the Power of AI for Stock Market...2023",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Adler S. Day Trading with ChatGPT. Test the Power of AI for Stock Market...2023\\Adler S. Day Trading with ChatGPT. Test the Power of AI for Stock Market...2023.pdf",
+      "bytes": 496200,
+      "pages_read": 78,
+      "status": "ok",
+      "entries": 3,
+      "top_keywords": [
+        [
+          "earnings",
+          2
+        ],
+        [
+          "risk management",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "iron_condor",
+          2
+        ]
+      ],
+      "seed_count": 2,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\adler_s_day_trading_with_chatgpt_test_the_power_of_ai_for_stock_market2023.txt"
+    },
+    {
+      "title": "Algorithmic Essentials_ Trading with Python_ Comprehenive Guide for 2024 by Johann Strauss",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Algorithmic Essentials_ Trading with Python_ Comprehenive Guide for 2024 by Johann Strauss.pdf",
+      "bytes": 3245640,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 9,
+      "top_keywords": [
+        [
+          "earnings",
+          2
+        ],
+        [
+          "position sizing",
+          1
+        ],
+        [
+          "robinhood",
+          1
+        ],
+        [
+          "assignment",
+          1
+        ],
+        [
+          "the wheel",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "iron_condor",
+          2
+        ],
+        [
+          "cash_secured_put",
+          2
+        ],
+        [
+          "covered_call",
+          2
+        ],
+        [
+          "bull_put_credit",
+          1
+        ]
+      ],
+      "seed_count": 5,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\algorithmic_essentials__trading_with_python__comprehenive_guide_for_2024_by_joha.txt"
+    },
+    {
+      "title": "An Introduction to Options Trading (2006)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\An Introduction to Options Trading (2006).pdf",
+      "bytes": 3442375,
+      "pages_read": 43,
+      "status": "ok",
+      "entries": 24,
+      "top_keywords": [
+        [
+          "american option",
+          5
+        ],
+        [
+          "vega",
+          3
+        ],
+        [
+          "early exercise",
+          2
+        ],
+        [
+          "gamma",
+          2
+        ],
+        [
+          "implied volatility",
+          1
+        ],
+        [
+          "delta",
+          1
+        ],
+        [
+          "theta",
+          1
+        ],
+        [
+          "straddle",
+          1
+        ],
+        [
+          "strangle",
+          1
+        ],
+        [
+          "collar",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          6
+        ],
+        [
+          "long_straddle",
+          5
+        ],
+        [
+          "covered_call",
+          3
+        ],
+        [
+          "bull_put_credit",
+          2
+        ],
+        [
+          "cash_secured_put",
+          1
+        ],
+        [
+          "long_strangle",
+          1
+        ],
+        [
+          "long_put",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\an_introduction_to_options_trading_2006.txt"
+    },
+    {
+      "title": "An Investors Guide to Trading Options (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\An Investors Guide to Trading Options (2013).pdf",
+      "bytes": 3818853,
+      "pages_read": 50,
+      "status": "ok",
+      "entries": 127,
+      "top_keywords": [
+        [
+          "covered call",
+          13
+        ],
+        [
+          "margin requirement",
+          9
+        ],
+        [
+          "collar",
+          6
+        ],
+        [
+          "rolling",
+          6
+        ],
+        [
+          "assignment",
+          4
+        ],
+        [
+          "naked call",
+          4
+        ],
+        [
+          "maximum loss",
+          4
+        ],
+        [
+          "credit spread",
+          4
+        ],
+        [
+          "straddle",
+          3
+        ],
+        [
+          "protective put",
+          3
+        ],
+        [
+          "debit spread",
+          3
+        ],
+        [
+          "implied volatility",
+          2
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          25
+        ],
+        [
+          "bull_put_credit",
+          18
+        ],
+        [
+          "cash_secured_put",
+          16
+        ],
+        [
+          "long_put",
+          10
+        ],
+        [
+          "long_straddle",
+          5
+        ],
+        [
+          "iron_condor",
+          5
+        ],
+        [
+          "bear_call_credit",
+          5
+        ],
+        [
+          "bull_call_debit",
+          4
+        ],
+        [
+          "bear_put_debit",
+          4
+        ],
+        [
+          "long_strangle",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\an_investors_guide_to_trading_options_2013.txt"
+    },
+    {
+      "title": "Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024\\Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024.pdf",
+      "bytes": 3145050,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 60,
+      "top_keywords": [
+        [
+          "black scholes",
+          6
+        ],
+        [
+          "black-scholes",
+          6
+        ],
+        [
+          "covered call",
+          4
+        ],
+        [
+          "vega",
+          4
+        ],
+        [
+          "theta",
+          3
+        ],
+        [
+          "risk management",
+          3
+        ],
+        [
+          "maximum loss",
+          3
+        ],
+        [
+          "delta",
+          2
+        ],
+        [
+          "gamma",
+          2
+        ],
+        [
+          "protective put",
+          2
+        ],
+        [
+          "implied volatility",
+          2
+        ],
+        [
+          "assignment",
+          2
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          11
+        ],
+        [
+          "iron_condor",
+          10
+        ],
+        [
+          "bull_put_credit",
+          9
+        ],
+        [
+          "long_straddle",
+          4
+        ],
+        [
+          "cash_secured_put",
+          4
+        ],
+        [
+          "long_put",
+          2
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\bisette_v_the_algo_rythm_learn_to_tradethe_options_market_with_python_2024.txt"
+    },
+    {
+      "title": "Come Into My Trading Room - A Complete Guide to Trading (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Master Traders Collection\\Come Into My Trading Room - A Complete Guide to Trading (2002).pdf",
+      "bytes": 5103702,
+      "pages_read": 45,
+      "status": "ok",
+      "entries": 7,
+      "top_keywords": [
+        [
+          "earnings",
+          3
+        ],
+        [
+          "position sizing",
+          1
+        ],
+        [
+          "vega",
+          1
+        ],
+        [
+          "naked put",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          4
+        ],
+        [
+          "iron_condor",
+          4
+        ],
+        [
+          "cash_secured_put",
+          1
+        ]
+      ],
+      "seed_count": 3,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\come_into_my_trading_room_a_complete_guide_to_trading_2002.txt"
+    },
+    {
+      "title": "Day Trading Ebook (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\Day Trading Ebook (2000).pdf",
+      "bytes": 362262,
+      "pages_read": 22,
+      "status": "ok",
+      "entries": 1,
+      "top_keywords": [
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 2,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\day_trading_ebook_2000.txt"
+    },
+    {
+      "title": "Day Trading University (2001)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\Day Trading University (2001).pdf",
+      "bytes": 27163490,
+      "pages_read": 1,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\day_trading_university_2001.txt"
+    },
+    {
+      "title": "Daytrading University - Advanced Daytrading Two-Day Seminar (2001)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\Daytrading University - Advanced Daytrading Two-Day Seminar (2001).pdf",
+      "bytes": 2589154,
+      "pages_read": 31,
+      "status": "ok",
+      "entries": 2,
+      "top_keywords": [
+        [
+          "risk management",
+          1
+        ],
+        [
+          "position sizing",
+          1
+        ]
+      ],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\daytrading_university_advanced_daytrading_two_day_seminar_2001.txt"
+    },
+    {
+      "title": "Dynamic Trading Indicators (2003)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\Dynamic Trading Indicators (2003).pdf",
+      "bytes": 7032513,
+      "pages_read": 30,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\dynamic_trading_indicators_2003.txt"
+    },
+    {
+      "title": "Essentails of Foreign Exchange Trading (2009)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\Essentails of Foreign Exchange Trading (2009).pdf",
+      "bytes": 3498599,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 5,
+      "top_keywords": [
+        [
+          "risk management",
+          5
+        ]
+      ],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\essentails_of_foreign_exchange_trading_2009.txt"
+    },
+    {
+      "title": "Forex - Online Manual for Successful Trading (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\Forex - Online Manual for Successful Trading (2000).pdf",
+      "bytes": 3087760,
+      "pages_read": 50,
+      "status": "ok",
+      "entries": 21,
+      "top_keywords": [
+        [
+          "delta",
+          3
+        ],
+        [
+          "gamma",
+          2
+        ],
+        [
+          "theta",
+          2
+        ],
+        [
+          "vega",
+          2
+        ],
+        [
+          "earnings",
+          2
+        ],
+        [
+          "risk management",
+          1
+        ],
+        [
+          "early exercise",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          6
+        ],
+        [
+          "long_straddle",
+          4
+        ],
+        [
+          "covered_call",
+          3
+        ],
+        [
+          "bull_put_credit",
+          2
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\forex_online_manual_for_successful_trading_2000.txt"
+    },
+    {
+      "title": "Forex Trading Techniques (2003)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\Forex Trading Techniques (2003).pdf",
+      "bytes": 4699044,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\forex_trading_techniques_2003.txt"
+    },
+    {
+      "title": "Fundamentals of the Option Market (2001)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Fundamentals of the Option Market (2001).pdf",
+      "bytes": 29767247,
+      "pages_read": 19,
+      "status": "ok",
+      "entries": 41,
+      "top_keywords": [
+        [
+          "risk management",
+          3
+        ],
+        [
+          "covered call",
+          2
+        ],
+        [
+          "straddle",
+          2
+        ],
+        [
+          "strangle",
+          2
+        ],
+        [
+          "collar",
+          2
+        ],
+        [
+          "married put",
+          2
+        ],
+        [
+          "butterfly",
+          2
+        ],
+        [
+          "delta",
+          1
+        ],
+        [
+          "gamma",
+          1
+        ],
+        [
+          "theta",
+          1
+        ],
+        [
+          "vega",
+          1
+        ],
+        [
+          "assignment",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          5
+        ],
+        [
+          "long_put",
+          4
+        ],
+        [
+          "bull_put_credit",
+          3
+        ],
+        [
+          "long_straddle",
+          3
+        ],
+        [
+          "iron_condor",
+          2
+        ],
+        [
+          "long_strangle",
+          2
+        ],
+        [
+          "call_butterfly",
+          2
+        ],
+        [
+          "put_butterfly",
+          2
+        ],
+        [
+          "cash_secured_put",
+          1
+        ],
+        [
+          "iron_butterfly",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\fundamentals_of_the_option_market_2001.txt"
+    },
+    {
+      "title": "Get Rich With Options (2009)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Get Rich With Options (2009).pdf",
+      "bytes": 7872806,
+      "pages_read": 34,
+      "status": "ok",
+      "entries": 17,
+      "top_keywords": [
+        [
+          "breakeven",
+          4
+        ],
+        [
+          "credit spread",
+          2
+        ],
+        [
+          "covered call",
+          1
+        ],
+        [
+          "black-scholes",
+          1
+        ],
+        [
+          "delta",
+          1
+        ],
+        [
+          "gamma",
+          1
+        ],
+        [
+          "theta",
+          1
+        ],
+        [
+          "vega",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "bull_put_credit",
+          3
+        ],
+        [
+          "bear_call_credit",
+          2
+        ],
+        [
+          "covered_call",
+          2
+        ],
+        [
+          "iron_condor",
+          2
+        ],
+        [
+          "long_straddle",
+          1
+        ]
+      ],
+      "seed_count": 5,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\get_rich_with_options_2009.txt"
+    },
+    {
+      "title": "Getting Started in Currency Trading (2008)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\Getting Started in Currency Trading (2008).pdf",
+      "bytes": 4782084,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 4,
+      "top_keywords": [
+        [
+          "margin requirement",
+          3
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "cash_secured_put",
+          3
+        ]
+      ],
+      "seed_count": 1,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\getting_started_in_currency_trading_2008.txt"
+    },
+    {
+      "title": "Getting Started in Options (2007)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Getting Started in Options (2007).pdf",
+      "bytes": 4690580,
+      "pages_read": 50,
+      "status": "ok",
+      "entries": 8,
+      "top_keywords": [
+        [
+          "collateral",
+          2
+        ],
+        [
+          "breakeven",
+          2
+        ],
+        [
+          "earnings",
+          1
+        ],
+        [
+          "rolling",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "bull_put_credit",
+          3
+        ],
+        [
+          "cash_secured_put",
+          2
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ]
+      ],
+      "seed_count": 5,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\getting_started_in_options_2007.txt"
+    },
+    {
+      "title": "Guide To Winning With Automated Trading Systems (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Guide To Winning With Automated Trading Systems (2000).pdf",
+      "bytes": 3877382,
+      "pages_read": 50,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\guide_to_winning_with_automated_trading_systems_2000.txt"
+    },
+    {
+      "title": "High Probability Short Term Trading Strategies (2005)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\High Probability Short Term Trading Strategies (2005).pdf",
+      "bytes": 5405252,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 5,
+      "top_keywords": [
+        [
+          "historical volatility",
+          2
+        ],
+        [
+          "vega",
+          1
+        ],
+        [
+          "delta",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "iron_condor",
+          2
+        ]
+      ],
+      "seed_count": 2,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\high_probability_short_term_trading_strategies_2005.txt"
+    },
+    {
+      "title": "How To Make Money With Trading Systems (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\How To Make Money With Trading Systems (2000).pdf",
+      "bytes": 313433,
+      "pages_read": 28,
+      "status": "ok",
+      "entries": 1,
+      "top_keywords": [
+        [
+          "margin requirement",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "cash_secured_put",
+          1
+        ]
+      ],
+      "seed_count": 1,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\how_to_make_money_with_trading_systems_2000.txt"
+    },
+    {
+      "title": "How To Swing Trade - A Beginners Guide to Trading Tools, Money Management, Rules, Routines and Strategies",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\How To Swing Trade - A Beginners Guide to Trading Tools, Money Management, Rules, Routines and Strategies\\How To Swing Trade - A Beginners Guide to Trading Tools, Money Management, Rules, Routines and Strategies.pdf",
+      "bytes": 8047860,
+      "pages_read": 33,
+      "status": "ok",
+      "entries": 3,
+      "top_keywords": [
+        [
+          "earnings",
+          2
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "iron_condor",
+          2
+        ]
+      ],
+      "seed_count": 2,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\how_to_swing_trade_a_beginners_guide_to_trading_tools_money_management_rules_rou.txt"
+    },
+    {
+      "title": "Increasing Alpha with Options (2010)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Increasing Alpha with Options (2010).pdf",
+      "bytes": 3494172,
+      "pages_read": 50,
+      "status": "ok",
+      "entries": 45,
+      "top_keywords": [
+        [
+          "implied volatility",
+          11
+        ],
+        [
+          "earnings",
+          5
+        ],
+        [
+          "delta",
+          3
+        ],
+        [
+          "rolling",
+          2
+        ],
+        [
+          "naked call",
+          2
+        ],
+        [
+          "covered call",
+          2
+        ],
+        [
+          "protective put",
+          2
+        ],
+        [
+          "ex-dividend",
+          1
+        ],
+        [
+          "collar",
+          1
+        ],
+        [
+          "gamma",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          16
+        ],
+        [
+          "bull_put_credit",
+          13
+        ],
+        [
+          "cash_secured_put",
+          11
+        ],
+        [
+          "covered_call",
+          5
+        ],
+        [
+          "long_straddle",
+          5
+        ],
+        [
+          "long_put",
+          3
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\increasing_alpha_with_options_2010.txt"
+    },
+    {
+      "title": "Intra-Day Trading Strategies  (2003)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Intra-Day Trading Strategies  (2003).pdf",
+      "bytes": 3513202,
+      "pages_read": 48,
+      "status": "ok",
+      "entries": 1,
+      "top_keywords": [
+        [
+          "vega",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 2,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\intra_day_trading_strategies_2003.txt"
+    },
+    {
+      "title": "Intraday Timing For Low Risk Swing Trading (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Intraday Timing For Low Risk Swing Trading (2000).pdf",
+      "bytes": 1957208,
+      "pages_read": 20,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\intraday_timing_for_low_risk_swing_trading_2000.txt"
+    },
+    {
+      "title": "Jesse H. Generative AI for Trading and Asset Management 2025",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Jesse H. Generative AI for Trading and Asset Management 2025\\Jesse H. Generative AI for Trading and Asset Management 2025.pdf",
+      "bytes": 13792325,
+      "pages_read": 34,
+      "status": "ok",
+      "entries": 2,
+      "top_keywords": [
+        [
+          "implied volatility",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          2
+        ],
+        [
+          "bull_put_credit",
+          1
+        ],
+        [
+          "cash_secured_put",
+          1
+        ],
+        [
+          "long_straddle",
+          1
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\jesse_h_generative_ai_for_trading_and_asset_management_2025.txt"
+    },
+    {
+      "title": "John Murphy's Ten Laws Of Technical Trading (2005)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\John Murphy's Ten Laws Of Technical Trading (2005).pdf",
+      "bytes": 313540,
+      "pages_read": 34,
+      "status": "ok",
+      "entries": 2,
+      "top_keywords": [
+        [
+          "rolling",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "bull_put_credit",
+          1
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\john_murphys_ten_laws_of_technical_trading_2005.txt"
+    },
+    {
+      "title": "Learn Day Trading (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\Learn Day Trading (2000).pdf",
+      "bytes": 889856,
+      "pages_read": 80,
+      "status": "ok",
+      "entries": 3,
+      "top_keywords": [
+        [
+          "breakeven",
+          1
+        ],
+        [
+          "rolling",
+          1
+        ],
+        [
+          "margin requirement",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "bull_put_credit",
+          1
+        ],
+        [
+          "cash_secured_put",
+          1
+        ]
+      ],
+      "seed_count": 3,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\learn_day_trading_2000.txt"
+    },
+    {
+      "title": "Margin Trading (2008)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Margin Trading Collection\\Margin Trading (2008).pdf",
+      "bytes": 1105013,
+      "pages_read": 79,
+      "status": "ok",
+      "entries": 20,
+      "top_keywords": [
+        [
+          "collateral",
+          11
+        ],
+        [
+          "margin requirement",
+          3
+        ],
+        [
+          "theta",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "cash_secured_put",
+          14
+        ],
+        [
+          "bull_put_credit",
+          12
+        ],
+        [
+          "iron_condor",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\margin_trading_2008.txt"
+    },
+    {
+      "title": "Mechanical Trading Systems (2005)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Mechanical Trading Systems (2005).pdf",
+      "bytes": 3246364,
+      "pages_read": 48,
+      "status": "ok",
+      "entries": 16,
+      "top_keywords": [
+        [
+          "risk management",
+          4
+        ],
+        [
+          "position sizing",
+          2
+        ],
+        [
+          "break-even",
+          2
+        ],
+        [
+          "historical volatility",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ],
+        [
+          "rolling",
+          1
+        ],
+        [
+          "breakeven",
+          1
+        ],
+        [
+          "unlimited risk",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "bull_put_credit",
+          1
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\mechanical_trading_systems_2005.txt"
+    },
+    {
+      "title": "NCI_Trading_System_v1.5_MASTER",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\NCI_Trading_System_v1.5_MASTER.pdf",
+      "bytes": 959460,
+      "pages_read": 79,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\nci_trading_system_v15_master.txt"
+    },
+    {
+      "title": "Oliver Velez - Swing Trading Tactics (2001)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Oliver Velez - Swing Trading Tactics (2001).pdf",
+      "bytes": 10290279,
+      "pages_read": 35,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\oliver_velez_swing_trading_tactics_2001.txt"
+    },
+    {
+      "title": "Option Pricing Models  (2007)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Pricing Models  (2007).pdf",
+      "bytes": 15240380,
+      "pages_read": 21,
+      "status": "ok",
+      "entries": 33,
+      "top_keywords": [
+        [
+          "black-scholes",
+          4
+        ],
+        [
+          "implied volatility",
+          3
+        ],
+        [
+          "delta",
+          2
+        ],
+        [
+          "binomial",
+          1
+        ],
+        [
+          "american option",
+          1
+        ],
+        [
+          "risk management",
+          1
+        ],
+        [
+          "straddle",
+          1
+        ],
+        [
+          "theta",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          4
+        ],
+        [
+          "bull_put_credit",
+          4
+        ],
+        [
+          "cash_secured_put",
+          3
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ]
+      ],
+      "seed_count": 5,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\option_pricing_models_2007.txt"
+    },
+    {
+      "title": "Option Spread Strategies (2009)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Spread Strategies (2009).pdf",
+      "bytes": 5997308,
+      "pages_read": 50,
+      "status": "ok",
+      "entries": 174,
+      "top_keywords": [
+        [
+          "implied volatility",
+          18
+        ],
+        [
+          "delta",
+          12
+        ],
+        [
+          "theta",
+          9
+        ],
+        [
+          "gamma",
+          7
+        ],
+        [
+          "vega",
+          7
+        ],
+        [
+          "bull call",
+          7
+        ],
+        [
+          "bear put",
+          6
+        ],
+        [
+          "breakeven",
+          5
+        ],
+        [
+          "maximum loss",
+          4
+        ],
+        [
+          "break-even",
+          4
+        ],
+        [
+          "rolling",
+          3
+        ],
+        [
+          "covered call",
+          2
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          34
+        ],
+        [
+          "bull_put_credit",
+          30
+        ],
+        [
+          "cash_secured_put",
+          19
+        ],
+        [
+          "covered_call",
+          15
+        ],
+        [
+          "long_straddle",
+          9
+        ],
+        [
+          "bull_call_debit",
+          7
+        ],
+        [
+          "bear_put_debit",
+          6
+        ],
+        [
+          "long_strangle",
+          1
+        ],
+        [
+          "long_put",
+          1
+        ],
+        [
+          "call_butterfly",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\option_spread_strategies_2009.txt"
+    },
+    {
+      "title": "Option Spreads and Combinations (2014)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Complete Book of Option Spreads (2014)\\Option Spreads and Combinations (2014).pdf",
+      "bytes": 4640161,
+      "pages_read": 46,
+      "status": "ok",
+      "entries": 60,
+      "top_keywords": [
+        [
+          "maximum loss",
+          6
+        ],
+        [
+          "breakeven",
+          5
+        ],
+        [
+          "covered call",
+          4
+        ],
+        [
+          "implied volatility",
+          4
+        ],
+        [
+          "delta",
+          4
+        ],
+        [
+          "collar",
+          3
+        ],
+        [
+          "straddle",
+          2
+        ],
+        [
+          "earnings",
+          2
+        ],
+        [
+          "naked call",
+          2
+        ],
+        [
+          "theta",
+          2
+        ],
+        [
+          "iron condor",
+          1
+        ],
+        [
+          "strangle",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          11
+        ],
+        [
+          "bull_put_credit",
+          7
+        ],
+        [
+          "covered_call",
+          6
+        ],
+        [
+          "long_straddle",
+          5
+        ],
+        [
+          "cash_secured_put",
+          5
+        ],
+        [
+          "long_put",
+          3
+        ],
+        [
+          "long_strangle",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\option_spreads_and_combinations_2014.txt"
+    },
+    {
+      "title": "Option Strategies - A Quick Guide (2010)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Strategies - A Quick Guide (2010).pdf",
+      "bytes": 8730424,
+      "pages_read": 35,
+      "status": "ok",
+      "entries": 14,
+      "top_keywords": [
+        [
+          "strangle",
+          3
+        ],
+        [
+          "break-even",
+          2
+        ],
+        [
+          "straddle",
+          2
+        ],
+        [
+          "bull call",
+          1
+        ],
+        [
+          "covered call",
+          1
+        ],
+        [
+          "married put",
+          1
+        ],
+        [
+          "bear put",
+          1
+        ],
+        [
+          "collar",
+          1
+        ],
+        [
+          "iron condor",
+          1
+        ],
+        [
+          "butterfly",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_strangle",
+          3
+        ],
+        [
+          "long_put",
+          2
+        ],
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "bull_call_debit",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "bear_put_debit",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ],
+        [
+          "call_butterfly",
+          1
+        ],
+        [
+          "put_butterfly",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\option_strategies_a_quick_guide_2010.txt"
+    },
+    {
+      "title": "Option Trading - Pricing and Volatility Strategies (2010)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Trading - Pricing and Volatility Strategies (2010).pdf",
+      "bytes": 4985850,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 34,
+      "top_keywords": [
+        [
+          "black-scholes",
+          5
+        ],
+        [
+          "collateral",
+          4
+        ],
+        [
+          "delta",
+          3
+        ],
+        [
+          "implied volatility",
+          2
+        ],
+        [
+          "gamma",
+          2
+        ],
+        [
+          "vega",
+          2
+        ],
+        [
+          "binomial",
+          2
+        ],
+        [
+          "risk management",
+          2
+        ],
+        [
+          "american option",
+          2
+        ],
+        [
+          "theta",
+          1
+        ],
+        [
+          "assignment",
+          1
+        ],
+        [
+          "margin requirement",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "bull_put_credit",
+          8
+        ],
+        [
+          "cash_secured_put",
+          8
+        ],
+        [
+          "iron_condor",
+          5
+        ],
+        [
+          "covered_call",
+          2
+        ],
+        [
+          "long_straddle",
+          2
+        ]
+      ],
+      "seed_count": 5,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\option_trading_pricing_and_volatility_strategies_2010.txt"
+    },
+    {
+      "title": "Options And Options Trading - A Simplified Course (2004)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options And Options Trading - A Simplified Course (2004).pdf",
+      "bytes": 3154280,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 23,
+      "top_keywords": [
+        [
+          "binomial",
+          8
+        ],
+        [
+          "black-scholes",
+          3
+        ],
+        [
+          "earnings",
+          1
+        ],
+        [
+          "vega",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "iron_condor",
+          2
+        ]
+      ],
+      "seed_count": 2,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\options_and_options_trading_a_simplified_course_2004.txt"
+    },
+    {
+      "title": "Options and Other Derivatives (2015)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options and Other Derivatives (2015).pdf",
+      "bytes": 5739641,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 53,
+      "top_keywords": [
+        [
+          "american option",
+          5
+        ],
+        [
+          "risk management",
+          4
+        ],
+        [
+          "binomial",
+          4
+        ],
+        [
+          "delta",
+          4
+        ],
+        [
+          "monte carlo",
+          4
+        ],
+        [
+          "collateral",
+          4
+        ],
+        [
+          "margin requirement",
+          3
+        ],
+        [
+          "volatility smile",
+          2
+        ],
+        [
+          "delta hedging",
+          2
+        ],
+        [
+          "gamma",
+          2
+        ],
+        [
+          "theta",
+          1
+        ],
+        [
+          "vega",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "cash_secured_put",
+          8
+        ],
+        [
+          "bull_put_credit",
+          6
+        ],
+        [
+          "covered_call",
+          4
+        ],
+        [
+          "long_put",
+          2
+        ],
+        [
+          "iron_condor",
+          2
+        ],
+        [
+          "long_straddle",
+          2
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\options_and_other_derivatives_2015.txt"
+    },
+    {
+      "title": "Options Made Easy (2005)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options Made Easy (2005).pdf",
+      "bytes": 4753860,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 23,
+      "top_keywords": [
+        [
+          "breakeven",
+          8
+        ],
+        [
+          "maximum loss",
+          4
+        ],
+        [
+          "unlimited risk",
+          3
+        ],
+        [
+          "bull call",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "bull_call_debit",
+          1
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 3,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\options_made_easy_2005.txt"
+    },
+    {
+      "title": "Options Strategies (1996)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options Strategies (1996).pdf",
+      "bytes": 2416070,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 51,
+      "top_keywords": [
+        [
+          "covered call",
+          4
+        ],
+        [
+          "break-even",
+          4
+        ],
+        [
+          "delta",
+          3
+        ],
+        [
+          "implied volatility",
+          3
+        ],
+        [
+          "straddle",
+          2
+        ],
+        [
+          "theta",
+          2
+        ],
+        [
+          "assignment",
+          2
+        ],
+        [
+          "gamma",
+          2
+        ],
+        [
+          "vega",
+          2
+        ],
+        [
+          "naked call",
+          1
+        ],
+        [
+          "naked put",
+          1
+        ],
+        [
+          "butterfly",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          9
+        ],
+        [
+          "bull_put_credit",
+          8
+        ],
+        [
+          "iron_condor",
+          8
+        ],
+        [
+          "cash_secured_put",
+          7
+        ],
+        [
+          "long_straddle",
+          5
+        ],
+        [
+          "call_butterfly",
+          1
+        ],
+        [
+          "put_butterfly",
+          1
+        ],
+        [
+          "long_strangle",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\options_strategies_1996.txt"
+    },
+    {
+      "title": "Options Trading Crash Course - Quick Start Guide For Beginners To Learn Risk And Reward",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Options Trading Crash Course - Quick Start Guide For Beginners To Learn Risk And Reward\\Options Trading Crash Course - Quick Start Guide For Beginners To Learn Risk And Reward.pdf",
+      "bytes": 910131,
+      "pages_read": 61,
+      "status": "ok",
+      "entries": 79,
+      "top_keywords": [
+        [
+          "delta",
+          11
+        ],
+        [
+          "risk management",
+          6
+        ],
+        [
+          "gamma",
+          5
+        ],
+        [
+          "covered call",
+          3
+        ],
+        [
+          "implied volatility",
+          3
+        ],
+        [
+          "theta",
+          3
+        ],
+        [
+          "earnings",
+          2
+        ],
+        [
+          "vega",
+          2
+        ],
+        [
+          "breakeven",
+          1
+        ],
+        [
+          "break-even",
+          1
+        ],
+        [
+          "naked put",
+          1
+        ],
+        [
+          "married put",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          11
+        ],
+        [
+          "bull_put_credit",
+          9
+        ],
+        [
+          "covered_call",
+          7
+        ],
+        [
+          "cash_secured_put",
+          5
+        ],
+        [
+          "long_straddle",
+          4
+        ],
+        [
+          "long_put",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\options_trading_crash_course_quick_start_guide_for_beginners_to_learn_risk_and_r.txt"
+    },
+    {
+      "title": "Options Trading for the Conservative Investor (2010)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options Trading for the Conservative Investor (2010).pdf",
+      "bytes": 1642222,
+      "pages_read": 80,
+      "status": "ok",
+      "entries": 83,
+      "top_keywords": [
+        [
+          "covered call",
+          26
+        ],
+        [
+          "rolling",
+          5
+        ],
+        [
+          "earnings",
+          5
+        ],
+        [
+          "implied volatility",
+          4
+        ],
+        [
+          "margin requirement",
+          2
+        ],
+        [
+          "risk management",
+          1
+        ],
+        [
+          "straddle",
+          1
+        ],
+        [
+          "defined risk",
+          1
+        ],
+        [
+          "unlimited risk",
+          1
+        ],
+        [
+          "black-scholes",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          31
+        ],
+        [
+          "bull_put_credit",
+          10
+        ],
+        [
+          "iron_condor",
+          10
+        ],
+        [
+          "cash_secured_put",
+          6
+        ],
+        [
+          "long_straddle",
+          6
+        ]
+      ],
+      "seed_count": 5,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\options_trading_for_the_conservative_investor_2010.txt"
+    },
+    {
+      "title": "Options Trading Primer By Marketwise Trading School (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options Trading Primer By Marketwise Trading School (2002).pdf",
+      "bytes": 758652,
+      "pages_read": 61,
+      "status": "ok",
+      "entries": 202,
+      "top_keywords": [
+        [
+          "delta",
+          10
+        ],
+        [
+          "covered call",
+          9
+        ],
+        [
+          "credit spread",
+          8
+        ],
+        [
+          "straddle",
+          8
+        ],
+        [
+          "strangle",
+          7
+        ],
+        [
+          "debit spread",
+          6
+        ],
+        [
+          "black-scholes",
+          5
+        ],
+        [
+          "gamma",
+          5
+        ],
+        [
+          "american option",
+          5
+        ],
+        [
+          "binomial",
+          4
+        ],
+        [
+          "butterfly",
+          4
+        ],
+        [
+          "theta",
+          3
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          21
+        ],
+        [
+          "bull_put_credit",
+          18
+        ],
+        [
+          "long_straddle",
+          12
+        ],
+        [
+          "iron_condor",
+          10
+        ],
+        [
+          "bear_call_credit",
+          9
+        ],
+        [
+          "bull_call_debit",
+          9
+        ],
+        [
+          "bear_put_debit",
+          9
+        ],
+        [
+          "cash_secured_put",
+          9
+        ],
+        [
+          "long_strangle",
+          7
+        ],
+        [
+          "long_put",
+          6
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\options_trading_primer_by_marketwise_trading_school_2002.txt"
+    },
+    {
+      "title": "professional_automated_trading",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\professional_automated_trading.pdf",
+      "bytes": 12146757,
+      "pages_read": 32,
+      "status": "ok",
+      "entries": 9,
+      "top_keywords": [
+        [
+          "risk management",
+          4
+        ],
+        [
+          "vega",
+          2
+        ],
+        [
+          "theta",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          3
+        ],
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "bull_put_credit",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\professional_automated_trading.txt"
+    },
+    {
+      "title": "Profit With Options - Essential Methods For Investing Success (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Profit With Options - Essential Methods For Investing Success (2002).pdf",
+      "bytes": 2582938,
+      "pages_read": 48,
+      "status": "ok",
+      "entries": 58,
+      "top_keywords": [
+        [
+          "implied volatility",
+          11
+        ],
+        [
+          "historical volatility",
+          6
+        ],
+        [
+          "black-scholes",
+          4
+        ],
+        [
+          "delta",
+          4
+        ],
+        [
+          "covered call",
+          4
+        ],
+        [
+          "earnings",
+          4
+        ],
+        [
+          "straddle",
+          3
+        ],
+        [
+          "binomial",
+          2
+        ],
+        [
+          "margin requirement",
+          2
+        ],
+        [
+          "assignment",
+          1
+        ],
+        [
+          "naked put",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          15
+        ],
+        [
+          "cash_secured_put",
+          15
+        ],
+        [
+          "bull_put_credit",
+          12
+        ],
+        [
+          "long_straddle",
+          7
+        ],
+        [
+          "covered_call",
+          5
+        ]
+      ],
+      "seed_count": 5,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\profit_with_options_essential_methods_for_investing_success_2002.txt"
+    },
+    {
+      "title": "Profitable Candlestick Trading  (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Candlestick Trading Collection\\Profitable Candlestick Trading  (2002).pdf",
+      "bytes": 7346202,
+      "pages_read": 31,
+      "status": "ok",
+      "entries": 3,
+      "top_keywords": [
+        [
+          "earnings",
+          2
+        ],
+        [
+          "the wheel",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "iron_condor",
+          2
+        ],
+        [
+          "cash_secured_put",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\profitable_candlestick_trading_2002.txt"
+    },
+    {
+      "title": "Put Option Strategies for Smarter Trading (2010)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Put Option Strategies for Smarter Trading (2010).pdf",
+      "bytes": 2469494,
+      "pages_read": 50,
+      "status": "ok",
+      "entries": 54,
+      "top_keywords": [
+        [
+          "covered call",
+          9
+        ],
+        [
+          "collar",
+          4
+        ],
+        [
+          "straddle",
+          3
+        ],
+        [
+          "maximum loss",
+          3
+        ],
+        [
+          "breakeven",
+          3
+        ],
+        [
+          "rolling",
+          2
+        ],
+        [
+          "butterfly",
+          1
+        ],
+        [
+          "strangle",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ],
+        [
+          "implied volatility",
+          1
+        ],
+        [
+          "ex-dividend",
+          1
+        ],
+        [
+          "naked call",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          12
+        ],
+        [
+          "long_straddle",
+          4
+        ],
+        [
+          "long_put",
+          4
+        ],
+        [
+          "bull_put_credit",
+          3
+        ],
+        [
+          "iron_condor",
+          2
+        ],
+        [
+          "call_butterfly",
+          1
+        ],
+        [
+          "put_butterfly",
+          1
+        ],
+        [
+          "long_strangle",
+          1
+        ],
+        [
+          "cash_secured_put",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\put_option_strategies_for_smarter_trading_2010.txt"
+    },
+    {
+      "title": "Quantitative Finance (2007)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Quantitative Finance (2007).pdf",
+      "bytes": 5808600,
+      "pages_read": 43,
+      "status": "ok",
+      "entries": 24,
+      "top_keywords": [
+        [
+          "delta",
+          5
+        ],
+        [
+          "gamma",
+          3
+        ],
+        [
+          "binomial",
+          2
+        ],
+        [
+          "straddle",
+          2
+        ],
+        [
+          "vega",
+          2
+        ],
+        [
+          "strangle",
+          1
+        ],
+        [
+          "theta",
+          1
+        ],
+        [
+          "collar",
+          1
+        ],
+        [
+          "collateral",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          4
+        ],
+        [
+          "iron_condor",
+          3
+        ],
+        [
+          "bull_put_credit",
+          2
+        ],
+        [
+          "long_strangle",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "long_put",
+          1
+        ],
+        [
+          "cash_secured_put",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\quantitative_finance_2007.txt"
+    },
+    {
+      "title": "Secrets Of The Millionaire Traders Vol I (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Secrets Of The Millionaire Traders Vol I (2000).pdf",
+      "bytes": 1927486,
+      "pages_read": 27,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\secrets_of_the_millionaire_traders_vol_i_2000.txt"
+    },
+    {
+      "title": "Secrets Of The Millionaire Traders Vol II (2001)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Secrets Of The Millionaire Traders Vol II (2001).pdf",
+      "bytes": 2006994,
+      "pages_read": 19,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\secrets_of_the_millionaire_traders_vol_ii_2001.txt"
+    },
+    {
+      "title": "Statistics of Financial Markets (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Statistics of Financial Markets (2013).pdf",
+      "bytes": 5249493,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 58,
+      "top_keywords": [
+        [
+          "butterfly",
+          7
+        ],
+        [
+          "straddle",
+          6
+        ],
+        [
+          "binomial",
+          4
+        ],
+        [
+          "strangle",
+          3
+        ],
+        [
+          "bull call",
+          2
+        ],
+        [
+          "risk management",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ],
+        [
+          "black-scholes",
+          1
+        ],
+        [
+          "collar",
+          1
+        ],
+        [
+          "delta",
+          1
+        ],
+        [
+          "implied volatility",
+          1
+        ],
+        [
+          "put-call parity",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          7
+        ],
+        [
+          "call_butterfly",
+          7
+        ],
+        [
+          "put_butterfly",
+          7
+        ],
+        [
+          "long_strangle",
+          3
+        ],
+        [
+          "iron_condor",
+          2
+        ],
+        [
+          "bull_call_debit",
+          2
+        ],
+        [
+          "long_put",
+          1
+        ],
+        [
+          "bull_put_credit",
+          1
+        ],
+        [
+          "cash_secured_put",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\statistics_of_financial_markets_2013.txt"
+    },
+    {
+      "title": "Step by Step Trading - Alexander Elder (2015)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\Step by Step Trading - Alexander Elder (2015).pdf",
+      "bytes": 4924398,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 9,
+      "top_keywords": [
+        [
+          "risk management",
+          4
+        ],
+        [
+          "the wheel",
+          1
+        ],
+        [
+          "rolling",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          2
+        ],
+        [
+          "cash_secured_put",
+          1
+        ],
+        [
+          "bull_put_credit",
+          1
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 5,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\step_by_step_trading_alexander_elder_2015.txt"
+    },
+    {
+      "title": "Strategic Analysis And Trading Tactics (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Strategic Analysis And Trading Tactics (2000).pdf",
+      "bytes": 1635998,
+      "pages_read": 28,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\strategic_analysis_and_trading_tactics_2000.txt"
+    },
+    {
+      "title": "Sure Fire Forex Trading (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\Sure Fire Forex Trading (2000).pdf",
+      "bytes": 1626245,
+      "pages_read": 80,
+      "status": "ok",
+      "entries": 5,
+      "top_keywords": [
+        [
+          "rolling",
+          3
+        ],
+        [
+          "collateral",
+          2
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "bull_put_credit",
+          5
+        ],
+        [
+          "covered_call",
+          3
+        ],
+        [
+          "cash_secured_put",
+          2
+        ]
+      ],
+      "seed_count": 3,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\sure_fire_forex_trading_2000.txt"
+    },
+    {
+      "title": "Swing Trading Using Candlestick Charting With Pivot Point Analysis  (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\Swing Trading Using Candlestick Charting With Pivot Point Analysis  (2002).pdf",
+      "bytes": 1011558,
+      "pages_read": 16,
+      "status": "ok",
+      "entries": 1,
+      "top_keywords": [
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 2,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\swing_trading_using_candlestick_charting_with_pivot_point_analysis_2002.txt"
+    },
+    {
+      "title": "Technical Trading Tactics (2004)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\Technical Trading Tactics (2004).pdf",
+      "bytes": 6530027,
+      "pages_read": 34,
+      "status": "ok",
+      "entries": 10,
+      "top_keywords": [
+        [
+          "margin requirement",
+          2
+        ],
+        [
+          "risk management",
+          1
+        ],
+        [
+          "delta",
+          1
+        ],
+        [
+          "straddle",
+          1
+        ],
+        [
+          "strangle",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ],
+        [
+          "rolling",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "cash_secured_put",
+          2
+        ],
+        [
+          "long_strangle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "bull_put_credit",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\technical_trading_tactics_2004.txt"
+    },
+    {
+      "title": "The Candlestick Trading Bible",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\The Candlestick Trading Bible.pdf",
+      "bytes": 2829110,
+      "pages_read": 50,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_candlestick_trading_bible.txt"
+    },
+    {
+      "title": "The Complete Book of Options Spreads (2014)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Complete Book of Options Spreads (2014).pdf",
+      "bytes": 4640161,
+      "pages_read": 46,
+      "status": "ok",
+      "entries": 60,
+      "top_keywords": [
+        [
+          "maximum loss",
+          6
+        ],
+        [
+          "breakeven",
+          5
+        ],
+        [
+          "covered call",
+          4
+        ],
+        [
+          "implied volatility",
+          4
+        ],
+        [
+          "delta",
+          4
+        ],
+        [
+          "collar",
+          3
+        ],
+        [
+          "straddle",
+          2
+        ],
+        [
+          "earnings",
+          2
+        ],
+        [
+          "naked call",
+          2
+        ],
+        [
+          "theta",
+          2
+        ],
+        [
+          "iron condor",
+          1
+        ],
+        [
+          "strangle",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          11
+        ],
+        [
+          "bull_put_credit",
+          7
+        ],
+        [
+          "covered_call",
+          6
+        ],
+        [
+          "long_straddle",
+          5
+        ],
+        [
+          "cash_secured_put",
+          5
+        ],
+        [
+          "long_put",
+          3
+        ],
+        [
+          "long_strangle",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_complete_book_of_options_spreads_2014.txt"
+    },
+    {
+      "title": "The Complete Guide to Option Pricing Formulas (2007)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Complete Guide to Option Pricing Formulas (2007).pdf",
+      "bytes": 10651715,
+      "pages_read": 30,
+      "status": "ok",
+      "entries": 58,
+      "top_keywords": [
+        [
+          "black-scholes",
+          5
+        ],
+        [
+          "american option",
+          5
+        ],
+        [
+          "monte carlo",
+          4
+        ],
+        [
+          "delta",
+          3
+        ],
+        [
+          "binomial",
+          3
+        ],
+        [
+          "gamma",
+          2
+        ],
+        [
+          "theta",
+          2
+        ],
+        [
+          "vega",
+          2
+        ],
+        [
+          "put-call parity",
+          1
+        ],
+        [
+          "delta hedging",
+          1
+        ],
+        [
+          "implied volatility",
+          1
+        ],
+        [
+          "historical volatility",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          5
+        ],
+        [
+          "bull_put_credit",
+          3
+        ],
+        [
+          "covered_call",
+          3
+        ],
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "long_put",
+          1
+        ],
+        [
+          "cash_secured_put",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_complete_guide_to_option_pricing_formulas_2007.txt"
+    },
+    {
+      "title": "The Day Trading Course (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\The Day Trading Course (2000).pdf",
+      "bytes": 14700758,
+      "pages_read": 0,
+      "status": "no_text",
+      "entries": 0
+    },
+    {
+      "title": "The Economist - Guide to Investment Strategy (2006)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\The Economist - Guide to Investment Strategy (2006).pdf",
+      "bytes": 4523121,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 13,
+      "top_keywords": [
+        [
+          "break-even",
+          2
+        ],
+        [
+          "rolling",
+          2
+        ],
+        [
+          "earnings",
+          2
+        ],
+        [
+          "collateral",
+          1
+        ],
+        [
+          "risk management",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "bull_put_credit",
+          3
+        ],
+        [
+          "covered_call",
+          2
+        ],
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "iron_condor",
+          2
+        ],
+        [
+          "cash_secured_put",
+          1
+        ]
+      ],
+      "seed_count": 5,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_economist_guide_to_investment_strategy_2006.txt"
+    },
+    {
+      "title": "The Equity Options Strategy Guide (2010)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Equity Options Strategy Guide (2010).pdf",
+      "bytes": 189996,
+      "pages_read": 30,
+      "status": "ok",
+      "entries": 94,
+      "top_keywords": [
+        [
+          "assignment",
+          12
+        ],
+        [
+          "break-even",
+          11
+        ],
+        [
+          "maximum loss",
+          9
+        ],
+        [
+          "covered call",
+          5
+        ],
+        [
+          "protective put",
+          4
+        ],
+        [
+          "married put",
+          4
+        ],
+        [
+          "early exercise",
+          3
+        ],
+        [
+          "bull call",
+          3
+        ],
+        [
+          "bear put",
+          3
+        ],
+        [
+          "collar",
+          3
+        ],
+        [
+          "collateral",
+          3
+        ],
+        [
+          "margin requirement",
+          2
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          21
+        ],
+        [
+          "cash_secured_put",
+          17
+        ],
+        [
+          "bull_put_credit",
+          15
+        ],
+        [
+          "long_put",
+          11
+        ],
+        [
+          "bull_call_debit",
+          3
+        ],
+        [
+          "bear_put_debit",
+          3
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_equity_options_strategy_guide_2010.txt"
+    },
+    {
+      "title": "The Forex Trading Course (2008)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\The Forex Trading Course (2008).pdf",
+      "bytes": 5213293,
+      "pages_read": 50,
+      "status": "ok",
+      "entries": 5,
+      "top_keywords": [
+        [
+          "assignment",
+          3
+        ],
+        [
+          "theta",
+          2
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          5
+        ],
+        [
+          "bull_put_credit",
+          5
+        ],
+        [
+          "cash_secured_put",
+          3
+        ],
+        [
+          "iron_condor",
+          2
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_forex_trading_course_2008.txt"
+    },
+    {
+      "title": "The Four Biggest Mistakes In Futures Trading (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\The Four Biggest Mistakes In Futures Trading (2000).pdf",
+      "bytes": 1100915,
+      "pages_read": 80,
+      "status": "ok",
+      "entries": 14,
+      "top_keywords": [
+        [
+          "margin requirement",
+          4
+        ],
+        [
+          "unlimited risk",
+          2
+        ],
+        [
+          "historical volatility",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ],
+        [
+          "naked put",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "cash_secured_put",
+          5
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 3,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_four_biggest_mistakes_in_futures_trading_2000.txt"
+    },
+    {
+      "title": "The Holy Grail Trading System",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\The Holy Grail Trading System (2013)\\The Holy Grail Trading System.pdf",
+      "bytes": 4803617,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 1,
+      "top_keywords": [
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 2,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_holy_grail_trading_system.txt"
+    },
+    {
+      "title": "The Mathematics Of Financial Modeling And Investment Management (2004)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\The Mathematics Of Financial Modeling And Investment Management (2004).pdf",
+      "bytes": 11986283,
+      "pages_read": 34,
+      "status": "ok",
+      "entries": 16,
+      "top_keywords": [
+        [
+          "risk management",
+          3
+        ],
+        [
+          "black-scholes",
+          2
+        ],
+        [
+          "binomial",
+          1
+        ],
+        [
+          "american option",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ],
+        [
+          "monte carlo",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 2,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_mathematics_of_financial_modeling_and_investment_management_2004.txt"
+    },
+    {
+      "title": "The Option Trader Handbook - Strategies And Trade Adjustments (2004)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Option Trader Handbook - Strategies And Trade Adjustments (2004).pdf",
+      "bytes": 1209615,
+      "pages_read": 79,
+      "status": "ok",
+      "entries": 220,
+      "top_keywords": [
+        [
+          "breakeven",
+          25
+        ],
+        [
+          "risk management",
+          21
+        ],
+        [
+          "straddle",
+          8
+        ],
+        [
+          "implied volatility",
+          7
+        ],
+        [
+          "assignment",
+          7
+        ],
+        [
+          "bear put",
+          6
+        ],
+        [
+          "strangle",
+          6
+        ],
+        [
+          "margin requirement",
+          6
+        ],
+        [
+          "bull call",
+          5
+        ],
+        [
+          "covered call",
+          5
+        ],
+        [
+          "rolling",
+          5
+        ],
+        [
+          "protective put",
+          4
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "cash_secured_put",
+          25
+        ],
+        [
+          "bull_put_credit",
+          20
+        ],
+        [
+          "covered_call",
+          17
+        ],
+        [
+          "long_straddle",
+          13
+        ],
+        [
+          "iron_condor",
+          12
+        ],
+        [
+          "bear_put_debit",
+          6
+        ],
+        [
+          "long_strangle",
+          6
+        ],
+        [
+          "long_put",
+          6
+        ],
+        [
+          "bull_call_debit",
+          5
+        ],
+        [
+          "call_butterfly",
+          3
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_option_trader_handbook_strategies_and_trade_adjustments_2004.txt"
+    },
+    {
+      "title": "The Option Trader's Guide To Probability, Volatility And Timing (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Option Trader's Guide To Probability, Volatility And Timing (2002).pdf",
+      "bytes": 3214218,
+      "pages_read": 47,
+      "status": "ok",
+      "entries": 40,
+      "top_keywords": [
+        [
+          "break-even",
+          8
+        ],
+        [
+          "probability of profit",
+          7
+        ],
+        [
+          "implied volatility",
+          3
+        ],
+        [
+          "unlimited risk",
+          3
+        ],
+        [
+          "delta",
+          1
+        ],
+        [
+          "assignment",
+          1
+        ],
+        [
+          "naked call",
+          1
+        ],
+        [
+          "covered call",
+          1
+        ],
+        [
+          "straddle",
+          1
+        ],
+        [
+          "naked put",
+          1
+        ],
+        [
+          "butterfly",
+          1
+        ],
+        [
+          "maximum loss",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "bull_put_credit",
+          5
+        ],
+        [
+          "cash_secured_put",
+          5
+        ],
+        [
+          "iron_condor",
+          3
+        ],
+        [
+          "covered_call",
+          3
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "call_butterfly",
+          1
+        ],
+        [
+          "put_butterfly",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_option_traders_guide_to_probability_volatility_and_timing_2002.txt"
+    },
+    {
+      "title": "The Option Trader's Hedge Fund (2012)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Hedge Fund Collection\\The Option Trader's Hedge Fund (2012)\\The Option Trader's Hedge Fund (2012).pdf",
+      "bytes": 13084069,
+      "pages_read": 35,
+      "status": "ok",
+      "entries": 27,
+      "top_keywords": [
+        [
+          "risk management",
+          6
+        ],
+        [
+          "implied volatility",
+          3
+        ],
+        [
+          "position sizing",
+          3
+        ],
+        [
+          "iron condor",
+          3
+        ],
+        [
+          "butterfly",
+          3
+        ],
+        [
+          "vega",
+          2
+        ],
+        [
+          "iron butterfly",
+          1
+        ],
+        [
+          "gamma",
+          1
+        ],
+        [
+          "assignment",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          8
+        ],
+        [
+          "bull_put_credit",
+          4
+        ],
+        [
+          "cash_secured_put",
+          4
+        ],
+        [
+          "call_butterfly",
+          3
+        ],
+        [
+          "put_butterfly",
+          3
+        ],
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "iron_butterfly",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_option_traders_hedge_fund_2012.txt"
+    },
+    {
+      "title": "The Options Course  (2005)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Options Course  (2005).pdf",
+      "bytes": 5663449,
+      "pages_read": 48,
+      "status": "ok",
+      "entries": 28,
+      "top_keywords": [
+        [
+          "delta",
+          4
+        ],
+        [
+          "earnings",
+          4
+        ],
+        [
+          "risk management",
+          3
+        ],
+        [
+          "straddle",
+          2
+        ],
+        [
+          "strangle",
+          1
+        ],
+        [
+          "rolling",
+          1
+        ],
+        [
+          "implied volatility",
+          1
+        ],
+        [
+          "maximum loss",
+          1
+        ],
+        [
+          "breakeven",
+          1
+        ],
+        [
+          "butterfly",
+          1
+        ],
+        [
+          "bull call",
+          1
+        ],
+        [
+          "credit spread",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          6
+        ],
+        [
+          "iron_condor",
+          5
+        ],
+        [
+          "bull_put_credit",
+          3
+        ],
+        [
+          "long_strangle",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "cash_secured_put",
+          1
+        ],
+        [
+          "call_butterfly",
+          1
+        ],
+        [
+          "put_butterfly",
+          1
+        ],
+        [
+          "bull_call_debit",
+          1
+        ],
+        [
+          "bear_call_credit",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_options_course_2005.txt"
+    },
+    {
+      "title": "The Options Course (2005)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Options Course (2005).pdf",
+      "bytes": 5376262,
+      "pages_read": 48,
+      "status": "ok",
+      "entries": 28,
+      "top_keywords": [
+        [
+          "delta",
+          4
+        ],
+        [
+          "earnings",
+          4
+        ],
+        [
+          "risk management",
+          3
+        ],
+        [
+          "straddle",
+          2
+        ],
+        [
+          "strangle",
+          1
+        ],
+        [
+          "rolling",
+          1
+        ],
+        [
+          "implied volatility",
+          1
+        ],
+        [
+          "maximum loss",
+          1
+        ],
+        [
+          "breakeven",
+          1
+        ],
+        [
+          "butterfly",
+          1
+        ],
+        [
+          "bull call",
+          1
+        ],
+        [
+          "credit spread",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          6
+        ],
+        [
+          "iron_condor",
+          5
+        ],
+        [
+          "bull_put_credit",
+          3
+        ],
+        [
+          "long_strangle",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "cash_secured_put",
+          1
+        ],
+        [
+          "call_butterfly",
+          1
+        ],
+        [
+          "put_butterfly",
+          1
+        ],
+        [
+          "bull_call_debit",
+          1
+        ],
+        [
+          "bear_call_credit",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_options_course_2005.txt"
+    },
+    {
+      "title": "The Secret Of Selecting Stocks For Immediate And Substantial Gains (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\The Secret Of Selecting Stocks For Immediate And Substantial Gains (2000).pdf",
+      "bytes": 3007249,
+      "pages_read": 50,
+      "status": "ok",
+      "entries": 3,
+      "top_keywords": [
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 2,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_secret_of_selecting_stocks_for_immediate_and_substantial_gains_2000.txt"
+    },
+    {
+      "title": "The Secrets Of Emotion Free Trading (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Financial Management Collection\\The Secrets Of Emotion Free Trading (2000).pdf",
+      "bytes": 496213,
+      "pages_read": 80,
+      "status": "ok",
+      "entries": 5,
+      "top_keywords": [
+        [
+          "break-even",
+          3
+        ]
+      ],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_secrets_of_emotion_free_trading_2000.txt"
+    },
+    {
+      "title": "The Ultimate Trading Guide (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\The Ultimate Trading Guide (2000).pdf",
+      "bytes": 21964382,
+      "pages_read": 23,
+      "status": "ok",
+      "entries": 1,
+      "top_keywords": [
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 2,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_ultimate_trading_guide_2000.txt"
+    },
+    {
+      "title": "The Way To Trade (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\The Way To Trade (2000).pdf",
+      "bytes": 2558046,
+      "pages_read": 44,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\the_way_to_trade_2000.txt"
+    },
+    {
+      "title": "Trade Options Online (2009)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Trade Options Online (2009).pdf",
+      "bytes": 7763272,
+      "pages_read": 34,
+      "status": "ok",
+      "entries": 5,
+      "top_keywords": [
+        [
+          "delta",
+          2
+        ],
+        [
+          "breakeven",
+          1
+        ],
+        [
+          "risk management",
+          1
+        ]
+      ],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\trade_options_online_2009.txt"
+    },
+    {
+      "title": "Trading as a Business  (2015)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Master Traders Collection\\Trading as a Business  (2015).pdf",
+      "bytes": 4848003,
+      "pages_read": 44,
+      "status": "ok",
+      "entries": 5,
+      "top_keywords": [
+        [
+          "rolling",
+          2
+        ],
+        [
+          "breakeven",
+          1
+        ],
+        [
+          "vega",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          2
+        ],
+        [
+          "bull_put_credit",
+          2
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\trading_as_a_business_2015.txt"
+    },
+    {
+      "title": "Trading for a Living (2014) - Study Guide",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Trading for a Living Collection - Dr Elder\\Trading for a Living Study - Study Guide  (2014)\\Trading for a Living (2014) - Study Guide.pdf",
+      "bytes": 3244460,
+      "pages_read": 45,
+      "status": "ok",
+      "entries": 3,
+      "top_keywords": [
+        [
+          "risk management",
+          3
+        ]
+      ],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\trading_for_a_living_2014_study_guide.txt"
+    },
+    {
+      "title": "Trading for a Living (2014)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Trading for a Living Collection - Dr Elder\\Trading for a Living (2014)\\Trading for a Living (2014).pdf",
+      "bytes": 13146529,
+      "pages_read": 30,
+      "status": "ok",
+      "entries": 5,
+      "top_keywords": [
+        [
+          "risk management",
+          4
+        ],
+        [
+          "rolling",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "bull_put_credit",
+          1
+        ]
+      ],
+      "seed_count": 2,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\trading_for_a_living_2014.txt"
+    },
+    {
+      "title": "Trading for beginners, The Bible 7 in 1 - Swing Trading,Dividend Investing,Options Trading Crash Course",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Trading for beginners, The Bible 7 in 1 - Swing Trading,Dividend Investing,Options Trading Crash Course\\Trading for beginners, The Bible 7 in 1 - Swing Trading,Dividend Investing,Options Trading Crash Course.pdf",
+      "bytes": 4072452,
+      "pages_read": 47,
+      "status": "ok",
+      "entries": 23,
+      "top_keywords": [
+        [
+          "earnings",
+          8
+        ],
+        [
+          "robinhood",
+          3
+        ],
+        [
+          "risk management",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          8
+        ],
+        [
+          "iron_condor",
+          8
+        ]
+      ],
+      "seed_count": 2,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\trading_for_beginners_the_bible_7_in_1_swing_tradingdividend_investingoptions_tr.txt"
+    },
+    {
+      "title": "Trading on Momentum (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\Trading on Momentum (2002).pdf",
+      "bytes": 2199942,
+      "pages_read": 50,
+      "status": "ok",
+      "entries": 0,
+      "top_keywords": [],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\trading_on_momentum_2002.txt"
+    },
+    {
+      "title": "Trading Options For Dummies (2008)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Trading Options For Dummies (2008).pdf",
+      "bytes": 4876583,
+      "pages_read": 49,
+      "status": "ok",
+      "entries": 31,
+      "top_keywords": [
+        [
+          "the wheel",
+          2
+        ],
+        [
+          "risk management",
+          2
+        ],
+        [
+          "implied volatility",
+          2
+        ],
+        [
+          "delta",
+          2
+        ],
+        [
+          "butterfly",
+          2
+        ],
+        [
+          "straddle",
+          2
+        ],
+        [
+          "credit spread",
+          2
+        ],
+        [
+          "covered call",
+          1
+        ],
+        [
+          "iron butterfly",
+          1
+        ],
+        [
+          "collar",
+          1
+        ],
+        [
+          "married put",
+          1
+        ],
+        [
+          "call credit",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "cash_secured_put",
+          6
+        ],
+        [
+          "bull_put_credit",
+          6
+        ],
+        [
+          "covered_call",
+          5
+        ],
+        [
+          "bear_call_credit",
+          3
+        ],
+        [
+          "iron_condor",
+          2
+        ],
+        [
+          "call_butterfly",
+          2
+        ],
+        [
+          "put_butterfly",
+          2
+        ],
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "long_put",
+          2
+        ],
+        [
+          "iron_butterfly",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\trading_options_for_dummies_2008.txt"
+    },
+    {
+      "title": "Trading Regime Analysis - The Probability of Volatility  (2009)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Volatility and VIX Collection\\Trading Regime Analysis - The Probability of Volatility  (2009).pdf",
+      "bytes": 13847107,
+      "pages_read": 31,
+      "status": "ok",
+      "entries": 3,
+      "top_keywords": [
+        [
+          "butterfly",
+          1
+        ],
+        [
+          "rolling",
+          1
+        ],
+        [
+          "position sizing",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "call_butterfly",
+          1
+        ],
+        [
+          "put_butterfly",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "bull_put_credit",
+          1
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\trading_regime_analysis_the_probability_of_volatility_2009.txt"
+    },
+    {
+      "title": "Trading Stocks and Options with Moving Averages (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\Trading Stocks and Options with Moving Averages (2013).pdf",
+      "bytes": 1379672,
+      "pages_read": 37,
+      "status": "ok",
+      "entries": 6,
+      "top_keywords": [
+        [
+          "historical volatility",
+          4
+        ]
+      ],
+      "strategy_hits": [],
+      "seed_count": 0,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\trading_stocks_and_options_with_moving_averages_2013.txt"
+    },
+    {
+      "title": "Trading Systems and Methods (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Trading Systems and Methods (2013).pdf",
+      "bytes": 26731738,
+      "pages_read": 24,
+      "status": "ok",
+      "entries": 4,
+      "top_keywords": [
+        [
+          "rolling",
+          2
+        ],
+        [
+          "risk management",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          2
+        ],
+        [
+          "bull_put_credit",
+          2
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\trading_systems_and_methods_2013.txt"
+    },
+    {
+      "title": "Trading with Candlesticks (2011)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Candlestick Trading Collection\\Trading with Candlesticks (2011).pdf",
+      "bytes": 26145245,
+      "pages_read": 25,
+      "status": "ok",
+      "entries": 5,
+      "top_keywords": [
+        [
+          "earnings",
+          1
+        ],
+        [
+          "defined risk",
+          1
+        ],
+        [
+          "breakeven",
+          1
+        ],
+        [
+          "margin requirement",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          2
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "bull_put_credit",
+          1
+        ],
+        [
+          "cash_secured_put",
+          1
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\trading_with_candlesticks_2011.txt"
+    },
+    {
+      "title": "Trading With Ichimoku Clouds (2009)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Candlestick Trading Collection\\Trading With Ichimoku Clouds (2009).pdf",
+      "bytes": 10702663,
+      "pages_read": 34,
+      "status": "ok",
+      "entries": 8,
+      "top_keywords": [
+        [
+          "earnings",
+          2
+        ],
+        [
+          "rolling",
+          2
+        ],
+        [
+          "position sizing",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "iron_condor",
+          2
+        ],
+        [
+          "covered_call",
+          2
+        ],
+        [
+          "bull_put_credit",
+          2
+        ]
+      ],
+      "seed_count": 4,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\trading_with_ichimoku_clouds_2009.txt"
+    },
+    {
+      "title": "Understanding Stocks (2004)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Understanding Stocks (2004).pdf",
+      "bytes": 1377740,
+      "pages_read": 78,
+      "status": "ok",
+      "entries": 13,
+      "top_keywords": [
+        [
+          "earnings",
+          7
+        ],
+        [
+          "margin requirement",
+          2
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "long_straddle",
+          7
+        ],
+        [
+          "iron_condor",
+          7
+        ],
+        [
+          "cash_secured_put",
+          2
+        ]
+      ],
+      "seed_count": 3,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\understanding_stocks_2004.txt"
+    },
+    {
+      "title": "Using Excel for Business Analysis (2012)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Using Excel for Business Analysis (2012).pdf",
+      "bytes": 8505705,
+      "pages_read": 32,
+      "status": "ok",
+      "entries": 4,
+      "top_keywords": [
+        [
+          "risk management",
+          2
+        ],
+        [
+          "break-even",
+          1
+        ],
+        [
+          "theta",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "bull_put_credit",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ],
+        [
+          "covered_call",
+          1
+        ]
+      ],
+      "seed_count": 3,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\using_excel_for_business_analysis_2012.txt"
+    },
+    {
+      "title": "Using Options To Buy Stocks  (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Using Options To Buy Stocks  (2000).pdf",
+      "bytes": 18117718,
+      "pages_read": 24,
+      "status": "ok",
+      "entries": 8,
+      "top_keywords": [
+        [
+          "assignment",
+          2
+        ],
+        [
+          "collateral",
+          2
+        ],
+        [
+          "earnings",
+          1
+        ],
+        [
+          "unlimited risk",
+          1
+        ],
+        [
+          "margin requirement",
+          1
+        ],
+        [
+          "straddle",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "cash_secured_put",
+          5
+        ],
+        [
+          "bull_put_credit",
+          4
+        ],
+        [
+          "long_straddle",
+          2
+        ],
+        [
+          "covered_call",
+          2
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 5,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\using_options_to_buy_stocks_2000.txt"
+    },
+    {
+      "title": "Visual Guide to Options (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Visual Guide to Options (2013).pdf",
+      "bytes": 26444195,
+      "pages_read": 18,
+      "status": "ok",
+      "entries": 6,
+      "top_keywords": [
+        [
+          "delta",
+          1
+        ],
+        [
+          "covered call",
+          1
+        ],
+        [
+          "earnings",
+          1
+        ],
+        [
+          "black-scholes",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "covered_call",
+          1
+        ],
+        [
+          "long_straddle",
+          1
+        ],
+        [
+          "iron_condor",
+          1
+        ]
+      ],
+      "seed_count": 3,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\visual_guide_to_options_2013.txt"
+    },
+    {
+      "title": "Volatility Trading (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Volatility and VIX Collection\\Volatility Trading (2013).pdf",
+      "bytes": 3369541,
+      "pages_read": 50,
+      "status": "ok",
+      "entries": 54,
+      "top_keywords": [
+        [
+          "black-scholes",
+          6
+        ],
+        [
+          "delta",
+          6
+        ],
+        [
+          "gamma",
+          5
+        ],
+        [
+          "implied volatility",
+          4
+        ],
+        [
+          "vega",
+          3
+        ],
+        [
+          "earnings",
+          2
+        ],
+        [
+          "historical volatility",
+          2
+        ],
+        [
+          "ex-dividend",
+          2
+        ],
+        [
+          "straddle",
+          1
+        ],
+        [
+          "delta hedging",
+          1
+        ],
+        [
+          "theta",
+          1
+        ],
+        [
+          "american option",
+          1
+        ]
+      ],
+      "strategy_hits": [
+        [
+          "iron_condor",
+          10
+        ],
+        [
+          "long_straddle",
+          6
+        ],
+        [
+          "bull_put_credit",
+          6
+        ],
+        [
+          "covered_call",
+          5
+        ],
+        [
+          "cash_secured_put",
+          4
+        ],
+        [
+          "long_put",
+          1
+        ]
+      ],
+      "seed_count": 6,
+      "snippet_file": "src\\knowledge\\catalog\\snippets\\volatility_trading_2013.txt"
+    }
+  ],
+  "outputs": {
+    "entries": "src\\knowledge\\catalog\\ingested\\entries.jsonl",
+    "seeds": "src\\knowledge\\catalog\\ingested\\strategy_seeds.json",
+    "seedsAll": "src\\knowledge\\catalog\\ingested\\strategy_seeds_all.json",
+    "catalog": "src\\knowledge\\catalog\\ingested\\ota_knowledge_catalog.json",
+    "snippetsDir": "src\\knowledge\\catalog\\snippets"
+  }
+}

@@ -1,0 +1,253 @@
+ffffiirrss..iinndddd vvii 11//1133//0099 1100::1133::2255 AAMM
+ESSENTIALS
+of Foreign
+Exchange
+Trading
+ffffiirrss..iinndddd ii 11//1133//0099 1100::1133::2233 AAMM
+ESSENTIALS SERIES
+The Essentials Series was created for busy business advisory and corporate professionals. The
+books in this series were designed so that these busy professionals can quickly acquire knowl-
+edge and skills in core business areas.
+Each book provides need-to-have fundamentals for those professionals who must:
+(cid:127) Get up to speed quickly, because they have been promoted to a new position or
+have broadened their responsibility scope
+(cid:127) Manage a new functional area
+(cid:127) Brush up on new developments in their area of responsibility
+(cid:127) Add more value to their company or clients
+Other books in this series include:
+Essentials of Accounts Payable, Mary S. Schaeffer
+Essentials of Balanced Scorecard, Mohan Nair
+Essentials of Capacity Management, Reginald Tomas Yu-Lee
+Essentials of Capital Budgeting, James Sagner
+Essentials of Cash Flow, H.A. Schaeffer Jr.
+Essentials of Corporate Governance, Sanjay Anand
+Essentials of Corporate Performance Measurement, George T. Friedlob, Lydia L.F. Schleifer, and
+Franklin J. Plewa Jr.
+Essentials of Cost Management, Joe and Catherine Stenzel
+Essentials of Credit, Collections, and Accounts Receivable, Mary S. Schaeffer
+Essentials of CRM: A Guide to Customer Relationship Management, Bryan Bergeron
+Essentials of Financial Analysis, George T. Friedlob and Lydia L. F. Schleifer
+Essentials of Financial Risk Management, Karen A. Horcher
+Essentials of Intellectual Property, Paul J. Lerner and Alexander I. Poltorak
+Essentials of Knowledge Management, Bryan Bergeron
+Essentials of Patents, Andy Gibbs and Bob DeMatteis
+Essentials of Payroll Management and Accounting, Steven M. Bragg
+Essentials of Sarbanes-Oxley, Sanjay Anand
+Essentials of Shared Services, Bryan Bergeron
+Essentials of Supply Chain Management, Michael Hugos
+Essentials of Trademarks and Unfair Competition, Dana Shilling
+Essentials of Treasury, Karen A. Horcher
+Essentials of Managing Corporate Cash, Michele Allman-Ward and James Sagner
+Essentials of XBRL, Bryan Bergeron
+For more information on any of the above titles, please visit www.wiley.com
+ffffiirrss..iinndddd iiii 11//1133//0099 1100::1133::2244 AAMM
+ESSENTIALS
+of Foreign
+Exchange
+Trading
+James Chen
+John Wiley & Sons, Inc.
+ffffiirrss..iinndddd iiiiii 11//1133//0099 1100::1133::2244 AAMM
+Copyright © 2009 by James Chen. All rights reserved.
+Published by John Wiley & Sons, Inc., Hoboken, New Jersey.
+Published simultaneously in Canada.
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form
+or by any means, electronic, mechanical, photocopying, recording, scanning, or otherwise, except as
+permitted under Section 107 or 108 of the 1976 United States Copyright Act, without either the
+prior written permission of the Publisher, or authorization through payment of the appropriate
+per-copy fee to the Copyright Clearance Center, Inc., 222 Rosewood Drive, Danvers, MA 01923,
+978-750-8400, fax 978-646-8600, or on the Web at www.copyright.com. Requests to the Publisher
+for permission should be addressed to the Permissions Department, John Wiley & Sons, Inc., 111
+River Street, Hoboken, NJ 07030, 201-748-6011, fax 201-748-6008, or online at http://www.wiley
+.com/go/permissions.
+Limit of Liability/Disclaimer of Warranty: While the publisher and author have used their best efforts
+in preparing this book, they make no representations or warranties with respect to the accuracy
+or completeness of the contents of this book and specifi cally disclaim any implied warranties of
+merchantability or fi tness for a particular purpose. No warranty may be created or extended by sales
+representatives or written sales materials. The advice and strategies contained herein may not be
+suitable for your situation. You should consult with a professional where appropriate. Neither the
+publisher nor author shall be liable for any loss of profi t or any other commercial damages, including
+but not limited to special, incidental, consequential, or other damages.
+For general information on our other products and services, or technical support, please contact our
+Customer Care Department within the United States at 800-762-2974, outside the United States at
+317-572-3993 or fax 317-572-4002.
+Wiley also publishes its books in a variety of electronic formats. Some content that appears in print
+may not be available in electronic books.
+For more information about Wiley products, visit our Web site at http://www.wiley.com.
+Library of Congress Cataloging-in-Publication Data:
+Chen, James.
+Essentials of foreign exchange trading / James Chen.
+p. cm. — (Essentials series)
+Includes index.
+ISBN 978-0-470-39086-3 (pbk.)
+1. Foreign exchange market. 2. Foreign exchange futures. 3. Investments. I. Title. II. Series.
+HG3851.C437 2009
+332.4'5—dc22
+2008048193
+Printed in the United States of America
+10 9 8 7 6 5 4 3 2 1
+ffffiirrss..iinndddd iivv 11//1133//0099 1100::1133::2244 AAMM
+To my parents, my wife,
+my children, and forex
+traders everywhere.
+ffffiirrss..iinndddd vv 11//1133//0099 1100::1133::2244 AAMM
+ffffiirrss..iinndddd vvii 11//1133//0099 1100::1133::2255 AAMM
+Contents
+Preface xi
+Acknowledgments xv
+Chapter 1 Introduction to Foreign Exchange Trading 1
+Trading Money to Make Money 2
+Striking Gold 3
+Buying and Selling at Retail 4
+Big and Liquid, Like the Ocean 5
+Open 24/5 7
+Playing in the Majors 9
+Leveraged to the Hilt 12
+The Players 13
+What Moves the Forex Markets? 15
+What to Expect from This Book 17
+Chapter Summary 19
+Chapter 2 Basic Foreign Exchange Trading Mechanics 21
+Anatomy of a Currency Pair 22
+Going Long and Selling Short 24
+Market Orders—On the Spot 27
+Entry Orders—Waiting until the Price Is Right 27
+Stopping Losses with Stop Losses and Trailing Stops 28
+vii
+ffttoocc..iinndddd vviiii 11//1133//0099 1100::1166::3399 AAMM
+Contents
+Profi t Limits—When You’re in the Money 31
+Exit with Caution 31
+Trade Size—Lots and Lots of Lots 32
+Leveraging Margin and Leverage 33
+Margin Call—Insuffi cient Funds 34
+Pips—The Currency of Currency Trading 37
+Spreading the Wealth—Spreads or Commissions? 39
+Interest—Giving and Receiving 41
+Hedging—Two Sides of the Same Coin 44
+Chapter Summary 45
+Chapter 3 Technical Analysis—Tools for Trading Foreign Exchange 49
+Introduction to Technical Analysis—
+Interpreting Price Action 50
+Basics of Bars and Candlesticks 52
+Keeping Time with Chart Timeframes 57
+Support for Resistance (and Support) 59
+The Trend Will Set You Free 64
+How Trendy—Lines and Channels 67
+The Magic of Moving Averages 72
+Seeing Patterns in the Candles 78
+Currency Charts Take Shape 82
+Indicators of Change 88
+Pointing the Way with Pivot Points 95
+Fibonacci’s Magic Numbers 96
+Riding the Elliott Wave 98
+Getting to the Point & Figure 99
+Chapter Summary 100
+viii
+ffttoocc..iinndddd vviiiiii 11//1133//0099 1100::1166::3399 AAMM
+Contents
+Chapter 4 Fundamental Analysis—What Drives the
+Foreign Exchange Markets 103
+Introduction to Fundamental Analysis—Basic Economics 104
+A Healthy Interest in Global Bank Rates 105
+Carried Away with Trading 108
+Indication of Things to Come—Economic Indicators 110
+No News Is Bad News for News Traders 121
+Chapter Summary 124
+Chapter 5 Foreign Exchange Trading Methods and Strategies 127
+Rules to Trade By 128
+Position Trading—Settling in for the Long Term 130
+Swing Trading—Riding the Waves 134
+Day Trading—In and Out, Day In and Day Out 137
+Trend Trading—Going with the Flow 140
+Range Trading—Between a Rock and a Hard Place 147
+Breakout Trading (and Fading)—Shooting for the Stars 150
+Pattern Trading—Playing with Shapes 158
+Fibonacci and Pivot Point Trading—Magic Numbers and
+Self-Fulfi lling Prophecies 161
+Elliott Wave Trading—Two Steps Forward, One Step Back 166
+Divergence Trading—Separate Paths 170
+Multiple Timeframe Trading—Timing Is Everything 172
+Point & Figure Trading—Pointing Out Breakouts 175
+Carry Trading—In the Interest of Interest 179
+News Trading—All the News That’s Fit to Profi t From 183
+Contrarian Trading—The Majority Doesn’t Rule 184
+Backtesting—History Repeats Itself 187
+ix
+ffttoocc..iinndddd iixx 11//1133//0099 1100::1166::3399 AAMM
+Contents
+Autotrading—Robots for Hire 190
+Chapter Summary 192
+Chapter 6 Important Elements of Successful Foreign
+Exchange Trading 195
+The Boring Side of Success 196
+A Risky Business 196
+Fatter Is Healthier (But Only for Trading Accounts) 197
+Risk and Reward 198
+Fix Your Fractions 200
+Trailing Stops—Loyal Followers 201
+Size Matters 202
+Position Overload 205
+Measuring Risk with a Trendline 208
+Great Expectations 209
+Psychologically Speaking 210
+Plan the Trade and Trade the Plan 214
+Chapter Summary 216
+Index 219
+x
+ffttoocc..iinndddd xx 11//1133//0099 1100::1166::3399 AAMM
+Preface
+F
+oreign exchange trading has developed at such a blinding
+speed within the last decade that is has garnered an unprec-
+edented amount of interest from all corners of the globe. The
+meteoric rise of forex can be attributed to the many advantages of
+trading currencies over other fi nancial markets. These advantages
+will all be discussed within the pages of this book.
+More important than recognizing how forex trading can work
+to your benefi t, however, is knowing exactly how to approach this
+fascinating market with the proper prudence, attitude, and method-
+ology to achieve consistent profi tability. Only in this way can the
+advantages of forex trading truly be realized. This book will assist
+you in learning many of the most important aspects of playing the
+currency game effectively.
+I personally began my journey in forex trading when the retail
+foreign exchange industry was still in its early infancy. Before I ever
+even looked at a price chart of a currency pair or followed a forex
+news feed, I placed a live trade on the EUR/USD with real money.
+When a substantial sum was lost on that fi rst trade, I placed another
+trade. And then another. And yet another. Admittedly, I kept doing
+xxii
+ffpprreeff..iinndddd xxii 11//1133//0099 1100::1155::4411 AAMM
+Preface
+this until I lost almost every single penny in my trading account.
+I had absolutely no rational reason or justifi cation to place any of
+those fi rst several trades in that initial trading account. To me, at that
+time, forex was purely a game of instinct and gut feel.
+Needless to say, those early days taught me a good lesson. Most
+humans are not instinctively good at trading. For the vast majority
+of us, guts and instinct left unchecked invariably lead to catastrophic
+losses at some point in time, usually sooner rather than later. On
+attaining this realization, I began a tireless quest to become a profi t-
+able forex trader. My efforts consisted of a prolonged, single - minded
+endeavor to absorb forex - specifi c analytical methodologies, highly
+touted currency trading strategies, and sound money management
+techniques. My search for the “ holy grail” of foreign exchange trad-
+ing had begun in earnest.
+Over time, I realized that this holy grail of forex, in the tradi-
+tional sense, was not only elusive but most likely nonexistent. I came
+to the conclusion that although a bunch of chart indicators all fl ash-
+ing the same signal at the same exact time to enter into a currency
+trade is a very nice thing to see, it probably would not by itself be
+able to feed a typical family on a consistent basis. The true holy grail,
+I eventually found, is a combination of good analytical and trading
+technique, great risk/money management, and phenomenal dis-
+cipline. Without these vital components, consistent profi tability in
+forex trading would be diffi cult to achieve.
+This is where the book you are holding comes in. It is not
+meant to be an exhaustive tome that covers every detailed aspect of
+the foreign exchange world. Rather, this book is meant to serve as
+a practical guide to help you develop some of the most important
+xii
+ffpprreeff..iinndddd xxiiii 11//1133//0099 1100::1155::4411 AAMM
+Prefa

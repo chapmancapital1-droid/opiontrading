@@ -1,0 +1,31 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Gammapips
+// https://admiralmarkets.com/education/articles/forex-strategy/best-forex-trading-strategies-that-work
+
+// One of the latest Forex trading strategies to be used is the 50-pips a day Forex strategy which leverages the early market move of certain highly liquid currency pairs. 
+// The GBPUSD and EURUSD currency pairs are some of the best currencies to trade using this particular strategy. 
+
+// After the 7am GMT candlestick closes, traders place two positions or two opposite pending orders.
+// When one of them gets activated by price movements, the other position is automatically cancelled.
+
+// The profit target is set at 50 pips, and the stop-loss order is placed anywhere between 5 and 10 pips above or below the 7am GMT candlestick, after its formation. 
+// This is implemented to manage risk. After these conditions are set, it is now up to the market to do the rest. 
+// Day trading and scalping are both short-term trading strategies. 
+// However, remember that shorter-term implies greater risk due to the nature of more trades taken, so it is essential to ensure effective risk management.
+
+//@version=4
+strategy("50 pips a day", shorttitle="50p", overlay=true)
+i_stopLoss = input(5 ,"Stop Loss Pips away from bar")
+i_tp = input(50 ,"Pips a day TP")
+tradeStart = time == timestamp("GMT+0", year, month, dayofmonth, 7, 0, 0)
+
+TP = i_tp * 10
+SL = ((i_stopLoss*10)*syminfo.mintick)
+if tradeStart and strategy.position_size == 0
+    strategy.entry("Buy Stop", strategy.long, stop=high, oca_name="Breakout", oca_type=strategy.oca.cancel)
+    strategy.entry("Sell Stop", strategy.short, stop=low, oca_name="Breakout", oca_type=strategy.oca.cancel)
+    strategy.exit("Buy Exit", "Buy Stop", profit=TP, stop=low-SL)
+    strategy.exit("Sell Exit", "Sell Stop", profit=TP, stop=high+SL)
+
+plot(tradeStart ? 1e9 : na, style=plot.style_columns, color=color.silver, transp=80, title="Trade Start")
+

@@ -1,0 +1,86 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// 2020 © io72signals 
+
+//@version=4
+strategy("72s: Adaptive Hull Moving Average+", shorttitle="72s: Adaptive HMA+", overlay=true)
+
+//Optional Inputs
+charger     = input("Volatility", title="Choose which charger to adapt to:", options=["Volatility", "Volume"])
+src         = input(close, title="Source:")
+minLength   = input(172, title="Minimum period:")
+maxLength   = input(233, title="Maximum period:")
+adaptPct    = input(3.141, minval = 0, maxval = 100, title="Adapting Percentage:") / 100.0
+
+//Source to adapt to
+highVolatility = atr(13) > atr(40)                          //Volatility Meter. Change it to match to your strat/pair/tf if needs.
+
+rsivol  = rsi(volume,14)                                    //RSI Volume Osc:
+osc     = hma(rsivol,10)                                    //Basically it's almost the same as: vol > ma(volume,20)
+volBreak = osc > 49                                         //but smoothed using weight to filter noise or catch earlier signs.    
+
+//Dynamics 
+var float dynamicLen = avg(minLength,maxLength)
+plugged = charger=="Volume"? volBreak : highVolatility
+dynamicLen := iff(plugged, max(minLength, dynamicLen * (1 - adaptPct)), min(maxLength, dynamicLen * (1 + adaptPct)))
+
+//Slope calculation to determine whether market is in trend, or in consolidation or choppy, or might about to change current trend
+slope_period = 34, range = 25, pi = atan(1) * 4
+highestHigh = highest(slope_period), lowestLow = lowest(slope_period)
+slope_range = range / (highestHigh - lowestLow) * lowestLow
+calcslope(_ma)=>
+    dt = (_ma[2] - _ma) / src * slope_range  
+    c = sqrt(1 + dt * dt)
+    xAngle = round(180 * acos(1 / c) / pi)
+    maAngle = iff(dt > 0, -xAngle, xAngle)
+    maAngle
+
+//MA coloring to mark market dynamics 
+flat = input(9, title="Consolidation area threshold:")
+dynColor(_ma,_col1a,_col1b, _col2a, _col2b, _col0) =>
+    slope = calcslope(_ma)
+    slope >= flat ? plugged? _col1a : _col1b :
+     slope < flat and slope > -flat ? _col0 : 
+     slope <= -flat ? plugged? _col2a : _col2b : _col0
+
+//Adaptive HMA 
+xhma(_src,_length) => _return = wma(2 * wma(_src, _length / 2) - wma(_src, _length), int(sqrt(_length))) 
+dynamicHMA = xhma(close,int(dynamicLen))
+
+//Plot
+plot(dynamicHMA, "Dynamic HMA", dynColor(dynamicHMA, #6fbf73, #c0f5ae, #eb4d5c, #f2b1d4, color.yellow), 3)
+
+// Comparative study
+// staticHMA = hma(close, 200)
+// plot(staticHMA,  "Static HMA")
+// plotchar(dynamicLen, "dynamicLength", "", location.top) //check output the calculated Dynamic Length in the Data Window.
+
+//Backgroud coloring
+useBg  = input(true, title="Background color to differentiate movement")
+notgreat = calcslope(dynamicHMA) < flat and calcslope(dynamicHMA) > -flat
+bgcolor(useBg? plugged? na : notgreat? #757779: #afb4b9 : na)
+
+//Alerts
+alertcondition(highVolatility and not notgreat, "72s: Volatility Meter", "Market is on the move")
+alertcondition(volBreak[1] and volBreak and not notgreat, "72s: Volume Break", "Volume has just break above average")
+
+
+// Trading Logic
+
+// USAGE:
+// Very very nice BUY entry to catch big up-movement if:
+// 1. Price is above MA. (It is best when price is also not to far distance from the MA, or you can also use distance oscillator to help out too)
+// 2. HMA's color is in darker green. Means it's on the charging plug with your chosen aspect.
+// 3. RSI is above 50. This is to help as additional confirmation.
+
+// Clear SELL entry signal is same as above, just the opposite.
+rsi = rsi(close, 14)
+buyEntry = crossover(((close > dynamicHMA) and (dynColor(dynamicHMA, #6fbf73, #c0f5ae, #eb4d5c, #f2b1d4, color.yellow) == #6fbf73) and rsi > 50) ? 1 : 0, 0)
+sellEntry = crossover(((close < dynamicHMA) and (dynColor(dynamicHMA, #6fbf73, #c0f5ae, #eb4d5c, #f2b1d4, color.yellow) == #eb4d5c) and rsi < 50) ? 1 : 0, 0)
+
+plotarrow(buyEntry ? 1 : 0)
+plotarrow(sellEntry ? -1 : 0)
+strategy.entry("Go Long", strategy.long, when=buyEntry)
+strategy.entry("Go Short", strategy.short, when=sellEntry)
+
+strategy.close("Go Long", when=crossunder(rsi, 70) )
+strategy.close("Go Short", when=crossover(rsi, 30) )

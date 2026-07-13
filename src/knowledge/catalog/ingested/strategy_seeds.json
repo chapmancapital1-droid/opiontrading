@@ -1,0 +1,1517 @@
+[
+  {
+    "id_suffix": "csp",
+    "name": "Cash-Secured Put — The Option Trader Handbook - Strategies And Trad",
+    "strategyId": "cash_secured_put",
+    "thesis": "moderately_bullish",
+    "portfolioRole": "income_engine",
+    "riskProfile": "substantial_downside_capped_upside",
+    "approval": "level2_basic",
+    "ivConditions": [
+      "elevated",
+      "neutral"
+    ],
+    "trends": [
+      "up",
+      "sideways"
+    ],
+    "eventStance": "avoid_earnings",
+    "growthPrimary": true,
+    "priority": 0.9,
+    "shortDeltaTarget": 0.25,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "assignment_then_cc",
+      "dte_21_close_or_roll"
+    ],
+    "id": "ingest_the_option_trader_handbook_strategies_an_csp",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=25) in: The Option Trader Handbook - Strategies And Trade Adjustments (2004)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium",
+      "Book emphasizes risk management — size with portfolio 1% rule",
+      "Plan for assignment / early exercise near ex-div or deep ITM"
+    ],
+    "bookSource": "The Option Trader Handbook - Strategies And Trade Adjustments (2004) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Option Trader Handbook - Strategies And Trade Adjustments (2004).pdf]",
+    "structure": "Cash-Secured Put",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=25",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 25
+  },
+  {
+    "id_suffix": "csp",
+    "name": "Cash-Secured Put — Option Spread Strategies (2009)",
+    "strategyId": "cash_secured_put",
+    "thesis": "moderately_bullish",
+    "portfolioRole": "income_engine",
+    "riskProfile": "substantial_downside_capped_upside",
+    "approval": "level2_basic",
+    "ivConditions": [
+      "elevated",
+      "neutral"
+    ],
+    "trends": [
+      "up",
+      "sideways"
+    ],
+    "eventStance": "avoid_earnings",
+    "growthPrimary": true,
+    "priority": 0.9,
+    "shortDeltaTarget": 0.25,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "assignment_then_cc",
+      "dte_21_close_or_roll"
+    ],
+    "id": "ingest_option_spread_strategies_2009_csp",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=19) in: Option Spread Strategies (2009)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Option Spread Strategies (2009) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Spread Strategies (2009).pdf]",
+    "structure": "Cash-Secured Put",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=19",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 19
+  },
+  {
+    "id_suffix": "csp",
+    "name": "Cash-Secured Put — The Equity Options Strategy Guide (2010)",
+    "strategyId": "cash_secured_put",
+    "thesis": "moderately_bullish",
+    "portfolioRole": "income_engine",
+    "riskProfile": "substantial_downside_capped_upside",
+    "approval": "level2_basic",
+    "ivConditions": [
+      "elevated",
+      "neutral"
+    ],
+    "trends": [
+      "up",
+      "sideways"
+    ],
+    "eventStance": "avoid_earnings",
+    "growthPrimary": true,
+    "priority": 0.9,
+    "shortDeltaTarget": 0.25,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "assignment_then_cc",
+      "dte_21_close_or_roll"
+    ],
+    "id": "ingest_the_equity_options_strategy_guide_2010_csp",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=17) in: The Equity Options Strategy Guide (2010)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Plan for assignment / early exercise near ex-div or deep ITM"
+    ],
+    "bookSource": "The Equity Options Strategy Guide (2010) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Equity Options Strategy Guide (2010).pdf]",
+    "structure": "Cash-Secured Put",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=17",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 17
+  },
+  {
+    "id_suffix": "cc",
+    "name": "Covered Call — Options Trading for the Conservative Investor (2",
+    "strategyId": "covered_call",
+    "thesis": "neutral",
+    "portfolioRole": "campaign",
+    "riskProfile": "substantial_downside_capped_upside",
+    "approval": "level2_basic",
+    "ivConditions": [
+      "elevated",
+      "neutral"
+    ],
+    "trends": [
+      "up",
+      "sideways",
+      "down"
+    ],
+    "eventStance": "avoid_ex_div",
+    "growthPrimary": true,
+    "priority": 0.88,
+    "shortDeltaTarget": 0.3,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "dte_21_close_or_roll",
+      "manual_review"
+    ],
+    "id": "ingest_options_trading_for_the_conservative_inv_cc",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=31) in: Options Trading for the Conservative Investor (2010)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Options Trading for the Conservative Investor (2010) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options Trading for the Conservative Investor (2010).pdf]",
+    "structure": "Covered Call",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=31",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 31
+  },
+  {
+    "id_suffix": "cc",
+    "name": "Covered Call — An Investors Guide to Trading Options (2013)",
+    "strategyId": "covered_call",
+    "thesis": "neutral",
+    "portfolioRole": "campaign",
+    "riskProfile": "substantial_downside_capped_upside",
+    "approval": "level2_basic",
+    "ivConditions": [
+      "elevated",
+      "neutral"
+    ],
+    "trends": [
+      "up",
+      "sideways",
+      "down"
+    ],
+    "eventStance": "avoid_ex_div",
+    "growthPrimary": true,
+    "priority": 0.88,
+    "shortDeltaTarget": 0.3,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "dte_21_close_or_roll",
+      "manual_review"
+    ],
+    "id": "ingest_an_investors_guide_to_trading_options_20_cc",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=25) in: An Investors Guide to Trading Options (2013)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium",
+      "Book emphasizes risk management — size with portfolio 1% rule",
+      "Plan for assignment / early exercise near ex-div or deep ITM"
+    ],
+    "bookSource": "An Investors Guide to Trading Options (2013) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\An Investors Guide to Trading Options (2013).pdf]",
+    "structure": "Covered Call",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=25",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 25
+  },
+  {
+    "id_suffix": "cc",
+    "name": "Covered Call — Options Trading Primer By Marketwise Trading Sch",
+    "strategyId": "covered_call",
+    "thesis": "neutral",
+    "portfolioRole": "campaign",
+    "riskProfile": "substantial_downside_capped_upside",
+    "approval": "level2_basic",
+    "ivConditions": [
+      "elevated",
+      "neutral"
+    ],
+    "trends": [
+      "up",
+      "sideways",
+      "down"
+    ],
+    "eventStance": "avoid_ex_div",
+    "growthPrimary": true,
+    "priority": 0.88,
+    "shortDeltaTarget": 0.3,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "dte_21_close_or_roll",
+      "manual_review"
+    ],
+    "id": "ingest_options_trading_primer_by_marketwise_tra_cc",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=21) in: Options Trading Primer By Marketwise Trading School (2002)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium",
+      "Book emphasizes risk management — size with portfolio 1% rule",
+      "Plan for assignment / early exercise near ex-div or deep ITM"
+    ],
+    "bookSource": "Options Trading Primer By Marketwise Trading School (2002) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options Trading Primer By Marketwise Trading School (2002).pdf]",
+    "structure": "Covered Call",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=21",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 21
+  },
+  {
+    "id_suffix": "bpc",
+    "name": "Bull Put Credit Spread — Option Spread Strategies (2009)",
+    "strategyId": "bull_put_credit",
+    "thesis": "moderately_bullish",
+    "portfolioRole": "income_engine",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "elevated",
+      "neutral"
+    ],
+    "trends": [
+      "up",
+      "sideways"
+    ],
+    "eventStance": "avoid_earnings",
+    "growthPrimary": true,
+    "priority": 0.87,
+    "shortDeltaTarget": 0.3,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_2x_credit",
+      "dte_21_close_or_roll"
+    ],
+    "id": "ingest_option_spread_strategies_2009_bpc",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=30) in: Option Spread Strategies (2009)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Option Spread Strategies (2009) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Spread Strategies (2009).pdf]",
+    "structure": "Bull Put Credit Spread",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=30",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 30
+  },
+  {
+    "id_suffix": "bpc",
+    "name": "Bull Put Credit Spread — The Option Trader Handbook - Strategies And Trad",
+    "strategyId": "bull_put_credit",
+    "thesis": "moderately_bullish",
+    "portfolioRole": "income_engine",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "elevated",
+      "neutral"
+    ],
+    "trends": [
+      "up",
+      "sideways"
+    ],
+    "eventStance": "avoid_earnings",
+    "growthPrimary": true,
+    "priority": 0.87,
+    "shortDeltaTarget": 0.3,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_2x_credit",
+      "dte_21_close_or_roll"
+    ],
+    "id": "ingest_the_option_trader_handbook_strategies_an_bpc",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=20) in: The Option Trader Handbook - Strategies And Trade Adjustments (2004)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "The Option Trader Handbook - Strategies And Trade Adjustments (2004) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Option Trader Handbook - Strategies And Trade Adjustments (2004).pdf]",
+    "structure": "Bull Put Credit Spread",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=20",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 20
+  },
+  {
+    "id_suffix": "bpc",
+    "name": "Bull Put Credit Spread — An Investors Guide to Trading Options (2013)",
+    "strategyId": "bull_put_credit",
+    "thesis": "moderately_bullish",
+    "portfolioRole": "income_engine",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "elevated",
+      "neutral"
+    ],
+    "trends": [
+      "up",
+      "sideways"
+    ],
+    "eventStance": "avoid_earnings",
+    "growthPrimary": true,
+    "priority": 0.87,
+    "shortDeltaTarget": 0.3,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_2x_credit",
+      "dte_21_close_or_roll"
+    ],
+    "id": "ingest_an_investors_guide_to_trading_options_20_bpc",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=18) in: An Investors Guide to Trading Options (2013)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "An Investors Guide to Trading Options (2013) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\An Investors Guide to Trading Options (2013).pdf]",
+    "structure": "Bull Put Credit Spread",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=18",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 18
+  },
+  {
+    "id_suffix": "bcc",
+    "name": "Bear Call Credit Spread — Options Trading Primer By Marketwise Trading Sch",
+    "strategyId": "bear_call_credit",
+    "thesis": "moderately_bearish",
+    "portfolioRole": "income_engine",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "elevated",
+      "neutral"
+    ],
+    "trends": [
+      "down",
+      "sideways"
+    ],
+    "eventStance": "avoid_earnings",
+    "growthPrimary": true,
+    "priority": 0.84,
+    "shortDeltaTarget": 0.3,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_2x_credit",
+      "dte_21_close_or_roll"
+    ],
+    "id": "ingest_options_trading_primer_by_marketwise_tra_bcc",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=9) in: Options Trading Primer By Marketwise Trading School (2002)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Options Trading Primer By Marketwise Trading School (2002) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options Trading Primer By Marketwise Trading School (2002).pdf]",
+    "structure": "Bear Call Credit Spread",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=9",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 9
+  },
+  {
+    "id_suffix": "bcc",
+    "name": "Bear Call Credit Spread — Trading Options For Dummies (2008)",
+    "strategyId": "bear_call_credit",
+    "thesis": "moderately_bearish",
+    "portfolioRole": "income_engine",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "elevated",
+      "neutral"
+    ],
+    "trends": [
+      "down",
+      "sideways"
+    ],
+    "eventStance": "avoid_earnings",
+    "growthPrimary": true,
+    "priority": 0.84,
+    "shortDeltaTarget": 0.3,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_2x_credit",
+      "dte_21_close_or_roll"
+    ],
+    "id": "ingest_trading_options_for_dummies_2008_bcc",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=3) in: Trading Options For Dummies (2008)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Trading Options For Dummies (2008) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Trading Options For Dummies (2008).pdf]",
+    "structure": "Bear Call Credit Spread",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=3",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 3
+  },
+  {
+    "id_suffix": "bcc",
+    "name": "Bear Call Credit Spread — 101 Option Trading Secrets  (2001)",
+    "strategyId": "bear_call_credit",
+    "thesis": "moderately_bearish",
+    "portfolioRole": "income_engine",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "elevated",
+      "neutral"
+    ],
+    "trends": [
+      "down",
+      "sideways"
+    ],
+    "eventStance": "avoid_earnings",
+    "growthPrimary": true,
+    "priority": 0.84,
+    "shortDeltaTarget": 0.3,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_2x_credit",
+      "dte_21_close_or_roll"
+    ],
+    "id": "ingest_101_option_trading_secrets_2001_bcc",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=2) in: 101 Option Trading Secrets  (2001)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium"
+    ],
+    "bookSource": "101 Option Trading Secrets  (2001) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\101 Option Trading Secrets  (2001).pdf]",
+    "structure": "Bear Call Credit Spread",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=2",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 2
+  },
+  {
+    "id_suffix": "ic",
+    "name": "Iron Condor — Option Spread Strategies (2009)",
+    "strategyId": "iron_condor",
+    "thesis": "range",
+    "portfolioRole": "income_engine",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "elevated"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "avoid_earnings",
+    "growthPrimary": false,
+    "priority": 0.8,
+    "shortDeltaTarget": 0.16,
+    "dteMin": 25,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_2x_credit",
+      "dte_21_close_or_roll"
+    ],
+    "id": "ingest_option_spread_strategies_2009_ic",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=34) in: Option Spread Strategies (2009)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Option Spread Strategies (2009) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Spread Strategies (2009).pdf]",
+    "structure": "Iron Condor",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=34",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 34
+  },
+  {
+    "id_suffix": "ic",
+    "name": "Iron Condor — Increasing Alpha with Options (2010)",
+    "strategyId": "iron_condor",
+    "thesis": "range",
+    "portfolioRole": "income_engine",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "elevated"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "avoid_earnings",
+    "growthPrimary": false,
+    "priority": 0.8,
+    "shortDeltaTarget": 0.16,
+    "dteMin": 25,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_2x_credit",
+      "dte_21_close_or_roll"
+    ],
+    "id": "ingest_increasing_alpha_with_options_2010_ic",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=16) in: Increasing Alpha with Options (2010)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium"
+    ],
+    "bookSource": "Increasing Alpha with Options (2010) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Increasing Alpha with Options (2010).pdf]",
+    "structure": "Iron Condor",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=16",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 16
+  },
+  {
+    "id_suffix": "ic",
+    "name": "Iron Condor — Profit With Options - Essential Methods For Inve",
+    "strategyId": "iron_condor",
+    "thesis": "range",
+    "portfolioRole": "income_engine",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "elevated"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "avoid_earnings",
+    "growthPrimary": false,
+    "priority": 0.8,
+    "shortDeltaTarget": 0.16,
+    "dteMin": 25,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_2x_credit",
+      "dte_21_close_or_roll"
+    ],
+    "id": "ingest_profit_with_options_essential_methods_fo_ic",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=15) in: Profit With Options - Essential Methods For Investing Success (2002)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes volatility — prefer elevated IV when selling premium"
+    ],
+    "bookSource": "Profit With Options - Essential Methods For Investing Success (2002) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Profit With Options - Essential Methods For Investing Success (2002).pdf]",
+    "structure": "Iron Condor",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=15",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 15
+  },
+  {
+    "id_suffix": "bcd",
+    "name": "Bull Call Debit Spread — Options Trading Primer By Marketwise Trading Sch",
+    "strategyId": "bull_call_debit",
+    "thesis": "bullish",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "low",
+      "neutral"
+    ],
+    "trends": [
+      "up"
+    ],
+    "eventStance": "prefer_clear",
+    "growthPrimary": false,
+    "priority": 0.7,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 60,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_1x_debit",
+      "manual_review"
+    ],
+    "id": "ingest_options_trading_primer_by_marketwise_tra_bcd",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=9) in: Options Trading Primer By Marketwise Trading School (2002)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Options Trading Primer By Marketwise Trading School (2002) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options Trading Primer By Marketwise Trading School (2002).pdf]",
+    "structure": "Bull Call Debit Spread",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=9",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 9
+  },
+  {
+    "id_suffix": "bcd",
+    "name": "Bull Call Debit Spread — Option Spread Strategies (2009)",
+    "strategyId": "bull_call_debit",
+    "thesis": "bullish",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "low",
+      "neutral"
+    ],
+    "trends": [
+      "up"
+    ],
+    "eventStance": "prefer_clear",
+    "growthPrimary": false,
+    "priority": 0.7,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 60,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_1x_debit",
+      "manual_review"
+    ],
+    "id": "ingest_option_spread_strategies_2009_bcd",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=7) in: Option Spread Strategies (2009)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Option Spread Strategies (2009) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Spread Strategies (2009).pdf]",
+    "structure": "Bull Call Debit Spread",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=7",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 7
+  },
+  {
+    "id_suffix": "bcd",
+    "name": "Bull Call Debit Spread — The Equity Options Strategy Guide (2010)",
+    "strategyId": "bull_call_debit",
+    "thesis": "bullish",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "low",
+      "neutral"
+    ],
+    "trends": [
+      "up"
+    ],
+    "eventStance": "prefer_clear",
+    "growthPrimary": false,
+    "priority": 0.7,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 60,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_1x_debit",
+      "manual_review"
+    ],
+    "id": "ingest_the_equity_options_strategy_guide_2010_bcd",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=3) in: The Equity Options Strategy Guide (2010)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry"
+    ],
+    "bookSource": "The Equity Options Strategy Guide (2010) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Equity Options Strategy Guide (2010).pdf]",
+    "structure": "Bull Call Debit Spread",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=3",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 3
+  },
+  {
+    "id_suffix": "bpd",
+    "name": "Bear Put Debit Spread — The Option Trader Handbook - Strategies And Trad",
+    "strategyId": "bear_put_debit",
+    "thesis": "bearish",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "low",
+      "neutral"
+    ],
+    "trends": [
+      "down"
+    ],
+    "eventStance": "prefer_clear",
+    "growthPrimary": false,
+    "priority": 0.68,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 60,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_1x_debit",
+      "manual_review"
+    ],
+    "id": "ingest_the_option_trader_handbook_strategies_an_bpd",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=6) in: The Option Trader Handbook - Strategies And Trade Adjustments (2004)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "The Option Trader Handbook - Strategies And Trade Adjustments (2004) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Option Trader Handbook - Strategies And Trade Adjustments (2004).pdf]",
+    "structure": "Bear Put Debit Spread",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=6",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 6
+  },
+  {
+    "id_suffix": "bpd",
+    "name": "Bear Put Debit Spread — The Equity Options Strategy Guide (2010)",
+    "strategyId": "bear_put_debit",
+    "thesis": "bearish",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "low",
+      "neutral"
+    ],
+    "trends": [
+      "down"
+    ],
+    "eventStance": "prefer_clear",
+    "growthPrimary": false,
+    "priority": 0.68,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 60,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_1x_debit",
+      "manual_review"
+    ],
+    "id": "ingest_the_equity_options_strategy_guide_2010_bpd",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=3) in: The Equity Options Strategy Guide (2010)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry"
+    ],
+    "bookSource": "The Equity Options Strategy Guide (2010) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Equity Options Strategy Guide (2010).pdf]",
+    "structure": "Bear Put Debit Spread",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=3",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 3
+  },
+  {
+    "id_suffix": "bpd",
+    "name": "Bear Put Debit Spread — Option Strategies - A Quick Guide (2010)",
+    "strategyId": "bear_put_debit",
+    "thesis": "bearish",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "low",
+      "neutral"
+    ],
+    "trends": [
+      "down"
+    ],
+    "eventStance": "prefer_clear",
+    "growthPrimary": false,
+    "priority": 0.68,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 60,
+    "exitRules": [
+      "profit_50pct_max",
+      "stop_1x_debit",
+      "manual_review"
+    ],
+    "id": "ingest_option_strategies_a_quick_guide_2010_bpd",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=1) in: Option Strategies - A Quick Guide (2010)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry"
+    ],
+    "bookSource": "Option Strategies - A Quick Guide (2010) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Strategies - A Quick Guide (2010).pdf]",
+    "structure": "Bear Put Debit Spread",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=1",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 1
+  },
+  {
+    "id_suffix": "cbf",
+    "name": "Call Butterfly — Statistics of Financial Markets (2013)",
+    "strategyId": "call_butterfly",
+    "thesis": "neutral",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "neutral",
+      "elevated"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "prefer_clear",
+    "growthPrimary": false,
+    "priority": 0.6,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "manual_review"
+    ],
+    "id": "ingest_statistics_of_financial_markets_2013_cbf",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=7) in: Statistics of Financial Markets (2013)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Statistics of Financial Markets (2013) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Statistics of Financial Markets (2013).pdf]",
+    "structure": "Call Butterfly",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=7",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 7
+  },
+  {
+    "id_suffix": "cbf",
+    "name": "Call Butterfly — The Option Trader's Hedge Fund (2012)",
+    "strategyId": "call_butterfly",
+    "thesis": "neutral",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "neutral",
+      "elevated"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "prefer_clear",
+    "growthPrimary": false,
+    "priority": 0.6,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "manual_review"
+    ],
+    "id": "ingest_the_option_traders_hedge_fund_2012_cbf",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=3) in: The Option Trader's Hedge Fund (2012)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "The Option Trader's Hedge Fund (2012) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Hedge Fund Collection\\The Option Trader's Hedge Fund (2012)\\The Option Trader's Hedge Fund (2012).pdf]",
+    "structure": "Call Butterfly",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=3",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 3
+  },
+  {
+    "id_suffix": "cbf",
+    "name": "Call Butterfly — Trading Options For Dummies (2008)",
+    "strategyId": "call_butterfly",
+    "thesis": "neutral",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "neutral",
+      "elevated"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "prefer_clear",
+    "growthPrimary": false,
+    "priority": 0.6,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "manual_review"
+    ],
+    "id": "ingest_trading_options_for_dummies_2008_cbf",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=2) in: Trading Options For Dummies (2008)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Trading Options For Dummies (2008) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Trading Options For Dummies (2008).pdf]",
+    "structure": "Call Butterfly",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=2",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 2
+  },
+  {
+    "id_suffix": "pbf",
+    "name": "Put Butterfly — Statistics of Financial Markets (2013)",
+    "strategyId": "put_butterfly",
+    "thesis": "neutral",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "neutral",
+      "elevated"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "prefer_clear",
+    "growthPrimary": false,
+    "priority": 0.58,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "manual_review"
+    ],
+    "id": "ingest_statistics_of_financial_markets_2013_pbf",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=7) in: Statistics of Financial Markets (2013)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Statistics of Financial Markets (2013) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Statistics of Financial Markets (2013).pdf]",
+    "structure": "Put Butterfly",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=7",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 7
+  },
+  {
+    "id_suffix": "pbf",
+    "name": "Put Butterfly — The Option Trader's Hedge Fund (2012)",
+    "strategyId": "put_butterfly",
+    "thesis": "neutral",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "neutral",
+      "elevated"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "prefer_clear",
+    "growthPrimary": false,
+    "priority": 0.58,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "manual_review"
+    ],
+    "id": "ingest_the_option_traders_hedge_fund_2012_pbf",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=3) in: The Option Trader's Hedge Fund (2012)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "The Option Trader's Hedge Fund (2012) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Hedge Fund Collection\\The Option Trader's Hedge Fund (2012)\\The Option Trader's Hedge Fund (2012).pdf]",
+    "structure": "Put Butterfly",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=3",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 3
+  },
+  {
+    "id_suffix": "pbf",
+    "name": "Put Butterfly — Trading Regime Analysis - The Probability of Vol",
+    "strategyId": "put_butterfly",
+    "thesis": "neutral",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "neutral",
+      "elevated"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "prefer_clear",
+    "growthPrimary": false,
+    "priority": 0.58,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 45,
+    "exitRules": [
+      "profit_50pct_max",
+      "manual_review"
+    ],
+    "id": "ingest_trading_regime_analysis_the_probability__pbf",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=1) in: Trading Regime Analysis - The Probability of Volatility  (2009)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Trading Regime Analysis - The Probability of Volatility  (2009) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Volatility and VIX Collection\\Trading Regime Analysis - The Probability of Volatility  (2009).pdf]",
+    "structure": "Put Butterfly",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=1",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 1
+  },
+  {
+    "id_suffix": "lp",
+    "name": "Long / Protective Put — The Equity Options Strategy Guide (2010)",
+    "strategyId": "long_put",
+    "thesis": "bearish",
+    "portfolioRole": "hedge",
+    "riskProfile": "defined",
+    "approval": "level2_basic",
+    "ivConditions": [
+      "low",
+      "neutral"
+    ],
+    "trends": [
+      "down",
+      "sideways"
+    ],
+    "eventStance": "ok_through_events",
+    "growthPrimary": false,
+    "priority": 0.55,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 90,
+    "exitRules": [
+      "manual_review",
+      "profit_50pct_max"
+    ],
+    "id": "ingest_the_equity_options_strategy_guide_2010_lp",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=11) in: The Equity Options Strategy Guide (2010)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry"
+    ],
+    "bookSource": "The Equity Options Strategy Guide (2010) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Equity Options Strategy Guide (2010).pdf]",
+    "structure": "Long / Protective Put",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=11",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 11
+  },
+  {
+    "id_suffix": "lp",
+    "name": "Long / Protective Put — An Investors Guide to Trading Options (2013)",
+    "strategyId": "long_put",
+    "thesis": "bearish",
+    "portfolioRole": "hedge",
+    "riskProfile": "defined",
+    "approval": "level2_basic",
+    "ivConditions": [
+      "low",
+      "neutral"
+    ],
+    "trends": [
+      "down",
+      "sideways"
+    ],
+    "eventStance": "ok_through_events",
+    "growthPrimary": false,
+    "priority": 0.55,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 90,
+    "exitRules": [
+      "manual_review",
+      "profit_50pct_max"
+    ],
+    "id": "ingest_an_investors_guide_to_trading_options_20_lp",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=10) in: An Investors Guide to Trading Options (2013)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "An Investors Guide to Trading Options (2013) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\An Investors Guide to Trading Options (2013).pdf]",
+    "structure": "Long / Protective Put",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=10",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 10
+  },
+  {
+    "id_suffix": "lp",
+    "name": "Long / Protective Put — Fundamentals of the Option Market (2001)",
+    "strategyId": "long_put",
+    "thesis": "bearish",
+    "portfolioRole": "hedge",
+    "riskProfile": "defined",
+    "approval": "level2_basic",
+    "ivConditions": [
+      "low",
+      "neutral"
+    ],
+    "trends": [
+      "down",
+      "sideways"
+    ],
+    "eventStance": "ok_through_events",
+    "growthPrimary": false,
+    "priority": 0.55,
+    "shortDeltaTarget": null,
+    "dteMin": 21,
+    "dteMax": 90,
+    "exitRules": [
+      "manual_review",
+      "profit_50pct_max"
+    ],
+    "id": "ingest_fundamentals_of_the_option_market_2001_lp",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=4) in: Fundamentals of the Option Market (2001)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Fundamentals of the Option Market (2001) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Fundamentals of the Option Market (2001).pdf]",
+    "structure": "Long / Protective Put",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=4",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 4
+  },
+  {
+    "id_suffix": "ls",
+    "name": "Long Straddle — The Option Trader Handbook - Strategies And Trad",
+    "strategyId": "long_straddle",
+    "thesis": "large-move",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "low"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "ok_through_events",
+    "growthPrimary": false,
+    "priority": 0.4,
+    "shortDeltaTarget": null,
+    "dteMin": 7,
+    "dteMax": 45,
+    "exitRules": [
+      "manual_review",
+      "profit_50pct_max"
+    ],
+    "id": "ingest_the_option_trader_handbook_strategies_an_ls",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=13) in: The Option Trader Handbook - Strategies And Trade Adjustments (2004)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "The Option Trader Handbook - Strategies And Trade Adjustments (2004) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Option Trader Handbook - Strategies And Trade Adjustments (2004).pdf]",
+    "structure": "Long Straddle",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=13",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 13
+  },
+  {
+    "id_suffix": "ls",
+    "name": "Long Straddle — 30 Great Investing Minds (2002)",
+    "strategyId": "long_straddle",
+    "thesis": "large-move",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "low"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "ok_through_events",
+    "growthPrimary": false,
+    "priority": 0.4,
+    "shortDeltaTarget": null,
+    "dteMin": 7,
+    "dteMax": 45,
+    "exitRules": [
+      "manual_review",
+      "profit_50pct_max"
+    ],
+    "id": "ingest_30_great_investing_minds_2002_ls",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=12) in: 30 Great Investing Minds (2002)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "30 Great Investing Minds (2002) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\30 Great Investing Minds (2002).pdf]",
+    "structure": "Long Straddle",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=12",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 12
+  },
+  {
+    "id_suffix": "ls",
+    "name": "Long Straddle — Options Trading Primer By Marketwise Trading Sch",
+    "strategyId": "long_straddle",
+    "thesis": "large-move",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "low"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "ok_through_events",
+    "growthPrimary": false,
+    "priority": 0.4,
+    "shortDeltaTarget": null,
+    "dteMin": 7,
+    "dteMax": 45,
+    "exitRules": [
+      "manual_review",
+      "profit_50pct_max"
+    ],
+    "id": "ingest_options_trading_primer_by_marketwise_tra_ls",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=12) in: Options Trading Primer By Marketwise Trading School (2002)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Options Trading Primer By Marketwise Trading School (2002) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options Trading Primer By Marketwise Trading School (2002).pdf]",
+    "structure": "Long Straddle",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=12",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 12
+  },
+  {
+    "id_suffix": "lsg",
+    "name": "Long Strangle — Option Strategies - A Quick Guide (2010)",
+    "strategyId": "long_strangle",
+    "thesis": "large-move",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "low"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "ok_through_events",
+    "growthPrimary": false,
+    "priority": 0.38,
+    "shortDeltaTarget": null,
+    "dteMin": 7,
+    "dteMax": 45,
+    "exitRules": [
+      "manual_review",
+      "profit_50pct_max"
+    ],
+    "id": "ingest_option_strategies_a_quick_guide_2010_lsg",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=3) in: Option Strategies - A Quick Guide (2010)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry"
+    ],
+    "bookSource": "Option Strategies - A Quick Guide (2010) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Strategies - A Quick Guide (2010).pdf]",
+    "structure": "Long Strangle",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=3",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 3
+  },
+  {
+    "id_suffix": "lsg",
+    "name": "Long Strangle — Statistics of Financial Markets (2013)",
+    "strategyId": "long_strangle",
+    "thesis": "large-move",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "low"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "ok_through_events",
+    "growthPrimary": false,
+    "priority": 0.38,
+    "shortDeltaTarget": null,
+    "dteMin": 7,
+    "dteMax": 45,
+    "exitRules": [
+      "manual_review",
+      "profit_50pct_max"
+    ],
+    "id": "ingest_statistics_of_financial_markets_2013_lsg",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=3) in: Statistics of Financial Markets (2013)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Statistics of Financial Markets (2013) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Statistics of Financial Markets (2013).pdf]",
+    "structure": "Long Strangle",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=3",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 3
+  },
+  {
+    "id_suffix": "lsg",
+    "name": "Long Strangle — Fundamentals of the Option Market (2001)",
+    "strategyId": "long_strangle",
+    "thesis": "large-move",
+    "portfolioRole": "growth_tactical",
+    "riskProfile": "defined",
+    "approval": "level3_spreads",
+    "ivConditions": [
+      "low"
+    ],
+    "trends": [
+      "sideways"
+    ],
+    "eventStance": "ok_through_events",
+    "growthPrimary": false,
+    "priority": 0.38,
+    "shortDeltaTarget": null,
+    "dteMin": 7,
+    "dteMax": 45,
+    "exitRules": [
+      "manual_review",
+      "profit_50pct_max"
+    ],
+    "id": "ingest_fundamentals_of_the_option_market_2001_lsg",
+    "minLiquidity": "normal",
+    "newsBias": "any",
+    "entryRules": [
+      "Distilled from book mentions (hit_weight=2) in: Fundamentals of the Option Market (2001)",
+      "Verify strikes, liquidity, and max loss in OptionScope before Robinhood entry",
+      "Book emphasizes risk management — size with portfolio 1% rule"
+    ],
+    "bookSource": "Fundamentals of the Option Market (2001) [C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Fundamentals of the Option Market (2001).pdf]",
+    "structure": "Long Strangle",
+    "notes": [
+      "Auto-ingested seed from PDF keyword map; weight=2",
+      "Educational — not investment advice"
+    ],
+    "hitWeight": 2
+  }
+]

@@ -1,0 +1,82 @@
+Jack Schwager’s Guide to
+Winning with Automated
+Trading Systems
+CCoouurrssee MMaannuuaall
+Jack Schwager
+AAnn OOvveerrvviieeww ooff
+TTrraaddiinngg SSyysstteemmss --
+AAnndd WWhhyy YYoouu SShhoouulldd
+UUssee TThheemm
+2
+TThhee MMoosstt IImmppoorrttaanntt LLeessssoonn
+ooff tthhee MMaarrkkeett WWiizzaarrddss
+Benefits of a Mechanical
+Trading System
+Six basic advantages of trading systems:
+Eliminates emotion
+l
+Eliminates need for constant decision making
+l
+Ensures consistency of approach
+l
+Risk control
+l
+Same approach can be applied to many markets
+l
+Approach can be tested for statistical reliability
+l
+4
+DDeeffiinniinngg aanndd
+IIlllluussttrraattiinngg tthhee
+LLeeaaddiinngg TTyyppeess ooff
+TTrraaddiinngg SSyysstteemmss
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+AAnn AAlltteerrnnaattiivvee
+AApppprrooaacchh --
+CCoouunntteerr--TTrreenndd
+SSyysstteemmss
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50

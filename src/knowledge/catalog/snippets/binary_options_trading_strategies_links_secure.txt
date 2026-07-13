@@ -1,0 +1,270 @@
+GOBINARY24.COM
+BINARY OPTIONS
+TRADING STRATEGIES
+Strategies of Pros Explained for Dummies
+GoBinary24.com
+Joining traders from New York • Tokyo • Singapore • Toronto • Paris • London
+Welcome!
+Do you want to become a successful
+binary options trader?
+You are in the right place. In this e-book you will be
+introduced to the top 10 binary options strategies. As well
+as picking the most effective and easy-to-use strategies out
+there, we have presented them in a fun visual manner that
+is easy to understand, even if you don’t have much
+experience.
+Some binary option traders play the markets without any
+solid strategies. We however, strongly recommend
+mastering at least a couple of strategies and trading only
+when strategy indicators are clear. By doing so you can not
+only reduce your risk, but also significantly increase any
+profits.
+That said, always be aware of the other factors that drive
+markets, don’t just follow indicators blindly!
+And Remember that it’s okay to have losses – as long as
+more of your trades are ‘In the Money’ than ‘Out of the
+Money’.
+TOP
+RATED
+SLIDESHARE
+AUTHOR
+GoBinary24.com
+Joining traders from New York • Tokyo • Singapore • Paris • London
+Fundamentals Why Binary
+Why Binary options are becoming more
+and more popular?
+Simplicity
+Binary options are generally simpler to trade than
+other instruments. This is because you only need to
+form a view on what direction the price of the
+underlying asset will move. In comparison, traditional
+options also require you to form a view on the
+magnitude of any price movement.
+Fast outcome
+Binary options offer contracts with short-term
+durations, from 60 seconds to 60 minutes. This
+provides the trader with several investment
+opportunities during a day. It also offers flexibility as
+markets change over time.
+Less risk
+With the forex market, every time you enter into a
+trade you risk the entire amount of money in your
+trading account. With binary options, however, your
+risk is always limited to the amount you committed to
+that specific trade.
+Multiple asset classes
+A trader can access multiple asset classes such as
+stocks, currencies, indices and commodities, and can
+usually trade them whenever a market is open some-
+where in the world.
+No fees
+Unlike with other trading instruments, there are
+usually no fees or commissions attached to binary
+options. Brokers make their money from the
+percentage discrepancy between what they pay out on
+winning trades and what they collect from losing
+trades.
+Fundamentals Binary Vs Forex
+Comparing two top trading opportunities
+BINARY
+VS
+FOREX
+OPTIONS
+Profitability rates 60%-85% Uncertain
+Risk Controlled Unpredictable
+Refunds for losses >15% refund None
+Risk/Reward ratio Reward < Risk Reward > Risk
+Leverage* Not available Up to X500
+For beginners Simple to use Not so much (except social)
+Fees No Spread and/or commission
+Regulated in the US No Yes
+Ownership of asset No Yes
+Assets for trading Multiple Limited
+A nice little simulator tool for comparing your
+possible profits/losses in forex or binary - here.
+* Leverage (margin) allows you to increase your investment capital so you can make a larger trade, and potentially a larger profit if your trade is a winning one.
+Fundamentals Trade example
+How it works
+2. Choose expiry time
+1. Choose an asset 3. Select investment 4. Decide if the rate
+amount will go Up or Down
+Gold 18:00 $100
+Will Gold go up or down?
+Gold 1309.50
+CALL
+11:00 Payout percentage
+1309.650 72%
+11:00 PUT Potential payout
+$175
+11:00 12:00 13:00 14:00 15:00 16:00 17:00 18:00 Time left: 00:29
+41% UP DOWN 59%
+Market sentiment - dynamic fluctuations of buyers and sellers creating trends
+Overview Example
+Binary options offer a way to trade stocks, For example, a trader forms a view that the price of
+commodities, indices and currency pairs where your gold will fall in a given period of time, and so places
+rate of return is FIXED. You just need to correctly $100 in a put. If correct, s/he wins a fixed payout -
+pick whether the value of the asset is going up (Call) $175. It does not matter if the price of the asset falls
+or down (Put). Usually, these options expire in 15-30 $1 or $100 - the payout is the same. If the price of gold
+minutes. rises, however, the trader loses the entire amount of
+the investment - $100.
+Some brokers, however, let you minimize risks by
+choosing the payout and loss percentage you want.
+For example, you can choose to lose only 75% in the
+event that your view is incorrect. With such an
+option, you would also have to accept a lower win
+percentage.
+Fundamentals Bulls & Bears
+A visual trick for memorizing what is bull
+and what is bear
+On Wall Street, the bulls and bears are in a constant struggle. If you haven't heard of these terms already, you
+undoubtedly will as you begin to invest. The terms bull market and bear market describe upward and downward
+market trends, respectively, and can be used to describe either the market as a whole or specific sectors and securi-
+ties. These images will help you memorize which is which.
+Bullish action Bearish action
+Bearish trend
+Bullish candlestick Bearish candlestick
+Fundamentals Tools
+How to set up your workspace for
+successful binary trading
+Precise binary trading decisions must include technical analysis. This requires more specific information than that
+provided by a line chart, so professional traders use independent candlestick charts that offer more in-depth data.
+1. 1. 2.
+Simple binary line chart Binary line chart + candlestick chart tool
+Recommended free chart tools
+• Trading View tm
+• Free Stock Charts tm
+• Multicharts
+Fundamentals Charts
+Unlock the potential of charts!
+How to read candlestick charts
+The line is called
+“shadow”
+Highest price Highest price
+of the day of the day
+Close price Open price
+The color bar is called
+“body”
+Open price Close price
+Lowest price Lowest price
+of the day of the day
+Color variation 1 Color variation 2
+Close Open Close Open
+Open Close Open Close
+A. Doji - when the opening and closing price are equal.
+B. Long-Legged Doji - after small candlesticks, they
+indicate a potential trend change.
+C. 4 Price Doji - where the high and low are equal.
+Normally only seen on thinly traded pairs.
+A. B. C.
+Fundamentals Timing
+Best time for trading
+One of the most important aspects when trading binary options is to know when to trade the market. Even though
+trading on foreign exchange options, stock options, commodity options and index options is available 24 -hours a
+day, five days a week, not every hour or minute is worth trading. There are different hours during the day and differ-
+ent days of the week which see more volume and liquidity than others, resulting in high volatility and oppor-
+tunities to maximize trading.
+Overlaps - the peak time
+The binary options market is most active when there When more than one market is active, you can expect
+is an overlap of the London/New York and to see increased volatility, meaning that prices move
+Asia/London sessions. The market experiences a high around more and in a clearer direction. During
+volume of trades at these times. off-peak hours, there is little volume and less price
+movement, resulting in flat and directionless markets.
+Tokyo/London overlap
+London/New York overlap
+GMT time
+08:00 09:00 10:00 11:00 12:00 13:00 14:00 15:00 16:00 17:00 18:00 19:00 20:00 21:00 22:00 23:00 24:00 01:00 02:00 03:00 04:00 05:00 06:00 07:00
+London
+New York
+Sidney
+Tokio
+Effects of timing Best days of the week
+As a binary options trader, you profit when you There are days that see more volatility and price action
+correctly predict the direction of an asset price. than others. According to our research, Tuesday and
+Volatility is therefore essential to maximize the Wednesday are considered to be the most active
+chances of you increasing your return on investment. trading days of the week. Friday is also recognized as
+Studies have shown that the most active trading hours a high-volatility trading day, especially during the
+occur during the European session. In the US, trading hours when European and US trading sessions
+activity picks up sharply around 8:30 am EST. this is overlap. During the second half of the day, price
+due to the release of closely watched US economic movements can be very unpredictable.
+data, which generates the liquidity and volatility
+needed for the underlying asset to reach its target Best time
+price before the option expires. Prices become most
+volatile when the US releases its monthly non-farm MON TUE WED THU FRI SAT SUN
+payrolls report on the first Friday of every month. In
+contrast, markets will be less active and liquid during
+major holidays in the US and Europe, resulting in
+subdued trade.
+Fundamentals Expiry time
+What time frame to choose for trading
+binary options
+When it comes to trading binary options, you have a variety of choices for what kind of time frame (time until
+expiry) to trade in. the majority of binary options, however, have expiry times ranging from 60 seconds to 30
+minutes.
+Description Return rate Type of analysis
+60 sec
+Very unpredictable time frame. Quick results, but hard 65% - 70% More like gambling
+NEW!
+to make a sound prediction.
+10 & 15 min
+Random reversals are less likely to occur here. Use Up to 80% Technical
+hourly chart to understand the underlying trend.
+Most popular
+30 minutes binary options should incorporate some 80% and up Technical +
+fundamental analysis techniques during your re- F u n d a mental
+30 min for an asset to perform more closely to what its long
+term forecast is. Long term investors rely very heavily
+on fundamentals. You will also want to look at 15
+minute charts and hourly charts to give you a broad
+view of the technical factors surrounding the asset.
+Fundamental analysis will help you here, but 30
+minutes is still short enough that you can’t neglect
+the technical side of things. Looking at both of these
+things will give you a much more complete picture
+of how an asset will perform over this longer time
+period.
+What time-frame to use for the pattern recognition
+In order to confirm a trend, use a candlestick chart with a bigger time frame than the one you use to decide your
+expiry time. it is usually recommended to use a time frame of at least 1 hour for chart pattern recognition. short-
+term traders, however, may choose to use 1-minute and 15-minute candlestick charts. The 1-minute chart provides
+entry and exit signals while the 15-minute and hourly charts are used to confirm the trend and support and resist-
+ance levels. If you trade binary options with 15-minute or 30-minute expiry times, 1-hour and 4-hour candlestick
+charts can be used to determine/confirm your view.
+Strategies #1
+The Double Red Strategy
+1.
+PUT
+2.
+Description Key elements
+The double red strategy is a short-term reversal system • Chart for analysis: 5 min
+based on price action and resistance. The trade is • Expiry time to use: 5 -15 min
+planned on a 5-minute chart and is signaled when
+two bearish candles form following a test of resist-
+ance. Watch out
+1. Choose an asset and watch the market until you see • Not suited for volatile markets.
+the first red bar. then wait for a second red bar. • Do not use it when big news events are taking
+2. If the second red bar closes lower than the first red place.
+bar, then that’s it – Jackpot.
+3. Usually, what happens is that the third bar will go
+even lower than the second bar. This is the point
+where you should immediately place a Put option on
+the asset, with an expiry time not longer than 15
+minutes.
+Strategies #2
+The Pinocchio Strategy
+Bearish Pinnochio
+2. Upper shadow
+at least 2x the size
+of the real body
+4. Potential profit
+3. Confirmation
+of a downtrend.
+PUT
+1. Uptrend
+Description Key elements
+A Pinocchio bar is a candlestick bar that has a very • Time-frame for analysis: 1h, 4h win
+68%
+small body and a very long wick (nose). It is also • Expiry time to use: 5-15 min
+rate
+called Shooting star, Hanging man, Hammer and
+Inverted Hammer. As you remember, Pinnochio’s
+nose grew long when he was lying

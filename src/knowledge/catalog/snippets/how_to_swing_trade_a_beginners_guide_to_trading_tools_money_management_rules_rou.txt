@@ -1,0 +1,238 @@
+How to Swing Trade
+A Beginner’s Guide to Trading Tools, Money
+Management, Rules, Strategies and Routines of a Swing
+Trader
+© Brian Pezim, BSc, MBA
+Preface by Andrew Aziz, Ph.D.
+Traders at Bear Bull Traders
+www.bearbulltraders.com
+DISCLAIMER:
+The author and www.BearBullTraders.com (“the Company”), including its employees, contractors,
+shareholders and affiliates, are NOT an investment advisory service, registered investment advisors
+or broker-dealers and does not undertake to advise clients on which securities they should buy or sell
+for themselves. It must be understood that a very high degree of risk is involved in trading securities.
+The Company, the author, the publisher and the affiliates of the Company assume no responsibility or
+liability for trading and investment results. Statements on the Company's website and in its
+publications are made as of the date stated and are subject to change without notice. It should not be
+assumed that the methods, techniques or indicators presented in these products will be profitable nor
+that they will not result in losses. In addition, the indicators, strategies, rules and all other features of
+the Company's products (collectively, “the Information”) are provided for informational and
+educational purposes only and should not be construed as investment advice. Examples presented are
+for educational purposes only. Accordingly, readers should not rely solely on the Information in
+making any trades or investments. Rather, they should use the Information only as a starting point for
+doing additional independent research in order to allow them to form their own opinions regarding
+trading and investments. Investors and traders must always consult with their licensed financial
+advisors and tax advisors to determine the suitability of any investment.
+Preface
+The current bull market rally, which started March 9, 2009, is known
+to be the longest one on record since World War II. By 2018, the market has
+risen more than 300 percent since its low just 9 years ago. Everyone is
+talking about the markets these days, from coffee shop customers and
+baristas to nurses and grandmothers.
+The technology boom, along with widespread high speed Internet use,
+social media and new gadgets and apps has made everyone with even just a
+passing interest an armchair expert in the world of investing and trading.
+While the financial markets once only belonged to the elites of Wall Street,
+today teenagers are now doubling their parents’ accounts by trading
+complex financial instruments like options or futures.
+Millennials are connected 24/7 to the well of knowledge, the Internet,
+searching for every answer and not accepting unknowns. They do not want
+to leave their money in the hands of advisors, bankers and mutual fund
+managers who charge extremely high fees and offer very low returns. They
+are in control of their lives, and as a result, more savvy toward their
+investments and assets. Because of these new changes, we now have
+entered an interesting period for trading.
+Hot sector mania is not a new thing, but we see them much more often
+these days. In the past, hot sector mania used to be rare and happen only
+once every decade or so. They corresponded to technological revolutions
+such as the birth of the Internet or advancements in IT such as the dot.com
+bubble of the late 1990s. But today, trading has changed. We see a mania
+almost every few months. People rush to buy into a sector: the bitcoin and
+cryptocurrency mania of 2017, the FAANG mania of early 2018 (Facebook,
+Apple, Amazon, Netflix and Alphabet’s Google), and the marijuana and pot
+mania of the summer of 2018. For traders, everything is different.
+Who would have thought that a photo-sharing app like Snapchat with a
+27-year-old CEO would be worth more on its IPO than American Airlines,
+Hilton, Best Buy or Ferrari. The stock opened at $17 per share and closed
+the day at $24.51, with the market cap as high as $34 billion. Or who would
+have imagined ordinary people rushing to buy bitcoin and cryptocurrencies
+in 2017. The blockchain stocks were the hot new thing that year.
+As Brian Pezim details in his book, the value of companies who
+simply mentioned the word “blockchain” in a press release would
+skyrocket. For example, a company called “Long Island Iced Tea Corp.”
+(ticker: LTEA) changed their name to “Long Blockchain Corp.” (ticker:
+LBCC) and decided to shift their focus from beverages to blockchain
+technology. The stock ran over 200% in a single day. Or who would have
+thought a company like New Age Beverages Corporation (ticker: NBEV),
+which sells beverages like tea, coffee and kombucha, would see its stock
+skyrocket 62.5% following an announcement that they would launch a
+beverage infused with cannabidiol.
+As I sit at my desk writing this preface in September of 2018, the
+markets are incredible. Successful trading in these markets requires a new
+perspective and new strategies that complement this new era of trading. It’s
+a whole new world out there! Old school trading textbooks and strategies
+developed by analysts decades ago need updating. Although those systems
+have their place, a considerable fortune can be made by adapting to the new
+market conditions. That is why I think this book is important and different.
+I used to work with Brian at a company while I was doing research in
+clean tech. I traveled with him for work a few times and we became friends.
+He is older than me, he was semi-retired, and had literally tons of
+knowledge and experience to transfer to me. I soon learned about trading
+from him, and he in fact was the person who first introduced me to the
+world of trading.
+Although Brian is an engineer by training, he has developed
+exceptional skills when it comes to trading in the financial markets. He is
+now a friend as well as a colleague in our community of traders, Bear Bull
+Traders (www.BearBullTraders.com). We focus mostly on day trading in
+the stock market, but from time to time Brian will share his swing trades
+with us. Everyone in the community has been wanting to know how he
+swing trades. We encouraged him to write a book about his strategies, and
+he did.
+As a person who has known Brian for a long time, I was excited to
+read his book, How to Swing Trade. In his book, Brian explains 3 strategies
+for swing trading: the conventional method of scanning stocks based on
+technical analysis, overnight gaps, and hot sector manias. I found these 3
+strategies to be effective and easy to understand and execute. In his book, in
+addition to his swing trading strategies, he also writes about other aspects of
+swing trading that are just as important, such as proper tools, a sound
+psychology and effective risk and trade management.
+Brian’s book, in my opinion, is the quickest way for new traders to get
+up to speed with how to swing trade in the markets. I hope you enjoy
+reading this book as much as I did.
+Andrew Aziz
+Author,
+1. How to Day Trade for a Living: A Beginner’s Guide to Trading Tools
+and Tactics, Money Management, Discipline and Trading Psychology
+2. Advanced Techniques in Day Trading: A Practical Guide to High
+Probability Strategies and Methods
+www.BearBullTraders.com
+How to Profitably Swing Trade
+Chapter 1: Introduction
+Chapter 2: How Swing Trading Works
+Swing Trading vs. Day Trading
+Swing Trading vs. Position Trading
+Market Participants: Retail vs. Institutional Traders
+High-Frequency Trades
+How to Start Trading
+Buying Long or Selling Short
+How to Enter a Trade
+Investment and Margin Accounts
+Chapter Summary
+Chapter 3: Tools and Platforms for Swing Trading
+Type of Account
+Commissions and Fees
+Platforms and Tools
+Tools Available Online
+Chapter Summary
+Chapter 4: Financial Instruments for Swing Trading
+Exchange-Traded Funds
+Individual Stocks
+Currencies
+Cryptocurrencies
+Options
+Chapter Summary
+Chapter 5: Risk and Account Management
+Assessing the Risk and the Reward
+Setting Stops and Targets
+Managing the Trade Size
+Maintaining a Trading Journal
+Chapter Summary
+Chapter 6: Fundamental Analysis
+Total Revenue
+Earnings per Share
+Price to Earnings Ratio
+Debt to Equity
+Return on Equity
+Short Interest
+Hot Sector Manias
+Chapter Summary
+Chapter 7: Technical Analysis – Charting Basics
+Candlesticks
+Bar Charts
+Price Action and Psychology
+Candlestick Patterns
+Basic Bullish and Bearish Candlesticks
+Reversal Candles
+Gaps
+Chapter Summary
+Chapter 8: Technical Analysis – Indicator Tools
+Support and Resistance Levels
+Moving Averages
+Relative Strength Index
+MACD: Convergence and Divergence
+Average True Range
+Chapter Summary
+Chapter 9: Technical Analysis – Patterns
+Double Bottoms and Double Tops
+Bear and Bull Flags
+How to Trade Flag Patterns
+Bear and Bull Pendants
+ABCD Patterns
+Head and Shoulders Patterns
+Chapter Summary
+Chapter 10: Swing Trading Guiding Principles
+Keep it Simple
+Treat your Swing Trading Activity Like a Serious Business
+Develop a Work Plan
+Actively Manage your Risk to Reward Ratio; Focus on the Entry
+Measure your Results and Adjust Accordingly
+Chapter Summary
+Chapter 11: Swing Trading Rules
+Risks of Holding a Security
+Over-the-Counter or Penny Stocks
+Chapter Summary
+Chapter 12: Swing Trading Strategies
+Regularly Scanning for Trades
+Short-term Gap Trades
+Hot Sector Manias
+Chapter Summary
+Chapter 13: The Entry and the Exit
+The Entry
+The Exit
+Chapter Summary
+Chapter 14: The Routine of a Swing Trader
+Setting Goals, Objectives and Strategies
+Defining and Building a Routine
+Chapter Summary
+Chapter 15: Final Thoughts
+Glossary
+Chapter 1:
+Introduction
+Swing trading is a type of trading in which you hold positions in stocks
+or other investments over a period of time that can range from 1 day to a
+few weeks or more. In this book, I will explain the fundamentals of swing
+trading and how it is different from other styles of trading and investing
+such as day trading or position trading. I will also describe some swing
+trading strategies that many traders use each day. These strategies, and
+others that you may decide to develop on your own, could provide you with
+an opportunity to over time make a good return on your capital.
+If you are a beginner trader, this book will equip you with an
+understanding of where to start, how to start, what to expect from swing
+trading, and how you can develop your own strategy based on your personal
+goals. Simply reading this book will not necessarily make you a profitable
+swing trader though. Profits in trading do not come from reading 1 or 2
+books. They will come with education, the right tools, practice and ongoing
+market research.
+If you are a trader with some existing experience, this book will give
+you some insights on the author’s approach to swing trading, rules that I
+follow and some strategies that I have used over the years to make
+profitable trades.
+When I was a preteen, I would watch my father pour over the stocks in
+the newspaper and occasionally hear him on the phone with his broker,
+placing orders to buy and sell shares. One day I asked my father if he could
+buy some stock and he said sure. He opened an account and bought 1 (one),
+yes, 1 share of “The Bell Telephone Company of Canada”. I still have that 1
+share today and it has multiplied into a couple of dozen shares through
+splits and a dividend reinvestment program.
+That was the starting point for my stock ownership/trading career. Ever
+since, I have been interested in stocks and the stock market and I have
+subsequently traded throughout most of my adult life.
+The one thing we can all count on is change and this holds true for
+trading the stock market. When I started actively purchasing stocks, the
+Internet did not exist. If you wanted to research a particular company, you
+went to the library and asked for a file that would consist of newspaper
+clippings and maybe annual reports. Charts. What charts?
+The advent of the Internet and online trading changed the financial
+industry dramatically. I tried my hand at day trading during the dot-com era.
+I made a lot of money and then lost a lot of money. It was a humbling
+less

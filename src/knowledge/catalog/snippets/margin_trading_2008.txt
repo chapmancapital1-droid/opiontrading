@@ -1,0 +1,276 @@
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+Margin
+Trading
+from A to Z
+A Complete Guide to Borrowing,
+Investing, and Regulation
+MICHAEL T. CURLEY
+John Wiley & Sons, Inc.
+iii
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+vi
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+Margin
+Trading
+from A to Z
+i
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+Founded in 1807, John Wiley & Sons is the oldest independent publish-
+ingcompanyintheUnitedStates.WithofficesinNorthAmerica,Europe,
+AustraliaandAsia,Wileyisgloballycommittedtodevelopingandmarket-
+ing print and electronic products and services for our customers’ profes-
+sionalandpersonalknowledgeandunderstanding.
+TheWileyTradingseriesfeaturesbooksbytraderswhohavesurvived
+the market’s ever changing temperament and have prospered—some by
+reinventing systems, others by getting back to basics. Whether a novice
+trader, professional or somewhere in-between, these books will provide
+theadviceandstrategiesneededtoprospertodayandwellintothefuture.
+Foralistofavailabletitles,visitourWebsiteatwww.WileyFinance.com.
+ii
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+Margin
+Trading
+from A to Z
+A Complete Guide to Borrowing,
+Investing, and Regulation
+MICHAEL T. CURLEY
+John Wiley & Sons, Inc.
+iii
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+Copyright(cid:1)C 2008byMichaelT.CurleyMasterson.Allrightsreserved.
+PublishedbyJohnWiley&Sons,Inc.,Hoboken,NewJersey
+PublishedsimultaneouslyinCanada
+Nopartofthispublicationmaybereproduced,storedinaretrievalsystem,ortransmittedin
+anyformorbyanymeans,electronic,mechanical,photocopying,recording,scanning,oroth-
+erwise,exceptaspermittedunderSection107or108ofthe1976UnitedStatesCopyrightAct,
+withouteitherthepriorwrittenpermissionofthePublisher,orauthorizationthroughpayment
+oftheappropriateper-copyfeetotheCopyrightClearanceCenter,Inc.,222RosewoodDrive,
+Danvers,MA01923,(978)750-8400,fax(978)750-4470,orontheWebatwww.copyright.com.
+RequeststothePublisherforpermissionshouldbeaddressedtothePermissionsDepartment,
+JohnWiley&Sons,Inc.,111RiverStreet,Hoboken,NJ07030,(201)748-6011,fax(201)748-
+6008,oronlineathttp://www.wiley.com/go/permissions.
+LimitofLiability/DisclaimerofWarranty:Whilethepublisherandauthorhaveusedtheirbest
+effortsinpreparingthisbook,theymakenorepresentationsorwarrantieswithrespecttothe
+accuracyorcompletenessofthecontentsofthisbookandspecificallydisclaimanyimplied
+warrantiesofmerchantabilityorfitnessforaparticularpurpose.Nowarrantymaybecreated
+orextendedbysalesrepresentativesorwrittensalesmaterials.Theadviceandstrategiescon-
+tainedhereinmaynotbesuitableforyoursituation.Youshouldconsultwithaprofessional
+whereappropriate.Neitherthepublishernorauthorshallbeliableforanylossofprofitorany
+othercommercialdamages,includingbutnotlimitedtospecial,incidental,consequential,or
+otherdamages.
+Forgeneralinformationonourotherproductsandservicesorfortechnicalsupport,please
+contactourCustomerCareDepartmentwithintheUnitedStatesat(800)762-2974,outsidethe
+UnitedStatesat(317)572-3993orfax(317)572-4002.
+Wileyalsopublishesitsbooksinavarietyofelectronicformats.Somecontentthatappearsin
+printmaynotbeavailableinelectronicformats.FormoreinformationaboutWileyproducts,
+visitourwebsiteatwww.wiley.com.
+LibraryofCongressCataloging-in-PublicationData:
+Curley,MichaelT.
+MargintradingfromAtoZ:acompleteguidetoborrowing,investing,and
+regulation/MichaelT.Curley.
+p.cm.
+Includesbibliographicalreferencesandindex.
+ISBN978-0-470-17394-7(cloth:alk.paper)
+1.Marginaccounts–UnitedStates.2.Margins(Securitytrading)–UnitedStates.
+I.Title.
+HG6041.C842008
+332.63’2280973–dc22
+2007038098
+PrintedintheUnitedStatesofAmerica
+10 9 8 7 6 5 4 3 2 1
+iv
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+Thisbookisdedicatedtoallthemenandwomenwhotoilinthe
+backofficesofthefinancialcommunity.Theworkishard,the
+compensationlow,andtherecognitionminute.However,without
+you,thisindustrycouldnotsurvive.
+Thankstoyouall!
+v
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+vi
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+Contents
+Preface xi
+About the Author xv
+CHAPTER 1 Cash Accounts 1
+SaleofSecurities 3
+PayingforSecuritiesbytheSaleofOtherSecurities 3
+DeliveryagainstPayment 4
+EmployeeStockOptions 6
+ChapterOneQuestions 7
+CHAPTER 2 Initial Federal Margin Requirements 9
+Purchases 9
+Sales 16
+MeetingaMarginCall 17
+ChapterTwoQuestions 19
+CHAPTER 3 Initial and Minimum
+Maintenance Requirements 21
+InitialRequirements 21
+HouseRequirements 23
+NYSEMinimumMaintenanceRequirements 23
+ChapterThreeQuestions 29
+CHAPTER 4 The Special Memorandum Account 31
+Customer’sAccount 35
+ChapterFourQuestions 42
+vii
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+viii CONTENTS
+CHAPTER 5 Short Sales 45
+CoveringShortSales 51
+NYSEMinimumMaintenanceRequirements 52
+SampleTransactions 53
+ShortSaleversustheBoxorShortagainsttheBox 55
+PrimeBroker 59
+ChapterFiveQuestions 62
+CHAPTER 6 Bonds 65
+U.S.GovernmentSecurities 67
+Zero-CouponGovernmentObligations 67
+Municipals 69
+NonconvertibleCorporateBonds 72
+ChapterSixQuestions 74
+CHAPTER 7 Miscellaneous Categories 77
+When-IssuedandWhen-DistributedTransactions 77
+Customer’sAccounts 78
+MarkstotheMarket 80
+When-DistributedSecurities 80
+SegregationofCustomers’Securities 80
+ReviewofCustomers’Accounts 81
+InterestCharges 83
+MarginonNewIssues 85
+DayTrades 85
+RequirementsforaPatternDayTrader 86
+TimeandTick 87
+ChapterSevenQuestions 89
+CHAPTER 8 Options 91
+Definitions 92
+AdditionalDefinitionsRelatedtotheTypesofOptions 93
+Examples 95
+RequirementsforthePurchaseand/orSaleofOptions 100
+Long-TermEquityAnticipationSecurities 101
+LEAPS 101
+LEAPSExample 102
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+Contents ix
+BullSpreadCallDebit 106
+BearSpreadCallCredit 107
+BullSpreadPutCredit 107
+BearSpreadPutDebit 108
+TheAmericanStyle 108
+TheEuropeanStyle 108
+OtherTypesofOptions 108
+IndexOptions 108
+InterestRateOptions 109
+AdditionalDetailsConcerningOptions 113
+ChapterEightQuestions 114
+CHAPTER 9 Portfolio Margining 121
+MarginDeficiencies 125
+Chapter9Questions 126
+Eligible/Hedged/UnhedgedPositions 126
+AccountSet-up 126
+UnlistedDerivatives 126
+Liquidations 127
+APPENDIX A The Federal Reserve 129
+APPENDIXB Customer Margin Account and
+SMA Sheets 137
+APPENDIXC Answers to Chapter Questions 139
+APPENDIXD Final Examination Questions 151
+APPENDIXE Final Examination Answers 161
+Glossary of Terms 169
+Index 177
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+x
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+Preface
+Trading on margin has taken an unfair and unwarranted amount of
+abuse.Purchasingsecuritiesonmarginisnothingmorethanpurchas-
+ingsecuritiesoncredit.Creditisnotevilorbadand,ifproperlyused,
+canbeanextremelyprofitablemeansofinvesting.
+IfItoldyouthatIhadjustpurchasedahouseandpaidforitinfull,I
+amsureyouwouldbesurprised,becausethisisnotthenormalprocedure
+forpurchasingahouse.Mostpeoplereacttothisstatementbysayingthat
+(1)ahouseisahugepurchaserequiringfinancing(true)and(2)thereisno
+risk—realestatealwaysincreasesinvalue(false).
+Iwouldbenegligentnottotellyouthatanycreditpurchaseofstocks,
+bonds, real estate, furniture, fixtures, and so on involves a degree of risk.
+However,acashpurchaseinfullofthesameitemsinvolvesthesamede-
+greeofrisk.Thevalueofitemspurchased,whetherfinancedorpaidforin
+full,candecline,givingyoualoss.Realestatepriceshavedroppedsubstan-
+tiallyincertaingeographicalareas,areasthathaveexperiencedadecline
+injobsandincreasedunemployment;adeclineinrealestatevalueusually
+accompaniesit.Therealestatedeclineaffectedhousesbeingfinancedwith
+amortgageaswellasthosethatwerefullypaid.
+Thefirstfalsenotiononemustdiscardistheideathatdebtisbad.Itis
+not.Borrowedfundsusedproperlycanresultinconsiderableprofits.The
+termleveraged buyoutisverypopularrightnowonWallStreet.Itisnoth-
+ingmorethanonecompanytakingoveranothercompanywithborrowed
+funds.Oureconomyandourstandardoflivingasweknowittodaywould
+notexistwithoutcredit.
+Theobviousfactinpurchasingsecuritiesoncredit,withthecurrentre-
+quirementsat50percent,isthatonecanpurchasetwiceasmuchinamar-
+gin account as in a cash account. Consequently, if one purchases $10,000
+worth of securities in a cash account and that security doubles in value,
+onehasaprofitof$10,000.Thesame$10,000inamarginaccountenables
+one to purchase $20,000 in securities. Should these securities double in
+value,theprofitis$20,000.That,inessence,istheprinciplebehindmargin
+trading.
+xi
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+xii PREFACE
+Often,thecomplaintisvoicedthatanadditionalexpenseisinvolvedin
+margintrading,becausethebrokerchargesinterestonthemoneyheorshe
+isfinancing.Andthatisabsolutelytrue.However,sinceonecanpurchase
+twiceasmanysecurities,twiceasmanydividendsareavailabletooffseta
+goodportionoftheinterestcharged.
+A margin account can also be used to obtain financing for purposes
+otherthanbuyingandsellingsecurities.Assumeacustomerhas$60,000in
+market value of listed securities and wants to buy a new car with a total
+stickerpriceof$27,000.Depositingthesesecuritiesintoamarginaccount,
+thebrokerispermittedtofinance 50percent,or$30,000. Inthiscase, the
+customer has purchased his or her car and still maintained ownership of
+thesecurities.Interestchargedbythebrokerisapproximatelythesameas
+that charged by a bank for an auto loan. The advantage of the margin ac-
+countisthattheclientdoesnothavetomakemonthlypaymentstopayoff
+theloan.Theloanmaybepaidoffatanytimeorcanstayopenindefinitely,
+providedthecollateralissufficienttomeettheminimummaintenancere-
+quirement(thisisdiscussedindetailinthetext).Inaddition,thebankloan
+requirestheautomobileascollateral.Thebankcanthusdictatewhatkind
+of insurance must be purchased, whether alarms must be installed, and
+soon.However,withthemarginaccounttheloanistiedtothesecurities
+depositedandhasnothingtodowiththecar.
+While most margin accounts are longstanding accounts, many are
+opened and subsequently closed in a relatively short period of time. This
+isparticularlytruearoundApril15thofeachyear,whentaxpaymentsare
+due.Manytimes,securitiesaredepositedandloanstaken,theproceedsof
+whichareusedforthepaymentoftaxes.Oftentheseaccountsarepaidoff
+andclosedoutrelativelyquickly.
+At this point, a few comments should be made about margin trading
+risk.However,Ifirstshallallaysomeofthemisconceptionsregardingtwo
+majorcrashes,October29,1929,andOctober19,1987.
+One often hears that the 1929 crash was caused by margin trading.
+Although margin accounts were a factor, many other factors also came
+into play. To begin with, prior to the crash, no hard and fast margin re-
+quirements existed. The New York Stock Exchange had a suggested mar-
+gin requirement of 20 percent. However, more often than not, customers
+were trading on 10 percent and in some cases 5 percent margin. This is
+clearly a case of too much credit. The sharp decline left many accounts
+inadeficitorclosetonoequity,forcingaliquidation.Thishaslongsince
+beenrectifiedbytheestablishmentofinitialrequirements(currentlyof50
+percent) and minimum maintenance requirements (currently 25 percent).
+Asyoucansee,requirementsaresubstantiallyhighernowthanin1929.
+ThecrashonOctober19,1987,wasquitedifferent.Thestockmarket
+had changed substantially from 1929. Not only had the volume and the
+FM JWPR086-Curley January15,2008 7:55 CharCount=0
+Preface xiii
+number of shares available increased, but new products had been intro-
+duced,suchasequityoptions,broad-basedindexoptions,futureshedging
+strategies,programtrading,andso-callednakedwritingofoptions,which
+can,atleastintheory,resultinunlimitedloss.
+Congress appointed a committee to look into the crash and come up
+withsomesuggestionstopreventarecurrence.Asaresult,marginrequire-
+ments were increased on equity options and narrow- and broad-based in-
+dex options, and new restrictions on program trading were implemented.
+No suggestion was made to increase either initial margin requirement of
+50percentormaintenancerequirementof25percent.
+Iknowsomewillsay,whataboutthecrashin2000?Inallfairness,the
+declinestartingin2000andcontinuingforseveralyearswasaslowdeteri-
+orationofthemarketvalueofsecurities,particularlythetechstocks

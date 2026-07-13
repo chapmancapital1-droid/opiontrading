@@ -1,0 +1,53 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © pAulseperformance
+
+//@version=5
+indicator('Version 5 Changes')
+
+i_maType = input.string("EMA", "MA Type", options=["EMA", "SMA", "RMA", "WMA", "?"])
+
+
+// New switch Statement to simplify long if/else statements.
+
+// Old Version 4 Way of making long if/else statements
+f_getMAV4(_maType, _maSource, _maLength) =>
+    if _maType == 'SMA'
+        ta.sma(_maSource, _maLength)
+    else if _maType == 'EMA'
+        ta.ema(_maSource, _maLength)
+    else if _maType == 'WMA'
+        ta.wma(_maSource, _maLength)
+    else if _maType == 'VWMA'
+        ta.vwma(_maSource, _maLength)
+    else if _maType == 'RMA'
+        ta.rma(_maSource, _maLength)
+    else if _maType == 'SWMA'
+        ta.swma(_maSource)
+ 
+
+f_getMAV5(_maType, _maSource, _maLength) =>
+    ma = switch i_maType
+    	"SMA"  => ta.sma(_maSource, _maLength)
+    	"EMA"  => ta.ema(_maSource, _maLength)
+    	"WMA"  => ta.wma(_maSource, _maLength)
+    	"VWMA" => ta.vwma(_maSource, _maLength)
+    	"RMA"  => ta.rma(_maSource, _maLength)
+    	"SWMA" => ta.swma(_maSource)
+
+
+// f_getMAV5(_maType, _maSource, _maLength) =>
+//     switch
+//     	_maType == "SMA"  => ta.sma(_maSource, _maLength)
+//     	_maType == "EMA"  => ta.ema(_maSource, _maLength)
+//     	_maType == "WMA"  => ta.wma(_maSource, _maLength)
+//     	_maType == "VWMA" => ta.vwma(_maSource, _maLength)
+//     	_maType == "RMA"  => ta.rma(_maSource, _maLength)
+//     	_maType == "SWMA" => ta.swma(_maSource)
+//     	=> true
+
+    
+maV4 = f_getMAV4(i_maType, close, 20)
+plot(maV4, "MA V4", color=color.blue)
+maV5 = f_getMAV5(i_maType, close, 20)
+plot(maV5, "MA V5", color=color.green)
+// plotchar(maV5, color=color.green)

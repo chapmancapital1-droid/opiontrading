@@ -1,0 +1,54 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Gammapips
+
+// https://admiralmarkets.com/education/articles/forex-strategy/best-forex-trading-strategies-that-work
+
+// You can take advantage of the 60-minute time frame in this strategy. 
+// The most suitable currency pairs to trade using this strategy are the EUR/USD, USD/JPY, GBP/USD, and the AUD/USD.
+
+// Buy Trade Rules:
+
+// You can enter a long position when the MACD histogram goes beyond the zero line. The stop loss could be placed at a recent swing low.
+
+// Sell Trade Rules:
+
+// You can enter a short position when the MACD histogram goes below the zero line. The stop loss could be placed at a recent swing high.
+
+//@version=4
+strategy("Forex 1 hour strategy", 
+          shorttitle="FX1HS", 
+          overlay=true, 
+          process_orders_on_close=true, 
+          commission_type=strategy.commission.percent, 
+          commission_value=0.1, 
+          slippage=5, 
+          initial_capital=10000,
+          default_qty_type=strategy.percent_of_equity,
+          default_qty_value=10
+          )
+
+
+i_showSwingHi  = input(true, "show swing Hi")
+i_showSwingLo  = input(true, "show swing Low")
+i_macdFilter   = input(1, "Macd Filter", type=input.integer, minval=0)
+[macdLine, signalLine, histogramLine] = macd(close, 12*i_macdFilter, 26*i_macdFilter, 9*i_macdFilter)
+
+// plot(macdLine, title="Macd Line")
+// plot(signalLine, title="Signal Line")
+// plot(histogramLine, title="histogram Line", color= histogramLine > 0 ? color.green : color.red, style=plot.style_histogram)
+
+swingLow = lowest(24)
+swingHi  = highest(high, 24)
+
+long    = crossover(histogramLine, 0)
+short   = crossunder(histogramLine, 0)
+plot(long ? 1e9: na, color=color.green, style=plot.style_columns, transp=80, title="Long")
+plot(short ? 1e9: na, color=color.red, style=plot.style_columns, transp=80, title="Short")
+plot(i_showSwingHi ? swingHi : na, color=color.yellow, title="Swing Hi")
+plot(i_showSwingLo ? swingLow : na, color=color.white, title="Swing Low")
+
+strategy.entry("Macd Crossover Long", strategy.long, when=long)
+strategy.entry("Macd Crossunder Short", strategy.short, when=short)
+strategy.exit("Long Exit", from_entry="Macd Crossover Long", stop=swingLow, limit=swingHi)
+strategy.exit("Short Exit", from_entry="Macd Crossunder Short", stop=swingHi, limit=swingLow)
+

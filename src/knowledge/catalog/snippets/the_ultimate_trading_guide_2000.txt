@@ -1,0 +1,294 @@
+$69.95 USA/$108.50 CAN
+ith the recent explosion in the
+popularity of trading, nearly (Continued from front flap)
+everyone who trades wants a
+find that this complete, highly effective tutorial
+trading system—a methodology for buying
+is truly the ultimate in successfully developing
+and selling. A trading system can be a useful
+and utilizing trading systems that really work.
+tool—provided the trader has the know-how
+to use it correctly. Unfortunately, few traders
+JOHN R. HILL is the President and founder
+Jo. In this indispensable book, John Hill, one
+of futures Truth, a leading newsletter that
+of today's most, highly regarded analysts, and
+analyzes and rates trading systems. He has been
+his partners, George Pruitt and Landy Hill,
+a frequent guest on CNBC and is a popular
+enable traders to develop original systems
+speaker at numerous investment conferences.
+that they tan use to increase their trading
+Mr. Hill holds a master's degree in chemical
+profitability.
+engineering from Ohio State University.
+Demonstrating that a system is only as reliable
+GEORGE PRUITT is the Director of Research
+as the criteria on which it. is based and the
+for FuturesTnruth. In addition, he has written
+information that is fed into it, the authors pro-
+for Futures magazine and has had research
+vide traders with the tools needed to develop
+published by the Wall Street Journal and
+systems based on sound logic, including com-
+Barron's. Mr. Pruitt holds a B.S. in computer
+plete explanations of.
+science from the University of North Carolina
+• The principles behind trading systems
+at Ashenlle.
+(cid:127) How various systems operate for
+LUNDY HILL began his career working on
+accounts of all sizes, ranging from
+amounts of $10,000 to $1.000.000 the Door of the Chicago Mercantile Exchange
+and the Chicago Board of Trade. He currently
+(cid:127) The tools and background necessary for
+operates Commodity Research Institute, a
+developing computerized trading systems
+futures brokerage company. Previously, he
+that are backtested (i.e., tested on exist-
+ing historical data) and will be profitable organized Stafford Trading Company, a
+in the future registered CTA. Mr. Hill holds a degree in
+electrical and computer engineering from
+(cid:127) Short-term market timing techniques for
+any market Clemson University.
+. . .and much more. Stock, futures and
+options traders, and individual investors will
+(Continued on back flap)
+CONTENTS
+Preface xi
+Acknowledgments xv
+Introduction: The Search for Truth 1
+Chapter 1
+The Set-Ups or the Big Picture 8
+Trading versus Investing 8
+The Ultimate Timing Tool for All Markets 9
+Technology Revolution 9
+Stages of Market Action 10
+How to Make Money with This Theory 19
+Case Study of Trading Rules 22
+To Trade or Not to Trade 25
+Conclusion 26
+Note 27
+Chapter 2
+Practical Applications of the Elliott Wave Theory 28
+Targets for Major Movements 30
+Corrective Waves or Phases 31
+Case Study in Crude Oil 33
+How to Trade A or ABC Corrections to a Thrust 34
+Trading Plan 35
+Other Works on Cycles 36
+Summary 36
+Chapter 3
+Bar Charts and Their Forecasting Ability 37
+How to Use Short-Term Patterns for Profit 39
+Entry Techniques 43
+System Development Based on Closing Prices 43
+Three-Day Equilibrium Reverse 55
+Pattern Gap 59
+Hook Closing 60
+vii
+viii CONTENTS
+Narrow Range Bars 64
+Trading the Narrow Ranges 68
+Trading the Wide Range Bar 68
+Buy Zones 69
+Stop Point 70
+Taking Profits 71
+Anticipation 71
+Time Breakout Rule 72
+Gap Higher/Low Openings 7-1
+Chapter 4
+Channel and Trendline Trading 76
+Trend Lines and Parallel Movements 76
+Trading the 0-2 Line 78
+Trendline and Four-Close System (TL4C) 80
+Trend Channel System 81
+Chapter 5
+Swing Trading 33
+Swing Charts 83
+Anticipation 86
+Move Ending 87
+Pullback Buys 87
+Action and Reactions 88
+Preliminary Demand 88
+Time and Space 89
+Sell Tops after a Trend Change 89
+Three Bar Rallies 90
+Holding Gain and Rally from Support 91
+Setups for Trend Change 92
+Trend Continuation 94
+Three Drives to a Bottom 95
+Support/Resistance Zones 95
+Time and Price Projections 97
+Trend 99
+First Day in Rally 100
+Chapter 6
+Patterns 101
+Opening Range Breakouts 102
+Trend Up Confirmed 104
+Spring Reversal Pattern 105
+CONTENTS ix
+Upthrust Reversal Pattern 106
+Yum-Yum Continuation Pattern 108
+L Formation and Reverse L 109
+Double Tops and Bottoms 110
+Small Morning Tails 111
+Clear Out Patterns 114
+Overlapping and Non-Overlapping Bars 114
+Two-Day Intersection 116
+Channel Trading Systems 116
+The Pullback 121
+High of Low Bar for Buying/Low of High Bar for Selling 123
+Three Bars Up/Down 124
+Dynamite Triangle 125
+Narrow Range/Wide Range 126
+Two-Day Flip (2DF) 127
+Tight Formation Breakout 128
+The Important of Exits 128
+Use of Tools in Trading the S&Ps 134
+Chapter 7
+Drurnmond Geometry and the PLdot:
+An Introduction to the Fundamentals 139
+What is Drumnond Geometry? 139
+Conclusion 152
+Chapter 8
+Introduction to Mechanical Trading Systems 153
+Why Use a Trading System? 155
+Throw Those Ads Away 157
+Should I Buy a Trading System? 159
+Myths and Facts Concerning Trading Systems 160
+Conclusion 163
+Chapter 9
+Where to Start 164
+Hardware 164
+Software 164
+Data 166
+Indicators 171
+Five Approaches Used by the Best Trading Systems 185
+Anatomy of a Trading System 185
+Conclusion 206
+x CONTENTS
+Chapter 10
+Historical Testing—A Blessing or a Curse 208
+Simulated Analysis 208
+Curve Fitting 209
+Periodic Reoptimization—Does It Work? 214
+Alternative to Optimization—Adaptive Parameters 216
+You Design the Trading System, Not Your Computer 219
+How to Evaluate Trading System Performance 220
+How to Evaluate Trading System Portfolio Performance 224
+Conclusion 226
+Chapter 11
+Money Management 228
+Statistics—A Necessary Tool 229
+Risk of Ruin 230
+Capital Allocation Model 231
+Compounding Returns 240
+Placement of Protective Stopa and Profit Targets 241
+Conclusion 251
+Chapter 12
+Turnkey Systems and Portfolios 252
+Portfolio 1 $10,000 Initial Capital 252
+Portfolio 2 $25,000 Initial Capital 253
+Portfolio 3 $50,000 Initial Capital 254
+Portfolio 4 $100,000 Initial Capital 255
+Portfolio 5 $300,000 Initial Capital 256
+Conclusion 257
+Chapter 13
+Top Ten Systems of All Time 258
+Bibliography 283
+Appendix: Easy Language Source Code 285
+PREFACE
+All speculative markets are governed by the law of supply and demand.
+Economics have proven that a fair market will determine the equilib-
+rium point between the supply and demand of goods or services. This
+equilibrium point is the price where buyers and sellers agree on a value
+of the product being traded. The price of a stock or future is constantly
+changing. This price movement, also known as market action, is often
+represented by a simple bar chart that provides five different statistics
+for the market that it represents: open, high, low, close price, and the
+range of market movement fur that day.
+The bar chart represents the war that is fought between buyers and
+sellers (bulls and bears). If the market closes up from the open, the
+hulls have won. If just the opposite happens, then the bears are the vic-
+tors. The range of the bar chart represents the battles that were fought
+during the day. If the price of a stock advances by one point, that stock
+was worth an extra point in price. A collection of the latest bar charts of
+a certain market gives a longer term view of the supply and demand for
+that underlying market. Market technicians believe that future prices
+of a slock or future can be determined by following the map of supply
+and demand that is portrayed by the bar chart. If one can master the
+art of proper chart interpretation and uncover the law of supply and de-
+mand, it can lead to profitable trading.
+The first part of this book is dedicated to the art of deciphering
+the bar chart. The authors present several approaches to reading the
+charts that are based on years of watching the markets. We learn best
+when we concentrate on one idea at a time. Take any chart and mark
+specific entries under each idea presented. The ideas presented will
+not work in isolation, but will contribute to an overall trading plan.
+There are only three parts to a trading plan: entry, exit, and stop loss
+when the entry is wrong. Each one of these three parts has a basket of
+techniques. By learning these techniques, you will develop your own
+key indicators and eventually you'll have the ability to navigate any
+chart and recognize a potential edge that suits your trading style. You
+can develop an edge in the markets, but you will never master the
+monster.
+The second part of this book is dedicated to the multimillioni dollar
+industry of mechanical trading systems. The advent of the computer
+xi
+xii PREFACE
+and inexpensive data has given everyone the ability to teat trading
+ideas. Since most of the trading public are inexperienced traders, they
+have searched out the gurus and experts in trading systems. Many
+gurus and experts promise wealth to anybody wanting to trade stocks
+or futures. Unfortunately, many people followed their advice, pur-
+chased their trading systems, and failed miserably at trading. The
+large gap between what was promised and what was actually achieved
+has given this industry a bad name. Futures Truth Company has been
+testing and evaluating trading systems since 1986. This company was
+organized to provide hard cold facts on the many trading systems that
+are available to the public. Futures Truth began as a watchdog com-
+pany, but over the years it has become a medium for good and honest
+trading ideas. A mechanical approach to the markets can be successful
+and this is backed up by the fact that approximately 80% of the $30
+billion in the managed futures industry is traded by exact systematic
+methods.
+Well over 80% of traders and speculators lose money. Computers
+have incorrectly been used to show hypothetical performance statistics.
+A trading system cannot be dreamed up by a computer; it must be based
+on a reasonable chart interpretation of supply and demand. The com-
+puter, with the benefit of hindsight, can be used to massage data to
+show any desired return. This is known as curve fitting. Such trading
+systems have no relationship to the real world, but do make impressive
+promotional pieces. That is why it is extremely important for a trader to
+understand the forces of supply and demand that operate in the mar-
+kets. The purpose of this book is to show you how to make money in the
+markets by providing:
+1. A framework for chart interpretation based on solid supply and
+demand characteristics of the charts .. . and how to use this
+knowledge for profit.
+2. The education and tools necessary for developing trading systems
+that will work not only in hindsight but in the future.
+3. Trading systems and money management schemes that can get a
+trader on the right track.
+The ideas and trading tools presented are bound to initiate contro-
+versy, even provoke disagreement. This seems appropriate since no one
+trading tool is right for everyone. Take what is useful and discard the
+rest. Read and study the ideas with healthy skepticism. Test the ideas
+and patterns against your own experience. Our interest is not that you
+trust and/or believe the ideas and trading plans presented herein but
+that you trust your own approach to trading the markets.
+PREFACE Xiii
+DISCLAIMER
+It should not be assumed that the methods, techniques, or indicators
+presented in this book will be profitable or that they will not result in
+losses. Past results are not necessarily indicative of future results. Ex-
+amples in this book are for educational purposes only. This is not a so-
+licitation of any order to buy or sell. The National Futures Association
+requires us to state that "Hypothetical or simulated performance re-
+sults have certain inherent limitations. Unlike an actual performance
+record, simulated results do not represent actual trading, also, since the
+trades have not actually been executed, Che results may have under- or
+overcompensated for the impact, if any, of certain market factors, such
+as lack of liquidity, simulated trading programs in general are also sub-
+jec

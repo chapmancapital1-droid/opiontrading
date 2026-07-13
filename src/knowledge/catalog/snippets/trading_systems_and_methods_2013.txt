@@ -1,0 +1,329 @@
+ffffiirrss..iinndddd ii 1122//77//1122 55::5588 PPMM
+Trading
+Systems
+and
+Methods
+ffffiirrss..iinndddd ii 1122//77//1122 55::5588 PPMM
+Founded in 1807, John Wiley & Sons is the oldest independent publishing company in the
+United States. With offi ces in North America, Europe, Australia and Asia, Wiley is glob-
+ally committed to developing and marketing print and electronic products and services
+for our customers’ professional and personal knowledge and understanding.
+The Wiley Finance series contains books written specifi cally for fi nance and invest-
+ment professionals as well as sophisticated individual investors and their fi nancial advi-
+sors. Book topics range from portfolio management to e-commerce, risk management,
+fi nancial engineering, valuation and fi nancial instrument analysis, as well as much more.
+For a list of available titles, visit our Web site at www.WileyFinance.com.
+ffffiirrss..iinndddd iiii 1122//77//1122 55::5588 PPMM
+Trading
+Systems
+and
+Methods
+Fifth Edition
+PERRY J. KAUFMAN
+John Wiley & Sons, Inc.
+ffffiirrss..iinndddd iiiiii 1122//77//1122 55::5588 PPMM
+Cover image: Nikada/iStockphoto
+Cover design: John Wiley & Sons, Inc.
+Copyright © 2005, 2013 by Perry J. Kaufman. All rights reserved.
+Published by John Wiley & Sons, Inc., Hoboken, New Jersey.
+Published simultaneously in Canada.
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form or by
+any means, electronic, mechanical, photocopying, recording, scanning, or otherwise, except as permitted
+under Section 107 or 108 of the 1976 United States Copyright Act, without either the prior written permission
+of the Publisher, or authorization through payment of the appropriate per-copy fee to the Copyright Clearance
+Center, Inc., 222 Rosewood Drive, Danvers, MA 01923, (978) 750-8400, fax (978) 646-8600, or on the Web
+at www.copyright.com. Requests to the Publisher for permission should be addressed to the Permissions
+Department, John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ 07030, (201) 748-6011, fax (201) 748-6008,
+or online at http://www.wiley.com/go/permissions.
+Limit of Liability/Disclaimer of Warranty: While the publisher and author have used their best efforts
+in preparing this book, they make no representations or warranties with respect to the accuracy or
+completeness of the contents of this book and specifi cally disclaim any implied warranties of merchantability
+or fi tness for a particular purpose. No warranty may be created or extended by sales representatives or
+written sales materials. The advice and strategies contained herein may not be suitable for your situation.
+You should consult with a professional where appropriate. Neither the publisher nor author shall be liable
+for any loss of profi t or any other commercial damages, including but not limited to special, incidental,
+consequential, or other damages.
+For general information on our other products and services or for technical support, please contact
+our Customer Care Department within the United States at (800) 762-2974, outside the United States at
+(317) 572-3993 or fax (317) 572-4002.
+Charts created using TradeStation. ©TradeStation Technologies, Inc. 2001–2012. All rights reserved. No
+investment or trading advice, recommendation or opinions is being given or intended.
+Wiley publishes in a variety of print and electronic formats and by print-on-demand. Some material included
+with standard print versions of this book may not be included in e-books or in print-on-demand. If this
+book refers to media such as a CD or DVD that is not included in the version you purchased, you may
+download this material at http://booksupport.wiley.com. For more information about Wiley products, visit
+www.wiley.com.
+Library of Congress Cataloging-in-Publication Data:
+Kaufman, Perry J.
+Trading systems and methods / Perry J. Kaufman. — 5th ed.
+p. cm.
+Rev. ed. of: New trading systems and methods. 4th ed. c2005.
+Includes bibliographical references and index.
+ISBN 978-1-118-04356-1 (cloth) — 978-1-118-22224-9 (ebk) — 978-1-118-26092-0 (ebk) —
+978-1-118-23603-1 (ebk)
+1. Commodity exchanges—Statistical methods. 2. Technical analysis (Investment analysis) I. Kaufman,
+Perry J. New trading systems and methods. II. Title.
+HG6046.K34 2013
+332.64′4–dc23
+2012030903
+Printed in the United States of America.
+10 9 8 7 6 5 4 3 2 1
+ffffiirrss..iinndddd iivv 1122//77//1122 55::5588 PPMM
+To Barbara
+ffffiirrss..iinndddd vv 1122//77//1122 55::5588 PPMM
+ffffiirrss..iinndddd vvii 1122//77//1122 55::5588 PPMM
+Contents
+Preface to the Fifth Edition xv
+CHAPTER 1 Introduction 1
+The Expanding Role of Technical Analysis 1
+Convergence of Trading Styles in Stocks and
+Futures 2
+A Line in the Sand between Fundamentals
+and Technical Analysis 4
+Professional and Amateur 5
+Random Walk 6
+Deciding on a Trading Style 8
+Measuring Noise 10
+Maturing Markets and Globalization 14
+Background Material 16
+Research Guidelines 18
+Objectives of This Book 19
+Profi le of a Trading System 20
+A Word about the Notation Used in This Book 23
+And Finally . . . 23
+CHAPTER 2 Basic Concepts and Calculations 25
+About Data and Averaging 26
+On Average 30
+Price Distribution 33
+Moments of the Distribution: Variance, Skewness,
+and Kurtosis 37
+Standardizing Risk and Return 48
+The Index 54
+Standard Measurements of Performance 58
+Probability 59
+Supply and Demand 66
+vii
+ffttoocc..iinndddd vviiii 1122//77//1122 55::5588 PPMM
+viii CONTENTS
+CHAPTER 3 Charting 79
+Finding Consistent Patterns 80
+What Causes the Major Price Moves
+and Trends? 82
+The Bar Chart and Its Interpretation by
+Charles Dow 83
+Chart Formations 92
+Trendlines 94
+One-Day Patterns 102
+Continuation Patterns 113
+Basic Concepts in Chart Trading 117
+Accumulation and Distribution—Bottoms and Tops 118
+Episodic Patterns 132
+Price Objectives for Bar Charting 133
+Implied Strategies in Candlestick Charts 139
+Practical Use of the Bar Chart 144
+Evolution in Price Patterns 148
+CHAPTER 4 Charting Systems and Techniques 151
+Dunnigan and the Thrust Method 152
+Nofri’s Congestion-Phase System 155
+Outside Days with an Outside Close 157
+Inside Days 158
+Pivot Points 158
+Action and Reaction 159
+Channel Breakout 167
+Moving Channels 170
+Commodity Channel Index 171
+Wyckoff ’s Combined Techniques 172
+Complex Patterns 173
+A Study of Charting Patterns 176
+Bulkowski’s Chart Pattern Rankings 178
+CHAPTER 5 Event-Driven Trends 181
+Swing Trading 182
+Constructing a Swing Chart Using a
+Swing Filter 184
+Point-and-Figure Charting 195
+The N-Day Breakout 222
+CHAPTER 6 Regression Analysis 235
+Components of a Time Series 235
+Characteristics of the Price Data 236
+ffttoocc..iinndddd vviiiiii 1122//77//1122 55::5588 PPMM
+Contents ix
+Linear Regression 238
+Linear Correlation 248
+Nonlinear Approximations for
+Two Variables 252
+Transforming Nonlinear to Linear 256
+Evaluation of Two-Variable Techniques 257
+Multivariate Approximations 259
+ARIMA 267
+Basic Trading Signals Using a Linear
+Regression Model 273
+Measuring Market Strength 276
+CHAPTER 7 Time-Based Trend Calculations 279
+Forecasting and Following 279
+Price Change over Time 284
+The Moving Average 284
+Geometric Moving Average 292
+Accumulative Average 293
+Reset Accumulative Average 293
+Drop-Off Eff ect 293
+Exponential Smoothing 293
+Plotting Lags and Leads 307
+CHAPTER 8 Trend Systems 309
+Why Trend Systems Work 309
+Basic Buy and Sell Signals 314
+Bands and Channels 320
+Applications of a Single Trend 330
+Comparison of Major Trend Systems 336
+Techniques Using Two Trendlines 350
+Multiple Trends and Common Sense 356
+Comprehensive Studies 359
+Selecting the Right Trend Method and
+Speed 359
+Moving Average Sequences: Signal
+Progression 363
+Early Exits from a Trend 366
+Moving Average Projected Crossovers 366
+CHAPTER 9 Momentum and Oscillators 369
+Momentum 370
+Divergence Index 384
+Oscillators 385
+ffttoocc..iinndddd iixx 1122//77//1122 55::5588 PPMM
+x CONTENTS
+Double-Smoothed Momentum 404
+Velocity and Acceleration 412
+Hybrid Momentum Techniques 416
+Momentum Divergence 418
+Some Final Comments on Momentum 426
+CHAPTER 10 Seasonality and Calendar Patterns 427
+A Consistent Factor 428
+The Seasonal Pattern 429
+Popular Methods for Calculating
+Seasonality 430
+Seasonal Filters 456
+Seasonality and the Stock Market 478
+Common Sense and Seasonality 483
+CHAPTER 11 Cycle Analysis 485
+Cycle Basics 485
+Uncovering the Cycle 494
+Maximum Entropy 514
+Cycle Channel Index 520
+Short Cycle Indicator 521
+Phasing 523
+CHAPTER 12 Volume, Open Interest, and Breadth 527
+A Special Case for Futures Volume 527
+Variations from the Normal Patterns 529
+Standard Interpretation 531
+Volume Indicators 535
+Breadth Indicators 546
+Interpreting Volume and Breadth
+Systematically 554
+An Integrated Probability Model 558
+Intraday Volume Patterns 559
+Filtering Low Volume 562
+Market Facilitation Index 564
+CHAPTER 13 Spreads and Arbitrage 565
+Dynamics of Futures Intramarket Spreads 566
+Carrying Charges 567
+Spreads in Stocks 569
+Spread and Arbitrage Relationships 570
+Risk Reduction in Spreads 571
+ffttoocc..iinndddd xx 1122//77//1122 55::5588 PPMM
+Contents xi
+Arbitrage 572
+The Carry Trade 596
+Changing Spread Relationships 600
+Intermarket Spreads 602
+CHAPTER 14 Behavioral Techniques 617
+Measuring the News 618
+Event Trading 623
+Commitment of Traders Report 635
+Opinion and Contrary Opinion 641
+Fibonacci and Human Behavior 648
+Elliott’s Wave Principle 651
+Price Target Constructions Using the
+Fibonacci Ratio 660
+Fischer’s Golden Section Compass System 662
+W. D. Gann—Time and Space 666
+Financial Astrology 671
+CHAPTER 15 Pattern Recognition 685
+Projecting Daily Highs and Lows 687
+Time of Day 689
+Opening Gaps 699
+Weekday, Weekend, and Reversal Patterns 711
+Computer-Based Pattern Recognition 732
+Artifi cial Intelligence Methods 735
+CHAPTER 16 Day Trading 737
+Impact of Transaction Costs 738
+Key Elements of Day Trading 744
+Trading Using Price Patterns 753
+Intraday Breakout Systems 759
+Intraday Volume Patterns 774
+Intraday Price Shocks 775
+CHAPTER 17 Adaptive Techniques 779
+Adaptive Trend Calculations 779
+Adaptive Variations 788
+Other Adaptive Momentum Calculations 793
+Adaptive Intraday Breakout System 796
+An Adaptive Process 797
+Considering Adaptive Methods 798
+ffttoocc..iinndddd xxii 1122//77//1122 55::5588 PPMM
+xii CONTENTS
+CHAPTER 18 Price Distribution Systems 801
+Measuring Distribution 801
+Use of Price Distributions and Patterns to
+Anticipate Moves 805
+Distribution of Prices 811
+Steidlmayer’s Market Profi le 822
+Using Daily Distributions to Identify Support
+and Resistance 830
+CHAPTER 19 Multiple Time Frames 833
+Tuning Two Time Frames to Work
+Together 833
+Elder’s Triple-Screen Trading System 835
+Robert Krausz’s Multiple Time Frames 838
+Martin Pring’s KST System 842
+CHAPTER 20 Advanced Techniques 845
+Measuring Volatility 845
+Using Volatility for Trading 856
+Trade Selection Using Volatility 861
+Liquidity 867
+Trends and Price Noise 868
+Trends and Interest Rate Carry 871
+Expert Systems 871
+Fuzzy Logic 875
+Fractals, Chaos, and Entropy 880
+Neural Networks 886
+Genetic Algorithms 895
+Replication of Hedge Funds 902
+CHAPTER 21 System Testing 905
+Expectations 907
+Identifying the Parameters 908
+Selecting the Test Data 910
+Testing Integrity 916
+Searching for the Best Result 919
+Visualizing and Interpreting
+Test Results 922
+Large-Scale Testing 932
+Refi ning the Strategy Rules 937
+Arriving at Valid Test Results 938
+Comparing the Results of Two Systems 946
+Profi ting from the Worst Results 950
+ffttoocc..iinndddd xxiiii 1122//77//1122 55::5588 PPMM
+Contents xiii
+Retesting for Changing Parameters 951
+Testing across a Wide Range of Markets 954
+Price Shocks 970
+Anatomy of an Optimization 972
+Summarizing Robustness 976
+CHAPTER 22 Practical Considerations 983
+Use and Abuse of the Computer 984
+Extreme Events 992
+Gambling Techniques—The Theory of Runs 1000
+Selective Trading 1011
+System Trade-Off s 1012
+Trading Limits and Disconnected Markets 1018
+Silver and NASDAQ—Too Good to Be True 1020
+Similarity of Systematic Trading Signals 1021
+CHAPTER 23 Risk Control 1027
+Mistaking Luck for Skill 1027
+Risk Aversion 

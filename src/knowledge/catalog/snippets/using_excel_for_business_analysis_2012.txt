@@ -1,0 +1,271 @@
+Using Excel for
+Business Analysis
+ffirs 22June2012;19:37:28
+Foundedin1807,JohnWiley&Sonsistheoldestindependentpublishingcompanyin
+theUnitedStates.WithofficesinNorthAmerica,Europe,Australia,andAsia,Wileyis
+globally committed to developing and marketing print and electronic products and
+services for our customers’ professional and personal knowledge and understanding.
+The Wiley Finance series contains books written specifically for finance and
+investment professionals, as well as sophisticated individual investors and their
+financial advisors. Book topics range from portfolio management to e-commerce,
+risk management, financial engineering, valuation, and financial instrument analysis,
+as well as much more.
+Foralistofavailabletitles,pleasevisitourwebsiteatwww.WileyFinance.com.
+Using Excel for
+Business Analysis
+A Guide to Financial Modelling Fundamentals
+DANIELLE STEIN FAIRHURST
+John Wiley & Sons Singapore Pte. Ltd.
+Copyrightª2012JohnWiley&SonsSingaporePte.Ltd.
+Publishedin2012byJohnWiley&SonsSingaporePte.Ltd.1FusionopolisWalk,
+#07-01,SolarisSouthTower,Singapore138628
+Allrightsreserved.
+Nopartofthispublicationmaybereproduced,storedinaretrievalsystem,ortransmittedin
+anyformorbyanymeans,electronic,mechanical,photocopying,recording,scanning,or
+otherwise,exceptasexpresslypermittedbylaw,withouteitherthepriorwrittenpermission
+ofthePublisher,orauthorizationthroughpaymentoftheappropriatephotocopyfeetothe
+CopyrightClearanceCenter.RequestsforpermissionshouldbeaddressedtothePublisher,
+JohnWiley&Sons(Asia)Pte.Ltd.,1FusionopolisWalk,#07-01,SolarisSouthTower,
+Singapore138628,tel:65–6643–8000,fax:65–6643–8008,e-mail:enquiry@wiley.com.
+Thispublicationisdesignedtoprovideaccurateandauthoritativeinformationinregardto
+thesubjectmattercovered.ItissoldwiththeunderstandingthatthePublisherisnotengaged
+inrenderingprofessionalservices.Ifprofessionaladviceorotherexpertassistanceisrequired,
+theservicesofacompetentprofessionalpersonshouldbesought.Neithertheauthornorthe
+publisherisliableforanyactionspromptedorcausedbytheinformationpresentedinthisbook.
+Anyviewsexpressedhereinarethoseoftheauthoranddonotrepresenttheviewsofthe
+organizationsheworksfor.
+MicrosoftandExcelareregisteredtrademarksofMicrosoftCorporation.
+OtherWileyEditorialOffices
+JohnWiley&Sons,111RiverStreet,Hoboken,NJ07030,USA
+JohnWiley&Sons,TheAtrium,SouthernGate,Chichester,WestSussex,P0198SQ,
+UnitedKingdom
+JohnWiley&Sons(Canada)Ltd.,5353DundasStreetWest,Suite400,Toronto,Ontario,M9B
+6HB,Canada
+JohnWiley&SonsAustraliaLtd.,42McDougallStreet,Milton,Queensland4064,Australia
+Wiley-VCH,Boschstrasse12,D-69469Weinheim,Germany
+978-1-118-13284-5(Paper)
+978-1-118-13285-2(ePDF)
+978-1-118-13286-9(Mobi)
+978-1-118-13287-6(ePub)
+Typesetin10/12pt,Sabon-RomanbyMPSLimited,Chennai,India.
+PrintedinSingaporebyHoPrintingSingaporePte.Ltd.
+10 9 8 7 6 5 4 3 2 1
+For Mike, of course.
+Contents
+Preface xi
+CHAPTER 1
+What Is Financial Modelling? 1
+What’s the Difference between a Spreadsheet and a
+Financial Model? 3
+Types and Purposes of Financial Models 4
+Tool Selection 5
+What Skills Do You Need to Be a Good Financial Modeller? 10
+The Ideal Financial Modeller 16
+Summary 19
+CHAPTER 2
+Building a Model 21
+Model Design 21
+The Golden Rules for Model Design 22
+Design Issues 24
+The Workbook Anatomy of a Model 25
+Project Planning Your Model 27
+Model Layout Flow Charting 28
+Steps to Building a Model 28
+Information Requests 35
+Version-Control Documentation 36
+Summary 37
+CHAPTER 3
+Best Practice Principles of Modelling 39
+Document Your Assumptions 39
+Linking, Not Hard Coding 39
+Only Enter Data Once 40
+Avoid Bad Habits 41
+Use Consistent Formulas 41
+Format and Label Clearly 41
+Methods and Tools of Assumptions Documentation 42
+Linked Dynamic Text Assumptions Documentation 48
+What Makes a Good Model? 51
+Summary 52
+vii
+viii CONTENTS
+CHAPTER 4
+Financial Modelling Techniques 53
+The Problem with Excel 53
+Error Avoidance Strategies 54
+How Long Should a Formula Be? 59
+Linking to External Files 61
+Building Error Checks 63
+Avoid Error Displays in Formulas 66
+Circular References 67
+Summary 70
+CHAPTER 5
+Using Excel in Financial Modelling 71
+Formulas and Functions in Excel 71
+Excel Versions 73
+Handy Excel Shortcuts 74
+Basic Excel Functions 76
+Logical Functions 82
+Nesting: Combining Simple Functions to Create Complex Formulas 84
+Cell Referencing Best Practices 86
+Named Ranges 89
+Summary 92
+CHAPTER 6
+Functions for Financial Modelling 93
+Aggregation Functions 93
+LOOKUP Formulas 100
+Other Useful Functions 106
+Working with Dates 115
+Financial Project Evaluation Functions 121
+Loan Calculations 126
+Summary 131
+CHAPTER 7
+Tools for Model Display 133
+Basic Formatting 133
+Custom Formatting 133
+Conditional Formatting 139
+Sparklines 143
+Bulletproofing Your Model 147
+Customising the Display Settings 151
+Form Controls 157
+Summary 171
+CHAPTER 8
+Tools for Financial Modelling 173
+Hiding Sections of a Model 173
+Grouping 178
+Contents ix
+Array Formulas 179
+Goal Seeking 184
+Pivot Tables 186
+Macros 190
+User-Defined Functions (UDFs) 198
+Summary 200
+CHAPTER 9
+Common Uses of Tools in Financial Modelling 201
+Escalation Methods for Modelling 201
+Understanding Nominal and Effective (Real) Rates 206
+Calculating Cumulative Totals 209
+How to Calculate a Payback Period 210
+Weighted Average Cost of Capital (WACC) 214
+Building a Tiering Table 216
+Modelling Depreciation Methods 219
+Break-Even Analysis 227
+Summary 233
+CHAPTER 10
+Model Review 235
+Rebuilding an Inherited Model 235
+Auditing a Financial Model 245
+Appendix 10.1: QA Log 250
+Summary 250
+CHAPTER 11
+Stress-Testing, Scenarios, and Sensitivity Analysis in Financial Modelling 251
+What’s the Difference between Scenario, Sensitivity,
+and What-If Analysis? 252
+Overview of Scenario Analysis Tools and Methods 253
+Advanced Conditional Formatting 261
+Comparing Scenario Methods 264
+Summary 273
+CHAPTER 12
+Presenting Model Output 275
+Preparing an Oral Presentation for Model Results 275
+Preparing a Graphic or Written Presentation for Model Results 276
+Chart Types 279
+Working with Charts 291
+Handy Charting Hints 295
+Dynamic Range Names 297
+Charting with Two Different Axes and Chart Types 300
+x CONTENTS
+Bubble Charts 302
+Waterfall Charts 307
+Summary 316
+About the Author 317
+About the Website 319
+Index 321
+Preface
+T
+hisbookwaswrittenfrommycoursematerialscompiledovermanyyearsoftraining
+in analytical courses in Australia and globally—most frequently courses such as
+Financial Modelling in Excel, Data Analysis & Reporting in Excel, and Budgeting &
+ForecastinginExcel,bothasface-to-faceworkshopsandonlinecourses.Thecommon
+themeistheuseofMicrosoftExcel,andI’verefinedthecontenttosuitthehundredsof
+participantsandtheirquestionsovertheyears.Thiscontenthasbeenhonedandrefined
+bythemanyparticipantsonthese courses,whoaremyintendedreaders.Thisbookis
+aimedatyou,themanypeoplewhoseekfinancialanalysistraining(eitherbyattending
+aseminarorself-pacedbyreadingthisbook)becauseyouareseekingtoimproveyour
+skills to perform better inyourcurrentrole,or get a new and betterjob.
+WhenIstartedfinancialmodellingintheearlynineties,itwasnotcalledfinancial
+modelling—itwasjust“UsingExcelforBusinessAnalysis,”andthisiswhatI’vecalled
+this book. It was only just after the new millennium that the term financial modelling
+gainedpopularityinitsownrightandbecamearequiredskilloftenlistedonanalytical
+job descriptions. This book spends quite a bit of time in Chapter 1 defining the
+meaning of a financial model as it’s often thought to be something that is far more
+complicated than it actually is. Many analysts I’ve met are building financial models
+already without realising it, but they do themselves a disservice by not calling their
+models, “models”!
+However, those who are already building financial models are not necessarily
+following good modelling practice as they do so. Chapter 3 is dedicated to the prin-
+ciplesofbestmodellingpractice,whichwillsaveyoualotoftime,effort,andanguish
+inthelongrun.Manyoftheprinciplesofbestpracticeareforthepurposeofreducing
+the possibility of error in your model, and there is a whole section on strategies for
+reducing error in Chapter 4.
+The majority of Excel users are self-taught, and therefore many users will often
+know highly advanced Excel tools, yet fail to understand how to use them in the
+context of building a financial model. This book is very detailed, so feel free to skip
+sectionsyoualreadyknow.Becauseofthecomprehensivenatureofthebook,muchof
+the detailed but less commonly used content, such as instructions for the older
+Excel 2003 users, has been moved to the companion website at www.wiley.com/go/
+steinfairhurst. References to the content on the website, and many cross-references to
+other sections of the book, can be found throughout the manuscript.
+BOOK OVERVIEW
+This book has 12 chapters, but these can be grouped into three parts. Whilst they do
+follow on from each other with the most basic concepts at the beginning, feel free to
+jump directly to any of the parts. The first section—Chapters 1 to 3—addresses the
+xi
+fpref 22June2012;19:17:22
+xii PREFACE
+leasttechnicaltopicsaboutfinancialmodellingingeneral,suchastoolselection,model
+design, and best practice.
+Thesecondsection—Chapters4to8—isextremelypracticalandhands-on.HereI
+have outlined all of the tools, techniques, and functions in Excel that are commonly
+usedinfinancialmodelling.OfcourseitdoesnotcovereverythingExcelcando,butit
+covers the “must-know” tools.
+The third section—Chapters 9 to 12—is the most important in my view. This
+covers the use of Excel in financial modelling and analysis. This is really where the
+book differs from other “how-two” Excel books. Chapter 9 covers some commonly
+usedtechniquesinmodelling,suchasescalation,tieringtables,anddepreciation—how
+toactuallyuseExceltoolsforsomethinguseful!Chapter11coverstheseveraldifferent
+methods of performing scenarios and sensitivity analysis (basically the whole point of
+financialmodellingtomymind!).Lastly,Chapter12coverstheoften-neglectedtaskof
+presentingmodeloutput.Manymodellersspenddaysorweeksonthecalculationsand
+functionality, but fail to spend just a few minutes or hours on charts, formatting, and
+layoutattheendoftheprocess,eventhoughthisiswhattheuserwillsee,interactwith,
+and eventually use to judge the usefulness of the model.
+ACKNOWLEDGEMENTS
+Thisbookwouldnothavebeenwrittenhaditnotbeenforthemanypeoplewhohave
+attended my training sessions, participated in online courses, and contributed to the
+forums. Your continual feedback and enthusiasm for the subject inspired me to write
+thisbookanditwasthroughyouthatIrealisedhowmuchabooklikethiswasneeded.
+Thecontinuedsupportofmyfamilymadethisprojectpossible.Inparticular,Mike
+myhusbandforhisunconditionalcommitmentandtowhomthisbookisdedicated,my
+childrenwhogivemesuchjoy,aswellasmyremarkableparentsandsiblingswhohave
+always inspired and encouraged me without question. I would like to give a special
+thanks to my ever-patient assistant Susan Wilkin for her dedication and diligence
+throughouttheproject,KurtAlexanderforhissteadfastenthusiasm,andtoJoePorteus
+for keeping me on the right track.
+I hope you find the book both useful and enjoyable. Happy modelling!
+fpref 22June2012;19:17:23
+1
+CHAPTER
+What Is Financial Modelling?
+T
+here are all sorts of complicated definitions of financial modelling, and in my
+experiencethereisquiteabitofconfusionaroundwhatafinancialmodelisexactly.
+A few years ago, we put together a Plum Solutions survey about the attitudes, trends,
+and uses of financial modelling, asked respondents “What do you think a financial
+model is?” Participants were asked to put down the first thing that came to mind,
+withoutanyresearchortoomuch thinkingaboutit.Ifoundtheresponsesinteresting,
+amusing, and sometimes rather disturbing.
+Some answers were overly complicated and highly technical:
+n “Representation of behaviour/real-world observations through mathematical
+approach designed to anticipate range of outcomes.”
+n “A set of structured calculations, written in a spreadsheet, used to analyse the
+operational and financial characteristics of a business and/or 

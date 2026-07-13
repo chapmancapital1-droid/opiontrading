@@ -1,0 +1,413 @@
+inside_5x5_Inside_5x5 8/22/11 2:16 PM Page a
+Options Strategies
+quick guide
+inside_5x5_Inside_5x5 8/17/11 3:14 PM Page b
+OIC is providing this publication for publication, nor does OIC warrant the
+informational purposes only. No statement suitability of this information for any
+in this publication is to be construed as particular purpose. Prior to buying or selling
+furnishing investment advice or being a an option, you must receive a copy of
+recommendation, solicitation or offer to Characteristics and Risks of Standardized
+buy or sell any option or any other security. Options. Copies of this document may be
+Options involve risk and are not suitable obtained from your broker, from any
+for all investors. OIC makes no warranties, exchange on which options are traded,
+expressed or implied, regarding the by calling 1-888-OPTIONS (678-4667), or
+completeness of the information in this by visiting www.OptionsEducation.org.
+inside_5x5_Inside_5x5 9/30/13 6:42 AM Page 1
+ABOUT OIC
+The Options Industry Council (OIC) was formed in 1992 as a unified
+industry effort to educate individual investors about the benefits and
+risks of exchange-traded options. OIC conducts hundreds of seminars,
+distributes educational brochures, maintains a website and offers live
+help from options professionals. The goal of OIC, comprised of the U.S.
+options exchanges and OCC, is to increase the awareness, knowledge and
+responsible use of exchange-listed equity options among a global
+audience of investors—including individuals, financial advisors and
+institutional managers—by providing independent, unbiased education
+and practical knowledge.
+1-888-OPTIONS (678-4667)
+www.OptionsEducation.org
+inside_5x5_Inside_5x5 8/17/11 3:14 PM Page 2
+Each strategy has an
+accompanying graph showing
+profit and loss at expiration.
+•The vertical axis shows the
+HOW TO USE THIS BOOK
+profit/loss scale.
+•When the strategy line is below
+the horizontal axis, it assumes
+you paid for the position or
+had a loss. When it is above
+the horizontal axis, it assumes
+you received a credit for the
+position or had a profit.
+profit •The dotted line indicates the
++
+strike price.
+strike BEP
+price •The intersection of the strategy
+line and the horizontal axis
+is the break-even point (BEP)
+stock not including transaction
+price
+costs, commissions, or margin
+(borrowing) costs.
+•These graphs are not drawn
+-
+to any specific scale and are
+loss meant only for illustrative
+and educational purposes.
+•The risks/rewards described are
+generalizations and may be
+lesser or greater than indicated.
+inside_5x5_Inside_5x5 8/17/11 3:14 PM Page 3
+TERMS AND DEFINITIONS
+Break-Even Point (BEP): The stock price(s) at which an option
+strategy results in neither a profit nor loss.
+Call: An option contract that gives the holder the right to buy
+the underlying security at a specified price for a certain, fixed
+period of time.
+In-the-money: A call option is in-the-money if the strike price is
+less than the market price of the underlying security. A put option
+is in-the-money if the strike price is greater than the market
+price of the underlying security.
+Long position: A position wherein an investor is a net holder in a
+particular options series.
+Out-of-the-money: A call option is out-of-the-money if the strike
+price is greater than the market price of the underlying security.
+A put option is out-of-the-money if the strike price is less than
+the market price of the underlying security.
+Premium: The price a put or call buyer must pay to a put or call
+seller (writer) for an option contract. Market supply and demand
+forces determine the premium.
+inside_5x5_Inside_5x5 8/17/11 3:14 PM Page 4
+Put: An option contract that gives the holder the right to sell
+the underlying security at a specified price for a certain, fixed
+period of time.
+Ratio Spread: A multi-leg option trade of either all calls or all
+puts whereby the number of long options to short options is
+something other than 1:1. Typically, to manage risk, the number
+of short options is lower than the number of long options
+(i.e. 1 short call: 2 long calls).
+Short position: A position wherein the investor is a net writer
+(seller) of a particular options series.
+Strike price or exercise price: The stated price per share for which
+the underlying security may be purchased (in the case of a call)
+or sold (in the case of a put) by the option holder upon exercise of
+the option contract.
+Synthetic position: A strategy involving two or more instruments
+that has the same risk/reward profile as a strategy involving only
+one instrument.
+Time decay or erosion: A term used to describe how the time value
+of an option can “decay” or reduce with the passage of time.
+Volatility: A measure of the fluctuation in the market price of the
+underlying security. Mathematically, volatility is the annualized
+standard deviation of returns.
+Bull
+Strategies
+tabs_5x5.312_tabs_5x5.312 8/17/11 3:05 PM Page 3
+seigetartS
+lluB
+tabs_5x5.312_tabs_5x5.312 8/17/11 3:05 PM Page 4
+inside_5x5_Inside_5x5 8/17/11 3:14 PM Page 5
+bull strategy LONG CALL
+Example:Buy call
+profit
+Market Outlook:Bullish +
+Risk: Limited
+Reward: Unlimited
+Increase in Volatility:
+Helps position stock
+price
+Time Erosion: Hurts position
+BEP: Strike price plus
+premium paid
+-
+loss
+inside_5x5_Inside_5x5 8/17/11 3:14 PM Page 6
+bull strategy BULL CALL SPREAD
+Example: Buy 1 call;
+sell 1 call at higher strike profit
++
+Market Outlook: Bullish
+Risk: Limited
+Reward: Limited
+Increase in Volatility: stock
+Helps or hurts depending price
+on strikes chosen
+Time Erosion: Helps or hurts
+depending on strikes chosen -
+BEP: Long call strike plus
+loss
+net premium paid
+inside_5x5_Inside_5x5 8/17/11 3:14 PM Page 7
+bull strategy BULL PUT SPREAD
+Example: Sell 1 put;
+buy 1 put at lower strike with p + rofit
+same expiry
+Market Outlook:
+Neutral to bullish
+Risk: Limited
+stock
+Reward: Limited price
+Increase in Volatility:
+Typically hurts position slightly
+Time Erosion: Helps position -
+BEP: Short put strike minus
+loss
+credit received
+inside_5x5_Inside_5x5 8/17/11 3:15 PM Page 8
+bull strategy COVERED CALL/BUY WRITE
+Example: Buy stock; sell calls
+on a share-for-share basis profit
++
+Market Outlook: Neutral to
+slightly bullish
+Risk: Limited, but substantial
+(risk is from a fall in stock price)
+stock
+Reward: Limited price
+Increase in Volatility:
+Hurts position
+Time Erosion: Helps position -
+BEP: Starting stock price minus
+loss
+premium received
+inside_5x5_Inside_5x5 8/17/11 3:15 PM Page 9
+bull strategy PROTECTIVE/MARRIED PUT
+Example: Own 100 shares of
+stock; buy 1 put profit
++
+Market Outlook: Cautiously
+bullish
+Risk: Limited
+Reward: Unlimited
+stock
+Increase in Volatility: price
+Helps position
+Time Erosion: Hurts position
+BEP: Starting stock price -
+plus premium paid
+loss
+inside_5x5_Inside_5x5 8/17/11 3:15 PM Page 10
+bull strategy CASH-SECURED SHORT PUT
+Example: Sell 1 put; hold cash
+equal to strike price x 100 profit
++
+Market Outlook: Neutral to
+slightly bullish
+Risk: Limited, but substantial
+Reward: Limited
+stock
+Increase in Volatility: price
+Hurts position
+Time Erosion: Helps position
+BEP: Strike price minus -
+premium received
+loss
+Bear
+Strategies
+tabs_5x5.312_tabs_5x5.312 8/17/11 3:05 PM Page 5
+seigetartS
+raeB
+tabs_5x5.312_tabs_5x5.312 8/17/11 3:05 PM Page 6
+inside_5x5_Inside_5x5 8/17/11 3:15 PM Page 11
+bear strategy LONG PUT
+Example:Buy put
+profit
+Market Outlook: Bearish +
+Risk: Limited
+Reward: Limited, but substantial
+Increase in Volatility:
+Helps position stock
+price
+Time Erosion: Hurts position
+BEP: Strike price minus
+premium paid
+-
+loss
+inside_5x5_Inside_5x5 8/17/11 3:15 PM Page 12
+bear strategy BEAR PUT SPREAD
+Example: Sell 1 put;
+buy 1 put at higher strike profit
++
+Market Outlook: Bearish
+Risk: Limited
+Reward: Limited
+Increase in Volatility: stock
+Helps or hurts depending on price
+strikes chosen
+Time Erosion: Helps or hurts
+depending on strikes chosen -
+BEP: Long put strike minus
+loss
+net premium paid
+inside_5x5_Inside_5x5 8/22/11 2:20 PM Page 13
+bear strategy BEAR CALL SPREAD
+Example: Sell 1 call;
+buy 1 call at higher strike profit
++
+Market Outlook:
+Neutral to bearish
+Risk: Limited
+Reward: Limited
+stock
+Increase in Volatility: price
+Typically hurts position slightly
+Time Erosion: Helps position
+BEP: Short call strike plus -
+credit received
+loss
+Neutral
+Strategies
+tabs_5x5.312_tabs_5x5.312 8/17/11 3:05 PM Page 7
+seigetartS
+lartueN
+tabs_5x5.312_tabs_5x5.312 8/17/11 3:05 PM Page 8
+inside_5x5_Inside_5x5 8/17/11 3:15 PM Page 14
+neutral strategy COLLAR
+Example: Own stock, protect
+by purchasing 1 put and selling
+profit
+1 call with a higher strike +
+Market Outlook: Neutral
+Risk: Limited
+Reward: Limited
+Increase in Volatility: Effect stock
+price
+varies, none in most cases
+Time Erosion: Effect varies
+BEP: In principle, breaks even
+-
+if, at expiration, the stock is
+above/(below) its initial level by loss
+the amount of the debit/(credit)
+inside_5x5_Inside_5x5 8/17/11 3:15 PM Page 15
+neutral strategy SHORT STRADDLE
+Example: Sell 1 call;
+sell 1 put at same strike
+profit
+Market Outlook: Neutral +
+Risk: Unlimited
+Reward: Limited
+Increase in Volatility:
+Hurts position stock
+price
+Time Erosion: Helps position
+BEP: Two BEPs
+1. Call strike plus premium
+-
+received
+2. Put strike minus premium loss
+received
+inside_5x5_Inside_5x5 8/17/11 3:15 PM Page 16
+neutral strategy SHORT STRANGLE
+Example: Sell 1 call with higher
+strike; sell 1 put with lower strike
+profit
+Market Outlook: Neutral +
+Risk: Unlimited
+Reward: Limited
+Increase in Volatility:
+Hurts position stock
+price
+Time Erosion: Helps position
+BEP: Two BEPs
+1. Call strike plus premium
+-
+received
+2. Put strike minus premium loss
+received
+inside_5x5_Inside_5x5 8/22/11 2:21 PM Page 17
+neutral strategy IRON CONDOR
+Example: Sell 1 call; buy 1 call at
+higher strike; sell 1 put; buy 1 put
+at lower strike; all options have
+the same expiry. Underlying price
+typically between short call and p + rofit
+short put strikes.
+Market Outlook: Range bound
+or neutral
+Risk: Limited
+stock
+Reward: Limited price
+Increase in Volatility:
+Typically hurts position
+Time Erosion: Helps position -
+BEP: Two BEPs
+loss
+1. Short call strike plus credit
+received
+2. Short put strike minus credit
+received
+inside_5x5_Inside_5x5 8/17/11 3:15 PM Page 18
+neutral strategy CALENDAR SPREAD
+Example: Sell 1 call; buy 1 call
+at same strike but longer expiration;
+also can be done with puts
+Market Outlook: Near term neutral profit
+(if strikes = stock price); can be +
+slanted bullish (with OTM call
+options) or bearish (with OTM
+put options)
+Risk: Limited
+stock
+Reward: Limited; substantial price
+after near term expiry
+Increase in Volatility:
+Helps position -
+Time Erosion: Helps until near
+term option expiry loss
+BEP: Varies; after near term
+expiry long call strike plus debit
+paid or (if done with puts) short
+put strike minus debit paid
+inside_5x5_Inside_5x5 8/17/11 3:15 PM Page 19
+neutral strategy COVERED COMBINATION/COVERED STRANGLE
+Example: Own stock; sell one call;
+sell one put; underlying price
+typically between short call and
+short put strikes
+profit
+Market Outlook: Range bound +
+or neutral, moderately bullish;
+willing to buy more shares and
+sell existing shares
+Risk: Limited, but substantial
+stock
+Reward: Limited price
+Increase in Volatility: Typically hurts
+position
+Time Erosion: Typically hurts position -
+BEP: Two BEPs
+loss
+1. Short call strike plus total credit
+2. Short put strike minus total credit
+inside_5x5_Inside_5x5 8/17/11 3:15 PM Page 20
+neutral strategy LONG CALL BUTTERFLY
+Example: Sell 2 calls;
+buy 1 call at next lower strike;
+buy 1 call at next higher strike
+(the strikes are equidistant)
+profit
+Market Outlook: Neutral around +
+strike
+Risk: Limited
+Reward: Limited
+Increase in Volatility: stock
+price
+Typically hurts position
+Time Erosion: Typically helps position
+BEP: Two BEPs
+-
+1. Lower long call strike plus
+net premium paid
+loss
+2. Higher long call strike minus
+net premium paid
+Volatility
+Strategies
+tabs_5x5.312_tabs_5x5.312 8/17/11 3:05 PM Page 9
+seigetartS
+ytilitaloV
+tabs_5x5.312_tabs_5x5.312 8/17/11 3:05 PM Page 10
+inside_5x5

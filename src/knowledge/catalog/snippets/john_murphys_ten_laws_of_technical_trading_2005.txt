@@ -1,0 +1,182 @@
+Trading Strategies
+John Murphy is a very popular author, columnist, and speaker on the subject of
+Technical Analysis. StockCharts.com is very glad to include his Ten Laws of
+Technical Trading in our educational material. If you find this information useful,
+please visit the MurphyMorris web site for additional examples of John's insight.
+John Murphy's Ten Laws of Technical Trading
+Which way is the market moving? How far up or down will it go? And when will it go
+the other way? These are the basic concerns of the technical analyst. Behind the
+charts and graphs and mathematical formulas used to analyze market trends are
+some basic concepts that apply to most of the theories employed by today's
+technical analysts.
+John Murphy, a leader in technical analysis of futures markets, has drawn upon his
+thirty years of experience in the field to develop ten basic laws of technical trading:
+rules that are designed to help explain the whole idea of technical trading for the
+beginner and to streamline the trading methodology for the more experienced
+practitioner. These precepts define the key tools of technical analysis and how to
+use them to identify buying and selling opportunities.
+Mr. Murphy was the technical analyst for CNBC-TV for seven years on the popular
+show "Tech Talk" and has authored three best-selling books on the subject --
+Technical Analysis of the Financial Markets, Intermarket Technical Analysis
+and The Visual Investor.
+His most recent book demonstrates the essential "visual" elements of technical
+analysis. The fundamentals of Mr. Murphy's approach to technical analysis illustrate
+that it is more important to determine where a market is going (up or down) rather
+than the why behind it.
+The following are Mr. Murphy's ten most important rules of technical trading:
+1. Map the Trends
+2. Spot the Trend and Go With It
+3. Find the Low and High of It
+4. Know How Far to Backtrack
+5. Draw the Line
+6. Follow That Average
+7. Learn the Turns
+8. Know the Warning Signs
+9. Trend or Not a Trend?
+10. Know the Confirming Signs
+1. Map the Trends
+Study long-term charts. Begin a chart analysis with monthly and weekly charts
+spanning several years. A larger scale "map of the market" provides more visibility
+and a better long-term perspective on a market. Once the long-term has been
+established, then consult daily and intra-day charts. A short-term market view
+alone can often be deceptive. Even if you only trade the very short term, you will
+do better if you're trading in the same direction as the intermediate and longer
+term trends.
+2. Spot the Trend and Go With It
+Determine the trend and follow it. Market trends come in many sizes -- long-term,
+intermediate-term and short-term. First, determine which one you're going to trade
+and use the appropriate chart. Make sure you trade in the direction of that trend.
+Buy dips if the trend is up. Sell rallies if the trend is down. If you're trading the
+intermediate trend, use daily and weekly charts. If you're day trading, use daily and
+intra-day charts. But in each case, let the longer range chart determine the trend,
+and then use the shorter term chart for timing.
+3. Find the Low and High of It
+Find support and resistance levels. The best place to buy a market is near support
+levels. That support is usually a previous reaction low. The best place to sell a
+market is near resistance levels. Resistance is usually a previous peak. After a
+resistance peak has been broken, it will usually provide support on subsequent
+pullbacks. In other words, the old "high" becomes the new "low." In the same way,
+when a support level has been broken, it will usually produce selling on subsequent
+rallies -- the old "low" can become the new "high."
+4. Know How Far to Backtrack
+Measure percentage retracements. Market corrections up or down usually retrace a
+significant portion of the previous trend. You can measure the corrections in an
+existing trend in simple percentages. A fifty percent retracement of a prior trend is
+most common. A minimum retracement is usually one-third of the prior trend. The
+maximum retracement is usually two-thirds. Fibonacci retracements of 38% and
+62% are also worth watching. During a pullback in an uptrend, therefore, initial buy
+points are in the 33-38% retracement area.
+5. Draw the Line
+Draw trend lines. Trend lines are one of the simplest and most effective charting
+tools. All you need is a straight edge and two points on the chart. Up trend lines are
+drawn along two successive lows. Down trend lines are drawn along two successive
+peaks. Prices will often pull back to trend lines before resuming their trend. The
+breaking of trend lines usually signals a change in trend. A valid trend line should
+be touched at least three times. The longer a trend line has been in effect, and the
+more times it has been tested, the more important it becomes.
+6. Follow that Average
+Follow moving averages. Moving averages provide objective buy and sell signals.
+They tell you if existing trend is still in motion and help confirm a trend change.
+Moving averages do not tell you in advance, however, that a trend change is
+imminent. A combination chart of two moving averages is the most popular way of
+finding trading signals. Some popular futures combinations are 4- and 9-day
+moving averages, 9- and 18-day, 5- and 20-day. Signals are given when the
+shorter average line crosses the longer. Price crossings above and below a 40-day
+moving average also provide good trading signals. Since moving average chart lines
+are trend-following indicators, they work best in a trending market.
+7. Learn the Turns
+Track oscillators. Oscillators help identify overbought and oversold markets. While
+moving averages offer confirmation of a market trend change, oscillators often help
+warn us in advance that a market has rallied or fallen too far and will soon turn.
+Two of the most popular are the Relative Strength Index (RSI) and Stochastics.
+They both work on a scale of 0 to 100. With the RSI, readings over 70 are
+overbought while readings below 30 are oversold. The overbought and oversold
+values for Stochastics are 80 and 20. Most traders use 14-days or weeks for
+stochastics and either 9 or 14 days or weeks for RSI. Oscillator divergences often
+warn of market turns. These tools work best in a trading market range. Weekly
+signals can be used as filters on daily signals. Daily signals can be used as filters for
+intra-day charts.
+8. Know the Warning Signs
+Trade MACD. The Moving Average Convergence Divergence (MACD) indicator
+(developed by Gerald Appel) combines a moving average crossover system with the
+overbought/oversold elements of an oscillator. A buy signal occurs when the faster
+line crosses above the slower and both lines are below zero. A sell signal takes
+place when the faster line crosses below the slower from above the zero line.
+Weekly signals take precedence over daily signals. An MACD histogram plots the
+difference between the two lines and gives even earlier warnings of trend changes.
+It's called a "histogram" because vertical bars are used to show the difference
+between the two lines on the chart.
+9. Trend or Not a Trend
+Use ADX. The Average Directional Movement Index (ADX) line helps determine
+whether a market is in a trending or a trading phase. It measures the degree of
+trend or direction in the market. A rising ADX line suggests the presence of a strong
+trend. A falling ADX line suggests the presence of a trading market and the absence
+of a trend. A rising ADX line favors moving averages; a falling ADX favors
+oscillators. By plotting the direction of the ADX line, the trader is able to determine
+which trading style and which set of indicators are most suitable for the current
+market environment.
+10. Know the Confirming Signs
+Include volume and open interest. Volume and open interest are important
+confirming indicators in futures markets. Volume precedes price. It's important to
+ensure that heavier volume is taking place in the direction of the prevailing trend.
+In an uptrend, heavier volume should be seen on up days. Rising open interest
+confirms that new money is supporting the prevailing trend. Declining open interest
+is often a warning that the trend is near completion. A solid price uptrend should be
+accompanied by rising volume and rising open interest.
+"11."
+Technical analysis is a skill that improves with experience and study. Always be a
+student and keep learning.
+Richard Rhodes' Trading Rules
+I must admit, I am not smart enough to have devised these ridiculously simple
+trading rules. A great trader gave them to me some 15 years ago. However, I will
+tell you, they work. If you follow these rules, breaking them as infrequently as
+possible, you will make money year in and year out, some years better than others,
+some years worse - but you will make money. The rules are simple. Adherence to
+the rules is difficult.
+"Old Rules...but Very Good Rules"
+If I've learned anything in my 17 years of trading, I've learned that the simple
+methods work best. Those who need to rely upon complex stochastics, linear
+weighted moving averages, smoothing techniques, fibonacci numbers etc., usually
+find that they have so many things rolling around in their heads that they cannot
+make a rational decision. One technique says buy; another says sell. Another says
+sit tight while another says add to the trade. It sounds like a cliché, but simple
+methods work best.
+1. The first and most important rule is - in bull markets, one is supposed to be
+long. This may sound obvious, but how many of us have sold the first rally
+in every bull market, saying that the market has moved too far, too fast. I
+have before, and I suspect I'll do it again at some point in the future. Thus,
+we've not enjoyed the profits that should have accrued to us for our initial
+bullish outlook, but have actually lost money while being short. In a bull
+market, one can only be long or on the sidelines. Remember, not having a
+position is a position.
+2. Buy that which is showing strength - sell that which is showing weakness.
+The public continues to buy when prices have fallen. The professional buys
+because prices have rallied. This difference may not sound logical, but
+buying strength works. The rule of survival is not to "buy low, sell high", but
+to "buy higher and sell higher". Furthermore, when comparing various
+stocks within a group, buy only the strongest and sell the weakest.
+3. When putting on a trade, enter it as if it has the potential to be the biggest
+trade of the year. Don't enter a trade until it has been well thought out, a
+campaign has been devised for adding to the trade, and contingency plans
+set for exiting the trade.
+4. On minor corrections against the major trend, add to trades. In bull
+markets, add to the trade on minor corrections back into support levels. In
+bear markets, add on corrections into resistance. Use the 33-50%
+corrections level of the previous movement or the proper moving average as
+a first point in which to add.
+5. Be patient. If a trade is missed, wait for a correction to occur before putting
+the trade on.
+6. Be patient. Once a trade is put on, allow it time to develop and give it time
+to create the profits you expected.
+7. Be patient. The old adage that "you never go broke taking a profit" is maybe
+the most worthless piece of advice ever given. Taking small profits is the
+surest way to ultimate loss I can think of, for small profits are never allowed
+to develop into enormous profits. The real money in trading is made from
+the one, two or three large trades that develop each year. You must develop
+the ability to patiently stay with winning trades to allow them to develop into
+that sort of trade.
+8. Be patient. Once a trade is put on, give it time to work; give it time to
+insulate itself from random noise; give it time for others to see the merit of
+what you saw earlier than they.
+9. Be impatient. As always, small loses and quick losses are the best losses. It
+is not the loss of money t

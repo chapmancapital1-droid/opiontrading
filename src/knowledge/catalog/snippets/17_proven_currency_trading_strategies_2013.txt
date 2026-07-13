@@ -1,0 +1,245 @@
+ffffiirrss..iinndddd ii 0066//1122//1122 1111::5522 AAMM
+17 Proven
+Currency
+Trading
+Strategies
+ffffiirrss..iinndddd ii 0066//1122//1122 1111::5522 AAMM
+Founded in 1807, John Wiley & Sons is the oldest independent publish-
+ing company in the United States. With offi ces in North America, Europe,
+Australia, and Asia, Wiley is globally committed to developing and mar-
+keting print and electronic products and services for our customers ’
+professional and personal knowledge and understanding.
+The Wiley Trading series features books by traders who have
+survived the market’ s ever-changing temperament and have prospered—
+some by reinventing systems, others by getting back to basics. Whether
+you are a novice trader, professional, or somewhere in between, these
+books will provide the advice and strategies needed to prosper today and
+well into the future.
+F or a list of available titles, visit our website at www.WileyFinance.com.
+ffffiirrss..iinndddd iiii 0066//1122//1122 1111::5522 AAMM
+17 Proven
+Currency
+Trading
+Strategies
+How to Profit in the
+Forex Market
+MARIO SINGH
+John Wiley & Sons Singapore Pte. Ltd.
+ffffiirrss..iinndddd iiiiii 0066//1122//1122 1111::5522 AAMM
+Copyright © 2013 by John Wiley & Sons Singapore Pte. Ltd.
+Published by John Wiley & Sons Singapore Pte. Ltd.
+1 Fusionopolis Walk, #07-01, Solaris South Tower, Singapore 138628
+All rights reserved.
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted
+in any form or by any means, electronic, mechanical, photocopying, recording, scanning, or
+otherwise, except as expressly permitted by law, without either the prior written permission
+of the Publisher, or authorization through payment of the appropriate photocopy fee to the
+Copyright Clearance Center. Requests for permission should be addressed to the Publisher,
+John Wiley & Sons Singapore Pte. Ltd., 1 Fusionopolis Walk, #07–01, Solaris South Tower,
+Singapore 138628, tel: 65–6643–8000, fax: 65–6643–8008, e-mail: enquiry@wiley.com.
+Limit of Liability/Disclaimer of Warranty: While the publisher and author have used their
+best efforts in preparing this book, they make no representations or warranties with respect
+to the accuracy or completeness of the contents of this book and specifically disclaim any
+implied warranties of merchantability or fitness for a particular purpose. No warranty may
+be created or extended by sales representatives or written sales materials. The advice and
+strategies contained herein may not be suitable for your situation. You should consult with a
+professional where appropriate. Neither the publisher nor author shall be liable for any loss
+of profit or any other commercial damages, including but not limited to special, incidental,
+consequential, or other damages.
+Other Wiley Editorial Offices
+John Wiley & Sons, 111 River Street, Hoboken, NJ 07030, USA
+John Wiley & Sons, The Atrium, Southern Gate, Chichester, West Sussex, P019 8SQ,
+United Kingdom
+John Wiley & Sons (Canada) Ltd., 5353 Dundas Street West, Suite 400, Toronto, Ontario,
+M9B 6HB, Canada
+John Wiley & Sons Australia Ltd., 42 McDougall Street, Milton, Queensland 4064, Australia
+Wiley-VCH, Boschstrasse 12, D-69469 Weinheim, Germany
+ISBN 978–1–118–38551–7 (Cloth)
+ISBN 978–1–118–38553–1 (ePDF)
+ISBN 978–1–118–38554–8 (Mobi)
+ISBN 978–1–118–38552–4 (ePub)
+Typeset in 10/12 pt, ITC Century by MPS Limited, Chennai, India.
+Printed in Singapore by Ho Printing Pte. Ltd.
+10 9 8 7 6 5 4 3 2 1
+ffffiirrss..iinndddd iivv 0066//1122//1122 1111::5522 AAMM
+To my three angels:
+Shalyn, my beautiful soul mate
+Chantelle, my vivacious daughter
+Elliot, my bubbly son
+Thank you for showing me every day that while
+the forex market holds the key to abundant wealth, my true treasure
+is found in the three of you.
+I love you with all my heart.
+ffffiirrss..iinndddd vv 0066//1122//1122 1111::5522 AAMM
+ffffiirrss..iinndddd vvii 0066//1122//1122 1111::5522 AAMM
+Contents
+Preface xi
+Acknowledgments xix
+PART ONE Forex Is a Game 1
+CHAPTER 1 How to Play the Game 3
+The Forex Game 3
+Forex and the Seven Majors 5
+Leverage 11
+Summary 14
+CHAPTER 2 How Money Is Made in the Game 15
+Buy Low, Sell High 15
+Three Points in Every Trade 17
+Bid/Ask Spread 23
+What Causes the Price of Currencies
+to Fluctuate? 25
+Fraction Theory 30
+Reading the Charts 31
+Market Structure 37
+Summary 48
+CHAPTER 3 The Six Major Players 51
+Central Banks 51
+Commercial and Investment Banks 58
+vii
+ffttoocc..iinndddd vviiii 1122//33//1122 77::0022 PPMM
+viii CONTENTS
+Multinational Corporations 62
+Institutional Traders 68
+Retail Forex Brokers 69
+Retail Traders 70
+Summary 70
+CHAPTER 4 Why You Must Play the Game 73
+Top 17 Reasons to Trade Forex 73
+Summary 84
+CHAPTER 5 Play It Your Way: Understanding
+Your Profile 87
+The Experiment 88
+Five Categories of Forex Traders 92
+Your Perfect Strategy 98
+Summary 107
+PART TWO Strategies to Win the Game 109
+Includes details on the FXPRIMUS
+100% bonus trading credit
+CHAPTER 6 Strategies for Scalpers 111
+Strategy 1: Rapid-Fire Strategy 111
+Strategy 2: Piranha Strategy 118
+CHAPTER 7 Strategies for Day Traders 125
+Strategy 3: Fade the Break 126
+Strategy 4: Trade the Break 131
+Trading the News 138
+Strategy 5: Gawk the Talk 143
+Strategy 6: Balk the Talk 148
+ffttoocc..iinndddd vviiiiii 1122//33//1122 77::0022 PPMM
+Contents ix
+CHAPTER 8 Strategies for Swing Traders 155
+Strategy 7: Trend Rider 155
+Strategy 8: Trend Bouncer 163
+Strategy 9: Fifth Element 169
+Strategy 10: Power Ranger 177
+Strategy 11: The Pendulum 185
+CHAPTER 9 Strategies for Position Traders 191
+Strategy 12: Swap and Fly 192
+Strategy 13: Commodity Correlation (Part 1) 199
+Strategy 13: Commodity Correlation (Part 2) 204
+Strategy 14: Siamese Twins 210
+CHAPTER 10 Strategies for Mechanical Traders 217
+Strategy 15: Guppy Burst 217
+Strategy 16: English Breakfast Tea 223
+Strategy 17: Good Morning Asia 228
+CHAPTER 11 Conclusion 235
+Bibliography 239
+About the Author 241
+About the Website 243
+Plus FXPRIMUS 100% bonus trading credit
+Index 245
+ffttoocc..iinndddd iixx 1122//33//1122 77::0022 PPMM
+ffttoocc..iinndddd xx 1122//33//1122 77::0022 PPMM
+Preface
+Y
+ou can ’t afford to ignore forex anymore.
+T his is an urgent message I carry everywhere I go. It really
+doesn’ t matter who we are or what stage in life we’ re at. You could
+be in school and you can’ t seem to fi gure out the rules of global fi nance.
+You could be holding down a job but you desire to make a decent second
+income in your spare time.
+Y ou could already be involved in the fi nancial markets as a retail trader
+or investor, but with low yields and depressed growth all around the world,
+you are searching for an asset class that offers unparalleled returns. You
+might even be a fund manager who holds an international portfolio in dif-
+ferent asset classes, such as equities, bonds, and commodities.
+However, with central banks lowering rates and injecting record
+amounts of liquidity into the fi nancial system, you realize the importance
+of protecting your entire portfolio against currency risks.
+Finally, you might be someone running a multinational company. You
+could be based in one country, but your offi ces span across many countries
+all around the world. Expenses for salaries, infrastructure, machinery, and
+supplies are paid out in different currencies every single month. As the
+business gets larger, you can’ t turn a blind eye to the currency fl uctuations,
+which have a signifi cant impact to the company ’s bottom line every month.
+I f you fi nd yourself in any one of these categories, this book is for you.
+The sooner we all understand the forex “game,” the better it is going to
+be for us. Forex is a game for three reasons. First, playing it must be fun.
+Second, we play it with an intention to win. Finally, it has rules. If you break
+the rules, the rules will break you.
+HOW IT ALL BEGAN
+I had a painful start to forex trading because I broke a cardinal rule. Allow
+me to share my story with you. I’ ll be the fi rst to admit that I ’m not a smart
+guy. I don ’t have a fi nance degree or an economics degree.
+xi
+ffpprreeff..iinndddd xxii 0033//1122//1122 44::3333 PPMM
+xii PREFACE
+I studied chemical engineering in school but graduated with third-class
+honors, dashing my mother’ s hopes of my becoming a top chief executive
+for a Fortune 500 company. After graduation, I proceeded to apply for a job
+at petroleum giant Shell, but I haven ’t heard from them yet.
+Sometimes I console myself by thinking that my resume lost its way in
+the mail. I didn’ t have much materially then, but what I had was the burning
+desire to achieve success in life. It was this desire to succeed that led me to
+my fi rst experience with forex trading.
+Six years ago, I was with a friend in a local coffee shop when he sud-
+denly fl ipped open his laptop to reveal a screen full of charts. Through the
+charts and jumping numbers on the screen, I asked him, “What ’s this?”
+He coolly replied, “Forex trading.”
+Thinking it was some hobby he recently picked up, I asked again, “Real
+cash?”
+“Yes.” He nodded smugly. “Real cash.”
+T hat began to draw me in, slowly but surely. Looking back, it wasn’ t the
+fact that forex was the biggest fi nancial market in the world that drew me in.
+What drew me in was the fact that all you needed was an Internet connection
+and a laptop to make money from this market anywhere in the world.
+F ascinated, I started to ask my trader friend some questions. When he
+shared with me the story of how George Soros broke the Bank of England
+on September 16, 1992, and made $1 billion in a day, I was hooked.
+I ’ m the kind of guy who only needs one live example of someone who
+has done something to convince me that I can do it too. Excited about this
+new discovery called forex trading, I went off and started to do my own
+reading on free websites.
+Soon I started my fi rst account with USD3,000.
+MY FIRST TRADE
+My fi rst trade was on the GBP/USD. It was on an uptrend, and the price had
+reached a new high. This is it, I thought, rubbing my hands gleefully. I ’m
+going to be a millionaire by next Friday. Seeing that the price had reached a
+new high, I was convinced that gravity would pull it right down.
+I clicked “sell.” That poignant moment was the start of my painful les-
+son. After I clicked “sell,” the price continued to creep up. That’ s not sup-
+posed to happen, I thought.
+As prices continued climbing, I decided to hit the sell button again,
+only this time with double the lot size (and double the intensity) as my fi rst
+trade. I reasoned that if I clicked twice the number of lots, all that needed
+to happen was for prices to fall a little before I could see some nice profi ts.
+ffpprreeff..iinndddd xxiiii 0033//1122//1122 44::3333 PPMM
+Preface xiii
+After the second “sell” click, I couldn ’t believe my eyes. The price
+went up further. My hands started to get sweaty. My head started to shine
+from the beads of sweat that started to trickle down from my bald head.
+Murphy’ s Law was in full motion. In desperation, I actually grabbed the
+laptop and turned it upside down to paint me a picture of falling prices.
+My ego was badly hurt.
+“It ’s got to come down,” I muttered to myself. At that point, I clicked
+“sell” for a third time, with double the lot size of the second trade.
+T he numbers on my laptop screen at the time weren’ t very far from the
+numbers my friend had shown me. The only difference was that mine had a
+stubborn negative sign preceding them that just wouldn ’t go away. A couple
+of days after my third dreaded click, the broker closed off all my positions.
+I was hit with the dreaded margin call.
+In a grand total of just six days, I had lost my entire account.
+Whenever I share my story in my forex seminars, I replicate the sce-
+nario and draw an uptrend on the whiteboard.
+“ Would you click ‘buy’ or ‘ sell’ over here?” I always ask, as I circle the
+highest point reached by the price. At every single seminar, most people
+choose to sell, confi dent that high prices will fall.
+I t’ s almost a consolation to know that we human beings are 

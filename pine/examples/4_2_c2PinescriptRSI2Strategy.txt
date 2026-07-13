@@ -1,0 +1,27 @@
+//@version=4
+// Long = rsi < oversold 
+// short = rsi > overbought 
+strategy(title="Relative Strength Index", shorttitle="RSI Strategy", format=format.price, precision=2)
+
+// Inputs
+i_oversold      = input(30, title="Oversold")
+i_overbought    = input(70, title="Overbought")
+len             = input(14, minval=1, title="Length")
+src             = input(close, "Source", type = input.source)
+
+// Calculations
+up              = rma(max(change(src), 0), len)
+down            = rma(-min(change(src), 0), len)
+rsi             = down == 0 ? 100 : up == 0 ? 0 : 100 - (100 / (1 + up / down))
+
+// Plotting Calls
+plot(rsi, "RSI", color=#8E1599)
+band1 = hline(70, "Upper Band", color=#C0C0C0)
+band0 = hline(30, "Lower Band", color=#C0C0C0)
+fill(band1, band0, color=#9915FF, transp=90, title="Background")
+
+// Strategy functions
+if rsi < i_oversold
+    strategy.entry(id="RSI Oversold Go Long", long=strategy.long)
+if rsi > i_overbought
+    strategy.entry(id="RSI Overbought Go Short", long=false)

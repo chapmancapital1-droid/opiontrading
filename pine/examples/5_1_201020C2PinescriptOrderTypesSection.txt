@@ -1,0 +1,505 @@
+//@version=4
+// Published: 20-10-20
+
+// -------- CONTENTS -------
+// 🔎 To find a lesson quickly. Copy the lesson name and search with (⌘ + f) or (win + f ) 
+// Legend
+// Code Architecture
+// Topic Overview
+// Code Start
+// How to enter a trade using market orders with strategy.entry and strategy.order
+// WHAT'S THE DIFFERENCE BETWEEN strategy.order() AND strategy.entry()?
+// How to Exit a Trade using strategy market orders with strategy.close and strategy.close_all
+// How to Place a Limit Entry Order
+// How to place a Stop Entry Order
+// Visualizing Pending Orders.
+// How to cancel an order
+
+
+// -------- LEGEND --------
+// 🔥 Start of a Lecture
+// 🏹 Lecture Title
+// 🎯 End of a Lecture
+// ❗ Imortant Warning
+// 📝 Notes
+// 📈 Start of an example
+// 👇 Example Method Start
+// 👆 Example Method End
+// 📉 End of an example
+
+
+// --------- CODE ARCHITECTURE --------
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🏹               Lesson Name
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+//    📈📈📈   Example Name    📈📈📈
+// 👇 Method #: Method Description
+// Methods are sub examples. (Examples within the example)
+// 👆
+//    📉📉📉                   📉📉📉
+// 🎯
+
+
+
+// ---------------- ORDER MANAGEMENT FUNCTIONS ----------------
+// strategy.entry()
+// strategy.order()
+// strategy.exit()
+// strategy.close()
+// strategy.close_all()
+// strategy.cancel()
+// strategy.cancel_all()
+
+
+// ---------------- ORDER MANAGEMENT FUNCTIONS SYNTAX ----------------
+// All Arguments
+// strategy.entry(id, long, qty, limit, stop, oca_name, oca_type, comment, when, alert_message) → void
+// strategy.order(id, long, qty, limit, stop, oca_name, oca_type, comment, when, alert_message) → void
+// strategy.exit(id, from_entry, qty, qty_percent, profit, limit, loss, stop, trail_price, trail_points, trail_offset, oca_name, comment, when, alert_message) → void
+// strategy.close(id, when, comment, qty, qty_percent, alert_message) → void
+// strategy.close_all(when, comment, alert_message) → void
+// strategy.cancel(id, when) → void
+// strategy.cancel_all(when) → void
+
+// Minimum Required Arguments
+// strategy.entry(id, long)
+// strategy.order(id, long)
+// strategy.exit(id)
+// strategy.close(id)
+// strategy.close_all()
+// strategy.cancel(id)
+// strategy.cancel_all()
+
+// 📝 Note: The id argument is required for almost all of the functions.
+
+
+// ----- CODE -----
+strategy("Order Types", overlay=true, pyramiding=1)
+
+// Input Settings
+rsiLength   = input( 14 )
+overSold    = input( 30 )
+overBought  = input( 70 )
+
+// Strategy
+rsi         = rsi(close, rsiLength)
+goLong      = rsi < overSold
+goShort     = rsi > overBought
+
+//      📈📈📈     Quickstart Example 1    📈📈📈
+if goLong
+	strategy.entry(id="goLong", long=strategy.long)
+
+if goShort
+	strategy.entry(id="goShort", long=strategy.short)
+//      📉📉📉                             📉📉📉
+
+
+
+
+
+
+
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🏹 How to enter a trade using market orders with strategy.entry and strategy.order
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+// There's only two ways to enter a position in Pine Script
+// The following functions are all you need to enter a position in Pine
+// strategy.entry()
+// strategy.order()
+// They both have the same exact syntax and arguments
+// strategy.entry(id, long, qty, limit, stop, oca_name, oca_type, comment, when, alert_message) → void
+// strategy.order(id, long, qty, limit, stop, oca_name, oca_type, comment, when, alert_message) → void
+// But we will see the difference between the two and understand which one to use and when.
+
+//     📈📈📈           MARKET LONG ENTRY: strategy.entry()             📈📈📈
+// 👇 Method 1
+// if goLong
+//     strategy.entry(id="Go Long", long=true)
+// 👆
+
+// 👇 Method 2: Using built in variable "strategy.long"
+// if goLong
+//     strategy.entry(id="Go Long", long=strategy.long) 
+// 👆
+
+// 👇 Method 3: using when argument
+// strategy.entry(id="Go Long", long=true, when=goLong) 
+// 👆
+
+//     📉📉📉                                                           📉📉📉
+
+
+//                   ❗❗❗❗WARNING❗❗❗❗
+// If you try to send more than one identical strategy.entry orders with an identical id at the same time. Neither will work.
+
+
+
+//     📈📈📈          MARKET SHORT ENTRY: strategy.entry()             📈📈📈
+
+// 👇 Method 1
+// if goShort
+//     strategy.entry(id="Go Short", long=false)       
+// 👆
+
+// 👇 Method 2: Using built in variable "strategy.short"
+// if goShort
+//     strategy.entry(id="Go Short", long=strategy.short)   
+// 👆
+
+// 👇 Method 3: using "when" argument
+// strategy.entry(id="Go Short", long=false, when=goShort)  
+// 👆
+
+//     📉📉📉                                                           📉📉📉
+
+
+
+//     📈📈📈           MARKET LONG ENTRY: strategy.order()             📈📈📈
+
+// 👇 Method 1
+// if goLong
+    // strategy.order(id="Go Long", long=true)
+// 👆
+
+// 👇 Method 2: Using built in variable "strategy.long"
+// if goLong
+//     strategy.order(id="Go Long", long=strategy.long)  
+// 👆
+// 👇 Method 3: using when argument
+// strategy.order(id="Go Long", long=true, when=goLong) 
+// 👆
+//     📉📉📉                                                           📉📉📉
+
+
+
+//     📈📈📈          MARKET SHORT ENTRY: strategy.order()             📈📈📈
+
+// 👇 Method 1
+// if goShort
+//     strategy.order(id="Go Short", long=false) 
+// 👆
+
+// 👇 Method 2: Using built in variable "strategy.short"
+// if goShort
+//     strategy.order(id="Go Short", long=strategy.short)
+// 👆
+// 👇 Method 3: using "when" argument
+// strategy.order(id="Go Short", long=false, when=goSho rt) 
+// 👆
+//     📉📉📉                                                           📉📉📉
+
+//   🎯                                                      
+
+
+
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+//  🏹 WHAT'S THE DIFFERENCE BETWEEN strategy.order() AND strategy.entry()?
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+
+// ▲▲ strategy.entry() is affected by the pyramiding setting in the strategy's properties
+// 🚫 strategy.entry() is affected by the strategy.risk.allow_entry_in function
+// 🔃 strategy.entry() can reverse positions long/short
+
+
+// Run these commands separately and mess with the pyramiding setting to see the effect.
+// The pyramiding setting can be found in the properties tab of the strategy on the chart
+// Or, can be programmed in the strategy() annotation as an argument. 
+//     📈📈📈           PYRAMIDING             📈📈📈
+// 👇 Pyramiding has an effect
+// strategy.entry(id="Go Long", long=true, when=goLong)
+// 👆
+
+// 👇 Pyramiding Has No Effect.
+// strategy.order(id="Go Long", long=true, when=goLong)
+// 👆
+
+//     📉📉📉                                  📉📉📉
+
+// We can also test the effect of strategy.risk.allow_entry_in() function on strategy.entry and strategy.order
+// 📝 Note: These have no effect on the strategy.order() function
+//     📈📈📈           strategy.risk.allow_entry_in()             📈📈📈
+// strategy.risk.allow_entry_in(strategy.direction.all)    // This is the default
+
+// 👇 Only Go Long.
+// strategy.risk.allow_entry_in(strategy.direction.long)
+// 👆
+
+// 👇 Only Go Short.
+// strategy.risk.allow_entry_in(strategy.direction.short)
+// 👆
+
+// strategy.entry(id="Go Long",  long=false)
+// OR
+// strategy.order(id="Go Long", long=true)
+//     📉📉📉                                                      📉📉📉
+
+
+//     📈📈📈           POSITION REVERSALS              📈📈📈
+// 📌 Run these two together and notice the reversal.
+// strategy.entry(id="Go Long", long=true, when=goLong)
+// strategy.entry(id="Go Short", long=false, when=goShort)
+
+// 📌 Run these two together and notice the orders just keep stacking up.
+// strategy.order(id="Go Long", long=true, when=goLong)
+// strategy.order(id="Go Short", long=false, when=goShort)
+
+// 📌 If you run entry() and order() together, positions opened from order() can be reversed from entry()
+// 📝 Note: By default the size of each order is 1 contract. We can change this with the "qty" argument.
+// if goShort
+//     strategy.order(id="Go Short", long=false, qty=10)      // Open 10 contracts short on signal.
+
+// if goLong
+    // strategy.entry(id="Go Long", long=true, qty=10)         // Open 10 contract long on signal.
+// 📌 Notice how we open up more than 10 contracts when going long. This is because the entire position is reveresed.
+
+//     📉📉📉                                           📉📉📉
+
+
+// ❓Which one should you use❓
+// Whichever one works for you really.
+// But generally, it's easier to work with strategy.entry so stick with that if your'e just starting out.
+
+//   🎯                                                                 
+
+
+
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🏹 How to Exit a Trade using strategy market orders with strategy.close and strategy.close_all
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+// We may not want to flip from long to short positions in our strategy. Sometimes we might just want to exit a position completely 
+// wait for the next signal to get back in. This is where exits come in. 
+
+// 🚮 strategy.close() function closes a particular entry trade with fully or partially with a market order.
+// 🚮 strategy.close_all() function closes all positions with a market order.
+// 📝 Note: These functions do nothing if there are no open orders.
+
+//     📈📈📈   MARKET EXIT A POSITION SPAWNED FROM A SPECIFIC ID    📈📈📈
+// strategy.entry(id="Go Long", long=true, when=goLong)   // Entry order from strategy.entry 
+// strategy.close(id="Go Long", when=goShort)             // Close all orders spawned from this ID
+// OR
+// strategy.order(id="Go Long", long=true, when=goLong)   // Entry order from strategy.order 
+// strategy.close(id="Go Long", when=goShort)             // Close all orders spawned from this ID
+//     📉📉📉                                                        📉📉📉
+
+
+//     📈📈📈   MARKET EXIT ALL POSITIONS   📈📈📈
+// strategy.entry(id="Go Long Entry 1", long=true, when=goLong)    // Entry order from strategy.entry
+// strategy.entry(id="Go Long Entry 2", long=true, when=goLong)    // Entry order from strategy.entry
+// strategy.order(id="Go Long Order 1", long=true, when=goLong)    // Entry order from strategy.order 
+// strategy.order(id="Go Long Order 2", long=true, when=goLong)    // Entry order from strategy.order 
+// strategy.close_all(when=goShort)                                // Close all orders regardless of ID
+//     📉📉📉                               📉📉📉
+
+
+//     📈📈📈   PARTIALLY MARKET EXIT A POSITION SPAWNED FROM A SPECIFIC ID    📈📈📈
+// strategy.entry(id="Go Long", long=true, when=goLong)                   // Entry order from strategy.entry 
+
+// 👇 Method 1: Close all orders spawned from this ID, by 1 unit
+// strategy.close(id="Go Long", when=goShort, qty=1)                      
+// // 📝 Note: "qty" is the number of contracts/shares/lots/units to exit a trade with. It is not the same as the default_qty_type found in the strategy() annotation
+// 👆
+
+// 👇 Method 2: Close all orders spawned from this ID, by 10%
+// strategy.close(id="Go Long", when=goShort, qty_percent=10)             
+// // 📝 Note: Percentage is based off the remaining position size. So 10% ten times won't fully reduce a position 100%.
+// 👆
+
+// 👇 Method 3: Close all orders spawned from this ID, by 1 unit
+// strategy.close(id="Go Long", when=goShort, qty=1, qty_percent=10)       
+// // 📝 Note: The docs mention that "qty_percent" take priority over "qty" argument, but this is actually the opposite.
+// 👆
+
+// We can check the effect of these exits by plotting our position size and visualizing the changes.
+// plot(strategy.position_size)    
+//     📉📉📉                                                        📉📉📉
+
+//   🎯                                                                                                 
+
+
+
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🏹                    How to Place a Limit Entry Order
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+// Our two functions for placing market orders can also place limit orders.
+// strategy.entry(id, long, limit=limitPrice)
+// strategy.order(id, long, limit=limitPrice)
+
+// We can do this by setting the "limit" argument to a correct limit price
+
+// For a buy limit we want the limit price to be lower than the current price
+// For a sell limit we want the limit price to be higher than the curent price.
+
+//     📈📈📈   LIMIT ENTRY: strategy.entry()    📈📈📈
+// strategy.entry("Buy Limit",  long=true,  limit=low,  when=goLong)       // Buy Limit set at the low of signal.
+// strategy.entry("Sell Limit", long=false, limit=high, when=goShort)      // Sell Limit set at the high of signal.
+//     📉📉📉                                    📉📉📉
+
+//     📈📈📈   LIMIT ENTRY: strategy.order()    📈📈📈
+// strategy.order("Buy Limit",  long=true,  limit=low,  when=goLong)          // Buy Limit set at the low of signal.
+// strategy.order("Sell Limit", long=false, limit=high, when=goShort)         // Sell Limit set at the high of signal.
+//     📉📉📉                                     📉📉📉
+
+// 🎯                                                                                                 
+
+
+
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🏹                    How to place a Stop Entry Order
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+// Our two functions for placing market orders and limit orders can also place stop orders.
+// strategy.entry(id, long, stop=stopPrice)
+// straegy.order(id, long, stop=stopPrice)
+
+// We can do this by setting the "stop" argument to a correct stop price
+// For a buy stop we want the stop price to be higher than the current price
+// For a sell stop we want the stop price to be lower than the curent price.
+
+//     📈📈📈   STOP ENTRY: strategy.entry()    📈📈📈
+// strategy.entry("Buy Stop",  long=true,  stop=high,  when=goLong)       // Buy Stop set at the high of signal bar.
+// strategy.entry("Sell Stop", long=false, stop=low,  when=goShort)      // Sell Stop set at the low of signal bar.
+//     📉📉📉                                    📉📉📉
+
+//     📈📈📈   STOP ENTRY: strategy.order()    📈📈📈
+// strategy.order("Buy Stop",  long=true,  stop=high,  when=goLong)     // Buy Stop set at the high of signal bar.
+// strategy.order("Sell Stop", long=false, stop=low, when=goShort)      // Sell Stop set at the low of signal bar.
+//     📉📉📉                                     📉📉📉
+
+// 🎯                                                                                                 
+
+
+
+
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🏹                    Visualizing Pending Orders.
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// It's no doubt that TV has some of the most visually appealing charting software out there.
+// Drawing from that, I'm going to assume you are a visual learner, much like myself.
+// So let's use some plotting techniques so we can visualize just where our pending orders are. 
+
+// The following examples are used for a long only strategy, but can easily be reversed
+//     📈📈📈   Visualizing Pending Orders: Bad Example 1    📈📈📈
+// limitPrice = low    // Buy Limit Price
+// strategy.entry("Buy Limit",  long=true,  limit=limitPrice, when=goLong)       // Buy Limit
+// strategy.close("Buy Limit", when=goShort)
+// plot(limitPrice)    // Plotting the limitPrice like this won't work because our variable is redefined on each bar.
+//     📉📉📉                                                📉📉📉
+
+//     📈📈📈   Visualizing Pending Orders: Good Example 1    📈📈📈
+// // Note: we can only go Long once in this example, so pyramiding will not work.
+// var float limitPrice = na
+// if goLong and strategy.position_size <= 0
+//     limitPrice := low
+//     strategy.entry("Buy Limit",  long=true,  limit=limitPrice)       // Buy Limit
+
+// if goShort
+//     strategy.close("Buy Limit")
+
+// plot(limitPrice, style=plot.style_linebr, color=color.green)  // Draw a stepline for each limitPrice
+//     📉📉📉                                                📉📉📉
+
+
+//     📈📈📈   Visualizing Pending Orders: Better Example 2    📈📈📈
+// // Note: we can only go Long once in this example, so pyramiding will not work.
+// var float limitPrice = na
+
+// if low <= limitPrice
+//     limitPrice := na
+
+// if goLong 
+//     limitPrice := low
+//     strategy.entry("Buy Limit",  long=true,  limit=limitPrice)       // Buy Limit
+
+// if goShort
+//     strategy.close("Buy Limit")
+
+// plot(limitPrice, style=plot.style_linebr, color=color.green)  // Draw a stepline for each limitPrice
+// //     📉📉📉                                                📉📉📉
+
+
+//     📈📈📈   Visualizing Limit Orders: Working Example 1    📈📈📈
+// i_sellLimitPrice = input(30)
+// i_buyLimitPrice  = input(10)
+
+// // Limit orders will always be active.
+// strategy.entry("Sell Limit",  long=false,   limit=i_sellLimitPrice)
+// strategy.entry("Buy Limit",   long=true,    limit=i_buyLimitPrice)
+
+// plot(i_sellLimitPrice, title="Sell Limit", color=color.red)    
+// plot(i_buyLimitPrice, title="Buy Limit",   color=color.green)  
+//     📉📉📉                                                📉📉📉
+
+
+
+//     📈📈📈   Visualizing Stop Orders: Working Example 2    📈📈📈
+// i_buyStopPrice  = input(20)
+// i_sellStopPrice = input(10)
+
+// // Stop orders will always be active.
+// strategy.entry("Buy Stop",   long=true,    stop=i_buyStopPrice)
+// strategy.entry("Sell Stop",  long=false,   stop=i_sellStopPrice)
+
+// plot(i_buyStopPrice, title="Buy Stop",   color=color.green) 
+// plot(i_sellStopPrice, title="Sell Stop", color=color.red)    
+//     📉📉📉                                                📉📉📉
+// 🎯
+
+
+
+
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🏹                   How to cancel an order
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// The functions used for this are pretty straightforward, but I will go over them so that we cover everything
+// strategy.cancel(id, when)
+// strategy.cancel_all(when)
+
+// We can cancel specific pending orders or all pending orders with these two functions.
+// It's also possible to cancel market orders if the cancel function is called before the market order is sent.
+
+//     📈📈📈    Order counts: Canceling a Buy Stop    📈📈📈
+// i_buyStopPrice  = input(20)
+
+// // Stop orders will be active on every bar
+// strategy.entry("Buy Stop",   long=true,    stop=i_buyStopPrice)
+
+// if strategy.position_size > 0
+//     // strategy.cancel("Buy Stop")      // Stop Order is cancelled.
+//     // strategy.cancel_all()
+//     i_buyStopPrice := na
+
+// plot(i_buyStopPrice, title="Buy Stop",   color=color.green) 
+//     📉📉📉                           📉📉📉
+
+
+//     📈📈📈    Order counts: Canceling Wrong    📈📈📈
+// // Two things are happening here. 
+// // 1: A buy stop will always be in place until it is finally triggered
+// // 2: After it is triggered, the instruction above it will actually change the buy stop to a market order
+// // 3rd: No orders are actually cancelled in the making of this film.
+
+// i_buyStopPrice  = input(20)
+
+// if strategy.position_size > 0
+//     strategy.cancel("Buy Stop")
+//     i_buyStopPrice := na
+
+// // Stop orders will always be active.
+// strategy.entry("Buy Stop",   long=true,    stop=i_buyStopPrice)
+// strategy.cancel("Buy Stop")
+
+
+// plot(i_buyStopPrice, title="Buy Stop",   color=color.green) 
+//     📉📉📉                           📉📉📉

@@ -1,0 +1,389 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Gammapips
+// Version: 0.339
+// Published: 21.10.20 17:48:45
+
+// -------- CONTENTS -------
+// 🔎 To find a lesson quickly. Copy the lesson name and search with (⌘ + f) or (win + f ) 
+// Legend
+// How to place a Take Profit
+// How to Place a Stop Loss
+// How to place a Stop-Limit Order
+// How to place a OCO order
+// How to place a trailing stop
+
+
+// -------- LEGEND --------
+// 🔥 Start of a Lecture
+// 🏹 Lecture Title
+// 🎯 End of a Lecture
+// ❗ Imortant Warning
+// 📝 Notes
+// 📈 Start of an example
+// 👇 Example Method Start
+// 👆 Example Method End
+// 📉 End of an example
+
+
+// --------- CODE ARCHITECTURE --------
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🏹               Lesson Name
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+//    📈📈📈   Example Name    📈📈📈
+// 👇 Method #: Method Description
+// Methods are sub examples. (Examples within the example)
+// 👆
+//    📉📉📉                   📉📉📉
+// 🎯
+
+
+
+
+// ------ CODE ---------
+//@version=4
+strategy("Advanced Order Types", overlay=true, pyramiding=1)
+
+// Input Settings
+fastSMALen      = input( 15 )
+slowSMALen      = input( 50 )
+
+// Strategy
+slowSMA         = sma(close, slowSMALen)
+fastSMA         = sma(close, fastSMALen)
+goShort         = crossunder(fastSMA, slowSMA) 
+goLong          = crossover(fastSMA, slowSMA)
+plot(slowSMA, title="Slow SMA", color=color.purple, linewidth=4)
+plot(fastSMA, title="Fast SMA", color=color.orange, linewidth=2)
+
+
+
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🏹               How to place a Take Profit
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 📚 A Take Profit (T/P) is a type of pending order that specifies the exact price at which to close out an open position for a profit. 
+// 📚 If the market price does not reach the TP price, the take-profit order does not get filled.
+// https://www.investopedia.com/terms/t/take-profitorder.asp
+
+// We can place take profit orders by using the "stop" and "limit" arguments with strategy.exit() or strategy.order()
+// Syntax for strategy.exit()
+// strategy.exit(id, from_entry, qty, qty_percent, profit, limit, loss, stop, trail_price, 
+//               trail_points, trail_offset, oca_name, comment, when, alert_message)
+
+//    📈📈📈   Example 1: Placing a TP based on a Price Level   📈📈📈
+// i_tp_pct    = input(10.0, title='Take Profit %')/100
+
+// // Use built in variable to show us our entry price. Works well for 1 order, more entries will show an avg.
+// tpLevel     = strategy.position_avg_price * (1 + i_tp_pct)
+// // The great thing about using the strategy.position_avg_price variable is we will have a nice TP line 
+// // that will only plot when we want it to. This is because when the market is flat the variable will return "na" which will not plot.
+
+// plot(tpLevel, title="TP Level",color=color.green, style=plot.style_linebr, linewidth=2)
+
+// // Simple Long Entry
+// strategy.entry("Go Long", strategy.long, when=goLong)
+
+// // 👇 Method 1: Simple. Use this.
+// // strategy.exit(id="TP", from_entry="Go Long", limit=tpLevel)
+// // 👆
+
+
+// // // 👇 Method 2A: Complex. Use this if you can't use method 1.
+// // if strategy.position_size > 0  // If we don't check this, then an order will be sent every bar
+// //     strategy.order(id="TP", long=false, limit=tpLevel, qty=2)  
+// // // 👆
+
+// // // 👇 Method 2B: Complex. Use this if you can't use method 1.
+// // if strategy.position_entry_name == 'Go Long'
+// //     strategy.order(id="TP", long=false, limit=tpLevel)  
+// // // 👆
+
+
+// // // 👇 Method 3: Really Complex. Make the strategy long only and sending a short order, which will convert to a close. Why would you do this?
+// // strategy.risk.allow_entry_in(strategy.direction.long)
+// // if strategy.position_size > 0
+// //     strategy.entry(id="TP", long=false, limit=tpLevel)
+// // // 👆
+
+// // // 👇 Method 4: Works, kinda, but remember it's a market exit. Notice how this doesn't execute until the next bar.
+// // if high >= tpLevel
+// //     strategy.close("Go Long")
+// // // 👆
+
+//    📉📉📉                                                                📉📉📉
+
+
+
+//    📈📈📈   Example 2: Placing A TP Using Ticks.    📈📈📈
+// plot(syminfo.mintick, title="min tick helper")   // This is to help identify minticks as each asset is different. 
+// i_tp_ticks    = input(1200, title='Take Profit In Ticks')
+
+// tpLevel       = strategy.position_avg_price + (i_tp_ticks * syminfo.mintick)  // Note: if we don't use syminfo.mintick our plot will be off.
+// plot(tpLevel, title="TP Level",color=color.green, style=plot.style_linebr, linewidth=2)
+
+
+// strategy.entry("Go Long", strategy.long, when=goLong)           // Simple Long Entry
+
+// // 👇 Method 1: Simple. Use this.
+// // strategy.exit(id="TP", from_entry="Go Long", profit=i_tp_ticks)  // The profit argument automatically converts the our input to ticks.
+// // 👆
+
+
+// // 👇 Method 2: Complex. Use this if you can't use method 1. Notice the differnet tick variable from Method 1.
+// if strategy.position_size > 0  // If we don't check this, then an order will be sent every bar
+//     strategy.order(id="TP", long=false, limit=tpLevel)  // It's also important to note that this order will only close 1 contract by default
+// // 👆
+
+
+// 👇 Method 3: Why would you do this?
+// strategy.risk.allow_entry_in(strategy.direction.long)  // Only allow long entries, otherwise strategy.entry will reverse position.
+// if strategy.position_size > 0
+//     strategy.entry(id="TP", long=false, limit=tpLevel)
+// // 👆
+
+// 👇 Method 4: Works, kinda, but remember it's a market exit. Notice how this doesn't execute until the next bar.
+// if high >= tpLevel
+//     strategy.close("Go Long")
+// // 👆
+// // A lot of people ask "What's the difference between strategy.close and strategy.exit?"", so ive included this example to show you.
+//    📉📉📉                                                                📉📉📉
+// 🎯
+
+
+
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🏹               How to Place a Stop Loss
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 📚 A stop-loss (SL) order is an order to buy or sell a security when it reaches a certain price. 
+// 📚 Stop-loss orders are designed to limit an investor’s loss on a position. 
+// 📚 When the price falls below the stop price the order becomes a market order and executes at the next available price.
+// https://www.investopedia.com/terms/s/stop-lossorder.asp
+
+// We can place stop loss orders by using the "stop" and "limit" arguments with strategy.exit() or strategy.order()
+// NOTE: Do not be confused by the "stop" argument also on strategy.entry() This is not for a stop loss, but for a stop order. 
+
+//    📈📈📈   Example 1: Long SL with strategy.exit and strategy.order()    📈📈📈
+// i_sl_pct    = input(10.0, title='Stop Loss %')/100
+// slLevel     = strategy.position_avg_price * (1 - i_sl_pct)  // Use built in variable to show us our entry price. Works well for 1 order, more entries will show an avg.
+// // slLevel     = strategy.position_avg_price * (1 + i_sl_pct)  // Use built in variable to show us our entry price. Works well for 1 order, more entries will show an avg.
+
+
+// // The great thing about using the strategy.position_avg_price variable is we will have a nice SL line 
+// // that will only plot when we want it to. This is because when the market is flat the variable will return "na" which will not plot.
+// plot(slLevel, title="TP Level",color=color.red, style=plot.style_linebr, linewidth=2)
+
+// // Simple Long Entry
+// strategy.entry("Go Long", strategy.long, when=goLong)
+// // strategy.entry("Go Long", strategy.short, when=goLong)
+
+// // // 👇 Method 1: Simple. Use this
+// // strategy.exit(id="SLoss", from_entry="Go Long", stop=slLevel)
+// // // 👆
+
+
+// // // 👇 Method 2: Complex. Use this if you can't use method 1.
+// // if strategy.position_size > 0  // If we don't check this, then an order will be sent every bar
+// //     strategy.order(id="SL", long=false, stop=slLevel)  
+// // // 👆
+
+
+// // 👇 Method 3: Why would you do this?
+// // strategy.risk.allow_entry_in(strategy.direction.long)
+// // if strategy.position_size > 0
+// //     strategy.entry(id="SL", long=false, stop=slLevel)
+// // 👆
+
+// // 👇 Method 4: Works, kinda, but remember it's a market exit. Notice how this doesn't execute until the next bar.
+// // if low <= slLevel
+// //     strategy.close("Go Long")
+// // 👆
+
+
+//    📉📉📉                                                                📉📉📉
+// 🎯
+
+
+
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🏹                   How to place a Stop-Limit Order
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// Our two functions for placing market orders, limit orders and stop orders can also place stop-limit orders.
+
+// strategy.entry(id, long, stop=stopPrice, limit=limitPrice)
+// strategy.order(id, long, stop=stopPrice, limit=limitPrice)
+
+
+// To send a stop-limit order we need to use both stop and limit arguments: 
+
+//    📈📈📈   Entry Stop-Limit: Example 1    📈📈📈
+
+// // 👇 Method 1: If block Long entry
+// if goLong
+//     stopPrice  = high
+//     limitPrice = stopPrice + (30 * syminfo.mintick)
+//     strategy.entry(id="Buy Stop-Limit", long=true, stop=stopPrice, limit=limitPrice)
+// strategy.close("Buy Stop-Limit", when=goShort)
+// // 👆
+
+
+// // 👇 Method 2: Using "when" Short Entry
+// stopPrice  = low
+// limitPrice = stopPrice - (30 * syminfo.mintick)
+// strategy.entry(id="Sell Stop-Limit", long=false, stop=stopPrice, limit=limitPrice, when=goShort)
+// strategy.close("Sell Stop-Limit", when=goLong)
+// // 👆
+
+
+//     📉📉📉                           📉📉📉
+
+
+//     📈📈📈   Visualizing Stop-limit Orders: Working Example 1    📈📈📈
+// i_buyStopPrice  = input(20)
+// i_buyLimitPrice = input(30)
+
+// // Limit order will always be active.
+// strategy.order("Buy Stop-Limit", long=true, stop=i_buyStopPrice, limit=i_buyLimitPrice)
+
+// p_bs = plot(i_buyStopPrice, title="Buy Stop",   color=color.green) 
+// p_bl = plot(i_buyLimitPrice, title="Buy Limit", color=color.yellow)
+// fill(p_bs, p_bl, color.new(color.green, 91),title='Buy Zone' )
+//     📉📉📉                                                📉📉📉
+// 🎯
+
+ 
+ 
+ 
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🏹               How to place a OCO order
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 📚 What is an OCO order?
+// ⎡A one-cancels-the-other order (OCO) is a pair of conditional orders stipulating that if one order executes, 
+//  then the other order is automatically canceled. An OCO order often combines a stop order with a limit order 
+//  on an automated trading platform. When either the stop or limit price is reached and the order executed,
+//  the other order automatically gets canceled. 
+//  Experienced traders use OCO orders to mitigate risk and to enter the market.⎦
+// https://www.investopedia.com/terms/o/oco.asp
+
+// OCOs are good for trading breakouts and volatility. They will also keep the order book free of any forgotten orders. 
+// OCO orders can also be referred to as OCA orders. One-Cancels-All orders can work exactly like OCO orders, but they are not limited to just a pair of orders.
+// OCA orders encompass OCO orders. So when placing OCO orders we will use the OCA argument.
+
+// There are three functions that can place oco orders.
+// strategy.order(id, long, oca_name="OCA Name", oca_type=strategy.oca.cancel)
+// strategy.entry(id, long, oca_name="OCA Name", oca_type=strategy.oca.cancel)
+// strategy.exit(id,  oca_name="OCA Name")
+
+// Let's look at some examples on how we can use an OCO.
+
+//    📈📈📈   Breakout    📈📈📈
+// // i_upperBreakPrice   = input(28.5, title="Upper Breakout Level")   // Set your own levels
+// // i_lowerBreakPrice   = input(28.4, title="Lower Breakout Level")   // Set your own levels  
+// i_upperBreakPrice   = high          // Or just use the high 
+// i_lowerBreakPrice   = low           // and low to get an idea of how things work.
+// plot(i_upperBreakPrice, title="Upper Break Price", color=color.green, style=plot.style_stepline, offset=1)
+// plot(i_lowerBreakPrice, title="Lower Break Price", color=color.red, style=plot.style_stepline, offset=1)
+
+// // // 👇 Method 1: Using strategy.order
+// breakout = time > timestamp(2020, 10, 14, 0,0,0)
+// if breakout
+//     strategy.order("Upper Break Price", long=true,  stop=i_upperBreakPrice,   oca_name='Breakout', oca_type=strategy.oca.cancel)      // Buy Stop
+//     strategy.order("Lower Break Price", long=false, stop=i_lowerBreakPrice,   oca_name='Breakout', oca_type=strategy.oca.cancel)      // Sell Stop
+
+// // // 👆
+
+
+// // 👇 Method 2: Using strategy.entry -- This will only open 1 trade by default unless you increase pyramiding.
+// breakout = time > timestamp(2020, 10, 14, 0,0,0)
+// if breakout
+//     strategy.entry("Upper Break Price", long=true,  stop=i_upperBreakPrice, oca_name='Breakout', oca_type=strategy.oca.cancel)  // Buy Stop
+//     strategy.entry("Lower Break Price", long=false, stop=i_lowerBreakPrice, oca_name='Breakout', oca_type=strategy.oca.cancel)  // Sell Stop
+// // 👆
+//    📉📉📉                   📉📉📉
+
+
+//    📈📈📈   Stop Loss and TP For Long: OCO    📈📈📈
+// i_sl = input(5.0, title='Stop Loss %')/100
+// i_tp = input(10.0, title='Take Profit %')/100
+// SL = strategy.position_avg_price * (1 - i_sl)
+// TP = strategy.position_avg_price * (1 + i_tp)
+// plot(SL, color=color.red, style=plot.style_linebr, linewidth=2)
+// plot(TP, color=color.green, style=plot.style_linebr, linewidth=2)
+
+// strategy.entry(id="Go Long", long=true, when=goLong)
+
+
+// // // 👇 Method 1: Simple way without OCO. Normally you would want to do this.
+// // strategy.exit(id="Simple Exit", from_entry="Go Long", limit=TP, stop=SL)
+// // // 👆
+
+
+// // // 👇 Method 2: Complex way with OCO. 
+// // if strategy.position_size > 0  // Adding in the strategy.position_size logic makes sure we only send these orders once otherwise we have orders resting
+// //     // strategy.order("Stop Loss",   long=false,   stop=SL,  oca_name='SLTP', oca_type=strategy.oca.cancel)
+// //     // strategy.order("Take Profit", long=false,   limit=TP, oca_name='SLTP', oca_type=strategy.oca.cancel)
+// // // 👆
+
+//    📉📉📉                   📉📉📉
+// 🎯
+
+
+
+
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🏹               How to place a trailing stop
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// What is a trailing Stop?
+// A trailing stop is a modification of a typical stop order 
+// that can be set at a defined percentage or dollar amount away from a security's current market price. 
+// For a long position, an investor places a trailing stop loss below the current market price. 
+// For a short position, an investor places the trailing stop above the current market price
+
+// ⚡ A trailing stop is designed to lock in profits or limit losses as a trade moves favorably.
+// ⚡ Trailing stops only move if the price moves favorably. Once it moves to lock in a profit or reduce a loss, it does not move back in the other direction.
+// ⚡ A trailing stop is a stop order and has the additional option of being a limit order or a market order.
+// ⚡ One of the most important considerations for a trailing stop order is whether it will be a percentage or fixed-dollar amount and how by much it will trail the price.
+// https://www.investopedia.com/terms/t/trailingstop.asp
+
+// Trailing Stop Syntax in Pine
+// Trailing stop functionality can be found in the strategy.exit() function.
+// Specifically, there are 3 arguments that allow us to control our trailing stops:
+// ⚡ trail_price  = Price at which the trailing stop is activated 
+// ⚡ trail_points = Ticks from entry at which the trailing stop is activated.
+// ⚡ trail_offset = Ticks offset from price after activation 
+
+//    📈📈📈    Trailing Stop For Long Entry    📈📈📈
+// testStartYear   = input(2020, "Backtest Start Year")
+// testStartMonth  = input(10, "Backtest Start Month")
+// testStartDay    = input(08, "Backtest Start Day")
+// testType        = input('Points', "Activation Type", options=['Points', 'Price'])
+// trailLevel      = input(1.178,  "Trail Price", type=input.float, step=0.0001)
+// trailPoints     = input(150, "Trail Points (in ticks)", type=input.integer)
+// trailOffset     = input(100, "Trail Offset (in ticks)", type=input.integer)
+// testPeriodStart = timestamp(testStartYear, testStartMonth, testStartDay, 0, 0)
+// // Courtesy of BTR https://backtest-rookies.com/2018/06/08/tradingview-trailing-stop-mechanics-beware-version-3/
+
+// // For plotting Only**
+// var tstop = float(na)
+// if strategy.position_size > 0 and high >= (testType == "Price" ? trailLevel : trailPoints*syminfo.mintick + strategy.position_avg_price)
+//     tstop := max(high - trailOffset*syminfo.mintick, nz(tstop[1]))
+// else
+//     tstop := na
+    
+// tstopActivationLevel = strategy.position_size > 0 ? (testType == "Price" ? trailLevel : strategy.position_avg_price+(trailPoints*syminfo.mintick)): na
+// tstopActivated = high >= tstopActivationLevel 
+// plot(tstopActivationLevel, title="Trail Price Activation", color=tstopActivated ? color.green: color.new(color.yellow, 90), style=plot.style_linebr)
+// plot(strategy.position_size > 0 ? tstop: na, title="Trailing Stop", color=color.red, style=plot.style_linebr, offset=0)
+// plot(strategy.position_avg_price, title="Entry Price", color=color.yellow, style=plot.style_linebr)
+
+// // Note: Sometimes the Stop and Activation Level won't plot if they are hit in the same bar. 
+// longCondition = goLong and (time >= testPeriodStart)
+// if longCondition
+//     strategy.entry("Go Long", strategy.long)
+// strategy.exit("Trailing Stop", "Go Long", trail_points=trailPoints, trail_offset=trailOffset, when=testType == 'Points')
+// strategy.exit("Trailing Stop", "Go Long", trail_price=trailLevel,   trail_offset=trailOffset, when=testType == 'Price')
+//    📉📉📉                   📉📉📉
+// 🎯
+

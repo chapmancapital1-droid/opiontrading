@@ -1,0 +1,277 @@
+Trading with
+Ichimoku
+Clouds
+,
+Founded in 1807, John Wiley & SOilS is the oldest independent publish­
+ing company in Ule United States. WiUl offices in North America, Europe,
+Australia and Asia, Wiley is globally committed to developing and market­
+ing print and electronic products and services for our customers' profes­
+sional and personal knowledge and understanding.
+The Wiley Trading series features books by traders who have survived
+the market's ever changing temperament and have prospered-some by
+reinventing systems, others by getting back to basics. Whether a novice
+trader, professional or somewhere in-between, these books will provide
+the advice and strategies needed to prosper today and well into the future.
+For a list of available titles, visit our Web site at www.WileyFinance.com.
+n
+Trading with
+Ichimoku
+Clouds
+The Essential Guide to Ichimoku
+Kinko Hyo Technical Analysis
+ltlANESH PA'I'EL
+ffi
+WILEY
+John Wiley Sons, Inc.
+&
+1II
+2010
+Copyright by Capitai ine. The right of Manesh Patel to be identified as the author
+<0 E,!.!.
+1988.
+has been assel1ed in accordance with the Copyright, Designs and Patents Act
+Publishcd by John Wiley Sons, Inc., Hoboken, New Jcrsey.
+&
+]'ublished simultaneously in Canada.
+Chans used with pcmlission of TTadeStalion, Inc.
+No part, of this publication may be reproduced, stored in a retrieval system, or transmitted in
+any fonn or by any means, electronic, mechanical, photocopying, rccording, scanning, or
+107 108 1976
+othen\'ise, except as pennitted under Sect.ion or of the United States Copyright
+Act, without eit.her the prior writt.en pemlission of the Publisher, or aut.horization through
+2'22
+payment of the appropriate per-copy fee to the Copyright Clearance Center, Inc.,
+01923, (978) 750-8400, (978) G46-8GOO,
+Rosewood Driw, Dam'ers, MA fax or on the web at
+ww.wcopyrighl.com. Requests to the Publisher for pennission should be addressed to the
+07030, (201)
+Pemlissions Department, John Wiley Sons. lnc., III River St.reet,. Hoboken, NJ
+&
+748-f,QJ (201) 748-f'()()8,
+I, fax ur online at hltp:/lwww.wiley.cum/goJpemlis!:>iuns.
+Limit of LiabititylDisdaimer of Warranty: While the publi!:>her and author have used their best
+dfons preparing this book, they make no representations or warrdnties with respect LO the
+in
+accuracy or completeness of the cuntent!:> of book and !:>peciflcally di!:>claim any implied
+tilis
+warrantiCl; of merchantabilit.y or fltne!:>s for a particular ]lufl)use. No warranty may be created
+or extended by sales repre!:>entative!:> or written !:>ale!:> materiab. The advice and strategies
+contained herein may not be suitable for your situatiun. You !:>hould consult with a
+professional where appropriate. t-:either the publisher nor author shall be liable for any loss of
+profit or any other t;ummercial danlages, including but not limited to special, incidental,
+consequential, or other damages.
+For general infonlJation on our other products and selviees or for technical support, please
+(800) 762·2974,
+contact our Customer Care Department within the United States at outside the
+(317) 572-3993 (317) 572-4002.
+United States at. or fax
+Wiley also publishes its books a variety of electronic fomlats. Some content that appears in
+in
+print may not be available in electronic books. For more infonnation about Wiley products,
+visit. our web site at ww.wwiley.com.
+Library ofColIgress Cata/ogillg-ifl-PubUccltioll Dclta;
+Patel, Manesh.
+Trading with Ichimoku clouds: the essential guide to Ichimoku Kinko Hyo technical
+analysis Manesh Patel.
+I
+p. cm. -(Wiley trading series)
+Includes bibliographical references and index.
+978-4M70-OO99J-4
+ISBN (cloth)
+J. hwestment.analysis. 2. Stocks-Prices-Charts, diagrams, etc. L Title.
+HG4529.P38 2010
+332.fl3'2042-dc22
+2009052168
+Printed in the United States of America.
+10 9 8 6 5 4 3 2
+7
+,v
+I am ded'icat'ing lhis book to my la.leJalher
+Ra,manlal. Pald-afa,lher who encouraged me to
+K.
+be the best I can and to follow my dt'ea.ms.
+If wel'e notfol' h'im, I 'would not be who I am today.
+'it
+A portion of the proceeds from this book will be given to various charities
+around the world in his name.
+v
+Vl
+Contents
+Introduction Ix
+Background IX
+Components of a Trading System xv
+1
+�IIAI·'I'I�K. Ichlmoku Components
+Tenkan Sen 4
+Kijun Sen
+10
+Chikou Span
+19
+Kumo Cloud Components 25
+Senkou Span A 27
+Senkou Span B 28
+Kumo Cloud 30
+t;IIAI·'rI�K 2: Ichlmoku Trading Plan 41
+Components 41
+Strategy Description 42
+45
+t::IIAI·'I'.�K Ichlmoku 8ackl,esting
+3
+Backtesting 45
+EURUSD-A Two-Year Backlest 46
+Summary-Two Years of Backtesting
+134
+137
+Examining the Backlest Results 137
+Optimize Trading Plan
+144
+vII
+"ill
+CONTENTS
+149
+Ideallchimoku Strategy
+150
+(;II;\I"I'I:H 6 Ichlmoku 'I'tme Elements llil
+Ichimoku Time Elements
+161
+(;II;\I"I'I<:H 7 Applied 'l'l'uder I'sychoht�yl
+Doug Laughlin 171
+Is It as Easy as Just Being Taught a New System? 172
+The Problem We Have with Getting in Our Own Way 172
+Is There a Conspiracy Against the Small Trader? 173
+Traders Myth-Smart People Make the Best Traders 17.
+Losing Trades Are Acceptable
+175
+A Successful System Will Fortify Your Convictions 176
+Self-Sabotage and How It Applies to Your Trading 178
+In Summary-Trader Psychology Overall 179
+Cllf\I"I'EH 8 D.I�' 'l'I' .ldlng "'lth It:hlmoku 181
+Consequences of Trading without a Trading Plan
+18'
+Trading Plan
+185
+Backtesting
+186
+Conclusion 192
+CII\J I"I'EH 9 Conclushtn 193
+Ichlmoku Anulysls Sheet 195
+Blbllogl'aph�'
+199
+About the Authol' �1I1
+Index
+�03
+Introduction
+Rf\CKGROUND
+�Japanese Candles" is a phrase that is well known among the trading cam­
+mWlity. If the phrase is searched on the Internet, 3,810,000 searches are
+available in the Google search engine today. In comparison, if �Ichimoku"
+is searched, 141,000 searches appear, which is quite a difference. Steve
+Nison brought Japanese Candlesticks to the Western world and did a great
+job illustrating how it can be used to become a successful trader. He left a
+huge mark on the trading community, and today institutions down to the
+average retail trader use Japanese Candlesticks in some form or fashion in
+their technical analysis.
+This book brings Ule next phrase of Japanese technical analysis to the
+Western world, �Ichimoku Kinko Hyo." Ichimoku Kinko Ryo is a system
+Umt has been used successfully throughout Japan for years but never has
+progressed fOr\vard in the Western world. If a trader combines Japanese
+Candles with Ichimoku Kinko Byo, a powerful system is available to him
+or her. In fact, it increases the probability of trading drastically and can be
+evidenced by trading in a "paper" account after reading this book Japanese
+Candlesticks not be discussed further in this book and any additional
+will
+infomlation regarding this topic is avaiJable through Steve Nison's books
+and training seminars.
+By the time this book is published, the market will be one that has not
+been experienced previously; not even historical traders can predict what
+the future holds. There are no historical references to the current market
+models. We have seen the volatility index (VlX) (Figure 1.1), which aver­
+aged a value of \0 to 12 for a number of years in the middle of this decade,
+and exceeded 50 for the flrst time during the collapse of the global flnancial
+markets. Why is this market different from any other historical period?
+One of the biggest reasons that the market is so different is technology.
+With the advent of the Internet, infonnation can be received globa1f.y in a
+matter of milliseconds. During the crash of 1929, no computers were avail­
+able and television was in its early stages. The first televised live broad­
+cast from a plane had just occurred. Two years earlier, the biggest news
+INTRODUCTION
+,. .
+••
+••
+••
+••
+••
+•
+•
+• • • • • • • • •
+I�I(.UKE 1.1 TradeStation Monthly Chart of SVIX.X Volatility Index
+worldwide was: "In 1927, the president of the American Telephone and
+Telegraph Company in New York talked by phone to Herbert Hoover in
+Washington, more Ulan 200 miles away. The president of tile telephone
+company was able to see clearly the face of Mr. Hoover as he talked. This
+proved to the world that electricity could be used to carry sight as well as
+sound. "
+During tile mid-1980s, computers were still in their early stages. It was
+the beginning of the personal computer era-Microsoft was introducing
+the operation system MS-DOS 3.2, Apple was introducing the Mac Plus,
+IBM was launching the first laptop computer, and so forth. Technology be­
+gan to advance drastically in a short period. The size of a microchip was
+getting smaller and smaller and the computing power within the microchip
+was exponentially i.ncreasi.ng in a short amount of time. What normally
+took a room full of technological resources to do was now available in
+the size of a desktop computer.
+A perfect example of the rapid change in technology is mainframes.
+Back in the 1970s, IBM dominated the mainframe "space." Mainframes
+were perfomling the computing power needed by various industry groups.
+It would normally take an entire room size of more than 1,000 square feet
+just to be able to store this technology. Not only that, the room needed
+the ability to store all the cabling and also required tile support of a
+Introduction xl
+high-powered cooling system. The expense associated with mainframes
+was in the magnitude of more than $100,000. Only big corporations and uni­
+versities could afford such "luxuries." Small companies had to perform cal­
+culations by hand or they had to hire some of these larger corporations to
+perform the task they needed. With the introduction of personal computers
+in the mid-1980s, small companies and private individuals were now able
+to directly participate in the computer era. Prices dropped from a six-figure
+number to a magnitude of $3,000 to $5,000. My personal experience back
+in the 1980s was with the Apple and then progressed forward with the
+IJE
+IBM XT machines witll Microsoft DOS. These were the days where there
+really was no graphical interface and everything was in the form of pure
+text.
+the 1990s, technology introduced the concept of the Tntemet and the
+In
+World Wide Web. A drastic event in a small town in India now can be heard
+and seen throughout the world in a matter of seconds. lnfomlation trav­
+eled the world in microseconds compared to days/weeks/montlls as it did
+in earlier decades. III regard to the financial markets, one event in a partic­
+ular market caused an instant �chain reaction" across financial markets
+all
+globally within a short amount of time. Not only can the events occur in­
+stantly but they can also affect everyone, that is, lower, middle, and upper
+classes worldwide. By the late 1990s, almost every individual around the
+world had some sort of investment in some financial market, either tluough
+an online real-time brokerage account, money market account, CD, retire­
+ment account (401(k)), and so fOrtJl. Control was now the hands of an
+in
+emotional retail customer compared to a professional trader.
+In book, you learn tlle key aspects of becoming a professional
+this
+trader. I walk you through the complete process of trading with Ichimoku
+Kinko Hyo. After you read the book, various resources are available to you
+to make sure that your joumey into the "Ichimoku world" is successful.
+of' 'I'.'ading
+l'yI)t.�S
+In order to trade, two key questions always need to be addressed:
+Question I: When and what price should we enter the trade?
+Question 2: When and what price should we exit a trade?
+There are two analytical models-Technical Analysis and Fundamen­
+tal Analysis-that help the trader get the answers to these questions. Tech­
+nical analysis consists of looking at price and time action for a particular
+instrument. Today, online brokerage accounts along with other finns of­
+fer a retail customer htuldreds of indicators for price and time analysis.
+The indicators are sometimes called "studies" and they are mathematical
+xii INTRODUCTION
+formulas that represent price and time action in a certain way. With a cer­
+ta

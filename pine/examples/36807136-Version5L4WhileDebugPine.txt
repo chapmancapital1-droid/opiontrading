@@ -1,0 +1,60 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © pAulseperformance
+
+//@version=5
+indicator('Version 5 Changes', overlay=true, max_labels_count=500)
+
+// Debugging Function!
+message = "Hello!"
+if input.bool(false, "Debug")
+    runtime.error(message)
+
+
+
+plot(close)
+
+
+
+
+
+
+
+
+
+
+
+// While Loops!
+// Repeat a section of code an unknown number of times until a specific condition is met
+// Like how many times a number can be divided by 2
+// i_number   = input.float(100)
+// count  = 0
+// while i_number >= 1
+//     i_number := i_number / 2
+//     count += 1
+    
+
+// plot(i_number, "Number")
+// plot(count, "Count")
+
+
+
+
+
+
+
+
+// i_ms         = input.int(200, "Milliseconds to run")
+// count = 0
+// var timeStart   = timenow
+// var timeEnd     = timeStart + (i_ms)
+// while true
+//     if timenow >= timeEnd
+//         break
+    
+//     count +=1 
+    
+// plot(count)
+// plot((count*5)/1000000, "MHZ" )
+
+
+

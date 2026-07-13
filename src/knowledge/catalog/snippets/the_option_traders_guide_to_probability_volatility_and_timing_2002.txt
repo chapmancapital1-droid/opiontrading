@@ -1,0 +1,320 @@
+THE OPTION TRADER’S
+GUIDE TO PROBAYBILITY,
+L
+VOLATILITY, AND TIMING
+F
+M
+A
+E
+T
+Team-Fly®
+Founded in 1807, John Wiley & Sons is the oldest independent
+publishing company in the United States. With offices in North
+America, Europe, Australia, and Asia, Wiley is globally commit-
+ted to developing and marketing print and electronic products
+and services for our customers’ professional and personal knowl-
+edge and understanding.
+The Wiley Trading Series features books by traders who have
+been able to work with the market’s ever changing temperament
+and prosper—some by reinventing systems, others by getting
+back to basics. For the novice trader, professional, or somewhere
+in between, these books will provide the advice and strategies
+needed to prosper today and well into the future.
+For a list of available titles, please visit our Web site at
+www.WileyFinance.com.
+A Marketplace Book
+THE OPTION TRADER’S
+GUIDE TO PROBABILITY,
+VOLATILITY, AND TIMING
+Jay Kaeppel
+John Wiley & Sons, Inc.
+Copyright © 2002 by Jay Kaeppel. All rights reserved.
+Published by John Wiley & Sons, Inc., New York.
+Published simultaneously in Canada.
+No part of this publication may be reproduced, stored in a retrieval system,
+ortransmitted in any form or by any means, electronic, mechanical,
+photocopying, recording, scanning, or otherwise, except as permitted under
+Section 107 or 108 of the 1976 United States Copyright Act, without either
+the prior written permission of the Publisher or authorization through
+payment of the appropriate per-copy fee to the Copyright Clearance Center,
+222 Rosewood Drive, Danvers, MA 01923, (978) 750-8400, fax (978) 750-4744.
+Requests to the Publisher for permission should be addressed to the
+Permissions Department, John Wiley & Sons, Inc., 605 Third Avenue, New
+York, NY 10158-0012, (212) 850-6011, fax (212) 850-6008, e-mail:
+PERMREQ@WILEY.COM.
+This publication is designed to provide accurate and authoritative
+information in regard to the subject matter covered. It is sold with
+theunderstanding that the publisher is not engaged in rendering professional
+services. If professional advice or other expert assistance is required, the
+services of a competent professional person should besought.
+Wiley also publishes its books in a variety of electronic formats. Some
+content that appears in print may not be available in electronic books. For
+more information about Wiley products visit our Web site at
+www.wiley.com.
+ISBN: 0-471-22619-X
+Printed in the United States of America.
+10 9 8 7 6 5 4 3 2 1
+In loving memory of Arthur H. Kaeppel
+Contents
+Chapter 1 Introduction 1
+Who Can Benefit from This Book 1
+What Sets This Book Apart 2
+Can Options Really Be Simplified? 2
+What This Book Provides 2
+Overview of Option Trading 3
+Understanding Risk by Using Risk Curves 6
+Asking the Right Question 9
+Analyzing Risk: What Separates the Winners
+from the Losers 11
+Summary 18
+Chapter 2 The Basics of Options 21
+Option Definitions 21
+Options on a Specific Security 26
+Intrinsic Value versus Extrinsic Value 30
+In-the-Money versus Out-of-the-
+Money Options 32
+Summary 35
+Chapter 3 Reasons to Trade Options 37
+The Three Primary Uses of Options 37
+Leveraging an Opinion on Market Direction 39
+vii
+viii Contents
+Hedging an Existing Position (and
+Generating Income) 41
+Taking Advantage of Neutral Situations 44
+Summary 46
+Chapter 4 Option Pricing 47
+Theoretical Value 47
+Examples of Theoretical Option Pricing 49
+Overvalued Options versus Undervalued
+Options 50
+Summary: Theory versus Reality 52
+Chapter 5 Time Decay 55
+The Effect of Time Decay on the Price of
+an Option 56
+Implications of Time Decay 58
+Time Decay Illustrated 58
+Summary 62
+Chapter 6 Volatility 63
+Volatility: The Most Important Concept in
+Option Trading 63
+Historic Volatility Explained 63
+Implied Volatility Explained 65
+Is Implied Volatility High or Low? Relative
+Volatility Explained 69
+Relative Volatility Ranking 72
+Considerations in Selecting Option-
+Trading Strategies 72
+Why Does Volatility Matter? 74
+The Effect of Changes in Volatility 77
+Summary 80
+Contents ix
+Chapter 7 Probability 81
+Weighing the Pros and Cons 81
+Strategies for a Bullish Scenario 82
+Profit/Loss Comparisons 86
+Delta 89
+Probability Analysis 91
+The Correct and Incorrect Ways to
+Use Probability 95
+Summary 96
+Chapter 8 Market Timing 99
+The Underlying Security Is Expected to Move
+within a Specific Period 100
+The Underlying Is Expected to Move in a
+Particular Direction but Not in a
+Specific Time Frame 102
+The Underlying Is Expected to Move Significantly
+but the Direction Is Unknown 103
+The Underlying Is Expected to Stay within a
+Range or Not Move Much in Any
+Direction 105
+Summary 106
+Chapter 9 Trading Realities 107
+Exercise and Assignment 107
+Bid and Ask Prices and the Importance of
+Option Volume 110
+Appreciating the Effect of Bid-Ask Spreads 111
+Factors in Dealing with Bid-Ask Spreads 113
+A Word on Limit Orders 113
+Summary 115
+Chapter 10 Important Concepts to Remember 117
+Valid Reasons to Trade Options 117
+Option Pricing 118
+x Contents
+Time Decay 118
+Volatility 119
+Probability 120
+Market Timing 120
+How to Lose Money Trading Options 121
+The Keys to Success in Option Trading 125
+Summary 128
+Chapter 11 Overview of Trading Strategy Guides 131
+The Two Key Elements in Selecting a
+Trading Strategy 131
+Trading Strategy Matrix 133
+Overview of Trading Strategy Chapters 133
+Chapter 12 Buy a Naked Option 139
+Key Factors 139
+Position Taken 146
+Position Management 148
+Trade Result 150
+Chapter 13 Buy a Backspread 151
+Key Factors 151
+Position Taken 157
+Backspreads versus Naked Calls and Puts 157
+Volatility and Backspreads 159
+Position Management 162
+Trade Result 164
+Chapter 14 Buy a Calendar Spread 165
+Key Factors 165
+Position Taken 173
+Position Management 173
+Trade Result 174
+Contents xi
+A Decline in Volatility Is Deadly to
+Calendar Spreads 175
+Chapter 15 Buy a Straddle 179
+Key Factors 179
+Position Taken 186
+Position Management 188
+Trade Result 190
+Y
+L
+Chapter 16 Sell a Vertical Spread 191
+F
+Key Factors M191
+Position Taken 197
+Position MaAnagement 199
+Trade Result 200
+E
+T
+Chapter 17 Sell a Naked Put 201
+Key Factors 201
+Position Taken 206
+One Method for Managing Stock Position
+If Assigned 208
+Position Management 209
+Trade Result 209
+Chapter 18 Write a Covered Call 211
+Key Factors 211
+Position Taken 216
+Position Management 218
+Trade Result 219
+Writing Covered Calls without Limiting
+Upside Potential 220
+Team-Fly®
+xii Contents
+Chapter 19 Enter a Butterfly Spread 223
+Key Factors 223
+Position Taken 229
+Position Management 233
+Trade Result 235
+Chapter 20 Placing Trades 237
+Considerations in Placing Option Orders 238
+Placing Orders by Phone and On Line 238
+Summary 246
+Epilogue Some Random Thoughts for Option Traders 247
+Appendix A PROVEST Option Trading Method Criteria 251
+The PROVEST Option Trading Method: A
+Framework for Trade Selection 251
+Appendix B Option Exchanges, Option Brokers, Option
+Symbols, and Option Volume 255
+Exchanges 255
+Brokerage Firms 257
+Resources 257
+Stock and Stock Index Option Symbols 258
+Stock Option Volume Statistics 258
+Index 265
+Foreword
+Novice traders are attracted to the options market because of the
+degree of leverage and the vision of enhanced profitability it af-
+fords them. Options, however, are unlike any other exchange-
+traded product because of leverage, and more importantly,
+because of an attribute referred to as time decay. Unfortunately,
+traders learn the hard way that many factors besides calling the
+market direction correctly come into play in trading options.
+Most traders do not understand implied volatility, time decay,
+and out-of-the-money versus in-the-money options. Many do not
+have a working knowledge of which option strategies are best for
+any given situation, and they fail to understand just what the
+risk is before they make their trades.
+Jay Kaeppel explains these issues in The Option Trader’s
+Guide to Probability, Volatility, and Timing. Kaeppel covers the
+basics and then goes on to teach how to trade options. And
+hedoesn’t do it with get-rich-quick examples and hyperbole. He
+looks at the options market with a thorough analysis of both
+the risk and the profit potential of the various strategies, and he
+does so in a very readable fashion.
+Kaeppel outlines the steps involved in becoming a successful
+trader. He explains the different strategies available and when to
+use each one. He shows how to accurately assess volatility and
+from there, how to profit by disparities in the implied volatilities
+of different options. His strategies include guidelines for deter-
+mining when to buy undervalued options and when to sell over-
+valued options. Finally, Kaeppel teaches when to take a profit,
+and most importantly, when to cut losses and move on to the
+next trade.
+xiii
+xiv Foreword
+The key value of this book is its objectivity and its details.
+The guidelines are clear and objective, not a collection of anec-
+dotal examples that have happened once or twice. Save yourself
+some money and benefit from this money manager’s experience
+and wisdom if you want to profit in the options market.
+THOM HARTLE
+2001
+Thom Hartle (www.thomhartle.com) is a trader and educator
+working with private trades, as well as a contributing editor for
+Active Trader Magazine.
+Chapter 1
+INTRODUCTION
+Who Can Benefit from This Book
+This book is written for people who fall into one of two
+categories:
+1. Those who are new to option trading and looking for a good
+place to start
+2. Those who have traded options in the past and did not
+achieve the type of success they had hoped to
+Option trading enjoyed explosive growth during the late
+1990s and into the start of the new millennium, particularly
+among individuals. Traders whose bankrolls were fattened by
+the great bull market in stocks fueled part of this growth. Having
+enjoyed great success in the stock market, many people decided
+to try to increase their gains by accessing the leverage associated
+with options. Along the way computers got faster and more
+powerful, technology advanced rapidly, and markets traded with
+greater volume and volatility than ever before. Yet there is much
+about option trading that is no different than it ever was.
+Through all the years and all the growth and changes, critical el-
+ements remain that traders must understand and apply consis-
+tently if they hope to succeed in the long run. The purpose of
+this book is to illuminate these concepts and show how to apply
+them successfully in real-world trading.
+1
+2 The Option Trader’s Guide
+What Sets This Book Apart
+The primary focus of this book is not to teach you aboutoptions,
+but rather to teach you how to successfully tradeoptions. Having
+a textbook understanding of any topic is not the same thing as ap-
+plying that knowledge in the real world. This book is intended to
+give new traders and returnees to the options market an under-
+standing of what it takes to succeed, as well as a set of guidelines
+to apply in the real world of trading. Most of all, it is intended to
+make traders aware of the sobering realities of option trading, in-
+cluding the financial risks involved. No attempt is made to
+candy-coat the fact that garnering consistent profits in the op-
+tions market over a long period is a difficult goal to achieve.
+Can Options Really Be Simplified?
+Options are by nature fairly complex. Not only are there many
+trading strategies to consider, there also are many different fac-
+tors that apply to trade selection and position management. To
+complicate things even further, some factors matter a lot with
+certain strategies and not as much with others. Nevertheless,
+despite the inherent complexities, it is possible to gain an un-
+derstanding of these key factors without a Ph.D. in finance. This
+book will introduce you to the most important basic concepts
+in option trading and illustrate why an understanding of these
+concepts is critical to your long-term success. In the later chap-
+ters of this book, the concepts are applied to a number of differ-
+ent trading strategies to show you how to get the 

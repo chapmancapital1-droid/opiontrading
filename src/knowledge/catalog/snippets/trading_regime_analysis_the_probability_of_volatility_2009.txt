@@ -1,0 +1,210 @@
+TRADING REGIME ANALYSIS
+The Probability of Volatility
+Murray Gunn
+A John Wiley and Sons, Ltd, Publication
+Trading Regime Analysis
+ForothertitlesintheWileyTradingSeries
+pleaseseewww.wiley.com/finance
+Copyright(cid:2)c 2009 JohnWiley&SonsLtd,TheAtrium,SouthernGate,Chichester,
+WestSussexPO198SQ,England
+Telephone (+44)1243779777
+Email(forordersandcustomerserviceenquiries):cs-books@wiley.co.uk
+VisitourHomePageonwww.wiley.com
+AllRightsReserved.Nopartofthispublicationmaybereproduced,storedinaretrievalsystemor
+transmittedinanyformorbyanymeans,electronic,mechanical,photocopying,recording,scanningor
+otherwise,exceptunderthetermsoftheCopyright,DesignsandPatentsAct1988orunderthetermsofa
+licenceissuedbytheCopyrightLicensingAgencyLtd,SaffronHouse,6-10KirbyStreet,London,
+EC1N8TS,UK,withoutthepermissioninwritingofthePublisher.RequeststothePublishershouldbe
+addressedtothePermissionsDepartment,JohnWiley&SonsLtd,TheAtrium,SouthernGate,
+Chichester,WestSussexPO198SQ,England,oremailedtopermreq@wiley.co.uk,orfaxedto
+(+44)1243770620.
+Designationsusedbycompaniestodistinguishtheirproductsareoftenclaimedastrademarks.Allbrand
+namesandproductnamesusedinthisbookaretradenames,servicemarks,trademarksorregistered
+trademarksoftheirrespectiveowners.ThePublisherisnotassociatedwithanyproductorvendor
+mentionedinthisbook.
+Thispublicationisdesignedtoprovideaccurateandauthoritativeinformationinregardtothesubject
+mattercovered.ItissoldontheunderstandingthatthePublisherisnotengagedinrenderingprofessional
+services.Ifprofessionaladviceorotherexpertassistanceisrequired,theservicesofacompetent
+professionalshouldbesought.
+OtherWileyEditorialOffices
+JohnWiley&SonsInc.,111RiverStreet,Hoboken,NJ07030,USA
+Jossey-Bass,989MarketStreet,SanFrancisco,CA94103-1741,USA
+Wiley-VCHVerlagGmbH,Boschstr.12,D-69469Weinheim,Germany
+JohnWiley&SonsAustraliaLtd,42McDougallStreet,Milton,Queensland4064,Australia
+JohnWiley&Sons(Asia)PteLtd,2ClementiLoop#02-01,JinXingDistripark,Singapore129809
+JohnWiley&SonsCanadaLtd,6045FreemontBlvd,Mississauga,ONT,L5R4J3,Canada
+Wileyalsopublishesitsbooksinavarietyofelectronicformats.Somecontentthatappearsinprintmay
+notbeavailableinelectronicbooks.
+LibraryofCongressCataloginginPublicationData
+Gunn,Murray.
+Tradingregimeanalysis:theprobabilityofvolatility/MurrayGunn.
+p. cm.
+Includesbibliographicalreferencesandindex.
+ISBN978-0-470-98785-8(cloth)
+1. Stocks. 2. Capitalmarket. 3. Investments. I. Title.
+HG4661.G862009
+332.63(cid:3)2042—dc22
+2008052049
+BritishLibraryCataloguinginPublicationData
+AcataloguerecordforthisbookisavailablefromtheBritishLibrary
+ISBN978-0-470-98785-8(HB)
+Typesetin10/12ptTimesbyIntegraSoftwareServicesPvt.Ltd,Pondicherry,India
+PrintedandboundinGreatBritainbyTJInternationalLtd,Padstow,Cornwall,UK
+For Flora
+Contents
+Foreword ix
+Acknowledgements xiii
+PART I: SUPPLYANDDEMAND 1
+1 ThereisNOHolyGrail 3
+2 The“Nature”ofMarkets 19
+3 VolatilityDefined 43
+PART II: EXISTINGTRADINGREGIMEANALYSIS 77
+4 OrthodoxPatternRecognition 79
+5 JapaneseCandlesticks 129
+6 VolumeConsiderations 143
+7 PreviousHighsandLows 151
+8 ElliottWavePrinciple 161
+9 MovingAverageEnvelopes 179
+10 BollingerBandWidth 185
+11 TheADX 193
+12 PointandFigureCharts 199
+viii Contents
+13 RateofChangeandDivergence 207
+14 Williams%R 219
+15 DonchianChannels 225
+16 ANodtotheQuants 239
+PART III: FURTHERIDEASFORTRADINGREGIME
+ANALYSIS 251
+17 ImpliedVolatilityCurves 253
+18 TheVolatilitySmile 261
+19 MyMATE 275
+20 Trend-FollowingPerformanceIndicator 281
+21 TradingRegimeIndicator 291
+PART IV: COMBININGANDUSINGTRADINGREGIME
+ANALYSIS 297
+22 AnEclecticApproach 299
+23 ApplicationsforTradersandInvestors 309
+24 TradingRegimeAnalysisforEconomistsandFundamentalists 359
+25 CaseStudies 365
+26 ThereisStillNoHolyGrail 389
+Appendix1:TimeFractalsandtheSupply/DemandIndex 395
+Appendix2:WhyDoTrendLinesWork? 407
+Appendix3:ExamplesofTrendLines 411
+References 417
+Index 419
+x Foreword
+ispassionateaboutmarketanalysis,writingabookaboutitisalabourofloverather
+thanofprofit.
+Secondly, this book is not intended to be a “how to trade the markets” type of
+book. If I had all the answers to the questions that the markets pose, or if I had a
+methodorsystemthataddedvalueineverysingletimeperiod,Iwouldcertainlynot
+be writing a book about it! I would be sitting in the sunshine by the pool, at that
+villabythegolfcoursewhereIwouldplayeverydaywithouthavingtoworryabout
+where my daughter’s education fund was going to come from! Ah yes, we can but
+dream.Ifsomeonehasamethodorarbitragesystemthatissogood,whywouldhe
+want to share it with anyone else in the first place since doing so may well dilute
+its potency? No, this book is not a “how to” book in the genre of making you a
+guaranteed millionaire, so if that is what the reader is expecting then I suggest he
+puts it down now. This book is the amalgamation of my thoughts and experiences
+gained over the last 20 years in market trading and analysis. It is intended to be
+a contribution to the body of knowledge in market analysis, in particular technical
+market analysis that the International Federation of Technical Analysts (IFTA) is
+doing so much to categorise and nurture. Trading ideas and methods are presented
+inthebookbuttheycomewithaverybighealthwarningbecauseIknowfrommy
+ownexperienceofinvestinginandtradingthemarketsthatnomethodisinfallible.
+What we deal with in market analysis is probabilities rather than certainties. There
+arenocertaintiesinthemarkets.Ever.Thisisarealisationthatcanreallyonlycome
+throughmarketexperienceandhavingbeenknockeddowncountlesstimesjustwhen
+youthinkyouhavegotthemarketsfiguredout.Probabilitycanbemeasuredinmany
+different ways and it can mean different things to different people but, essentially,
+it is defined as the chance of something happening. In the markets that chance is
+generally50%buttherearetimeswhentheoddsimprovesomewhattoskewitabove
+theclassicchance ofheads ortailsinalonggameofcointoss.Thiscalculation of
+chance has to be based on an analysis of the past history because there is, in the
+end, nothing else on which to base it. Whether you decide to use economic data,
+corporatestatistics,marketpriceactionoranythingelse,theonecommonthreadin
+market analysis is that we are all trying to find things that had a relationship with
+howthemarketssubsequentlybehavedinthepastand,therefore,inallprobability,
+willhavethatsamerelationshipinthefuture.
+The other important point to note is that this is not a book about quantitative
+analysis,andifyouarea“quant”whoisexpectingthisbooktobefilledwithequa-
+tions and abstract terms please do yourself a favour and put the book down. The
+titleofthisbookreferstotradingregimeanalysis,butImustpointoutfromtheout-
+set that my concept of trading regime is, if not too different from, certainly much
+simpler than, the concept of regime that our quantitative and econometric friends
+think of, which include references to Markowitz mean variance, Markov chains,
+vectors, modes, state space or any other such terms that anyone without a PhD in
+physics would struggle to understand! I have in fact included a passing reference
+to what I would describe as the more quantitative analysis of trading regime, but I
+Foreword
+I have always been very suspicious of people who write books on financial market
+tradingorinvesting.Theplethoraofbooks,suchas“howtotradethisway”or“how
+to make a million dollars from the market”, has always had me asking the same
+question.Iftheanalysis,systemormethodthattheseauthorspresenttotheworldare
+so good and consistent in extracting value (i.e. money) from the financial markets,
+then why oh why are they not sitting on a beach somewhere watching the profits
+rollinratherthanwritingbooksaboutit.It’sawell-knownfactthatalotofauthors
+on investment or trading in the financial and commodity markets make their living
+from writing about how to do it, rather than doing it themselves. Many of these
+authorsinfacthavenevertradedthemarketsbutinsteaddoagreatjobinmarketing
+themselvesasgurusandevenbrandsthatpeoplewhodoactuallytradethemarkets
+follow,sometimesonwhatseemslikeareligiousbasis.Theoldphraseisthat“those
+that can, do, and those that cannot, teach” and the cynics among us would point
+out that this is true in just about any field or profession. The problem with books
+being written about trading in the financial markets is that the people who would
+be interested in them tend to analyse things in a black and white fashion given the
+natureoftheirendeavour.Peoplewhoareinterestedintradingthemarketsforprofit
+know through experience that it is one of the most difficult endeavours that human
+beings can subject themselves to and so once they have been doing it for a while
+theytendtoviewbookson“howtotradethemarkets”withaveryhealthydoseof
+salt.Experiencedpractitionersknowthatthereisnoonemethodorsystemthatisthe
+answertothemarketspuzzleandthatonlydiligenthardworkandanalysisiswhat
+willpayoffoverthelongterm.
+Sowhatisdifferentabouthisbook?Well,thefirst,andmostimportant,thingto
+pointouttothereaderisthattheroyaltiesfromthesaleofthisbookarebeingpaid
+directlytoacharity,soitshouldbecrystalclearthatthisbookhasnotbeenwritten
+foranypersonalmonetarygain.Thismayseemstrangetosomebut,assomeonewho
+Foreword xi
+must emphasise that the regime or modes that Hamilton and others refer to in the
+quantitativeoreconometricfieldaredifferentfrommydefinitionoftradingregime.
+Mostrelevantly,Ilimitmydefinitionoftradingregimetoessentiallytwoso-called
+stateswhereasalotofthetraditionalquantitativereferencestoregimeswitchingtake
+multiple(macro-economic)regimesintoaccount.
+In many respects this book is intended tobe an antidote to the complication and
+extrememathematicalmodelsthatpurveythefieldofinvestmentmanagementthese
+days.Thisisnottosaythatthereisnotaplaceforsuchmodellingbut,havingreadthe
+socialscienceofeconomicsbytrainingandbeingamarketpriceanalystinpractice,
+Ilookatthemarketsmorefromtheperspectiveofanartistratherthananengineer.
+Tome,thefinancialandcommoditymarketsareanever-endingexperimentinsocial
+psychologyratherthananexperimentinaphysicslaboratory.Thisbook,therefore,
+ismuchmoremarketphilosophythanmarketscience.
+Acknowledgements
+I could not have written this book if it were not for the help and support of many
+people,someofwhomareprobablynotawarethattheyhavehelpedmetocompile
+mythoughtsinsuchaway.
+IwouldliketothankmycolleaguesandprofessionalcontactswithwhomIhave
+engagedinstimulatingdiscussionsaboutmarkettheoryandanalysisthroughoutthe
+yearsIhavebeenworkinginthefinancialmarkets.Manyofthesepeople,although
+holding very different viewpoints from my own, hold the same passion about the
+markets that I have, and so debating over market philosophy has been (and still
+is) a great joy. In particular, my thanks go to Kurt Magnus (the Steve Irwin of
+the FX market), David O’Loan (for putting the idea in my head), Tony Plummer,
+IanWilliams,MarkJohns,JeremyFand,GerryCelaya,TimMcCulloughandRyan
+Shea. There are countless others whose opinions about market philosophy I value
+andtheyknowwhotheyare.
+Peter Eggleston and Theodore Chen from the Royal Bank of Scotland were
+vital in helping me with Chapter 16 and I would like to thank them for that,
+as well as providing some magnificent research on the subject matter in general.
+Monica Greer pointed me in the right direction for further background reading on
+psychologywhichwasveryuseful.IwouldliketothankMansoorMohi-Uddinfrom
+UBSwhois,inmyopinion,oneofthemoreoriginalandinsightfulanalystsinthe
+markets.TheUKSocietyofTechnicalAnalystshasbeenaconstantsourceofinspira-
+tion for me and I would like to acknowledge the fine work of the committee under
+the chairmanship of Adam Sorab in recent years. The global family, which is the
+InternationalFederationofTechnicalAnalysts,isfilledwithexceptionalpeoplewho
+arepassionateaboutmarketanalysisandIsalutethemallhere.
+I have been heavily influenced in my own market thinking by the work and
+writings of Robert Prechter, Ed Seykota, Adam Smith, George Soros, Ludwig von
+Mises,JesseLivermoreandJohnHenry.Theyareconstantcompanionsinmystudy.
+xiv Acknowledgements
+Ihavebeenfortunateinhavingaclosefamilywhoha

@@ -1,0 +1,159 @@
+My Stock Market Power – Day
+Trading Ebook
+Day Trading Overview.......................................................................................................2
+What is Day Trading?.....................................................................................................2
+Types of Day Traders......................................................................................................2
+Day Trading Risks & Rewards.......................................................................................3
+Pattern Day Trader Status...............................................................................................3
+Understanding Specific Time Zones during the Trading Day............................................3
+Day Trading Time Zones................................................................................................4
+Conclusion......................................................................................................................6
+Day Trading Styles.............................................................................................................6
+Day Trading Breakouts Overview..................................................................................7
+Scalp Trading Overview.................................................................................................7
+Counter Trading Overview.............................................................................................8
+Trend Following Overview.............................................................................................8
+Summary.........................................................................................................................9
+Level II Quotes - Primary Tool for Active Traders............................................................9
+Level II Window Structure.............................................................................................9
+Tape Reading....................................................................................................................12
+How do I get access to the Time and Sales Window?..................................................13
+How to Use the Time and Sales Window.....................................................................13
+Speaking from Experience............................................................................................14
+Conclusion....................................................................................................................16
+Day Trading Money Management....................................................................................16
+How Much Should You Risk........................................................................................17
+Stops are not meant to be hit.........................................................................................17
+Operate in Cash.............................................................................................................17
+Day Trading Journal.........................................................................................................18
+Terms of Use.....................................................................................................................20
+Day Trading Overview
+What is Day Trading?
+The act of buying and selling securities intra-day with the expectation of making fast
+profits within minutes to hours is known as day trading. Day traders come in all shapes
+and forms, using mechanical to
+systematic day trading systems, and can
+place anywhere from one to thousands of
+trades per day.
+Types of Day Traders
+Breakout Traders:
+Many day traders will trade momentum
+and focus on day trading breakouts
+above swing highs and swing lows while
+others will look to trade reversal setups
+after gaps.
+Reversal Traders:
+Counter-trend traders will look for signs that a stock is topping or bottoming out before
+they place a trade in the opposite direction. For example, reversal traders use tools such
+as the TICK, TICKI, Put Call Ratio, volume, etc. to anticipate a change in trend.
+Range Traders:
+Range traders find stocks that have been trading within support and resistance levels and
+buy when a stock hits support and sell when it hits resistance. Range traders will be most
+successful in markets that are choppy and that have no real direction.
+Regardless of the type of trader, the most important aspect of day trading is the discipline
+to follow a set of rules and establishing your own money management principles which
+you live by.
+Day Trading Risks & Rewards
+With the use of margin, many day traders can leverage anywhere from 2 to 4 times the
+cash balance of their account. While this can become very profitable, it can also lead to
+major losses, especially for newer traders who have not established their loss
+management principles. In reality, most of the day traders that enter the game lack the
+discipline to adhere to strict rules and end up losing large amounts of money. These
+traders can be classified as gamblers. However, a disciplined day trader can take large
+sums of money down if they have the appropriate systems and money management in
+place.
+Day trading is an up hill battle for most because day traders do not only have to place a
+winning trade, they have to first offset the commissions before they can go into a profit
+position.
+Commissions
+If you are day trading, commissions will be of utmost important for you to manage. Most
+full service brokers will charge a flat fee for trades while other brokers, such as
+Tradestation, charge per share. For smaller traders who are just starting out, per share
+trading is great for practicing with smaller commission.
+For those of you trading with a couple thousands share blocks, a flat commission
+structure will most likely be more beneficial. The key is finding a broker who will
+provide a platform which will allow the speed to execute orders and also provide for the
+ability to decide which commission structure is best suited for your trading style. eSignal
+seems to partner with a few brokers that allow for this.
+Pattern Day Trader Status
+The SEC has put a barrier in place to protect investors which requires investors to
+maintain a minimum balance in their accounts if they plan on making at least 4 round trip
+day trades in a 5 day period. If you plan on day trading, you will need at least $25,000 in
+your account on a closing basis to continue day trading.
+Understanding Specific Time
+Zones during the Trading Day
+Having a successful trading career not only depends on the trading system or style that
+you use but also depends on other intangibles, such as day trading time zones.
+Understanding the market dynamics during different times of the day will take your
+trading to the next level.
+Think about your trading history and notice if you see a pattern in the different day
+trading time zones in relation to winning and losing trade percentages. What a day trader
+must understand is that even if a chart has a great setup, the time at which the trade is
+placed may be in a day trading time zone which typically starts a countertrend move. For
+example, many traders who day trade breakouts will be far more successful during the
+first two hours of the day than any other timeframe during the day. Typically breakout
+attempts will fail and reverse which will only serve to frustrate the trader and cause you
+to doubt your approach to trading.
+Let's now take a look at the different time zones and understand the general market
+dynamics during each time zone.
+Day Trading Time Zones
+The opening bell - 9:30am to 9:50am
+The first 20 minutes of the day are the most volatile of the trading day. While this is the
+most dangerous day trading time zone, it can also provide to be the most lucrative if you
+understand how to trade in this time frame. It is usually recommended that novice traders
+stay out of this zone and wait for the imbalances created from overnight news or earnings
+releases to settle down. Many technical indicators do not work well in this time frame as
+the volatility is too strong. In most cases, volume will also be the highest of the day
+during this time.
+The Morning Reversal- 9:50am to 10:10am
+The first reversal zone of the day begins at around 9:50am and lasts for 20 minutes. This
+is a very important period of the day for day traders. I look for this time zone to put on
+continuation trades. For example, a stock may gap down by 10% on the open and then
+bounce for 10 to 15 minutes coming into this time zone. However, this is where day
+traders will look for a reversal of the bounce and a continuation in the primary trend.
+Once the dust has settled from the opening bell, you will be able to more clearly see what
+the traders in this security will want to do. Volume will drop off a little bit compared to
+the open but will still be very high during this day trading time zone. This time period is
+my favorite for trading as the price stability returns to the market but volatility is still
+present for profitable trading. In strongly trending markets, reversals may be small or
+non-existent
+Low Risk Trading - 10:10am to 10:25am
+During this day trading time zone, volatility shrinks again and you want to look for clues
+in the Dow, S&P, and Nasdaq as to the direction that the market wants to take. This is an
+opportune time for bigger traders to move the market the way they choose. Watch the
+tape of the stocks that you track for any indications of direction.
+Decision Time - 10:25am to 10:30am
+The market will be settled for the most part and most of the days volatility will have
+passed. There may have been a few reversals in the first hour but during this small zone,
+many traders will cash out of profitable positions and finish the day while others will
+position themselves for the next move in the market. I look at this period as a time for
+consolidation and preparation. The move following this day trading time zone can last
+until lunchtime.
+Final Move of the Morning - 10:30am to 11:15am
+This time zone will be the final major time zone as far as morning trading is concerned. It
+is safer in relation to the other zones in that technical indicators such as the slow
+stochastic or RSI will have a more pronounced effect than some of the earlier time zones.
+Be careful near the end of this range as it leads right into the lunch time hour which can
+start early or start late. A rule of thumb is that the more volatile the preceding day trading
+time zones are, the greater the chance that this move will extend further into the 11
+o'clock hour.
+Go Eat your Lunch!! - 11:15am - 2:15pm
+Lunchtime trading can be brutal. False breakouts and choppy sideways moves
+characterize this time period. If you must trade, trade lightly until you have a good track
+record of putting on winning trades in this time zone. Also, please let me know how you
+do it! The risk to reward is very high here. Volume will fall out of the market as floor
+traders and other institutional traders will take their lunches. Don't let this time zone turn
+profitable morning trading into a loss.
+Back to Business - 2:15pm - 3:00pm
+Traders will work their way back into the market during this time frame. For the most
+part, trends have been established and trading during this timeframe will provide you
+with opportunities where the use of technical indicators is applicable. Remember, the
+CME closes at 3pm so you will see a pickup in volume due to some of the bond traders
+coming into the equity and futures markets.
+It's GO Time - 3:00pm - 3:10pm
+Bond market closes and bond traders will flood the equities markets; watch for sharp
+moves in either direction. Moves can be fast and large.
+Use Caution & Stay with the Trend - 3:10pm - 3:25pm
+During this day trading time zone, use caution as you are approaching the 3:30pm
+timeframe which tends to produce a reversal or a stall of the prior trend. During this zone,
+you want to stay with the trend that has been establ

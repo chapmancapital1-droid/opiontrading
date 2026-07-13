@@ -1,0 +1,348 @@
+Fundamentals of the
+Options Market
+Fundamentals
+of the Options
+Market
+Michael Williams
+McGraw-Hill
+NewYork SanFrancisco Washington,D.C.
+Auckland Bogota Caracas Lisbon London
+Madrid Mexico City Milan Montreal New Delhi
+SanJuan Singapore Sydney Tokyo Toronto
+LibraryofCongressCataloging-in-PublicationData
+McGraw-Hill ~f1
+~
+ADivisionofTheMcGnJw·HiIJCompanies
+Copyright©2001byTheMcGraw-HillCompanies,Inc.Allrightsreserved.PrintedintheUnitedStatesof
+America.ExceptaspermittedundertheUnitedStatesCopyrightActof1976,nopartofthispublicationmaybe
+reproducedordistributedinanyformorbyanymeans,orstoredinadatabaseorretrievalsystem,withoutthe
+priorwrittenpermissionofthepublisher.
+2 3 4 5 6 7 8 9 0 CUS/CUS 0 9 8 7 6 5 4 3 2 1
+ISBN007-136318-1
+The sponsoringeditorforthisbookwasKelli ChristiansenandtheproductionsupervisorwasTinaCameron. Itwas
+setinNew CenturySchoolbook byD&GLimited,LLC.
+PrintedandboundbyCustomPrinting.
+McGraw-Hillbooksareavailableatspecialquantitydiscountstouseaspremiumsandsalespromotions,orforuse
+incorporatetrainingprograms.Formoreinformation,pleasewritetotheDirectorofSpecialSales,Professional
+Publishing,McGraw-Hill,TwoPennPlaza,NewYork,NY10121-2298.Orcontactyourlocalbookstore.
+Thispublicationisdesignedtoprovideaccurateandauthoritativeinformationinregardtothesubjectmatter
+covered.Itissoldwiththeunderstandingthatneithertheauthornorthepublisherisengagedinrenderinglegal,
+accounting,orprofessionalservice.Iflegaladviceorotherexpertassistanceisrequired,theserviceofacompetent
+professionalpersonshoudbesought.
+n
+~J Thisbookisprintedonacid-freepaper.
+In memory of
+John Lawson (F37)
+and
+John Hauke (T88)
+Acknowledgments
+SpecialthankstoMichaelGurwitz,whowasinstrumentalinthecomple
+tion andeditingofthis book.
+To Karin Swannfor herdiligent editingofthe materials.
+To Kelli Christiansen ofMcGraw-Hill for supporting us throughout
+this process.
+Tothefollowingforgivingusreal-worldexperience,knowledge,lessons
+learned,andsupportthroughoutourcareers:ThePacificExchange(PCX),
+Headwaters Capital,KeckSecurities,Napoli & Associates, SheldonKahn,
+Barry Goren, Dan Traub, Phil Defeo, Dale Carlson, Catherine Clay; and
+WilliamNapoli.
+To the staffat Market Compass and support staff: Kitric Kerns, Dan
+Evets, Stephan Choy, MikeTownsend, Keith LaFaver, Lynn Hamburger,
+andthe PCXprintingdepartment.
+To Michelle M. Swallow for her advice and patience throughout the
+writingofthis bookandbeyond.
+To ourfamily andfriends for theirundyingsupport.
+AmyS. Hoffman
+Michael S.Williams
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+. 1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+I
+About the Authors
+Michael S. Williams is president and CEO ofMarket Compass, LLC,
+which specializes infinancial educationfor investors andtraders online,
+via the Internet, and through the PCX Institute. Williams has been an
+optionsmarketmakerandfloorbrokeronthePacificExchange(PCX)for
+nearlyadecade.Heisafrequentspeakeratconferencesaroundthecoun
+try,includingtheTSAAannualconference,the OptionsIndustryCouncil
+seminars, andThe MoneyShow. Michaelhas also spokenatWeberState
+andPepperdineUniversity.
+AmyS.HoffmanisafounderandvicepresidentofMarketCompass,LLC.
+ShehasbeenanoptionsmarketmakeronthePCx,tradingforhedgefunds
+and as anindependentmarket maker. Herfinancial careerbeganin 1989
+as a compliance officer and in-house trader for a large commodities firm.
+Hoffman is currently an instructor for the PCX Institute and Options
+IndustryCouncilandcanbeheardon0n24(online)providingmarketcom
+mentaryandanalysis.
+Contents
+Introduction xvii
+1. Introduction to Options 1
+Why StockOptions? History ofOptions The EarliestHistory
+The Birthand Rise ofToday's Options Industry Options:A
+Conceptual Overview Example: Undeveloped Land Example:
+Property/Health Insurance
+2. Characteristics ofStockOptions 9
+Introduction Underlying Security TheTwoTypes ofStock
+Options Call Option Put Option Strike Price/Exercise Price
+Expiration Cycle Unit ofTrade/ContractSize Option Styles
+Option Styles:LEAPSandFLEXOptions Option Class
+ReadingOptions Quotes Quiz
+3. BuildingBlocks 25
+Introduction LongStock Short Stock Long Call Short
+Call LongPut Short Put Graphing an Option Position
+Quiz
+4. PricingOptions 37
+Introduction Option Status Relative to the UnderlyingStock
+ITM ATM OTM FactorsAffectingthe Price ofan Option
+ExtrinsicValue PricingModels:An Overview PricingModel
+Variables TheoreticalValue versus the Marketplace
+Summary Quiz
+5. OptionVolatility 55
+Introduction Measures ofVolatility Factors Influencing
+ImpliedVolatility The Importance ofImpliedVolatility
+Volatility's Impact on the PricingModel Pricing Models and
+Price Movement Mean Standard Deviation Volatility,
+StandardDeviation, and Mean PricingModels and Option
+TheoreticalValue Summary Quiz
+6. Introduction to Synthetics 71
+Introduction Examples PricingSynthetics The Synthetic
+Triangle Conversion/Reversal Conversion/Reversal and
+Free Money Conversion/ReversalRisks Interest-Rate Risk
+Closingatthe Strike Summary Quiz
+xii Contents
+7. The Greeks 85
+Introduction The Greeks Delta Probability ofan ITM
+Finish upon Expiration Delta andTime The Trouble with
+Deltas Gamma Gamma andTime Theta Rho Vega
+Vega andTime Summary Quiz
+8. PositionTrading 107
+Introduction Panic Sell-OffExpectation:The Bounce Market
+Maker General Observations on PositionTrading Directional
+Risk Hedging Delta Neutral versus ContractNeutral
+Spreading Hedging Summary
+9. Option Strategies 125
+Introduction Market Outlooks Spreads Legging Bullish
+Strategies Bullish:LongStock BullishLongStock (Margined)
+Bullish LongCalls LeveragedRisk The Delta Position
+Managing thePosition A Moderately BullishBullSpread Call
+BullSpread PutBullSpread Bullish:RatioBull Spread
+(Long) Managing the Position Bearish Strategies Bearish:
+Short Stock Bearish:LongPuts LeveragedRisk The Delta
+Position Managing the Position Moderately Bearish:Bear
+Spread PutBearSpread CallBearSpread Bearish:Ratio
+BearSpread (Long) Managing the Position Neutral Strategies
+Covered Call Writing/Buy Write Long-Term Strategy Short
+Term Strategy Bull Spread CoveredWrite/Buy Write
+Horizontal CalendarSpread Diagonal CalendarSpread
+Straddle (Short) Managing the Position Strangle (Short)
+Managing the Position Ratio Bull Spread (Short) Ratio Bear
+Spread (Short) Volatile Strategies ("Backspread") Straddle
+(Long) Market Risks:Analyzingthe Greeks Managing a Long
+Straddle Market Risks:Analyzingthe Greeks Managing a Long
+Strangle Volatile Strategy Summary TheTruth about
+Butterflies Neutral Strategies Volatile Strategies Summary
+Risk-Reduction Strategies Protecting Unrealized Profit
+Married Puts Risk Collar/Fence Long Underlying Security
+(Risk Collar/Fence) Short Underlying Security (Risk Collar)
+Quiz
+10. Market Making 231
+Introduction WhoAre Market Makers? IndividualTrader
+versus Market Maker TradingStyles Backspreader
+Frontspreader Market MakerTrading:An Overview Market
+MakingAs a Business A Market Maker's ComplexPositioning
+Profit andHedging
+ChapterTitle xiii
+11. The Marketplace 243
+Introductionto Stocks Historical Quotes Real-Time Quotes
+ReadingStock Quotes The Exchanges The Specialist System
+NASDAQ and the Market-Maker System OptionsExchanges
+Rules ofthe OptionExchange The Exchange Floor Staffand
+Members The Exchange Staff Stock Firms/Clerks Analyzing
+the Marketplace FundamentalAnalysis CBOEVolatility
+Index-VIX Put-to-CallRatio Indices Weighting Indices
+Using Indices
+12. GettingStarted 265
+Introduction TradingStock ExecutingNew York Stock
+Exchange (NYSE) Orders ExecutingNASDAQ Stock Executing
+NASDAQ Orders OptionsExecution Electronic Floor Broker
+Execution Auto-Execution TradingAccounts The
+Exercise/AssignmentProcess Trade Station The Brokers and
+Brokerage Firms Questions toAsk Brokerage Firms Data
+Providers
+A. OrderTypes 285
+All-or-None (AON) Order Day Order Market Order (MKT)
+Stop Orders Fill-Dr-Kill (FOK) Order Good-Until-Canceled
+(GTC) Order Limit Order Market-on-Close (MOC) Order
+Market-if-Touched (MIT) Order
+B. Strategy Formulas 289
+Married Put ProtectingUnrealized Profit Covered Call
+Potential Bull Spread (Long Call Spread) Bull Spread
+(Short Put Spread) Bear Spread (LongPut Spread) Bear
+Spread (Short Call Spread) Ratio Bull Spread (Long) Ratio
+Bull Spread (Short) Ratio Bear Spread (Long) Ratio Bear
+Spread (Short) LongStraddle Short Straddle Long Strangle
+Short Strangle LongButterfly Short Butterfly Long Iron
+Butterfly Short Iron Butterfly Long Condor Short Condor
+Risk CollarlFence (Risk Conversion) Risk CollarlFence (Risk
+Reversal)
+c.
+Indices 295
+Sector Indices Broad-Based Indices Foreign Market Indices
+D. Expiration Cycles 299
+E. Fractionsto Decimal Conversion Chart 303
+F. The Options ClearingCorporation (OCC) 305
+Introduction Stock Options Exchanges
+G. Intrinsic and Premium Formulas 307
+Introduction Call IntrinsicValue Put IntrinsicValue
+Call PremiumValue Put PremiumValue
+H. The Black-ScholesModel 309
+Introduction The Binomial Model
+I. QuizAnswers 311
+Glossary 319
+Index 333
+Fundamentals of the
+Options Market
+Introduction
+The Four Disciplines
+of Investing
+Introduction
+Education
+Strategy
+Execution
+Risk Management
+WhatType ofTraderAreYou?
+How Is Leverage Involved?
+The Right Education Matters
+xviii Introduction
+Introduction
+When I began my career on the trading floor of the Pacific Exchange
+optionsfloor, Iaskedmyselfonequestionrepeatedly:''Whatisthesecret?"
+After a while,I learnedthatI was wastingtoo muchofmytime tryingto
+find an answer to this question when the answer was always right in
+front ofme.Thereis no secret,onlydiscipline. Myboss poundedthis con
+ceptintomyhead atthe tradingfirm for whichI was working. I watched
+him trade and was amazed at how easy he made it look. I knew there
+must be a secret. In the beginning I did not believe him, but I soon
+learned how true his statement was. Thanks to him and to some other
+traders at the firm, I soon learned that I had to master the four disci
+plines inorderto be a successful trader.The second thingI learned from
+themisthatyouneverstoplearning,andyounevertotallymasteranyof
+the four disciplines. This masteryis a never-ending cycle and a constant
+journey: Once you have mastered the four disciplines, however, you will
+make a profit.Tradingis a business.
+Education
+Thefirst disciplineis education.The investorortradermustunderstand
+how the products work. Education comes in several forms: real-world
+experience, theoretical or textbook knowledge, and investigation. There
+aretwopartstoeducation:thefirstisunderstandingtheproduct,andthe
+second is knowinghow to use the product strategically:A course or text
+bookshould describe how somethingworks, then explainhowto use it. I
+have taken several courses where the instructor showed me how some
+thingworksbutnevertaughttheclasswhatitcouldactuallydowiththat
+knowledge. I amcontinuallyfrustratedwhensomeonespeaksabouttrad
+ingbutterflies(anoptionstrategythathasalowriskwithlotsofrewards)
+andfails to tell the studentthathe orshe cannottrade this position as a
+butterflybutinstead mustleginto it (puttingthe position on one step at
+a time).As a brokerand market makerfor severalyears, I have traded a
+butterfly once. Ifthe instructor had followed through with his teaching,
+he would have mentioned how one might trade into a butterfly (notjust
+how itworks).
+Strategy
+The second discipline is strateg)r, or plan ofaction. Never walk into the
+marketblindly:Alwayshaveastrategyora planofaction.Theinvestoror
+Introduction xix
+tradermustfirst decide whathis orhermarket outlookis-whetheritis
+bullish, bearish, neutral, volatile, or uncertain. Once the individual
+investor has decided what his or her market outlook is, then he or she
+mustdecidewhichstrategywillsuitthismarketoutlook.Oncethetrader
+orinvester decides on a strategy,he or she mustconsiderthe riskversus
+reward factors and an exit strategy plan. He or she should always con
+sider''Whatif?"scenarios.
+Execution
+The third discipline is execution.The investor or trader needs to execute
+hisorherplanofactionorstrategy.Manyinvestorssufferanalysisparal
+ysis, 

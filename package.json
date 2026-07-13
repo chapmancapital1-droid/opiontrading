@@ -9,7 +9,10 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "ingest:pdfs": "python scripts/ingest_option_pdfs.py",
+    "ingest:compile": "node scripts/compile_ingest_rules.mjs",
+    "ingest": "python scripts/ingest_option_pdfs.py && node scripts/compile_ingest_rules.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.1",

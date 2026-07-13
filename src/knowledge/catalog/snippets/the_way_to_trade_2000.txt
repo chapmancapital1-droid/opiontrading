@@ -1,0 +1,328 @@
+AVALANCHE DIRECT LIMITED
+Head Office:
+The Media Centre
+7 Northumberland Street
+Huddersfield, HD1 1RL
+England
+Tel: +44 (0)1484 483119
+Fax: +44 (0) 1484 483120
+Web: www.the-way-to-trade.com
+First published in Great Britain 1999
+Foreword © Alexander Elder 1999
+© Financial Times Professional Limited 1999
+The right of John Piper to be identified as author
+of this Work has been asserted by him in accordance with
+the Copyright, Designs, and Patents Act 1988.
+All rights reserved; no part of this publication may be reproduced,
+stored in a retrieval system, or transmitted in any form or by any means,
+electronic, mechanical, photocopying, recording, or otherwise without either
+the prior written permission of the Publishers or a licence permitting restricted
+copying in the United Kingdom issued by the Copyright Licensing Agency Ltd,
+90 Tottenham Court Road, London W1P 0LP. This book may not be lent,
+resold, hired out or otherwise disposed of by way of trade in any form
+of binding or cover other than that in which it is published,
+without the prior consent of the Publishers.
+The work entitled The Way to Trade: Discover Your Successful
+Trading Personality, has been made available to Avalanche Direct Limited
+by Pearson Limited in electronic form subject to the condition that the work
+nor any part of the work may be copied, printed, downloaded, saved or
+transferred to any other computer file, or distributed on a network
+without Avalanche Direct Limited’s prior permission.
+Please help to fight digital theft.
+This book is a legal copy if ordered through:
+www.the-way-to-trade.com
+If you did not order it from this web-site,
+please send an e-mail to:
+illegal@the-way-to-trade.com
+THE WAY
+TO TRADE
+Discover your
+successful
+trading personality
+JOHN PIPER
+THE WAY
+TO TRADE
+About the Author
+John Piper has been involved with markets since his early
+twenties. In the late 1980s he started to trade markets full time
+and did so right through the Crash of 1987 – an experience
+that stands him in good stead for markets today. For over a
+decade he has been the editor of The Technical Trader, the
+leading newsletter in the UK for those who trade any of the
+popular markets worldwide. His articles bring a fine edge of
+analysis to markets and how they work. He trades full time,
+making consistent profits, and now manages money for
+selected clients at Berkeley Futures Limited, a firm regulated
+by the SFA. He lives in Dorking, Surrey and in Massa, Italy.
+This book is dedicated to
+all those who are struggling with markets, whoever and
+wherever they may be.
+CONTENTS
+Why you need this book xiii
+Foreword by Dr Alexander Elder xvii
+Introduction xix
+Acknowledgements xxi
+Section 1
+THE UNDERLYING PHILOSOPHY
+1 An introduction to the Trading Pyramid 3
+The Trading Pyramid 4
+Summary 9
+2 The evolution of a trader and the 55 steps 11
+The three stages 12
+The 55 steps (a personal journey to success) 15
+Summary 19
+3 The human brain 21
+Structure of the brain 22
+Trading chaos 26
+Summary 26
+4 You – the first level of the pyramid and why 29
+The trading experience 30
+Summary 33
+5 Commitment 35
+The nature of the market 35
+Market Profile 37
+Summary 39
+6 Discipline 41
+Discipline and the Trading Pyramid 42
+vii
+Contents
+System parameters 43
+Summary 45
+7 Money Management 47
+Using Money Management 48
+Position size 49
+Monitoring position 50
+Summary 51
+8 Risk control 53
+Risk inherent in the vehicle 54
+Risk inherent in the market 55
+Other forms of risk 55
+Summary 57
+9 The three simple rules (or trading secrets) 59
+The trading secrets 60
+Following the rules 61
+Summary 66
+10 System parameters – the thinking behind system design 67
+Buying options 68
+Writing options 68
+Futures 68
+Designing a system 69
+Summary 75
+11 System parameters – simple trading rules and the
+human brain 77
+Systems 78
+The human brain 79
+Summary 81
+12 Developing your methodology 83
+Time frame 84
+Trading type 84
+Analysis type 85
+Money Management (MM) 85
+Risk control (RC) 87
+Entry methodology (EM) 87
+viii
+Contents
+Exit methodology (ExM) 87
+Interview with an institutional trader 88
+Summary 93
+13 Operation 95
+The set-up 96
+Problems with operation 97
+Summary 99
+14 The whole structure = profit/loss 101
+Summary 103
+15 Stops and acceptance 105
+Are stops necessary? 105
+Stop approaches 106
+Acceptance 107
+Summary 110
+16 A trading coach? 111
+The benefits of working with a coach 111
+Adrienne Toghraie 113
+First steps 114
+Summary 115
+Section 2
+MARKET TECHNIQUES AND METHODOLOGIES
+17 Some points of principle 119
+More general points 120
+Low risk trading opportunities 122
+Trading tips 123
+Summary 125
+18 Market Profile and Minus Development 127
+Market Profile 127
+Minus Development 130
+Value 130
+Other concepts 132
+TTT article 132
+Trading tips with Market Profile 136
+Summary 137
+ix
+Contents
+19 Futures and options 139
+Stocks 139
+Futures 140
+Options 141
+Summary 149
+20 Spiky action 151
+Trading Trend 151
+Types of spike 152
+Summary 153
+21 An options strategy 155
+The options strategy – principle 155
+The options strategy – operation 157
+Options – the hedging strategy 158
+Summary 163
+22 A number of futures strategies 165
+Gas opens – code word: goose 166
+Failed breakthroughs – code word: goat 169
+Failed re-tests – code word: snake 172
+Square congestion – code word: box 172
+Key levels – code word: piano 173
+Eliott fives – code word: illusion 174
+Aborted patterns – code word: platypus 175
+Trend following – code word: horse 176
+Corrective action 177
+Other systemized approaches 178
+Summary 179
+23 Systems 181
+Stops 182
+One secret to success 183
+A few additional comments 183
+My own trading 183
+My trading rules 184
+Risk warning/disclaimer 185
+x
+Contents
+It doesn’t end here 186
+Summary 187
+24 Trading systems and when to use them 189
+Trading systems 189
+How to make a fortune trading futures 191
+Summary 193
+25 Market myths 195
+Indicators and market techniques 195
+News 196
+Zero sum? Don’t you believe it! 196
+Systems 197
+Summary 197
+26 The 10-step approach to futures and options trading 199
+Step 1: Where am I now? 199
+Step 2: Where do I want to go? 200
+Step 3: Survival (1) 200
+Step 4: Survival (2) 201
+Step 5: Methodologies 201
+Step 6: Theory 202
+Step 7: Practice 203
+Step 8: Fear 203
+Step 9: Running profits 204
+Step 10: Expertise 204
+The consultancy service 204
+Summary 205
+Section 3
+A CHART TUTORIAL
+27 Low risk trading opportunities on U.S. and U.K. markets 209
+Section 4
+AN OPTIONS TRADING CAMPAIGN
+28 A war of attrition 221
+Epilogue 231
+xi
+Contents
+APPENDICES
+1 Follow-up Services 239
+2 The Troubled Traderby Tony Plummer, MSTA 241
+3 Recommended reading 255
+4 Trading and psychology questionnaire 257
+5 Is Elliott addictive? 269
+Index 275
+xii
+WHY YOU NEED THIS BOOK
+If you are an individual trader, whether a novice or experienced, you will
+benefit from reading this book because:
+1 Trading the futures and options markets leads to a greater compound-
+ing of wealth than any other method available. Billions have been made
+in days on many occasions, and will be made again. Nothing else comes
+close.
+2 It is possible to make money in the markets consistently. It is possible to
+beat the market. The author, John Piper, among many others, has done
+it. To do the same you need to follow a proven methodology which suits
+your personality. This book explains how.
+3 This book also sets out a number of proven methodologies, giving you
+a head start in selecting the one which will work for you.
+4 But it also goes a lot further. John Piper wrote this book because he had
+never come across a book which deals with the whole issue of trading.
+There are many books which deal with market analysis, and technical
+analysis techniques. There are many books which deal with psychology.
+There are books which deal with money management and all manner of
+other subjects, some even cover a range of topics. But no other book
+covers it all, from a successful philosophy of trading, through all the psy-
+chology, into the methodologies, the operation thereof, and the end
+result.
+5 It is rare to find a book which appreciates that it is no good doing it “how I
+say.” We each have to find our own route to success. This book spells out
+why that is, and how to do it. That is what The Way to Tradeis all about.
+6 The futures and options markets offer the biggest potential for growth,
+far more than is offered by stock markets. The people who really make
+it big do so in these markets. Perhaps more importantly you can make
+money whether markets go up or down. In coming years this may be
+important.
+xiii
+Why you need this book
+Fascinated? You should be, and anyone who is into money, and wants lots
+more of it should check out this book. Rich or poor, working or retired, there
+is something for everyone in these pages.
+Why this book is unique
+Trading is a life experience, it is not like any other business. As you become
+a better trader, you become a better person. But as you evolve it is difficult
+to look back at where you were. I believe this is why there are no other
+books which cover all the ground. Those traders who do make it often “for-
+get” how they got there, not surprisingly, as a lot of the skills become sub-
+conscious.
+However, John has always combined his trading with writing about
+markets. This has given him a fairly unique insight and forced him to
+express personal matters which other traders just assume. It has also
+forced him to more carefully examine the precise process involved in
+becoming a successful trader. It is solely through this process that John
+Piper “discovered” the Trading Pyramid. This is the first attempt to cre-
+ate a model for trading success and traders will find it immensely useful.
+So not only does this book take the trader right through from the begin-
+ning to the end result (trading profits, lots of them!) it also provides a frame-
+work against which to work.
+There are no right or wrong ways to trade
+The only thing that counts is the result. This book sets out a range of para-
+meters within which to build the system that suits you. The beauty of trad-
+ing is that it becomes an expression of your own personality. Good traders
+don’t do, they simply are. But to become a good trader you have got to find
+the approach which will work for you. This book, and the follow-up services
+that are available with it, will help you do just that.
+Follow your own path
+But to get there you must follow your own path. It is no good following the
+trades other people do. Certainly you need help to learn this business,
+which is what this book is all about. You need a mentor, but you do not
+need gurus who tell you how to trade. You will only win by trading your way.
+Indeed Frank Sinatra’s big hit “My Way” is an excellent anthem for any
+xiv
+Why you need this book
+trader. Taking that step to do it by yourself is one many traders find the
+most difficult, but it is essential.
+If you don’t want to do it your way then you are better off giving your
+money to another trader, like John Piper, so that he can trade it for you. But
+make sure you check out the track record and risk profile first.
+xv
+FOREWORD
+by Dr Alexander Elder
+Financial Trading Inc.
+Successful trading is based on 3 Ms – Mind, Method, Money.
+Mind refers to your trading psychology. You must follow certain psycho-
+logical rules that lead to winning when faithfully applied and avoid pitfalls
+that become death traps for most losers.
+Method refers to how you find your trades – how you decide what to buy
+or sell. Each trader needs a method for choosing specific stocks, options,
+or futures as well as rules for “pulling the trigger” – deciding exactly when
+to buy and sell.
+Money refers to how you manage your trading capital. You may have a
+brilliant trading system, but if your Money Management is poor, you are
+guaranteed to lose money. A single unlucky trade can destroy your account
+if Money Management is not in place.
+Trading psychology, trading method, and Money Management – people
+sometimes ask me which of the three is most important. I answer – imag-
+ine sitting on a three-legged stool. It is pretty stable, but try getti

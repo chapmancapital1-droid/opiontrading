@@ -1,0 +1,217 @@
+Tra in
+with
+an lesticks
+Visua l Tools for Improved
+Technical Ana lysis and Ti ming
+Michael C. Thomsett
+Vice Prelide<Jl. Tim Moort
+Pu~lishel-
+Assot"le Publish!! mel DirettGr 01 MlrbllfIQ Am)' N!idliOQ!r
+becUive E~~or JimS o)'!
+EditCK~1 AsS~tl.,. Plmela Boland
+Optr3!ions Gina K.lnouse
+Mlna~-
+S!<>iCK M.r\;:eti"" M.n;iel Ju~el'11iter
+PubliciI)' Manaaer Uurl Clill
+AssrSl""'-Mar\;dlfIQ M.n3jltI Meoan C~Mn
+C~'ffl! Oe~iner Alan Clemen~
+f.lnagiflll EditCK KriSly HOWl
+f'TOjto:l ElMCf' lime Goet..I
+COllY EditCK Chid Hutc/1iflSQrI
+f'Tooh!ade! KalhyRulz
+SeniGr Glom Sth,.,do;
+C~H>;lOsitDl
+f.llnutw;lun"g Buyer 0111 Utri~
+o
+WII ~1 Pearson Ed1£lliOll, lroc
+Puhlilhi!l',lls FT PJ!IS
+Uppo!l' S:rddle R11'f!; Nelli Jersey 07~>tl
+Thl$ book Is $Old .it~ Ihe ,"~en~n~lnlllh.t neither t~e a~tIIOl' "or Ihe
+publll~er (e enllalled In rendering lellal, Iceo."lInll, 01' olher profllllO"11
+.. r.lell Dr .r!wlu by plbli,hi"1I thl, bonk. EJOh Indi.ld •• I,ituatl.n II
+.nlque. TIlU$, it leg.1 or tlnanci'l IdYlce 01' olll~r ~Ip~rl ,"lsl,nce 1$
+reQuired In IIPIClllc IltUitlon. thelemel1 01 , ,ompelent
+prDfllllo~11
+.~nll. b. '.Ollht t. ""lIrl t~.t Ihl .itullion hn be.n Inl ..I " .... lllIy
+.n~ ilpproprlalely. Tht ~ulhor and III~ p~blishtr di"I,lm ~ny tiabllity, lon,
+o. rlet ,"ultlng dltedly or Indirectly. 1.0m 1111 UII or .ppllcallon of any 01
+thl <onl.nl, ol lhl. bDOk.
+FT Press otters I'cell~nt ~jsrol.llls on this book ~hen CKdered in qU31l111Y tor bull
+PIId\a5es CK spt<:illllies FCK fI"(lrf intorrrullon, please ConIaCt U S CorpOIaie and
+GoverrYn,,,t Sales, l-aoo-W·3~19, ~~rllS3les@pearsontech<jrO\JP_,<;<n, For sales
+wslde the U $" ple;se contad In\e(Jl,uorgl S31es at inlerfi/ltionalOpei!O"SQrI,C<Jm
+Compi!<l)' ij(t(j prooU(t 1I3rne1 mero:'Gner:j h!!e", i!O"e therrJOemar'; or rt\l,ster-er:j tr~
+...r ks Gllhtir resptCtivt
+~Wl'It!s
+.oJ1 "ill:; re>er~, NG ~rt ot t~i$ book m~ tie rffO"OOur;o<j, in 'ny torm or by '"1 mean!,
+IIIithw ptrmissioo in ""iti"" tlom tile Wblis~er
+f'Tln!er:j in the Uniled StJles ot Arneric:l
+f~st Prll'lt,,,,, /,uyUS! 2010
+IS8N-1 0: I)-13--I38094-X
+IseN-I,; 978-j)-13-13809-t-3
+Pearron Edlrtatioo LTD
+Pearson Edocal'Qr1 AI/SIIllil PlY, Limned
+Pearron Edocatioo SinQapCHe, Pte ltd
+PearSlln Edlrtatioo flmllt ASil. UiJ
+Pearron Edocatioo C¥Im, Ltd
+PearSOlr Edu:atiOO de Me,lco, S A de C V
+Pears,," £ducatlOr>-J.a~n
+Pearron Edocation M,lays~, Pte Ltd
+Libl~fy 01C cngteliS CJIJlrniff(J-in-PuMCJtiIJn OJlJ
+Mlchilll C
+ThomS!~,
+Tradir>Q ",th Cl niJJesl ilil .,; !U3II<l<lls for 1mP lOI'!!d l!JCmical Nlysis and t<m ir>Q I
+f.lit/l3et C lhomse~
+.~
+Irdudes Inlle.
+ISSN-IJ, SI8-j)-13-138094-3(hardl»ci III ~l
+1S8N-IO 1)-1l--13S094-X
+1 StGcl<I- Chirts, dioOraml. 2 3 Porrtolie managtme<j
+~C_ Inot$tmtnll!1:!~is
+I 1it~.
+HG4S38T4tiWII
+332.fJ"20-42-ilr:22
+Wl00l0281
+•
+Contents
+Acknowledgments ............................................... viii
+About the Author , , , , , , , , .......... , , , , , .... .......... .... , . , , , ... IX
+Introduction
+"" ". 1
+Chaplet 1 The Basic Candlestick ........ . .....•. ... ••. . ••. . ... 5
+The Origin and Meaning 01 the Candlestick ...... .......... .... ,"', .... 5
+Strengths and Weaknesses 01 Candleslicks """.,," __________ , , , , , ... 9
+Paper Trading asa Tesling Ground .... . ,""'" ..... "",,. ,""'" .. 12
+The Skills Every Trader Needs ............ ,', ....................... 14
+Candlesticks: General Observations Concerning Their Use ..... ........ ... 18
+Expanding the Information Pool Effectively ........ .... _ ...... .. 20
+Endnotes ...... ,'" ..... .......... .......... ......... .... ..... .. 22
+Chapter 2 Single-Stick Signs . ..... . ... .. ... . , .. .. ... • . . . . .. . 25
+Uptrends and Downtrends ........................ . . ... .. 25
+The Significance of a Candleslick's Shape ... .... .......... .... ..... ... 28
+Variations on the Bullish Long Candlestick ......................... ... 30
+The Mistake Pattern ...... ......... ..... .... ........... .... .... ... 32
+The Spinning Top, Hanging Man, and Hammer ........ . . .... .. 37
+The Significance of Tails ... ......... ..... ... ............ .... .... ... 42
+Chapter 3 Double-Slick Moves . .. .. . ... . ........... .. • . . . . .. . 47
+Two Reversal Moves: Engulfing and Harami ........... ............... .. 48
+More Reversals: The Inverted Hammer and Doji Slar ......... .......... .. 53
+Even More Reversals: Meeting Lines and Piercing Lines .................. 55
+Contirming Patterns: Thrusting, Separating, and Neck Lines ... ......... ... 60
+Reversal and Confirming Moves-Relative Values ...... . . ..... .. 56
+,;
+Contents
+Chapler 4 Complex Slick Pallerns . .. . . . . .. . ..... . . . ... •..... . 69
+Reversal Trend Change Patterns . __ .. 71
+Reversal Trend Inside and Outside Formations .......... ...... , , , , ...... 74
+Reversal Stars and Abandoned Babies .. .... ................ , , , , ...... 78
+Complex Trend Pattems ......... .......... ......... ..... , , , , ...... 82
+Complex Gap Trends ........... .......... ......... ..... ,"', ..... 85
+Chaptet 5 Reversal Patlern Analysis . .... . • ... •• . . •. ... •• . ..... 91
+Recognizing the Bull Reversal .... ......... .......... ..... ,"', ..... 91
+Recognizing the Bear Reversal ................... . . .. " . 94
+The Doji as a Reversal Signal ..... .......... ......... ..... , , , , , ..... 97
+Reversal Pattems with Gaps .......... ..... ............... .... ..... 101
+Reversals Setting New Support or Resistance .. ...... ......... .... ..... 104
+More Resistance and Support Reversals ...... .......... .......... .... 108
+Mul1isession Gap Reversals ..................... . . .... 111
+Chapter 6 Volume and Volatility . . ... . .. . . . ..... • •...•. . .. . .. 119
+Volume as a Price Indicator ... 119
+Volume Indicators .... .......... .......... ......... .......... .... 122
+Volume Indicators and Candlesticks .... .... ................ .... ..... 126
+Testing Price Volatility .......... .......... ......... .......... .... 131
+Chapter 7 Buy and Sell Setup Signals .. .....•.. .• • . ..•. .. . . .. 141
+Price Spikes and Reaction Swings ..... ..... ............... ..... .... 143
+Percentage Swing Systems ....... .......... ......... .......... .... 146
+Short-Term Gapping Behavior .................... . .... 149
+Anticipating the Trend During Consotidation .. ......... ....... .... .... 153
+The Setup Pattern and Swing ......... .... ................ .... ..... 156
+Support and Resistance in the Swing Trade .. ........ ........ .... ..... 165
+Chapter 8 Swing Trading with Candlesticks .. . .... . .• . ..•.. . . . .. 171
+A Swing Tradmg Overview ........... ..... ............... ..... .... 171
+Quantifying Price Movement with Candlesticks .......... .......... .... 174
+The Importance ot Convergence and Divergence . . .. 178
+Primary Trends and Candlestick-Based Entry or Exit ..... ........... .... 182
+Setup Criteria and Action Points ....... ..... ............... .... ..... 186
+Selling Short in Swing Trades ..... .......... ......... .......... .... 190
+Contents vII
+Chapter 9 Spotting Trends and Using Trendlines ... .• .. . . . . .. . . .. 193
+Identifying the Trendline ................................. ..... .... 194
+Trendlines and Candlesticks as Confirmation .. ......... ........... .... 200
+Applying Moving Averages to Candlestick Analysis .... . .. 203
+Chapter 10 Technical Indicators ... . ................. . ....... 207
+The Value of Confirmation .......................... .......... .... 207
+A Review: Technical Analysis Basics. . . . . . . . . . . . . . . . . .... 209
+The Significance of Gaps ........ .......... ......... .......... .... 212
+A Key Framework: Support .and Resistance ............................ 215
+Overbought and Oversold Indicators ........ .......... .......... .... 217
+The Potential of Candlestick Signals ... 222
+Glossary . ............................•...•....•....... 225
+Index ......... . . . .. ................. . . . •• . ... . . . ..... 235
+viii
+Acknowledgments
+Thanks to the many options industry folks who have shared information gener
+ollsly and provided support for this and many other projects, especially
+stockcharts.com, whose generous permissions policy has helped bring this topic
+to life. I also want to thank Tina Logan, author of Getting Started ill Candlestick
+Charting Uohn \'(Iiley & Sons, 2008) for her willingness to help me, as a
+competitor, in the early stages of developing this book.
+Special thanks go to Jim Boyd of FT Press who, as executive editor, provided
+editorial guidance and support of t his project, and to the excellent editorial and
+production staff working with him.
+;,
+About the Author
+Michael C. Thomsctl has authored dO'lens of financia! books. These include
+0/)(i01l5 Trading for the Conservative hlVcstor (~-r Press); Winning with
+Optiolls (Amacom Books); The LEAPS Strategist (Marketplace Books); and the
+best-selling Getting Started Options Uohn Wiley & Sons), now in its Hrh
+ill
+edition with over 250,000 copies :sold.
+Thomsen is also author of The Investment and SeClirities Dictionary
+(McFarland), named br Choice Magazille as an Outstanding Academic Book for
+1988, Jnd many other investment and trading books. Before starting his profes
+sional writing career in 1978, Thomsett was an accountant. He also spent seven
+years as a consultant in the financial services industry with clients including
+securities hroker/dealt:rs, insuranct: mastt:r agt:ncit:s, and insuranct: companies.
+He has been an acti\'e options trader since the mid-1970s.
+Thomst:tt livt:s in Nashvillt:, Tt:nnesst:t:, and writes full time.
+This page infemiol/all)' left blank
+1
+Introduction
+Confusion and uncertainty: the two common attributes of the stock market. The
+random short-term movements in public trading create a lot of confusion and
+certainly add to uncertainty among traders. A novice understands this reality,
+but even experienced professionals who have been trading for years suffer the
+same affliction.
+This is where chart analysis becomes valuable. No one can claim a perfect
+record of timing bu)' and sell decisions, and no one realistically expects to beat
+the market with every trade. It is enough to beat the averages and to outperform
+the typical profit or loss experience ratio. For many, today's profits are eroded
+by tomorrow's losses, and so many individual traders find themselves seeking
+trades just to get back up to dead even. The candlestick chart is a valuable tool
+that helps you anticipate trends in a stock's price and improve the timing of buy
+and sell orders. Ironically, even experienced traders who refer regularly to
+candlestick charts often are not well versed in recognition of patterns or their
+significance.
+Tbis book first describes candlestick charts in detail and shows how they are
+constructed. The advantage with this visual aid is thaI you can find all the price
+information in one symbol. This includes a day's opening and closing price, the
+trading range, and direction (upward or downward) of movement. The candle
+stick also shows each day's breadth of trading range. When you view an array of
+charts over a number of trading periods, can determine in an instant
+)'OU
+whether a stock is high- or low-volatility, whether it is trending upward or
+downward, and most of all, when to make a move. Collectively, Ihis is a valuable
+set of statistics. Most traders wbo have analyzed price movement using candle
+sticks understand these basic attributes, but if Ihis is the extent of )'our under
+standing, you need more.
+Beyond the basics, this book explains how to recognize different kinds of
+signs, moves, and patterns (bull, bear, reversal, and market) and how to employ
+double and triple stick formations to better understand why prices are behaving
+in a particular manner. Many of these moves and patterns are subtle, and their
+meaning is easily lost in the more recognizable patterns most traders seek.
+,
+Tladlng with Candlnticki
+Candlesticks are also valuable when analyzed in combination with other
+indicators. For example, two factors often overlooked in price-focused technical
+analysis are the c

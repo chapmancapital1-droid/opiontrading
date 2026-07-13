@@ -1,0 +1,294 @@
+THE COMPLETE GUIDE TO
+Option
+Pricing
+Formulas
+SECOND EDITION
+ESPEN GAARDER HAUG
+McGraw-Hill
+New York Chicago San Francisco
+Lisbon London Madrid
+Mexico City Milan Seoul New Delhi San Juan
+Singapore Sydney Toronto
+This book is for my mother and father, who gave me all I needed to
+write this book—a pen and a mind—the rest was discipline, hard work,
+and patience. We are all standing on the shoulders of our parents. With
+this book, hopefully I can give back a fraction of all the knowledge I
+have received from this miraculous journey called life. Life is full of
+options. I was given the option to write this book, and I exercised that
+option. Whether it was optimal for me to exercise it, only time can
+tell. You now have the option to read this book. Whether it is optimal
+for you to exercise that option is hard to say without a good option
+formula. This book is full of option formulas, so what are you waiting
+for?
+Espen Gaarder Haug
+CONTENTS
+Introduction (cid:9) xvii
+Acknowledgments (cid:9) xix
+What Is New in the Second Edition? (cid:9) xxi
+Option Pricing Formulas Overview (cid:9) xxiii
+Glossary of Notations (cid:9) XXXV
+1 (cid:9) Black-Scholes-Merton (cid:9) 1
+1.1 Black-Scholes-Merton (cid:9) 2
+1.1.1 The Black-Scholes Option Pricing Formula 2
+1.1.2 Options on Stock Indexes (cid:9) 4
+1.1.3 Options on Futures (cid:9) 4
+1.1.4 Margined Options on Futures (cid:9) 5
+1.1.5 Currency Options (cid:9) 6
+1.1.6 The Generalized Black-Scholes-Merton
+Option Pricing Formula (cid:9) 7
+1.2 Parities and Symmetries (cid:9) 9
+1.2.1 Put-Call Parity for European Options (cid:9) 9
+1.2.2 At-the-Money Forward Value Symmetry (cid:9) 10
+1.2.3 Put-Call Symmetry (cid:9) 10
+1.2.4 Put-Call Supersymmetry (cid:9) 11
+1.2.5 Black-Scholes-Merton on Variance Form (cid:9) 11
+1.3 Before Black-Scholes-Merton (cid:9) 12
+1.3.1 The Bachelier Model (cid:9) 12
+1.3.2 The Sprenkle Model (cid:9) 13
+1.3.3 The Boness Model (cid:9) 14
+1.3.4 The Samuelson Model (cid:9) 14
+1.4 Appendix A: The Black-Scholes-Merton PDE (cid:9) 15
+vii
+viii (cid:9) CONTENTS
+1.4.1 (cid:9) Ito's Lemma (cid:9) 15
+1.4.2 (cid:9) Dynamic Hedging (cid:9) 16
+2 (cid:9) Black-Scholes-Merton Greeks (cid:9) 21
+2.1 (cid:9) Delta Greeks (cid:9) 21
+2.1.1 Delta (cid:9) 21
+2.1.2 Delta Mirror Strikes and Assets (cid:9) 29
+2.1.3 Strike from Delta (cid:9) 30
+2.1.4 Futures Delta from Spot Delta (cid:9) 31
+2.1.5 DdeltaDvol and DvegaDspot (cid:9) 32
+2.1.6 DvannaDvol (cid:9) 34
+2.1.7 DdeltaDtime, Charm (cid:9) 35
+2.1.8 Elasticity (cid:9) 36
+2.2 Gamma Greeks (cid:9) 38
+2.2.1 Gamma (cid:9) 38
+2.2.2 Maximal Gamma and the Illusions of Risk (cid:9) 39
+2.2.3 GammaP (cid:9) 42
+2.2.4 Gamma Symmetry (cid:9) 45
+2.2.5 DgammaDvol, Zomma (cid:9) 45
+2.2.6 DgammaDspot, Speed (cid:9) 47
+2.2.7 DgammaDtime, Color (cid:9) 49
+2.3 Vega Greeks (cid:9) 50
+2.3.1 Vega (cid:9) 50
+2.3.2 Vega Symmetry (cid:9) 55
+2.3.3 Vega-Gamma Relationship (cid:9) 55
+2.3.4 Vega from Delta (cid:9) 56
+2.3.5 VegaP (cid:9) 56
+2.3.6 Vega Leverage, Vega Elasticity (cid:9) 57
+2.3.7 DvegaDvol, Vomma (cid:9) 57
+2.3.8 DvommaDvol, Ultima (cid:9) 60
+2.3.9 DvegaDtime (cid:9) 61
+2.4 Variance Greeks (cid:9) 62
+2.4.1 Variance Vega (cid:9) 62
+2.4.2 DdeltaDvar (cid:9) 63
+2.4.3 Variance Vomma (cid:9) 63
+2.4.4 Variance Ultima (cid:9) 63
+2.5 Volatility-Time Greeks (cid:9) 64
+2.6 Theta Greeks (cid:9) 64
+2.6.1 Theta (cid:9) 64
+2.6.2 Theta Symmetry (cid:9) 68
+2.7 Rho Greeks (cid:9) 68
+2.7.1 Rho (cid:9) 68
+2.7.2 Phi/Rho-2 (cid:9) 71
+2.7.3 Carry Rho (cid:9) 73
+(cid:9)(cid:9)
+CONTENTS ix
+2.8 (cid:9) Probability Greeks (cid:9) 75
+2.8.1 (cid:9) In-the-Money Probability (cid:9) 76
+2.8.2 (cid:9) DzetaDvol (cid:9) 79
+2.8.3 (cid:9) DzetaDtime (cid:9) 80
+2.8.4 (cid:9) Risk-Neutral Probability Density (cid:9) 80
+2.8.5 (cid:9) From in-the-Money Probability to Density (cid:9) 80
+2.8.6 (cid:9) Probability of Ever Getting in-the-Money (cid:9) 80
+2.9 (cid:9) Greeks Aggregations (cid:9) 81
+2.9.1 (cid:9) Net Weighted Vega Exposure (cid:9) 82
+2.10 At-the-Money Forward Approximations (cid:9) 84
+2.10.1 Approximation of the Black-Scholes-Merton
+Formula (cid:9) 84
+2.10.2 Delta (cid:9) 84
+2.10.3 Gamma (cid:9) 84
+2.10.4 Vega (cid:9) 84
+2.10.5 Theta (cid:9) 84
+2.10.6 Rho (cid:9) 85
+2.10.7 Cost-of-Carry (cid:9) 85
+2.11 Numerical Greeks (cid:9) 85
+2.11.1 First-Order Greeks (cid:9) 85
+2.11.2 Second-Order Greeks (cid:9) 86
+2.11.3 Third-Order Greeks (cid:9) 86
+2.11.4 Mixed Greeks (cid:9) 87
+2.11.5 Third-Order Mixed Greeks (cid:9) 87
+2.12 Greeks from Closed-Form Approximations (cid:9) 89
+2.13 Appendix B: Taking Partial Derivatives (cid:9) 90
+3 Analytical Formulas for American Options (cid:9) 97
+3.1 (cid:9) The Barone-Adesi and Whaley Approximation (cid:9) 97
+3.2 (cid:9) The Bjerksund and Stensland (1993) Approximation (cid:127) 101
+3.3 (cid:9) The Bjerksund and Stensland (2002) Approximation . 104
+3.4 (cid:9) Put-Call Transformation American Options (cid:9) 109
+3.5 (cid:9) American Perpetual Options (cid:9) 109
+4 Exotic Options—Single Asset (cid:9) 111
+4.1 (cid:9) Variable Purchase Options (cid:9) 111
+4.2 (cid:9) Executive Stock Options (cid:9) 114
+4.3 (cid:9) Moneyness Options (cid:9) 114
+4.4 (cid:9) Power Contracts and Power Options (cid:9) 115
+4.4.1 (cid:9) Power Contracts (cid:9) 115
+4.4.2 (cid:9) Standard Power Option (cid:9) 116
+4.4.3 (cid:9) Capped Power Option (cid:9) 117
+4.4.4 (cid:9) Powered Option (cid:9) 118
+4.5 (cid:9) Log Contracts (cid:9) 119
+4.5.1 (cid:9) Log(S) Contract (cid:9) 120
+CONTENTS
+4.5.2 Log Option (cid:9) 121
+4.6 Forward Start Options (cid:9) 121
+4.7 Fade-in Option (cid:9) 122
+4.8 Ratchet Options (cid:9) 124
+4.9 Reset Strike Options—Type 1 (cid:9) 124
+4.10 Reset Strike Options—Type 2 (cid:9) 125
+4.11 Time-Switch Options (cid:9) 127
+4.12 Chooser Options (cid:9) 128
+4.12.1 Simple Chooser Options (cid:9) 128
+4.12.2 Complex Chooser Options (cid:9) 129
+4.13 Options on Options (cid:9) 132
+4.13.1 Put–Call Parity Compound Options (cid:9) 135
+4.13.2 Compound Option Approximation (cid:9) 136
+4.14 Options with Extendible Maturities (cid:9) 138
+4.14.1 Options That Can Be Extended by the Holder 138
+4.14.2 Writer-Extendible Options (cid:9) 140
+4.15 Lookback Options (cid:9) 141
+4.15.1 Floating-Strike Lookback Options (cid:9) 141
+4.15.2 Fixed-Strike Lookback Options (cid:9) 143
+4.15.3 Partial-Time Floating-Strike Lookback
+Options (cid:9) 144
+4.15.4 Partial-Time Fixed-Strike Lookback Options (cid:9) 147
+4.15.5 Extreme-Spread Options (cid:9) 148
+4.16 Mirror Options (cid:9) 150
+4.17 Barrier Options (cid:9) 152
+4.17.1 Standard Barrier Options (cid:9) 152
+4.17.2 Standard American Barrier Options (cid:9) 154
+4.17.3 Double-Barrier Options (cid:9) 156
+4.17.4 Partial-Time Single-Asset Barrier Options (cid:9) 160
+4.17.5 Look-Barrier Options (cid:9) 163
+4.17.6 Discrete-Barrier Options (cid:9) 164
+4.17.7 Soft-Barrier Options (cid:9) 165
+4.17.8 Use of Put-Call Symmetry for Barrier Options 167
+4.18 Barrier Option Symmetries (cid:9) 168
+4.18.1 First-Then-Barrier Options (cid:9) 169
+4.18.2 Double-Barrier Option Using
+Barrier Symmetry (cid:9) 171
+4.18.3 Dual Double-Barrier Options (cid:9) 172
+4.19 Binary Options (cid:9) 174
+4.19.1 Gap Options (cid:9) 174
+4.19.2 Cash-or-Nothing Options (cid:9) 174
+4.19.3 Asset-or-Nothing Options (cid:9) 175
+4.19.4 Supershare Options (cid:9) 176
+4.19.5 Binary Barrier Options (cid:9) 176
+4.19.6 Double-Barrier Binary Options (cid:9) 180
+CONTENTS (cid:9) xi
+4.19.7 Double-Barrier Binary Asymmetrical (cid:9) 181
+4.20 Asian Options (cid:9) 182
+4.20.1 Geometric Average-Rate Options (cid:9) 182
+4.20.2 Arithmetic Average-Rate Options (cid:9) 186
+4.20.3 Discrete Arithmetic Average-Rate Options (cid:9) 192
+4.20.4 Equivalence of Floating-Strike and Fixed-Strike
+Asian Options (cid:9) 199
+4.20.5 Asian Options with Volatility Term-Structure . (cid:9) 199
+5 Exotic Options on Two Assets (cid:9) 203
+5.1 Relative Outperformance Options (cid:9) 203
+5.2 Product Options (cid:9) 205
+5.3 Two-Asset Correlation Options (cid:9) 205
+5.4 Exchange-One-Asset-for-Another Options (cid:9) 206
+5.5 American Exchange-One-Asset-for-Another Option (cid:9) 208
+5.6 Exchange Options on Exchange Options (cid:9) 209
+5.7 Options on the Maximum or the Minimum of
+Two Risky Assets (cid:9) 211
+5.8 Spread-Option Approximation (cid:9) 213
+5.9 Two-Asset Barrier Options (cid:9) 215
+5.10 Partial-Time Two-Asset Barrier Options (cid:9) 217
+5.11 Margrabe Barrier Options (cid:9) 219
+5.12 Discrete-Barrier Options (cid:9) 221
+5.13 Two-Asset Cash-or-Nothing Options (cid:9) 221
+5.14 Best or Worst Cash-or-Nothing Options (cid:9) 223
+5.15 Options on the Minimum or Maximum of Two
+Averages (cid:9) 224
+5.16 Currency-Translated Options (cid:9) 226
+5.16.1 Foreign Equity Options Struck in
+Domestic Currency (cid:9) 226
+5.16.2 Fixed Exchange Rate Foreign Equity Options 228
+5.16.3 Equity Linked Foreign Exchange Options (cid:9) 230
+5.16.4 Takeover Foreign Exchange Options (cid:9) 232
+5.17 Greeks for Two-Asset Options (cid:9) 232
+6 Black-Scholes-Merton Adjustments and Alternatives 233
+6.1 The Black-Scholes-Merton Model with Delayed
+Settlement (cid:9) 234
+6.2 The Black-Scholes-Merton Model Adjusted for
+Trading Day Volatility (cid:9) 235
+6.3 Discrete Hedging (cid:9) 236
+6.3.1 Hedging Error (cid:9) 236
+6.3.2 Discrete-Time Option Valuation and
+Delta Hedging (cid:9) 237
+6.3.3 Discrete-Time Hedging with Transaction Cost . (cid:9) 238
+xii (cid:9) CONTENTS
+6.4 Option Pricing in Trending Markets (cid:9) 240
+6.5 Alternative Stochastic Processes (cid:9) 242
+6.6 Constant Elasticity of Variance (cid:9) 242
+6.7 Skewness-Kurtosis Models (cid:9) 244
+6.7.1 Definition of Skewness and Kurtosis (cid:9) 244
+6.7.2 The Skewness and Kurtosis for a Lognormal
+Distribution 245
+6.7.3 Jarrow and Rudd Skewness and Kurtosis Model 246
+6.7.4 The Corrado and Su Skewness and
+Kurtosis Model (cid:9) 247
+6.7.5 Modified Corrado-Su Skewness-Kurtosis Model (cid:9) 250
+6.7.6 Skewness-Kurtosis Put-Call Supersymmetry .. . (cid:9) 252
+6.7.7 Skewness-Kurtosis Equivalent
+Black-Scholes-Merton Volatility (cid:9) 252
+6.7.8 Gram Charlier Density (cid:9) 252
+6.7.9 Skewness-Kurtosis Trees (cid:9) 253
+6.8 Pascal Distribution and Option Pricing (cid:9) 253
+6.9 Jump-Diffusion Models (cid:9) 253
+6.9.1 The Merton Jump-Diffusion Model (cid:9) 253
+6.9.2 Bates Generalized Jump-Diffusion Model (cid:9) 255
+6.10 Stochastic Volatility Models (cid:9) 258
+6.10.1 Hull-White Uncorrelated Stochastic
+Volatility Model (cid:9) 259
+6.10.2 Hull-White Correlated Stochastic
+Volatility Model (cid:9) 261
+6.10.3 The SABR Model (cid:9) 265
+6.11 Variance and Volatility Swaps (cid:9) 271
+6.11.1 Variance Swaps (cid:9) 271
+6.11.2 Volatility Swaps (cid:9) 274
+6.12 More Information (cid:9) 278
+7 Trees and Finite Difference Methods (cid:9) 279
+7.1 Binomial Option Pricing (cid:9) 279
+7.1.1 Cox-Ross-Rubinstein American Binomial Tree 284
+7.1.2 Greeks in CRR Binomial Tree (cid:9) 287
+7.1.3 Rendleman Bartter Binomial Tree (cid:9) 289
+7.1.4 Leisen-Reimer Binomial Tree (cid:9) 290
+7.1.5 Convertible Bonds in Binomial Trees (cid:9) 292
+7.2 Binomial Model with Skewness and Kurtosis (cid:9) 297
+7.3 Trinomial Trees (cid:9) 299
+7.4 Exotic Options in Tree Models (cid:9) 303
+7.4.1 Options on Options (cid:9) 303
+7.4.2 Barrier Options Using Brownian Bridge
+Probabilities (cid:9) 305
+CONTENTS xiii
+7.4.3 American Barrier Options in CRR
+Binomial Tree (cid:9) 307
+7.4.4 (cid:9) European Reset Options Binomial (cid:9) 308
+7.4.5 American Asian Options in a Tree (cid:9) 314
+7.5 Three-Dimensional Binomial Trees (cid:9) 315
+7.6 Implied Tree Models (cid:9) 321
+7.6.1 (cid:9) Implied Binomial Trees (cid:9) 321
+7.6.2 (cid:9) Implied Trinomial Trees (cid:9) 327
+7.7 Finite Difference Methods (cid:9) 334
+7.7.1 (cid:9) Explicit Finite Difference (cid:9) 335
+7.7.2 (cid:9) Implicit Finite Difference (cid:9) 338
+7.7.3 (cid:9) Finite Difference in in(S) (cid:9) 340
+7.7.4 The Crank-Nicolson Method (cid:9) 342
+8 Monte Carlo Simulation (cid:9) 345
+8.1 Standard Monte Carlo Simulation (cid:9) 345
+8.1.1 (cid:9) Greeks in Monte Carlo (cid:9) 347
+8.1.2 (cid:9) Monte Carlo for Callable Options (cid:9) 349
+8.1.3 (cid:9) Two Assets (cid:9) 350
+8.1.4 (cid:9

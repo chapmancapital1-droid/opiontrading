@@ -1,0 +1,364 @@
+Frontmatter Page i Monday, March 8, 2004 10:06 AM
+The Mathematics of
+Financial Modeling
+and Investment
+Management
+SERGIO M. FOCARDI
+FRANK J. FABOZZI
+John Wiley & Sons, Inc.
+Frontmatter Page ii Monday, March 8, 2004 10:06 AM
+SMF
+To Dominique, Leila, Guillaume, and Richard
+FJF
+To my beautiful wife Donna and my children,
+Francesco, Patricia, and Karly
+Copyright © 2004 by John Wiley & Sons, Inc. All rights reserved.
+Published by John Wiley & Sons, Inc., Hoboken, New Jersey
+Published simultaneously in Canada
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted in
+any form or by any means, electronic, mechanical, photocopying, recording, scanning, or oth-
+erwise, except as permitted under Section 107 or 108 of the 1976 United States Copyright
+Act, without either the prior written permission of the Publisher, or authorization through
+payment of the appropriate per-copy fee to the Copyright Clearance Center, Inc., 222 Rose-
+wood Drive, Danvers, MA 01923, 978-750-8400, fax 978-750-4470, or on the web at
+www.copyright.com. Requests to the Publisher for permission should be addressed to the Per-
+missions Department, John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ 07030, 201-
+748-6011, fax 201-748-6008.
+Limit of Liability/Disclaimer of Warranty: While the publisher and author have used their best
+efforts in preparing this book, they make no representations or warranties with respect to the
+accuracy or completeness of the contents of this book and specifically disclaim any implied
+warranties of merchantability or fitness for a particular purpose. No warranty may be created
+or extended by sales representatives or written sales materials. The advice and strategies con-
+tained herein may not be suitable for your situation. You should consult with a professional
+where appropriate. Neither the publisher nor author shall be liable for any loss of profit or
+any other commercial damages, including but not limited to special, incidental, consequential,
+or other damages.
+For general information on our other products and services, or technical support, please con-
+tact our Customer Care Department within the United States at 800-762-2974, outside the
+United States at 317-572-3993, or fax 317-572-4002.
+Wiley also publishes its books in a variety of electronic formats. Some content that appears in
+print may not be available in electronic books.
+For more information about Wiley, visit our web site at www.wiley.com.
+ISBN: 0-471-46599-2
+Printed in the United States of America
+10 9 8 7 6 5 4 3 2 1
+Frontmatter Page iii Monday, March 8, 2004 10:06 AM
+Contents
+Preface xiv
+Acknowledgments xvi
+About the Authors xviii
+Commonly Used Symbols xix
+Abbreviations and Acronyms xx
+CHAPTER 1
+From Art to Engineering in Finance 1
+Investment Management Process 2
+Step 1: Setting Investment Objectives 2
+Step 2: Establishing an Investment Policy 2
+Step 3: Selecting a Portfolio Strategy 6
+Step 4: Selecting the Specific Assets 7
+Step 5: Measuring and Evaluating Performance 9
+Financial Engineering in Historical Perspective 10
+The Role of Information Technology 11
+Industry’s Evaluation of Modeling Tools 13
+Integrating Qualitative and Quantitative Information 15
+Principles for Engineering a Suite of Models 17
+Summary 18
+CHAPTER 2
+Overview of Financial Markets, Financial Assets, and Market Participants 21
+Financial Assets 21
+Financial Markets 25
+Classification of Financial Markets 25
+Economic Functions of Financial Markets 26
+Secondary Markets 27
+Overview of Market Participants 34
+Role of Financial Intermediaries 35
+Institutional Investors 37
+Insurance Companies 41
+Pension Funds 41
+Investment Companies 42
+Depository Institutions 43
+Endowments and Foundations 45
+Common Stock 45
+iii
+Frontmatter Page iv Monday, March 8, 2004 10:06 AM
+iv
+Contents
+Trading Locations 45
+Stock Market Indicators 46
+Trading Arrangements 48
+Bonds 51
+Maturity 51
+Par Value 52
+Coupon Rate 52
+Provisions for Paying off Bonds 55
+Options Granted to Bondholders 56
+Futures and Forward Contracts 57
+Futures versus Forward Contracts 58
+Risk and Return Characteristics of Futures Contracts 59
+Pricing of Futures Contracts 59
+The Role of Futures in Financial Markets 63
+Options 64
+Risk-Return for Options 66
+The Option Price 66
+Swaps 69
+Caps and Floors 70
+Summary 71
+CHAPTER 3
+Milestones in Financial Modeling and Investment Management 75
+The Precursors: Pareto, Walras, and the Lausanne School 76
+Price Diffusion: Bachelier 78
+The Ruin Problem in Insurance: Lundberg 80
+The Principles of Investment: Markowitz 81
+Understanding Value: Modigliani and Miller 83
+Modigliani-Miller Irrelevance Theorems and the
+Absence of Arbitrage 84
+Efficient Markets: Fama and Samuelson 85
+Capital Asset Pricing Model: Sharpe, Lintner, and Mossin 86
+The Multifactor CAPM: Merton 87
+Arbitrage Pricing Theory: Ross 88
+Arbitrage, Hedging, and Option Theory:
+Black, Scholes, and Merton 89
+Summary 90
+CHAPTER 4
+Principles of Calculus 91
+Sets and Set Operations 93
+Proper Subsets 93
+Empty Sets 95
+Union of Sets 95
+Intersection of Sets 95
+Elementary Properties of Sets 96
+Distances and Quantities 96
+n-tuples 97
+Distance 98
+Frontmatter Page v Monday, March 8, 2004 10:06 AM
+v
+Contents
+Density of Points 99
+Functions 100
+Variables 101
+Limits 102
+Continuity 103
+Total Variation 105
+Differentiation 106
+Commonly Used Rules for Computing Derivatives 107
+Higher Order Derivatives 111
+Application to Bond Analysis 112
+Taylor Series Expansion 121
+Application to Bond Analysis 122
+Integration 127
+Riemann Integrals 127
+Properties of Riemann Integrals 129
+Lebesque-Stieltjes Integrals 130
+Indefinite and Improper Integrals 131
+The Fundamental Theorem of Calculus 132
+Integral Transforms 134
+Laplace Transform 134
+Fourier Transforms 137
+Calculus in More than One Variable 138
+Summary 139
+CHAPTER 5
+Matrix Algebra 141
+Vectors and Matrices Defined 141
+Vectors 141
+Matrices 144
+Square Matrices 145
+Diagonals and Antidiagonals 145
+Identity Matrix 146
+Diagonal Matrix 146
+Upper and Lower Triangular Matrix 148
+Determinants 148
+Systems of Linear Equations 149
+Linear Independence and Rank 151
+Hankel Matrix 152
+Vector and Matrix Operations 153
+Vector Operations 153
+Matrix Operations 156
+Eigenvalues and Eigenvectors 160
+Diagonalization and Similarity 161
+Singular Value Decomposition 162
+Summary 163
+CHAPTER 6
+Concepts of Probability 165
+Representing Uncertainty with Mathematics 165
+Probability in a Nutshell 167
+Frontmatter Page vi Monday, March 8, 2004 10:06 AM
+vi
+Contents
+Outcomes and Events 169
+Probability 170
+Measure 171
+Random Variables 172
+Integrals 172
+Distributions and Distribution Functions 174
+Random Vectors 175
+Stochastic Processes 178
+Probabilistic Representation of Financial Markets 180
+Information Structures 181
+Filtration 182
+Conditional Probability and Conditional Expectation 184
+Moments and Correlation 186
+Copula Functions 188
+Sequences of Random Variables 189
+Independent and Identically Distributed Sequences 191
+Sum of Variables 191
+Gaussian Variables 194
+The Regression Function 197
+Linear Regression 197
+Summary 199
+CHAPTER 7
+Optimization 201
+Maxima and Minima 202
+Lagrange Multipliers 204
+Numerical Algorithms 206
+Linear Programming 206
+Quadratic Programming 211
+Calculus of Variations and Optimal Control Theory 212
+Stochastic Programming 214
+Summary 216
+CHAPTER 8
+Stochastic Integrals 217
+The Intuition Behind Stochastic Integrals 219
+Brownian Motion Defined 225
+Properties of Brownian Motion 230
+Stochastic Integrals Defined 232
+Some Properties of Itô Stochastic Integrals 236
+Summary 237
+CHAPTER 9
+Differential Equations and Difference Equations 239
+Differential Equations Defined 240
+Ordinary Differential Equations 240
+Order and Degree of an ODE 241
+Solution to an ODE 241
+Systems of Ordinary Differential Equations 243
+Frontmatter Page vii Monday, March 8, 2004 10:06 AM
+vii
+Contents
+Closed-Form Solutions of Ordinary Differential Equations 246
+Linear Differential Equation 247
+Numerical Solutions of Ordinary Differential Equations 249
+The Finite Difference Method 249
+Nonlinear Dynamics and Chaos 256
+Fractals 258
+Partial Differential Equations 259
+Diffusion Equation 259
+Solution of the Diffusion Equation 261
+Numerical Solution of PDEs 263
+Summary 265
+CHAPTER 10
+Stochastic Differential Equations 267
+The Intuition Behind Stochastic Differential Equations 268
+Itô Processes 271
+The 1-Dimensional Itô Formula 272
+Stochastic Differential Equations 274
+Generalization to Several Dimensions 276
+Solution of Stochastic Differential Equations 278
+The Arithmetic Brownian Motion 280
+The Ornstein-Uhlenbeck Process 280
+The Geometric Brownian Motion 281
+Summary 282
+CHAPTER 11
+Financial Econometrics: Time Series Concepts, Representations, and Models 283
+Concepts of Time Series 284
+Stylized Facts of Financial Time Series 286
+Infinite Moving-Average and Autoregressive
+Representation of Time Series 288
+Univariate Stationary Series 288
+The Lag Operator L 289
+Stationary Univariate Moving Average 292
+Multivariate Stationary Series 293
+Nonstationary Series 295
+ARMA Representations 297
+Stationary Univariate ARMA Models 297
+Nonstationary Univariate ARMA Models 300
+Stationary Multivariate ARMA Models 301
+Nonstationary Multivariate ARMA Models 304
+Markov Coefficients and ARMA Models 304
+Hankel Matrices and ARMA Models 305
+State-Space Representation 305
+Equivalence of State-Space and ARMA Representations 308
+Integrated Series and Trends 309
+Summary 313
+Frontmatter Page viii Monday, March 8, 2004 10:06 AM
+viii
+Contents
+CHAPTER 12
+Financial Econometrics: Model Selection, Estimation, and Testing 315
+Model Selection 315
+Learning and Model Complexity 317
+Maximum Likelihood Estimate 319
+Linear Models of Financial Time Series 324
+Random Walk Models 324
+Correlation 327
+Random Matrices 329
+Multifactor Models 332
+CAPM 334
+Asset Pricing Theory (APT) Models 335
+PCA and Factor Models 335
+Vector Autoregressive Models 338
+Cointegration 339
+State-Space Modeling and Cointegration 342
+Empirical Evidence of Cointegration in Equity Prices 343
+Nonstationary Models of Financial Time Series 345
+The ARCH/GARCH Family of Models 346
+Markov Switching Models 347
+Summary 349
+CHAPTER 13
+Fat Tails, Scaling, and Stable Laws 351
+Scaling, Stable Laws, and Fat Tails 352
+Fat Tails 352
+The Class L of Fat-Tailed Distributions 353
+The Law of Large Numbers and the Central Limit Theorem 358
+Stable Distributions 360
+Extreme Value Theory for IID Processes 362
+Maxima 362
+Max-Stable Distributions 368
+Generalized Extreme Value Distributions 368
+Order Statistics 369
+Point Process of Exceedances or Peaks over Threshold 371
+Estimation 373
+Eliminating the Assumption of IID Sequences 378
+Heavy-Tailed ARMA Processes 381
+ARCH/GARCH Processes 382
+Subordinated Processes 383
+Markov Switching Models 384
+Estimation 384
+Scaling and Self-Similarity 385
+Evidence of Fat Tails in Financial Variables 388
+On the Applicability of Extreme Value Theory in Finance 391
+Summary 392
+Frontmatter Page ix Monday, March 8, 2004 10:06 AM
+ix
+Contents
+CHAPTER 14
+Arbitrage Pricing: Finite-State Models 393
+The Arbitrage Principle 393
+Arbitrage Pricing in a One-Period Setting 395
+State Prices 397
+Risk-Neutral Probabilities 398
+Complete Markets 399
+Arbitrage Pricing in a Multiperiod Finite-State Setting 402
+Propagation of Information 402
+Trading Strategies 403
+State-Price Deflator 404
+Pricing Relationships 405
+Equivalent Martingale Measures 414
+Risk-Neutral Probabilities 416
+Path Dependence and Markov Models 423
+The Binomial Model 423
+Risk-Neutral Probabilities for the Binomial Model 426
+Valuation of European Simple Derivatives 427
+Valuation of American Options 429
+Arbitrage Pricing in a Discrete-Time, Continuous-State Setting 430
+APT Models 435
+Testing APT 436
+Summary 439
+CHAPTER 15
+Arbitrage Pricing: Continuous-State, Continuous-Time Models 441
+The Arbitrage Principle in Continuous Time 441
+Trading Strategies and Trading Gains 443
+Arbitrage Pricing in Continuous-State, Continuous-Time 445
+Option Pricing 447
+Stock Price Processes 447
+Hedging 448
+The Black-Scholes Option Pricing Formula 449
+Generalizing the P

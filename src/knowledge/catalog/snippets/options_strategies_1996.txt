@@ -1,0 +1,266 @@
+FM JWBK147-Smith May8,2008 10:24 CharCount=0
+Option
+Strategies
+Profit-Making Techniques for
+Stock, Stock Index, and
+Commodity Options
+Third Edition
+COURTNEY D. SMITH
+JohnWiley&Sons,Inc.
+iii
+FM JWBK147-Smith May8,2008 10:24 CharCount=0
+vi
+FM JWBK147-Smith May8,2008 10:24 CharCount=0
+Option
+Strategies
+i
+FM JWBK147-Smith May8,2008 10:24 CharCount=0
+Founded in 1807, John Wiley & Sons is the oldest independent publish-
+ingcompanyintheUnitedStates.WithofficesinNorthAmerica,Europe,
+AustraliaandAsia,Wileyisgloballycommittedtodevelopingandmarket-
+ing print and electronic products and services for our customers’ profes-
+sionalandpersonalknowledgeandunderstanding.
+TheWileyTradingseriesfeaturesbooksbytraderswhohavesurvived
+the market’s ever changing temperament and have prospered—some by
+reinventing systems, others by getting back to basics. Whether a novice
+trader, professional or somewhere in-between, these books will provide
+theadviceandstrategiesneededtoprospertodayandwellintothefuture.
+For a list of available titles, please visit our web site at www.
+WileyFinance.com.
+ii
+FM JWBK147-Smith May8,2008 10:24 CharCount=0
+Option
+Strategies
+Profit-Making Techniques for
+Stock, Stock Index, and
+Commodity Options
+Third Edition
+COURTNEY D. SMITH
+JohnWiley&Sons,Inc.
+iii
+FM JWBK147-Smith May8,2008 10:24 CharCount=0
+Copyright(cid:1)C 1996,2008byCourtneyD.Smith.Allrightsreserved
+PublishedbyJohnWiley&Sons,Inc.,Hoboken,NewJersey
+PublishedsimultaneouslyinCanada
+Nopartofthispublicationmaybereproduced,storedinaretrievalsystem,or
+transmittedinanyformorbyanymeans,electronic,mechanical,photocopying,
+recording,scanning,orotherwise,exceptaspermittedunderSection107or108
+ofthe1976UnitedStatesCopyrightAct,withouteitherthepriorwritten
+permissionofthePublisher,orauthorizationthroughpaymentoftheappropriate
+per-copyfeetotheCopyrightClearanceCenter,Inc.,222RosewoodDrive,
+Danvers,MA01923,(978)750-8400,fax(978)750-4470,oronthewebat
+www.copyright.com.RequeststothePublisherforpermissionshouldbe
+addressedtothePermissionsDepartment,JohnWiley&Sons,Inc.,111River
+Street,Hoboken,NJ07030,(201)748-6011,fax(201)748-6008,oronlineat
+http://www.wiley.com/go/permissions.
+LimitofLiability/DisclaimerofWarranty:Whilethepublisherandtheauthor
+haveusedtheirbesteffortsinpreparingthisbook,theymakenorepresentations
+orwarrantieswithrespecttotheaccuracyorcompletenessofthecontentsof
+thisbookandspecificallydisclaimanyimpliedwarrantiesofmerchantabilityor
+fitnessforaparticularpurpose.Nowarrantymaybecreatedorextendedby
+salesrepresentativesorwrittensalesmaterials.Theadviceandstrategies
+containedhereinmaynotbesuitableforyoursituation.Youshouldconsultwith
+aprofessionalwhereappropriate.Neitherthepublishernortheauthorshallbe
+liableforanylossofprofitoranyothercommercialdamages,includingbutnot
+limitedtospecial,incidental,consequential,orotherdamages.
+Forgeneralinformationonourotherproductsandservicesorfortechnical
+support,pleasecontactourCustomerCareDepartmentwithintheUnitedStates
+at(800)762-2974,outsidetheUnitedStatesat(317)572-3993orfax(317)
+572-4002.
+Wileyalsopublishesitsbooksinavarietyofelectronicformats.Somecontent
+thatappearsinprintmaynotbeavailableinelectronicbooks.Formore
+informationaboutWileyproducts,visitourwebsiteatwww.wiley.com.
+LibraryofCongressCataloging-in-PublicationData:
+Smith,Courtney.
+Optionstrategies:profit-makingtechniquesforstock,stockindex,and
+commodityoptions/CourtneyD.Smith.–3rded.
+p.cm.
+Includesindex.
+ISBN978-0-470-24779-2(cloth)
+1.Financialfutures. 2.Options(Finance) 3.Commodityoptions. I.Title.
+HG6024.3.S552008
+332.64(cid:2)53–dc22
+2008014647
+PrintedintheUnitedStatesofAmerica
+10 9 8 7 6 5 4 3 2 1
+iv
+FM JWBK147-Smith May8,2008 10:24 CharCount=0
+ToPam
+v
+FM JWBK147-Smith May8,2008 10:24 CharCount=0
+vi
+FM JWBK147-Smith May8,2008 10:24 CharCount=0
+Contents
+Preface ix
+CHAPTER 1 Introduction 1
+PART ONE Why and How Option Prices Move 5
+CHAPTER 2 The Fundamentals of Options 7
+CHAPTER 3 The Basics of Option Price Movements 21
+CHAPTER 4 Advanced Option Price Movements 39
+CHAPTER 5 Volatility 59
+PART TWO Option Strategies 73
+CHAPTER 6 Selecting a Strategy 75
+CHAPTER 7 Buy a Call 91
+CHAPTER 8 Buy a Put 103
+CHAPTER 9 Naked Call Writing 115
+CHAPTER 10 Covered Call Writing 123
+CHAPTER 11 Ratio Covered Call Writing 143
+CHAPTER 12 Naked Put Writing 151
+vii
+FM JWBK147-Smith May8,2008 10:24 CharCount=0
+viii CONTENTS
+CHAPTER 13 Covered Put Writing 159
+CHAPTER 14 Ratio Covered Put Writing 175
+CHAPTER 15 Bull Spreads 183
+CHAPTER 16 Bear Spreads 197
+CHAPTER 17 Butterfly Spreads 209
+CHAPTER 18 Calendar Spreads 225
+CHAPTER 19 Ratio Spreads 233
+CHAPTER 20 Ratio Calendar Spreads 245
+CHAPTER 21 Straddles and Strangles 249
+CHAPTER 22 Synthetic Calls and Puts 267
+CHAPTER 23 Synthetic Longs and Shorts 271
+CHAPTER 24 How to Make Money Trading Options 275
+Index 301
+About the Author 307
+For More Information 309
+FM JWBK147-Smith May8,2008 10:24 CharCount=0
+Preface
+A
+bout20yearsagoIapproachedJohnWiley&Sonswiththeideato
+write a guide to option strategies. Several books had been written
+that gave an overall introduction to options and too many books
+hadbeenwrittenthatpurportedtoshowthereaderhowtomakemillions
+whilesippingpinacoladasonthebeach.Nobookhadbeenwrittenpurely
+onoptionsstrategies.Wileydecidedtogiveitago.
+Twentyyearsandoneeditionlater,thebookisstillbeingsoldacross
+thecountry.Fewbookslivethatlong!Iwanttothankmyreadersfortheir
+support.
+This third edition adds much more information on predicting implied
+volatility,howtoselectastrategy,andhowtomakemoneytradingoptions.
+Inaddition,morematerialhasbeenaddedtojustabouteverychapter.And,
+ofcourse,I’vecleanedupevenmoreerrors.Thankstomyeagle-eyedread-
+ersforspottingthem!
+OnethingIhavetriedtoretainfromthefirsteditionisthestraightfor-
+ward approach to options strategies. This book is designed to be used by
+traders,notreadbyrocketscientists.Ihaveattemptedtokeepthemathto
+abareminimum.Therearenowplentyofbookswithplentyofformulas.
+Thesuccessofthisbookisgratifying.Butthemostgratifyingsuccess
+comes from helping you, the reader, make money in the markets. I hope
+thisbookhelpsyoutobeatradingsuccess.
+ix
+FM JWBK147-Smith May8,2008 10:24 CharCount=0
+x
+c01 JWBK147-Smith April25,2008 7:26 CharCount=
+C H A P T E R 1
+Introduction
+W
+elcome to the third edition of Option Strategies. This book will
+takeyouonaguidedtouroftheworldofoptionstrategies.
+Options present the investor with a myriad of new strategies.
+Some areveryconservative, such ascovered callwriting,whereas others
+areveryspeculative,suchasnakedcallselling.Optionsprovidemoreand
+oftenbetterwaystofine-tuneyourinvestingstrategiestoexpectedmarket
+conditions.
+Thisbookcoversalltypesofoptions:stockindex,stock,andcommod-
+ity. Bullish and bearish strategies are covered equally. It will be useful to
+alloptionstradersandhedgers,fromnovicestoprofessionals.
+DECISION STRUCTURES
+Adecisionstructureisanorderedlineofinquiry,consistingofastructured
+seriesofsituationsandchoicesthatassistyouinanalyzingpotentialtrades
+andindeterminingyourcourseofactionafteryouhaveenteredatrade.A
+decision structure is not an exhaustive compilation of all possible strate-
+gies but a concise guide to the analysis necessary to deal with the most
+commonpossibilities.
+1
+c01 JWBK147-Smith April25,2008 7:26 CharCount=
+2 INTRODUCTION
+In order to achieve your objectives, you must first identify your ob-
+jectives.Thisself-evidenttruthisoftenforgotten.Twomainquestionscan
+helpyou:
+1. Howmuchriskareyouwillingtotake?Eachpersonhasasubjective
+criterionofrisk.Youmusthaveanideaofthelevelofriskwithwhich
+youarecomfortablesothatyoucanmakeacceptableinvestments.
+2. What kind of return do you need to take on that level of risk? The
+greatertherisk,thegreatershouldbeyourprospectivereward.Look
+at competing investments. You might have found a low-risk covered
+write,but your returnmight be just above Treasury bills.Why bother
+withsuchatrade?Lookforthoseopportunitiesthathavesignificantly
+morereward,thoughtheyalsohavemorerisk.
+SIMPLIFICATION OF OPTIONS
+CALCULATIONS
+Most discussions of options calculations are too simple. They highlight
+theimportantissuesratherthanpresentseeminglyirrelevantinformation.
+However,inthefinalanalysis,realityiscomplex.
+The major area of simplification has been in the mathematics of op-
+tions.Ingeneral,thecalculationsgiveninbooksandarticleshaveignored
+such factors as transaction costs, carrying charges, and taxes. In most
+cases,thisisnotcritical.However,thereisnoneedtoinvestinanoption
+tradeandlosemoneybecauseofignoredfactors.
+The discussions of risk and reward in Chapters 7 to 24 focus on the
+strategy and usually do not mention carrying charges, unless carrying
+chargestendtobeamajordeterminantofprofitability.Forexample,car-
+rying charges are rarely going to affect the decision to buy a call, but an
+arbitrage between an underlying instrument and a reverse conversion is
+dominatedbyconsiderationsofcarryingcharges.
+CARRYING CHARGES
+Carrying charges, including transaction costs, the bid/ask spread, slip-
+page,andfinancingcosts,mustalwaysbeconsideredwhendecidingona
+strategy.
+Transactioncostsareanever-presentcostoftrading.Thetermtrans-
+action costsincludescommissions,thebid/askspread,andslippage.Typ-
+ically, the largest transaction cost is brokerage commissions. Brokerage
+houses charge commissions on all transactions. Many option strategies
+involve the use of options in conjunction with other instruments. For
+c01 JWBK147-Smith April25,2008 7:26 CharCount=
+Introduction 3
+example,acoveredcallwriteprograminstocksinvolvesthesaleofacall
+againstthepurchaseoftheunderlyingstock.Thecommissiononthestock
+purchaseandontheeventualsaleshouldbeconsideredintheinvestment
+decision.
+Tradersofoptionsonthefloorsofthevariousexchangesdonotneed
+to consider this factor as much. Their transaction costs are pennies per
+contract.
+Anotherpotentialtransactioncostisthebid/ask spreadoftheinvest-
+ment. (The bid is the highest price that someone is willing to pay for the
+option;theaskisthelowestpriceatwhichsomeoneisofferingtosellthe
+option.)Alloptionsandrelatedinstrumentshaveabid/askspread.Forex-
+ample,anoptionmayhavealastpriceof41/ ,butthebidmaybe41/ and
+4 8
+theaskmaybe43/ .Ingeneral,mostinvestorswillhavetopaytheaskto
+8
+buyanoption,andwillsellatthebidprice.Thishastheeffectofinducing
+slippageincalculationsofprofits,risks,andbreak-evens.Itisusuallywise
+toincludeatleastoneminimumtickorpricemovement intothecostsof
+youroptiontrade.Forexample,bondfuturesoptionstradeinunitsof1/ .
+64
+Itwouldbeagoodideatosubtract1/ fromyourexpectedsalepriceand
+64
+add1/ toyourexpectedpurchaseprice.
+64
+The bid/ask spread is a major source of profit for floor traders. They
+typically look to buy at the bid and sell at the ask. This enables them to
+executemanystrategiesthatcannotbeexecutedbyeverybodyelse.Such
+strategiesasconversions,butterflies,andreversalstendtobetheexclusive
+domainofprofessionalfloortraders.Thesestrategiestendtobedominated
+bytransactioncosts.Theabilitytobuyatthebidandsellattheofferisa
+powerfuladvantageintradingthesestrategies.
+Slippage is the final transaction cost and is related to the bid/ask
+spread. It is the difference between the price that you expect on the fill
+ofanorderandtheactualcost.Forexample,youcouldexpecttogetafill
+at17/ onapurchaseofacall,butthemarketisactiveandvolatileandyour
+8
+orderisnotfilleduntilthemarketisupto21/ .Veryconservativeinvestors
+8
+should include at least another tick on the expected price as slippage for
+computingexpectedreturnsonatrade.
+Carrying charges, often overlooked and/or idealized, represent the
+costs to carry an open position. Traders should at least consider the op-
+portunity cost of initiation and carrying a particular trade. There are an
+infinitenumber ofinvestment possibilities. Whenyoudecide todoanop-
+tion trade, you have implicitly rejected all other investment possibilities.
+Youhaveeliminatedtheopportunitytoinvestelsewhere.Traditionally,the
+opportunitycosthasbeenquantifiedastheTreasury-billratebecauseitis
+consideredriskless.
+Leveraged positions have a finance charge. This finance charge must
+be considered before initiating a

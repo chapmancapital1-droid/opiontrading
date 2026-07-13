@@ -1,0 +1,199 @@
+The Holy Grail Trading System
+James Windsor
+2
+All Rights Reserved. No part of this publication may be reproduced in any form or by any
+means, including scanning, photocopying, or otherwise without prior written permission of the
+copyright holder. Copyright James Windsor © 2013
+3
+Table of Contents
+Introduction
+It Begins
+The Birth of 'Grail'
+The Diary
+The Spread Betting Liars!
+Month 1: October 2005
+Month 2: November 2005
+Month 3: December 2005
+Month 4: January 2006
+Month 5: February 2006
+Month 6: March 2006
+Month 7: April 2006
+Month 8: May 2006
+Month 9: June 2006
+Month 10: July 2006
+Month 11: August 2006
+Month 12: September 2006
+Month 13: October 2006
+Month 14: November 2006
+Month 15: December 2006
+Month 16: January 2007
+Month 17: February 2007
+The Last Post
+Final Notes
+Appendix 1: The Grail System
+Appendix 2 - Trading Sheets
+October 2005
+November 2005
+December 2005
+January 2006
+February 2006
+March 2006
+April 2006
+May 2006
+June 2006
+July 2006
+August 2006
+September 2006
+4
+October 2006
+November 2006
+December 2006
+January 2007
+Resources
+5
+Introduction
+There are many great stories in the history of trading that have significance.
+George Soros making a billion dollars betting against the Bank of England in 1992 which
+caused the UK to pull out of the Exchange Rate Mechanism.
+The rise and fall of Long Term Capital Management (LTCM), what was thought to be the best
+trading house on the planet.
+The fall of Lehman Brothers during 2008 where what was once the 4th largest investment bank
+in the US.
+JP Morgan also faced a £4billion loss in 2012 but managed to stay alive.
+There are dozens more true stories like this with many being turned into major motion pictures.
+Scholars and statisticians have studied these cases to find out what went wrong and what
+lessons can be learned.
+This book isn't about a story with that magnitude. It covers one true story that you most likely
+have not heard of. That's because it didn't involve public money or have a major impact on the
+world.
+Pension funds did not fall and the federal bank never had to intervene. Alan Greenspan never
+knew about this tale.
+That’s because it's the story of ordinary people that wanted to earn money by trading the
+financial markets and had a fairly large target. If you are an ordinary retail trader then this
+book is one which you really should read because you will identify with it personally.
+It's the story behind a team, an experiment and a trading system called 'Grail'.
+Many ordinary traders just like you watched this story unfold in 2005 - 2007. It gave them
+hope that trading was a way for them to escape the drudgery that engulfs most people in our
+capitalist society; a way to beat the system.
+Retail traders try system after system, one chart pattern after another, the latest indicator and
+auto trading robot all in the hope of finding the one that makes them millionaires. This was one
+that almost made it into the history books.
+It fulfilled all the dreams of those traders. It was 100% mechanical, was 100% automatic
+through computer trading and it worked over a long time period.
+The original blog on which this story is based is still online, time stamped for all to see but
+6
+what you won’t see is the story behind the unfolding posts.
+That story along with each post from that blog is revealed in this book for all to see. Month by
+month; post by post and trade by trade. You will be reading the views of the main player in
+this game looking back on what happened and commenting on what went wrong.
+You will also discover the exact system that was used and how deceptively simple it was.
+You have the opportunity to try the system for yourself and possibly find a way forward with
+it.
+The story is a double edged sword. The system did make money and shedloads of it but was
+only saved by withdrawing from it in the nick of time.
+This book actually reveals the details that we have kept a very closely guarded secret for 10
+years. You will find out at the end of the book exactly what the system is, its parameters and
+the changes we made. Don't skip to that section though until you have read it all. You won't
+see the true power of simplicity until you understand the whole story.
+I hope that you enjoy the book, but most of all hope that you will learn some lessons. If you
+manage to make the system work the way that we made it work, then all the best to you but
+please do let me know.
+Let’s turn the clock back and begin…
+7
+It Begins
+"We'll make how much!!?"
+I can remember those words from one of the team that was working on this project. As we
+pulled together the final results from our system testing it was music to all of our ears and
+exactly what we wanted to hear.
+We were a team of wannabe millionaire traders that were searching for the 'Holy Grail'; a
+trading system the delivered consistent results month in, month out over a long period.
+It all started in 2003 inside an Internet chat room on a website called moneytec.com. Part of
+the website was a live chat room where inexperienced day traders exchanged ideas and trades
+as they went through their daily quest for riches.
+We were all inexperienced traders at the time, trying to find a way forward in this jungle that
+is the foreign exchange currency market. We all wanted the easy money, earning thousands a
+month so we could all retire to the sun. It's the dream of most people that enter this arena,
+attracted by flashy websites extolling countless opportunities for making money and tales of
+multi-millionaire traders.
+The Internet is awash with pictures of someone lazing in a deckchair on the beach with the sea
+just a few feet away shimmering in the sun. The person in the deckchair has a laptop on a
+small table to their right and a straw hat on their head. A cool drink catches the sunlight and
+makes the lens flare on the photograph.
+The reality of choosing to trade the markets is something quite different. It consists of someone
+hunched over a desk staring at several screens till their eyes hurt and the pungent odour of
+curry farts lying in the air from yesterday’s takeaway. Welcome to the real world of a retail
+trader.
+Please allow me to introduce you to the team in our story. The names of all participants have
+been changed to protect the identity and privacy of the people involved.
+Firstly there was me. I was known as 'Soultrader' on the forums and chat rooms and was an
+Internet entrepreneur. At the time I ran an Internet business utilizing eBay, QXL Auctions and
+several websites through which I'd peddle software, games and e-books. In some circles I was
+a trading guru, in others I would later be seen as a charlatan having sold a few trading systems
+to wannabe traders; once a saleman always a salesman. Truth is that some found it hard to
+follow water down a plughole let alone simple trading instructions.
+I first entered the world of trading when a guy that had written a book on it bought a product
+from me. I had also seen a recent BBC TV programme showing this bunch of happy people on
+8
+a train sipping champagne. The programme covered how they were making money by 'Spread
+Betting' on the financial markets. Whilst on a short train journey one of the people on the train
+had made over £1000 from point A to point B all in the space of around an hour.
+I started selling the ebook I had read for the author as I was pretty good at marketing things and
+of course I read it. Having finished the book I don't think any self respecting entrepreneur could
+have done so without deciding to 'have a dabble' and so I did.
+It was a decision that would change my life.
+I began by trading the Dow Jones index and the occasional FTSE 100 trade and it's whilst
+doing that I met the second member of our future team.
+Kev was based in New York and was a trading dynamo. Born to affluent Jewish parents he
+had his eyes set on Wall Street as a career. His parents were both professionals in law and
+very successful too. Kev had a lot to measure up to.
+Kev entered the markets in traditional American style, with a whoop whoop and lots of noise.
+Aged only 22 when we first encountered each other he was the perfect age and had the right
+level of aggression and testosterone to either do well in the game; or to crash and burn
+quickly. Youth is a double edged sword in this world where fortunes are made on the toss of a
+coin.
+Eventually we both moved into the currency markets. At this time in its history the 'Forex'
+(FOReign EXchange) market had beautiful trends that went on for weeks at a time. It was
+attractive to trend traders like us and eventually we made a complete move into this new arena.
+Most of the people in the chat room were Forex traders. Some of them already had strong
+followings. 'Bunnygirl' was a forty something welsh lady that just loved to share her 'Bunny
+Cross' strategy, a simple moving average crossover with a twist. Over time we would become
+both friends and occasionally adversaries. In those days I was very arrogant and was lacking
+the real skill that a trader needed; that being humility in the face of the markets.
+Bunnygirl did join our group for a while but she was happy to trade in her own way, doing a
+bit here and a bit there so the connection gradually weakened over time. Thinking back it must
+have been an uncomfortable place for her to be when there were so many strong personalities
+together wanting to make millions.
+Angel was a trader living in Australia. Based in Adelade this true lady was a professional in
+the health field and her reasons for trading were to prop up her future pension in addition to
+her dream of living in Nice in the South of France. Angel was to become a pivotal contributor
+in the future when we began testing and tweaking our trading system.
+9
+Martin was based in the UK in Leeds. Martin is a great guy and remains my main trading
+partner today. It was his initial system that our new system was to be based on.
+Martin was extremely analytical. Previous to entering the markets he had made over two
+million in the casinos by studying roulette and working out a system to beat it. Add some
+electronic wizardry and he could walk into any casino anywhere in the world and make money
+on the spin of a wheel.
+Martin's skill was number crunching and chart study. If you needed a system back testing he
+would go through a whole year of one minute charts and come up with all the figures you
+needed. Drawdown, win / loss ratio, percentage gains, everything. Truth be known, the guy is
+a genius but he'd blush if you said that and reply with "I just look at the numbers"
+He was also a master at chess, having played with some of the best players in the world in his
+younger days.
+The final major contributor was a guy called Tony. He came from London and had a
+background in computer programming. He was a programming genius. In his early days he
+was the person that designed and made the old 'squawk boxes' in the trading rooms of London.
+(Before the Internet speed increases of the new millenium squawk boxes were the primary
+method of communication in the trading houses of the world).
+Tony loved programming. At one point he had what he called an automatic arbitrage scraper,
+a program that compared the prices of two brokers and when there was a mismatch he would
+trade the difference. He was banned from Oanda and several other brokers for having the
+ability to execute trades in milliseconds. During news trades his trades would be in just split
+seconds before the broker could react, and he could exit exactly at the top of a move before the
+price turned.
+One such robot he created just aimed to take 1-2 pips per trade when an arbitrage opportunity
+presented itself. At one point in a single week he took a $500 account to $56,000. The broker
+banned him and confiscated the account before he could get any money out. Tony was the
+person behind the automation of our trading methods.
+There were others involved including Whispy, Fluty and a couple of others that were along for
+the ride. The core of the team was me, Martin, Angel and

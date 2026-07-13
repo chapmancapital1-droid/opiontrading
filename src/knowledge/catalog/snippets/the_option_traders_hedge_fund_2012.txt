@@ -1,0 +1,203 @@
+ptg7987094
+The Option
+Trader’s Hedge
+Fund
+ptg7987094
+This page intentionally left blank
+ptg7987094
+The Option
+Trader’s Hedge
+Fund
+ptg7987094
+A Business FrAmewOrk FOr
+TrAding equiTy And index OpTiOns
+dennis A. Chen
+mark sebastian
+Vice President, Publisher: Tim Moore
+Associate Publisher and Director of Marketing: Amy Neidlinger
+Executive Editor: Jim Boyd
+Editorial Assistant: Pamela Boland
+Operations Manager: Jodi Kemper
+Assistant Marketing Manager: Megan Graue
+Cover Designer: Chuti Prasertsith
+Managing Editor: Kristy Hart
+Project Editor: Betsy Harris
+Copy Editor: Cheri Clark
+Proofreader: Debbie Williams
+Indexer: Larry Sweazy
+Senior Compositor: Gloria Schurick
+Manufacturing Buyer: Dan Uhrig
+© 2012 by Dennis A. Chen and Mark Sebastian
+Published by Pearson Education, Inc.
+Publishing as FT Press
+Upper Saddle River, New Jersey 07458
+This book is sold with the understanding that neither the author nor the publisher is engaged
+in rendering legal, accounting, or other professional services or advice by publishing this book.
+Each individual situation is unique. Thus, if legal or financial advice or other expert assistance is
+required in a specific situation, the services of a competent professional should be sought to ensure
+that the situation has been evaluated carefully and appropriately. The author and the publisher dis-
+claim any liability, loss, or risk resulting directly or indirectly, from the use or application of any of
+ptg7987094
+the contents of this book.
+FT Press offers excellent discounts on this book when ordered in quantity for bulk purchases or special
+sales. For more information, please contact U.S. Corporate and Government Sales, 1-800-382-3419,
+corpsales@pearsontechgroup.com. For sales outside the U.S., please contact International Sales at
+international@pearsoned.com.
+Company and product names mentioned herein are the trademarks or registered trademarks of their
+respective owners.
+All rights reserved. No part of this book may be reproduced, in any form or by any means, without
+permission in writing from the publisher.
+Printed in the United States of America
+First Printing May 2012
+ISBN-10: 0-13-282340-3
+ISBN-13: 978-0-13-282340-1
+Pearson Education LTD.
+Pearson Education Australia PTY, Limited.
+Pearson Education Singapore, Pte. Ltd.
+Pearson Education Asia, Ltd.
+Pearson Education Canada, Ltd.
+Pearson Educación de Mexico, S.A. de C.V.
+Pearson Education—Japan
+Pearson Education Malaysia, Pte. Ltd.
+Library of Congress Cataloging-in-Publication Data
+Chen, Dennis A. (Dennis Anthony), 1970-
+The option trader’s hedge fund : a business framework for trading equity and index options / Dennis
+A. Chen, Mark Sebastian.
+p. cm.
+Includes index.
+ISBN 978-0-13-282340-1 (hardcover : alk. paper) -- ISBN 0-13-282340-3
+1. Options (Finance) 2. Portfolio management. 3. Risk management. I. Sebastian, Mark, 1978- II.
+Title.
+HG6024.A3C4852 2012
+332.64’524--dc23
+2012007222
+For Melinda,
+Thank you for encouraging me and standing by me
+in all of our endeavors.
+For my partners at Smart Income Partners, Ltd.,
+Thank you for your trust and support. Thank you for believing and
+investing in our business.
+—Dennis
+ptg7987094
+To Lauren, thank you for putting up with me through thick and thin;
+without you all of this is nothing.
+To my parents, thank you for pushing me to constantly try to exceed
+expectations and never settle.
+To my son, may the road that lies ahead be all you could hope for.
+To my partner, co-workers, and all of those associated with Option Pit,
+thank you for making what I do not seem like work.
+—Mark
+This page intentionally left blank
+ptg7987094
+Contents
+introduction .........................................................................1
+Endnote ..........................................................................................3
+Part I The Framework
+Chapter 1 The insurance Business .......................... 5
+How Insurance Companies Make Money ....................................8
+How Insurance Companies Lose Money ...................................12
+Success Drivers of the Insurance Business ................................14
+Chapter 2 Trade selection ................................. 19
+Market Selection ..........................................................................20
+Strategy Selection .........................................................................27
+Time Frame ..................................................................................28 ptg7987094
+Volatility .......................................................................................29
+Pricing...........................................................................................29
+Endnote ........................................................................................30
+Chapter 3 risk management............................... 31
+Risk Management ........................................................................32
+Money Management ....................................................................33
+Position Sizing .............................................................................34
+Portfolio Diversification ..............................................................35
+Adjusting the Different Trades ...................................................36
+Addressable Risks ........................................................................37
+Insuring the Portfolio Against Black Swan Events....................38
+Chapter 4 Trade execution ................................ 43
+Conditions of the Market ............................................................43
+Evaluate Potential Realized Volatility ........................................44
+Evaluate Implied Volatility .........................................................44
+Evaluate the Months ....................................................................46
+Evaluate the Skew ........................................................................47
+Evaluate Other Products .............................................................47
+Trade .............................................................................................48
+Order Entry ..................................................................................49
+Chapter 5 The Trading plan ............................... 55
+The Mind-Set ...............................................................................56
+The Importance of Sticking to the Process ................................58
+Questions Your Trading Plan Should Answer...........................60
+Endnotes .......................................................................................62
+Chapter 6 Trading infrastructure.......................... 63
+Risk Capital ..................................................................................63
+The Trading Platform (Broker) ..................................................65
+Portfolio Margin ..........................................................................67
+Information Resources and Other Analytical Tools .................69
+Dedicated Space ...........................................................................70
+Backup Plans ................................................................................70
+Chapter 7 Learning processes.............................. 73
+The Trading Journal ....................................................................73
+ptg7987094
+Sounding Board ...........................................................................77
+Endnote ........................................................................................80
+Part II Implementing the Business
+Chapter 8 understanding Volatility........................ 81
+What Causes Volatility? ..............................................................81
+Three-Dimensional ......................................................................83
+Volatility and the Model..............................................................88
+Chapter 9 most used strategies............................ 89
+The Vertical Spread .....................................................................89
+The Iron Condor ..........................................................................93
+The ATM Iron Butterfly ............................................................100
+The Calendar Spread or Time Spread ......................................108
+The Ratio Back and Front Spread .............................................115
+Endnote ......................................................................................119
+Chapter 10 Operating the Business:
+putting Together TOmiC 1.0 from A to Z.......121
+Trading Plan ...............................................................................122
+Executing the Trading Plan.......................................................126
+viii Contents
+Part III Lessons from the Trading Floor
+Chapter 11 Lessons from the Trading Floor on Volatility...131
+Understanding Weighted Vegas in SPX Index Options .........131
+Taking on the Skew ...................................................................134
+Four Tips When the VIX Cash Is Depressed ...........................135
+How to Find and Track Volatility Skew ...................................137
+SPX Skew: It’s All Relative ........................................................137
+Understanding Implied Volatility in Iron Condors ................138
+The Stages of Skew .....................................................................140
+Chapter 12 Lessons from the Trading Floor on risk
+management...................................145
+Cash Is a Position .......................................................................145
+The Card Game Value ...............................................................146
+Why Are Option Trading Hands So Hard to Sit On? ..............147
+How Option Time Value Premium Decays over the ptg7987094
+Weekend .....................................................................................149
+When Is the Time to De-risk Your Portfolio? .........................152
+How to Trade When You Go on Vacation ...............................152
+Chapter 13 Lessons from the Trading Floor on Trading
+and execution..................................155
+What Everybody Should Know About Payment
+for Order Flow ............................................................................155
+When Should You Worry About Assignment? .......................157
+A Successful Short SPX Calendar .............................................161
+Butterfly Trading Checklist .......................................................163
+What Is the Proper Width for an Index Butterfly’s Wings? ...165
+The Importance of Good Exits ..................................................168
+Preparing to Trade for a Living, How Much
+Capital Is Needed? .....................................................................169
+The Importance of Focus ..........................................................170
+Chapter 14 Lessons from the Trading Floor on the Other
+greeks .........................................173
+What Happens to the Gamma of ITM or OTM Options
+When IV Increases? ...................................................................173
+Why Do I Need to Weight My Option Portfolio? ....................175
+Gamma Scalping ........................................................................176
+Contents ix
+Chapter 15 The Beginning .................................191
+Appendix A recommended reading . . . . . . . . . . . . . . . . . . . . . . . .195
+Category 1: The Starter ..............................................................195
+Category 2: Getting Ready to Start Paper Trading ..................195
+Category 3: Ready to Trade .......................................................196
+Category 4: Advanced and Mathematical ................................196
+Other Books That Might Be Useful ..........................................196
+Appendix B strategy Learning sequence . . . . . . . . . . . . . . . . . . . .199
+App

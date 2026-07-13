@@ -1,0 +1,69 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © pAulseperformance 93
+
+//@version=5
+strategy("My Strategy", overlay=true, margin_long=100, margin_short=100)
+
+// Strategy
+longCondition = ta.crossover(ta.sma(close, 14), ta.sma(close, 28))
+if (longCondition)
+    strategy.entry("My Long Entry Id", strategy.long)
+
+shortCondition = ta.crossunder(ta.sma(close, 14), ta.sma(close, 28))
+if (shortCondition)
+    strategy.entry("My Short Entry Id", strategy.short)
+
+
+
+
+// New variables and functions provide better script visibility on strategy information:
+
+// strategy.closedtrades.entry_price() and strategy.opentrades.entry_price()
+
+// strategy.closedtrades.entry_bar_index() and strategy.opentrades.entry_bar_index()
+// strategy.closedtrades.entry_time() and strategy.opentrades.entry_time()
+// strategy.closedtrades.size() and strategy.opentrades.size()
+// strategy.closedtrades.profit() and strategy.opentrades.profit()
+// strategy.closedtrades.commission() and strategy.opentrades.commission()
+// strategy.closedtrades.max_runup() and strategy.opentrades.max_runup()
+// strategy.closedtrades.max_drawdown() and strategy.opentrades.max_drawdown()
+// strategy.closedtrades.exit_price()
+// strategy.closedtrades.exit_bar_index()
+// strategy.closedtrades.exit_time()
+// strategy.convert_to_account()
+// strategy.convert_to_symbol()
+// strategy.account_currency
+
+
+
+f_tradeAnalysis(_tradeNum, _closedTrades=true, _lblSze=size.normal) =>
+    if barstate.islastconfirmedhistory or barstate.isrealtime
+    
+        _entryPrice     = _closedTrades ? strategy.closedtrades.entry_price(_tradeNum) : strategy.opentrades.entry_price(_tradeNum)
+        _entryBarIndex  = _closedTrades ? strategy.closedtrades.entry_bar_index(_tradeNum) : strategy.opentrades.entry_bar_index(_tradeNum)
+        _entryTime      = _closedTrades ? strategy.closedtrades.entry_time(_tradeNum) : strategy.opentrades.entry_time(_tradeNum)
+        _positionSize   = _closedTrades ? strategy.closedtrades.size(_tradeNum) : strategy.opentrades.size(_tradeNum)
+        _profit         = _closedTrades ? strategy.closedtrades.profit(_tradeNum) : strategy.opentrades.profit(_tradeNum)
+        _maxRunUp       = _closedTrades ? strategy.closedtrades.max_runup(_tradeNum) : strategy.opentrades.max_runup(_tradeNum)
+        _maxDrawdown    = _closedTrades ? strategy.closedtrades.max_drawdown(_tradeNum) : strategy.opentrades.max_drawdown(_tradeNum)
+        _exitPrice      = _closedTrades ? strategy.closedtrades.exit_price(_tradeNum) : na
+        _exitBarIndex   = _closedTrades ? strategy.closedtrades.exit_bar_index(_tradeNum) : na
+        _exitTime       = _closedTrades ? strategy.closedtrades.exit_time(_tradeNum) : na
+    
+    
+        _entryText      = "Entry # {0} @ {1}\n{2} {3} {4}"
+        _entryText := str.format(_entryText,_tradeNum,_entryPrice, _positionSize > 0 ? "Long" : "Short",  _positionSize, syminfo.basecurrency)
+        _l_entry = label.new(_entryTime, _entryPrice, _entryText, xloc.bar_time, color=color.white, textcolor=color.black, style=_positionSize >0 ?label.style_label_upper_right: label.style_label_lower_right, size=_lblSze, textalign=text.align_left)
+        
+        _exitText       = "Exit # {0} @ {1}\nProfit:{2, number, #.#########}\nMax Run Up: {3}\nMax Drawdown: -{4}"
+        // _exitText       = "Exit # {0}\n{1} {2} {3}\n @ {4}"
+        _exitText       := str.format(_exitText, _tradeNum, _exitPrice, strategy.convert_to_account(_profit), _maxRunUp, _maxDrawdown)
+        _l_exit = label.new(_exitTime, _exitPrice, _exitText, xloc.bar_time, color=_profit >0 ? color.green : color.red, textcolor=color.black, style=_positionSize >0 ?label.style_label_upper_left: label.style_label_lower_left, size=_lblSze, textalign=text.align_left)
+    
+
+i_tradeNum   = input.int(1, "Trade #", minval=1)-1
+i_openTrades = not input.bool(false, "Show Open Trades")
+
+f_tradeAnalysis(i_tradeNum, i_openTrades)
+
+
