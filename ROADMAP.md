@@ -148,9 +148,11 @@ Given `MarketContext` + the book-library rules:
 - UI strip: Alpaca paper/live status, equity, cash, buying power
 - Still **manual checklist only** — never places orders
 
-### 🤖 Phase 5.1 — Optional LLM polish (open)
-Wire SpaceXAI / Grok to rewrite the grounded markdown for tone only — must not
-mutate `facts` (PoP, strikes, size, max loss). Keep disclaimers mandatory.
+### 🤖 Phase 5.1 — Optional LLM polish (open / BACKBURNER)
+- **Default today:** catalog-grounded `explainStrategy()` needs no neural model.
+- **Personal local build (later):** non-Ollama local chat (prefer **LM Studio** OpenAI server) for prose only — must not mutate `facts`.
+- **Research parked:** `docs/research/LOCAL_LLM_BACKBURNER.md` (includes inventory of `C:\Windows.old\Users\NerdC\wan2gp` = media gen, not trade LLM).
+- Pull at ~**95% complete** and decide need vs skip. Optional cloud (SpaceXAI/Grok) remains alternate path.
 
 ### 📈 Phase 6 — Charting & backtest
 Overlay strategy payoff/breakevens on the live chart; backtest the selector's
