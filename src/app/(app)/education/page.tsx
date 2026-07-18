@@ -73,6 +73,13 @@ export default function EducationPage() {
             </Link>{" "}
             — plan before entry; close with realized P/L after.
           </li>
+          <li className="text-[var(--text-muted)]">
+            Optional (off-hours / weekend):{" "}
+            <Link className="underline text-[var(--text-accent)]" href="/evolve">
+              Evolve
+            </Link>{" "}
+            — synthetic self-improve lab to stress-test rules (not live signals).
+          </li>
         </ol>
       </Concept>
 
@@ -113,7 +120,11 @@ export default function EducationPage() {
               the trade decision.
             </li>
             <li>
-              <strong>Quick links</strong> — Scanner, Trade Lab, Library, Journal, Education.
+              <strong>Quick links</strong> — Scanner, Trade Lab,{" "}
+              <Link className="underline text-[var(--text-accent)]" href="/evolve">
+                Evolve Lab
+              </Link>
+              , Library, Journal, Education.
             </li>
           </ul>
         </Sub>
@@ -280,6 +291,116 @@ export default function EducationPage() {
       </HowTo>
 
       <HowTo
+        title="Evolve Lab (primary tab · flask icon)"
+        href="/evolve"
+        summary="Scientific-method self-improve lab (workspace-0890ad1c). Synthetic markets only — not live trade signals."
+      >
+        <Sub title="Where to open it">
+          <ul className="list-disc pl-5 space-y-1 mb-0">
+            <li>
+              Left sidebar (desktop): <strong>Evolve</strong> between Scanner and Library.
+            </li>
+            <li>
+              Mobile tab bar: short label <strong>Evo</strong>.
+            </li>
+            <li>
+              Direct URL:{" "}
+              <code className="text-[11px]">http://localhost:3000/evolve</code>
+            </li>
+            <li>
+              Command cockpit <strong>quick links</strong> also point here. (The old buried
+              Command “Test” tab was promoted into this first-class tool.)
+            </li>
+          </ul>
+        </Sub>
+        <Sub title="What it is (honest)">
+          <ul className="list-disc pl-5 space-y-1 mb-0">
+            <li>
+              A <strong>synthetic stress laboratory</strong> that evolves strategy “genomes”
+              (risk / entry / exit / model weights) across fake markets: bull, bear, crisis,
+              sideways.
+            </li>
+            <li>
+              Uses the scientific method as a pipeline:{" "}
+              <strong>Observe → Hypothesize → Experiment → Analyze → Iterate</strong>.
+            </li>
+            <li>
+              “400 years” (or market-years sliders) means <em>simulated</em> years for stress —
+              <strong>not</strong> 400 years of real SPY history.
+            </li>
+            <li>
+              <strong>Champion genomes are lab artifacts</strong> — they do not place orders and
+              are not live “buy this strike” signals.
+            </li>
+            <li>
+              No broker connection inside Evolve. No auto-trade. Ever.
+            </li>
+          </ul>
+        </Sub>
+        <Sub title="How the UI works (step by step)">
+          <ol className="list-decimal pl-5 space-y-1.5 mb-0">
+            <li>
+              Pick <strong>DTE band</strong> (e.g. 0–1, 5, 30) — filters which strategy templates
+              appear for that horizon.
+            </li>
+            <li>
+              Pick a <strong>strategy</strong> (credit spread, iron condor, etc.) and a{" "}
+              <strong>ticker profile</strong> (SPY, QQQ, …) used only for synthetic path stats.
+            </li>
+            <li>
+              Set lab knobs: <strong>generations</strong>, <strong>population size</strong>,{" "}
+              <strong>market years</strong>, <strong>eval years</strong>. Smaller = faster smoke;
+              larger = slower, richer evolution.
+            </li>
+            <li>
+              Click <strong>Run evolution</strong>. The pipeline stages light up while an SSE
+              stream (<code className="text-[11px]">/api/testlab/evolve</code>) reports progress.
+            </li>
+            <li>
+              Watch charts: fitness / Sharpe by generation, champion equity curve, regime
+              breakdown when available.
+            </li>
+            <li>
+              Read the champion card: edge, win rate, Kelly-style size hint, drawdown —{" "}
+              <em>as lab metrics</em>, not as permission to size real capital.
+            </li>
+          </ol>
+        </Sub>
+        <Sub title="How it fits your live money loop">
+          <ul className="list-disc pl-5 space-y-1 mb-0">
+            <li>
+              <strong>Off-hours:</strong> run Evolve to see which risk knobs survive crisis regimes.
+            </li>
+            <li>
+              <strong>Do not</strong> copy champion strikes into Robinhood. There are no live
+              strikes here.
+            </li>
+            <li>
+              Take only <em>process lessons</em> (tighter risk, prefer defined-risk, avoid
+              over-leverage) → then open{" "}
+              <Link className="underline text-[var(--text-accent)]" href="/builder">
+                Trade Lab
+              </Link>{" "}
+              with <strong>live Alpaca data</strong> and size from{" "}
+              <strong>your real equity</strong> in Settings.
+            </li>
+            <li>
+              Offline twin (optional): <code className="text-[11px]">python/ota</code> and{" "}
+              <code className="text-[11px]">TRADING_BRAIN_LOCAL</code> self-improve scripts — same
+              idea, CLI.
+            </li>
+          </ul>
+        </Sub>
+        <Sub title="When NOT to use Evolve">
+          <ul className="list-disc pl-5 space-y-1 mb-0">
+            <li>During a live entry session when you need real marks — use Trade Lab + checklist.</li>
+            <li>As proof a structure “always wins” — synthetic edge can overfit the generator.</li>
+            <li>As a substitute for journaling real RH outcomes.</li>
+          </ul>
+        </Sub>
+      </HowTo>
+
+      <HowTo
         title="Library"
         href="/library"
         summary="Searchable catalog of book/rule ingest — sources for brain ranking."
@@ -365,6 +486,50 @@ export default function EducationPage() {
       <h2 className="text-lg font-medium m-0 pt-2 border-t border-[var(--border)] pt-4">
         Core concepts
       </h2>
+
+      <Concept title="Evolve vs Trade Lab (do not mix them up)">
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-[var(--border)] text-[var(--text-muted)]">
+                <th className="py-1.5 pr-3 font-medium"></th>
+                <th className="py-1.5 pr-3 font-medium">
+                  <Link className="underline text-[var(--text-accent)]" href="/evolve">
+                    Evolve
+                  </Link>
+                </th>
+                <th className="py-1.5 font-medium">
+                  <Link className="underline text-[var(--text-accent)]" href="/builder">
+                    Trade Lab
+                  </Link>
+                </th>
+              </tr>
+            </thead>
+            <tbody className="text-[var(--text-secondary)]">
+              <tr className="border-b border-[var(--border)]">
+                <td className="py-1.5 pr-3 font-medium text-[var(--text-primary)]">Data</td>
+                <td className="py-1.5 pr-3">Synthetic regimes</td>
+                <td className="py-1.5">Live / demo option chain</td>
+              </tr>
+              <tr className="border-b border-[var(--border)]">
+                <td className="py-1.5 pr-3 font-medium text-[var(--text-primary)]">Output</td>
+                <td className="py-1.5 pr-3">Champion genome metrics</td>
+                <td className="py-1.5">Strikes, PoP/EV, checklist</td>
+              </tr>
+              <tr className="border-b border-[var(--border)]">
+                <td className="py-1.5 pr-3 font-medium text-[var(--text-primary)]">Use when</td>
+                <td className="py-1.5 pr-3">Study risk rules offline</td>
+                <td className="py-1.5">Before a real or paper fill</td>
+              </tr>
+              <tr>
+                <td className="py-1.5 pr-3 font-medium text-[var(--text-primary)]">Broker</td>
+                <td className="py-1.5 pr-3">Never</td>
+                <td className="py-1.5">Manual checklist only</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </Concept>
 
       <Concept title="Capital ladder (empire)">
         Seed (~$500–few k) → Stage 1 (~$5k) → Stage 2 (~$20–25k). At seed, 1% risk is tiny — many

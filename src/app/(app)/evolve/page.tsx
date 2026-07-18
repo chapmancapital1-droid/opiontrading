@@ -136,6 +136,9 @@ export default function EvolvePage() {
           <code className="text-[10px]">python/ota</code>
         </div>
         <div className="flex flex-wrap gap-2">
+          <Link href="/education" className="os-btn text-xs no-underline">
+            How Evolve works (Education)
+          </Link>
           <Link href="/dashboard" className="os-btn text-xs no-underline">
             Command
           </Link>

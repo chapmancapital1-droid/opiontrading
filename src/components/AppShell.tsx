@@ -112,6 +112,12 @@ export default function AppShell({ children }: { children: ReactNode }) {
             <br />
             No auto-trade · educational
           </p>
+          <Link
+            href="/education"
+            className="block text-[10px] text-[var(--text-muted)] px-1 mt-1 underline underline-offset-2"
+          >
+            How tabs work → Education
+          </Link>
         </div>
       </nav>
 
