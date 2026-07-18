@@ -1,5 +1,10 @@
 import AppShell from "@/components/AppShell";
+import LeadGate from "@/components/LeadGate";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  return <AppShell>{children}</AppShell>;
+  return (
+    <LeadGate>
+      <AppShell>{children}</AppShell>
+    </LeadGate>
+  );
 }

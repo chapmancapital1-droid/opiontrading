@@ -26,6 +26,7 @@
 | 06 | `06-FOUR-STRATEGIES-TRAINING.md` | 4 higher-safety strategies + platform walkthrough |
 | 07 | `07-PROFITABLE-TRADE-SHAPE.md` | What a profitable setup *looks like* on OptionScope |
 | 08 | `08-MULTI-TEAM-QA-REPORT.md` | Superagent / multi-team quality gates |
+| 09 | `09-AVATAR-GITHUB-FREE-SCRIPT.md` | Avatar scripts → free GitHub download + email unlock |
 
 **Related existing assets (already in repo):**
 - `docs/training/OPTIONSCOPE_VIDEO_EDUCATION_PACK.txt`

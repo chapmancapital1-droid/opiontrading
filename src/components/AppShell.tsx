@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
+import { LeadStatusChip } from "@/components/LeadStatusChip";
 
 const PRIMARY_NAV = [
   { href: "/dashboard", label: "Command", icon: "ti-layout-dashboard", short: "Cmd" },
@@ -118,6 +119,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
           >
             How tabs work → Education
           </Link>
+          <LeadStatusChip />
         </div>
       </nav>
 
