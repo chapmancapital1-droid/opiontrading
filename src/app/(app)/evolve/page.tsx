@@ -2,9 +2,10 @@
 
 /**
  * Evolve Lab — first-class tool (workspace-0890ad1c scientific-method engine).
- * IA: tools rail · synthetic stress lab · never live signals / never auto-trade.
+ * IA: tools rail · synthetic stress lab · hive brain knowledge growth · never auto-trade.
  */
 
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { EvolutionLabPanel } from "@/components/EvolutionLabPanel";
 
@@ -41,6 +42,167 @@ const TOOL_STRIP = [
     blurb: "Plan → open → close",
   },
 ] as const;
+
+type HiveSnap = {
+  ok: boolean;
+  brain?: {
+    totalSuccessfulRuns: number;
+    totalRejectedRuns: number;
+    updatedAt: string;
+    improvementLessons: string[];
+    lastChampion?: {
+      strategyId: string;
+      ticker: string;
+      dte: number;
+      winRate: number;
+      sharpe: number;
+      at: string;
+    };
+  };
+  winRates?: {
+    strategies: Array<{
+      strategyId: string;
+      runs: number;
+      avgWinRate: number;
+      bestWinRate: number;
+      avgSharpe: number;
+      lastRunAt: string;
+    }>;
+  };
+  successThresholds?: Record<string, number>;
+  growOnGithub?: string;
+};
+
+function HiveStatusPanel() {
+  const [snap, setSnap] = useState<HiveSnap | null>(null);
+  const [err, setErr] = useState("");
+
+  const load = useCallback(async () => {
+    try {
+      const res = await fetch("/api/hive", { cache: "no-store" });
+      const j = (await res.json()) as HiveSnap;
+      if (!j.ok) throw new Error("hive_fetch_failed");
+      setSnap(j);
+      setErr("");
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "Failed to load hive");
+    }
+  }, []);
+
+  useEffect(() => {
+    void load();
+    const t = setInterval(() => void load(), 12000);
+    return () => clearInterval(t);
+  }, [load]);
+
+  const rows = snap?.winRates?.strategies ?? [];
+
+  return (
+    <section className="os-panel p-4 space-y-3">
+      <div className="flex flex-wrap items-start justify-between gap-2">
+        <div>
+          <div className="os-kicker">Hive brain · git-tracked knowledge</div>
+          <h2 className="text-base font-medium m-0">Strategy win rates & improvements</h2>
+          <p className="text-xs text-[var(--text-muted)] m-0 mt-1 max-w-2xl">
+            Successful Evolve champions auto-write{" "}
+            <code className="text-[10px]">src/knowledge/catalog/hive/</code>. Push those files to
+            GitHub so every install inherits grown option knowledge. Synthetic only — not live fills.
+          </p>
+        </div>
+        <button type="button" className="os-btn text-xs" onClick={() => void load()}>
+          Refresh hive
+        </button>
+      </div>
+
+      {err && <p className="text-xs text-red-400 m-0">{err}</p>}
+
+      <div className="grid gap-2 sm:grid-cols-3 text-sm">
+        <div className="rounded-lg border border-[var(--border)] p-3">
+          <div className="text-[10px] uppercase text-[var(--text-muted)]">Successful runs</div>
+          <div className="text-xl font-medium">
+            {snap?.brain?.totalSuccessfulRuns ?? "—"}
+          </div>
+        </div>
+        <div className="rounded-lg border border-[var(--border)] p-3">
+          <div className="text-[10px] uppercase text-[var(--text-muted)]">Rejected (gate)</div>
+          <div className="text-xl font-medium">
+            {snap?.brain?.totalRejectedRuns ?? "—"}
+          </div>
+        </div>
+        <div className="rounded-lg border border-[var(--border)] p-3">
+          <div className="text-[10px] uppercase text-[var(--text-muted)]">Updated</div>
+          <div className="text-sm font-medium">
+            {snap?.brain?.updatedAt && snap.brain.updatedAt !== "1970-01-01T00:00:00.000Z"
+              ? snap.brain.updatedAt.slice(0, 19).replace("T", " ")
+              : "— empty hive —"}
+          </div>
+        </div>
+      </div>
+
+      {snap?.brain?.lastChampion && (
+        <p className="text-xs text-[var(--text-secondary)] m-0">
+          Last champion: <strong>{snap.brain.lastChampion.strategyId}</strong> ·{" "}
+          {snap.brain.lastChampion.ticker} · {snap.brain.lastChampion.dte}DTE · WR{" "}
+          {(snap.brain.lastChampion.winRate * 100).toFixed(0)}% · Sharpe{" "}
+          {snap.brain.lastChampion.sharpe.toFixed(2)}
+        </p>
+      )}
+
+      {rows.length > 0 ? (
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr className="border-b border-[var(--border)] text-[var(--text-muted)]">
+                <th className="py-1.5 pr-2 font-medium">Strategy</th>
+                <th className="py-1.5 pr-2 font-medium">Runs</th>
+                <th className="py-1.5 pr-2 font-medium">Avg WR</th>
+                <th className="py-1.5 pr-2 font-medium">Best WR</th>
+                <th className="py-1.5 font-medium">Avg Sharpe</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.slice(0, 12).map((r) => (
+                <tr key={r.strategyId} className="border-b border-[var(--border)]">
+                  <td className="py-1.5 pr-2 font-medium text-[var(--text-primary)]">
+                    {r.strategyId}
+                  </td>
+                  <td className="py-1.5 pr-2">{r.runs}</td>
+                  <td className="py-1.5 pr-2">{(r.avgWinRate * 100).toFixed(0)}%</td>
+                  <td className="py-1.5 pr-2">{(r.bestWinRate * 100).toFixed(0)}%</td>
+                  <td className="py-1.5">{r.avgSharpe.toFixed(2)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <p className="text-xs text-[var(--text-muted)] m-0">
+          No successful hive rows yet. Run evolution below — champions meeting WR/Sharpe/edge/DD
+          gates are written automatically.
+        </p>
+      )}
+
+      {snap?.brain?.improvementLessons && snap.brain.improvementLessons.length > 0 && (
+        <div>
+          <div className="text-[10px] uppercase text-[var(--text-muted)] mb-1">
+            Improvement lessons
+          </div>
+          <ul className="m-0 pl-4 list-disc text-xs text-[var(--text-secondary)] space-y-0.5">
+            {snap.brain.improvementLessons.slice(0, 6).map((l) => (
+              <li key={l.slice(0, 60)}>{l}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {snap?.growOnGithub && (
+        <pre className="text-[10px] m-0 p-2 rounded-lg overflow-x-auto border border-[var(--border)] bg-[var(--surface-1)] text-[var(--text-muted)]">
+          {snap.growOnGithub}
+        </pre>
+      )}
+    </section>
+  );
+}
 
 export default function EvolvePage() {
   return (
@@ -122,6 +284,8 @@ export default function EvolvePage() {
           in Robinhood → journal. “400 years” here means synthetic stress years, not real SPY history.
         </div>
       </header>
+
+      <HiveStatusPanel />
 
       {/* Engine surface */}
       <EvolutionLabPanel />

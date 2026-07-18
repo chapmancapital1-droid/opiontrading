@@ -1,7 +1,8 @@
 /**
  * SSE evolution lab — self-improving synthetic options backtest.
  * Source: workspace-0890ad1c (scientific-method evolution engine).
- * No DB / no auto-trade — educational Test tab only.
+ * Successful champions auto-ingest into Hive Brain (git-tracked knowledge).
+ * No broker / no auto-trade — educational.
  */
 
 import {
@@ -12,6 +13,7 @@ import {
   type DTE,
   type EvolutionProgress,
 } from "@/testlab/trading";
+import { ingestEvolveChampion } from "@/knowledge/hiveStore";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -55,7 +57,7 @@ export async function GET(request: Request) {
 
   const encoder = new TextEncoder();
   const stream = new ReadableStream({
-    start(controller) {
+    async start(controller) {
       const send = (data: object) => {
         try {
           controller.enqueue(encoder.encode(`data: ${JSON.stringify(data)}\n\n`));
@@ -134,6 +136,45 @@ export async function GET(request: Request) {
         });
 
         const bt = champion.backtest;
+        const metrics = {
+          strategyId: strategy.id,
+          strategyLabel: strategy.name ?? strategy.id,
+          dte,
+          ticker: ticker.symbol,
+          sharpe: bt?.sharpeRatio ?? 0,
+          sortino: bt?.sortinoRatio ?? 0,
+          maxDD: bt?.maxDrawdown ?? 0,
+          winRate: bt?.winRate ?? 0,
+          trades: bt?.totalTrades ?? 0,
+          totalReturn: bt?.totalReturn ?? 0,
+          profitFactor: bt?.profitFactor ?? 0,
+          statisticalEdge: bt?.statisticalEdge ?? 0,
+          kellyOptimal: bt?.kellyOptimal ?? 0,
+          expectedValue: bt?.expectedValue ?? 0,
+          fitnessComposite: champion.fitness?.composite ?? 0,
+          marketYears: config.marketYears,
+          evalYears: config.evalYears,
+          generations: config.generations,
+          populationSize: config.populationSize,
+          seed: config.seed,
+          regimeResults: (bt?.regimeResults ?? {}) as Record<
+            string,
+            { trades?: number; winRate?: number; avgPnL?: number; totalPnL?: number }
+          >,
+        };
+
+        let hive: Awaited<ReturnType<typeof ingestEvolveChampion>> | null = null;
+        try {
+          hive = await ingestEvolveChampion(metrics);
+        } catch (e) {
+          hive = {
+            ok: true,
+            ingested: false,
+            reason: e instanceof Error ? e.message : String(e),
+            failures: ["hive_write_error"],
+          };
+        }
+
         send({
           type: "complete",
           elapsed: Date.now(),
@@ -142,23 +183,43 @@ export async function GET(request: Request) {
             strategyId: strategy.id,
             dte,
             ticker: ticker.symbol,
-            sharpe: bt?.sharpeRatio ?? 0,
-            sortino: bt?.sortinoRatio ?? 0,
-            maxDD: bt?.maxDrawdown ?? 0,
-            winRate: bt?.winRate ?? 0,
-            trades: bt?.totalTrades ?? 0,
-            totalReturn: bt?.totalReturn ?? 0,
-            profitFactor: bt?.profitFactor ?? 0,
+            sharpe: metrics.sharpe,
+            sortino: metrics.sortino,
+            maxDD: metrics.maxDD,
+            winRate: metrics.winRate,
+            trades: metrics.trades,
+            totalReturn: metrics.totalReturn,
+            profitFactor: metrics.profitFactor,
             annualizedReturn: bt?.annualizedReturn ?? 0,
             annualizedVol: bt?.annualizedVol ?? 0,
             calmarRatio: bt?.calmarRatio ?? 0,
-            expectedValue: bt?.expectedValue ?? 0,
-            kellyOptimal: bt?.kellyOptimal ?? 0,
-            statisticalEdge: bt?.statisticalEdge ?? 0,
-            regimeResults: bt?.regimeResults ?? {},
+            expectedValue: metrics.expectedValue,
+            kellyOptimal: metrics.kellyOptimal,
+            statisticalEdge: metrics.statisticalEdge,
+            regimeResults: metrics.regimeResults,
             equity: bt?.equity?.slice(0, 400) ?? [],
             fitness: champion.fitness,
           },
+          hive: hive
+            ? {
+                ingested: hive.ingested,
+                reason: hive.reason,
+                failures: "failures" in hive ? hive.failures : undefined,
+                runId: "runId" in hive ? hive.runId : undefined,
+                lessons: "lessons" in hive ? hive.lessons : undefined,
+                strategyWinRate:
+                  "strategy" in hive
+                    ? {
+                        strategyId: hive.strategy.strategyId,
+                        runs: hive.strategy.runs,
+                        avgWinRate: hive.strategy.avgWinRate,
+                        bestWinRate: hive.strategy.bestWinRate,
+                        avgSharpe: hive.strategy.avgSharpe,
+                      }
+                    : undefined,
+                totalSuccessfulRuns: hive.brain?.totalSuccessfulRuns,
+              }
+            : null,
         });
       } catch (err) {
         send({

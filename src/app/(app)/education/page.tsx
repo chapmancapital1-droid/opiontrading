@@ -398,6 +398,41 @@ export default function EducationPage() {
             <li>As a substitute for journaling real RH outcomes.</li>
           </ul>
         </Sub>
+        <Sub title="Hive brain (auto-improvement knowledge)">
+          <ul className="list-disc pl-5 space-y-1 mb-0">
+            <li>
+              When a run <strong>succeeds</strong> (win rate, Sharpe, edge, trade count, DD gates),
+              OptionScope writes to the <strong>Hive Brain</strong> under{" "}
+              <code className="text-[11px]">src/knowledge/catalog/hive/</code>.
+            </li>
+            <li>
+              Files updated: <code className="text-[11px]">hive_brain.json</code> (lessons +
+              aggregates), <code className="text-[11px]">strategy_win_rates.json</code> (WR tracking
+              per strategy), <code className="text-[11px]">evolve_runs.jsonl</code> (append-only log).
+            </li>
+            <li>
+              Rejected champions still count as “rejected” for honesty — they do not pollute win
+              rates.
+            </li>
+            <li>
+              <strong>Grow GitHub knowledge:</strong> after good evolve sessions, commit & push the
+              hive folder so every install inherits cumulative strategy stats:
+              <br />
+              <code className="text-[10px]">
+                git add src/knowledge/catalog/hive/ && git commit -m &quot;hive: evolve successful
+                runs&quot; && git push
+              </code>
+            </li>
+            <li>
+              API: <code className="text-[11px]">GET /api/hive</code> — live snapshot on the Evolve
+              page.
+            </li>
+            <li>
+              Hive WR is <em>synthetic lab</em> history — not Robinhood realized win rate. Journal
+              still owns real outcomes.
+            </li>
+          </ul>
+        </Sub>
       </HowTo>
 
       <HowTo

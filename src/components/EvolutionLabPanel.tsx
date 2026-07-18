@@ -84,6 +84,22 @@ type Champion = {
   >;
 };
 
+type HiveResult = {
+  ingested: boolean;
+  reason: string;
+  failures?: string[];
+  runId?: string;
+  lessons?: string[];
+  strategyWinRate?: {
+    strategyId: string;
+    runs: number;
+    avgWinRate: number;
+    bestWinRate: number;
+    avgSharpe: number;
+  };
+  totalSuccessfulRuns?: number;
+};
+
 const STAGES: { key: Stage; label: string }[] = [
   { key: "observing", label: "Observe" },
   { key: "hypothesizing", label: "Hypothesize" },
@@ -115,6 +131,7 @@ export function EvolutionLabPanel() {
   const [totalGen, setTotalGen] = useState(0);
   const [generations, setGenerations] = useState<GenRow[]>([]);
   const [champion, setChampion] = useState<Champion | null>(null);
+  const [hive, setHive] = useState<HiveResult | null>(null);
   const [market, setMarket] = useState<{
     totalDays: number;
     finalPrice: number;
@@ -146,6 +163,7 @@ export function EvolutionLabPanel() {
     setProgress("Generating synthetic market…");
     setGenerations([]);
     setChampion(null);
+    setHive(null);
     setMarket(null);
     setCurrentGen(0);
 
@@ -194,11 +212,18 @@ export function EvolutionLabPanel() {
           );
         } else if (data.type === "complete") {
           setChampion(data.champion as Champion);
+          const hivePayload = data.hive as HiveResult | null | undefined;
+          setHive(hivePayload ?? null);
           setStage("complete");
           setRunning(false);
           const ch = data.champion as Champion;
+          const hiveNote = hivePayload?.ingested
+            ? " · Hive ✓ knowledge grown"
+            : hivePayload
+              ? " · Hive skipped (thresholds)"
+              : "";
           setProgress(
-            `Done · Edge ${((ch.statisticalEdge ?? 0) * 100).toFixed(1)}% · WR ${((ch.winRate ?? 0) * 100).toFixed(0)}% · Kelly ${((ch.kellyOptimal ?? 0) * 100).toFixed(0)}%`,
+            `Done · Edge ${((ch.statisticalEdge ?? 0) * 100).toFixed(1)}% · WR ${((ch.winRate ?? 0) * 100).toFixed(0)}% · Kelly ${((ch.kellyOptimal ?? 0) * 100).toFixed(0)}%${hiveNote}`,
           );
           es.close();
           esRef.current = null;
@@ -317,6 +342,51 @@ export function EvolutionLabPanel() {
                 width: `${Math.min(100, ((currentGen + 1) / totalGen) * 100)}%`,
               }}
             />
+          </div>
+        )}
+        {hive && (
+          <div
+            className={`mt-3 rounded-lg border px-3 py-2 text-xs leading-relaxed ${
+              hive.ingested
+                ? "border-emerald-600/50 bg-emerald-500/10 text-[var(--text-secondary)]"
+                : "border-[var(--border)] bg-[var(--surface-2)] text-[var(--text-muted)]"
+            }`}
+          >
+            <div className="font-medium text-[var(--text-primary)]">
+              Hive brain · {hive.ingested ? "ingested for improvement" : "not ingested"}
+            </div>
+            <p className="m-0 mt-1">{hive.reason}</p>
+            {hive.ingested && hive.strategyWinRate && (
+              <p className="m-0 mt-1">
+                <strong>{hive.strategyWinRate.strategyId}</strong> · {hive.strategyWinRate.runs}{" "}
+                hive runs · avg WR{" "}
+                {(hive.strategyWinRate.avgWinRate * 100).toFixed(0)}% · best WR{" "}
+                {(hive.strategyWinRate.bestWinRate * 100).toFixed(0)}% · avg Sharpe{" "}
+                {hive.strategyWinRate.avgSharpe.toFixed(2)}
+                {typeof hive.totalSuccessfulRuns === "number"
+                  ? ` · hive total ${hive.totalSuccessfulRuns}`
+                  : ""}
+              </p>
+            )}
+            {hive.ingested && hive.lessons && hive.lessons.length > 0 && (
+              <ul className="m-0 mt-1 pl-4 list-disc">
+                {hive.lessons.slice(0, 4).map((l) => (
+                  <li key={l.slice(0, 48)}>{l}</li>
+                ))}
+              </ul>
+            )}
+            {!hive.ingested && hive.failures && hive.failures.length > 0 && (
+              <ul className="m-0 mt-1 pl-4 list-disc">
+                {hive.failures.map((f) => (
+                  <li key={f}>{f}</li>
+                ))}
+              </ul>
+            )}
+            <p className="m-0 mt-2 text-[10px] text-[var(--text-muted)]">
+              Files:{" "}
+              <code>src/knowledge/catalog/hive/</code> — commit & push to GitHub so installs grow
+              shared strategy win-rate knowledge.
+            </p>
           </div>
         )}
       </div>

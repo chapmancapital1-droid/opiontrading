@@ -99,6 +99,14 @@ For education / personal analysis only. Never auto-trades.
     4. Review brain / checklist → Copy checklist (manual entry only — no auto-trade)
     5. Journal   → save plan → mark open/close after paper fills
     6. Evolve    → http://localhost:3000/evolve  (synthetic self-improve lab; not live signals)
+       Successful champions auto-update Hive Brain files:
+         src/knowledge/catalog/hive/hive_brain.json
+         src/knowledge/catalog/hive/strategy_win_rates.json
+         src/knowledge/catalog/hive/evolve_runs.jsonl
+       Commit & push that folder so GitHub knowledge (and future installs) grow:
+         git add src/knowledge/catalog/hive/
+         git commit -m "hive: evolve successful runs"
+         git push
 
 
 --------------------------------------------------------------------------------

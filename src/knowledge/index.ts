@@ -6,6 +6,22 @@ export type {
   StrategyRule,
   Thesis,
 } from "./types";
+export {
+  HIVE_VERSION,
+  HIVE_SUCCESS,
+  emptyHiveBrain,
+  evaluateHiveSuccess,
+  getStrategyHiveNote,
+  distillLessons,
+  mergeSuccessfulRun,
+  strategyWinRatesExport,
+} from "./hiveBrain";
+export type {
+  HiveBrainDoc,
+  HiveChampionMetrics,
+  StrategyWinRateRow,
+  HiveRunRecord,
+} from "./hiveBrain";
 export { PORTFOLIO_POLICY, assertPolicyInvariants } from "./portfolioPolicy";
 export {
   resolveCapitalPhase,
