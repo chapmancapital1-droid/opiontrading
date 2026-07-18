@@ -27,6 +27,13 @@ export default function EducationPage() {
           <code className="text-[11px]">docs/training/nerdcommand-beginner-book/</code> — start at{" "}
           <code className="text-[11px]">00-INDEX-AND-HANDOFF.md</code>
         </p>
+        <p className="text-xs text-[var(--text-muted)] mt-2 m-0">
+          Free GitHub CTA script (avatar):{" "}
+          <code className="text-[11px]">
+            docs/training/nerdcommand-beginner-book/09-AVATAR-GITHUB-FREE-SCRIPT.md
+          </code>
+          . First open unlocks after name/email capture (NerdCommand leads).
+        </p>
       </div>
 
       <section className="rounded-xl border border-[var(--border-warning)] bg-[var(--bg-warning)] p-4">
