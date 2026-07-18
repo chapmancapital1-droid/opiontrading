@@ -1,0 +1,221 @@
+OPTIONS TRADING
+CRASH COURSE
+Quick Start Guide For Beginners To Learn
+Risk And Reward. Overcome Fear And
+Anxiety In Stock Market Investing Through
+The Best Passive Income Strategies.
+George Greek
+Table of Contents
+Introduction
+Chapter 1. Master the Basic Nuts and Bolts of Options Trading (Buy or Sell
+Calls and Puts)
+Chapter 2. Understand the Theory and Mathematics Behind Options
+Chapter 3. What Are the Factors That Affect Options Pricing?
+Chapter 4. How Are Options Different Than Stocks
+Chapter 5. How You Can Use Options Even If You Invest in Stocks and
+Create Superior Combo Strategies
+Chapter 6. The Art of Adjusting Single Options Strategies
+Chapter 7. Risk Management
+Chapter 8. Overcome Fear and Anxiety
+Chapter 9. Some Simple Options Trading Strategies
+Chapter 10. Financial Leverage
+Chapter 11. Money Management Concept
+Chapter 12. Analyzing Market Trends In Options Trading
+Chapter 13. Recognizing Trading Opportunities
+Chapter 14. The Greeks
+Chapter 15. How Options Work
+Chapter 16. Avoiding Beginner Mistakes and Tips
+Chapter 17. Daily Routine for a Trader
+Chapter 18. Selling Naked Options
+Chapter 19. Options On Futures
+Chapter 20. Best Demo Simulator and How to Use It
+Chapter 21. Options Trading Jargon
+Conclusion
+© Copyright 2021 - All rights reserved.
+The content contained within this book may not be reproduced, duplicated
+or transmitted without direct written permission from the author or the
+publisher.
+Under no circumstances will any blame or legal responsibility be held
+against the publisher, or author, for any damages, reparation, or monetary
+loss due to the information contained within this book. Either directly or
+indirectly.
+Legal Notice:
+This book is copyright protected. This book is only for personal use. You
+cannot amend, distribute, sell, use, quote or paraphrase any part, or the
+content within this book, without the consent of the author or publisher.
+Disclaimer Notice:
+Please note the information contained within this document is for
+educational and entertainment purposes only. All effort has been executed
+to present accurate, up to date, and reliable, complete information. No
+warranties of any kind are declared or implied. Readers acknowledge that
+the author is not engaging in the rendering of legal, financial, medical or
+professional advice. The content within this book has been derived from
+various sources. Please consult a licensed professional before attempting
+any techniques outlined in this book.
+By reading this document, the reader agrees that under no circumstances is
+the author responsible for any losses, direct or indirect, which are incurred
+as a result of the use of information contained within this document,
+including, but not limited to errors, omissions, or inaccuracies.
+Introduction
+Options trading can be daunting for those with little to no experience, but it
+doesn’t have to be. Options are a simple tool that allows you to increase
+your returns on investments and leverage the power of buying low and
+selling high.
+In this article, we’ll explore the basics of options trading so that you can
+start to educate yourself about how they work. We’ll talk about what they
+are, the different types and when you might use them.
+What Are Options?
+There are many ways to make money in the stock market. You can buy a
+stock outright, you can short sell stocks and you could even trade options.
+The first thing you need to understand about options is that they are
+contracts that give the buyer the right to buy or sell a stock at a specific
+price before a specific date. Call Options are the right to buy stocks at a
+predetermined price and Put Options are the right to sell stocks at a
+predetermined price. There is a buyer and a seller for every option and the
+seller is obligated to fulfill the contract the buyer should choose to exercise
+it.
+If you’re using options as a way to trade stocks, a put option is basically
+insurance against losing money. If you own stocks and fear they might drop
+in value, you can buy put option contracts to protect the stocks from losing
+too much. If the stocks don’t drop, you don’t have to do anything else and
+your put option expires worthless. If the stock drops below the strike price,
+you can sell your stocks at the predetermined price and then buy them back
+with the option contract. That way you avoid losing money on your original
+investment. If you’re looking to trade options as an investment strategy on
+its own, then buying call option contracts is a good way to do it. If you
+think a stock is going to go up in value, you can buy call option contracts
+with a strike price that’s higher than the current market price. That way you
+can make money if the stock goes up. If the stock doesn’t go up, your
+option expires worthless and you lose the money that you paid for it. Your
+goal in that situation would be to buy the stocks at the strike price and then
+sell them for a higher price. Options are a great way to trade stocks or build
+your investment portfolio.
+Types of Options
+There are two main types of options: equity and index.
+Equity options are the rights to buy a specific stock at a specific price in the
+future. Index options are rights to buy or sell an entire index, like the S&P
+500. You can also trade options on futures contracts, which are agreements
+to buy or sell a specific commodity at a specific price in the future.
+These are known as futures options but they work in similar ways to equity
+and index options.
+You can also trade options on currency pairs. Instead of buying the US
+dollar or any other currency, you can buy options on the exchange rate
+between two currencies. In this case, the underlying asset is currencies and
+not stocks.
+Using Options in Your Portfolio
+One of the great things about options trading is that it lets you take a more
+active role in your portfolio. If you have stocks that are performing poorly
+but you still think they have the potential to go up, you can buy put option
+contracts to protect your investment. This way you don’t have to sell your
+stocks and take a loss, giving them a second chance to go up in value.
+Buying put option contracts is also a great way to hedge your portfolio.
+If you have stocks that are doing well but you’re afraid that they might have
+a correction, you can buy put option contracts to protect your portfolio. If
+the stocks don’t drop in value, you don’t have to do anything and your put
+option contracts expire worthlessly. If your stocks do drop in value, the put
+option contracts allow you to sell your stocks at the predetermined price
+and then buy them back with the option contract. This way you can avoid
+losing money on your original investment. You can do it too!
+Options trading can seem like a daunting task, but it doesn’t have to be. It
+can be a simple way to trade stocks or the underlying assets of futures
+contracts. You can start by reading up on the basics of options and learning
+how they work. This way you can get a better idea of how they can work
+for you and how to use them. You don’t have to dive right into the deep
+end, especially if you’re just starting out. The best way to learn how to
+swim is to step into the shallow end and slowly wade into the deeper water.
+This will give you time to get comfortable with the process and then
+gradually build up your confidence.
+Hopefully, by now you have a solid understanding of options trading. You
+don’t have to use them on your own or as part of an active trading strategy.
+You can use options as a way to build your investment portfolio, protect
+your investments, and work towards meeting your goals.
+You can also use options to trade stocks. Whatever you decide to do with
+them, having a solid understanding of options trading will help you make
+the right decision for yourself.
+Chapter 1. Master the Basic Nuts and
+Bolts of Options Trading (Buy or Sell Calls
+and Puts)
+Buying and Selling Puts
+Let’s talk about buying and selling puts. Puts, of course, allow you to sell
+the stock that you have or the underlying commodity that you have
+underneath it all. There are different reasons why people may want to buy
+or sell puts, and here we’ll go over what it is, how to do it, and the
+advantages of such.
+What is Buying and Selling Puts?
+Selling/buying puts essentially is giving someone the option to buy the
+stock at a certain amount of money.
+If you sell a put option, you’re selling the chance for someone to buy that
+stock at a price.
+If you buy a put option, you’re giving someone the option to buy that stock
+for that price and the person is obligated to sell it.
+So, let’s say that you’re planning on getting a put option to buy that stock at
+a certain amount of money. You can put that option down, and from there,
+wait for it to fall, and from there you can exercise it. Maybe you want to
+buy shares from a really good railroad company. You essentially notice it’s
+increasing the earnings on this, and you decide to buy the stock when it’s
+below 30 potentially. By buying a put option, it basically makes the seller
+obligated to sell you the stock when it falls below 30 dollars.
+You want to exercise these in falling markets since you’ll generate a profit
+when the market is falling, rather than rising.
+Selling Puts in this Market
+Here’s the thing, when you want to sell puts, you should only do so if
+you’re comfy with owning a stock that’s under its actual price, because
+essentially, you’re assuming the obligation to buy it if the person does
+decide to sell. From this, you should also only enter trades where the net
+price paid for the security is good. This is the most important part of selling
+puts profitably in the markets that you have. There are other reasons to sell
+it to the person. You can also own the security below the market price that
+is currently there, and you’ll definitely want to be careful when you do
+choose to sell this.
+An Example of Buying a Put
+Let’s now move onto buying these puts. One thing to note is that you’re not
+going to see the commissions, taxes, margins, and other charges factored
+into any of these equations for a reason. That starts to get it a bit more
+complicated, and right now, we are just showing you the cut and dry of all
+of the ways you can buy a put option that can be considered. But you
+should definitely consult with your tax advisor or broker before you go in.
+So, let’s say you’ve got company A, which is overvalued currently at $50
+bucks a share, and you decide to bet on a decline at this point, getting a put
+contract that’s at $35 a share, and it costs $2 per share, so the “breakeven”
+price is $33 a share. This is deduced from basic math since you’re taking
+the contract price of 35 minus the 2 making it $33 for this. Since each of
+these represents 100 different shares. That’s $3500 in total of what you’ll
+buy, and then of course it’ll cost you upfront $200 for this (cause of the
+options contract and the shares) and from there, you enter the trade. Now,
+let’s say that the option contract is for August 2019, and from there, you
+fast-forward and watch the market. Below is a table of what can happen.
+What happens to
+Action of stock Your return Outlook
+you
+The option
+expires, becomes
+worthless, and you
+Soars all the way lose the $200 (0%)
+Okay
+up to $60 premium, but
+you’re basically
+losing nothing
+else
+Falls slightly to Same thing (0%) Okay
+$38 happens, stock
+falls but you don’t
+make a profit
+You make some
+cash! 800 dollars
+Drops all the way
+to be exact ($35- (800%) Nice!
+to $25
+25) and then the
+$2 premium
+The ideal
+situation, and
+Drops to $0 you’ll get $3300
+(basically going from it (0 at (1500%) Ideal!
+bankrupt) expiration, so
+3500-200 from the
+premium)
+So, the best time to use these is when you have a sinking ship in terms of
+stock. Otherwise, they aren’t worth your time, and it’s better not to have
+these stocks, and there is always a chance you could end up losing money.
+But, if the person sells the stock, and you turn around and cash in on it,
+you’ll have more money, and you don’t have to worry about the burd

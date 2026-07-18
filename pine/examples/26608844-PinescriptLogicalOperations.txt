@@ -1,0 +1,43 @@
+//@version=4
+study("Variable Operators - Logic")
+
+//  There are three logical operators in Pine Script:
+//      not 	Negation
+//      and 	Logical Conjunction
+//      or  	Logical Disjunction
+
+
+// ----- LOGICAL ------
+
+// booleans
+not_bool        = not true                  // const bool = false
+not_bool2       = not false                 // const bool = true
+and_bool        = true and true             // const bool = true
+and_bool2       = true and false            // const bool = false
+and_bool3       = false and false           // const bool = false
+andnot_bool     = false and not false       // const bool = false
+andnot_bool2    = not false and not false   // const bool = true
+or_bool         = true or true              // const bool = true
+or_bool2        = true or false             // const bool = true
+or_bool3        = false or false            // const bool = false
+ornot_bool      = false or not false        // const bool = true
+ornot_bool2     = not false or not false    // const bool = true
+
+// numbers
+// Numbers are logically true even if they are negative
+not_int         = not 2                     // const bool = false
+and_if          = 2 and 2.0                 // const bool = true
+or_int          = 2 or 2                    // const bool = true
+or_int2         = -2 and 0                  // const bool = true
+lt_na           = not na                    // const bool = true
+
+
+// series
+not_series      = not close                 // series bool = [true, false]
+and_series      = close and open            // series bool = [true, false]
+or_series       = low or high               // series bool = [true, false]
+and_series2     = close and true            // series bool = [true, false]
+and_series3     = close and na              // series bool = [false, false]
+
+
+plot(and_series3 ? 1: 0)     // You can plot booleans by converting them like this. 1 == True, 0 == False.

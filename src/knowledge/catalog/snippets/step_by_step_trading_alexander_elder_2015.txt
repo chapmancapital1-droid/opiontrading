@@ -1,0 +1,186 @@
+Step by Step Trading
+By Dr. Alexander Elder
+Copyright 2015 by Dr. Alexander Elder
+All charts by StockCharts.com – used with permission.
+ISBN: 978-0-9744942-5-8
+Published by elder.com
+LEGAL: No part of this publication may be reproduced, stored in a retrieval system, or
+transmitted in any form or by any means without the prior written permission of the copyright
+owner.
+DISCLAIMER OF WARRANTY: while the author has used his best efforts in preparing this
+book, he makes no representations or warranties with respect to the accuracy or completeness of
+the contents. The advice and strategies contained herein may not be appropriate for your
+situation. You should consult with a professional where appropriate. The author shall not be
+responsible for any loss.
+Books by Dr. Alexander Elder
+In chronological order:
+Trading for a Living
+Study Guide for Trading for a Living
+Rubles to Dollars
+Come into My Trading Room
+Study Guide for Come into My Trading Room
+Straying from the Flock: Travels in New Zealand
+Entries & Exits: Visits to 16 Trading Rooms
+Study Guide for Entries & Exits
+The New Sell & Sell Short (with Study Guide)
+To Trade or Not to Trade: A Beginner’s Guide (e-book)
+Two Roads Diverged: Trading Divergences (e-book)
+The New High – New Low Index (e-book), with Kerry Lovvorn
+Additive Manufacturing (e-book)
+The Trading Puzzle – Book One (e-book), with Kerry Lovvorn
+The New Trading for a Living
+Study Guide for The New Trading for a Living
+Table of Contents
+Free updates and the honor code
+Starting Out on Your Journey
+Markets are tough
+Two steps that will put you ahead of the crowd
+How to control risk
+Good records make good traders
+Technical Analysis
+StockCharts Basics
+Let’s create a chart (actually, two charts)
+Dressing a naked chart: a pair of moving averages
+Profits from manic-depression (using envelopes)
+The power of bulls and bears (MACD indicator)
+May the force be with you (Force index)
+Less is more (other indicators)
+Trading Systems
+The trades to avoid (the Impulse system)
+Every trade deserves a name (the system you trade)
+Buying pullbacks in an uptrend
+Catching reversals (false breakout with a divergence)
+An end-of-day trend-following system (by Kerry Lovvorn)
+Trading with fundamentals and technicals (by Philip Wu)
+Trade Management
+The sweet spot (what timeframe will you trade?)
+Stops, targets, and risk control
+Your visual diary
+The road ahead
+Sources
+Acknowledgments
+About the author
+Free updates and the honor code
+After we accumulate feedback for this e-book, we plan to issue an updated edition and send it at
+no charge to all purchasers. If you bought this book from Elder.com, you’ll automatically
+receive an update. If you bought it elsewhere, please let us know, and we’ll add your email to
+our list for future updates. We have a strict privacy policy and will never release your
+information to anyone.
+Please do not forward this book to your friends (i.e. commit piracy). Instead, email your friends
+this link to make sure they receive the latest update.
+Please do not copy this book.
+I put several hundred hours of work into writing. Please reciprocate my trust in you by sending
+your friends the above link rather than pirating the book.
+And now, let’s embark on our journey.
+Dr. Alexander Elder
+Vermont, March 2015
+Return to the top
+Starting Out on Your Journey
+Congratulations on becoming a StockCharts.com member. You have taken an important step
+towards becoming a successful trader. This book will guide you through the next several steps.
+My goal in writing it was to help you avoid common pitfalls and master the key principles that
+will serve you for the rest of your trading life.
+Most beginners jump into trading unprepared. They remind me of new skiers who hop into a
+gondola and ride to the top of a mountain without a clue how to ski down its slopes. This book
+will teach you the essentials of modern computerized trading. Even if you already have some
+experience, you’ll find much that is useful and perhaps even surprising in this book.
+To help you focus on the process of becoming a successful stock trader, I’ve included the key
+lessons from my years of experience. This book, Step by Step Trading, will walk you through
+the essentials of this fantastically interesting but demanding craft and teach you its main do’s and
+don’ts. I believe that “less is more” in trading. Most traders needlessly complicate their work
+and hurt their results instead of improving them.
+I suggest reading this brief book at least twice. Begin by loading it onto your favorite tablet or
+printing it out and read it once the old-fashioned way, relaxing in your favorite chair. Then go
+back and re-read it while sitting in front of your StockCharts screen, and implement its lessons.
+This will ensure that you absorb all of the essential information in this book.
+We’ll begin by looking at the risks of trading and then set the essential money management
+rules. We’ll continue our journey of discovery by going step-by-step through the exact chart
+settings that I use – and of course explain how and why I use them. There is no need to waste
+time re-inventing the wheel if you can benefit directly from my years of experience.
+After that, I’ll show you several examples of trading systems and trade management techniques.
+I’ll even give you a copy of the spreadsheet that I use to track my own trades. Take your time
+working with this book to become a more knowledgeable and more disciplined trader.
+Throughout this book you’ll find boxes like this one - they contain precise instructions on how to
+duplicate my settings on your computer. If you are on the first reading of this book, you can skip
+these and focus on the actual text. Later, when you are in front of your computer, follow these
+instructions – step-by-step – to get your StockCharts account configured just like mine.
+Return to the top
+Markets are tough
+Trading attracts us with its promise of money and freedom, challenge and excitement. Beginners
+quickly discover how hard it is to take profits out of the market. Remember, the only easy thing
+about trading is losing money!
+The rewards of trading as well as its dangers are both are very real and you need to weigh them
+before you jump in with both feet. If you decide to trade, you have a fascinating road ahead of
+you. If you decide that trading is not for you, there is no shame in “Let me stand aside from the
+markets for now.”
+Before we analyze charts and look for stocks to buy or sell, let’s explore several basic questions:
+what markets to trade, how to manage risk and why keep a trading journal.
+Where will your trading profits come from? The money you hope to take out of the markets
+currently resides in other people’s accounts. And all those men, women and corporations have
+absolutely no desire to give money to you. As a matter of fact, right now, while you’re reading
+this book, they’re crafting their trading plans, designed to take your money.
+While you’re planning to pick their pockets, they’re working hard on trying to pick yours.
+They’re probably more experienced in this game than a beginning trader. But your forthcoming
+battle with them isn’t even your biggest problem.
+Your greatest enemy – a bigger obstacle than any competitor, a grasping broker, or unstable
+internet – is the person you see every morning in the mirror.
+All beginners – and quite a few experienced traders who should know better – sabotage
+themselves in ways that are sometimes sad, at other times hilarious, but almost always avoidable.
+And they do it not once or twice, but over and over again, until their account is depleted or they
+lose confidence and slink away from the markets.
+The lack of knowledge, or to put it bluntly, ignorance, isn’t the biggest cause of trader mortality.
+The two major causes of losing are the inability to control risk and to manage yourself. If you
+learn to manage yourself in the markets and to control risks, you’ll ensure that you have enough
+time to survive, clear up any lack of knowledge, and start taking profits from the markets.
+Most people hate to face their own role in losing. This is why, if you want to become a
+successful trader, you need to learn to manage yourself: write trading plans, calculate risks vs.
+rewards, and complete your trading journal after each trade. Then you’ll rise above the masses
+and start taking money from the markets.
+The rules for managing risk that I’ll show you may feel annoying for beginners with tiny
+accounts, because proper risk control limits trade size. Our greed pushes against risk
+management. All traders have this powerful emotion – some of us have a lot and others an even
+bigger lot.
+Another hugely powerful emotion is fear, and it follows on the heels of greed. You get greedy,
+put on an oversize trade, the market slaps you – and now fear kicks in. You become afraid to put
+on a perfectly reasonable trade – and afterwards kick yourself for having missed an opportunity.
+Poor risk management makes people lose courage as well as money.
+This is why I want to begin this book on trading tools and systems with brief chapters on risk
+control and self-management.
+Return to the top
+Two steps that will put you ahead of the crowd
+The two key skills that separate winners from losers are risk control and self-control.
+Managing risk in your account is pretty straightforward once you know the formulae, which
+you’re about to see. A professional trader may allocate up to a third of his research time to
+calculating money management angles, as he compares risks and rewards for different stocks.
+He discards many stocks that look attractive but whose risk parameters don’t suit him.
+How much time does an average beginner spend calculating and managing risk? Most likely
+zero, zip, nada. Right before placing a trade he may briefly scratch his head or some other part
+of his anatomy and decide to double his usual size because he made money in the previous trade
+or skip this trade because he lost money in his previous trade. Both choices are equally wrong.
+If you let your latest trade determine what size to trade next time, it means giving up control of
+trade management. If you follow the formulae in this book for controlling risks, you’ll
+accomplish a goal in which most beginners fail.
+The second essential skill – self-control – is harder to quantify. Fortunately there is a clear and
+concrete tool for implementing and measuring self-control: keeping good quality trading records.
+After Entries & Exits, my book of interviews with traders, was published, people kept asking
+what those traders had in common. The 16 traders in the book – men and women, long-term and
+short-term traders, stocks, futures and options traders, American and foreign traders – what did
+they have in common?
+They all kept excellent records.
+I say to my students: “Show me a trader with good records, and I’ll show you a good trader.
+Show me a trader with poor or nonexistent records, and I’ll show you an average trader. And
+that’s a very poor sight because an average trader loses money. The majority must lose in order
+for a small, informed, and disciplined minority to make profits. We’ll pay attention to record-
+keeping as well as risk management in this book.
+Return to the top
+How to control risk
+An intelligent scuba diver always keeps an eye on his air tank’s pressure gauge to make sure he
+has enough to return to the surface, with a safety margin. The money in your trading account is
+your air supply. Watch it, be economical in its use, and have a reserve.
+All beginners, no matter how bright, make mistakes and take losses. Be sure to keep your losses
+small, don’t let them threaten your survival.
+The most important rule of risk control is THE TWO PERCENT RULE: never risk more than
+2% of your account equity on any given trade.
+Begin by writing down three numbers for every trade: your entry, target and stop. Without them
+a trade turns into a gamble – and you’re not here to gamble, are you?
+Later, in the chapters on technical analysis, we’ll discuss ho

@@ -1,0 +1,82 @@
+//@version=4
+study("Variable Operators - Comparison Operators")
+
+//  There are six comparison operators in Pine Script:
+//      < 	Less Than
+//      <= 	Less Than or Equal To
+//      != 	Not Equal
+//      == 	Equal
+//      > 	Greater Than
+//      >=  Greater Than or Equal To
+
+// ----- COMPARISONS ------
+
+// numbers 
+lt_int       = 2 < 2            // const bool = false
+lt_na        = 2 < na           // const bool = false
+lte_int      = 2 <= 2           // const bool = true
+e_int        = 2 == 2           // const bool = true
+e_int_float  = 2 == 2.0         // const bool = true
+ne_int       = 2 != 3           // const bool = true
+gt_int       = 2 > -1            // const bool = true
+gt_na        = 2 > na           // const bool = false
+gte_int      = 2 >= 2           // const bool = true
+
+// strings
+// lt_string       = "" < ""            // ERROR
+// lte_string      = "" <= ""           // ERROR
+e_string        = "a" == "a"         // const bool = true
+e_string_na     = "" == na           // const bool = true
+e_string_na2    = " " == na          // const bool = false
+ne_string       = "" != " "          // const bool = true
+// gt_string       = "a" > "b"          // ERROR
+// gte_string      = "a" >= "b"         // ERROR
+
+
+// series
+lt_series       = close < 2         // series bool = [true, false]
+lt_series_na    = close < na        // series bool = [false, false]
+lte_series      = low <= high       // series bool = [true, false]
+e_series        = close == 2        // series bool = [true, false]
+ne_series       = close != close    // series bool = [false, false]
+gt_series       = high > 1.0        // series bool = [true, false]
+gte_series      = high >= low       // series bool = [true, false]
+
+
+// booleans
+// lt_bool       = true < false        // ERROR
+// lte_bool      = true <= true        // ERROR
+e_bool        = true == true        // const bool = true
+e_bool2       = true == false       // const bool = false
+e_bool3       = false == false      // const bool = true
+e_bool_na     = false == na         // const bool = false
+e_bool_na2    = true == na          // const bool = false
+e_bool_one    = true == 1           // const bool = false
+// e_bool_mt     = false == 'string'   // ERROR
+ne_bool       = true != false       // const bool = true
+// gt_bool       = true > false        // ERROR
+// gte_bool      = true >= true        // ERROR
+
+
+
+
+// color
+e_color        = color.green == color.green  // const bool = true
+e_hex          = #4CAF50 != #4CAF50          // const bool = false
+e_hex_color    = color.green == #4CAF50      // const bool = true
+e_comp         = e_color == e_hex            // const bool = false
+e_hex_2        = #4caf50 == #4CAF50          // const bool = false
+// plot(e_hex ? 1 : 0, color=#4CAF50, title='#4CAF50')
+// plot(e_comp ? 1 : 0, color=#4CAF50, title='#4CAF50')
+// plot(e_hex_2 ? 1: 0, color=#4caf50, title='#4caf50')
+
+// label & line
+var e_line_1 = line.new(0, 0, 0, 0)     // These two lines are not the same
+var e_line_2 = line.new(0, 0, 0, 0)     // at least when being compared with ==
+e_line_bool  = e_line_1 == e_line_2     // series[bool] or [false] = series[line] == series[line]
+// Same for label.
+
+plot(e_line_bool ? 1 : 0)
+
+
+

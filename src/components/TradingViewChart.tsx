@@ -55,9 +55,15 @@ function TradingViewChart({
       withdateranges: false,
       autosize: true,
     });
-    container.appendChild(script);
+
+    // Defer so React Strict Mode cleanup of the previous script finishes first.
+    const t = window.setTimeout(() => {
+      if (!container.isConnected) return;
+      container.appendChild(script);
+    }, 0);
 
     return () => {
+      window.clearTimeout(t);
       container.innerHTML = "";
     };
   }, [symbol]);

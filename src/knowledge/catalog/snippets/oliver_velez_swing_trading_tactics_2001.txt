@@ -1,0 +1,229 @@
+PPrriissttiinnee..ccoomm PPrreesseennttss
+SSwwiinngg TTrraaddiinngg TTaaccttiiccss
+WWiitthh
+OOlliivveerr LL.. VVeelleezz
+FFoouunnddeerr ooff PPrriissttiinnee..ccoomm,, aanndd AAuutthhoorr ooff tthhee bbeesstt sseelllliinngg bbooookk,,
+TToooollss aanndd TTaaccttiiccss ffoorr tthhee MMaasstteerr DDaayy TTrraaddeerr
+CCooppyyrriigghhtt 22000011,, PPrriissttiinnee CCaappiittaall HHoollddiinnggss,, IInncc..
+TTaabbllee ooff CCoonntteennttss
+IInnttrroodduuccttiioonn AAnnaattoommyy ooff UUpp &&
+TThhee 66 MMaajjoorr TTiimmee FFrraammeess
+DDoowwnn TTrreennddss
+TThhee 44 TTrraaddiinngg SSttyylleess
+DDiisssseeccttiinngg tthhee MMaajjoorr UUpp TTrreenndd
+UUnnddeerrssttaannddiinngg CCaannddlleessttiicckkss
+DDiisssseeccttiinngg tthhee MMaajjoorr DDoowwnn TTrreenndd
+TThhee FFoouunnddaattiioonn
+PPrriissttiinnee’’ss MMaasstteerr
+TThhee MMaarrkkeett’’ss BBaassiicc UUnniitt
+BBuuyy && SSeellll SSeett--uuppss
+TThhee OOnnllyy WWaayy ttoo WWiinn oorr LLoossee
+TThhee 33 PPrriimmaarryy TTrreennddss
+TThhee BBuuyy SSeett--uupp && AAccttiioonn
+CCoommbbiinniinngg BBuuiillddiinngg BBlloocckkss
+TThhee SSeellll SSeett--uupp && AAccttiioonn
+PPrriissttiinnee CChhaarrtt EExxaammpplleess
+TTrraaddiinngg DDiissccllaaiimmeerr
+It should not be assumed that the methods, techniques, or indicators presented in this book will be profitable or that they
+will not result in losses. Past results are not necessarily indicative of future results. Examples in this book are for
+educational purposes only. This is not a solicitation of any order to buy or sell.
+“HYPOTHETICAL OR SIMULATED PERFORMANCE RESULTS HAVE CERTAIN INHERENT LIMITATIONS.
+UNLIKE AN ACTUAL PERFORMANCE RECORD, SIMULATED RESULTS DO NOT REPRESENT ACTUAL
+TRADING. ALSO, SINCE THE TRADES IN THIS BOOK HAVE NOT ACTUALLY BEEN EXECUTED, THE
+RESULTS WE STATE MAY HAVE UNDER OR OVER COMPENSATED FOR THE IMPACT, IF ANY, OF
+CERTAIN MARKET FACTORS, SUCH AS LACK OF LIQUIDITY. SIMULATED TRADING PROGRAMS IN
+GENERAL ARE ALSO SUBJECT TO THE FACT THAT THEY ARE DESIGNED WITH THE BENEFIT OF
+HINDSIGHT. NO REPRESENTATION IS BEING MADE THAT ANY ACCOUNT WILL OR IS LIKELY TO
+ACHIEVE PROFITS OR LOSSES SIMILAR TO THOSE SHOWN.”
+The authors and publisher assume no responsibilities for actions taken by readers. The authors and publisher are not
+providing investment advice. The authors and publisher do not make any claims, promises, or guarantees that any
+suggestions, systems, trading strategies, or information will result in a profit, loss, or any other desired result. All
+readers and seminar attendees assume all risk, including but not limited to the risk of trading losses. Options
+involve risk and are not suitable for all investors. Prior to buying or selling an option, a person must receive a copy of
+Characteristics and Risks of Standardized Options (www.cboe.com).
+SSwwiinngg TTrraaddiinngg ccaann rreessuulltt iinn llaarrggee lloosssseess aanndd mmaayy nnoott bbee aann aaccttiivviittyy ssuuiittaabbllee ffoorr eevveerryyoonnee..
+Copyright © 2001 by Pristine Capital Holdings, Inc. All rights reserved. Printed in the U.S. of America. Except as
+permitted under the United States Copyright Act of 1976, no part of this publication may be reproduced or distributed in
+any form or by any means, or stored in a database or retrieval system, without prior written permission of the publisher.
+PPaarrtt II
+Introduction
+Introduction
+CChhaarrttiinngg TTiimmee FFrraammeess
+TThheerree aarree ssiixx mmaajjoorr ttiimmeess ffrraammeess aavvaaiillaabbllee ttoo
+mmaarrkkeett ppllaayyeerrss,, aallll ooff wwhhiicchh ccaann bbee ggrroouuppeedd iinnttoo
+tthhrreeee bbrrooaaddeerr ccaatteeggoorriieess::
+LLoonngg tteerrmm;;
+IInntteerrmmeeddiiaattee tteerrmm;; aanndd
+SShhoorrtt tteerrmm..
+CChhaarrttiinngg TTiimmee FFrraammeess
+LLoonngg tteerrmm
+UUsseedd ffoorr aaccaaddeemmiicc ppuurrppoosseess aanndd ccyycclliiccaall aannaallyyssiiss
+YYeeaarrllyy CChhaarrttss ((eeaacchh bbaarr == 224400 ttrraaddiinngg ddaayyss))
+UUsseedd ffoorr aaccaaddeemmiicc ssttuuddiieess aanndd tteessttss
+MMoonntthhllyy CChhaarrttss ((eeaacchh bbaarr == 2200 ttrraaddiinngg ddaayyss))
+UUsseedd bbyy aaccaaddeemmiiccss aanndd lloonngg--tteerrmm iinnvveessttoorrss
+MMoonntthhllyy CChhaarrtt
+WWeeeekkllyy CChhaarrtt ooff IINNTTCC
+rr2200mmaa
+rr4400mmaa
+CChhaarrttiinngg TTiimmee FFrraammeess
+IInntteerrmmeeddiiaattee tteerrmm
+Used for swing trading & core trading
+WWeeeekkllyy CChhaarrttss ((eeaacchh bbaarr == 55 ttrraaddiinngg ddaayyss))
+Visited occasionally by swing traders and also used by
+some long-term investors. We encourage our traders to
+visit weekly charts once per week
+DDaaiillyy CChhaarrttss ((eeaacchh bbaarr == 11 ffuullll ttrraaddiinngg ddaayy))
+This is the domain of the swing trader. It is where the
+swing trader will spend 90% of his time and get nearly
+95% of his entry and exit signals
+WWeeeekkllyy CChhaarrtt
+WWeeeekkllyy CChhaarrtt ooff IINNTTCC
+dd4400mmaa
+dd2200mmaa
+rr2200mmaa
+rr4400mmaa
+DDaaiillyy CChhaarrtt
+dd4400mmaa
+DDaaiillyy CChhaarrtt ooff IINNTTCC
+dd2200mmaa
+CChhaarrttiinngg TTiimmee FFrraammeess
+SShhoorrtt tteerrmm
+Used for Micro-Trading
+HHoouurrllyy CChhaarrttss ((eeaacchh bbaarr == 6600 mmiinnuutteess))
+Visited by day traders at times to eliminate noise and to gain
+a clearer perspective of the overall trend. A great time
+frame for 2-day plays
+IInnttrraa--ddaayy ((1155-- && 55--mmiinnuuttee ttrraaddiinngg bbaarrss))
+This is where the day trader and the scalper live their entire
+lives. Nearly all entry and exit points are derived in these
+time frames
+HHoouurrllyy CChhaarrtt
+HHoouurrllyy CChhaarrtt ooff IINNTTCC
+dd220000mmaa
+dd4400mmaa
+dd2200mmaa
+55-- && 1155--MMiinn CChhaarrttss
+55--MMiinn CChhaarrtt ooff IINNTTCC 1155--MMiinn CChhaarrtt ooff IINNTTCC
+2200mmaa
+2200mmaa
+220000mmaa
+220000mmaa
+CCoommbbiinniinngg TTiimmee FFrraammeess
+PPrriissttiinnee TTiipp
+For our purposes, there are two types of trading: WWeeaalltthh
+TTrraaddiinngg and IInnccoommee TTrraaddiinngg. The wealth trader, while
+making occasional visits to monthly charts, will use the
+weekly and daily charts for all of his trading signals. The
+income trader, while occasionally visiting the daily chart, will
+use the 2, 5, and 15-min time frames for most of his trading
+signals. Note that there is always an effort to combine two or
+more times frames. TThhee mmaarrkkeett ppllaayyeerr wwhhoo uusseess mmoorree tthhaann
+oonnee ttiimmee ffrraammee iinn hhiiss aannaallyyssiiss wwiillll eexxppeerriieennccee aa hhiigghheerr ddeeggrreeee
+ooff ttrraaddiinngg aaccccuurraaccyy. Remember this, as it is the most
+important key to understanding why nearly perfect setups in
+one time frame can and do fail at times.
+TTrraaddiinngg SSttyylleess
+There are ffoouurr mmaajjoorr ssttyylleess of
+trading available to market players,
+all of which can be grouped into
+ttwwoo ccaatteeggoorriieess:
+WWeeaalltthh BBuuiillddiinngg SSttyyllee
+IInnccoommee PPrroodduucciinngg SSttyyllee
+TTrraaddiinngg SSttyylleess
+WWeeaalltthh BBuuiillddiinngg
+1.. CCoorree TTrraaddiinngg ((wweeeekkss ttoo mmoonntthhss)).. This wealth-building style of trading
+attempts to capture major trends in the market and/or underlying stock. Most
+traders will use this style for longer term accounts such as IRAs, KEOGHs and
+other less time sensitive accounts. Weekly charts are used for Core
+Trading.
+22.. SSwwiinngg TTrraaddiinngg ((22 ttoo 1100 ddaayyss)).. This wealth-building style of trading is
+designed to capture short-term swings in an on-going trend, while side
+stepping the brief countertrend moves. It attempts to take advantage of a very
+overlooked niche, one that is too short for large institutions and too long for
+day traders. Daily charts are used for Swing Trading.
+Note: PPrriissttiinnee’’ss ttrraaddiinngg pphhiilloossoopphhyy ccaallllss ffoorr hhaavviinngg aatt lleeaasstt oonnee ooff tthhee ttwwoo
+wweeaalltthh--bbuuiillddiinngg ttrraaddeess aallwwaayyss aatt wwoorrkk.. SSoommee ooff tthhee ccoouunnttrryy’’ss ttoopp ttrraaddeerrss
+hhaavvee aammaasssseedd vveerryy llaarrggee ssuummss ooff mmoonneeyy uuttiilliizziinngg oonnee oorr bbootthh ooff tthheessee
+ssttyylleess iinn tthheeiirr ttrraaddiinngg pprrooggrraammss..
+TTrraaddiinngg SSttyylleess
+IInnccoommee PPrroodduucciinngg
+11.. GGuueerriillllaa TTrraaddiinngg ((11 ttoo 22 ddaayyss)).. This income producing style utilizes a
+sniper’s hit and run approach. It looks to buy a stock on Tuesday, for instance,
+and sell it on Wednesday. Conversely, it calls for shorting a stock on one day,
+only to cover it the next day. DDaaiillyy aanndd HHoouurrllyy cchhaarrttss aarree uusseedd ffoorr
+GGuueerriillllaa TTrraaddiinngg..
+22.. MMiiccrroo--TTrraaddiinngg ((sseeccoonnddss ttoo hhoouurrss)).. This income producing style is
+what most people refer to as day trading. Some refer to it as scalping, and it
+serves as the foundation for anyone who wants to make a living from the
+markets. 55-- aanndd 1155--mmiinnuuttee cchhaarrttss aarree uusseedd ffoorr MMiiccrroo--ttrraaddiinngg..
+NNoottee:: PPrriissttiinnee’’ss pphhiilloossoopphhyy ccaallllss ffoorr ssppeecciiaalliizziinngg iinn bbootthh GGuueerriillllaa aanndd
+MMiiccrroo TTrraaddiinngg,, aanndd aallwwaayyss hhaavviinngg oonnee oorr bbootthh ooff tthhee ssttyylleess aatt wwoorrkk..
+TThheessee aarree tthhee ssttyylleess oonn wwhhiicchh mmoosstt pprrooffeessssiioonnaall ttrraaddeerrss ffooccuuss..
+CCoorree TTrraaddiinngg CChhaarrtt
+CC
+oo
+rr
+ee
+TT
+rr
+ee
+nn
+dd
+== SShhoorrtt
+== CCoovveerr
+SSwwiinngg TTrraaddiinngg CChhaarrtt
+Sell
+SSwwiinngg TTrraaddeerr bbuuyyss nneeaarr tthhee ddeecclliinniinngg 2200mmaa
+AAnndd sseellllss aawwaayy ffrroomm tthhee 2200mmaa..
+Sell
+Buy
+Buy
+Sell
+Buy
+2200mmaa
+Buy 4400mmaa
+SSwwiinngg TTrraaddiinngg TToooollss
+TToooollss ooff tthhee SSwwiinngg TTrraaddee
+CChhaarrttiinngg TToooollss:: DDaaiillyy cchhaarrttss ddiissppllaayyeedd iinn
+JJaappaanneessee CCaannddlleessttiicckk ffoorrmm..
+TTeecchhnniiccaall TToooollss:: CCoolloorr ccooddeedd vvoolluummee;; 2200 && 4400
+ppeerriioodd ‘‘ssiimmppllee’’ mmoovviinngg aavveerraaggeess,,
+aanndd aa 55 ppeerriioodd CCoommmmooddiittyy
+CChhaannnneell IInnddeexx ((CCCCII--55))..
+CCoommmmooddiittyy CChhaannnneell IInnddeexx ((CCCCII--55))
+AAnnttiicciippaattoorryy CCCCII((55)) BBuuyy SSiiggnnaall AAnnttiicciippaattoorryy CCCCII((55)) SSeellll SSiiggnnaall
+OO//BB ++110000
+++110000
+OO//BB
+OO//SS --110000 --110000
+OO//SS
+PPrriissttiinnee CCCCII((55)) SSeellll SSiiggnnaall
+PPrriissttiinnee CCCCII((55)) BBuuyy SSiiggnnaall
+OO//BB
+++110000
+OO//BB
+++110000
+--110000 --110000
+OO//SS OO//SS
+NNoottee:: PPrriissttiinnee llooookkss ffoorr bbuuyy ssiiggnnaallss iinn uuppttrreennddss && sseellll ssiiggnnaallss iinn ddoowwnnttrreennddss..
+DDaaiillyy CChhaarrtt ww// VVoolluummee && CCCCII((55))
+dd2200mmaa
+dd4400mmaa
+CCCCII--55
+CCoolloorr ccooddeedd VVoolluummee
+UUnnddeerrssttaannddiinngg CCaannddlleessttiicckkss
+CCoommmmeennttaarryy
+The main difference between Japanese Candlestick analysis and Western Bar chart
+analysis is that the JJaappaanneessee ppllaaccee tthhee hhiigghheesstt iimmppoorrttaannccee oonn tthhee rreellaattiioonnsshhiipp bbeettwweeeenn
+tthhee ooppeenn aanndd cclloossee ooff tthhee ssaammee ddaayy,, wwhhiillee tthhee WWeesstteerrnneerrss ppllaaccee tthhee iimmppoorrttaannccee oonn tthhee
+cclloossee aass iitt rreellaatteess ttoo tthhee pprriioorr ppeerriioodd’’ss cclloossee. NNoottee:: As long as the underlying stock
+closes higher than the prior day’s close, Western thought says it’s positive; however,
+according to the Japanese view, this is not necessarily the case. If on an up day, the stock
+closes below its open, the Japanese would regard it as negative. EExxaammppllee: Monday’s
+close = $39. Tuesday’s open = $40.75. Tuesday’s close = $39.75. The Western view:
+“Positive action because the stock was up ¾ on the day.” Japanese view: “Negative
+action because the stock closed sharply below its opening price of $40.75.”
+IImmppoorrttaanntt::
+WWee rreeggaarrdd tthhee llaatttteerr vviieeww aass mmoorree aaccccuurraattee aanndd uusseeffuull ffoorr ttrraaddeerrss.. This is why we
+exclusively use candlestick bar ch

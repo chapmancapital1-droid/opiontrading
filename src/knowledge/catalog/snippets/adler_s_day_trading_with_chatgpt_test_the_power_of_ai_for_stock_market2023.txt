@@ -1,0 +1,253 @@
+Day Trading with ChatGPT
+Test the Power of AI for Stock Market Predictions
+Saskia Adler
+Copyright © 2023 by GitforGits.
+All rights reserved. This book is protected under copyright laws and no
+part of it may be reproduced or transmitted in any form or by any means,
+electronic or mechanical, including photocopying, recording, or by any
+information storage and retrieval system, without the prior written
+permission of the publisher. Any unauthorized reproduction, distribution,
+or transmission of this work may result in civil and criminal penalties and
+will be dealt with in the respective jurisdiction at anywhere in India, in
+accordance with the applicable copyright laws.
+Published by: GitforGits
+Publisher: Sonal Dhandre
+www.gitforgits.com
+support@gitforgits.com
+Printed in India
+First Printing: April 2023
+Cover Design by: Kitten Publishing
+For permission to use material from this book, please contact GitforGits at
+support@gitforgits.com.
+Content
+Preface
+Chapter 1: Power of AI in Stock Market Predictions
+A Layman's Introduction to AI
+Stock Market Predictions until now by Humans
+Human Limitations in Stock Market Predictions
+How AI Contributes to Stock Market Predictions
+Prompt Engineering in ChatGPT for Stock Market Predictions
+Understanding Prompts and Their Role in ChatGPT
+Importance of Prompt Engineering
+Creating Insightful Prompts for Stock Market Predictions
+Summary
+Chapter 2: Collecting and Analyzing Historical Stock Data
+Importance of Historical Data in Day Trading
+Basis for Technical Analysis
+Quantifying Market Sentiment
+Establishing Benchmarks and Performance Metrics
+Enhancing Predictive Models
+Downloading Historical Stock Data from Yahoo Finance
+Visit Yahoo Finance
+Search for the Stock
+Navigate to Historical Data tab
+Set the Time Range
+Choose the Frequency
+Apply Settings and Download the Data
+Ready Steps for Downloading Daily Historical Data
+Ready Steps for Downloading Weekly Historical Data
+Ready Steps for Downloading Monthly Historical Data
+Reviewing the Downloaded Historical Data
+Uploading Historical Data to GitHub
+Create a GitHub Account
+Create a New GitHub Repository
+Upload Files to the Repository
+Obtain the Raw File Links
+Use File Links in ChatGPT
+Summary
+Chapter 3: Moving Averages (SMA & EMA) with ChatGPT
+Moving Averages and Their Types
+Concept of Moving Averages
+Simple Moving Average (SMA)
+Exponential Moving Average (EMA)
+50-Day and 200-Day Moving Averages
+Engineering Prompts for SMA, EMA, 50 DEMA and 200 DEMA
+Prompts for SMA
+Prompts for EMA
+Prompts for 50 DEMA
+Prompts for 200 DEMA
+Predicting Moving Averages with ChatGPT
+Sample Prompt: SMA
+Sample Prompt: EMA
+Sample Prompt: 50 DEMA
+Sample Prompt: 200 DEMA
+Summary
+Chapter 4: Relative Strength Index (RSI) with ChatGPT
+Relative Strength Index (RSI)
+Concept of Relative Strength Index
+Overbought and Oversold Conditions
+Importance of RSI in Day Trading
+Combining RSI with Other Technical Indicators
+Prompt Engineering for RSI
+Prompts for Identifying Overbought and Oversold Conditions
+Prompts for Detecting Divergences
+Prompts for Combining RSI with Other Technical Indicators
+Predicting RSI with ChatGPT
+Sample Prompt: Identifying Overbought and Oversold Conditions
+Sample Prompt: Detecting Divergences
+Sample Prompt: Combining RSI with Other Technical Indicators
+Summary
+Chapter 5: Bollinger Bands with ChatGPT
+Bollinger Bands for Day Trading
+Understanding Bollinger Bands
+Measuring Volatility with Bollinger Bands
+Identifying Overbought and Oversold Conditions
+Bollinger Band Squeezes and Breakouts
+Importance of Bollinger Bands in Day Trading
+Defining Prompts for Spotting Bollinger Bands
+Prompts for Identifying Overbought and Oversold Conditions
+Prompts for Detecting Bollinger Band Squeezes and Breakouts
+Prompts for Combining Bollinger Bands with Other Technical
+Indicators
+Analyzing Prompt Responses on Bollinger Bands
+Sample Prompt: Identifying Overbought and Oversold Conditions
+Sample Prompt: Detecting Bollinger Band Squeezes and Breakouts
+Sample Prompt: Combining Bollinger Bands with Other Technical
+Indicators
+Summary
+Chapter 6: Fibonacci Retracement with ChatGPT
+Understanding Fibonacci Retracement
+Overview
+Importance of Fibonacci Retracement
+Prompt Engineering for Fibonacci Retracement
+Sample Prompts on Fibonacci Retracement
+Analysis of Responses from Fibonacci Retracement Prompts
+Summary
+Chapter 7: Moving Average Convergence Divergence (MACD) with
+ChatGPT
+Moving Average Convergence Divergence (MACD)
+Concept of MACD
+Potential of MACD for Day Trading
+Prompt Engineering for MACD Analysis
+Sample Prompt: Calculating MACD Line, Signal Line & Histogram
+Value
+Sample Prompt: Figuring Out MACD Crossover Signal
+Sample Prompt: MACD Divergence
+Sample Prompt: Calculate Average MACD Value
+Sample Prompt: MACD Histogram Trend
+Analyzing ChatGPT Responses
+Summary
+Chapter 8: Stochastic Oscillator with ChatGPT
+Stochastic Oscillator
+Concept of Oscillator
+Working of Stochastic Oscillators
+Advanced Prompt Engineering for Stochastic Oscillators
+Sample Prompt: Calculate %K and %D Lines
+Sample Prompt: Weekly Overbought & Oversold Conditions
+Sample Prompt: Bullish & Bearish Crossovers
+Analyzing ChatGPT Responses on Stochastic Oscillators
+Summary
+Chapter 9: Putting It All Together - Is It Worth Using ChatGPT?
+Was ChatGPT Analyzing Historical Data and Providing Desired
+Results?
+Was ChatGPT Comprehending and Addressing Financial Prompts
+Accurately?
+Was ChatGPT Providing Decision-making Responses?
+Summary
+Preface
+'Day Trading with ChatGPT' is an experimentation guide that explores
+how the powerful AI language model ChatGPT can be utilized for day
+trading signals in the stock market. This pioneering book aims to give
+readers a hands-on experience and a comprehensive understanding of how
+to experiment with ChatGPT for better decision-making before
+considering it a trading tool.
+The author takes a critical approach, emphasizing the strengths and
+limitations of using ChatGPT in trading. As you journey through the
+pages, you'll discover the AI's impressive abilities to analyze historical
+data, address financial prompts, and offer decision-making input while
+acknowledging the potential pitfalls of relying solely on AI-driven
+analysis.
+The book's objective is not to advocate for ChatGPT as the ultimate
+trading solution but to objectively examine its potential and limitations in
+the financial world. The author subtly highlights their skepticism,
+encouraging readers to approach the technology with a discerning eye and
+always to corroborate AI-generated insights with their research and
+expertise.
+In this book you will learn how to:
+Discover how ChatGPT can analyze historical data for trading insights.
+Learn to leverage ChatGPT's ability to address financial prompts.
+Enhance decision-making with AI-driven input in day trading.
+Understand the importance of combining AI with human expertise.
+Explore the benefits and limitations of AI in financial analysis.
+Master the use of technical indicators with ChatGPT's guidance.
+Develop a critical approach to AI-generated trading insights.
+Improve your trading strategies by incorporating AI tools.
+Gain a comprehensive understanding of ChatGPT's capabilities.
+Learn to navigate the financial world with AI-assisted decision-making.
+GitforGits
+Prerequisites
+This book is advised for everyone to read, for everyone who wants to
+make quick analysis of stock trading, and who dont wish to subscribe
+analytical platforms for stock analysis. This book can also be enjoyed by
+all those who are under a dilemma if ChatGPT can really do intelligent
+analysis on stocks and make predictions.
+Codes Usage
+Are you in need of some helpful code examples to assist you in your
+programming and documentation? Look no further! Our book offers a
+wealth of supplemental material, including code examples and exercises.
+Not only is this book here to aid you in getting your job done, but you
+have our permission to use the example code in your programs and
+documentation. However, please note that if you are reproducing a
+significant portion of the code, we do require you to contact us for
+permission.
+But don't worry, using several chunks of code from this book in your
+program or answering a question by citing our book and quoting example
+code does not require permission. But if you do choose to give credit, an
+attribution typically includes the title, author, publisher, and ISBN. For
+example, "Day Trading with ChatGPT by Saskia Adler".
+If you are unsure whether your intended use of the code examples falls
+under fair use or the permissions outlined above, please do not hesitate to
+reach out to us at
+We are happy to assist and clarify any concerns.
+Acknowledgement
+I owe a tremendous debt of gratitude to GitforGits, for their unflagging
+enthusiasm and wise counsel throughout the entire process of writing this
+book. Their knowledge and careful editing helped make sure the piece was
+useful for people of all reading levels and comprehension skills. In
+addition, I'd like to thank everyone involved in the publishing process for
+their efforts in making this book a reality. Their efforts, from copyediting
+to advertising, made the project what it is today.
+Finally, I'd like to express my gratitude to everyone who has shown me
+unconditional love and encouragement throughout my life. Their support
+was crucial to the completion of this book. I appreciate your help with this
+endeavour and your continued interest in my career.
+Chapter 1: Power of AI in Stock Market Predictions
+A Layman's Introduction to AI
+In the modern, rapidly evolving world we live in, Artificial Intelligence
+(AI) has brought about a transformative shift across numerous industries
+and domains, spanning from healthcare, entertainment, and education to
+the financial sector. One particular area where AI has made a substantial
+mark is in the field of stock market forecasting. To appreciate the potential
+benefits of AI in facilitating well-informed decision-making for day
+traders, it is crucial to first gain a fundamental understanding of AI and its
+various applications.
+Artificial Intelligence is a subfield of computer science that aims to create
+machines and systems capable of performing tasks that would typically
+require human intelligence. These tasks encompass problem-solving,
+learning, perception, language understanding, and decision-making,
+among others. Machine learning, a subset of AI, involves the development
+of algorithms and models that allow computers to learn from and interpret
+data without explicit programming. This ability to learn and adapt makes
+AI a powerful tool for a wide range of applications.
+In the context of the stock market, AI has demonstrated remarkable
+potential in helping investors and traders navigate the complexities of
+financial markets. Stock market prediction is an inherently challenging
+task due to the vast number of factors influencing stock prices, including
+market sentiment, political events, economic indicators, and company
+performance. Consequently, traditional analytical methods often struggle
+to account for these intricate relationships and the sheer volume of data.
+By leveraging AI and machine learning, advanced algorithms can process
+and analyze enormous quantities of data at unprecedented speeds,
+identifying patterns and trends that may be indicative of future market
+movements. These sophisticated models can aid investors and traders in
+making more informed decisions, potentially leading to improved returns
+on investment and reduced risks.
+Stock Market Predictions until now by Humans
+For decades, humans have tried to predict the movements of the stock
+market using various tools and techniques. These techniques can be
+broadly categorized into two approaches: fundamental analysis and
+technical analysis.
+Fundamental analysis involves the assessment of a company's financial
+health, industry position, and overall market conditions to determine the
+intrinsic value of a stock. Analysts look at factors such as earnings,
+revenue, debt levels, and management quality to gauge the

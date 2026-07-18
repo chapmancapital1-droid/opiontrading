@@ -1,0 +1,64 @@
+{
+  "version": "2.0.0",
+  "updatedAt": "2026-07-11",
+  "note": "Full PDF ingest pass completed via scripts/ingest_option_pdfs.py. Structured strategy seeds compiled into bookIngestRules.ts.",
+  "ingest": {
+    "script": "scripts/ingest_option_pdfs.py",
+    "compile": "scripts/compile_ingest_rules.mjs",
+    "npm": "npm run ingest",
+    "manifest": "src/knowledge/catalog/ingested/manifest.json",
+    "entries": "src/knowledge/catalog/ingested/entries.jsonl",
+    "catalog": "src/knowledge/catalog/ingested/ota_knowledge_catalog.json",
+    "seeds": "src/knowledge/catalog/ingested/strategy_seeds.json",
+    "rulesTs": "src/knowledge/bookIngestRules.ts"
+  },
+  "stats": {
+    "pdfCount": 100,
+    "booksOk": 98,
+    "knowledgeEntries": 2270,
+    "strategySeedsExport": 36,
+    "categories": {
+      "Risk Management": 1024,
+      "Trading Strategies": 721,
+      "Core Foundations": 529,
+      "Numerical Methods": 77,
+      "Python & Automation": 7
+    }
+  },
+  "roots": [
+    "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader",
+    "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading",
+    "C:\\Users\\Michael Chapman\\Downloads",
+    "L:\\newdump"
+  ],
+  "newdumpPass": {
+    "date": "2026-07-12",
+    "inventory": "src/knowledge/catalog/newdump_inventory.json",
+    "rules": "src/knowledge/newdumpRules.ts",
+    "design": "docs/empire/NEWDUMP_INGEST_AND_COMMAND_DESIGN.md",
+    "ui": ["Command Center tabs", "/library", "Playbook pre/post forms"],
+    "note": "Metadata + structured rules only; no full PDF text in repo"
+  },
+  "topSourcesByEntries": [
+    "The Option Trader Handbook - Strategies And Trade Adjustments (2004)",
+    "Options Trading Primer By Marketwise Trading School (2002)",
+    "Option Spread Strategies (2009)",
+    "An Investors Guide to Trading Options (2013)",
+    "The Equity Options Strategy Guide (2010)",
+    "Options Trading for the Conservative Investor (2010)",
+    "Options Trading Crash Course",
+    "Bisette V. The Algo Rythm — Options with Python (2024)",
+    "The Complete Guide to Option Pricing Formulas (2007)",
+    "Volatility Trading (2013)"
+  ],
+  "ingestionStatus": {
+    "indexed": true,
+    "fullTextExtracted": true,
+    "pageCapNote": "Large PDFs capped at 25–50 pages for first-pass extract; re-run with higher caps for deep chapters.",
+    "structuredRulesFromBooks": [
+      "src/knowledge/bookRulesExtra.ts",
+      "src/knowledge/bookIngestRules.ts"
+    ],
+    "nextStep": "Optional: LLM chapter-level rule refinement + higher page caps on top 15 books"
+  }
+}

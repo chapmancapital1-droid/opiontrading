@@ -1,0 +1,203 @@
+Page i
+Using Options to Buy Stocks
+Build Wealth with Little Risk and No Capital
+Dennis Eisen, Ph.D.
+Dearborn™
+A Kaplan Professional Company
+Page ii
+This publication is designed to provide accurate and authoritative information in regard
+to the subject matter covered. It is sold with the understanding that the publisher is not
+engaged in rendering legal, accounting, or other professional service. If legal advice or
+other expert assistance is required, the services of a competent professional should be
+sought.
+Associate Publisher: Cynthia Zigmund
+Managing Editor: Jack Kiburz
+Project Editor: Trey Thoelcke
+Interior Design: Lucy Jenkins
+Cover Design: Scott Rattray, Rattray Design
+Typesetting: Elizabeth Pitts
+© 2000 by Dennis Eisen
+Published by Dearborn
+A Kaplan Professional Company
+All rights reserved. The text of this publication, or any part thereof, may not be
+reproduced in any manner whatsoever without written permission from the publisher.
+Printed in the United States of America
+00 01 02 10 9 8 7 6 5 4 3 2 1
+Library of Congress Cataloging-in-Publication Data
+Eisen, Dennis.
+Using options to buy stocks / Dennis Eisen.
+p. cm.
+Includes bibliographical references and index.
+ISBN 0-7931-3414-5 (pbk.)
+1. Stock options—Handbooks, manuals, etc. 2. Investments—Handbooks,
+manuals, etc.
+I. Title.
+HG6042.E373 2000
+332.63'228—dc21 99-049348
+Dearborn books are available at special quantity discounts to use as premiums and sales
+promotions, or for use in corporate training programs. For more information, please call
+the Special Sales Manager at 800-621-9621, ext. 4514, or write to Dearborn Financial
+Publishing, Inc., 155 N. Wacker Drive, Chicago, IL 60606-1719.
+Page iii
+CONTENTS
+Preface v
+Part One 1
+The Basic Approach
+1. Introduction 3
+2. Long-Term Options 17
+3. Basic Strategy 35
+4. Margin 51
+5. Disposition and Taxes 63
+Part Two 75
+Risk, Reward, and Safety
+6. Baseline Analysis 77
+7. Eliminating Dogs 91
+8. Out-of-the-Money LEAPS 99
+9. Roll 'Em Out 109
+10. Buy 'Em Out 123
+11. Advanced Strategies 147
+12. Hedging for Disaster 155
+Part Three 165
+Volatility and Premiums
+13. Measuring Volatility 167
+14. Option Premiums 181
+15. American-Style Options 189
+Part Four 203
+Additional Resources
+16. My Favorite Web Sites 205
+17. Selected Bibliography 217
+Appendix A: European Put Premiums 221
+Appendix B: American Put Premiums 235
+Appendix C: In-the-Money Probabilities 289
+Index 335
+Page v
+PREFACE
+There comes a time in the life of every investor when he or she runs out of money to
+invest: the birth of a baby, purchase of a home, a second child, braces, another baby
+(oops!), and, later on, tuition payments, wedding expenses, a second home. All of these
+can temporarily suspend regular investment plans. Permanent crimps in investing can
+arise when retirement plans are fully funded or retirement itself commences.
+Professionals and nonprofessionals alike are subject to the laws of supply and demand,
+and can find themselves at times between jobs, underemployed, or just plain out of work.
+These things happen to us all, and for most, the idea of maintaining regular investment
+plans during such tribulations seems impossible. Where will the money come from?
+I have been a regular investor for over three decades, faithfully putting aside the dollars
+needed for retirement and stuffing them into stocks, bonds, and mutual funds. Imagine
+my surprise the day my financial adviser informed me that my retirement plan was now
+fully funded. This was a good-news/bad-news situation. The good news was that I would
+now be able to retire at 60 percent of my peak earnings for the rest of my life. The bad
+news was that as a compulsive saver and avid investor, I would no longer be able to
+contribute new capital with which to play the market, either for the purpose of buying
+new issues or for acquiring additional shares of my favorite companies. I could sell
+existing equities to do such things, but as an inveterate "buy-and-hold" investor, I was
+loath to trade in any of my equity holdings.
+My need to continue my investment program beyond what I was legally permitted to
+contribute to my retirement plan was driven by four concerns:
+1. What will happen if I outlive what the actuarial tables said were going to be my
+golden years?
+Page vi
+2. Will there be enough in my retirement plan so I can spoil my grandchildren while I am
+still alive, yet leave enough in my estate for my wife, my children, and (alas) the cut due
+the Internal Revenue Service?
+3. I knew I would miss the research, discussions, evaluations, and decision making that
+go into the selection and buying of stocks.
+4. And, hey, the difference between being an old man and an elderly gentleman is
+money.
+The first strategy that occurred to me for continuing my investment program was to go
+on margin. Most brokers will lend you up to 50 percent of the value of your account to
+buy more stocks. The trouble with this method is that you have to repay these funds with
+interest. The interest rate is high—often higher than what can be safely earned on bonds,
+preferred stock, and even the appreciation on many growth stocks. Furthermore, the
+specter of a dreaded margin call because of a market slump, however temporary, made
+me (as it does most investors) very leery.
+It then occurred to me that there is a great way to acquire stocks without trading what
+you've got or using borrowed funds. Simply stated, the method involves selling long-
+term options on highly rated companies and using the premiums received to further your
+investment program. There is no interest paid on the funds received; the funds never
+have to be repaid (because they have not been borrowed); and the equity requirements
+needed to do this are much lower than those for regular margin buying. Although I
+adapted and perfected this technique to suit my own needs and situation, it can be used
+by any investor who has built up some measure of equity and would like to acquire
+additional stocks without contributing additional capital. As you will see later, the
+potential benefits far outweigh any incremental risks, especially when appropriate
+hedges and proper safeguards are incorporated.
+What makes this technique so effective is that it exploits the fact that option prices do not
+reflect the expected long-term growth rates of the underlying equities. The reason for this
+is that standard option pricing formulas, used by option traders everywhere, do not
+incorporate this variable. With short-term options, this doesn't matter. With long-term
+options, however, this oversight often leads the market to over-
+Page vii
+value premiums. Taking advantage of this mispricing is the foundation of my strategy.
+I have been using this technique for the past five years—very cautiously at first because
+of the newness of these long-term options (they were invented in 1990) and the almost
+complete lack of information regarding their safety and potential. It was this lack of
+analysis that led me to start my own research into the realm of long-term equity options.
+Having determined their relative risk/reward ratio, I am now very comfortable generating
+several thousand dollars a month in premiums that I use to add to my stock positions. I
+am often told that what I am doing is akin to what a fire or hazard insurance company
+does, generating premiums and paying claims as they arise. A better analogy might be to
+a title insurance company because with proper research, claims should rarely occur.
+This book is divided into four sections: The first one consists of Chapters 1 through 5
+and describes the basic approach in using long-term options to further investment
+programs. The second section, Chapters 6 through 12, refines this approach and shows
+how to institute controls to reduce risk. The potential reward and the long-term safety of
+the basic approach and refinements are established through extensive computer
+simulation and backtesting. This is accomplished by going back ten years and asking
+what would have been the outcome if the various techniques had been applied in as
+consistent a manner as possible during that period.
+The third section, Chapters 13 through 15, contains the analytic formulas for the rapid
+computation of volatility and option premiums for both European- and American-style
+options. The 1997 Nobel prize in economics was awarded to Myron Scholes and Robert
+Merton, who along with Fischer Black were the original developers of these formulas.
+With minor variations, they are still used today for calculating option premiums by
+market makers and option traders alike. Although college mathematics is needed to
+understand the formulas, the short, simple algorithms given for their numerical
+evaluation can be used by virtually anyone who knows BASIC or can set up a
+spreadsheet on a personal computer. For readers without access to computer tools, there
+are various appendices containing tables for looking up option premiums and assignment
+probabilities.
+Page viii
+Finally, Chapters 16 and 17 contain suggested resources for additional information,
+including Internet Web sites and capsule reviews of introductory, intermediate, and
+advanced books on options.
+The methods developed in this book are based on my three decades of investing in real
+estate and the equities market, plus the modeling experience gained through the
+development of analytic, decision-making tools for various agencies of the federal
+government and numerous trade associations, research institutes, and private-sector
+clients. My first book, Decision Making in Federal Real Estate: How the Government
+Decides Whether and with Whom to Buy, Build or Lease, remains the classic in its field.
+I wish to thank the various investment analysts and members of the brokerage industry
+for their insightful comments and suggestions. These include Ed Elfenbein, publisher of
+the Microcap Stock Digest, who reviewed and edited the first version of the book,
+Buying Stocks without Money, and Charlie Meyers, senior vice president for investments
+at Legg Mason Wood Walker, Inc., who introduced me to the world of options. Special
+thanks to Cynthia Zigmund, editorial director at Dearborn Financial Publishing, Inc., for
+her help in bringing this project to fruition. I am particularly grateful to the numerous
+investors like myself that I have met in investment chat rooms on America Online. I
+know them only by their Internet screen names, but their collective insights into the
+stock and options markets added much to my own knowledge. More than that, I found
+the instant feedback of such interactions to be invaluable as I bounced new ideas off a
+jury of my peers and refined my own thoughts in the process. Finally, I owe special
+thanks to my wife, Doris, for the encouragement she provided and sacrifices she made to
+keep me at this task until the job was done.
+Page 1
+PART ONE—
+THE BASIC APPROACH
+Page 3
+1—
+Introduction
+What Is an Option?
+Although options are typically bought and sold through security dealers and brokers, it is
+important to understand that options are not securities. Unlike stocks, warrants, or
+corporate bonds, options are not authorized or issued by any company on its behalf.
+Rather, an option is simply a contract between two parties, a buyer and a seller. The
+buyer is often referred to as the owner or option holder, and the seller is often referred to
+as the option writer. A call option gives the option holder the right to buy an asset at a
+set price within a certain time, while a put option gives the option holder the right to sell
+an asset at a set price within a certain time. In neither case is the option holder ever
+obligated to buy or sell.
+For an example of an option contract, suppose you're in the market for a new car. Sitting
+there in the dealer's showroom is that spectacular model you'd love to own. Because it is
+popular, there is little discount from the sticker price of $40,000. You tell the salesman
+that you get your bonus in three months. Anxious to make a deal, he says, "Okay, the
+price may wel

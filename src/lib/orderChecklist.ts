@@ -53,23 +53,47 @@ export function buildChecklist(args: {
   plannedProfitTarget?: number | null;
   plannedLossLimit?: number | null;
   plannedExitDate?: string | null;
+  /** Override contract count (e.g. brain suggestedContracts, including 0). */
+  contracts?: number;
 }): OrderChecklist {
   const optionLegs = args.legs.filter((l): l is OptionLeg => l.assetType === "option");
-  const contracts = optionLegs.length ? Math.min(...optionLegs.map((l) => l.contracts)) : 1;
+  const fromLegs = optionLegs.length ? Math.min(...optionLegs.map((l) => l.contracts)) : 1;
+  const contracts =
+    args.contracts != null && Number.isFinite(args.contracts)
+      ? Math.max(0, Math.floor(args.contracts))
+      : fromLegs;
   const expiration = optionLegs[0]?.expiration ?? null;
   const credit = args.perShareNet >= 0;
+
+  // When contracts override differs from leg template, scale option leg qty for journal/copy
+  const scale = fromLegs > 0 && args.contracts != null ? contracts / fromLegs : 1;
+  const legs: ChecklistLegLine[] = args.legs.map((l) => {
+    const line = legLine(l);
+    if (l.assetType === "option" && args.contracts != null) {
+      return { ...line, quantity: contracts };
+    }
+    return line;
+  });
+  const estTotal = Number((Math.abs(args.netCashFlow) * (args.contracts != null ? scale : 1)).toFixed(2));
+  const maxModeledLoss: number | "undefined" =
+    args.maxLoss === "undefined"
+      ? "undefined"
+      : Number((Math.abs(args.maxLoss) * (args.contracts != null ? scale : 1)).toFixed(2));
 
   return {
     underlying: args.underlying,
     strategyName: args.strategyName,
     contracts,
     expiration,
-    legs: args.legs.map(legLine),
+    legs,
     netLimitPerShare: Number(Math.abs(args.perShareNet).toFixed(2)),
     netLimitLabel: `${credit ? "Net credit" : "Net debit"} $${Math.abs(args.perShareNet).toFixed(2)} / share`,
-    estTotal: Number(Math.abs(args.netCashFlow).toFixed(2)),
-    maxModeledLoss: args.maxLoss,
-    estCollateral: args.collateral,
+    estTotal,
+    maxModeledLoss,
+    estCollateral:
+      args.collateral != null && args.contracts != null
+        ? Number((args.collateral * scale).toFixed(2))
+        : args.collateral,
     breakEvens: args.breakEvens,
     quoteTimestamp: args.quoteTimestamp,
     plannedProfitTarget: args.plannedProfitTarget ?? null,

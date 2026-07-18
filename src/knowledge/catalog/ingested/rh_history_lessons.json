@@ -1,0 +1,457 @@
+{
+  "generated_at": "2026-07-16T16:01:39.342869+00:00",
+  "n_matched_trades": 877,
+  "n_wins": 439,
+  "n_losses": 438,
+  "n_flat": 0,
+  "win_rate": 0.5006,
+  "total_pnl": -25264.04,
+  "avg_win": 125.4,
+  "avg_loss": -183.37,
+  "profit_factor": 0.685,
+  "by_side": {
+    "long_option": {
+      "n": 339,
+      "win_rate": 0.233,
+      "pnl": -49304.77
+    },
+    "short_option": {
+      "n": 538,
+      "win_rate": 0.669,
+      "pnl": 24040.73
+    }
+  },
+  "by_cp": {
+    "call": {
+      "n": 430,
+      "win_rate": 0.474,
+      "pnl": -1148.57
+    },
+    "put": {
+      "n": 447,
+      "win_rate": 0.526,
+      "pnl": -24115.47
+    }
+  },
+  "worst_symbols": [
+    {
+      "symbol": "SPXW",
+      "n": 3,
+      "win_rate": 0.0,
+      "pnl": -25061.94,
+      "avg_pnl": -8353.98
+    },
+    {
+      "symbol": "CLSK",
+      "n": 6,
+      "win_rate": 0.5,
+      "pnl": -1950.51,
+      "avg_pnl": -325.08
+    },
+    {
+      "symbol": "ULTY",
+      "n": 6,
+      "win_rate": 0.5,
+      "pnl": -1332.75,
+      "avg_pnl": -222.12
+    },
+    {
+      "symbol": "MSTY",
+      "n": 50,
+      "win_rate": 0.48,
+      "pnl": -1288.9,
+      "avg_pnl": -25.78
+    },
+    {
+      "symbol": "BITO",
+      "n": 48,
+      "win_rate": 0.417,
+      "pnl": -575.76,
+      "avg_pnl": -11.99
+    }
+  ],
+  "best_symbols": [
+    {
+      "symbol": "GERN",
+      "n": 52,
+      "win_rate": 0.558,
+      "pnl": 1244.73,
+      "avg_pnl": 23.94
+    },
+    {
+      "symbol": "PLUG",
+      "n": 135,
+      "win_rate": 0.489,
+      "pnl": 1190.4,
+      "avg_pnl": 8.82
+    },
+    {
+      "symbol": "SXC",
+      "n": 6,
+      "win_rate": 0.5,
+      "pnl": 647.7,
+      "avg_pnl": 107.95
+    },
+    {
+      "symbol": "NYMT",
+      "n": 45,
+      "win_rate": 0.378,
+      "pnl": 519.48,
+      "avg_pnl": 11.54
+    },
+    {
+      "symbol": "ZETA",
+      "n": 6,
+      "win_rate": 0.5,
+      "pnl": 419.76,
+      "avg_pnl": 69.96
+    }
+  ],
+  "assignment_count": 107,
+  "expiration_count": 130,
+  "patterns": [
+    "LONG OPTIONS: win_rate=23% pnl=$-49305 on 339 trades \u2014 debit buys often expire worthless; prefer defined-risk debit spreads + time stops.",
+    "ASSIGNMENT: 107 events, pnl=$-9845 \u2014 short puts/calls getting assigned; manage earlier or use defined-risk spreads.",
+    "EXPIRATION: 130 closes via OEXP, pnl=$-882 \u2014 too many held to zero; exit losers at \u221240\u201350% premium (SPY playbook rule).",
+    "WORST SYMBOLS (by total P/L): SPXW $-25062 (n=3, wr=0%), CLSK $-1951 (n=6, wr=50%), ULTY $-1333 (n=6, wr=50%), MSTY $-1289 (n=50, wr=48%), BITO $-576 (n=48, wr=42%)",
+    "BEST SYMBOLS (by total P/L): GERN $1245 (n=52, wr=56%), PLUG $1190 (n=135, wr=49%), SXC $648 (n=6, wr=50%), NYMT $519 (n=45, wr=38%), ZETA $420 (n=6, wr=50%)"
+  ],
+  "build_on_wins": [
+    "Lean into GERN-like setups that already paid ($1245 on 52 trades, wr 56%) \u2014 size only within 1\u20132% risk.",
+    "Lean into PLUG-like setups that already paid ($1190 on 135 trades, wr 49%) \u2014 size only within 1\u20132% risk.",
+    "Lean into SXC-like setups that already paid ($648 on 6 trades, wr 50%) \u2014 size only within 1\u20132% risk.",
+    "Short premium has edge in this sample \u2014 keep defined-risk credit spreads; avoid naked assignment risk."
+  ],
+  "how_could_do_better": [
+    "Never risk >1\u20132% equity per campaign (empire rule).",
+    "Prefer defined-risk spreads over naked STO when assignment shows up in history.",
+    "Exit long options before OEXP wipeouts; use \u221240% premium adjust/exit.",
+    "Avoid repeating worst symbols until process review is journaled.",
+    "Use NCI Bias + SPY playbook gates before next entry on liquid underlyings.",
+    "LONG OPTIONS: win_rate=23% pnl=$-49305 on 339 trades \u2014 debit buys often expire worthless; prefer defined-risk debit spreads + time stops.",
+    "ASSIGNMENT: 107 events, pnl=$-9845 \u2014 short puts/calls getting assigned; manage earlier or use defined-risk spreads.",
+    "EXPIRATION: 130 closes via OEXP, pnl=$-882 \u2014 too many held to zero; exit losers at \u221240\u201350% premium (SPY playbook rule).",
+    "WORST SYMBOLS (by total P/L): SPXW $-25062 (n=3, wr=0%), CLSK $-1951 (n=6, wr=50%), ULTY $-1333 (n=6, wr=50%), MSTY $-1289 (n=50, wr=48%), BITO $-576 (n=48, wr=42%)"
+  ],
+  "sample_worst_trades": [
+    {
+      "symbol": "SPXW",
+      "side": "long_option",
+      "cp": "Put",
+      "strike": 5.0,
+      "exp": "3/10/2025",
+      "open_date": "3/10/2025",
+      "close_date": "3/10/2025",
+      "open_trans": "BTO",
+      "close_trans": "OASGN",
+      "qty": 1.0,
+      "open_prem": 83.53,
+      "close_prem": 0.0,
+      "pnl": -8353.98,
+      "hold_days": 0,
+      "notes": [
+        "assigned",
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "SPXW",
+      "side": "long_option",
+      "cp": "Put",
+      "strike": 5.0,
+      "exp": "3/10/2025",
+      "open_date": "3/10/2025",
+      "close_date": "3/10/2025",
+      "open_trans": "BTO",
+      "close_trans": "OASGN",
+      "qty": 1.0,
+      "open_prem": 83.53,
+      "close_prem": 0.0,
+      "pnl": -8353.98,
+      "hold_days": 0,
+      "notes": [
+        "assigned",
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "SPXW",
+      "side": "long_option",
+      "cp": "Put",
+      "strike": 5.0,
+      "exp": "3/10/2025",
+      "open_date": "3/10/2025",
+      "close_date": "3/10/2025",
+      "open_trans": "BTO",
+      "close_trans": "OASGN",
+      "qty": 1.0,
+      "open_prem": 83.53,
+      "close_prem": 0.0,
+      "pnl": -8353.98,
+      "hold_days": 0,
+      "notes": [
+        "assigned",
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "SMCI",
+      "side": "long_option",
+      "cp": "Call",
+      "strike": 46.0,
+      "exp": "2/28/2025",
+      "open_date": "2/25/2025",
+      "close_date": "2/28/2025",
+      "open_trans": "BTO",
+      "close_trans": "OEXP",
+      "qty": 1.0,
+      "open_prem": 6.0,
+      "close_prem": 0.0,
+      "pnl": -1800.12,
+      "hold_days": 3,
+      "notes": [
+        "expired",
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "SMCI",
+      "side": "long_option",
+      "cp": "Call",
+      "strike": 46.0,
+      "exp": "2/28/2025",
+      "open_date": "2/25/2025",
+      "close_date": "2/28/2025",
+      "open_trans": "BTO",
+      "close_trans": "OEXP",
+      "qty": 1.0,
+      "open_prem": 6.0,
+      "close_prem": 0.0,
+      "pnl": -1800.12,
+      "hold_days": 3,
+      "notes": [
+        "expired",
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "SMCI",
+      "side": "long_option",
+      "cp": "Call",
+      "strike": 46.0,
+      "exp": "2/28/2025",
+      "open_date": "2/25/2025",
+      "close_date": "2/28/2025",
+      "open_trans": "BTO",
+      "close_trans": "OEXP",
+      "qty": 1.0,
+      "open_prem": 6.0,
+      "close_prem": 0.0,
+      "pnl": -1800.12,
+      "hold_days": 3,
+      "notes": [
+        "expired",
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "INTC",
+      "side": "short_option",
+      "cp": "Call",
+      "strike": 31.0,
+      "exp": "10/31/2025",
+      "open_date": "9/19/2025",
+      "close_date": "9/25/2025",
+      "open_trans": "STO",
+      "close_trans": "BTC",
+      "qty": 1.0,
+      "open_prem": 2.01,
+      "close_prem": 4.73,
+      "pnl": -1218.17,
+      "hold_days": 6,
+      "notes": [
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "INTC",
+      "side": "short_option",
+      "cp": "Call",
+      "strike": 31.0,
+      "exp": "10/31/2025",
+      "open_date": "9/19/2025",
+      "close_date": "9/25/2025",
+      "open_trans": "STO",
+      "close_trans": "BTC",
+      "qty": 1.0,
+      "open_prem": 2.01,
+      "close_prem": 4.73,
+      "pnl": -1218.17,
+      "hold_days": 6,
+      "notes": [
+        "large_pnl"
+      ]
+    }
+  ],
+  "sample_best_trades": [
+    {
+      "symbol": "SMCI",
+      "side": "short_option",
+      "cp": "Call",
+      "strike": 46.5,
+      "exp": "2/28/2025",
+      "open_date": "2/25/2025",
+      "close_date": "2/28/2025",
+      "open_trans": "STO",
+      "close_trans": "OEXP",
+      "qty": 3.0,
+      "open_prem": 5.75,
+      "close_prem": 0.0,
+      "pnl": 1724.82,
+      "hold_days": 3,
+      "notes": [
+        "expired",
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "SMCI",
+      "side": "short_option",
+      "cp": "Call",
+      "strike": 46.5,
+      "exp": "2/28/2025",
+      "open_date": "2/25/2025",
+      "close_date": "2/28/2025",
+      "open_trans": "STO",
+      "close_trans": "OEXP",
+      "qty": 3.0,
+      "open_prem": 5.75,
+      "close_prem": 0.0,
+      "pnl": 1724.82,
+      "hold_days": 3,
+      "notes": [
+        "expired",
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "SMCI",
+      "side": "short_option",
+      "cp": "Call",
+      "strike": 46.5,
+      "exp": "2/28/2025",
+      "open_date": "2/25/2025",
+      "close_date": "2/28/2025",
+      "open_trans": "STO",
+      "close_trans": "OEXP",
+      "qty": 3.0,
+      "open_prem": 5.75,
+      "close_prem": 0.0,
+      "pnl": 1724.82,
+      "hold_days": 3,
+      "notes": [
+        "expired",
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "INTC",
+      "side": "long_option",
+      "cp": "Call",
+      "strike": 30.5,
+      "exp": "10/31/2025",
+      "open_date": "9/19/2025",
+      "close_date": "9/25/2025",
+      "open_trans": "BTO",
+      "close_trans": "STC",
+      "qty": 1.0,
+      "open_prem": 2.22,
+      "close_prem": 5.03,
+      "pnl": 1286.83,
+      "hold_days": 6,
+      "notes": [
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "INTC",
+      "side": "long_option",
+      "cp": "Call",
+      "strike": 30.5,
+      "exp": "10/31/2025",
+      "open_date": "9/19/2025",
+      "close_date": "9/25/2025",
+      "open_trans": "BTO",
+      "close_trans": "STC",
+      "qty": 1.0,
+      "open_prem": 2.22,
+      "close_prem": 5.03,
+      "pnl": 1286.83,
+      "hold_days": 6,
+      "notes": [
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "INTC",
+      "side": "long_option",
+      "cp": "Call",
+      "strike": 30.5,
+      "exp": "10/31/2025",
+      "open_date": "9/19/2025",
+      "close_date": "9/25/2025",
+      "open_trans": "BTO",
+      "close_trans": "STC",
+      "qty": 1.0,
+      "open_prem": 2.22,
+      "close_prem": 5.03,
+      "pnl": 1286.83,
+      "hold_days": 6,
+      "notes": [
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "side": "short_option",
+      "cp": "Put",
+      "strike": 664.0,
+      "exp": "10/3/2025",
+      "open_date": "9/29/2025",
+      "close_date": "10/3/2025",
+      "open_trans": "STO",
+      "close_trans": "BTC",
+      "qty": 1.0,
+      "open_prem": 3.25,
+      "close_prem": 0.05,
+      "pnl": 969.83,
+      "hold_days": 4,
+      "notes": [
+        "large_pnl"
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "side": "short_option",
+      "cp": "Put",
+      "strike": 664.0,
+      "exp": "10/3/2025",
+      "open_date": "9/29/2025",
+      "close_date": "10/3/2025",
+      "open_trans": "STO",
+      "close_trans": "BTC",
+      "qty": 1.0,
+      "open_prem": 3.25,
+      "close_prem": 0.05,
+      "pnl": 969.83,
+      "hold_days": 4,
+      "notes": [
+        "large_pnl"
+      ]
+    }
+  ],
+  "source_path": "C:\\Users\\Michael Chapman\\Desktop\\NERDCOMMAND_TRADING_BRAIN\\robinhoodhistory",
+  "n_activity_rows": 9854,
+  "n_option_legs": 2081,
+  "n_closed_matched": 1052
+}

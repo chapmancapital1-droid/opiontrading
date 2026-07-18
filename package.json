@@ -9,13 +9,16 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "ingest:pdfs": "python scripts/ingest_option_pdfs.py",
+    "ingest:compile": "node scripts/compile_ingest_rules.mjs",
+    "ingest": "python scripts/ingest_option_pdfs.py && node scripts/compile_ingest_rules.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.1",
     "@supabase/supabase-js": "2.45.0",
     "decimal.js": "10.4.3",
-    "next": "14.2.5",
+    "next": "16.2.10",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "recharts": "^2.12.7"

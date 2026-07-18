@@ -1,0 +1,22 @@
+{
+  "min_entry_score": 71.76839686895083,
+  "min_pop": 0.5042120796282679,
+  "max_strikes": 4,
+  "atr_momentum_weight": 20.0,
+  "risk_per_trade": 0.020087157743819754,
+  "max_contracts": 7,
+  "commission_per_contract": 0.65,
+  "slippage_per_share": 0.05,
+  "loss_trigger_pct": 0.4441950375503746,
+  "prefer_defined_risk": false,
+  "use_adjustments": true,
+  "profit_take_pct": 0.4830909921150658,
+  "default_iv": 0.10725248725866142,
+  "r": 0.05,
+  "min_option_premium": 0.15,
+  "max_option_premium": 15.0,
+  "atm_band": 12.387542743689096,
+  "generation": 4,
+  "fitness": 125.68964072657126,
+  "notes": "validated 400y fit=125.69 mean_ret=0.058"
+}

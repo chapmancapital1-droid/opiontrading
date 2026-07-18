@@ -1,0 +1,82 @@
+// ╔══════════════════════════════════════════════════════════════════════╗
+// ║  NCI → OptionScope Alert Bridge  (add-on for NCI TA v2)            ║
+// ║  Paste INTO the main NCI Complete Trading Assistant script          ║
+// ║  at the END (after fire_buy / fire_sell / master are defined),      ║
+// ║  OR enable alerts on the main script with the JSON templates below. ║
+// ║                                                                    ║
+// ║  Why: TradingView widgets cannot stream custom indicator values    ║
+// ║  into OptionScope. Alerts POST JSON to:                            ║
+// ║     POST http://YOUR_HOST/api/nci-ta/webhook                       ║
+// ║  OptionScope brain then reads getSnapshot(symbol).                 ║
+// ╚══════════════════════════════════════════════════════════════════════╝
+//@version=5
+// NOTE: This file is documentation + copy-paste snippets for the main indicator.
+// Do not add as a second overlay without wiring to the main NCI TA variables.
+
+// ── Snippet A: alert conditions (paste into main NCI TA) ──────────────
+// alertcondition(fire_buy,  title="NCI ◆ FIRE BUY",  message="NCI_FIRE_BUY")
+// alertcondition(fire_sell, title="NCI ◆ FIRE SELL", message="NCI_FIRE_SELL")
+// alertcondition(arm_buy_new,  title="NCI ○ ARM BUY",  message="NCI_ARM_BUY")
+// alertcondition(arm_sell_new, title="NCI ○ ARM SELL", message="NCI_ARM_SELL")
+// alertcondition(rt_fire_buy,  title="NCI ◇ FADE BUY",  message="NCI_FADE_BUY")
+// alertcondition(rt_fire_sell, title="NCI ◇ FADE SELL", message="NCI_FADE_SELL")
+
+// ── Snippet B: webhook JSON body (TradingView Alert → Webhook URL) ────
+// Use "Message" field (not the condition message) with:
+/*
+{
+  "symbol": "{{ticker}}",
+  "event": "FIRE_BUY",
+  "master": 0.0,
+  "master_pct": 0,
+  "sb_net": 0,
+  "sb_bull": 0,
+  "sb_bear": 0,
+  "port_bull": 0,
+  "port_bear": 0,
+  "voter_bull": 0,
+  "voter_bear": 0,
+  "companion_buy": 0,
+  "companion_sell": 0,
+  "cb_bull": 0,
+  "cb_bear": 0,
+  "fer": 0,
+  "kinetic": 0,
+  "adx": 0,
+  "abc": "B",
+  "timeframe": "{{interval}}",
+  "time": "{{timenow}}"
+}
+*/
+// Replace numeric fields by enabling "alert() with dynamic placeholders"
+// once you add alert() calls that str.tostring() the live vars, e.g.:
+//
+// if fire_buy and barstate.isconfirmed
+//     alert('{"symbol":"' + syminfo.ticker + '","event":"FIRE_BUY","master":' +
+//       str.tostring(master) + ',"master_pct":' + str.tostring(master_pct) +
+//       ',"sb_net":' + str.tostring(sb_net) + ',"sb_bull":' + str.tostring(sb_bull) +
+//       ',"sb_bear":' + str.tostring(sb_bear) +
+//       ',"port_bull":' + str.tostring(sb_port_bull) +
+//       ',"port_bear":' + str.tostring(sb_port_bear) +
+//       ',"voter_bull":' + str.tostring(sb_vot_bull) +
+//       ',"voter_bear":' + str.tostring(sb_vot_bear) +
+//       ',"companion_buy":' + str.tostring(comp_buy) +
+//       ',"companion_sell":' + str.tostring(comp_sell) +
+//       ',"cb_bull":' + str.tostring(cb_bull) +
+//       ',"cb_bear":' + str.tostring(cb_bear) +
+//       ',"fer":' + str.tostring(fer) +
+//       ',"kinetic":' + str.tostring(kinetic) +
+//       ',"adx":' + str.tostring(sb_adx) +
+//       ',"abc":"' + (abc_stage==1?"B":abc_stage==2?"C":"A") + '"' +
+//       ',"timeframe":"' + timeframe.period + '","time":"' + str.tostring(timenow) + '"}',
+//       alert.freq_once_per_bar_close)
+//
+// Repeat for fire_sell / arm_buy_new / arm_sell_new / rt_fire_buy / rt_fire_sell.
+
+// ── OptionScope setup ─────────────────────────────────────────────────
+// 1. npm run dev  → http://localhost:3000
+// 2. Expose with ngrok/cloudflare tunnel for TV cloud webhooks
+// 3. Webhook URL: https://YOUR_TUNNEL/api/nci-ta/webhook
+// 4. Optional header: x-nci-ta-secret: <NCI_TA_WEBHOOK_SECRET from .env.local>
+// 5. GET /api/nci-ta/snapshot?symbol=AAPL to verify
+// 6. Brain call: runTradingBrain({ context, account, nciTa: getSnapshot("AAPL") })

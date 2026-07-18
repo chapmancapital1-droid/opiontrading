@@ -1,0 +1,178 @@
+THE COMPLETE
+GUIDE TO DAY
+TRADING
+A Practical Manual
+From A Professional Day Trading Coach
+Markus Heitkoetter
+BookSurge, LLC
+North Charleston, SC
+The opinions expressed in this manuscript are solely the opinions of the author and do not represent
+the opinions or thoughts of the publisher. The author represents and warrants that s/he either owns
+or has the legal right to publish all material in this book.
+The Complete Guide to Day Trading
+A Practical Manual From A Professional Day Trading Coach
+All Rights Reserved.
+Copyright © 2008 Markus Heitkoetter
+V2.0
+Edited by Nicole Quinlan
+This book may not be reproduced, transmitted, or stored in whole or in part by any means, including
+graphic, electronic, or mechanical without the express written consent of the publisher except in the
+case of brief quotations embodied in critical articles and reviews.
+BookSurge, LLC
+http://www.booksurge.com
+ISBN: 978-1-4196-9563-6
+PRINTED IN THE UNITED STATES OF AMERICA
+To my family -
+for supporting me even in my craziest moments.
+Table of Contents
+PREFACE........................................................................................................IX
+INTRODUCTION: WHY DAY TRADING?.......................................................XIII
+HOW TO GET THE MOST OUT OF THIS BOOK..............................................XIX
+PART 1: DAY TRADING BASICS – WHAT YOU SHOULD KNOW.......1
+WHAT IS DAY TRADING?.................................................................................3
+WHO SHOULD BE DAY TRADING?...................................................................5
+IS IT REALLY POSSIBLE TO MAKE A LIVING AS A DAY TRADER?....................9
+HOW TO GET STARTED - DEFINE YOUR GOALS AND MAKE A PLAN..............17
+1.) Define Your SMART Goal..................................................................18
+2.) Make a Plan.......................................................................................19
+3.) Execute the Plan................................................................................20
+HOW MUCH MONEY DO YOU NEED TO GET STARTED?................................23
+DETERMINING YOUR RISK TOLERANCE.........................................................27
+WHAT YOU NEED TO BEGIN TRADING..........................................................29
+A Computer..............................................................................................29
+An Internet Connection............................................................................30
+A Charting Software.................................................................................30
+A Broker...................................................................................................39
+A Properly Funded Trading Account.......................................................42
+A Trading Strategy...................................................................................43
+PART 2: YOUR TRADING STRATEGY –
+THE CORNERSTONE TO YOUR TRADING SUCCESS..........................47
+HOW TO DEVELOP YOUR OWN PROFITABLE DAY TRADING STRATEGY........49
+STEP 1: SELECTING A MARKET......................................................................51
+Trading Stocks..........................................................................................52
+Trading Forex..........................................................................................57
+Trading Futures.......................................................................................65
+Trading Stock Options..............................................................................80
+STEP 2: SELECTING A TIMEFRAME.................................................................85
+STEP 3: SELECTING A TRADING APPROACH...................................................87
+Fundamental Analysis..............................................................................87
+Technical Analysis...................................................................................90
+Day Trading Charts.................................................................................93
+Technical Indicators...............................................................................103
+Popular Trading Approaches.................................................................135
+STEP 4: DEFINING ENTRY POINTS................................................................149
+STEP 5: DEFINING EXIT POINTS...................................................................151
+Stop Losses.............................................................................................152
+Profit-Taking Exits.................................................................................160
+Trailing Stops.........................................................................................167
+Taking Partial Profits.............................................................................169
+Time-Stops..............................................................................................169
+STEP 6: EVALUATING YOUR STRATEGY.......................................................171
+How to Read and Understand a Performance Report............................176
+STEP 7: IMPROVING YOUR STRATEGY.........................................................183
+THE 10 POWER PRINCIPLES –
+MAKING SURE THAT YOUR TRADING PLAN WORKS...................................191
+Principle #1: Use Few Rules – Make It Easy to Understand.................192
+Principle #2: Trade Electronic and Liquid Markets..............................193
+Principle #3: Have Realistic Expectations.............................................193
+Principle #4: Maintain a Healthy Balance Between Risk and Reward..194
+Principle #5: Find a System That Produces
+at Least Five Trades per Week.........................195
+Principle #6: Start Small - Grow Big.....................................................195
+Principle #7: Automate Your Exits.........................................................197
+Principle #8: Have a High Percentage of Winning Trades....................198
+Principle #9: Test Your Strategy on at Least 200 Trades......................198
+Principle #10: Choose a Valid Back-Testing Period.............................199
+PART 3: THE SECRETS TO DAY TRADING SUCCESS.......................203
+THERE’S MORE TO TRADING THAN JUST HAVING A STRATEGY..................205
+THE SEVEN MISTAKES OF TRADERS AND HOW TO AVOID THEM.................209
+Mistake #1: Struggling To Identify the Direction of the Market............212
+Mistake #2: Not Taking Profits..............................................................213
+Mistake #3: Not Limiting Your Losses...................................................214
+Mistake #4: Trading the Wrong Market.................................................215
+Mistake #5: Lack of a Trading Strategy.................................................216
+Mistake #6: Not Controlling Your Emotions..........................................217
+Mistake #7: Overtrading........................................................................218
+THE TRADER’S PSYCHE...............................................................................221
+THE THREE “SECRETS” TO DAY TRADING SUCCESS....................................227
+THE TENETS OF DAY TRADING....................................................................231
+HOW TO START TRADING WITHOUT RISKING A SINGLE PENNY..................235
+BONUS MATERIALS...................................................................................241
+APPENDICES.................................................................................................243
+APPENDIX A – TRADING PLAN TEMPLATE...................................................245
+APPENDIX B – BROKER CHECKLIST.............................................................249
+APPENDIX C – ADDITIONAL RESOURCES.....................................................251
+APPENDIX D – READING RESOURCES..........................................................253
+APPENDIX E – GLOSSARY............................................................................257
+APPENDIX F – ABOUT MARKUS HEITKOETTER............................................271
+APPENDIX G – COACHING PROGRAMS.........................................................273
+Preface
+D
+ay trading can be simple, but don’t make the mistake of think-
+ing that it’s easy.
+I know that there are many websites and late-night infomercials that try
+to tell you differently. They make you think that you just have to read a
+few pages or attend an online class, and then, magically, you’ll become a
+successful trader.
+Don’t be fooled.
+Like in any other profession, you need a solid education before you get
+started. After all, the goal is to make more money than a lawyer or a
+doctor, but many aspiring traders expect to learn everything they need to
+know from an eBook that they might get somewhere on the Internet,
+most likely for free. And how could a small amount of free information
+teach you to make more money than people who have gone to school for
+years and years?
+Right, the answer is: it can’t.
+Some aspiring traders think they don’t have to learn a single thing. They
+believe that they can buy a “magic system” or “XXX software” that will
+place their trades for them and make them rich while they sleep. Or they
+rely on the advice of some “guru” for their trading decisions, blindly
+following his recommendations without knowing anything about the
+markets.
+I’m glad you’re different.
+IX
+The Complete Guide to Day Trading
+You picked up this book because you’re serious about becoming a suc-
+cessful day trader. And, by reading this book, that’s exactly what you’ll
+learn how to do.
+WARNING: Be aware, though, that just reading this book will NOT
+automatically make you an instant millionaire. You’ll learn a lot of facts
+and concepts about day trading, but in order to make the most out of this
+book and become the trader you want to be, you’ll have to adapt the
+ideas that you’re about to learn to what you already KNOW.
+Socrates said that “Learning is remembering.”
+And Richard Saul Wurman says:
+“Facts in themselves don't solve the problem. Facts are only
+meaningful as they relate to a concept you can grasp … New
+ideas are not so much discovered as uncovered by moving from
+what you already understand into the realm of what you would
+like to understand.”
+Source: Information Anxiety, by Richard Saul Wurman, 1989
+Let me give you an example:
+I moved from Germany to the U.S. in 2001, and one of my first “tasks”
+here was buying a house. It should have been no problem – I mean, we
+do have houses in Germany. It’s basically the same process, right?
+Right – but where I come from, we measure in meters and kilometers.
+So, you can just imagine my confusion when my realtor started describ-
+ing lot sizes in quarter-acre, half-acre, etc. What the heck? How big is an
+acre?
+Of course, I didn’t want to ask – no one likes to seem ignorant – but I
+looked it up. An acre is 43,560 square feet. Great. That didn’t really help
+me. Now I knew the exact measurements, but I still couldn’t picture the
+exact size of “an acre” in my head. I had no frame of reference.
+But, I have it now. A friend of mine told me that an acre is about the size
+of an American football field without the end zones.
+X
+Preface
+Poof. Understanding. A frame of reference.
+The same is true in trading. You might already know many of the con-
+cepts presented in this book (e.g. that you should use a stop loss). And
+there might be some concepts that are new to you (e.g. using a time-stop
+when exiting a trade).
+But don’t worry: I’ll present all of these concepts in a very practical way.
+You’ll be getting a great deal of examples and scenarios to look at – this
+entire book is about you getting that “grasp” on trading that you’ll need.
+And by the last page, you’ll have it.
+Remember Socrates: “Learning is remembering.”
+My Objective: I am determined that this book will save you
+both money and time when it comes to your

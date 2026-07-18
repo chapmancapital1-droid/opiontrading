@@ -1,0 +1,231 @@
+OPTIONS AND
+OPTIONS TRADING
+A Simplified Course that
+Takes You from Coin Tosses
+to Black-Scholes
+ROBERT W. WARD
+McGraw-Hill
+NewYork Chicago SanFrancisco Lisbon London
+Madrid MexicoCity Milan NewDelhi
+SanJuan Seoul Singapore
+Sydney Toronto
+Copyright © 2004 by The McGraw-Hill Companies, Inc. All rights reserved. Manufactured in the United
+States of America. Except as permitted under the United States Copyright Act of 1976, no part of this
+publication may be reproduced or distributed in any form or by any means, or stored in a database or
+retrieval system, without the prior written permission of the publisher.
+0-07-144297-9
+The material in this eBook also appears in the print version of this title: 0-07-143209-4
+All trademarks are trademarks of their respective owners. Rather than put a trademark symbol after
+every occurrence of a trademarked name, we use names in an editorial fashion only, and to the benefit
+of the trademark owner, with no intention of infringement of the trademark. Where such designations
+appear in this book, they have been printed with initial caps.
+McGraw-Hill eBooks are available at special quantity discounts to use as premiums and sales
+promotions, or for use in corporate training programs. For more information, please contact George
+Hoare, Special Sales, at george_hoare@mcgraw-hill.com or (212) 904-4069.
+TERMS OF USE
+This is a copyrighted work and The McGraw-Hill Companies, Inc. (“McGraw-Hill”) and its licensors
+reserve all rights in and to the work. Use of this work is subject to these terms. Except as permitted
+under the Copyright Act of 1976 and the right to store and retrieve one copy of the work, you may not
+decompile, disassemble, reverse engineer, reproduce, modify, create derivative works based upon,
+transmit, distribute, disseminate, sell, publish or sublicense the work or any part of it without McGraw-
+Hill’s prior consent. You may use the work for your own noncommercial and personal use; any other
+use of the work is strictly prohibited. Your right to use the work may be terminated if you fail to
+comply with these terms.
+THE WORK IS PROVIDED “AS IS.” McGRAW-HILL AND ITS LICENSORS MAKE NO
+GUARANTEES OR WARRANTIES AS TO THE ACCURACY, ADEQUACY OR
+COMPLETENESS OF OR RESULTS TO BE OBTAINED FROM USING THE WORK,
+INCLUDING ANY INFORMATION THAT CAN BE ACCESSED THROUGH THE WORK VIA
+HYPERLINK OR OTHERWISE, AND EXPRESSLY DISCLAIM ANY WARRANTY, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF
+MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. McGraw-Hill and its
+licensors do not warrant or guarantee that the functions contained in the work will meet your
+requirements or that its operation will be uninterrupted or error free. Neither McGraw-Hill nor its
+licensors shall be liable to you or anyone else for any inaccuracy, error or omission, regardless of cause,
+in the work or for any damages resulting therefrom. McGraw-Hill has no responsibility for the content
+of any information accessed through the work. Under no circumstances shall McGraw-Hill and/or its
+licensors be liable for any indirect, incidental, special, punitive, consequential or similar damages that
+result from the use of or inability to use the work, even if any of them has been advised of the
+possibility of such damages. This limitation of liability shall apply to any claim or cause whatsoever
+whether such claim or cause arises in contract, tort or otherwise.
+DOI: 10.1036/0071442979
+For more information about this title, click here.
+C O N T E N T S
+Foreword vii
+Preface On Taking Risk and Blowing Up xi
+PART ONE
+THE BASICS
+Chapter1
+What a Derivative Is and What It Isn’t 3
+Chapter2
+Binomials and Coin Tosses 31
+Chapter3
+Pascal’s Triangle and the Binomial Theorem 47
+Chapter4
+Distributions Are the Key—What Are Distributions? 59
+Chapter5
+Probabilities, Odds, and Payoffs 73
+Chapter6
+Writing Our First Option 85
+Chapter7
+Sectors, Strike Prices, and Summation Signs 97
+Chapter8
+The Fair Price of an Option 109
+iii
+iv Contents
+Chapter9
+Our First Stock Option: IBM 119
+Chapter10
+Statistics: The 15-Minute Cram Course 135
+Chapter11
+Dow Jones versus Coin Tosses 145
+Chapter12
+Turning Spot Prices into Forward Prices: S (cid:1) eRT 159
+PART TWO
+THE FORMULA
+Chapter13
+Skeleton for an Option Formula 181
+Chapter14
+Getting Comfortable with the Black-Scholes Formula 195
+Chapter15
+Introducing Volatility and SKIT-V 203
+Chapter16
+Pros and Cons of the Black-Scholes Formula 209
+PART THREE
+TRADING
+Chapter17
+A Primer on Risk and Hedging 223
+Contents v
+Chapter18
+Option Risk: Finding It and Hedging It 247
+Chapter19
+How Traders Make Money (Customers) 273
+Chapter20
+How to Convert Puts and Calls: CPL.PCS 289
+Chapter21
+The Best Option Strategies 297
+Chapter22
+Market Insights and Edges 321
+ANSWER KEY 339
+INDEX 405
+This page intentionally left blank.
+F O R E W O R D
+Wall Street—oh, the stories I could tell and the tales of intrigue I
+could write—and don’t think I haven’t been asked or been
+tempted. Maybe it comes back to that old market adage regarding
+time and price—I haven’t the time and no one has yet offered my
+price! But no matter, my memoirs will have to wait for another
+time as this is Bob’s option book. Some day when life slows down
+a bit maybe I can make the time to dictate those stories. Bob took
+some time off and did just that, but he focused on sharing his
+hard-earned knowledge and experience with those who want to
+know how it really works.
+Wall Street is a world of finance, a world of ever-changing
+prices and ideas—heretoday,gonetomorrow.Changeisintheair.
+Only on Wall Street could the Nasdaq be priced at more than5000
+before crashing to almost 1000 in two years. Meanwhile, Bob and
+I have been toiling away in that Rip Van Winkle ofa market,gold,
+which after slumbering for 20 years has just begun to awaken,
+and in two years has bounced back from $250 to $425. It has been
+a long, long wait for those of us not asleep the past 20 years. This
+is the market Bob and I have been shackled to, seemingly forever.
+It takes real hardscrabble instincts to survivein suchabarren
+environment and to help us thrive and prosper at Prudential Se-
+curities we fall back on old Ben Franklin’s adage: early to bedand
+early to rise. Things start early in our office. At the southernmost
+tip of Manhattan our day starts at 6:45 a.m. and we are, para-
+phrasing Michael Lewis in his book about Salomon Bros., ‘‘ready
+and eager to bite the backside off a bear each morning.’’
+But you need more than enthusiasm to prosper on Wall
+Street. Our survival over the past 25 years has been based pri-
+marily on the philosophy we embrace and to which Bob devotes
+a whole chapter: ‘‘The customer is king.’’ We ply our daily efforts
+solely in the direction ofhelpingourcustomerssurviveandthrive
+in the gold and foreign exchange markets. For the past 20 years
+we’ve operated an around-the-clock desk—an increasingly rare
+phenomenon these last few years. As Bob likes to remind me, ‘‘in
+good times it seems everybody’s a genius, but only the shrewdest
+manage to survive in style when a decade of dry years hits.’’ And
+gold has been in a coma for at least that long.
+vii
+Copyright © 2004 by The McGraw-Hill Companies, Inc. Click here for terms of use.
+viii Foreword
+Our business is primarily based on derivatives, theveryones
+described in Bob’s book: futures, forwards, and options. They are
+our stock in trade, comprisingroughlythree-quartersofourdeals.
+To many on the outside of Wall Street they seem to be unfath-
+omableand,byimplication,unmanageable.Butthisisnotthecase
+at all. Despite the fact that my education prepared me far more
+for literature and philosophy, learning the ins and outs of deriv-
+atives was more a matter of time and application than of mathe-
+matical wizardry. Mathematical theory has its place, but it often
+seems wide of the mark and leaves many of us shaking ourheads
+with a ‘‘so what’’ attitude. The market is not a respecter of simple
+formulas, or things would be more orderly than they are. Most of
+usrequireanintuitivefeelforthederivativeswetrade,ratherthan
+depend upon mathematical abstractions. Bob shows you how and
+whyforwards,futures,andoptionsworkfromtheinsideout.Take
+it fromonewhoknows—hisdescriptionsareasrealworldasthey
+come and properly describe the way the markets work.
+Hischapteronhowtradersmakemoney(andtheimportance
+of customers) is clearer and truer than any I’ve ever seen. It not
+only has the ring of truth, but the real-time experience to back it
+up.Bobwasaheadtraderformanyyearsandlearnedthesethings
+first hand. I can verify the realities he lays out—it’s as true a de-
+scriptionof the tradingdilemmaasyouwilleversee.Youcanfool
+around with taking positions all you want, but the customer is
+king and the moment you forget that is the moment your depart-
+ment starts downhill. You will never survive the dry years.
+Bob has taken his deep understanding of the markets, op-
+tions in particular, and turned them into a step-by-step textbook
+to help aspiring students. You won’t find complex ideas broken
+down more simply, or explanations made as real-life and visual
+in any other books. And nobody worries like Bob does about the
+reader getting lost. While academic books might show more rigor,
+they also miss the point: What matters to a trader on a desk is
+the nitty-gritty intuitions of how and why something works and
+how to fix it when things go awry. Bob can troubleshootproblems
+instantly and figure out simple solutions faster than anybody I
+know. I’ve seen him do it. If you pay attention to the details
+in this book you will learn the most important lesson in
+troubleshooting—good solutions always depend on a clear un-
+derstanding of the basics. The more basic a thing is, the easier it
+Foreword ix
+is to see the problems and find the right answers. In several in-
+famous disasters of recent years, such as Enron, derivative posi-
+tions were not simplified and clarified but were used as vehicles
+of obfuscation. That alone tells you about the intentions of man-
+agements who failed.
+Bob is able to take esoteric concepts and translate them into
+simple, everyday examples. He then helps anchor the ideas in
+your mind with memorable visual images—making recall so
+much easier than the classically dry textbook formulas. I know
+thisforsure—Ihaveneverrunintoabetterblendofriskmanager-
+teacher-trader than Bob. His knowledge of markets ingeneraland
+precious metals in particular is encyclopedic. His desire to share
+knowledgeandhelpotherslearncomesthroughclearlyfrompage
+one.
+If you are hoping to find the one and only answer to beat
+Wall Street, you will be looking for a long, long time. Everybody
+wants a quick fix and an easy answer, but in the high-stakesgame
+of finance with so many brilliant players there are no easy
+answers—only complex ones. And the answers can change from
+minute to minute. You don’t go to the World Series of Poker if
+you don’t know whether a flush beats a straight—because the
+players who show up are not merely knowledgeable about poker,
+they are obsessed. Only the best of the best need apply. So it is,
+also, on Wall Street. Your training in derivatives begins with the
+basics in Bob’s book and then it’s up to you to developexperience
+and practice. If this is too much trouble, then maybe you don’t
+really want to work on Wall Street.
+If you will read only one book on derivatives, this is it. If
+youfindabookthatmakescomplexmarketconceptssimplerthan
+this, buy the book and keep it forever. You’ll have the first edition
+of a classic. What Graham and Dodd did for simplifying and ex-
+plaining security analysis, Bob’s book does for derivatives. Wall
+Streeters do not have the mind or temperament to explain basic
+details to beginners. That’s what makes Bob’s book so different—
+there aren’t any other books like this out there.
+Years ago, when I was a neophyte trying to understand the
+vagaries of the markets and the esoterics of the forwards and fu-
+tures, I would have given a month’s salary to have the simplistic
+clarity that Bob brings to this topic in a sin

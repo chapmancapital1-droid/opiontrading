@@ -1,0 +1,171 @@
+Connors Research Trading Strategy Series
+Trading Stocks and
+Options with
+Moving Averages ‐
+A Quantified
+Approach
+By
+Connors Research, LLC
+Laurence Connors
+Matt Radtke
+P a g e | 2
+Copyright © 2013, Connors Research, LLC.
+ALL RIGHTS RESERVED. No part of this publication may be reproduced, stored in a
+retrieval system, or transmitted, in any form or by any means, electronic, mechanical,
+photocopying, recording, or otherwise, without the prior written permission of the
+publisher and the author.
+This publication is designed to provide accurate and authoritative information in regard
+to the subject matter covered. It is sold with the understanding that the author and the
+publisher are not engaged in rendering legal, accounting, or other professional service.
+Authorization to photocopy items for internal or personal use, or in the internal or
+personal use of specific clients, is granted by Connors Research, LLC, provided that the
+U.S. $7.00 per page fee is paid directly to Connors Research, LLC, 1-973-494-7333.
+ISBN 978-0-9886931-7-3
+Printed in the United States of America.
+P a g e | 3
+Disclaimer
+By distributing this publication, Connors Research, LLC, Laurence A. Connors and Matt Radtke
+(collectively referred to as “Company") are neither providing investment advisory services nor acting as
+registered investment advisors or broker-dealers; they also do not purport to tell or suggest which
+securities or currencies customers should buy or sell for themselves. The analysts and employees or
+affiliates of Company may hold positions in the stocks, currencies or industries discussed here. You
+understand and acknowledge that there is a very high degree of risk involved in trading securities and/or
+currencies. The Company, the authors, the publisher, and all affiliates of Company assume no
+responsibility or liability for your trading and investment results. Factual statements on the Company's
+website, or in its publications, are made as of the date stated and are subject to change without notice.
+It should not be assumed that the methods, techniques, or indicators presented in these products will be
+profitable or that they will not result in losses. Past results of any individual trader or trading system
+published by Company are not indicative of future returns by that trader or system, and are not indicative
+of future returns which be realized by you. In addition, the indicators, strategies, columns, articles and all
+other features of Company's products (collectively, the "Information") are provided for informational and
+educational purposes only and should not be construed as investment advice. Examples presented on
+Company's website are for educational purposes only. Such set-ups are not solicitations of any order to
+buy or sell. Accordingly, you should not rely solely on the Information in making any investment. Rather,
+you should use the Information only as a starting point for doing additional independent research in order
+to allow you to form your own opinion regarding investments.
+You should always check with your licensed financial advisor and tax advisor to determine the suitability
+of any investment.
+HYPOTHETICAL OR SIMULATED PERFORMANCE RESULTS HAVE CERTAIN INHERENT
+LIMITATIONS. UNLIKE AN ACTUAL PERFORMANCE RECORD, SIMULATED RESULTS DO NOT
+REPRESENT ACTUAL TRADING AND MAY NOT BE IMPACTED BY BROKERAGE AND OTHER
+SLIPPAGE FEES. ALSO, SINCE THE TRADES HAVE NOT ACTUALLY BEEN EXECUTED, THE
+RESULTS MAY HAVE UNDER- OR OVER-COMPENSATED FOR THE IMPACT, IF ANY, OF CERTAIN
+MARKET FACTORS, SUCH AS LACK OF LIQUIDITY. SIMULATED TRADING PROGRAMS IN
+GENERAL ARE ALSO SUBJECT TO THE FACT THAT THEYARE DESIGNEDWITH THE BENEFIT OF
+HINDSIGHT. NO REPRESENTATION IS BEING MADE THAT ANY ACCOUNT WILL OR IS LIKELY TO
+ACHIEVE PROFITS OR LOSSES SIMILAR TO THOSE SHOWN.
+Connors Research
+10 Exchange Place
+Suite 1800
+Jersey City, NJ 07302
+P a g e | 4
+Table of Contents
+Section 1 Introduction ............................................................................. 5
+Section 2 Strategy Rules ........................................................................... 8
+Section 3 Test Results ............................................................................ 15
+Section 4 Selecting Strategy Parameters ............................................... 21
+Section 5 Using Options ......................................................................... 25
+Section 6 Additional Thoughts ............................................................... 29
+Appendix: The ConnorsRSI Indicator and Historical Volatility .............. 31
+P a g e | 5
+Section 1
+Introduction
+P a g e | 6
+Indicators are not always what they appear to be. Moving averages are widely used as a trend‐following
+tool. In many of the trading strategies that we have developed over the years, the 200‐day moving
+average (MA) is used to identify the direction of the trend. We have found that taking buy signals only
+when the price is above the 200‐day MA can improve profitability in many systems.
+Recently, we completed research that shows moving averages can also be used as part of a strategy to
+find short‐term, mean reversion trading opportunities. This may be surprising to some traders because it
+might seem odd to use a trend‐following indicator like MAs in a short‐term, mean reversion strategy.
+While MAs are used in this strategy, the MA is not being applied in its traditional way. As we highlighted
+in the 2004 book How Markets Really Work, it is important to develop unique insights into the behavior
+of prices.
+In How Markets Really Work, we tested common knowledge and discovered it was not always best to
+follow widely accepted market truths. We found that it was best to buy short‐term weakness, for
+example, and research showed that selective buying when market breadth was poor was more
+profitable than buying when market breadth indicators were uniformly positive. We also discovered that
+changes in volume were irrelevant to making buy and sell decisions despite the widespread belief
+among traders that volume is needed to confirm an uptrend.
+We have continued that type of research and we always look at data rather than widely accepted truths.
+In doing so, we found that moving averages (MAs) can be used as short‐term timing tools.
+Traditionally, MAs are usually used as trend‐following tools. Buy signals are given when prices close
+above the MA and sell signals result from closes below the MA. While they can be used profitably in this
+way, there are also a number of problems associated with MAs.
+When a market is range‐bound, which is most of the time, traders experience a number of whipsaw
+trades while waiting for the next trend to emerge. Whipsaw trades are entries that are quickly reversed.
+Commissions and other trading costs can be substantial when prices whip back and forth around the
+moving average and those costs decrease profits.
+Signals based on MAs will also always be late. This is by design since MAs trail the market. However,
+these delays can lead to missing large price moves. The price of SPDR S&P 500 ETF (NYSE: SPY) increased
+more than 30% after bottoming in March 2009, for example, before long‐term MAs gave buy signals.
+Systems based on MAs generally have low win rates and a majority of the system profits come from only
+a few of the trades. Most trades end in only small gains or losses that result from whipsaws.
+These problems make MAs difficult to trade. In back‐testing over long periods, they seem to be
+profitable but in real‐time, the delayed signals and large number of losing trades lead many traders to
+abandon the system.
+We viewed the problems of MAs as an opportunity to develop a trading system based on mean
+reversion.
+P a g e | 7
+Whipsaws are caused by the binary nature of the MA system. It is always either in or out of the market,
+or is always long or short, based on the interaction of the MA with prices. We can reduce this problem
+by defining rules that only take high probability trades. Many markets are untradeable the majority of
+the time and rules can be designed to recognize when the market is at an extreme and trade only under
+the right conditions.
+Another weakness of MA systems is that they give back large amounts of profits after the trend reverses
+before they exit or they require delays that miss large profits before entering trades. This is caused by
+the fact that prices move significantly away from the MA when markets are trending. Some traders
+address this problem by closing trades when prices deviate too far from an MA, which leads to another
+problem because strong trends will be missed and the profitability of the system will be reduced. We
+address the problem of by using two MAs which minimizes the delays at turning points.
+All of the strategy rules are fully detailed in the next section. This is a powerful new way to use MAs that
+can deliver profits in any market.
+P a g e | 8
+Section 2
+Strategy Rules
+This document cannot be reproduced without the expressed written permission of Connors Research, LLC.
+P a g e | 9
+Moving averages are generally used to follow the trends. Some traders will use MAs to help identify
+overbought or oversold markets. This approach usually involves identifying when the price has moved
+too far from the MA. To determine when prices are too far from an MA, channels, based on
+percentages or standard deviations, are often added to the MA. Channels fail to identify strength and
+are invariably wrong during the market’s largest advances or declines.
+The Quantified Moving Average Strategy uses two moving averages to reduce the probability of being
+wrong at major market turns. Both moving averages will move along with prices and the relationship
+between the two averages will highlight oversold market extremes.
+This strategy executes trades using a simple three‐step process consisting of Setup, Entry and Exit. The
+rules for each of these steps are detailed below.
+A Quantified Moving Average Strategy Setup occurs when all of the following conditions are true:
+1. The stock’s price must be above $5.
+2. The stock’s average daily volume over the past 21 trading days (approximately one month)
+must be at least 250,000 shares.
+3. The historical volatility over the past 100 days, or HV(100), must be greater than 30. (See the
+Appendix for a definition of historical volatility).
+4. Today’s close must be above the 200‐day moving average, or MA(200).
+5. The fast MA is at least Y% below the slow MA where Y = 2.5, 5.0, 7.5, or 10.0%. The
+following MA scenarios will be tested:
+Scenario Fast MA Slow MA
+1 MA(C,5) MA(C,10)
+2 MA(C,5) MA(C,20)
+3 MA(C,5) MA(C,50)
+4 MA(C,10) MA(C,20)
+5 MA(C,10) MA(C,50)
+If the previous day was a Setup, then we Enter a trade by:
+6. Submitting a limit order to buy the stock at a price X% below yesterday’s close,
+where X is 2, 4, 6, 8 or 10%.
+After we’ve entered the trade, we Exit using one of the following methods, selected in advance:
+7a. The closing price of the stock is higher than the previous day’s close. We typically refer to
+this exit as the First Up Close.
+7b. The stock closes with a ConnorsRSI value greater than 50.
+7c. The stock closes with a ConnorsRSI value greater than 70.
+7d. The closing price of the stock is greater than the 3‐day moving average, or MA(3).
+7e. The closing price of the stock is greater than the 5‐day moving average, or MA(5).
+This document cannot be reproduced without the expressed written permission of Connors Research, LLC.
+P a g e | 10
+Let’s look at each rule in a little more depth, and explain why it’s included in the strategy.
+Rules 1 & 2 assure that we’re in highly liquid stocks which can be readily bought and sold with tight
+bid/ask spreads that reduce trading costs.
+Rule 3 assures that the stock has enough volatility to allow for large moves.
+Rule 4 identifies the direction of the long‐term trend. By requiring the close to be above the 200‐day
+MA, we are finding stocks that are oversold but remain in a long‐term uptrend.
+Rule 5 identifies short‐term

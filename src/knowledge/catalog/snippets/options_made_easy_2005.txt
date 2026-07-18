@@ -1,0 +1,290 @@
+Cohen_FM.qxd 6/1/05 9:46 AM Page i
+Options
+Made Easy
+Second Edition
+Cohen_FM.qxd 6/1/05 9:46 AM Page ii
+In an increasingly competitive world, it is quality
+of thinking that gives an edge—an idea that opens new
+doors, a technique that solves a problem, or an insight
+that simply helps make sense of it all.
+We work with leading authors in the various arenas
+of business and finance to bring cutting-edge thinking
+and best-learning practices to a global market.
+It is our goal to create world-class print publications
+and electronic products that give readers
+knowledge and understanding that can then be
+applied, whether studying or at work.
+To find out more about our business
+products, you can visit us at www.ft-ph.com.
+Cohen_FM.qxd 6/1/05 9:46 AM Page iii
+Options
+Made Easy
+Second Edition
+Your Guide to Profitable Trading
+Guy Cohen
+An imprint of Pearson Education
+London●New York●Toronto●Sydney●Tokyo●Singapore●Hong Kong
+Cape Town ●New Delhi ●Madrid●Paris●Amsterdam ●Munich ●Milan ●Stockholm
+Cohen_FM.qxd 6/1/05 9:46 AM Page iv
+Library of Congress Number: 2005923851
+Vice President and Editor-in-Chief: Tim Moore
+Executive Editor: Jim Boyd
+Editorial Assistant: Susie Abraham
+Development Editor: Russ Hall
+Marketing Manager: John Pierce
+International Marketing Manager: Tim Galligan
+Cover Designer: Alan Clements
+Managing Editor: Gina Kanouse
+Senior Project Editor: Kristy Hart
+Copy Editor: Chrissy Andry
+Indexer: Lisa Stumpf
+Interior Designer: Sue Lamble
+Compositor: Major Productions
+Manufacturing Buyer: Dan Uhrig
+© 2005 by Pearson Education, Inc.
+Publishing as Financial Times Prentice Hall
+Upper Saddle River, New Jersey 07458
+Financial Times Prentice Hall offers excellent discounts on this book when ordered in
+quantity for bulk purchases or special sales. For more information, please contact U.S.
+Corporate and Government Sales, 1-800-382-3419, corpsales@pearsontechgroup.com.
+For sales outside the U.S., please contact International Sales at
+international@pearsoned.com.
+Company and product names mentioned herein are the trademarks or registered trade-
+marks of their respective owners.
+All rights reserved. No part of this book may be reproduced, in any form or by any means,
+without permission in writing from the publisher.
+Printed in the United States of America
+First Printing
+ISBN 0-13-187135-8
+Pearson Education LTD.
+Pearson Education Australia PTY, Limited.
+Pearson Education Singapore, Pte. Ltd.
+Pearson Education North Asia, Ltd.
+Pearson Education Canada, Ltd.
+Pearson Educatión de Mexico, S.A. de C.V.
+Pearson Education—Japan
+Pearson Education Malaysia, Pte. Ltd.
+Cohen_FM.qxd 6/1/05 9:46 AM Page v
+v
+FINANCIAL TIMES PRENTICE HALL BOOKS
+For more information, please go to www.ft-ph.com
+Business and Society
+John Gantz and Jack B. Rochester
+Pirates of the Digital Millennium: How the Intellectual Property Wars Damage Our
+Personal Freedoms, Our Jobs, and the World Economy
+Douglas K. Smith
+On Value and Values: Thinking Differently About We in an Age of Me
+Current Events
+Alan Elsner
+Gates of Injustice: The Crisis in America’s Prisons
+John R. Talbott
+Where America Went Wrong: And How to Regain Her Democratic Ideals
+Economics
+David Dranove
+What’s Your Life Worth? Health Care Rationing…Who Lives? Who Dies?
+Who Decides?
+Entrepreneurship
+Dr. Candida Brush, Dr. Nancy M. Carter, Dr. Elizabeth Gatewood,
+Dr. Patricia G. Greene, and Dr. Myra M. Hart
+Clearing the Hurdles: Women Building High Growth Businesses
+Oren Fuerst and Uri Geiger
+From Concept to Wall Street: A Complete Guide to Entrepreneurship
+and Venture Capital
+David Gladstone and Laura Gladstone
+Venture Capital Handbook: An Entrepreneur’s Guide to Raising Venture Capital,
+Revised and Updated
+Thomas K. McKnight
+Will It Fly? How to Know if Your New Business Idea Has Wings…
+Before You Take the Leap
+Stephen Spinelli, Jr., Robert M. Rosenberg, and Sue Birley
+Franchising: Pathway to Wealth Creation
+Executive Skills
+Cyndi Maxey and Jill Bremer
+It’s Your Move: Dealing Yourself the Best Cards in Life and Work
+John Putzier
+Weirdos in the Workplace
+Finance
+Aswath Damodaran
+The Dark Side of Valuation: Valuing Old Tech, New Tech, and New
+Economy Companies
+Kenneth R. Ferris and Barbara S. Pécherot Petitt
+Valuation: Avoiding the Winner’s Curse
+Cohen_FM.qxd 6/1/05 9:46 AM Page vi
+vi
+International Business and Globalization
+John C. Edmunds
+Brave New Wealthy World: Winning the Struggle for World Prosperity
+Robert A. Isaak
+The Globalization Gap: How the Rich Get Richer and the Poor Get Left
+Further Behind
+Johny K. Johansson
+In Your Face: How American Marketing Excess Fuels Anti-Americanism
+Peter Marber
+Money Changes Everything: How Global Prosperity Is Reshaping Our Needs, Values,
+and Lifestyles
+Fernando Robles, Françoise Simon, and Jerry Haar
+Winning Strategies for the New Latin Markets
+Investments
+Zvi Bodie and Michael J. Clowes
+Worry-Free Investing: A Safe Approach to Achieving Your Lifetime Goals
+Guy Cohen
+The Bible of Options Strategies: The Definitive Guide for Practical Trading Strategies
+Michael Covel
+Trend Following: How Great Traders Make Millions in Up or Down Markets
+Aswath Damodaran
+Investment Fables: Exposing the Myths of “Can’t Miss” Investment Strategies
+Harry Domash
+Fire Your Stock Analyst! Analyzing Stocks on Your Own
+David Gladstone and Laura Gladstone
+Venture Capital Investing: The Complete Handbook for Investing in Businesses for
+Outstanding Profits
+D. Quinn Mills
+Buy, Lie, and Sell High: How Investors Lost Out on Enron and the Internet Bubble
+D. Quinn Mills
+Wheel, Deal, and Steal: Deceptive Accounting, Deceitful CEOs, and Ineffective
+Reforms
+Michael J. Panzner
+The New Laws of the Stock Market Jungle: An Insider’s Guide to Successful Investing
+in a Changing World
+H. David Sherman, S. David Young, and Harris Collingwood
+Profits You Can Trust: Spotting & Surviving Accounting Landmines
+Michael Thomsett
+Stock Profits: Getting to the Core—New Fundamentals for a New Age
+Leadership
+Jim Despain and Jane Bodman Converse
+And Dignity for All: Unlocking Greatness through Values-Based Leadership
+Marshall Goldsmith, Cathy Greenberg, Alastair Robertson, and Maya Hu-Chan
+Global Leadership: The Next Generation
+Management
+Rob Austin and Lee Devin
+Artful Making: What Managers Need to Know About How Artists Work
+Cohen_FM.qxd 6/1/05 9:46 AM Page vii
+vii
+J. Stewart Black and Hal B. Gregersen
+Leading Strategic Change: Breaking Through the Brain Barrier
+David M. Carter and Darren Rovell
+On the Ball: What You Can Learn About Business from Sports Leaders
+Charles J. Fombrun and Cees B.M. Van Riel
+Fame and Fortune: How Successful Companies Build Winning Reputations
+Amir Hartman
+Ruthless Execution: What Business Leaders Do When Their Companies Hit the Wall
+Harvey A. Hornstein
+The Haves and the Have Nots: The Abuse of Power and Privilege in the Workplace…
+and How to Control It
+Kevin Kennedy and Mary Moore
+Going the Distance: Why Some Companies Dominate and Others Fail
+Steven R. Kursh
+Minding the Corporate Checkbook: A Manager’s Guide to Executing Successful
+Business Investments
+Roy H. Lubit
+Coping with Toxic Managers, Subordinates…and Other Difficult People
+Fergus O’Connell
+The Competitive Advantage of Common Sense: Using the Power You Already Have
+Tom Osenton
+The Death of Demand: The Search for Growth in a Saturated Global Economy
+W. Alan Randolph and Barry Z. Posner
+Checkered Flag Projects: 10 Rules for Creating and Managing Projects that Win,
+Second Edition
+Stephen P. Robbins
+Decide & Conquer: Make Winning Decisions to Take Control of Your Life
+Stephen P. Robbins
+The Truth About Managing People…And Nothing but the Truth
+Ronald Snee and Roger Hoerl
+Leading Six Sigma: A Step-by-Step Guide Based on Experience with GE and Other
+Six Sigma Companies
+Susan E. Squires, Cynthia J. Smith, Lorna McDougall, and William R. Yeack
+Inside Arthur Andersen: Shifting Values, Unexpected Consequences
+Jerry Weissman
+Presenting to Win: The Art of Telling Your Story
+Marketing
+David Arnold
+The Mirage of Global Markets: How Globalizing Companies Can Succeed as
+Markets Localize
+Michael Basch
+CustomerCulture: How FedEx and Other Great Companies Put the Customer First
+Every Day
+Jonathan Cagan and Craig M. Vogel
+Creating Breakthrough Products: Innovation from Product Planning
+to Program Approval
+Lewis P. Carbone
+Clued In: How To Keep Customers Coming Back Again And Again
+Cohen_FM.qxd 6/1/05 9:46 AM Page viii
+viii
+Tom Osenton
+Customer Share Marketing: How the World’s Great Marketers Unlock Profits
+from Customer Loyalty
+Bernd H. Schmitt, David L. Rogers, and Karen Vrotsos
+There’s No Business That’s Not Show Business: Marketing in Today’s Experience
+Culture
+Yoram J. Wind and Vijay Mahajan, with Robert Gunther
+Convergence Marketing: Strategies for Reaching the New Hybrid Consumer
+Personal Finance
+David Shapiro
+Retirement Countdown: Take Action Now to Get the Life You Want
+Steve Weisman
+A Guide to Elder Planning: Everything You Need to Know to Protect Yourself Legally
+and Financially
+Strategy
+Edward W. Davis and Robert E. Spekmam
+The Extended Enterprise: Gaining Competitive Advantage through Collaborative
+Supply Chains
+Joel M. Shulman, With Thomas T. Stallkamp
+Getting Bigger by Growing Smaller: A New Growth Model for Corporate America
+Cohen_FM.qxd 6/1/05 9:46 AM Page ix
+To Geoff, whose genius and contrarian outlook gave me
+the stomach to perform one of his reasonable miracles.
+Cohen_FM.qxd 6/1/05 9:46 AM Page x
+Cohen_FM.qxd 6/1/05 9:46 AM Page xi
+xi
+Contents
+Acknowledgments xiii
+About the Author xv
+Executive summary xvii
+Preface xix
+1 Introduction to Options 1
+2 Into the Marketplace 29
+3 The Basics of Fundamental Analysis 49
+4 The Basics of Technical Analysis 85
+5 Two Popular Strategies and How to Improve Them 137
+6 An Introduction to the Greeks 164
+7 Bull Call Spreads and Bull Put Spreads 197
+8 Two Basic Volatility Strategies 220
+9 Two Basic Sideways Strategies 238
+10 Trading and Investing Psychology 262
+11 Putting It All Together—A Call to Action 280
+12 Stock Futures and Options Strategies (Bonus Chapter) 289
+Appendix IStrategy Table 293
+Appendix IIGlossary 305
+References and Recommended Reading 319
+Index 321
+Cohen_FM.qxd 6/1/05 9:46 AM Page xii
+Cohen_FM.qxd 6/1/05 9:46 AM Page xiii
+xiii
+Acknowledgments
+It’s amazing how many parts of your mind go into writing a book like this. As a
+result, there are a number of people I must thank for both their direct and
+indirect influence.
+First to my friend Geoffrey Glassborow to whom this book is dedicated and
+whose wondrous skills enabled me to prove modern medicine wrong. In 1994 I
+was diagnosed with ulcerative colitis, an intensely debilitating condition of the
+lower intestine. The condition was serious enough to lead doctors in both the
+UK and USA to recommend surgery as the only means of “relief.” At this time I
+was in constant pain and fear, such that even venturing out of my home became
+an achievement in itself. Through Geoff, I not only made a full recovery, but I
+also learned how to think, something we don’t really get taught at school. It may
+sound a bit trite but because of what was achieved, I can now look on every
+obstacle in life as a challenge and every challenge as an opportunity.
+I also need to thank my MBA Finance options lecturer from City University
+(Cass) Business School, Professor Gordon Gemmill. It was his enthusiasm that
+got me hooked in the first place.
+Alpesh B. Patel, the renowned financial journalist and author, has been
+another source of inspiration. From our first meeting where I demonstrated
+OptionEasy, he has encouraged me and introduced me to other important
+people in this industry. It’s a rarity to find his sort in any industry once they
+become well established.
+Finally, to my friends, particularly those who stuck around during the
+darkest days when it was almost impossible for me to even go out. I will always
+remember who you are…particularly Dominic and Lulu who went way beyond
+the call of duty.
+The publisher is grateful for permission to use charts created on Worden Brothers TC2005 and TradeStation®, the flagship product of
+TradeStat

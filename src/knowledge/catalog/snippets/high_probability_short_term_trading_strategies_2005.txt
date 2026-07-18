@@ -1,0 +1,184 @@
+STREET SMARTS
+CONTENTS
+ACKNOWLEDGMENTS xi
+PREFACE xiii
+Chapter 1 INTRODUCTION 1
+Chapter 2 SWING TRADING 3
+Chapter 3 MONEY MANAGEMENT 7
+PART ONE TESTS
+Chapter 4 TURTLE SOUP 12
+Chapter5 TURTLE SOUP PLUS ONE TM 22
+Chapter6 80-20's 31
+Chapter7 MOMENTUM PINBALL TM 36
+Chapter 8 2-PERIOD ROC 42
+PART TWO RETRACEMENTS
+Chapter 9 THE "ANTI” 48
+Chapter 10 THE HOLY GRAIL 58
+Chapter 11 ADX GAPPER 63
+PART THREE CLIMAX PATTERNS
+Chapter12 WHIPLASH 71
+Chapter13 THREE-DAY UNFILLED CAP REVERSALS 74
+Chapter14 A PICTURE'S WORTH A THOUSAND WORDS 80
+Chapter15 WOLFE WAVES 88
+Chapter16 NEWS 96
+Chapter17 MORNING NEWS REVERSALS 99
+Chapter18 BIG PICTURE NEWS REVERSALS 104
+PART FOUR BREAKOUT MODE
+Chapter19 RANGE CONTRACTION 109
+Chapter 20 HISTORICAL VOLATILITY MEETS TOBY CRABEL 115
+PART FIVE MARKET MUSINGS
+Chapter 21 SMART MONEY INDICATORS 122
+Chapter 22 MORE WORDS ON TRADE MANAGEMENT 128
+Chapter 23 BE PREPARED! 131
+Chapter 24 FINAL THOUGHTS 134
+Chapter 25 THE SECRETS OF SUCCESSFUL TRADING 135
+APPENDIX
+Historical Volatility Calculations, 203
+Moore Research Center-Statistical Studies, 205
+Exhibit A.1 Historical Upper 90% Statistics, 208
+Exhibit A.2 Historical Upper 80% Statistics, 209
+Exhibit A.3 Historical Lower 10% Statistics, 210
+Exhibit A.4 Historical Lower 20% Statistics, 211
+Exhibit A.5 Historical WR7 and Higher Close Statistics, 212
+Exhibit A.6 Historical WR7 and Lower Close Statistics, 213
+Exhibit A.7 Historical ROCRSI Buy Report, 215
+Exhibit A.8 Historical ROCRS1 Sell Report, 216
+Exhibit A.9 Historical Fresh ROC Buy Report, 218
+Exhibit A.10 Historical Fresh ROC Sell Report, 219
+Exhibit A.11 Futures 14-Period ADX Statistics, 221
+Exhibit A.12 Historical Oops Buy Report, 223
+Exhibit A. 13 Historical Oops Sell Report, 224
+Exhibit A. 14 Historical Oops (ADX Capper) Buy Report, 225
+Exhibit A. 15 Historical Oops (ADX Capper) Sell Report, 226
+Exhibit A. 16 Historical Fresh ADX Buy Report, 228
+Exhibit A. 17 Historical Fresh ADX Sell Report, 229
+Exhibit A.18 Historical Cap Failure Buy 50% Report, 231
+Exhibit A. 19 Historical Cap Failure Sell 50% Report, 231
+Exhibit A.20 Historical Channel (2-Period High/Low) Report), 233
+Samples of Daily Worksheets, 234
+Trademarks, 236
+Research Services, Software, and Charting Services, 237
+Software and Books Offered by Oceanview Financial Research, 238
+ABOUT THE AUTHORS 239
+PREFACE
+Traders talk amongst themselves, not necessarily to discuss bullish or bearish market opinions, but
+rather to share insights into the nature and quirkiness of this business. The mental toll trading
+exacts definitely forms bonds. When we open up it is always surprising to discover the similarity of
+lessons learned, experiences shared, and how we all independently arrive at the same
+conclusions. Often in talking with each other we're really looking for clues into our own heads,
+hoping to understand ourselves a little better.
+Despite our constant pursuit of knowledge, the market itself assures there is no shortcut to
+obtaining our final degree. In the end, it is experience which is our ultimate teacher and there is no
+substitute. We can only choose the attitude with which we approach this process of learning to
+trade. We can accept the inevitable setbacks and learn from them, or we can yield to our natural
+human stubbornness and be forced to repeat the same lessons over and over again.
+This book has been written by two people who have come to enjoy the process. We've both
+discovered we are not the only ones to have made certain mistakes and we've also discovered the
+same secrets to success ... which we hope to share with you. The single most important secret is
+this: learn to listen to the markets and do not impose your own will upon them.
+Every successful trader we have known has also discovered the necessity for consistency. It is the
+key to everything-you must trade with a coherent methodology. You must follow a specific trading
+strategy. Although this book presents multiple strategies, each and every one has the same
+essential starting point: minimizing risk first, looking to maximize gains only after risk has been
+defined and controlled.
+Between us we have 34 years of experience as floor traders, exchange members, traders on
+institutional desks, hedge fund managers, and commodity trading advisors-trading for our own
+accounts the entire time. We hit it off well because our number one guiding belief is that you must,
+above all, find setups and entries which minimize exposure. The profits come on their own terms.
+Finally, even though we present many different patterns, you only need ONE strategy to be
+prosperous. Some of the best traders are successful because they trade only one strategy.
+Hopefully, all of the patterns in the manual will increase your awareness of certain market
+idiosyncrasies and will serve as a confirmation of your own market observations.
+STREET SMARTS
+CHAPTER 1
+INTRODUCTION
+Yes, Virginia, you CAN make a living from trading!
+In a day when global money managers are given increasing attention and funds seem to dominate
+the market arena, it might be difficult to imagine that the small speculator could have much of an
+edge. Has trading become a function of computer power? Have markets changed in the last
+decade? How relevant is the theoretical world in the heat of battle? The truth is, a few trading tricks
+and a little common sense will get you more mileage than all the books on technical analysis
+combined. Ultimately, an individual can better determine support and resistance than a computer
+can. And yes, the private individual has more of an edge than he knows!
+This book is written for the active trader. It is a compilation of strategies that the two of us have
+been trading with for the last 15 years in both equities and futures. The strategies are conceptually
+simple and have been readily adopted by our friends and colleagues. This is not a book of
+technical analysis. It is a manual of precise setups that have you in the market for only a limited
+amount of time. Consider it to be a collection of "surgical strikes" with a distinct methodology for
+managing each one'.
+Each pattern identifies a distinct market condition. After all, trading should be done on only the
+most recognizable and reliable patterns. Most of the setups can be traded on any market and on
+any time frame.
+This manual will teach you everything we know about swing trading. By swing trading we mean
+monitoring the market for support and resistance levels and actively trading around those areas.
+Stops are placed just beneath support or above resistance to minimize risk. You will learn to
+recognize the best setups at these levels and then how to lock in profits when trades are made.
+In order for you to get the most out of trading these setups, a few points need to be covered:
+• It is important to initially trade a new concept or strategy on paper. Only by seeing a pattern
+over and over again will you truly feel comfortable with it. You must believe in its ability to
+repeat itself. Don't be surprised if you find yourself actually becoming excited as you see the
+patterns begin to set up.
+• If a pattern does not make sense to you, don't trade it. If you don't have a 100 percent belief in
+it, you will not be able to overcome losing streaks.
+• All you need is one pattern to make a living! Learn first to specialize in doing one thing well. We
+know two traders who do nothing but trade the "anti" pattern from a five-minute S&P chart.
+- 1 -
+STREET SMARTS
+Another friend trades only "Three Little Indians" on tick charts. Traders can earn their living by
+trading any one of the patterns that we present in this book.
+• Your biggest enemy in trading is going to be a directional bias, an opinion about market
+direction ... whether yours, a broker's or a friend's. Shut it out! Learn to concentrate on the
+"right-hand side" of the chart-in other words, on the pattern at hand.
+• One of the things you will get out of this book is an increased ability to listen to the market."
+Even if a chapter does not seem to suit your personal trading style, it should at least heighten
+your awareness of market action and price behavior at critical points.
+• None of these strategies is designed to be a mechanical system. Be grateful that they are not!
+If they were, a large fund would come into the marketplace and exploit the edge. It is estimated
+that over 90 percent of the large pools in the commodity markets are run on a mechanical
+basis, systematically attempting to exploit trends. It is very difficult for these funds to move
+large amounts of money on a short-term time frame. They do not have the luxury of using
+resting stop-loss orders without risking adverse slippage. They cannot be as nimble as the
+small speculator can-and herein lies your edge.
+• This brings us to the most important point. Initial stop loss orders are essential! Each strategy in
+this book will have you entering a protective stop upon being filled. Stops are necessary for
+your protection against worst-case scenarios. (Remember, we are trading on probabilities
+only.) All it takes is getting sloppy once, or experiencing the "frozen rabbit syndrome" in a bad
+trade, to undo the efforts of the previous 20 trades. Placing initial protective stops must
+become a habit that is never broken. As you will see, in most, if not all of the examples, your
+stops will risk only a small amount of money.
+The patterns in this manual are organized around three distinct swing trading concepts by which
+support and resistance levels are formed. They are: tests, retracements, and climax reversals. We
+will elaborate on these ideas in the introductory chapter on swing trading. This will be followed by a
+chapter on money management.
+Chapters included under "test" setups include Turtle Soup, Turtle Soup Plus One, 80-20's, and
+Momentum Pinball. Retracement patterns include sections on the Anti and two ADX trades. Lastly,
+different types of climax reversals are discussed. Our favorites range from news-reversal patterns
+to distinct bar chart setups.
+We have also included a chapter by a friend who is a finance professor at Syracuse University We
+thought you would be fascinated-as we were by the summary of his research and findings on the
+secrets of longevity and profitability of top CTAs.
+The appendix includes all applicable back-testing results independently conducted by the Moore
+Research Center in Eugene, Oregon. These tests are included to illustrate a market's tendency;
+that an edge does indeed exist. They are not meant to be mechanical systems.
+Before we move on to the strategies, let's first discuss the mechanics of swing trading.
+- 2 -
+STREET SMARTS
+CHAPTER 2
+SWING TRADING
+"Speculation, in its truest sense, calls -for anticipation.
+Richard D. Wyckoff
+It is important to understand the basics of swing trading to understand how our strategies work.
+Since the days of Charles Dow, traders have written about two distinct methods of trading. The
+first is playing for the long pull. This involves trying to determine the underlying value of a market
+or security through fundamentals. A trade is then held until a revaluation takes place. This is
+analogous to trend-following strategies which ultimately depend on long term economic policies
+or fundamental shifts in supply and demand. The second method of trading, as described by
+Dow back in 1908, was to "deal in active markets making many trades, and relying on stop loss
+orders for protection." This came to be called "swing trading." Trading opportunities presented
+themselves on both the long and short side, regardless of what the underlying long-term trend
+was.
+Swing trading is anticipating the market's next move, and asking what is the most probable
+outcome. For example, if a market broke support and had a sharp move down, the strongest trade
+to make would be to sell the first rally. This is because the most probable event would be for the
+market to at least make a retest of the new low before it could, with any high degree of probability
+be expected to reverse di

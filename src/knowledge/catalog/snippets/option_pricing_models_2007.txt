@@ -1,0 +1,215 @@
+Option Pricing Models
+and Volatility Using
+Excel-VBA
+FABRICE DOUGLAS ROUAH
+GREGORY VAINBERG
+John Wiley & Sons, Inc.
+Option Pricing Models
+and Volatility Using
+Excel-VBA
+Foundedin1807,JohnWiley&Sonsistheoldestindependentpublishingcompany
+in the United States. With offices in North America, Europe, Australia, and Asia,
+Wiley is globally committed to developing and marketing print and electronic
+products and services for our customers’ professional and personal knowledge and
+understanding.
+The Wiley Finance series contains books written specifically for finance and
+investment professionals as well as sophisticated individual investors and their
+financial advisors. Book topics range from portfolio management to e-commerce,
+riskmanagement,financialengineering,valuation,andfinancialinstrumentanalysis,
+aswellasmuchmore.
+Foralistofavailabletitles,visitourWebsiteatwww.WileyFinance.com.
+Option Pricing Models
+and Volatility Using
+Excel-VBA
+FABRICE DOUGLAS ROUAH
+GREGORY VAINBERG
+John Wiley & Sons, Inc.
+Copyright(cid:1)c 2007byFabriceDouglasRouahandGregoryVainberg.Allrightsreserved.
+PublishedbyJohnWiley&Sons,Inc.,Hoboken,NewJersey.
+PublishedsimultaneouslyinCanada.
+WileyBicentennialLogo:RichardJ.Pacifico
+Nopartofthispublicationmaybereproduced,storedinaretrievalsystem,ortransmittedinanyform
+orbyanymeans,electronic,mechanical,photocopying,recording,scanning,orotherwise,exceptas
+permittedunderSection107or108ofthe1976UnitedStatesCopyrightAct,withouteithertheprior
+writtenpermissionofthePublisher,orauthorizationthroughpaymentoftheappropriateper-copyfeeto
+theCopyrightClearanceCenter,Inc.,222RosewoodDrive,Danvers,MA01923,(978)750-8400,fax
+(978)750-4470,orontheWebatwww.copyright.com.RequeststothePublisherforpermissionshould
+beaddressedtothePermissionsDepartment,JohnWiley&Sons,Inc.,111RiverStreet,Hoboken,NJ
+07030,(201)748-6011,fax(201)748-6008,oronlineathttp://www.wiley.com/go/permission.
+LimitofLiability/DisclaimerofWarranty:Whilethepublisherandauthorhaveusedtheirbesteffortsin
+preparingthisbook,theymakenorepresentationsorwarrantieswithrespecttotheaccuracyor
+completenessofthecontentsofthisbookandspecificallydisclaimanyimpliedwarrantiesof
+merchantabilityorfitnessforaparticularpurpose.Nowarrantymaybecreatedorextendedbysales
+representativesorwrittensalesmaterials.Theadviceandstrategiescontainedhereinmaynotbesuitable
+foryoursituation.Youshouldconsultwithaprofessionalwhereappropriate.Neitherthepublishernor
+authorshallbeliableforanylossofprofitoranyothercommercialdamages,includingbutnotlimited
+tospecial,incidental,consequential,orotherdamages.
+Forgeneralinformationonourotherproductsandservicesorfortechnicalsupport,pleasecontactour
+CustomerCareDepartmentwithintheUnitedStatesat(800)762-2974,outsidetheUnitedStatesat
+(317)572-3993orfax(317)572-4002.
+Wileyalsopublishesitsbooksinavarietyofelectronicformats.Somecontentthatappearsinprintmay
+notbeavailableinelectronicbooks.FormoreinformationaboutWileyproducts,visitourWebsiteat
+www.wiley.com.
+Designationsusedbycompaniestodistinguishtheirproductsareoftenclaimedastrademarks.Inall
+instanceswhereJohnWiley&Sons,Inc.isawareofaclaim,theproductnamesappearininitialcapital
+orallcapitalletters.Readers,however,shouldcontacttheappropriatecompaniesformorecomplete
+informationregardingtrademarksandregistration.
+LibraryofCongressCataloging-in-PublicationData:
+Rouah,Fabrice,1964-
+
+OptionpricingmodelsandvolatilityusingExcel -VBA/FabriceDouglasRouah,GregoryVainberg.
+p.cm.–(Wileyfinanceseries)
+Includesbibliographicalreferencesandindex.
+ISBN:978-0-471-79464-6(paper/cd-rom)
+1. Options(Finance)–Prices.2. Capitalinvestments–Mathematical–Mathematicalmodels.
+3. Options(Finance)–Mathematicalmodels.4. MicrosoftExcel(Computerfile)5. Microsoft
+VisualBasicforapplications.I.Vainberg,Gregory,1978-II.Title.
+HG6024.A3R6782007
+332.64’53–dc22
+2006031250
+PrintedintheUnitedStatesofAmerica.
+10987654321
+To Jacqueline, Jean, and Gilles
+—Fabrice
+To Irina, Bryanne, and Stephannie
+—Greg
+Contents
+Preface ix
+CHAPTER1
+MathematicalPreliminaries 1
+CHAPTER2
+NumericalIntegration 39
+CHAPTER3
+Tree-BasedMethods 70
+CHAPTER4
+TheBlack-Scholes,PractitionerBlack-Scholes,andGram-CharlierModels 112
+CHAPTER5
+TheHeston(1993)StochasticVolatilityModel 136
+CHAPTER6
+TheHestonandNandi(2000)GARCHModel 163
+CHAPTER7
+TheGreeks 187
+CHAPTER8
+ExoticOptions 230
+CHAPTER9
+ParameterEstimation 275
+vii
+viii CONTENTS
+CHAPTER10
+ImpliedVolatility 304
+CHAPTER11
+Model-FreeImpliedVolatility 322
+CHAPTER12
+Model-FreeHigherMoments 350
+CHAPTER13
+VolatilityReturns 374
+APPENDIXA
+AVBAPrimer 404
+References 409
+AbouttheCD-ROM 413
+AbouttheAuthors 417
+Index 419
+Preface
+T
+his book constitutes a guide for implementing advanced option pricing models
+and volatility in Excel/VBA. It can be used by MBA students specializing in
+finance and risk management, by practitioners, and by undergraduate students in
+their final year. Emphasis has been placed on implementing the models in VBA,
+rather than on the theoretical developments underlying the models. We have made
+every effort to explain the models and their coding in VBA as simply as possible.
+Every model covered in this book includes one or more VBA functions that can be
+accessed on the CD-ROM. We have focused our attention on equity options, and
+we have chosen not to include interest rate options. The particularities of interest
+rateoptionsplacetheminaseparateclassofderivatives.
+The first part of the book covers mathematical preliminaries that are used
+throughout the book. In Chapter1 we explain complex numbers and how to
+implement them in VBA. We also explain how to write VBA functions for finding
+roots of functions, the Nelder-Mead algorithm for finding the minimum of a
+multivariate function, and cubic spline interpolation. All ofthese methods are used
+extensively throughout the book. Chapter2 covers numerical integration. Many of
+option pricingandvolatility models requirethatanintegralbeevaluatedforwhich
+no closed-form solution exists, which requires a numerical approximation to the
+integral.InChapter2wepresentvariousmethodsthathaveproventobeextremely
+accurateandefficientfornumericalintegration.
+The second part of this book covers option pricing formulas. In Chapter3
+we cover lattice methods. These include the well-known binomial and trinomial
+trees, but also refinements such as the implied binomial and trinomial trees, the
+flexible binomial tree, the Leisen-Reimer tree, the Edgeworth binomial tree, and
+the adapted mesh method. Most of these methods approximate the Black-Scholes
+model in discrete time. One advantage they have over the Black-Scholes model,
+however, is that they can be used to price American options. In Chapter4 we
+covertheBlack-Scholes,Gram-Charlier,andPractitionerBlack-Scholesmodels,and
+introduce implied volatility. The Black-Scholes model is presented as a platform
+upon which other models are built. The Gram-Charlier model is an extension
+of the Black-Scholes model that allows for skewness and excess kurtosis in the
+distribution of the return on the underlying asset. The Practitioner Black-Scholes
+model uses implied volatility fitted from a deterministic volatility function (DVF)
+regression, as an input to the Black-Scholes model. It can be thought of as an
+ad hoc method that adapts the Black-Scholes model to account for the volatility
+smile in option prices. In Chapter5 we cover the Heston(1993) model, which is
+an extension of the Black-Scholes model that allows for stochastic volatility, while
+ix
+x PREFACE
+in Chapter6 we cover the Heston and Nandi(2000) GARCH model, which in its
+simplest form is a discrete-time version of the model in Chapter5. The call price
+in each model is available in closed form, up to a complex integral that must be
+evaluated numerically. In Chapter6 we also show how to identify the correlation
+anddependenceinassetreturns,whichtheGARCHmodelattemptstoincorporate.
+WealsoshowhowtoimplementtheGARCH(1,1)modelinVBA,andhowGARCH
+volatilities can be used for long-run volatility forecasting and for constructing the
+term structure of volatility. Chapter7 covers the option sensitivities, or Greeks,
+from the option pricing models covered in this book. The Greeks for the Black-
+Scholes and Gram-Charlier models are available in closed form. The Greeks from
+Heston(1993), and Heston and Nandi(2000) models are available in closed form
+also, but require a numerical approximation to a complex integral. The Greeks
+from tree-based methods can be approximated from option and asset prices at the
+beginningnodesofthetree.InChapter7wealsoshowhowtousefinitedifferences
+toapproximate theGreeks,andweshowthattheseapproximations areallcloseto
+theirclosed-formvalues.InChapter8wecoverexoticoptions.Mostofthemethods
+we present for valuing exotic options are tree-based. Particular emphasis is placed
+on single-barrier options, and the various methods that have been proposed to
+deal with the difficulties that arise when tree-based methods are adapted to barrier
+options.InChapter8wealsocoverAsianoptions,floating-strikelookbackoptions,
+and digital options. Finally, in Chapter9 we cover basic estimation methods for
+parameters that are used as inputs to the option pricing models covered in this
+book. Particular emphasis is placed on loss function estimation, which estimates
+parametersbyminimizingthedifferencebetweenmarketandmodelprices.
+The third part of this book deals with volatility and higher moments. In
+Chapter10 we present a thorough treatment of implied volatility and show how
+the root-finding methods covered in Chapter1 can be used to obtain implied
+volatilitiesfrommarketprices.Weexplainhowtheimpliedvolatilitycurvecanshed
+information on the distribution of the underlying asset return, and we show how
+option prices generated from the Heston(1993) and Gram-Charlier models lead
+to implied volatility curves that account for the smile and skew in option prices.
+Chapter11 deals with model-free implied volatility. Unlike Black-Scholes implied
+volatility, model-free implied volatility does not require the restrictive assumption
+ofaparticularparametricformfortheunderlyingpricedynamics.Moreover,unlike
+Black-Scholes implied volatilities, which are usually computed using at-the-money
+or near-the-money options only, model-free volatilities are computed using the
+whole cross-section of option prices. In Chapter11 we also present methods that
+mitigate the discretization and truncation bias brought on by using market prices
+that do not include a continuum of strike prices,and that are available only over a
+boundedintervalofstrikeprices.WealsoshowhowtoconstructtheChicagoBoard
+
+Options Exchange volatility index, the VIX, which is now based on model-free
+implied volatility. Chapter12 extends the model-free methods of Chapter11, and
+dealswithmodel-freeskewnessandkurtosis.Weshowhowapplyinginterpolation-
+extrapolation to these methods leads to much more accurate approximations to
+Preface xi
+the integrals that are used to estimate model-free higher moments. In Chapter13
+we treat volatility returns, which are returns on strategies designed to profit from
+volatility. We cover simple straddles, which are constructed using a single call and
+put.Zero-betastraddlesareslightlymorecomplex,buthavetheadvantagethatthey
+are hedged against market movements. We also introduce a simple model to value
+straddle options, and introduce delta-hedged gains. Similar to zero-beta straddles,
+delta-hedged gains are portfolios in which all risks except volatility risk have been
+hedged away, so that the only remaining risk to the portfolio is volatility risk.
+Finally, we cover variance swaps, which are an application of model-free volatility
+forconstructingacalloptiononvolatility.
+ThisbookalsocontainsaCD-ROMthatcontainsExcelspreadsheetsandVBA
+functions to implement all of the option pricing and volatility models presented in
+this book. The CD-ROM also includes solutions to all the chapter exercises, and
+option data for IBM Corporation and Intel Corporation downloaded from Yahoo!
+(finance.yahoo.com).
+ACKNOWLEDGMENTS
+We have several people to thank f

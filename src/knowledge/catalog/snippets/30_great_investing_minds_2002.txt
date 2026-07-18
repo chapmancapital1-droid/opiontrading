@@ -1,0 +1,239 @@
+Dean LeBaron’s Treasury
+of Investment Wisdom
+30 Great Investing Minds
+DEAN LEBARON
+ROMESH VAITILINGAM
+John Wiley & Sons
+@Team-FLY
+Copyright © 2002 by Dean LeBaron and Romesh Vaitilingam. All rights reserved.
+Published by John Wiley & Sons, Inc., New York.
+Published simultaneously in Canada.
+No part of this publication may be reproduced, stored in a retrieval system or transmitted in any
+form or by any means, electronic, mechanical, photocopying, recording, scanning or otherwise,
+except as permitted under Sections 107 or 108 of the 1976 United States Copyright Act,
+without either the prior written permission of the Publisher, or authorization through payment
+of the appropriate per-copy fee to the Copyright Clearance Center, 222 Rosewood Drive,
+Danvers, MA 01923, (978) 750-8400, fax (978) 750-4744. Requests to the Publisher for
+permission should be addressed to the Permissions Department, John Wiley & Sons, Inc.,
+605 Third Avenue, New York, NY 10158-0012, (212) 850-6011, fax (212) 850-6008,
+E-Mail: PERMREQ@WILEY.COM.
+This publication is designed to provide accurate and authoritative information in regard to the
+subject matter covered. It is sold with the understanding that the publisher is not engaged in
+rendering professional services. If professional advice or other expert assistance is required, the
+services of a competent professional person should be sought.
+Library of Congress Cataloging-in-Publication Data:
+ISBN: 0-471-15294-3
+Previously published in 1999 as The Ultimate Investor: The People and Ideas That Make Modern
+Investmentby Capstone Publishing Limited, Oxford, United Kingdom.
+Printed in the United States of America.
+10 9 8 7 6 5 4 3 2 1
+Contents
+Preface ix
+The Promises Men Live By• by Peter L. Bernstein 1
+Investment Insights: Changing Styles across Time
+and Space• by Dean LeBaron 7
+CHARTING THE COURSE
+Macro Tools
+Chapter 1 Investment Policy 15
+GURU • Charles Ellis
+Chapter 2 Economic Forecasting 22
+GURU • Peter Bernstein
+Chapter 3 Risk Management 28
+GURUS • Fischer Black, Robert Merton, andMyron Scholes
+Chapter 4 Financial Engineering 36
+GURU • Andrew Lo
+OUR DAY WILL COME
+Investment Style
+Chapter 5 Active Portfolio Management 47
+GURU • William Miller
+Chapter 6 Growth Investing 55
+GURU • Peter Lynch
+Chapter 7 Value Investing 62
+GURU • Warren Buffett
+iii
+iv Contents
+BUILDING A BETTER MOUSETRAP
+Construction Tools
+Chapter 8 Technical Analysis 73
+GURU • Walter Deemer
+Chapter 9 Quantitative Investing 80
+GURU • Robert Arnott
+Chapter 10 Foreign Exchange 88
+GURU • Richard Olsen
+WE ARE THE WORLD
+Investing with the Market
+Chapter 11 Market Efficiency 97
+GURUS • Burton Malkiel andEugene Fama
+Chapter 12 Mutual Funds 105
+GURU • John Bogle
+Chapter 13 Indexing 114
+GURUS • Wells Fargo, American National Bank,
+Batterymarch Financial Management
+TILTING AT WINDMILLS
+Betting against the Market
+Chapter 14 Fixed Income 123
+GURU • Andrew Carter
+Chapter 15 Short Selling 132
+GURUS • Steven Leuthold andKathryn Staley
+Chapter 16 Hedge Funds 138
+GURU • George Soros
+I DID IT MY WAY
+A Different Philosophy
+Chapter 17 Contrarian Investing 147
+GURU • James Fraser
+Contents v
+FAR FROM THE MADDING CROWD
+Diversification
+Chapter 18 Global Investing 155
+GURU • Gary Brinson
+Chapter 19 Emerging Markets 162
+GURU • Mark Mobius
+Chapter 20 Venture Capital 174
+GURU • Georges Doriot
+I LOVE A PARADE
+Investor Behavior
+Chapter 21 Investor Psychology 181
+GURUS • Richard Thaler andRobert Vishny
+Chapter 22 Manias, Panics, and Crashes 189
+GURU • Marc Faber
+Chapter 23 Internet Investing 196
+GURU • Geoffrey Moore
+HOW TO SUCCEED IN BUSINESS
+Corporate Behavior
+Chapter 24 Corporate Governance 207
+GURU • Robert Monks
+Chapter 25 Corporate Restructuring 215
+GURU • Bruce Wasserstein
+Chapter 26 Initial Public Offerings 221
+GURU • Ivo Welch
+WE’RE HERE TO HELP YOU
+The Government Factor
+Chapter 27 International Money 231
+GURU • Martin Barnes
+vi Contents
+Chapter 28 Politics and Investing 240
+GURU • Edward Yardeni
+FOLLOWING THE PIPER
+Sharing Responsibility
+Chapter 29 Investment Consultants 247
+GURU • George Russell
+THE FAT LADY SINGS
+Analysis and Reporting
+Chapter 30 Performance Measurement 257
+GURU • Peter Dietz
+Future Focus I: Ten Key Investment Issues 263
+Future Focus II: Ten Key Global Issues 270
+James Fraser’s Book Bag 277
+Toolbar of Top Websites for Investment 280
+Index 303
+@Team-FLY
+Preface
+You are holding in your hands what we hope is a treasure. To us, it is. We are
+sharing our friends, our heroes, and their wisdom with you. Depending on
+future conditions, some of the wisdom will be invaluable... and some you will
+wish you had not heard. But each comes from a noble effort to penetrate the
+minds and insights of the best investors. And try to let each of them sparkle for
+you as they do for us.
+This volume began its life as The Ultimate Investor, published in 1999 by
+Capstone Publishing Limited in the United Kingdom. We have updated many
+sections but preserved the basic point that the personalities of great investors in-
+fluence their selection of styles. In some places, we have changed emphasis since
+markets in late 2001, when we are writing these notes, are vastly different than
+in early 1999. The note of skepticism that underlay our observations in the first
+publication may be a helpful enduring attitude, although experience in the past
+few years may make it seem rather obvious.
+But we are not trying to rewrite history or overcorrect. If the notes of 1999
+seem too repetitive, we could have selected almost any other year in the last
+decade or two and used it equally well as a basis for our observations.
+We hope our points are useful to you today... and tomorrow.
+We have tried to approach a moving target as best we can treating thirty
+ideas and thirty-plus people. The ideas are not neatly bounded so that they exist
+without important and active relations with other elements. Rather, they are part
+of the market soup, boiling and vibrant, which is constantly evolving in the in-
+terplay of mathematics and personalities. We can pretend that each element is
+distinct only for the purpose of descriptive analysis. But, in the end, each mar-
+ket instant and each investor has to reassemble the pieces to grapple with our task
+of forecasting imponderable outcomes.
+We have tried to simplify the ideas, at times borrowing from the writings
+of the personalities or gurus who are associated with the ideas—and borrowing
+vii
+viii Preface
+from the ideas of others. None of us as investment students and practitioners
+lives in isolation: We are all part of the mosaic being analyzed, shard by piece.
+At times, we may seem glib and cavalier. It is merely in our attempt to be
+concise about things that defy precision.
+So now that we have started with our limitations, what will we be doing to
+merit your attention? Answer: give you a grounding in the ideas and people who
+have brought us to today’s market understanding. These people have also shaped
+tomorrow’s market. They might not know it yet but they—and others we have
+omitted or do not know—set the base for innovation. You need to know them
+and their work. They are your investment future—at least your future in ways
+we try to understand for you.
+Ours was a seamless collaboration despite living an ocean apart. We had
+two in corpus (face-to-face) meetings and a daily dozen e-mail iterations. We
+could have been sitting at adjoining desks swapping papers and marker pens
+back and forth. Instead, it was done electronically. And we posted the chapters
+on Dean’s website in nearly finished form for comment by gurus, potential read-
+ers, and the publisher. It was possible for us and others to see the book arise in
+its entirety as it neared completion. And we hope this openness will promote
+more sales of the hard copy. We would do it again just the same way.
+In our discussion of investment ideas, we talk equally about people because
+it is the people who have the ideas. The best investment ideas, in our opinion, are
+consistent with the psyche of the people who have them. The cliché “managers do
+not pick markets, markets pick managers” refers to the possibility that it is the
+style of the day that plucks some investors for greatness rather than the other way
+around. The managers who succeed are most often confident of their views to the
+limits of arrogance, hate to see their ideas diluted in the interest of diversification
+(unless diversification was their idea), and are eager to display their market wit.
+Mostly they are colorful characters, most known and liked by at least one of us.
+In each chapter we describe an idea. Then we talk about one or two peo-
+ple associated with the idea. We also introduce the counterpoint: the downside
+and limitations of the idea. And we have asked each person discussed (where, as
+in most cases, they are still around) to react and comment if they wish: Many of
+our gurus have kindly taken up the challenge. Each chapter concludes with sug-
+gestions for the next steps, if any—ideas for application and research—and rec-
+ommendations for further reading whether in print or online.
+In addition to our main chapters, we have two introductory pieces: one by
+Peter Bernstein on the history of the markets over the past fifty years, which he
+has kindly allowed us to reprint; and another by Dean on changing investment
+Preface ix
+styles across time and space. We have also included a discussion of ten key issues
+related to the world of investing plus ten broader, more global questions, and a
+selection of ten investment classics by James Fraser. In addition, there is a webli-
+ography, a list of recommended investment websites for further study and some-
+times fun reading.
+—————————————
+Between the writing of this book and its printing, the terrible events of
+September 11, 2001, changed the world and our view of it. The world does not
+have clearly defined boundaries. It is complex—mushy, undefined, dynamic, ro-
+bust—with shifting shades of gray that cannot be defined in slogans of black and
+white. Complexity scientists have the thinking tools to help and will flesh out
+their ideas inot concrete policy recommendations.
+To many, globalism is corruption, political repression, and American prof-
+iteering. American readers should come to know more accurately the thoughts of
+others and why they think them. Comment is needed from other places. Ideally
+the United Nations (U.N.) should act as a clearinghouse but many governments
+of the world are not representative of their people, and the U.S. disdains the
+U.N. because of things such as its abortion policy and bureaucracy.
+U.S. leaders are successful Darwinian–Newtonians—they understand
+command and control; they know how to marshal force to beget force from de-
+fined opponents; they are the successful generals of recent wars—and those have
+been the most dangerous. If the U.S. finds that the world does not march to its
+tune, it will pull away. A nation cannot network and be secure from all future
+viruses. The only way is to separate. America first means America alone.
+To investors asking what these conditions mean for the future, we offer a
+few thoughts. We are likely to be moving into a long period when the return on
+bonds is equal to or greater than the return on equities. This is not a bear mar-
+ket forecast but, rather, an observation that capital raising may be from govern-
+ments—we won’t hear the word “surplus” for a long while—and there is a
+long-term argument for lower to no equity premiums. In a bear market—and it
+is not a dispute that we have one, rather at what stage—people blame themselves
+for the “error” and they have psychological instead of financial reactions, rather
+like Elisabeth Kubler-Ross’s famous list of the stages of dying:
+• Confidence that the market will come back
+• Searching for confirming experts that the market will come back
+• Anger at the market and at analysts with high salaries and conflicts
+• Ignoring markets’ information since it is a long-term investment
+x Preface
+• Intense study of the market for the best exit time
+• Selli

@@ -1,0 +1,364 @@
+Professional
+Automated
+Trading
+Founded in 1807, John Wiley & Sons is the oldest independent publishing
+companyintheUnitedStates.WithofficesinNorthAmerica,Europe,Aus-
+tralia and Asia, Wiley is globally committed to developing and marketing
+print and electronic products and services for our customers’ professional
+andpersonalknowledgeandunderstanding.
+TheWileyFinanceseriescontainsbookswrittenspecificallyforfinance
+and investment professionals as well as sophisticated individual investors
+andtheirfinancialadvisors.Booktopicsrangefromportfoliomanagement
+toe-commerce,riskmanagement,financialengineering,valuationandfinan-
+cialinstrumentanalysis,aswellasmuchmore.
+Foralistofavailabletitles,visitourWebsiteatwww.WileyFinance.com.
+Professional
+Automated
+Trading
+Theory and Practice
+EUGENE A. DURENARD
+Coverimage:©iStockphoto.com/ideiados
+Coverdesign:PaulMcCarthy
+Copyright©2013byEugeneA.Durenard.Allrightsreserved.
+PublishedbyJohnWiley&Sons,Inc.,Hoboken,NewJersey.
+PublishedsimultaneouslyinCanada.
+Nopartofthispublicationmaybereproduced,storedinaretrievalsystem,ortransmittedinanyformor
+byanymeans,electronic,mechanical,photocopying,recording,scanning,orotherwise,exceptaspermitted
+underSection107or108ofthe1976UnitedStatesCopyrightAct,withouteitherthepriorwritten
+permissionofthePublisher,orauthorizationthroughpaymentoftheappropriateper-copyfeetothe
+CopyrightClearanceCenter,Inc.,222RosewoodDrive,Danvers,MA01923,(978)750-8400,
+fax(978)646-8600,orontheWebatwww.copyright.com.RequeststothePublisherforpermissionshould
+beaddressedtothePermissionsDepartment,JohnWiley&Sons,Inc.,111RiverStreet,Hoboken,
+NJ07030,(201)748-6011,fax(201)748-6008,oronlineathttp://www.wiley.com/go/permissions.
+LimitofLiability/DisclaimerofWarranty:Whilethepublisherandauthorhaveusedtheirbesteffortsin
+preparingthisbook,theymakenorepresentationsorwarrantieswithrespecttotheaccuracyor
+completenessofthecontentsofthisbookandspecificallydisclaimanyimpliedwarrantiesof
+merchantabilityorfitnessforaparticularpurpose.Nowarrantymaybecreatedorextendedbysales
+representativesorwrittensalesmaterials.Theadviceandstrategiescontainedhereinmaynotbesuitable
+foryoursituation.Youshouldconsultwithaprofessionalwhereappropriate.Neitherthepublishernor
+authorshallbeliableforanylossofprofitoranyothercommercialdamages,includingbutnotlimitedto
+special,incidental,consequential,orotherdamages.
+Forgeneralinformationonourotherproductsandservicesorfortechnicalsupport,pleasecontactour
+CustomerCareDepartmentwithintheUnitedStatesat(800)762-2974,outsidetheUnitedStatesat
+(317)572-3993orfax(317)572-4002.
+Wileypublishesinavarietyofprintandelectronicformatsandbyprint-on-demand.Somematerial
+includedwithstandardprintversionsofthisbookmaynotbeincludedine-booksorinprint-on-demand.
+IfthisbookreferstomediasuchasaCDorDVDthatisnotincludedintheversionyoupurchased,you
+maydownloadthismaterialathttp://booksupport.wiley.com.FormoreinformationaboutWileyproducts,
+visitwww.wiley.com.
+ISBN978-1-118-12985-2(Hardcover)
+ISBN978-1-118-41902-1(ePDF)
+ISBN978-1-118-41929-8(ePub)
+PrintedintheUnitedStatesofAmerica
+10 9 8 7 6 5 4 3 2 1
+Contents
+Preface xv
+CHAPTER1
+IntroductiontoSystematicTrading 1
+1.1 DefinitionofSystematicTrading 2
+1.2 PhilosophyofTrading 3
+1.2.1 LessonsfromtheMarket 3
+1.2.2 Mechanismvs.Organism 5
+1.2.3 TheEdgeofComplexity 5
+1.2.4 IsSystematicTradingReductionistic? 6
+1.2.5 Reactionvs.Proaction 6
+1.2.6 Arbitrage? 7
+1.2.7 TwoViablePaths 7
+1.3 TheBusinessofTrading 7
+1.3.1 ProfitabilityandTrackRecord 8
+1.3.2 TheProductandItsDesign 10
+1.3.3 TheTradingFactory 12
+1.3.4 MarketingandDistribution 15
+1.3.5 Capital,Costs,andCriticalMass 16
+1.4 PsychologyandEmotions 19
+1.4.1 UpsandDowns 19
+1.4.2 PeerPressureandtheBlameGame 20
+1.4.3 Trust:ContinuityofQuality 20
+1.4.4 LearningfromEachOther 21
+1.5 FromCandlesticksinKyototoFPGAsinChicago 22
+PARTONE
+StrategyDesignandTesting
+CHAPTER2
+ANewSocioeconomicParadigm 33
+2.1 FinancialTheoryvs.MarketReality 33
+2.1.1 AdaptiveReactionsvs.RigidAnticipations 33
+v
+vi CONTENTS
+2.1.2 Accumulationvs.DivestmentGames 37
+2.1.3 PhaseTransitionsunderLeverage 38
+2.1.4 Derivatives:NewRisksDoNotProjectonto
+OldHedges 40
+2.1.5 Socio-PoliticalDynamicsandFeedbacks 41
+2.2 TheMarketIsaComplexAdaptiveSystem 42
+2.2.1 Emergence 43
+2.2.2 IntelligenceIsNotAlwaysNecessary 44
+2.2.3 TheNeedtoAdapt 45
+2.3 OriginsofRoboticsandArtificialLife 45
+CHAPTER3
+AnalogiesbetweenSystematicTradingandRobotics 49
+3.1 ModelsandRobots 49
+3.2 TheTradingRobot 50
+3.3 Finite-State-MachineRepresentationofthe
+ControlSystem 52
+CHAPTER4
+ImplementationofStrategiesasDistributedAgents 57
+4.1 TradingAgent 57
+4.2 Events 60
+4.3 ConsumingEvents 60
+4.4 UpdatingAgents 61
+4.5 DefiningFSMAgents 63
+4.6 ImplementingaStrategy 66
+CHAPTER5
+Inter-AgentCommunications 73
+5.1 HandlingCommunicationEvents 73
+5.2 EmittingMessagesandRunning
+Simulations 75
+5.3 ImplementationExample 76
+CHAPTER6
+DataRepresentationTechniques 83
+6.1 DataRelevanceandFilteringofInformation 83
+6.2 PriceandOrderBookUpdates 84
+6.2.1 ElementaryPriceEvents 85
+6.2.2 OrderBookData 85
+6.2.3 TickData:TheFinestGrain 88
+6.3 Sampling:ClockTimevs.EventTime 89
+Contents vii
+6.4 Compression 90
+6.4.1 SlicingTimeintoBarsandCandles 90
+6.4.2 SlicingPriceintoBoxes 96
+6.4.3 MarketDistributions 97
+6.5 Representation 97
+6.5.1 ChartsandTechnicalAnalysis 99
+6.5.2 TranslatingPatternsintoSymbols 101
+6.5.3 TranslatingNewsintoNumbers 102
+6.5.4 PsychologyofDataandAlerts 104
+CHAPTER7
+BasicTradingStrategies 105
+7.1 Trend-Following 105
+7.1.1 ChannelBreakout 106
+7.1.2 MovingAverages 106
+7.1.3 SwingBreakout 112
+7.2 Acceleration 114
+7.2.1 TrendAsymmetry 115
+7.2.2 TheShadowIndex 116
+7.2.3 TradingAcceleration 117
+7.3 Mean-Reversion 118
+7.3.1 SwingReversal 118
+7.3.2 RangeProjection 120
+7.4 IntradayPatterns 122
+7.4.1 Openings 122
+7.4.2 SeasonalityofVolatility 122
+7.5 News-DrivenStrategies 124
+7.5.1 Expectationsvs.Reality 124
+7.5.2 Ontology-DrivenStrategies 125
+CHAPTER8
+ArchitectureforMarket-Making 127
+8.1 TraditionalMarket-Making:TheSpecialists 127
+8.2 ConditionalMarket-Making:OpenOutcry 128
+8.3 ElectronicMarket-Making 129
+8.4 MixedMarket-MakingModel 131
+8.5 AnArchitectureforaMarket-MakingDesk 134
+CHAPTER9
+CombiningStrategiesintoPortfolios 139
+9.1 AggregateAgents 139
+9.2 OptimalPortfolios 141
+9.3 Risk-ManagementofaPortfolioofModels 142
+viii CONTENTS
+CHAPTER10
+SimulatingAgent-BasedStrategies 145
+10.1 TheSimulationProblem 146
+10.2 ModelingtheOrderManagementSystem 147
+10.2.1 OrdersandAlgorithms 148
+10.2.2 SimulatingSlippage 149
+10.2.3 SimulatingOrderPlacement 151
+10.2.4 SimulatingOrderExecution 153
+10.2.5 AModelfortheOMS 155
+10.2.6 OperatingtheOMS 156
+10.3 RunningSimulations 158
+10.3.1 SettingUpaBackTest 158
+10.3.2 SettingUpaForwardTest 160
+10.4 AnalysisofResults 162
+10.4.1 ContinuousStatistics 163
+10.4.2 Per-TradeStatistics 164
+10.4.3 ParameterSearchandOptimization 165
+10.5 DegreesofOver-Fitting 167
+PARTTWO
+EvolvingStrategies
+CHAPTER11
+StrategiesforAdaptation 173
+11.1 AvenuesforAdaptations 173
+11.2 TheCyberneticsofTrading 175
+CHAPTER12
+FeedbackandControl 179
+12.1 LookingatMarketsthroughModels 179
+12.1.1 InternalWorld 179
+12.1.2 StrategiesasGeneralizedFilters 180
+12.1.3 ImplicitMarketRegimes 181
+12.1.4 PersistenceofRegimes 183
+12.2 FitnessFeedbackControl 184
+12.2.1 MeasuresofFitness 186
+12.3 RobustnessofStrategies 192
+12.4 EfficiencyofControl 193
+12.4.1 TriggeringControl 193
+12.4.2 MeasuringEfficiencyofControl 194
+Contents ix
+12.4.3 TestResults 196
+12.4.4 OptimizingControlParameters 197
+CHAPTER13
+SimpleSwarmSystems 199
+13.1 SwitchingStrategies 199
+13.1.1 SwitchingbetweenRegimes 200
+13.1.2 SwitchingwithintheSameRegime 200
+13.1.3 MechanicsofSwitchingandTransactionCosts 205
+13.2 StrategyNeighborhoods 206
+13.3 ChoiceofaSimpleIndividualfromaPopulation 208
+13.4 AdditiveSwarmSystem 210
+13.4.1 ExampleofanAdditiveSwarm 211
+13.5 MaximizingSwarmSystem 214
+13.5.1 ExampleofaMaximizingSwarm 215
+13.6 GlobalPerformanceFeedbackControl 216
+CHAPTER14
+ImplementingSwarmSystems 219
+14.1 SettingUptheSwarmStrategySet 220
+14.2 RunningtheSwarm 220
+CHAPTER15
+SwarmSystemswithLearning 223
+15.1 ReinforcementLearning 224
+15.2 SwarmEfficiency 224
+15.3 BehaviorExploitationbytheSwarm 225
+15.4 ExploringNewBehaviors 227
+15.5 LamarkamongtheMachines 227
+PARTTHREE
+OptimizingExecution
+CHAPTER16
+AnalysisofTradingCosts 231
+16.1 NoFreeLunch 231
+16.2 Slippage 232
+16.3 IntradaySeasonalityofLiquidity 233
+16.4 ModelsofMarketImpact 234
+16.4.1 ReactiontoAggression 235
+16.4.2 LimitstoOpenness 235
+x CONTENTS
+CHAPTER17
+EstimatingAlgorithmicExecutionTools 237
+17.1 BasicAlgorithmicExecutionTools 237
+17.2 EstimationofAlgorithmicExecution
+Methodologies 240
+17.2.1 ASimulationEngineforAlgos 240
+17.2.2 UsingExecutionAlgoResultsinModel
+Estimation 241
+17.2.3 JointTestingofModelsandAlgos 242
+PARTFOUR
+PracticalImplementation
+CHAPTER18
+OverviewofaScalableArchitecture 247
+18.1 ECNsandTranslation 247
+18.2 AggregationandDisaggregation 249
+18.3 OrderManagement 250
+18.4 Controls 250
+18.5 Decisions 251
+18.6 MiddleandBackOffice 251
+18.7 Recovery 252
+CHAPTER19
+PrincipalDesignPatterns 253
+19.1 Language-AgnosticDomainModel 253
+19.2 SolvingTasksinAdaptedLanguages 254
+19.3 CommunicatingbetweenComponents 257
+19.3.1 MessagingBus 258
+19.3.2 RemoteProcedureCalls 259
+19.4 DistributedComputingandModularity 260
+19.5 ParallelProcessing 262
+19.6 GarbageCollectionandMemoryControl 263
+CHAPTER20
+DataPersistence 265
+20.1 Business-CriticalData 265
+20.2 ObjectPersistenceandCachedMemory 267
+20.3 DatabasesandTheirUsage 269
+Contents xi
+CHAPTER21
+FaultToleranceandRecoveryMechanisms 273
+21.1 SituationsofStress 273
+21.1.1 CommunicationBreakdown 273
+21.1.2 ExternalSystemsBreakdown 274
+21.1.3 TradesBustedattheECNLevel 275
+21.1.4 Give-UpErrorsCausingCreditLineProblems 276
+21.1.5 InternalSystemsBreakdown 277
+21.1.6 PlannedMaintenanceandUpgrades 277
+21.2 AJamofLogsIsBetterThanaLogjamofErrors 277
+21.3 VirtualMachineandNetworkMonitoring 278
+CHAPTER22
+ComputationalEfficiency 281
+22.1 CPUSpikes 281
+22.2 RecursiveComputationofModelSignals
+andPerformance 282
+22.3 NumericEfficiency 285
+CHAPTER23
+ConnectivitytoElectronicCommerceNetworks 291
+23.1 Adaptors 291
+23.2 TheTranslationLayer 292
+23.2.1 Orders:FIX 292
+23.2.2 SpecificECNs 293
+23.2.3 PriceSources:FAST 293
+23.3 DealingwithLatency 294
+23.3.1 ExternalConstraintsandCo-Location 294
+23.3.2 AvoidBeingShorttheLatencyOption 295
+23.3.3 SynchronizationunderConstraints 296
+23.3.4 ImprovingInternalLatency 297
+CHAPTER24
+TheAggregationandDisaggregationLayer 299
+24.1 QuotesFilteringandBookAggregation 300
+24.1.1 FilteringQuotes 300
+24.1.2 SyntheticOrderBook 301
+24.2 OrdersAggregationandFillsDisaggregation 301
+24.2.1 AggregatingPositionsandOrders 301
+24.2.2 FillsDisaggregation 303
+24.2.3 BookTransfersandMiddleOffice 303
+xii CONTENTS
+CHAPTER25
+TheOMSLayer 305
+25.1 OrderManagementasaRecursiveController 305
+25.1.1 ManagementofPositions 307
+25.1.2 ManagementofRestingOrders 307
+25.1.3 AlgorithmicOrders 308
+25.2 ControlunderStress 309
+25.3 DesigningaFlexibleOMS 310
+CHAPTER26
+TheHumanControlLayer 311
+26.1 DashboardandSmartScheduler 311
+26.1.1 ParameterControl 311
+26.1.2 ScheduledFlatteningofExposure 312
+26.2 ManualOrdersAggregator 313
+26.2.1 RepresentingaTraderbyanAgent 313
+26.2.2 WritingaTradingScreen 314
+26.2.3 MonitoringAggregatedStreams 314
+26.3 PositionandP&LMonitor 314
+26.3.1 Real-TimeExposureMonitor 315
+26.3.2 DisplayingEquityCurves 315
+26.3.3 OnlineTradeStatisticsandFitnesses 315
+26.3.4 TradesVisualizationModule 317
+CHAPTER27
+TheRiskManagementLayer 319
+27.1 RiskyBusiness 319
+27.2 AutomatedRiskManagement 320
+27.3 ManualRiskControlandthePanicButton 320
+CHAPTER28
+TheCoreEngineLayer 323
+28.1 Architecture 323
+28.2 SimulationandRecovery 325
+CHAPTER29
+SomePracticalImplementationAspects 327
+29.1 ArchitectureforBuildandPatchReleases 327
+29.1.1 TestingofCodebeforeaRelease 327
+29.1.2 VersioningofCodeandBuilds 328
+29.1.3 PersistenceofStateduringVersionReleases 328
+Contents xiii
+29.2 HardwareConsiderations 329
+29.2.1 BottleneckAnalysis 329
+29.2.2 TheEdgeofTechnology 330
+Appendix
+AuxiliaryLISPFunctions 333
+Bibliography 341
+Index 351
+Preface
+P
+rofessionalAutomatedTrading,TheoryandPrac

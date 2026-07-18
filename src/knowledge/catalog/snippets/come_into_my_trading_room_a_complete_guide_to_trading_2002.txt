@@ -1,0 +1,239 @@
+COME INTO MY TRADING ROOM
+A Complete Guide to Trading
+Dr. Alexander Elder
+www.elder.com
+John Wiley & Sons, Inc.
+New York • Chichester • Weinheim • Brisbane • Singapore • Toronto
+COME INTO MY TRADING ROOM
+A Complete Guide to Trading
+BOOKS BY DR. ALEXANDER ELDER
+Trading for a Living
+Study Guide for Trading for a Living
+Rubles to Dollars:
+Making Money on Russia’s Exploding Financial Frontier
+COME INTO MY TRADING ROOM
+A Complete Guide to Trading
+Dr. Alexander Elder
+www.elder.com
+John Wiley & Sons, Inc.
+New York • Chichester • Weinheim • Brisbane • Singapore • Toronto
+To my campers
+Copyright © 2002 by Dr. Alexander Elder. All rights reserved.
+Published by John Wiley & Sons, Inc.
+No part of this publication may be reproduced, stored in a retrieval system or trans-
+mitted in any form or by any means, electronic, mechanical, photocopying, recording,
+scanning or otherwise, except as permitted under Sections 107 or 108 of the 1976
+United States Copyright Act, without either the prior written permission of the Pub-
+lisher, or authorization through payment of the appropriate per-copy fee to the
+Copyright Clearance Center, 222 Rosewood Drive, Danvers, MA 01923, (978) 750-8400,
+fax (978) 750-4744. Requests to the Publisher for permission should be addressed to
+the Permissions Department, John Wiley & Sons, Inc., 605 Third Avenue, New York,
+NY 10158-0012, (212) 850-6011, fax (212) 850-6008, E-Mail: PERMREQ@WILEY.COM.
+This publication is designed to provide accurate and authoritative information in regard
+to the subject matter covered. It is sold with the understanding that the publisher is not
+engaged in rendering professional services. If professional advice or other expert assis-
+tance is required, the services of a competent professional person should be sought.
+This title is also available in print as ISBN 0-471-22534-7. Some content that appears in
+the print version of this book may not be available in this electronic edition.
+For more information about Wiley products, visit our web site at www.Wiley.com.
+CONTENTS
+Dedication iv
+Introduction 1
+HOW THIS BOOK IS ORGANIZED 2
+MALE OR FEMALE? 4
+PART ONE FINANCIAL TRADING FOR BABES IN THE WOODS 5
+1 Invest? Trade? Gamble? 7
+AN INTELLIGENT INVESTOR 7
+AN INTELLIGENT TRADER 8
+AN INTELLIGENT GAMBLER? 12
+2 What Markets to Trade? 15
+STOCKS 16
+FUTURES 18
+OPTIONS 20
+3 The First Steps 25
+THE EXTERNAL BARRIERS TO SUCCESS 25
+GETTING YOUR GEAR 32
+ANALYSIS AND TRADING 39
+PART TWO THE THREE M’S OF SUCCESSFUL TRADING 45
+4 Mind—The Disciplined Trader 47
+SLEEPWALKING THROUGH THE MARKET 49
+A REMEDY FOR SELF-DESTRUCTIVENESS 54
+THE MATURE TRADER 61
+5 Method—Technical Analysis 67
+BASIC CHARTING 68
+INDICATORS—FIVE BULLETS TO A CLIP 84
+v
+vi TABLE OF CONTENTS
+6 Trading 123
+SYSTEM TESTING 125
+TRIPLE SCREEN UPDATE 128
+DAY-TRADING 138
+THE IMPULSE SYSTEM 157
+MARKET THERMOMETER 162
+EXITING TRADES 165
+CHOOSING WHAT TO TRADE 183
+7 Money Management Formulas 215
+NO MATH ILLITERATES 217
+BUSINESSMAN’S RISK VS. LOSS. 218
+THE 2% SOLUTION—PROTECTION FROM SHARKS 220
+THE 6% RULE—PROTECTION FROM PIRANHAS 223
+POSITION SIZING 227
+MONEY MANAGEMENT STEPS 230
+PART THREE COME INTO MY TRADING ROOM 233
+8 The Organized Trader 235
+TRADER’S SPREADSHEET 236
+THE EQUITY CURVE 238
+TRADING DIARY 240
+ACTION PLAN 242
+9 Trading for a Living 245
+DISCIPLINE AND HUMILITY 247
+HAVE YOU GOT THE TIME? 251
+THE DECISION-MAKING TREE 257
+BEGINNER, SEMIPRO, PRO 264
+GOING PRO 267
+10 Come Into My Trading Room 271
+EXCERPTS FROM THE DIARY 273
+YOUR NEXT TRADE 298
+Acknowledgments 301
+Sources 303
+Index 307
+About the Author 313
+INTRODUCTION
+“Y
+ou can be free. You can live and work anywhere in the world,
+be independent from the routine and not answer to anybody.”
+With those words I began my first book, Trading for a Living. One of
+my great pleasures in the years since its publication has been meeting
+and becoming friends with people who became free thanks to suc-
+cessful trading.
+Several times a year I run a Traders’ Camp, a week of intensive
+classes at remote resorts. I enjoy my campers’ successes. A stockbroker
+became a full-time trader, closed his business, and moved to Rio to
+pursue a life-long interest in Latin women. A psychologist became
+such a successful options writer that she paid for an early retirement
+for her husband and moved with him to the Virgin Islands to become
+an expert in what she calls synchronous hammocking. A man bought
+a mountain in Vermont and trades from the house he built on its top.
+I wish all students could succeed, but it’s not that simple.
+How many psychiatrists does it take to change a lightbulb? Only
+one—but the bulb has to want to change.
+To succeed in trading you need several innate traits without which
+you shouldn’t even start. They include discipline, risk tolerance, and
+facility with numbers. A big fat guy who is often drunk and can’t kick
+a cigarette habit is unlikely to make a good trader—he lacks discipline.
+A nitpicker who obsesses over each dime is too tense to live with mar-
+ket risks. A daydreamer who cannot do simple arithmetic on the run
+becomes lost when prices change rapidly.
+In addition to discipline, risk tolerance, and ease with numbers, suc-
+cessful trading requires 3 M’s—Mind, Method, and Money. Mind means
+developing psychological rules that will keep you calm amidst the
+1
+2 INTRODUCTION
+noise of the markets. Method is a system of analyzing prices and
+developing a decision-making tree. Money refers to money manage-
+ment, which means risking only a small part of your trading capital on
+any trade; think of the way a submarine is divided into many com-
+partments so that it won’t sink if one section becomes flooded—you
+have to structure your account this way. Psychology, trading tactics,
+money management—you can learn these skills.
+How long will it take you to become a competent trader and how
+much will it cost? What rules do you set, what methods do you use,
+and how do you split your trading capital? What should you study first,
+second, and third? What markets should you trade, and how much
+money can you expect to make? If these questions interest you, you
+picked the right book.
+You can succeed in trading. It has been done before, and it’s being
+done right now, today, by people who started from scratch, learned to
+trade and are making a good living at it. The best ones make fortunes.
+Others fail, out of ignorance or lack of discipline. If you work through
+this book, ignorance will not be a problem, and you will hear me yell
+at you again and again, pointing you towards disciplined, responsible,
+professional trading.
+Trading is a journey of self-discovery. If you enjoy learning, if you
+are not scared of risk, if the rewards appeal to you, if you are prepared
+to put in the work, you have a great project ahead of you. You will
+work hard and enjoy the discoveries you’ll make along the way.
+I wish you success. Now let us begin.
+HOW THIS BOOK IS ORGANIZED
+Books written from the heart acquire their own direction. They develop
+and change in the process of being written. You start with a plan, but
+the book takes over, and before you know it, you’re going much far-
+ther than planned.
+I began writing this book three years ago on a flight to New York,
+returning from a Traders’ Camp in Mexico. We had more beginners
+than usual, many of them women. They kept asking for a book that
+they jokingly called Trading for Dummies. There were no dummies in
+our group. Those campers were smart, sharp, and motivated—but they
+needed to learn the rules and the tools. I figured I would write a brief
+INTRODUCTION 3
+practical introduction, call it Financial Trading for Babes in the Woods,
+and be done by Christmas.
+Three Christmases passed before I completed my project. The beginner
+part was easy, but I kept tunneling into the depths of trading, sharing
+what I learned in the nine years since Trading for a Living was pub-
+lished. I developed new indicators and systems. My money management
+became crisper, and I designed a new approach to record keeping. My
+work with hundreds of traders showed me how to teach people to turn
+their trading lives around and move from haphazard jumping in and
+out to a calm professional style. Take a few minutes to read how this
+book is organized, so that you may get full value out of it.
+Part One, Financial Trading for Babes in the Woods, is written pri-
+marily for those who are just becoming interested in trading. It lays
+out topics whose mastery is essential for success and puts up danger
+signs around the main pitfalls. Even experienced traders would do well
+to review this chapter, especially the concept of external barriers to
+success, which has never before been spelled out in trading literature,
+and the critique of the efficient market theory.
+Part Two, The Three M’s of Successful Trading, teaches you the
+three key aspects of trading—Mind, Method, and Money. Mind is
+your trading psychology. Method is how you go about finding trades
+and making entry and exit decisions. Money is how you manage your
+trading capital for long-term survival and success. Once we review
+the psychological rules, I’ll share with you my favorite analytic tools,
+some of which I have never before revealed. We will cover system
+testing, day-trading, and a new method for placing stops. The step-
+by-step money management strategy has never before appeared in
+trading literature.
+Part Three, Come into My Trading Room, delivers another first—a set
+of exact instructions for organizing your time and effort, as well as
+keeping good records. Proper record keeping is a hallmark of suc-
+cessful trading. Good records help you learn from your mistakes as
+well as victories. You know you should keep records, but now you’ll
+see exactly how to do it. By the time you work through this section,
+nobody can call you “a babe in the woods.”
+Take your time as you read this book, mark it up, return to the sec-
+tions that interest you most. This volume distills 20 years of trading and
+teaching experience. It took three years to write, and it will probably
+4 INTRODUCTION
+take more than one reading to get its full value. Open your charting
+software, pull out your trading records, test all the concepts on your
+own data. Only testing will make these ideas your own.
+By the time you leave my trading room, you’ll be in a position to take
+your trading to a higher, more intelligent, and successful level.
+MALE OR FEMALE?
+Almost every nonfiction writer faces the dilemma—which pronoun to
+use. He? She? He or she?
+Male traders outnumber women by about twenty to one, although
+this ratio is rapidly becoming more balanced as more and more women
+come into the markets. In our Traders’ Camps, which attract the more
+sophisticated segment of traders, we have already moved from a great
+preponderance of men to a near parity with women.
+I find that the percentage of successful traders is higher among
+women. They tend to be less arrogant, and arrogance is a deadly sin
+in trading. The male ego—that wonderful trait that has been bringing
+us wars, riots, and bloodshed since time immemorial—tends to get
+heavily caught up in trading. A guy studies his charts, decides to buy,
+and now his self-esteem is involved—he has to be right! If the market
+goes his way, he waits to be proven even more right—bigger is better.
+If the market goes against him, he is tough enough to stand the pain
+and waits for the market to reverse and prove him right—while it
+grinds down his account.
+Women traders, on the other hand, are much more likely to ask a sim-
+ple question—where’s the money? They like to take profits and focus on
+avoiding losses instead of trying to prove themselves right. Women are
+more likely to bend with the wind and go with the flow, catch trends
+and hop off a little earlier, booking profits. When I tell traders that keep-
+ing records is a hugely important aspect of success, women are more
+likely to keep them than men. If you are looking to hire a trader, all other
+factors being equal, I’d recommend looking for a woman.
+Still, there are many more male than fe

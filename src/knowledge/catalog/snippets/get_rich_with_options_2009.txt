@@ -1,0 +1,214 @@
+ffffiirrss..iinndddd iiii 88//1144//0099 11::3399::2255 PPMM
+GGeett rriicchh
+wwiitthh ooppttiioonnss
+ffffiirrss..iinndddd ii 88//1144//0099 11::3399::2244 PPMM
+ffffiirrss..iinndddd iiii 88//1144//0099 11::3399::2255 PPMM
+ggeett rriicchh
+wwiitthh ooppttiioonnss
+Second Edition
+Four Winning Strategies
+Straight from
+the Exchange Floor
+LEE LOWELL
+John Wiley & Sons, Inc.
+ffffiirrss..iinndddd iiiiii 88//1144//0099 11::3399::2255 PPMM
+Copyright © 2009 by Lee Lowell. All rights reserved.
+Published by John Wiley & Sons, Inc., Hoboken, New Jersey.
+Published simultaneously in Canada.
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form
+or by any means, electronic, mechanical, photocopying, recording, scanning, or otherwise, except
+as permitted under Section 107 or 108 of the 1976 United States Copyright Act, without either
+the prior written permission of the Publisher, or authorization through payment of the appropriate
+per-copy fee to the Copyright Clearance Center, Inc., 222 Rosewood Drive, Danvers, MA 01923,
+(978) 750-8400, fax (978) 646-8600, or on the web at www.copyright.com. Requests to the Publisher
+for permission should be addressed to the Permissions Department, John Wiley & Sons, Inc., 111 River
+Street, Hoboken, NJ 07030, (201) 748-6011, fax (201) 748-6008, or online at www.wiley.com/go/
+permissions.
+Limit of Liability/Disclaimer of Warranty: While the publisher and author have used their best efforts
+in preparing this book, they make no representations or warranties with respect to the accuracy or
+completeness of the contents of this book and specifi cally disclaim any implied warranties of
+merchantability or fi tness for a particular purpose. No warranty may be created or extended by sales
+representatives or written sales materials. The advice and strategies contained herein may not be suitable
+for your situation. You should consult with a professional where appropriate. Neither the publisher nor
+author shall be liable for any loss of profi t or any other commercial damages, including but not limited to
+special, incidental, consequential, or other damages.
+For general information on our other products and services or for technical support, please contact our
+Customer Care Department within the United States at (800) 762-2974, outside the United States at
+(317) 572-3993 or fax (317) 572-4002.
+Wiley also publishes its books in a variety of electronic formats. Some content that appears in print may
+not be available in electronic books. For more information about Wiley products, visit our web site at
+www.wiley.com.
+Library of Congress Cataloging-in-Publication Data:
+Lowell, Lee, 1967-
+Get rich with options: four winning strategies straight from the exchange fl oor/Lee Lowell.—2nd ed.
+p. cm.
+Includes index.
+ISBN 978-0-470-44589-1 (cloth)
+1. Options (Finance) I. Title.
+HG6024.A3L69 2009
+332.64’53—dc22
+2009032181
+Printed in the United States of America
+10 9 8 7 6 5 4 3 2 1
+ffffiirrss..iinndddd iivv 88//1144//0099 11::3399::2255 PPMM
+To my wife, Amy, and my three children—
+Sydney, Josie, and Griffi n—all whom I
+love more than anything in the world
+ffffiirrss..iinndddd vv 88//1144//0099 11::3399::2255 PPMM
+ffffiirrss..iinndddd vvii 88//1144//0099 11::3399::2266 PPMM
+CONTENTS
+Preface to the Second Edition ix
+Acknowledgments xiii
+Part One: T he option basics 1
+CHAPTER 1: It’s All about the Calls and Puts 3
+CHAPTER 2: How Options are Priced 15
+CHAPTER 3: Option Volatility 27
+CHAPTER 4: Stocks versus Options 47
+CHAPTER 5: Option Selling Is Your Key to Success 57
+Part Two: The strategies 69
+CHAPTER 6: Buy All the Stock You Want for Half the Price 71
+CHAPTER 7: Getting Paid to Buy Your Favorite Stock 93
+CHAPTER 8: Option Credit Spreads: The All-Star Strategy 121
+CHAPTER 9: A Day in the Life of the Market Maker 173
+vii
+ffttoocc..iinndddd vviiii 88//1144//0099 11::4400::4400 PPMM
+viii CONTENTS
+CHAPTER 10: Put Your Stocks to Work—Sell Covered Calls 185
+CHAPTER 11: A Bonus Strategy: Ratio Option Spreads 205
+Part three: Getting Ready to Trade 227
+CHAPTER 12: Tools of the Trade 229
+CHAPTER 13: Brokers and Commissions 235
+Conclusion 243
+Index 247
+ffttoocc..iinndddd vviiiiii 88//1144//0099 11::4400::4411 PPMM
+PPRREEFFAACCEE TTOO TTHHEE
+SSEECCOONNDD EEDDIITTIIOONN
+When I was approached recently by the team at John Wiley & Sons
+about writing a revision for this book, I had already been thinking
+about how and what I would change if ever given the chance. Now
+that I have the opportunity, let me fill you in on what you can expect
+to see in this version.
+Before I tell you what has changed, I just want to say thanks to
+my friends and colleagues for giving me their insight on what they’d
+like to see be different if I ever revised the book. But I must say, the
+biggest input on what I needed to revamp has come from the reviews
+from random readers who were nice enough to post their thoughts on
+Amazon.com. Yep, that’s right. To date, there have been 44 reviews
+of my book at Amazon and all have been helpful to me.
+The most common remarks from the few readers who didn’t think
+my book was up to snuff were the problems they had with the title (of
+all things!). They felt duped by the title and that the book didn’t show
+them the ways to Get Rich with Options.
+I’ve put every bit of my knowledge and experience into this book
+to show ordinary people how to use options the way that has brought
+me success over the last 17 years. You can defi nitely get rich trading
+ix
+ffpprreeff..iinndddd iixx 88//1144//0099 11::4400::1177 PPMM
+x PREFACE TO THE SECOND EDITION
+options, but you must do it correctly. I’m convinced, though, that
+these readers just didn’t connect the title with how well the strategies
+really work to increase your wealth. As you will read in my book, the
+one fact that I keep advocating over and over again is that you need to
+be on the sell side of options trading.
+I think some of the naysayer reviewers of my book didn’t really
+understand the concept of selling options as a means of immediate
+income generation through safer speculation and hedging techniques,
+or they didn’t really understand how to do it, or maybe they got
+burned in the past by selling options incorrectly.
+My goal was to show you how to trade options the proper way
+with the four strategies (and a bonus fi fth one at the end of the book)
+that I’ve used continuously over the years. All the money that you can
+bring into your account by selling options can add up to incredible
+sums over time. Just think about what you’d be leaving on the table
+if you never sold options in the fi rst place—you’d be leaving lots of
+money for someone else to pick up.
+So, on that note, I’m going to stress a bit more directly in this edi-
+tion about how you can get rich with options. None of the strategies
+that I discuss are different from the fi rst edition of this book. They’re
+still as sound as the day that I fi rst wrote about them. I’ll just be a little
+more detailed on how options trading can fatten your wallet.
+You’ll also be seeing more examples of two of my favorite
+strategies—option credit spreads and put-option selling. Since I now
+run two option advisory services that focus specifi cally on these two
+strategies, I am including real-life, archived recommendations that
+show my members what trades to take and when to take profi ts.
+I’ve also been asked to discuss in more detail the ways in which
+I fi nd the stocks or commodities that I trade the options, on as well
+as exit strategies during profi table and not profi table trades. Since the
+intention of this book was solely to teach the reader how to trade
+options profi tably once they’ve already picked their stock or com-
+modity market, the discussion of how to fi nd the stocks or commodi-
+ties was kept at a minimum. I will tell you this: Most of my decisions
+on which stock or commodity to pick is based primarily on chart pat-
+terns and, to a lesser degree, the fundamentals of the underlying.
+There are parts already within the book in which I briefl y discuss
+how I came to choose the underlying that I did, but I make the effort
+ffpprreeff..iinndddd xx 88//1144//0099 11::4400::1177 PPMM
+Preface to the Second Edition xi
+to expand on it a bit more in this revised edition. There are many
+great books out there now that can teach you about technical and
+fundamental analysis to help you get started on being able to pick the
+underlying, but those lessons are beyond the scope of this book. And
+as far as discussing exit strategies, I also go over this as much as I can as
+we discuss each strategy individually.
+The last thing I want to say about some the reviews that I received
+is that you cannot please everyone. Someone will always fi nd fault in
+whatever you do—and this applies to life in general, not just my book.
+I tried to make this book as complete as possible to get you on
+your way to surviving and profi ting in the options market. But by no
+means is this book the end-all and be-all of options books. No one
+could provide that to you no matter what the adviser’s background or
+experience has been. I encourage you to use this book as a great start-
+ing point and reference it well into the future.
+I hope you decide to stick around and read (or reread) my book
+because I really tried to make it as fun and enjoyable as I could for you
+to learn about options trading and how you can get your hands on
+some of the wealth that is there for the taking in this arena.
+—LEE LOWELL
+January 2009
+ffpprreeff..iinndddd xxii 88//1144//0099 11::4400::1177 PPMM
+ffpprreeff..iinndddd xxiiii 88//1144//0099 11::4400::1177 PPMM
+AACCKKNNOOWWLLEEDDGGMMEENNTTSS
+I would like to thank the fine folks at Agora and John Wiley & Sons
+for giving me the opportunity to have this book published.
+xxiiiiii
+ffllaasstt..iinndddd xxiiiiii 88//1144//0099 11::3399::5511 PPMM
+ffllaasstt..iinndddd xxiivv 88//1144//0099 11::3399::5511 PPMM
+PART ONE
+tthhee ooppttiioonn bbaassiiccss
+cc0011..iinndddd 11 88//1144//0099 11::3300::1177 PPMM
+cc0011..iinndddd 22 88//1144//0099 11::3300::1188 PPMM
+CHAPTER 1
+IITT’’SS AALLLL AABBOOUUTT
+TTHHEE CCAALLLLSS
+AANNDD PPUUTTSS
+Let’s start at the beginning. There are only two types of options—calls
+and puts. It’s really very simple, and it doesn’t have to be any more
+complicated than that. Call and put options are a direct form of invest-
+ment and should be seen as such. You can achieve everything you want
+on an investment basis with options, just as you would with any stock,
+bond, or mutual fund. That fact is very important to remember.
+Every position that is built using options is composed of either
+all calls, all puts, or a combination of the two. One thing that smart
+option traders know is that you can sell options as easily as you buy
+them. That is going to be one of the main themes of this book as you
+will soon see that a majority of my trades entail the selling of options.
+Don’t fret if you’ve heard that selling options is risky. The way that
+I do it has limited risk. One of the great aspects about the fi nancial
+markets is that you can sell something fi rst that you don’t own yet.
+Instead of the usual “buy low, sell high,” we can reverse it and “sell
+high, buy low.” In this case, the sale transaction comes fi rst.
+What are call and put options? In short, options are another form
+of investment that can be bought and sold just like a stock, a bond, or
+3
+cc0011..iinndddd 33 88//1144//0099 11::3300::1188 PPMM
+4 GET RICH WITH OPTIONS
+a commodity. They are referred to as “derivative” investments because an
+option’s value is derived from other sources, which we will talk about
+later on in the book. If you’ve read some of the mainstream litera-
+ture that is published about options, you will see the examples given
+from the buyer’s view of the market. I want to let you know that I’m
+going to teach you to trade from the short side (selling) as well as the
+long side (buying) of an options contract. Why limit yourself to one
+strategy?
+The main purpose of buying options is to gain leve

@@ -1,0 +1,129 @@
+================================================================================
+OPTIONSCOPE — STRATEGY SCANNER (Finviz-for-Options)
+UX + Engineering Spec | SuperAgent handoff
+Version: 1.0 | 2026-07-16
+Product goal: Grow personal empire capital from seed → $20,000 (then scale)
+================================================================================
+
+1. PURPOSE
+----------
+A hip, modern “Finviz for option strategies” surface inside OptionScope.
+User picks a strategy (e.g. Bull Call Debit Spread, Bull Put Credit, Iron Condor).
+System returns up to 15 tickers (fewer if market thin) that currently fit that
+strategy + adjustable filters (default underlying price $8–$150).
+
+This is NOT a signal to auto-trade. It is a shortlist for manual review in
+Trade Lab + Brain + Bias + Lessons (RH history).
+
+2. NAV / ENTRY
+--------------
+- Primary nav: “Scanner” (between Trade Lab and Library)
+- Command Center: prominent “Strategy Filter” button → /scanner
+- Deep link: /scanner?strategy=bull_put_credit&min=8&max=150
+
+3. UX LAYOUT (hip modern)
+-------------------------
+┌──────────────────────────────────────────────────────────────────────────┐
+│ OptionScope · Strategy Scanner          [Seed → $20k path]  [Help]     │
+├───────────────┬──────────────────────────────────────────────────────────┤
+│ FILTER RAIL   │  RESULTS (Finviz-style density, dark empire chrome)      │
+│               │                                                          │
+│ Strategy *    │  Showing 12 of 15 max · Bull Put Credit · $8–$150        │
+│ [chips grid]  │  ┌────┬──────┬─────┬──────┬─────┬──────┬──────┬──────┐  │
+│ Credit income │  │ #  │ Ticker│Spot │ IVR  │Fit% │ Bias │ Risk │ Open │  │
+│ Debit verts   │  ├────┼──────┼─────┼──────┼─────┼──────┼──────┼──────┤  │
+│ Directional   │  │ 1  │ PLUG │ 3?  │  … filtered out if <$8           │  │
+│ Vol / special │  │ 1  │ SOFI │12.4 │ 62%  │ 81  │ BULL │ def  │ Lab  │  │
+│               │  │ 2  │ …    │     │      │     │      │      │      │  │
+│ Price min/max │  └────┴──────┴─────┴──────┴─────┴──────┴──────┴──────┘  │
+│ [8]——[150]    │                                                          │
+│               │  Detail drawer (row click):                              │
+│ Market bias   │   - Why it fits (rule reasons)                           │
+│ Any/Bull/Bear │   - RH personal history coach if ticker in lessons       │
+│ /Neutral      │   - NCI bias snippet if available                        │
+│               │   - CTA: Open Trade Lab · Open Brain · Bias tab          │
+│ Max results   │                                                          │
+│ [15]          │  Empty state: “Fewer than 15 qualified — only N fit”     │
+│               │                                                          │
+│ [Run scan]    │  Footer disclaimer always visible                        │
+└───────────────┴──────────────────────────────────────────────────────────┘
+
+Mobile: filter collapses to sheet; table → cards.
+
+4. STRATEGIES (filter chips — all OptionScope IDs)
+--------------------------------------------------
+Credit income:
+  bull_put_credit, bear_call_credit, iron_condor
+Stock + option:
+  cash_secured_put, covered_call
+Debit verticals:
+  bull_call_debit, bear_put_debit
+Directional:
+  long_call, long_put
+Volatility:
+  long_straddle, long_strangle (if cataloged)
+Special:
+  money_press_put_diagonal
+
+Each strategy has:
+  - thesis (bullish / bearish / neutral / vol)
+  - preferred IV (elevated for credit, low/neutral for debit)
+  - preferred trend
+  - seed-friendly flag (defined risk preferred under $20k path)
+
+5. FILTER DEFAULTS (user-editable)
+----------------------------------
+minPrice: 8
+maxPrice: 150
+maxResults: 15  (never invent fillers — return fewer if needed)
+bias: any | bullish | bearish | neutral
+liquidity: normal+ (reject illiquid when live chain known)
+excludeEarnings: true (soft)
+minFitScore: 0.45 (0–1)
+useRhHistory: true (soft boost/penalty from personal lessons)
+seedMode: true when equity < 20000 → prefer defined-risk strategies
+
+6. SCORING MODEL (engineering)
+------------------------------
+For each candidate ticker in the liquid universe:
+  1. Hard filters: price ∈ [min,max], listed, not halted
+  2. Base fit from strategy thesis vs synthetic/live context:
+       - IV rank proxy, spot trend proxy, liquidity
+  3. Strategy-specific bonuses (credit + elevated IV, debit + trend, etc.)
+  4. RH history soft coach (rhHistoryScoreAdjust)
+  5. Empire seed: boost defined-risk if seedMode
+  6. Sort by fitScore desc, take top maxResults
+  7. If < maxResults, return what qualifies (honest count)
+
+Output row:
+  { rank, symbol, spot, fitScore, fitPct, thesis, reasons[],
+    strategyId, riskLabel, ivRankProxy, trendProxy, actions }
+
+7. API
+------
+GET /api/scanner?strategy=bull_put_credit&minPrice=8&maxPrice=150&maxResults=15&bias=any
+POST /api/scanner  { strategyId, filters }
+
+8. GROWTH PATH COPY
+-------------------
+Banner: “Empire path: seed → $20k. Scanner finds defined-risk candidates;
+Trade Lab sizes; Lessons stops repeating RH mistakes; Bias co-pilots direction.”
+
+9. ACCEPTANCE
+-------------
+[ ] Filter every catalog strategy
+[ ] Default 8–150; adjustable
+[ ] ≤15 rows; can be fewer
+[ ] No fake tickers padded to 15
+[ ] Open Trade Lab with strategy preselected
+[ ] Disclaimer educational only
+[ ] Works on demo provider without paid keys
+
+10. OWNERSHIP
+-------------
+SuperAgent owns delivery: UX spec (this file) + working /scanner implementation
+in chapmancapital1-droid/opiontrading reference codebase.
+
+================================================================================
+END SPEC
+================================================================================

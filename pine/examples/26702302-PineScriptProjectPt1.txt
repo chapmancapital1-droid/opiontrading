@@ -1,0 +1,27 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Gammapips
+
+//@version=4
+study("My Script", overlay=true)
+
+// RSI
+rsi = rsi(close, 14)
+// MACD
+[macdLine, signalLine, histLine] = macd(close, 12, 26, 9)
+// BB
+[middle, upper, lower] = bb(close, 5, 4)
+
+
+// PLOTS
+// rsi plot
+plot(rsi, title='rsi', color=color.purple)
+
+//macd plot
+plot(histLine, title="Histogram", style=plot.style_columns)
+plot(macdLine, title="MACD", transp=0)
+plot(signalLine, title="Signal", transp=0)
+
+// bb plot
+plot(middle, color=color.yellow)
+plot(upper, color=color.red)
+plot(lower, color=color.green)

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OptionScope Training Manual — Options + Dashboard Usage</title>
+<style>
+  @page { size: letter; margin: 0.65in; }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12.5px; line-height: 1.55; color: #1e293b; background: #fff;
+  }
+  .mono { font-family: Consolas, "Cascadia Code", monospace; }
+  h1 { font-size: 26px; margin: 0 0 8px; color: #0f172a; }
+  h2 { font-size: 16px; margin: 22px 0 8px; color: #0f172a; border-bottom: 2px solid #22c55e; padding-bottom: 4px; page-break-after: avoid; }
+  h3 { font-size: 13.5px; margin: 14px 0 6px; color: #0f172a; page-break-after: avoid; }
+  p { margin: 0 0 8px; }
+  ul, ol { margin: 0 0 10px; padding-left: 20px; }
+  li { margin-bottom: 4px; }
+  strong { color: #0f172a; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 11.5px; page-break-inside: avoid; }
+  th { text-align: left; background: #0f172a; color: #fff; padding: 6px 8px; font-weight: 600; }
+  td { border: 1px solid #e2e8f0; padding: 6px 8px; vertical-align: top; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  .cover {
+    background: #0f172a; color: #e2e8f0; border-radius: 10px; padding: 36px 32px;
+    margin-bottom: 20px; min-height: 280px; display: flex; flex-direction: column; justify-content: space-between;
+    page-break-after: always;
+  }
+  .cover h1 { color: #fff; font-size: 30px; }
+  .cover .tag { color: #22c55e; font-family: Consolas, monospace; font-size: 12px; margin: 0 0 12px; }
+  .cover .sub { color: #94a3b8; font-size: 14px; max-width: 420px; }
+  .warn {
+    background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 10px 12px; margin: 10px 0;
+    page-break-inside: avoid;
+  }
+  .law {
+    background: #0f172a; color: #86efac; border-radius: 8px; padding: 10px 12px; margin: 10px 0;
+    font-family: Consolas, monospace; font-size: 11.5px; page-break-inside: avoid;
+  }
+  .box {
+    border: 1px solid #e2e8f0; border-left: 4px solid #22c55e; border-radius: 6px;
+    padding: 10px 12px; margin: 8px 0 12px; background: #f8fafc; page-break-inside: avoid;
+  }
+  .step { display: flex; gap: 10px; margin-bottom: 6px; }
+  .step .n { font-family: Consolas, monospace; font-weight: 700; color: #16a34a; min-width: 28px; }
+  .footer {
+    margin-top: 18px; padding-top: 10px; border-top: 1px solid #e2e8f0;
+    font-size: 10.5px; color: #64748b;
+  }
+  .toc a { color: #0f172a; text-decoration: none; }
+  .kicker { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #16a34a; font-weight: 700; }
+  .chapter { page-break-before: always; }
+  .chapter:first-of-type { page-break-before: auto; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div>
+    <p class="tag">NERDCOMMAND · CHAPMAN CAPITAL · EMPIRE COMPANION</p>
+    <h1>OptionScope Training Manual</h1>
+    <p class="sub">Personal field guide: options trading fundamentals <strong style="color:#fff">and</strong> how to use every dashboard. Process over prediction.</p>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+    <div>
+      <div class="kicker" style="color:#22c55e;">For Michael Chapman only</div>
+      <div style="font-size:11px; color:#64748b; margin-top:4px;">See · Trust · Own · No auto-trade</div>
+    </div>
+    <div style="text-align:right; font-size:11px; color:#64748b;">
+      Version 2026-07-16<br>
+      Local app: localhost:3000
+    </div>
+  </div>
+</div>
+
+<!-- TOC -->
+<h2>Contents</h2>
+<ol class="toc">
+  <li>Hard laws &amp; capital ladder</li>
+  <li>Options trading education (plain English)</li>
+  <li>What OptionScope calculates (and what it never promises)</li>
+  <li>Dashboard usage guide (every screen)</li>
+  <li>Morning ritual (paper → process)</li>
+  <li>Seed account reality &amp; checklist discipline</li>
+  <li>Build status snapshot</li>
+</ol>
+
+<div class="warn">
+  <strong>Read first.</strong> Options involve significant risk. You can lose the entire premium; some structures can lose more than the debit paid.
+  Model PoP / EV / Monte Carlo are <em>estimates under assumptions</em>, not guarantees. Delta is not probability of profit.
+  This app does not place trades. You own every fill in Robinhood (or any broker). Educational companion only — not investment advice to others.
+</div>
+
+<!-- CH 1 -->
+<div class="chapter">
+  <h2>1. Hard laws &amp; capital ladder</h2>
+  <div class="law">
+    1) You press the broker button · 2) No auto-trade · 3) No RH password · 4) Model ≠ oracle · 5) Seed capital is survival · 6) Public SaaS only after real process
+  </div>
+
+  <table>
+    <tr><th>Phase</th><th>Equity target</th><th>Intent</th><th>Default posture</th></tr>
+    <tr><td><strong>Seed</strong></td><td>~$500</td><td>Survive, learn process, avoid blow-up</td><td>Paper first; micro defined-risk only</td></tr>
+    <tr><td><strong>Stage 1</strong></td><td>$500 → $5,000</td><td>Proof of process</td><td>Defined-risk default; journal every fill</td></tr>
+    <tr><td><strong>Stage 2</strong></td><td>$5,000 → $25,000</td><td>Scale carefully</td><td>Same rules, larger tickets inside budget</td></tr>
+  </table>
+
+  <div class="box">
+    <strong>$500 physics:</strong> 1% of $500 = $5 risk. Many 1-lot max losses are $25–$200+. Correct size is often <strong>zero contracts</strong> — that is a feature.
+    Cash-secured put on a $200 stock ≈ $20,000 cash. Covered call needs 100 shares first. Companion blocks naked undefined risk as a default path.
+  </div>
+</div>
+
+<!-- CH 2 -->
+<div class="chapter">
+  <h2>2. Options trading education</h2>
+
+  <h3>2.1 Calls and puts</h3>
+  <table>
+    <tr><th>Contract</th><th>Buyer’s right</th><th>Seller’s obligation</th></tr>
+    <tr><td><strong>Call</strong></td><td>Buy 100 shares at strike by expiration</td><td>Sell 100 shares at strike if assigned</td></tr>
+    <tr><td><strong>Put</strong></td><td>Sell 100 shares at strike by expiration</td><td>Buy 100 shares at strike if assigned</td></tr>
+  </table>
+  <p>Standard equity option multiplier = <strong>100 shares</strong>. Buyers pay premium; sellers receive premium and take the other side’s risk. Short options can be assigned — plan for it.</p>
+
+  <h3>2.2 Long vs short</h3>
+  <table>
+    <tr><th>Position</th><th>Capital</th><th>Risk shape</th></tr>
+    <tr><td>Long option</td><td>Debit (premium paid)</td><td>Max loss ≈ premium (single long)</td></tr>
+    <tr><td>Short option (naked)</td><td>Credit received</td><td>Can be large / undefined</td></tr>
+  </table>
+  <p><strong>Empire default:</strong> long and <em>defined-risk</em> spreads first. Naked short is not a Seed tool.</p>
+
+  <h3>2.3 Vertical spreads (workhorse)</h3>
+  <table>
+    <tr><th>Structure</th><th>Legs (concept)</th><th>Bias</th><th>Max loss</th><th>Max profit</th></tr>
+    <tr><td>Bull call debit</td><td>Long lower call + short higher call</td><td>Bullish</td><td>Net debit</td><td>Width − debit</td></tr>
+    <tr><td>Bear put debit</td><td>Long higher put + short lower put</td><td>Bearish</td><td>Net debit</td><td>Width − debit</td></tr>
+    <tr><td>Bull put credit</td><td>Short higher put + long lower put</td><td>Mild bull / neutral</td><td>Width − credit</td><td>Net credit</td></tr>
+    <tr><td>Bear call credit</td><td>Short lower call + long higher call</td><td>Mild bear / neutral</td><td>Width − credit</td><td>Net credit</td></tr>
+  </table>
+
+  <h3>2.4 Other structures you will see in the Lab</h3>
+  <ul>
+    <li><strong>Iron condor</strong> — short OTM put vertical + short OTM call vertical (range thesis).</li>
+    <li><strong>CSP / covered call</strong> — capital heavy; often Stage 1+ or when you already hold shares.</li>
+    <li><strong>Money Press (put diagonal)</strong> — sell near-term higher-strike put, buy lower-strike longer put as protection. Flat-to-up thesis; weekly roll discipline. Personal method notes only — not a promise of results.</li>
+    <li><strong>Straddle / strangle</strong> — volatility thesis; can be capital intensive; use Compare and model PoP carefully.</li>
+  </ul>
+
+  <h3>2.5 Greeks in one breath</h3>
+  <table>
+    <tr><th>Greek</th><th>Meaning</th></tr>
+    <tr><td><strong>Δ Delta</strong></td><td>Approx. dollar sensitivity / share-equivalent. <em>Not</em> win probability.</td></tr>
+    <tr><td><strong>Γ Gamma</strong></td><td>How delta changes as price moves.</td></tr>
+    <tr><td><strong>Θ Theta</strong></td><td>Time decay (per day in OptionScope position scale).</td></tr>
+    <tr><td><strong>ν Vega</strong></td><td>Sensitivity to implied volatility.</td></tr>
+    <tr><td><strong>ρ Rho</strong></td><td>Sensitivity to interest rates.</td></tr>
+  </table>
+
+  <h3>2.6 IV, trend, events</h3>
+  <ul>
+    <li><strong>High IV</strong> — premium rich; credit structures often preferred by books (still need edge + risk).</li>
+    <li><strong>Low IV</strong> — debit / long vol more common in textbooks.</li>
+    <li><strong>Earnings / events</strong> — can explode IV and gap through strikes; companion brain may avoid event proximity.</li>
+    <li><strong>Liquidity</strong> — wide bid/ask destroys theoretical edge; prefer tight markets.</li>
+  </ul>
+</div>
+
+<!-- CH 3 -->
+<div class="chapter">
+  <h2>3. What OptionScope calculates</h2>
+  <p>All of these are implemented in <span class="mono">src/domain/*</span> and surfaced in Trade Lab / Compare.</p>
+  <table>
+    <tr><th>Engine</th><th>What you see</th><th>Honesty label</th></tr>
+    <tr><td>Black-Scholes / CRR</td><td>Price + Greeks</td><td>Model theo — not a fill</td></tr>
+    <tr><td>Expiration payoff</td><td>Max profit / max loss / break-evens / curve</td><td>At expiration assumptions</td></tr>
+    <tr><td>Monte Carlo</td><td>Model PoP, EV, median, histogram</td><td>Fixed-vol GBM estimate</td></tr>
+    <tr><td>Strike hit box</td><td>Touch / finish probability aids</td><td>Model estimate</td></tr>
+    <tr><td>Brain selector</td><td>Ranked strategies + size + zero-size coach</td><td>Rules + policy; you decide</td></tr>
+  </table>
+  <div class="box">
+    <strong>Calc engine badge in Trade Lab:</strong> “Domain” = unit-tested engine for standard same-expiry structures.
+    “Diagonal UI” = Money Press multi-DTE residual path. Both are educational models.
+  </div>
+</div>
+
+<!-- CH 4 -->
+<div class="chapter">
+  <h2>4. Dashboard usage guide</h2>
+  <p>Run the app: <span class="mono">cd opiontrading → pnpm dev → http://localhost:3000</span></p>
+  <p>Your live data mode (as of last config read): <strong>Alpaca paper</strong> for market data + account sizing. Demo mode needs no keys.</p>
+
+  <h3>4.1 Command — <span class="mono">/dashboard</span></h3>
+  <div class="box">
+    <strong>Purpose:</strong> Morning cockpit. See capital truth, seed badge, journal pulse, chart, market context — not a “buy now” button.
+    <ul>
+      <li>Confirm equity / seed mode ($500 / $1k / $5k) matches reality or paper.</li>
+      <li>Check LIVE vs PAPER honesty labels (no fake live day P/L).</li>
+      <li>Jump to Trade Lab, Journal, or Settings from ritual CTAs.</li>
+      <li>Use chart + symbol search to set the day’s focus ticker.</li>
+    </ul>
+  </div>
+
+  <h3>4.2 Trade Lab — <span class="mono">/builder</span></h3>
+  <div class="box">
+    <strong>Purpose:</strong> Build a structure, run math, get brain ranks, copy a Robinhood checklist.
+    <ol>
+      <li>Enter ticker → <strong>Load live chain</strong> (or Use demo).</li>
+      <li>Pick strategy template (verticals, condor, Money Press, etc.).</li>
+      <li>Review legs table, net debit/credit, max P/L, break-evens.</li>
+      <li>Read payoff chart, Greeks panel, model PoP/EV (Monte Carlo).</li>
+      <li>Hit brain <strong>Recommend</strong> — may lock strikes/DTE from live chain.</li>
+      <li>If contracts = 0, read <strong>zero-size coach</strong> (capital too small — not a bug).</li>
+      <li>Scroll to <strong>Order checklist</strong> → Copy → enter manually in broker.</li>
+      <li>Save plan to Journal before you fill.</li>
+    </ol>
+  </div>
+
+  <h3>4.3 Library — <span class="mono">/library</span></h3>
+  <p>Search ingested option books / strategy rules. Use for thesis language and book-backed context — not as a signal service.</p>
+
+  <h3>4.4 Compare — <span class="mono">/compare</span></h3>
+  <p>Pick up to three structures under the same spot / IV / DTE. Table shows net cash, max P/L, break-evens, model PoP, model EV, payoff RoR. Demo marks unless you compare ideas already priced in Lab.</p>
+
+  <h3>4.5 Journal — <span class="mono">/journal</span></h3>
+  <p>Process loop: <strong>plan → open → close</strong> with realized P/L. Checklist text should appear on plans saved from Trade Lab. This is how you calibrate forecast vs outcome (Phase 7 mindset).</p>
+
+  <h3>4.6 Saved — <span class="mono">/saved</span></h3>
+  <p>Quick local bookmark of ideas (this browser). Reopen in Lab or log in Journal later.</p>
+
+  <h3>4.7 Settings — <span class="mono">/settings</span></h3>
+  <ul>
+    <li><strong>Seed presets:</strong> $500 / $1k / $5k — drives brain sizing policy.</li>
+    <li><strong>Robinhood import:</strong> paste or CSV from official export only. Never enter RH password.</li>
+    <li><strong>Alpaca:</strong> paper keys size the brain to live paper equity (no orders).</li>
+  </ul>
+
+  <h3>4.8 Education — <span class="mono">/education</span></h3>
+  <p>In-app risk field manual. This PDF is the longer portable version for study offline.</p>
+</div>
+
+<!-- CH 5 -->
+<div class="chapter">
+  <h2>5. Morning ritual (recommended)</h2>
+  <div class="step"><span class="n">01</span><div><strong>Settings</strong> — seed equity correct; RH paste if you want sharesHeld gates.</div></div>
+  <div class="step"><span class="n">02</span><div><strong>Command</strong> — ladder, account truth, focus ticker, no revenge mindset.</div></div>
+  <div class="step"><span class="n">03</span><div><strong>Trade Lab</strong> — load chain → brain → math → checklist → journal plan.</div></div>
+  <div class="step"><span class="n">04</span><div><strong>Broker</strong> — enter orders yourself; verify every leg, strike, side, qty, DTE.</div></div>
+  <div class="step"><span class="n">05</span><div><strong>Journal</strong> — mark open; later close with realized P/L. Learn, don’t spin.</div></div>
+
+  <div class="law">
+    &gt;_ RULE: Track effort and process (checklist used, plan before fill, size-in-policy). Returns follow discipline, not hope.
+  </div>
+</div>
+
+<!-- CH 6 -->
+<div class="chapter">
+  <h2>6. Seed account reality &amp; checklist discipline</h2>
+  <ul>
+    <li>Empire seed policy: ~<strong>0.5% target / 1% hard</strong> risk per trade; tight open-risk budget; CSP blocked as default at seed.</li>
+    <li>Growth-aggressive mode is not for Seed psychology.</li>
+    <li>Zero-size coach means “this 1-lot does not fit capital” — switch to cheaper defined-risk or paper larger names.</li>
+    <li>Checklist is the climax: copy → broker. The app never auto-sends orders.</li>
+  </ul>
+</div>
+
+<!-- CH 7 -->
+<div class="chapter">
+  <h2>7. Build status snapshot (tracked)</h2>
+  <p>As of 2026-07-16 Superagent + domain hardening pass:</p>
+  <table>
+    <tr><th>Area</th><th>Status</th></tr>
+    <tr><td>All dashboards in Next.js build</td><td>Built</td></tr>
+    <tr><td>Option math (BS, binomial, payoff, MC, Greeks)</td><td>Built + unit tests</td></tr>
+    <tr><td>Brain, market context, library ingest</td><td>Built + tests</td></tr>
+    <tr><td>Seed mode, RH paste, checklist → journal</td><td>Built (companion money loop)</td></tr>
+    <tr><td>Automated test suite</td><td>168+ tests green (verify with <span class="mono">pnpm test</span>)</td></tr>
+    <tr><td>Reality Checker personal MVP stamp</td><td>NEEDS_WORK → process proof still required before real ladder</td></tr>
+  </table>
+  <p>Full inventory: <span class="mono">docs/nexus/11-DASHBOARDS-AND-CALCS-STATUS.md</span> · Superagent pack: <span class="mono">docs/nexus/superagent/</span></p>
+</div>
+
+<div class="footer">
+  <strong>Disclaimer.</strong> For personal education and process only. Not investment advice. Not affiliated with Robinhood, Alpaca, or any broker.
+  Model outputs are estimates. You alone are responsible for trades and capital risk.
+  © 2026 NerdCommand / Chapman Capital · OptionScope Empire Companion · Long live the empire.
+</div>
+
+</body>
+</html>

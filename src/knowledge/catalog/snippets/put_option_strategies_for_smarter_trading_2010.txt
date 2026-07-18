@@ -1,0 +1,325 @@
+ptg
+From the Library of Lee Bogdanoff
+PUT OPTION
+STRATEGIES FOR
+SMARTER
+TRADING
+ptg
+From the Library of Lee Bogdanoff
+This page intentionally left blank
+ptg
+From the Library of Lee Bogdanoff
+PUT OPTION
+STRATEGIES FOR
+SMARTER
+TRADING
+HOW TO PROTECT AND BUILD
+ptg
+CAPITAL IN TURBULENT
+MARKETS
+Michael C. Thomsett
+From the Library of Lee Bogdanoff
+Vice President,Publisher:Tim Moore
+Associate Publisher and Director ofMarketing:Amy Neidlinger
+Executive Editor:Jim Boyd
+Editorial Assistant:Pamela Boland
+Operations Manager:Gina Kanouse
+Senior Marketing Manager:Julie Phifer
+Publicity Manager:Laura Czaja
+Assistant Marketing Manager:Megan Colvin
+Cover Designer:Chuti Prasertsith
+Managing Editor:Kristy Hart
+Project Editors:Julie Anderson and Jovana San Nicolas-Shirley
+Copy Editor:Chuck Hutchinson
+Proofreader:Williams Woods Publishing Services
+Indexer:Michael C.Thomsett
+Senior Compositor:Gloria Schurick
+Manufacturing Buyer:Dan Uhrig
+©2010 by Pearson Education,Inc.
+Publishing as FT Press
+Upper Saddle River,New Jersey 07458
+This book is sold with the understanding that neither the author nor the publisher is engaged
+in rendering legal,accounting,or other professional services or advice by publishing this book.
+Each individual situation is unique.Thus,iflegal or financial advice or other expert assistance
+is required in a specific situation,the services ofa competent professional should be sought to
+ensure that the situation has been evaluated carefully and appropriately.The author and the
+publisher disclaim any liability,loss,or risk resulting directly or indirectly,from the use or
+application ofany ofthe contents ofthis book.
+FT Press offers excellent discounts on this book when ordered in quantity for bulk purchases or
+special sales.For more information,please contact U.S.Corporate and Government Sales,
+1-800-382-3419,corpsales@pearsontechgroup.com.For sales outside the U.S.,please contact
+ptg
+International Sales at international@pearson.com.
+Company and product names mentioned herein are the trademarks or registered trademarks of
+their respective owners.
+All rights reserved.No part ofthis book may be reproduced,in any form or by any means,
+without permission in writing from the publisher.
+Printed in the United States ofAmerica
+First Printing December 2009
+ISBN-10:0-13-701290-X
+ISBN-13:978-0-13-701290-9
+Pearson Education LTD.
+Pearson Education Australia PTY,Limited.
+Pearson Education Singapore,Pte.Ltd.
+Pearson Education North Asia,Ltd.
+Pearson Education Canada,Ltd.
+Pearson Education´ de Mexico,S.A.de C.V.
+Pearson Education—Japan
+Pearson Education Malaysia,Pte.Ltd.
+Library ofCongress Cataloging-in-Publication Data
+Thomsett,Michael C.
+Put option strategies for smarter trading :how to protect and build capital in turbulent markets /
+Michael C.Thomsett.
+p.cm.
+Includes index.
+ISBN 978-0-13-701290-9 (hardback :alk.paper) 1. Stock options.2. Options (Finance) I.Title.
+HG6042.T463 2010
+332.63’2283—dc22
+2009031909
+From the Library of Lee Bogdanoff
+CONTENTS
+INTRODUCTION: SURVIVING IN VOLATILE
+AND FALLING MARKETS 1
+CHAPTER 1: THE FLEXIBLE NATURE OF
+OPTIONS: RISKS FOR
+ALL LEVELS 5
+Terms of Options 6
+Types of Options 6
+Underlying Security 8
+Strike Price 9
+Expiration Date 10
+Valuation of Options 10
+Intrinsic Value 11
+Time Value 12 ptg
+Extrinsic Value 12
+Dividends and Puts 14
+Comparing Risk Levels 16
+CHAPTER 2: PUTS, THE OTHER OPTIONS:
+THE OVERLOOKED RISK HEDGE 21
+Puts as Insurance for Paper Profits 22
+Selecting the Best Long Put 25
+Long Puts to Hedge Covered Calls 29
+Risk Considerations: Types of Risks 32
+Inflation and Tax Risk 33
+Market Availability/
+Trade Disruption Risks 38
+Portfolio and Knowledge/
+Experience Risks 38
+Diversification and Asset
+Allocation Risk 39
+v
+From the Library of Lee Bogdanoff
+Leverage Risk 41
+Liquidity Risk (Lost Opportunity Risk) 42
+Goal-based Risks 42
+Error Risks 43
+CHAPTER 3: PROFIT-TAKING WITHOUT
+SELLING STOCK: AN ELEGANT
+SOLUTION 45
+The Insurance Put 45
+Picking the Best Long Put:
+Time,Proximity,and Cost 48
+Buying Puts Versus Short-selling Stock 51
+Rolling into Spreads to Offset Put Losses 53
+Buying Puts to Protect Covered
+Call Positions 56
+Tax Problems with Long Puts 61
+ptg
+CHAPTER 4: SWING TRADING WITH PUTS:
+LONG AND SHORT OR
+COMBINED WITH CALLS 63
+Basics of Swing Trading 65
+A Swing Trading Method: Long and
+Short Stock 69
+The Alternative: Using Options 70
+Long Options 71
+Variations on the Options Swing
+Trading Method 73
+Short Options 75
+Calls Only 75
+Puts Only 76
+vi
+PUT OPTION STRATEGIES FOR SMARTER TRADING
+From the Library of Lee Bogdanoff
+Multiple Contract Strategies 77
+Multiple Contracts 77
+Multiple Strikes 78
+Spread or Straddle Conversion 78
+Covered Ratio Write Swing 79
+Long and Short Combination 80
+CHAPTER 5: PUT STRATEGIES FOR SPREADS:
+HEDGING FOR PROFIT 83
+Bear Spreads 83
+Bull Spreads 86
+Calendar Spreads 89
+Diagonal Spread Strategies 93
+Combination Put Spreads 100
+Call Bull Spread and Call Bear Spread
+(Call-Call) 101
+Call Bull Spread and Put Bear Spread
+(Call-Put) 104 ptg
+Put Bull Spread and Call Bear Spread
+(Put-Call) 107
+Put Bull Spread and Put Bear Spread
+(Put-Put) 109
+The Diagonal Butterfly Spread 112
+CHAPTER 6: PUT STRATEGIES FOR
+STRADDLES: PROFITS IN
+EITHER DIRECTION 117
+The Long Straddle 117
+The Short Straddle 121
+Strangle Strategies 127
+Calendar Straddles 133
+vii
+Contents
+From the Library of Lee Bogdanoff
+CHAPTER 7: PUTS IN THE RATIO SPREAD:
+ALTERING THE BALANCE 137
+Ratio Put Spreads 138
+Ratio Put Calendar Spreads 140
+The Backspread (Reverse Ratio) 143
+Ratio Calendar Combinations 146
+The Diagonal Backspread 150
+Short Ratio Puts 153
+CHAPTER 8: PUTS AS PART OF SYNTHETIC
+STRATEGIES: PLAYING STOCKS
+WITHOUT THE RISK 157
+Synthetic Stock Strategies 157
+Synthetic Strike Splits 161
+The Synthetic Put 163 ptg
+CHAPTER 9: PUTS IN CONTRARY PRICE
+RUN-UPS: SAFE COUNTER-
+PLAYS DURING BEAR MARKETS 167
+Option Valuation and Volatility 168
+Volatility Trading 170
+Factors Affecting Option Value 172
+Stock Price Movement 173
+Stock Market Volatility and Trend 173
+The Time Element 174
+The Proximity Element 175
+Dividend Yield and Changes 175
+Interest Rates 176
+Perceptions 176
+viii
+PUT OPTION STRATEGIES FOR SMARTER TRADING
+From the Library of Lee Bogdanoff
+Spotting the Overall Trend 177
+Reliance on Stock-based Technical Analysis 179
+Support and Resistance 179
+Gaps and Breakouts 182
+Double Tops and Bottoms 183
+Head and Shoulders 184
+Volatility Trends 186
+CHAPTER 10: UNCOVERED PUTS TO CREATE
+CASH FLOW: RISING MARKETS
+AND REVERSAL PATTERNS 187
+The Uncovered Short Put 188
+Evaluating Your Rate of Return from
+Selling Puts 191
+Covered Short Straddles 194
+Covered Short Spreads 197
+Recovery Strategies for Exercised
+ptg
+Covered Straddles and Spreads 203
+Short Puts in Rising Markets:
+One-Sided Swing Trading 206
+GLOSSARY 209
+INDEX 219
+ix
+Contents
+From the Library of Lee Bogdanoff
+This page intentionally left blank
+ptg
+From the Library of Lee Bogdanoff
+ACKNOWLEDGMENTS
+My thanks to the many people who helped me in the preparation of
+this book. These include the staff at candlestickcharts.com who
+generously provided permission to use their materials within the book,
+and to the excellent editorial staff at Pearson Education and FT Press,
+especially executive editor Jim Boyd and project editor Julie Anderson.
+Also thanks to the first-line editing by Linda Rose Thomsett,and to the
+professionals at the Chicago Board Options Exchange for their friend-
+ship,support and editorial guidance,most notably Marty Kearney and
+Jim Bittman.
+ptg
+xi
+Acknowledgments
+From the Library of Lee Bogdanoff
+ABOUT THE AUTHOR
+Michael C.Thomsett is a widely published author with over 70 pub-
+lished books. He is especially known for his options publishing. His
+books include Options Trading for the Conservative Investor and The
+Options Trading Body of Knowledge (FT Press), Winning with Options
+(Amacom Books), The LEAPS Strategist (Marketplace Books) and the
+best-selling Getting Started in Options (John Wiley & Sons) which has
+sold over 250,000 copies and was released in 2009 in its 8thedition.
+Thomsett also writes on many stock market investment topics. His
+Investment and Securities Dictionary (hardcover McFarland &
+Company and paperback Macmillan General Reference) was named by
+Choice Magazineas an Outstanding Academic Book ofthe Year.He also
+wrote The Mathematics of Investing (John Wiley & Sons), The Stock
+Investor’s Pocket Calculator(Amacom) and Stock Profits(FT Press).The
+author lives near Nashville and writes fulltime. His Web site is
+www.MichaelThomsett.com.
+ptg
+xii
+PUT OPTION STRATEGIES FOR SMARTER TRADING
+From the Library of Lee Bogdanoff
+INTRODUCTION
+Surviving in Volatile and Falling Markets
+D eclining market value in stocks, alarming economic news,
+chronic housing and credit problems, uncertain oil prices—all
+these critical conditions that were worse than ever in 2008 and
+2009 make the point that you need alternatives to survive in troubling
+economic times.
+There is good news.
+The options market is relatively young, but the popularity of options
+trading has grown exponentially every year since the early 1970s.This
+has occurred as increasing numbers of investors have realized that
+options are more than mere speculative tools. They are effective risk
+hedge instruments, cash generators, and portfolio management tools
+that virtually anyone can use beneficially.Even ifyou have very low risk
+ptg
+tolerance,conservative options strategies can strengthen your portfolio
+and reduce market risks while generating current income.
+In volatile markets,when you have no idea what stock values are going
+to be next month or even next week,options are especially valuable.In
+outright bear markets such as the market that started in 2007 and
+extended into 2009, put options offer a way to profit from declining
+stock values.This book is designed to explore a number of put strate-
+gies that can be used to provide profits when the markets are falling.
+A put is an option designed to increase in value when the underlying
+security’s value falls.It is the opposite ofa call,which is better known as
+an instrument that tracks a stock’s value and rises when the stock’s
+price rises.Traders often overlook put options because so many are nat-
+urally optimistic by nature. It is a common pitfall to believe that a
+stock’s value is always going to rise,and many investors treat their pur-
+chase price as a starting point from which values can only increase as
+time goes by.But anyone who was invested in the markets in 2008 and
+1
+From the Library of Lee Bogdanoff
+2009 knows that this belief is flawed and also that it has expensive con-
+sequences. Stocks do fall in value. And when they do, it often defies
+logic. In 2008, rapid declines in stocks once thought to be invincible
+made the point that markets overreact.By the end of2008,many stocks
+were available at bargain prices,but panic and fear were so widespread
+that few investors were brave enough to put capital into the equity
+markets.
+This is the perfect market for option trading—and for a number ofrea-
+sons.On a purely speculative approach to markets that have declined,
+low prices represent values;and when those prices bounce back (as they
+always do), anyone who got in at the lowest price levels makes hand-
+some profits.However,if you are so concerned about declining stocks
+that you do not want to invest in shares, options provide attractive
+alternatives. The same is true when markets peak at the top.
+Overbought markets invariably correct; so if you don’t want to take
+profits, but you are concerned about declining values over the short
+term,options can be used to protect stock positions without having to
+sell shares.
+There are so many possible uses for options and specifically for puts
+ptg
+that you can take advantage of the potential in any kind of market.
+Whether prices are depressed or inflated,and whether the mood is bull
+or bear,puts are effective devices for maximizing profits.In volatile and
+falling markets,the value of puts is at a maximum.This is true because
+the mood in the markets is always fearful at s

@@ -1,0 +1,179 @@
+www.rockwelltrading.com
+Introduction: How to Make Money with Trading Systems ______________________ 2
+How to Develop a Profitable Trading System_________________________________ 3
+Step 1: Select a market and a timeframe _______________________________________________3
+Step 2: Define entry rules____________________________________________________________4
+Step 3: Define exit rules_____________________________________________________________5
+Step 4: Evaluate your system_________________________________________________________6
+Step 5: Improving your system _______________________________________________________8
+Conclusion________________________________________________________________________8
+A Sample Trading System ________________________________________________ 9
+Step 1: Selecting a market and timeframe______________________________________________9
+Step 2: Define entry rules____________________________________________________________9
+Step 3: Define exit rules____________________________________________________________11
+Step 4: Evaluate your system________________________________________________________12
+Step 5: Improving your system ______________________________________________________14
+Conclusion_______________________________________________________________________15
+The 10 Power Principles of Successful Trading Systems_______________________ 16
+Principle #1: Few rules - easy to understand___________________________________________16
+Principle #2: Trade electronic and liquid markets ______________________________________16
+Principle #3: Make consistent profits_________________________________________________17
+Principle #4: Maintain a healthy balance between risk and reward ________________________17
+Principle #5: Find a system that produces at least five trades per week_____________________17
+Principle #6: Start small - grow big___________________________________________________18
+Principle #7: Automate your trading _________________________________________________18
+Principle #8: Have a high percentage of winning trades__________________________________18
+Principle #9: Look for a system that is tested on at least 200 trades ________________________19
+Principle #10: Chose a valid backtesting period ________________________________________19
+How to apply the 10 Power Principles – An Example _________________________ 20
+Tips, Tricks and Important Information You MUST Know ____________________ 22
+How often should you evaluate a system?______________________________________________22
+Should I override the strategy?______________________________________________________24
+Understanding "Winning Percentage"________________________________________________25
+What it takes to be a winner ________________________________________________________26
+Maintain Your Perspective _________________________________________________________28
+© by Rockwell Trading, Inc
+Re-transmission or reproduction of any part of this material is strictly
+prohibited without the prior written consent of Rockwell Trading, Inc.
+www.rockwelltrading.com
+Introduction: How to Make Money with Trading Systems
+Every minute more than 150 Million Dollars change hands in the electronic index
+futures markets like the e-mini S&P and e-mini NQ. You can win or lose thousands of
+dollars in a few minutes; the futures markets can make you rich in a few weeks or months
+or wipe out your account with no mercy.
+If you want to compete in the “game of games” and play against the best traders in the
+world, then you need to get ready. Too many gamblers are entering the arena without any
+plan or strategy, completely unprepared, and that's why they lose.
+Trading a system will dramatically increase your chances to succeed in trading, because it
+eliminates many reasons why unprepared traders fail.
+In this eBook we want to give you important information that will help you to make
+money with trading systems. In the first chapter you will learn how to develop a
+profitable trading system. If you don’t plan to create your own system you might want to
+skip this chapter. The second chapter shows a sample trading system that we developed
+using the steps we presented in the first chapter.
+In the third chapter you will learn about the 10 Power Principles of Successful Trading
+Systems and how you can use them to find a profitable trading system or how to evaluate
+your own system. The forth chapter shows an example how to apply the 10 Power
+Principles on a specific trading system.
+In the fifth chapter you will learn tips, tricks and other important information you must
+know if you want to be a successful system trader.
+Enjoy your new eBook!
+And if you have any questions, please do not hesitate to contact us at
+info@rockwelltrading.com or call 1-866-467-0747 or 1-312-224-8306.
+Markus Heitkoetter
+Rockwell Trading Inc
+http://www.rockwelltrading.com
+© by Rockwell Trading, Inc
+Re-transmission or reproduction of any part of this material is strictly
+prohibited without the prior written consent of Rockwell Trading, Inc.
+www.rockwelltrading.com
+How to Develop a Profitable Trading System
+In this chapter we will explain to you how to develop a profitable trading system in five
+steps:
+Step 1: Select a market and a timeframe
+Step 2: Define entry rules
+Step 3: Define exit rules
+Step 4: Evaluate your system
+Step 5: Improving the system
+Let’s take a closer look at these steps.
+Step 1: Select a market and a timeframe
+Every market and every timeframe can be traded with a system. But if you want to look
+at 50 different futures markets and 6 major timeframes (e.g. 5min, 10min, 15min, 30min,
+60min and daily), then you need to evaluate 300 possible options. Here are some hints on
+how to limit your choices:
+• Though you can trade every futures markets, we recommend that you stick to the
+electronic markets (e.g. e-mini S&P and other indices, Treasury Bonds and Notes,
+Currencies, etc). Usually these markets are very liquid, and you won’t have a
+problem entering and exiting a trade. Another advantage of electronic markets is
+lower commissions: Expect to pay at least half the commissions you pay on non-
+electronic markets. Sometimes the difference can be as high as 75%.
+• When you select a smaller timeframes (less than 60min) your average profit per
+trade is usually comparably low. On the other hand you get more trading
+opportunities. When trading on a larger timeframe your profits per trade will be
+bigger, but you will have less trading opportunities. It’s up to you to decide which
+timeframe suits you best.
+• Smaller timeframes mean smaller profits, but usually smaller risk, too. When you
+are starting with a small trading account, then you might want to select a small
+timeframe to make sure that you are not overtrading your account.
+Most profitable trading systems use larger timeframes like daily and weekly. These
+system work, too, but be prepared for less trading action and bigger drawdowns.
+© by Rockwell Trading, Inc
+Re-transmission or reproduction of any part of this material is strictly
+prohibited without the prior written consent of Rockwell Trading, Inc.
+www.rockwelltrading.com
+Step 2: Define entry rules
+Let’s simplify the myths of “entry rules”:
+Basically there are 2 different kinds of entry setups:
+• Trend-following: When prices are moving up, you buy, and when prices are
+going down, you sell.
+• Swing-trading: When prices are trading at an extreme (e.g. upper band of a
+channel), you sell, and you try to catch the small move while prices are moving
+back into “normalcy”. The same applies for selling.
+In my opinion swing trading is actually one of the best trading styles for the beginning
+trader to get his or her feet wet. By contrast, trend trading offers greater profit potential if
+a trader is able to catch a major market trend of weeks or months, but few are the traders
+with sufficient discipline to hold a position for that period of time without getting
+distracted.
+Most indicators that you will find in your charting software belong to one of these two
+categories: You have either indicators for identifying trends (e.g. Moving Averages) or
+indicators that define overbought or oversold situations and therefore offer you a trade
+setup for a short term swing trade.
+So don’t become confused by all the possibilities of entering a trade. Just make sure that
+you understand why you are using a certain indicator or what the indicator is measuring.
+An example of a simple swing trading strategy can be found in the next chapter.
+© by Rockwell Trading, Inc
+Re-transmission or reproduction of any part of this material is strictly
+prohibited without the prior written consent of Rockwell Trading, Inc.
+www.rockwelltrading.com
+Step 3: Define exit rules
+Let’s keep it simple here, too: There are two different exit rules you want to apply:
+• Stop Loss Rules to protect your capital and
+• Profit Taking Exits to realize your profits
+Both exit rules can be expressed in four ways:
+• A fixed dollar amount (e.g. $1,000)
+• A percentage of the current price (e.g. 1% of the entry price)
+• A percentage of the volatility (e.g. 50% of the average daily movement) or
+• A time stop (e.g. exit after 3 days)
+We don’t recommend using a fixed dollar amount, because markets are too different. For
+example, natural gas changes an average of a few thousand dollars per day per contract;
+however, Eurodollars change an average of a few hundred dollars a day per contract. You
+need to balance and normalize this difference when developing a trading system and
+testing it on different markets. That’s why you should always use percentages for stops
+and profit targets (e.g. 1% stop) or a volatility stop instead of a fixed dollar amount.
+A time stop gets you out of a trade if it is not moving in any direction, therefore freeing
+your capital for other trades.
+© by Rockwell Trading, Inc
+Re-transmission or reproduction of any part of this material is strictly
+prohibited without the prior written consent of Rockwell Trading, Inc.
+www.rockwelltrading.com
+Step 4: Evaluate your system
+The first figure to look for is the net profit. Obviously you want your system to generate
+profits. But don’t be frustrated when during the development stage your trading system
+shows a loss; try to reverse your entry signals. On our website www.rockwelltrading.com
+you already learned that trading is a zero sum game: So if you are going long at a certain
+price level, and you lose, then try to go short instead. Many times this is the easiest way
+to turn a losing system into a winning one.
+The next figure you want to look at is the average profit per trade. Make sure this
+number is greater than slippage and commissions, and that it makes your trading
+worthwhile. Trading is all about risk and reward, and you want to make sure you get a
+decent reward for your risk.
+Take a look at the Profit Factor (Gross Profit / Gross Loss). This will tell you how
+many dollars you are likely to win for every dollar you lose. The higher the profit factor
+the better the system. A system should have a profit factor of 1.5 or more, but watch out
+when you see profit factors above 3.0, because it might be that you over-optimized the
+system.
+Here are some more characteristics you might want to consider besides the net profit of a
+system:
+• Winning percentage
+Many profitable trading systems achieve a nice net profit with a rather small
+winning percentage, sometimes even below 30%. These systems follow the
+principle “Cut your losses short and let your profits run”. However, YOU need to
+decide whether you can stand 7 losers and only 3 winners in 10 trades. If you
+want to be “right” most of the time, then you should pick a system with a high
+winning percentage.
+. .
+• Number of Trades per Month
+Do you need daily action? If you want to see something happening every day,
+then you should pick a trading system with a high number of trades per month.
+Many profitable trading systems generate only 2-3 trades per month, but if you
+are not patient enough to wait for it, then yo

@@ -1,0 +1,256 @@
+PROFIT WITH
+OPTIONS
+Y
+L
+F
+M
+A
+E
+T
+Team-Fly®
+Founded in 1807, John Wiley & Sons is the oldest independent
+publishing company in the United States. With offices in North
+America, Europe, Australia, and Asia, Wiley is globally commit-
+ted to developing and marketing print and electronic products
+and services for our customers’ professional and personal
+knowledge and understanding.
+The Wiley Trading series features books by traders who have
+survived the market’s ever changing temperament and have
+prospered—some by reinventing systems, others by getting back
+to basics. Whether a novice trader, professional, or somewhere
+in between, these books will provide the advice and strategies
+needed to prosper today and well into the future.
+For a list of available titles, please visit our Web site at
+www.WileyFinance.com.
+A Marketplace Book
+PROFIT WITH
+OPTIONS
+Essential Methods for
+Investing Success
+LAWRENCE G. McMILLAN
+JOHN WILEY & SONS, INC.
+Copyright © 2002 by Lawrence G. McMillan. All rights reserved.
+Published by John Wiley & Sons, Inc., New York.
+Published simultaneously in Canada.
+No part of this publication may be reproduced, stored in a retrieval system or
+transmitted in any form or by any means, electronic, mechanical, photocopying,
+recording, scanning or otherwise, except as permitted under Section 107 or 108 of
+the 1976 United States Copyright Act, without either the prior written permission
+of the Publisher, or authorization through payment of the appropriate per-copy fee
+to the Copyright Clearance Center, 222 Rosewood Drive, Danvers, MA 01923,
+(978) 750-8400, fax (978) 750-4744. Requests to the Publisher for permission
+should be addressed to the Permissions Department, John Wiley & Sons, Inc.,
+605 Third Avenue, New York, NY 10158-0012, (212) 850-6011, fax (212) 850-6008,
+E-Mail: PERMREQ@WILEY.COM.
+This publication is designed to provide accurate and authoritative information in
+regard to the subject matter covered. It is sold with the understanding that the
+publisher is not engaged in rendering professional services. If professional advice
+or other expert assistance is required, the services of a competent professional
+person should be sought.
+Wiley also publishes its books in a variety of electronic formats. Some content that
+appears in print may not be available in electronic books. For more information
+about Wiley products visit our Web site at www.Wiley.com.
+ISBN 0-471-22531-2
+Printed in the United States of America.
+10 9 8 7 6 5 4 3 2 1
+PREFACE
+Over the years, I’ve written two thick books on options trading
+that have a combined page count over 1,500. I write a weekly
+advisory newsletter, as well as a daily fax service. So what, you
+may wonder, do I have left to write about on the topic of options
+trading?
+With this book, my goal is not necessarily to cover a lot of in-
+novative new ground, but to present material in a new way that
+will enhance the ability of traders to master a variety of option
+trading techniques and become more successful at incorporat-
+ing them into their overall trading program. My first book, Op-
+tions as a Strategic Investment is, at 998 pages, a complete
+reference text that covers nearly every aspect of options trading
+in depth. McMillan on Options is more focused on how to apply
+various options strategies, including the ones I personally pre-
+fer and use frequently. What has been missing—based on feed-
+back received from my readers, seminar attendees, and
+subscribers—is a book that covers each phase of the options
+trading process step-by-step, reinforces individual concepts, and
+thus allows you to hone and refine skills—in essence, a work-
+book or study guide.
+In Profit with Options I have attempted to provide an
+overview of the options trading process in a more concise,
+hands-on way. Each chapter covers a specific concept and ends
+v
+vi PREFACE
+with a set of review questions and answers that will assist you
+in absorbing and implementing the material covered.
+While the introduction does address basic terms and the
+building blocks of option trading concepts, the book as a whole is
+written for someone with some degree of investment and trad-
+ing experience. The first chapter also moves right into the com-
+ponents of option price, using historical and implied volatility
+to formulate your option trading strategy, and understanding
+the advantages an option model can provide. Plus, LEAPS, fu-
+tures, and trading technology are each treated in detail.
+Chapters 2 and 3 explain how to use options as both direct
+and contrary indicators, with examples showing how each can
+predict market direction and help you decide which options to
+buy under both scenarios.
+Chapter 4 teaches you how to incorporate system trading
+into an overall options game plan and illustrates the value of
+taking the system approach. A variety of systems types are
+outlined that are applicable for both short-term and long-term
+investors.
+Chapter 5 presents powerful methods for using options as
+“insurance” and portfolio protection, which is one of their key
+strengths.
+Chapters 6 and 7 conclude with various strategies for profit-
+ing from trading volatility. I start by viewing volatility as a
+strategic indicator, and then move into both forward and re-
+verse “skew” and spreading strategies. I then provide a more in-
+depth look at volatility analysis, the reasons behind volatility
+changes, and highlight my own favorite strategy plus personal
+criteria for buying straddles, “follow-up” action, and selling
+naked options.
+Each chapter of the workbook can stand on its own, but
+taken together, they form the basis of a well-rounded options
+trading program. With the end-of-chapter questions provided,
+you can test your knowledge of the concepts, techniques, and
+systems featured in Profit with Options before you need to put
+PREFACE vii
+them into action in the real trading world. And this learn-by-
+example workbook should prepare you for making the right
+moves at the right time, while reacting swiftly to opportunities
+that arise in the fast-paced options arena.
+It is my hope that this hands-on guide will complement my
+previous two works. You can now access a comprehensive re-
+source on options, a product devoted primarily to strategies in
+action, and a manual that helps to reinforce tactics and refine
+option trading skills.
+I have devoted much of my career to educating investors on
+the fundamentals and the benefits of trading options. I think
+they provide enormous wealth-building potential for anyone who
+has mastered a proficiency in trading options. And I hope, after
+completing this handbook, that you will have a better working
+knowledge of how to use options to diversify and enhance a
+portfolio.
+LAWRENCE G.MCMILLAN
+April 2002
+CONTENTS
+Chapter 1
+Introduction 1
+Chapter 2
+Options as Direct Indicators 31
+Chapter 3
+Options as Contrary Indicators 79
+Chapter 4
+System Trading 123
+Chapter 5
+Protecting a Stock Portfolio 163
+Chapter 6
+Trading Volatility 179
+Chapter 7
+Buy Low and Sell High—Volatility, That Is 211
+Answers to Review Questions 251
+Glossary 267
+Index 271
+ix
+1
+INTRODUCTION
+L O
+EARNING BJECTIVES
+The material in this chapter will help you to:
+• Become familiar with the terms and concepts of option
+trading.
+• Analyze the components of option price.
+• Use historical and implied volatility to formulate your op-
+tion trading strategy.
+• Understand the benefits an option model can provide.
+• Understand the advantages and disadvantages of trading
+futures.
+A call option gives you the right to purchase something at a
+specified price, and that option is normally “good” for only a pre-
+determined length of time. There are options in many facets of
+life—real estate, executive stock options, and the focus of this
+book: listed options. The “something” that you may purchase is
+called the underlying instrument (the underlying). It could
+be a stock, it could be an index, or it could be a futures contract.
+1
+2 INTRODUCTION
+The specified price at which that underlying instrument can be
+bought is called the strike price.Finally, the date by which the
+option must be used is called the expiration date. These three
+terms completely define the option. For example, an IBM July
+120 call is an option to buy IBM (the underlying instrument) at
+a price of 120 (the strike price) at any time through July (the
+expiration date).
+For stock and index options, the last trading day is the third
+Friday of the month, so the expiration Ydate is that day. (Actu-
+ally, for legal reasons, it’s technicallyL the next day—but that’s a
+Saturday, so for all intents and purposes, Friday is considered
+F
+to be the expiration date.) For futures options, expiration dates
+M
+vary within the expiration month. We’ll talk more about them
+later. The material in this chapter lays the groundwork for your
+A
+development as an option strategist.
+E
+T
+IMPORTANT TERMS AND CONCEPTS
+An important concept is that of a put option. A put option al-
+lows the holder to sell the underlying security at the strike price
+up until the expiration date. Thus, call options increase in price
+when the price of the underlying security rises, and put options
+increase in price when the price of the underlying security falls.
+Options were traded over-the-counter for years, but
+in 1973 the Chicago Board Options Exchange (CBOE)
+was formed and the innovations that they brought
+to the marketplace have resulted in the huge market
+we now have for listed options.
+The biggest innovation was the introduction of a liquid mar-
+ket in options. Options can be bought and sold at any time, just
+as shares of stock can be bought and sold. It is not necessary to
+Team-Fly®
+IMPORTANT TERMS AND CONCEPTS 3
+Table 1.1 Derivative Types
+Equity options (e.g., LEAPS)
+Index and sector options (e.g., S&P 500, OEX; oil and gas, gold)
+Listed warrants (similar to option but behaves more like stock)
+Futures options/serial options
+Over-the-counter options (e.g., Swaps—interest-rate trades)
+hold the option until its expiration date. Therefore, if you were
+to buy that IBM July 120 call, and then IBM stock price rose
+shortly thereafter—perhaps rising well above the strike price
+120—most likely the call would gain some value. You could just
+phone your broker and sell the call to take your profit. You
+would not have to worry about whether or not IBM was above
+the strike price of 120 at expiration.
+Options are a derivative security. That is, their price
+movements are taken from the movements in another security
+(the underlying stock, for example). Over the years, since listed
+options began trading on the Chicago Board Options Exchange
+(CBOE), there have been many different types of listed securi-
+ties. Index and sector optionsare merely options on an index
+or a sector index (for example, the S&P 500 Index or the Semi-
+conductor Index). Warrants have been listed on the New York
+Stock Exchange (NYSE) for years, but the current type of war-
+rants being traded—particularly on the American Stock Ex-
+change (AMEX)—generally play either currencies or the market
+as an option security. With warrants, you can own the market
+without much risk. Over-the-counter options are options
+that are traded directly, generally by big firms such as Morgan
+Stanley or institutions such as mutual funds. See Table 1.1 for
+a summary of derivative types.
+Here are a few other terms that may be of interest:
+• In-the-money/out-of-the-money. When the underly-
+ing is trading higher than the strike price of a call
+4 INTRODUCTION
+option, the call option is said to be in-the-money.
+If the underlying is below the strike price, the call is
+said to be out-of-the-money. Conversely, a put option is
+in-the-money when the underlying instrument is trad-
+ing at a price lower than the strike price and out-of-
+the-money when the underlying is trading above the
+strike price.
+• Exercise the option. Converting the option into the un-
+derlying instrument is exercising the option. A person who
+exercises one IBM July 120 call would get 100 shares of
+IBM in his or her account, and t

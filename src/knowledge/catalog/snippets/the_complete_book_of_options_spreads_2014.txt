@@ -1,0 +1,181 @@
+T C B
+he ompleTe ook
+o S
+of pTion preadS
+C
+and omBinaTionS
+Strategies for Income Generation, Directional
+Moves, and Risk Reduction
+Scott Nations
+Cover images: © iStock.com / Taylor Hinton; © iStock.com / Storman; © iStock.com / joel-t
+Cover design: Wiley
+Copyright © 2014 by Scott Nations. All rights reserved.
+Published by John Wiley & Sons, Inc., Hoboken, New Jersey.
+Published simultaneously in Canada.
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form or by
+any means, electronic, mechanical, photocopying, recording, scanning, or otherwise, except as permitted un-
+der Section 107 or 108 of the 1976 United States Copyright Act, without either the prior written permission
+of the Publisher, or authorization through payment of the appropriate per-copy fee to the Copyright Clear-
+ance Center, Inc., 222 Rosewood Drive, Danvers, MA 01923, (978) 750-8400, fax (978) 646-8600, or on the
+Web at www.copyright.com. Requests to the Publisher for permission should be addressed to the Permissions
+Department, John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ 07030, (201) 748-6011,
+fax (201) 748-6008, or online at www.wiley.com/go/permissions.
+Limit of Liability/Disclaimer of Warranty: While the publisher and author have used their best efforts in pre-
+paring this book, they make no representations or warranties with respect to the accuracy or completeness of
+the contents of this book and specifically disclaim any implied warranties of merchantability or fitness for a par-
+ticular purpose. No warranty may be created or extended by sales representatives or written sales materials.
+The advice and strategies contained herein may not be suitable for your situation. You should consult with a
+professional where appropriate. Neither the publisher nor author shall be liable for any loss of profit or any
+other commercial damages, including but not limited to special, incidental, consequential, or other damages.
+For general information on our other products and services or for technical support, please contact our
+Customer Care Department within the United States at (800) 762-2974, outside the United States at
+(317) 572-3993, or fax (317) 572-4002.
+Wiley publishes in a variety of print and electronic formats and by print-on-demand. Some material included
+with standard print versions of this book may not be included in e-books or in print-on-demand. If this book
+refers to media such as a CD or DVD that is not included in the version you purchased, you may download this
+material at http://booksupport.wiley.com. For more information about Wiley products, visit www.wiley.com.
+Library of Congress Cataloging-in-Publication Data:
+Nations, Scott.
+The complete book of option spreads and combinations : strategies for income generation, directional moves,
+and risk reduction / Scott Nations.
+pages cm. – (Wiley trading)
+Includes index.
+ISBN 978-1-118-80545-9 (paperback); ISBN 978-1-118-80639-5 (ebk); ISBN 978-1-118-80620-3 (ebk)
+1. Options (Finance) 2. Options (Finance)–Mathematics. 3. Investment analysis. I. Title.
+HG6024.A3N347 2014
+332.64′53–dc23
+2014016781
+Printed in the United States of America.
+10 9 8 7 6 5 4 3 2 1
+For my mother, who always made the time to answer a question
+from a curious kid.
+Contents
+Foreword vii
+Preface ix
+Chapter 1 not Just More or Less but Different 1 v
+Chapter 2 Just a Little Math 15
+Chapter 3 Vertical spreads 29
+Chapter 4 Covered Calls 55
+Chapter 5 Covered puts 75
+Chapter 6 Calendar spreads 93
+Chapter 7 straddles 109
+Chapter 8 strangles 125
+Chapter 9 Collars 139
+Chapter 10 risk reversal 155
+Chapter 11 Butterflies 169
+Chapter 12 Condors and Iron Condors 191
+Chapter 13 Conversion/reversal 209
+vi
+StnetnoC
+Chapter 14 ratio spreads and Back spreads 217
+Chapter 15 other spreads and Combinations 235
+About the Website 247
+About the Author 248
+Index 249
+Foreword
+I n this book, Options Spreads and Combinations, Scott takes the subject of options and
+option spreads and shows investors how they can be easy to understand through
+interesting, real world examples. Just as he does every week on CNBC’s Options Ac-
+tion and in his first book, Options Math for Traders, Scott takes what many have viewed vii
+as intimidating concepts and breaks down the barrier of entry for the self-directed
+investor. Scott has a wonderful ability to use his years of experience and vast knowl-
+edge of markets and rather than use industry jargon or high-level mathematics, he
+breaks things down to a level that is interesting and easy to grasp for all levels of
+investor—from the novice to the seasoned. This ability to relate to and write for
+people of all knowledge levels, without arrogance or condescension is impressive
+when you review his track record which includes being the brains behind the “Na-
+tions VolDex®” implied volatility index.
+This book encourages you to dig deeper, through poignant examples and real-life
+situations that can help your decision-making process when you face similar situa-
+tions. Most importantly, as Scott has done this for a living and has the “battle scars”
+to show for it, he helps you set realistic expectations. He is not here to give a fly-by-
+night or get-rich-quick scheme. He is helping you become educated in the theory
+and reality of options trading so you can put together a realistic game plan and give
+yourself the opportunity for options trading success.
+A prominent and important part of this book is to address some of the most common
+mistakes that retail traders make. All too often, when folks are starting out in the world
+of options trading, they only buy or sell single options in directional trades. This can be a
+successful strategy for some people but over time it is probably not a strategy with which
+viii
+DroweroF
+the average person can have long-term success. This book encourages you to consider
+spreading your trades, which spreads out your risk and the cost of your trades. As you
+read along, you will quickly grasp that this type of trading allows you to use less capital
+and define your risk right up front on your trades. You will have the opportunity in this
+book to learn about every type of spread trade that is realistic and imaginable.
+Chapter 1 addresses the differences in risk and return and the fundamental differ-
+ence in options payoffs, which sets the pace for the rest of this book and the difference
+in thinking about options as compared to just buying or selling stock. As Scott empha-
+sizes, the ability for one to manage risk and exposure to the market is much easier if
+you understand these spreads. This concept of risk differentiates this book from others
+and is one to keep in mind as you read. Scott gives insight in to how a professional looks
+at trading. That is, the first thing he looks at is how much risk or how much exposure
+do I have, then he looks at potential return. This concept is so important and helps to
+mitigate one of the primary mistakes that many newer options traders have. By defining
+risk right up front, which most spreads do, it keeps the investor away from a situation
+where they are in over their head or have risked too much capital, while at the same
+time setting out a worst-case scenario right up front. You can see this clearly illustrated
+in Chapter 3 on vertical spreads, no matter if you are buying or selling the spread, you
+should view the money you can lose and the potential return on the trade. This is not to
+be minimized and should be heeded in every example. read this to better understand
+risk and, more importantly, understand how to define the appropriate risk for you, and
+it can help you on your road to success.
+Scott also does a great job of addressing the size of your trades and keeping risk
+appropriate. This helps to address another mistake that traders of all levels make;
+that is, they trade more contracts on a trade than they are ready to. Spreads help to
+mitigate this situation, but equally as important is the reminder to do what is right
+for you and what you are ready for in any market situation. This is an important step
+in achieving success in a way that does not have you up all night worrying.
+As someone that talks to retail traders on a regular basis, I find it so refreshing to
+see someone teaching in a sensible, risk-defined manner to help the average person
+have a greater chance of success in the market. I commend Scott’s thoughtful work
+delivered in fun and logical lessons in this book. I consider him one of the best op-
+tions teachers. one of the great benefits of this book is that it is not going to be read
+and put away; this book can serve as a reference guide for the rest of your trading
+career. As you step up in knowledge or want to take different types of risk, you can
+reread the chapters on different spreads as you change your strategies based on mar-
+ket conditions. These lessons are timeless. I hope you enjoy this book as much as I did
+as you get the chance to learn from a great teacher and a great friend.
+—JJ Kinahan
+Preface
+T
+he goal of option trading is to make money. The vital element of making money
+over the long run is to define risk when you can and reduce the cost of your
+trade when you should. An option spread (essentially buying one option and selling a
+similar option) or an option combination (usually using two options in tandem such ix
+as buying both a put and a call or using an option in tandem with something else such
+as ownership of the underlying stock) is usually the best way to define risk and/or
+reduce the cost of your trade. Not every option spread or combination limits your
+risk but most do and they do it sensibly, without paying a huge penalty that destroys
+the mathematical advantage your option strategy might generate. In fact, certain
+option spreads generate even more mathematical advantage than outright option
+positions can. The purpose of this book is to help you understand these strategies
+and apply them intelligently because, again, the goal is to make money. We can and
+should enjoy both learning about options and trading them effectively, but both are a
+lot more fun when we’re making money.
+No trader is right every time, but you should make money more often than you
+lose money and your profitable trades should make more than your losing trades
+lose. The easiest way to do all these things is to use option spreads and combinations
+and to do so in a disciplined manner. That discipline includes taking your loss when
+your option spread trade isn’t working. You will probably have lost a lot less money
+than if you had traded the stock or an outright option (rather than an option spread
+or combination) but using a lower-cost, lower-risk spread or combination doesn’t
+mean we can ignore first principles and not take our loss when we should. A spread
+or combination is also a great tool when doing the hardest thing to accomplish when
+trading—adding to a winner well.
+x
+ecAferP
+As we’ve mentioned, some spreads and combinations have a built-in advantage.
+for example, we’ll discuss one built-in advantage when we discuss risk reversals.
+covered calls are another combination with a different built-in advantage—over
+time, the call option you sell will generate more in premium received than the op-
+tion is ultimately worth. Some spreads and combinations have a built-in disadvan-
+tage. collars are a great way to define risk if you own appreciated stock but you’re
+swimming against the tide a bit. That’s okay as long as you don’t use collars con-
+stantly and understand why that is.
+The Complete Book of Option Spreads and Combinations isn’t intended for someone
+who’s a complete newcomer to options. We discuss outright options, that is, op-
+tions that aren’t part of a spread or combination, but outright options are rarely the
+right strategy, particularly if you’re a speculative seller of options, so we’ll focus on
+spreads and combinations and while they’re not necessarily complicated, if you’re
+still stuck on the difference between a put option and a call

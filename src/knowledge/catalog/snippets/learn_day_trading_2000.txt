@@ -1,0 +1,190 @@
+Learn to day-trade the E-mini S&P 500
+Simple-as-123
+Marshall J. Jones
+1
+I’ll Show You How to Day Trade
+The E-Mini S&P in 60-90 Days…
+Regardless of Market Direction!
+Simple-as-123
+#1 Knowledge:
+You need to know what determines momentum.
+#2 Information:
+You need timely, crucial information to help you determine when that
+momentum is the best time to make the trade, and when to get out in order to minimize your risk
+and maximize your profits.
+#3 Belief:
+You must have a belief in yourself that you can do it. It’s that belief in yourself
+that gets you to take action. You have to act on the first two ingredients (knowledge and
+information) in order to make this method work for you.
+Notes: Don't Ask Questions Now…Wait Till You Read This Manual First --
+I’ll explain what it all means as we go along in the manual!
+New to the game?
+If you are not an experienced day-trader, and don’t know the basics…please go to page 55
+Know it all?
+You might want to review the basics anyway…you just may learn something new!
+Predicting the future is easy. It’s trying to figure out
+what’s going on now that’s hard
+Fritz R. S. Dressler
+President FRS Dressler Associates
+2
+Table of Contents
+Preface 4
+Acknowledgements 5
+Bio…Thought you’d never ask! 6
+Introduction
+How does it work 8
+Knowledge 9
+Information 10
+Belief -- Discipline 11
+Your Charts 13
+Logging on to RealTime Charts 14
+Loosen Up – US Stock Market Window 15
+Keep a Diary if You Really Want to Learn 17
+Short Hand 17
+The Concept 19
+Momentum 21
+This is How I Do It 22
+Trade Log with Time Zones 23
+3
+Preface
+I had been trading for about five years, and had very little success with short or long term
+trading. I became fascinated with the idea of day trading. I was always looking for the Holy Grail
+and as we traders know, there is no such thing. We all spend way too much money for the hype
+that's out there, and with all the talk on the street about the money being made day-trading I
+started to look for a system or method to trade the S&P, but when I looked into the amount of
+margin you needed I quickly became disillusioned. I’m not in that league as it takes over
+$25,000.00 to trade one contract! I had heard of mini contracts and found you could trade the
+Emini S&P; it’s one-fifth the size of the big S&P; and is traded electronically on Globex with no
+need to talk over the phone to a broker. Well, it fit right into my style of trading. I guess I like the
+action, and I don't like all that research for trading long-term positions.
+I started looking at charts and watching the news on CNBC everyday. I read everything on day
+trading that I could get my hands on. I think, because of all the stuff I had read about, such as
+fundamentals, technical analysis, and all those crazy indicators like RSI, Fibonacci numbers,
+Gann lines, Elliot waves, Stochastics, it would be just too difficult. Then I read an article written
+by one of my favorite teachers, Larry Williams and a co-author Miles Dunbar, they wrote an
+article for Futures Magazine, “Trading Strategies For the Future… The E-Mini Nasdaq 100” and
+in the article, he used an indices as an indicator, and in the same magazine article another writer
+used a different indices as an indicator. I said to myself…Self, why don’t you use both, as an
+indicator … the rest is history.
+I did not have a losing trade for over a year when I first started, I was very conservative, and only
+went by what I perceived to be the perfect scenario to trade the E-mini. The method worked well
+during the big Bull Run in the late 90’s. You could not make a bad trade with this method if you
+tried! I kept trying to tweak it and find more days to trade it. I had quite a few friends and fellow
+traders wanting to try it so I began to teach the method during the most volatile time of the
+market. The method worked, but it took patience and discipline and a bigger drawdown.
+I could write a whole chapter about trying all those crazy indicators. Man, all that stuff gave me
+brain cloud. I tried to put too much into it. I know now, after teaching students who knew
+nothing about trading, that they do much better than the experienced trader who has too much
+emotion and indicators to look at. This method is simple, and I will attempt to show you how
+simple it is in this manual. I will teach you just what you need to know, no more, and no less.
+Jake Bernstein said it takes ten years to develop a system or method ... we will see! As I write
+this we are in a bear market and it could be a whole new ballgame.
+Remember the acronym "Kiss" ... Keep It Simple Stupid
+Happy trading ... Simple-as-123
+Marshall J. Jones
+Day trader
+4
+Acknowledgments
+To my wife Helen, the computer widow, who brought me my coffee each and every morning,
+and made sure I got the latest business news from the newspaper. For her patience, and love, I
+owe her a debt of gratitude. We could have been traveling all over the States, having a great
+time, but she never complained. Wow! … What a wife!
+My daughter Renee, who took the time out of her busy day to help me proofread this manual,
+She holds down three jobs and has Ryan, her three-year-old son…who also tries to help me on
+the computer. When I’m trading, he likes to cheer me on. (I have to be very careful what I
+say…if you know what I mean.)
+My soon to be son in law, Frank Giganti, who prods me on with his marketing insights and
+Sharon my second daughter, for all of her e-mail letters of encouragement and suggestions. She
+makes me laugh, and see the sunny side of life.
+And to the rest of my family, Darlene my youngest daughter, her husband Greg and their two
+sons Joey, and Frankie, for their words of encouragement. And last but not least, my two sons
+Marshall and Michael who asked everyday, “What in the world are you doing up there dad?”
+I am so thankful for all of the traders who have touched my life with their opinion, suggestions,
+systems, methods, testimonials, and those who took the time to trade with me live, using the live
+charts on quote.com, and Yahoo! Messenger. It was a blast, guys! I really learned a lot about this
+method and myself with you on line.
+A special thanks to Thom Huntington, who helped edit part of this manual.
+Let’s not forget Lycos, Quote.com’s Live Charts, Yahoo, and paltalk for their great Messenger,
+and chat room software.
+It's only when we truly know and understand that we don't know ... and had no way of knowing,
+that we know we have to find out what we don't know.
+Marshall J. Jones
+Day-Trader, writer, poet, teacher, printer, pilot, marketing guru
+Father, grandfather, and all around good guy
+But only in my own mind!
+5
+Thought you'd never ask!
+Well it's been one hell of a ride! An adventure like a Tom Sawyer and Huckleberry Finn novel,
+and it's not over yet.
+I was born in El Centro, California, about 100 miles east of San Diego, where my family moved
+when I was about seven years old. My dad had bought Acme Printing Co., one of the oldest
+printing firms here in San Diego, dating back to around 1905 or earlier.
+After graduating from high school and volunteering for the draft, I was offered a chance to take
+my choice of any school the Army had to offer, so looking for the big bucks ($55.00 extra per
+month), I chose the Army Airborne. By the way, I don't recommend jumping out of a perfectly
+good airplane.
+I went through jump school at Fort Campbell Kentucky, and was also given a chance to attend
+the Ranger School at Fort Benning, Georgia. That's what I get for being gung-ho, and
+fortunately for me, an armistice had been declared in the Korean War.
+With my Honorable discharge from the Army in 1956, and the offer to pay me to go back to
+school, I was able to get my commercial pilot's license, and look for a job with the airlines here
+in San Diego. But no luck here; all of the pilots coming home from Korea got the jobs.
+Joining my Father, I managed the family printing business. I met my lovely wife, got married,
+and had five children. I attended San Diego Junior College, and San Diego State College (it was
+not even a University in those days), taking classes in business and marketing. After my father's
+death, I owned Acme Printing Co. and other various business enterprises for over twenty years.
+I was very active in San Diego, joining various Civic organizations; San Diego Junior Chamber
+of Commerce, past chairman of the Aviation Committee, formed the San Diego Jaycee Flying
+Club, Past President of Harbor Lions, Flotilla 11, U.S. Coast Guard Power Squadron, Air Search
+and Rescue, Antique Air Craft Association, San Diego Aerospace Museum, and was a member
+of the San Diego Elks Lodge. Busy, busy, busy!
+I started many various companies in the twenty years I was active in the printing business. Some
+of these businesses included American Traders Manufactures and Buyers (ATMAB - Anything
+To Make A Buck), Presto Prints of California, The Sand Box, Tattoos by Joyce, Joyce
+Enterprises Inc., M & J Marketing, Marshall Air, San Diego Sky Hawks Inc., and Typro
+Graphics.
+I retired from the printing business in 1976, and formed Joyce Enterprises Inc., a corporation
+involved in marketing and business consulting. I was a major shareholder and served on the
+Board of Directors as Vice President, in charge of marketing, and product development. I also
+became a business consultant, specializing in product development for other start up companies.
+6
+I came out of retirement in 1986 after some bad investment decisions, and went to work as a
+manager of Paper Plus, a division of Unisource World Wide. I retired again after fourteen years
+in September 2000.
+My many hobbies over the years include, backpacking, rebuilding antique aircraft, flying,
+boating, fishing, writing poetry, reading and watching Biography and the History channel, and
+last but not least, teaching day-trading.
+Looking for additional income, I happened to receive a familiar mail order pamphlet in 1994.
+You know the one... how to get rich quick in the commodities and futures business.
+I jumped right on in. Needless to say, I didn't get it. I kept looking for the Holy Grail! I read
+everything I could get my hands on, attending seminars and lectures on how to get rich. I spent a
+small fortune on books, systems, and methods by the likes of Ken Roberts, Jake Bernstein, Nick
+Van Nice, and our old favorite Larry Williams.
+Nothing worked for me, except an education in the commodities and futures business. Still
+thinking that this is a possible way to make money at home, I read an article on day trading in
+Futures magazine. I tried paper trading some of the ideas presented in the article on the S&P; it
+just gave me brain cloud - way too much stuff to think about. In another article in Futures, Larry
+Williams and Miles Dunbar wrote about trading the Nasdaq 100 and looking at a divergence in
+the Dow. Another article in the same magazine written by Michael A. Mermer talked about
+using the Nasdaq 100 as a leading indicator for the S&P 500 futures and said it was a great day-
+trading vehicle. At first it did not really sink in until I started watching CNBC on television.
+They have those little arrows in a box showing the change in the Dow, Nasdaq, and S&P 500. A
+light went on for some reason and I started watching every morning, keeping my eye on the Dow
+and the Nasdaq. At first I was looking for the divergence, then I noticed that when both the Dow
+and Nasdaq were in sync, the S&P 500 followed.
+Hey the rest is history!
+Simple but not easy… fear and greed are your enemies; patience and discipline are your tools,
+practice is the only way to achieving your potential
+Marshall J. Jones
+Day trader
+7
+Introduction
+… Simple-as-123
+How does it work?
+There are three indices that we look at after the market opens…and
+through out the day, they tell me which way the E-mini S&P is
+going. They are not indicators in the true sense of the word, but
+that’s what I call them.
+#1 The Dow #2 The Nasdaq #3 The S&P 500
+Nuance: We don’t make a trade during the first half hour. (We let the market settle down and
+wait f

@@ -1,0 +1,136 @@
+Swing Trading, pg. 1
+Swing Trading Using Candlestick charting with Pivot Point Analysis
+Written by John L. Person
+Introduction:
+This booklet was written with the intention of enlightening your knowledge and awareness of different techniques of
+technical analysis. As a professional trader and public speaker I strive to help educate my community of investors
+and clients. As an example of my commitment to that goal I want to provide this manual to you. I believe that
+continued education can help increase knowledge and through improved knowledge comes confidence.
+This booklet is not designed to cover every detail of the material discussed but to help you to explore a new avenue
+or refresh your memory of material you may have learned previously.
+About the Author:
+John Person is a 22-year veteran of the Futures and Options Trading industry. Since his start on the floor of the
+Chicago Mercantile Exchange, he has worked his way throughout the industry as a Broker, Trader, Branch
+Manager for one of Chicago's largest discount / full service firms under the tutelage of a former Chairman of the
+Chicago Board of Trade. Early in his career, John worked as an apprentice for George C. Lane – Credited with the
+creation of the oscillating system known as Stochastics. In addition, John studied Candlestick Charting techniques
+by Dan Gramza, the man who helped Steve Nison from his first book. John has applied his knowledge throughout
+the years by appearing as a regular contributor on several financial television programs and as a keynote speaker
+at some of the countries top Investment Expositions. In addition, John is the editor of "The Bottom-Line Newsletter",
+a weekly commodity publication that incorporates fundamental developments as well as technical analysis including
+his own proprietary trading system-using support and resistance levels on a daily, weekly and monthly basis. This
+helps his clients identify potential buy or sell signals on a short, intermediate or a long-term basis.
+CHAPTER 1
+Pivot Point Analysis is a famous technique that is used as a price forecasting method for day traders and
+professional traders as well. It is very popular among professionals.
+You should have a better understanding of this method after reading and studying this booklet and the benefits to
+you may help improve your timing of entry and exit points of the market.
+There are numerous advisory services, brokerage firms and independent traders that use one form of it or another.
+Support /Resistance, price range forecasting pin pointing tops and bottoms and target trading are some of the
+terms that are used to refer to it as well. For most traders on the floor of the exchanges it is considered common
+knowledge or old school of teaching.
+Most novice individual investors and even brokers are not familiar with this formula. I believe that most
+inexperienced investors have a hard time with incorporating this technique in their trading “tool box” due to the time
+it takes to calculate the numbers. But make no mistake the professionals’ look at it and so should you.
+First here is the mathematical formula where P= Pivot point; C= Close: H= High: and L= Low.
+The Pivot point number is the high, low, close added up and then divided by three. P=(H+L+C)/3= pivot point
+Now for the first resistance level take the pivot point number times two and then subtract the low. (Px2)-L=
+Resistance 1
+For the second resistance, take the pivot point number add the high and then subtract the low. P+H-L= Resistance
+2
+Copyright © 2002 by John L. Person III, CTA
+PDF created with FinePrint pdfFactory Pro trial version http://www.fineprint.com
+Swing Trading, pg. 2
+For the first support take the pivot point number times two and then subtract the high. (Px2)-H = Support 1
+For the second support, take the pivot point number subtract the high and then add the low. P-H+L= Support 2
+All right, now that we have that established you can see it is a detailed formula. So let’s try to simplify it. Consider
+the Pivot Point as the average of the previous sessions trading range combined with the closing price. The
+numbers of support and resistance that are calculated indicate the potential ranges for the next time frame based
+on the past weight of the markets strength or weakness derived from the calculations of the high, low and distance
+from the close of those points. Pivot Point analysis is also used for identifying breakout points from the support and
+resistance numbers.
+The previous sessions trading range could be based and calculated for an hour, a day, a week or a month. Most
+trading software includes these numbers on a daily basis so that you do not have the tedious chore of doing it the
+old fashion way, by hand using a calculator. The really old fashion way doesn’t use a calculator. Don’t make your
+job harder try the easy way.
+I wrote a computer program so that I can calculate the numbers on a daily, weekly and monthly time period
+relatively quick and for most markets. These calculations are available to clients by Fax, email or by viewing on line.
+Clients and visitors have access to this research by going to my website www.nationalfutures.com .
+I personally do the daily numbers at the end of the day in order to help me identify the next day’s potential range or
+support and resistance. It gives me a head start on my research so I am prepared for the next day’s work. It helps
+me to plan my trades. Similarly the weekly numbers are done at the end of every week and the same goes for the
+monthly numbers.
+Since most technical analysis is derived from mathematical calculations the common denominators that are used
+are the high, low, close and the open. This is what is used for plotting a bar chart. More notarized techniques like
+Moving averages, Relative Strength Index, Stochastics, and Fibonacci numbers are all calculated using
+mathematics based on those points of interest. It is also what is published in the Newspapers. It is there for a
+reason.
+The concept is this, as technical analysts we are trying to use past price behavior to help us indicate future price
+direction. l I am not trying to predict the future I just want an Idea of where prices can go in a given time period
+based on where they have been. After all isn’t that similar to the concept of drawing trend lines?
+CHAPTER 2
+We have all heard the slogan about how to be successful in investing in Real Estate, which is LOCATION,
+LOCATION, and LOCATION. (Check that out another symbolic reference that involves the Fibonacci number
+three).
+In this business it is important to remember what I call the rule of MULTIPLE VERIFICATION. I more than likely
+picked this belief by reading a book back in 1981 0r 1982 by Arthur Sklarew. He wrote in his book titled Techniques
+of a Professional Commodity Chart Analyst, about The Rule of Multiple Techniques (page 3)
+He states…Technicians know very well that the price chart analysis is not an exact science. No single chart
+technique yet discovered is infallible. Despite this lack of perfection, price chart analysis can very often give reliable
+forecasts of trend direction… …Confirmation is therefore an essential component of every valid chart signal.
+In addition to comparing price charts of different contract months and time scales, it has been my experience that
+the accuracy of any technical price forecast can be improved greatly by the application of a principle that I call the
+“Rule of Multiple Techniques.”
+The Rule of Multiple Techniques requires that the chart technician not rely solely on one single technical signal or
+indicator, but look for conformation from other technical indicators. The more technical indicators that confirm each
+other, the better the chance of an accurate forecast.
+Copyright © 2002 by John L. Person III, CTA
+PDF created with FinePrint pdfFactory Pro trial version http://www.fineprint.com
+Swing Trading, pg. 3
+The logic behind this rule is that if individual time proven techniques tend to be right most of the time, a combination
+of several such techniques that confirm each other will tend to be right even more frequently.
+I do not believe Mr. Sklarew talked about the Pivot Point analysis as a means of technical analysis nor was he
+aware at the time he wrote that book, of the art of candlestick charting. I believe that had he, it would have more
+than likely have been in his book.
+Verify, verify and verify. What it means to me is this, before deciding to invest or make a trade, if I understand the
+underlying fundamentals, I would want to look at a chart to confirm the trend and then I would look at varying
+technical indicators to help confirm my beliefs.
+By incorporating different techniques like pivot point analysis, the figures help me speed up my analytical process.
+With these numbers I can take my charts and draw lines with the support and resistance numbers on them to see if
+they help clear the “visual” picture. This is one technique that traders should try.
+The next example demonstrates how using pivot point analysis can work on most markets and for different time
+frames. I want to illustrate a price point using the Monthly Pivot Point support number for sugar. As the chart below
+in figure 2.1 shows, the target support number was 6.09. Let’s do the math and we will see.
+The previous months range (September) for the March 2002 Sugar futures was (High) 7.80 (Low) 6.40 (Close)
+6.63. Now work the formula and you should show 6.09 as the 1st support number for the month of October.
+Break Away GAP
+Mid Point GAP
+Exhaustion GAP
+(figure 2.1)
+Let’s examine what happened, the exact low was made eight business days into the month of October and it was
+6.11! Two ticks from the projected Pivot Point support number of 6.09. In fact, in this illustration there were two
+days that the low was made at 6.11, which formed a double bottom.
+In addition, there was another traditional chart reading technique that may have given you a clue that a bottom was
+near and that was the three-gap method. The Break Away Gap, the Mid Point Gap and the Exhaustion Gap.
+This chart above, in my opinion, demonstrates a text book example of the multiple verification rule. There were
+three different techniques that alerted one to a buying opportunity. One of the earlier indicators was the Monthly
+Pivot Point method, which would have alerted you nearly a week and a half in advance of a potential low. The other
+two techniques, the gap method and the double bottom chart formation helped confirm that target low.
+Copyright © 2002 by John L. Person III, CTA
+PDF created with FinePrint pdfFactory Pro trial version http://www.fineprint.com
+Swing Trading, pg. 4
+Keep in mind this is not a typical situation as analyzing markets is generally not this easy. Identifying chart patterns
+is an art and not an exact science. The important key point to remember here is when you do have confirmation of
+a support target from using the Pivot Point Calculation with traditional chart reading techniques it will enable one to
+map out a trading plan using proper risk factors. With a trading plan all mapped out that may help increase your
+confidence and skills as a trader.
+CHAPTER 3
+Japanese Candlesticks is the next style of Charting. This has been receiving more and more notoriety in the last
+decade here in the United States since a gentleman by the name of Steve Nisson published one of his first books
+on the subject back in 1991.
+Candlestick Charting originates back to Japan from centuries ago. It is a method of looking at data differently than
+has been developed in western cultures. The advantage of using candlestick charting in place of Bar charts is that
+you have the ability to use same techniques and analysis that bar charts offer plus the diversity and unique signals
+that candlesticks generate. This can empower you to gain an edge on your competition, the other guy.
+In addition, since this is a more sophisticated style and certainly a more specialized format of charting, it has gained
+in popularity

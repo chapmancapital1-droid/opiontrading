@@ -1,0 +1,351 @@
+Paul Wilmott
+Introduces
+Quantitative Finance
+Second Edition
+Paul Wilmott
+Introduces
+Quantitative Finance
+Second Edition
+www.wilmott.com
+Copyright(cid:148)2007 JohnWiley&SonsLtd,TheAtrium,SouthernGate,Chichester,
+WestSussexPO198SQ,England
+Telephone(+44)1243779777
+Email(forordersandcustomerserviceenquiries):cs-books@wiley.co.uk
+VisitourHomePageonwww.wiley.com
+Copyright(cid:148)2007PaulWilmott
+AllRightsReserved.Nopartofthispublicationmaybereproduced,storedinaretrievalsystemortransmitted
+inanyformorbyanymeans,electronic,mechanical,photocopying,recording,scanningorotherwise,except
+underthetermsoftheCopyright,DesignsandPatentsAct1988orunderthetermsofalicenceissuedbythe
+CopyrightLicensingAgencyLtd,90TottenhamCourtRoad,LondonW1T4LP,UK,withoutthepermissionin
+writingofthePublisher.RequeststothePublishershouldbeaddressedtothePermissionsDepartment,John
+Wiley&SonsLtd,TheAtrium,SouthernGate,Chichester,WestSussexPO198SQ,England,oremailedto
+permreq@wiley.co.uk,orfaxedto(+44)1243770620.
+Designationsusedbycompaniestodistinguishtheirproductsareoftenclaimedastrademarks.Allbrand
+namesandproductnamesusedinthisbookaretradenames,servicemarks,trademarksorregistered
+trademarksoftheirrespectiveowners.ThePublisherisnotassociatedwithanyproductorvendormentioned
+inthisbook.
+Thispublicationisdesignedtoprovideaccurateandauthoritativeinformationinregardtothesubjectmatter
+covered.ItissoldontheunderstandingthatthePublisherisnotengagedinrenderingprofessionalservices.If
+professionaladviceorotherexpertassistanceisrequired,theservicesofacompetentprofessionalshouldbe
+sought.
+OtherWileyEditorialOffices
+JohnWiley&SonsInc.,111RiverStreet,Hoboken,NJ07030,USA
+Jossey-Bass,989MarketStreet,SanFrancisco,CA94103-1741,USA
+Wiley-VCHVerlagGmbH,Boschstr.12,D-69469Weinheim,Germany
+JohnWiley&SonsAustraliaLtd,42McDougallStreet,Milton,Queensland4064,Australia
+JohnWiley&Sons(Asia)PteLtd,2ClementiLoop#02-01,JinXingDistripark,Singapore129809
+JohnWiley&SonsCanadaLtd,6045FreemontBlvd,Mississauga,ONT,L5R4J3,Canada
+Wileyalsopublishesitsbooksinavarietyofelectronicformats.Somecontentthatappears
+inprintmaynotbeavailableinelectronicbooks.
+AnniversaryLogoDesign:RichardJ.Pacifico
+LibraryofCongressCataloging-in-PublicationData
+Wilmott,Paul.
+PaulWilmottintroducesquantitativefinance.—2nded.
+p.cm.
+ISBN978-0-470-31958-1
+1.Finance—Mathematicalmodels.2.Options(Finance)—Mathematicalmodels.3.Options(Finance)—Prices—
+Mathematicalmodels.I.Title.IITitle:Quantitativefinance.
+HG173.W4932007
+332—dc22 2007015893
+BritishLibraryCataloguinginPublicationData
+AcataloguerecordforthisbookisavailablefromtheBritishLibrary
+ISBN978-0-470-31958-1(PB)
+Typesetin10/12ptHelveticabyLaserwordsPrivateLimited,Chennai,India
+PrintedandboundinGreatBritainbyAntonyRoweLtd,Chippenham,Wiltshire
+Thisbookisprintedonacid-freepaperresponsiblymanufacturedfromsustainableforestry
+inwhichatleasttwotreesareplantedforeachoneusedforpaperproduction.
+ToarisingStar
+contents
+Preface xxiii
+1 ProductsandMarkets:Equities,Commodities,ExchangeRates,
+ForwardsandFutures 1
+1.1 Introduction 2
+1.2 Equities 2
+1.2.1 Dividends 7
+1.2.2 Stocksplits 8
+1.3 Commodities 9
+1.4 Currencies 9
+1.5 Indices 11
+1.6 Thetimevalueofmoney 11
+1.7 Fixed-incomesecurities 17
+1.8 Inflation-proofbonds 17
+1.9 Forwardsandfutures 19
+1.9.1 Afirstexampleofnoarbitrage 20
+1.10 Moreaboutfutures 22
+1.10.1 Commodityfutures 23
+1.10.2 FXfutures 23
+1.10.3 Indexfutures 24
+1.11 Summary 24
+2 Derivatives 27
+2.1 Introduction 28
+2.2 Options 28
+2.3 Definitionofcommonterms 33
+2.4 Payoffdiagrams 34
+2.4.1 Otherrepresentationsofvalue 34
+2.5 Writingoptions 39
+2.6 Margin 39
+2.7 Marketconventions 39
+2.8 Thevalueoftheoptionbeforeexpiry 40
+2.9 Factorsaffectingderivativeprices 41
+viii contents
+2.10 Speculationandgearing 42
+2.11 Earlyexercise 44
+2.12 Put-callparity 44
+2.13 Binariesordigitals 47
+2.14 Bullandbearspreads 48
+2.15 Straddlesandstrangles 50
+2.16 Riskreversal 52
+2.17 Butterfliesandcondors 53
+2.18 Calendarspreads 53
+2.19 LEAPSandFLEX 55
+2.20 Warrants 55
+2.21 Convertiblebonds 55
+2.22 Overthecounteroptions 56
+2.23 Summary 57
+3 TheBinomialModel 59
+3.1 Introduction 60
+3.2 Equitiescangodownaswellasup 61
+3.3 Theoptionvalue 63
+3.4 Whichpartofour‘model’didn’tweneed? 65
+3.5 Whyshouldthis‘theoreticalprice’bethe‘marketprice’? 65
+3.5.1 Theroleofexpectations 66
+3.6 HowdidIknowtosell 1 ofthestockforhedging? 66
+2
+3.6.1 Thegeneralformulafor(cid:1) 67
+3.7 Howdoesthischangeifinterestratesarenon-zero? 67
+3.8 Isthestockitselfcorrectlypriced? 68
+3.9 Completemarkets 69
+3.10 Therealandrisk-neutralworlds 69
+3.10.1 Non-zerointerestrates 72
+3.11 Andnowusingsymbols 73
+3.11.1 Averageassetchange 74
+3.11.2 Standarddeviationofassetpricechange 74
+3.12 Anequationforthevalueofanoption 75
+3.12.1 Hedging 75
+3.12.2 Noarbitrage 76
+3.13 Wheredidtheprobabilitypgo? 77
+3.14 Counter-intuitive? 77
+3.15 Thebinomialtree 78
+3.16 Theassetpricedistribution 78
+3.17 Valuingbackdownthetree 80
+3.18 Programmingthebinomialmethod 85
+3.19 Thegreeks 86
+3.20 Earlyexercise 88
+3.21 Thecontinuous-timelimit 90
+3.22 Summary 90
+contents ix
+4 TheRandomBehaviorofAssets 95
+4.1 Introduction 96
+4.2 Thepopularformsof‘analysis’ 96
+4.3 Whyweneedamodelforrandomness:Jensen’sinequality 97
+4.4 Similaritiesbetweenequities,currencies,commoditiesandindices 99
+4.5 Examiningreturns 100
+4.6 Timescales 105
+4.6.1 Thedrift 107
+4.6.2 Thevolatility 108
+4.7 Estimatingvolatility 109
+4.8 Therandomwalkonaspreadsheet 109
+4.9 TheWienerprocess 111
+4.10 Thewidelyacceptedmodelforequities,currencies,commoditiesand
+indices 112
+4.11 Summary 115
+5 ElementaryStochasticCalculus 117
+5.1 Introduction 118
+5.2 Amotivatingexample 118
+5.3 TheMarkovproperty 120
+5.4 Themartingaleproperty 120
+5.5 Quadraticvariation 120
+5.6 Brownianmotion 121
+5.7 Stochasticintegration 122
+5.8 Stochasticdifferentialequations 123
+5.9 Themeansquarelimit 124
+5.10 FunctionsofstochasticvariablesandItoˆ’slemma 124
+5.11 InterpretationofItoˆ’slemma 127
+5.12 Itoˆ andTaylor 127
+5.13 Itoˆ inhigherdimensions 130
+5.14 Somepertinentexamples 130
+5.14.1 Brownianmotionwithdrift 131
+5.14.2 Thelognormalrandomwalk 132
+5.14.3 Amean-revertingrandomwalk 134
+5.14.4 Andanothermean-revertingrandomwalk 135
+5.15 Summary 136
+6 TheBlack–ScholesModel 139
+6.1 Introduction 140
+6.2 Averyspecialportfolio 140
+6.3 Eliminationofrisk:deltahedging 142
+6.4 Noarbitrage 142
+6.5 TheBlack–Scholesequation 143
+6.6 TheBlack–Scholesassumptions 145
+6.7 Finalconditions 146
+x contents
+6.8 Optionsondividend-payingequities 147
+6.9 Currencyoptions 147
+6.10 Commodityoptions 148
+6.11 ExpectationsandBlack–Scholes 148
+6.12 SomeotherwaysofderivingtheBlack–Scholesequation 149
+6.12.1 Themartingaleapproach 149
+6.12.2 Thebinomialmodel 149
+6.12.3 CAPM/utility 149
+6.13 Noarbitrageinthebinomial,Black–Scholesand‘other’worlds 150
+6.14 Forwardsandfutures 151
+6.14.1 Forwardcontracts 151
+6.15 Futurescontracts 152
+6.15.1 When interest rates are known, forward prices and futures
+pricesarethesame 153
+6.16 Optionsonfutures 153
+6.17 Summary 153
+7 PartialDifferentialEquations 157
+7.1 Introduction 158
+7.2 PuttingtheBlack–Scholesequationintohistoricalperspective 158
+7.3 ThemeaningofthetermsintheBlack–Scholesequation 159
+7.4 Boundaryandinitial/finalconditions 159
+7.5 Somesolutionmethods 160
+7.5.1 Transformationtoconstantcoefficientdiffusionequation 160
+7.5.2 Green’sfunctions 161
+7.5.3 Seriessolution 161
+7.6 Similarityreductions 163
+7.7 Otheranalyticaltechniques 163
+7.8 Numericalsolution 164
+7.9 Summary 164
+8 TheBlack–ScholesFormulæandthe‘Greeks’ 169
+8.1 Introduction 170
+8.2 Derivationoftheformulæforcalls,putsandsimpledigitals 170
+8.2.1 Formulaforacall 175
+8.2.2 Formulaforaput 179
+8.2.3 Formulaforabinarycall 181
+8.2.4 Formulaforabinaryput 182
+8.3 Delta 182
+8.4 Gamma 184
+8.5 Theta 187
+8.6 Speed 187
+8.7 Vega 188
+8.8 Rho 190
+8.9 Impliedvolatility 191
+8.10 Aclassificationofhedgingtypes 194
+8.10.1 Whyhedge? 194
+contents xi
+8.10.2 Thetwomainclassifications 194
+8.10.3 Deltahedging 195
+8.10.4 Gammahedging 195
+8.10.5 Vegahedging 195
+8.10.6 Statichedging 195
+8.10.7 Marginhedging 196
+8.10.8 Crash(Platinum)hedging 196
+8.11 Summary 196
+9 OverviewofVolatilityModeling 203
+9.1 Introduction 204
+9.2 Thedifferenttypesofvolatility 204
+9.2.1 Actualvolatility 204
+9.2.2 Historicalorrealizedvolatility 204
+9.2.3 Impliedvolatility 205
+9.2.4 Forwardvolatility 205
+9.3 Volatilityestimationbystatisticalmeans 205
+9.3.1 The simplest volatility estimate: constant volatility/moving
+window 205
+9.3.2 Incorporatingmeanreversion 206
+9.3.3 Exponentiallyweightedmovingaverage 206
+9.3.4 AsimpleGARCHmodel 207
+9.3.5 Expectedfuturevolatility 207
+9.3.6 Beyond close-close estimators: range-based estimation of
+volatility 209
+9.4 Maximumlikelihoodestimation 211
+9.4.1 Asimplemotivatingexample:taxinumbers 211
+9.4.2 Threehats 211
+9.4.3 Themathbehindthis:findthestandarddeviation 213
+9.4.4 Quants’salaries 214
+9.5 Skewsandsmiles 215
+9.5.1 Sensitivityofthestraddletoskewsandsmiles 216
+9.5.2 Sensitivityoftheriskreversaltoskewsandsmiles 216
+9.6 Differentapproachestomodelingvolatility 217
+9.6.1 Tocalibrateornot? 217
+9.6.2 Deterministicvolatilitysurfaces 218
+9.6.3 Stochasticvolatility 219
+9.6.4 Uncertainparameters 219
+9.6.5 Statichedging 220
+9.6.6 Stochasticvolatilityandmean-varianceanalysis 220
+9.6.7 Asymptoticanalysisofvolatility 220
+9.7 Thechoicesofvolatilitymodels 221
+9.8 Summary 221
+10 HowtoDeltaHedge 225
+10.1 Introduction 226
+10.2 Whatifimpliedandactualvolatilitiesaredifferent? 227
+xii contents
+10.3 Impliedversusactual,deltahedgingbutusingwhichvolatility? 228
+10.4 Case1:Hedgewithactualvolatility,σ 228
+10.5 Case2:Hedgewithimpliedvolatility,σ˜ 231
+10.5.1 Theexpectedprofitafterhedgingusingimpliedvolatility 232
+10.5.2 Thevarianceofprofitafterhedgingusingimpliedvolatility 233
+10.6 Hedgingwithdifferentvolatilities 235
+10.6.1 Actualvolatility=Impliedvolatility 236
+10.6.2 Actualvolatility>Impliedvolatility 236
+10.6.3 Actualvolatility<Impliedvolatility 238
+10.7 Prosandconsofhedgingwitheachvolatility 238
+10.7.1 Hedgingwithactualvolatility 238
+10.7.2 Hedgingwithimpliedvolatility 239
+10.7.3 Hedgingwithanothervolatility 239
+10.8 Portfolioswhenhedgingwithimpliedvolatility 239
+10.8.1 Expectation 240
+10.8.2 Variance 240
+10.8.3 Portfoliooptimizationpossibilities 241
+10.9 Howdoesimpliedvolatilitybehave? 241
+10.9.1 Stickystrike 242
+10.9.2 Stickydelta 242
+10.9.3 Time-periodicbehavior 243
+10.10 Summary 245
+11 AnIntroductiontoExoticandPath-dependentOptions 247
+11.1 Introduction 248
+11.2 Optionclassification 248
+11.3 Timedependence 249
+11.4 Cashflows 250
+11.5 Pathdependence 252
+11.5.1 Strongpathdependence 252
+11.5.2 Weakpathdependence 253
+11.6 Dimensionality 254
+11.7 Theorderofanoption 255
+11.8 Embeddeddecisions 256
+11.9 Classificationtables 258
+11.10 Examplesofexoticoptions 258
+11.10.1 Compoundsandchoosers 258
+11.10.2 Rangenotes 262
+11.10.3 Barrieroptions 264
+11.10.4 Asianoptions 265
+11.10.5 Lookbackoptions 265
+11.11 Summaryofmath/codingconsequences 266
+11.12 Summary 267
+12 Multi-assetOptions 271
+12.1 Introduction 272
+12.2 Multidimensionallognormalrandomwalks 272
+contents xiii
+12.3 Measuringcorrelations 274
+12.4 Optionsonmanyunderlyings 277
+12.5 The pricing formula for European non-path-dependent options on
+dividend-payingassets 278
+12.6 Exchangingoneassetforanother:asimilaritysolution 278
+12.7 Twoexamples 280
+12.8 Realitiesofpricingbasketoptions 282
+12.8.1 Easyproblems 283
+12.8.2 Mediumproblems 283
+12.8.3 Hardproblems 283
+12.9 Realitiesofhedgingbasketoptions 283
+12.10 Correlationversuscointegration 283
+12.11 Summary 284
+13 BarrierOptions 287
+13.1 Introduction 288
+13.2 Differenttypesofbarrieroptions 288
+13.3 Pricingmethodologies 289
+13.3.1 MonteCarlosimulation 289
+13.3.2 Partialdifferentialequations 290
+13.4 Pricingbarriersinthepartialdifferentialequationframework 290
+13.4.1 ‘Out’barriers 291
+13.4.2 ‘In’barriers 292
+13.5 Examples 293
+13.5.1 Somemoreexamples 294
+13.6 Otherfeaturesinbarrier-styleoptions 300
+13.6.1 Earlyexercise 300
+13.6.2 Repeatedhittingofthebarrier 301
+13.6.3 Resettingofbarrier 301
+13.6.4 Outsidebarrieroptions 301
+13.6.5 Softbarriers 301
+13.6.6 Parisianoptions 301
+13.7 Marketpractice:whatvolatilityshouldIuse? 302
+13.8 Hedgin

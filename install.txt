@@ -1,0 +1,439 @@
+================================================================================
+  OptionScope — INSTALL FROM GITHUB
+  Educational options strategy calculator & Robinhood trading companion
+  Repo: https://github.com/chapmancapital1-droid/opiontrading
+================================================================================
+
+NOT financial advice. Not affiliated with Robinhood.
+For education / personal analysis only. Never auto-trades.
+
+
+--------------------------------------------------------------------------------
+1. WHAT YOU NEED
+--------------------------------------------------------------------------------
+
+  Required
+  --------
+  • Git                    https://git-scm.com/downloads
+  • Node.js 20 LTS or newer  https://nodejs.org/
+      (includes npm)
+
+  Optional (only if you want live market data or cloud journal)
+  ------------------------------------------------------------
+  • pnpm 9+                npm install -g pnpm
+  • Python 3.11+           for PDF book ingest / local OTA brain scripts
+  • OpenBB local API       for free-ish chain/news path (see docs/OPENBB_SETUP.md)
+  • Polygon or Alpaca keys for licensed live data / paper account sizing
+  • Supabase project       for signed-in journal (local journal works without it)
+
+
+--------------------------------------------------------------------------------
+2. CLONE THE REPO
+--------------------------------------------------------------------------------
+
+  # HTTPS
+  git clone https://github.com/chapmancapital1-droid/opiontrading.git
+  cd opiontrading
+
+  # Or SSH (if your GitHub key is set up)
+  git clone git@github.com:chapmancapital1-droid/opiontrading.git
+  cd opiontrading
+
+  Default branch on GitHub is usually:  main
+
+  If you were told to use the companion / data-integration branch:
+    git checkout claude/openbb-data-news-integration
+    git pull
+
+
+--------------------------------------------------------------------------------
+3. INSTALL DEPENDENCIES
+--------------------------------------------------------------------------------
+
+  Either package manager works. Prefer the one that matches the lockfile you have.
+
+  Option A — npm (simple; package-lock.json is present)
+  ------------------------------------------------------
+    npm install
+
+  Option B — pnpm (faster; pnpm-lock.yaml is present)
+  ----------------------------------------------------
+    npm install -g pnpm
+    pnpm install
+
+
+--------------------------------------------------------------------------------
+4. ENVIRONMENT FILE (REQUIRED ONCE)
+--------------------------------------------------------------------------------
+
+  Copy the example env file to a local env file (never commit secrets):
+
+    Windows PowerShell:
+      Copy-Item .env.example .env.local
+
+    macOS / Linux:
+      cp .env.example .env.local
+
+  Demo mode works with NO API keys. Leave defaults:
+
+    MARKET_DATA_PROVIDER=demo
+    NEXT_PUBLIC_APP_NAME=OptionScope
+
+  Edit .env.local only when you add live data (see section 8).
+
+
+--------------------------------------------------------------------------------
+5. RUN THE APP (DEVELOPMENT)
+--------------------------------------------------------------------------------
+
+  npm run dev
+  # or:  pnpm dev
+
+  Open in a browser:
+    http://localhost:3000
+
+  First-run tour (demo, no keys):
+    1. Settings  → set seed equity ($500 / $1k / $5k) → Save
+    2. Command   → confirm equity strip
+    3. Trade Lab → enter a ticker (e.g. SPY) → Load live chain (demo chain if no keys)
+    4. Review brain / checklist → Copy checklist (manual entry only — no auto-trade)
+    5. Journal   → save plan → mark open/close after paper fills
+    6. Evolve    → http://localhost:3000/evolve  (synthetic self-improve lab; not live signals)
+
+
+--------------------------------------------------------------------------------
+6. VERIFY INSTALL (OPTIONAL BUT RECOMMENDED)
+--------------------------------------------------------------------------------
+
+  npm test
+  npm run typecheck
+
+  # or with pnpm:
+  pnpm test
+  pnpm typecheck
+
+  Production build check:
+    npm run build
+    npm start
+    # then open http://localhost:3000
+
+
+--------------------------------------------------------------------------------
+7. DATABASE / JOURNAL (OPTIONAL)
+--------------------------------------------------------------------------------
+
+  Local-first journal uses the browser (localStorage). No setup required.
+
+  Optional cloud journal + auth (Supabase):
+    1. Create a free Supabase project
+    2. Run the SQL in  db/schema.sql  in the Supabase SQL editor
+    3. Put these in .env.local:
+         NEXT_PUBLIC_SUPABASE_URL=...
+         NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+         SUPABASE_SERVICE_ROLE_KEY=...   (server only — never NEXT_PUBLIC_)
+
+
+--------------------------------------------------------------------------------
+8. LIVE MARKET DATA (OPTIONAL)
+--------------------------------------------------------------------------------
+
+  NEVER put market-data secrets in client code.
+  NEVER use the NEXT_PUBLIC_ prefix for API keys.
+
+  A) Keep demo (default)
+     MARKET_DATA_PROVIDER=demo
+
+  B) Polygon
+     MARKET_DATA_PROVIDER=polygon
+     MARKET_DATA_API_KEY=your_key_here
+     MARKET_DATA_BASE_URL=https://api.polygon.io
+
+  C) Alpaca (paper recommended; live optional)
+     Full step-by-step: see SECTION 9 below (get keys + wire .env.local)
+     Day-of live trading with real capital: see GO_LIVE_TRADING.txt
+
+  D) OpenBB (local REST)
+     See docs/OPENBB_SETUP.md
+     Example:
+       pip install openbb
+       uvicorn openbb_core.api.rest_api:app --port 8000
+     Then in .env.local:
+       MARKET_DATA_PROVIDER=openbb
+       OPENBB_BASE_URL=http://localhost:8000
+
+  Backup cascade (optional):
+    MARKET_DATA_BACKUP_PROVIDERS=alpaca,polygon
+    (demo is always the final fallback)
+
+
+--------------------------------------------------------------------------------
+9. ALPACA KEYS — PAPER FIRST, THEN “GO LIVE” (OPTIONAL)
+--------------------------------------------------------------------------------
+
+  OptionScope uses Alpaca for TWO server-side things only:
+    1) Market data (quotes / option chains) when MARKET_DATA_PROVIDER=alpaca
+    2) Paper/live account equity, cash, buying power, positions for BRAIN SIZING
+       via GET /api/alpaca/account
+
+  OptionScope NEVER places buy/sell orders. Keys are for READ + sizing.
+  You still enter every real trade manually at your broker (e.g. Robinhood).
+
+  “Go live” here means: use real market data + real (or paper) account equity
+  for sizing — NOT auto-trading.
+
+
+  9.1 Create a free Alpaca account
+  --------------------------------
+  1. Open:  https://alpaca.markets/
+  2. Click Sign Up / Get Started
+  3. Use a real email you control; verify the email if asked
+  4. Complete the account onboarding forms Alpaca requires
+  5. Log into the dashboard:
+       https://app.alpaca.markets/
+
+
+  9.2 Paper trading keys (RECOMMENDED for everyone first)
+  -------------------------------------------------------
+  Paper is free virtual money. Use this until your whole flow is solid.
+
+  1. In the Alpaca dashboard, switch to PAPER (not Live)
+       Look for Paper / Live toggle at the top of the dashboard
+  2. Open API Keys (or “Your API Keys” under account / paper trading)
+  3. Click Generate / Create new key (if you have none)
+  4. Copy BOTH values immediately:
+       • API Key ID      → goes in ALPACA_API_KEY_ID
+       • Secret Key      → goes in ALPACA_API_SECRET_KEY
+     The secret is often shown only once. Save it in a password manager.
+  5. Confirm paper trading base URL is used (default in OptionScope):
+       https://paper-api.alpaca.markets
+
+
+  9.3 Live trading keys (only when you truly need live account truth)
+  -------------------------------------------------------------------
+  Live keys talk to your real funded Alpaca brokerage account.
+
+  WARNING
+    • Live keys can access real money. Treat them like bank credentials.
+    • OptionScope still will NOT place orders — but leaked keys elsewhere could.
+    • Prefer paper until Command → Lab → checklist → journal is boringly reliable.
+    • Options data / approval levels depend on YOUR Alpaca account status.
+      Apply for options trading in Alpaca if chains fail for permissions reasons.
+
+  Steps:
+  1. Complete Alpaca identity / funding / agreements for a LIVE brokerage account
+  2. In the dashboard, switch to LIVE
+  3. Open API Keys for the LIVE environment
+  4. Generate a new key pair (do NOT reuse paper keys for live)
+  5. Copy API Key ID + Secret Key into .env.local (see 9.4)
+  6. Set trading base to the LIVE API host:
+       https://api.alpaca.markets
+     (NOT paper-api.alpaca.markets)
+
+
+  9.4 Wire keys into OptionScope (.env.local)
+  -------------------------------------------
+  Edit .env.local in the repo root (create from .env.example if missing).
+
+  --- PAPER (default / safe) ---
+
+    MARKET_DATA_PROVIDER=alpaca
+    ALPACA_API_KEY_ID=PK................................
+    ALPACA_API_SECRET_KEY=................................
+    ALPACA_DATA_BASE_URL=https://data.alpaca.markets
+    ALPACA_TRADING_BASE_URL=https://paper-api.alpaca.markets
+
+  --- LIVE account sizing + live trading API host ---
+
+    MARKET_DATA_PROVIDER=alpaca
+    ALPACA_API_KEY_ID=AK................................
+    ALPACA_API_SECRET_KEY=................................
+    ALPACA_DATA_BASE_URL=https://data.alpaca.markets
+    ALPACA_TRADING_BASE_URL=https://api.alpaca.markets
+
+  Notes:
+    • Key IDs often start with PK (paper) or AK (live) — not a hard rule; trust
+      the environment you generated them under.
+    • Data API host is usually the same for paper and live:
+        https://data.alpaca.markets
+    • Mode (paper vs live) is inferred from ALPACA_TRADING_BASE_URL:
+        contains "paper-api"  → paper
+        otherwise            → live
+    • NEVER prefix these with NEXT_PUBLIC_ (that would leak keys to the browser)
+    • NEVER commit .env.local to git
+    • After any change: stop the dev server and run  npm run dev  again
+
+
+  9.5 Optional: market data only, size from manual $500 seed
+  ----------------------------------------------------------
+  If you only want live chains but still size from Settings seed equity:
+
+    MARKET_DATA_PROVIDER=alpaca
+    ALPACA_API_KEY_ID=...
+    ALPACA_API_SECRET_KEY=...
+    ALPACA_DATA_BASE_URL=https://data.alpaca.markets
+    ALPACA_TRADING_BASE_URL=https://paper-api.alpaca.markets
+
+  Then in the app Settings keep equity source = manual seed ($500 / $1k / $5k)
+  instead of “Alpaca paper (live feed)” if that option is present.
+
+
+  9.6 Confirm it works
+  --------------------
+  1. npm run dev
+  2. Open http://localhost:3000
+  3. Settings — if equity source can use Alpaca paper, select it and refresh
+  4. Trade Lab — load a liquid ticker (SPY, QQQ). Chain should not say DEMO
+  5. Brain / Command — equity/cash should reflect Alpaca paper (or live) account
+  6. Optional API check (PowerShell):
+
+       Invoke-RestMethod http://localhost:3000/api/alpaca/account
+
+     Expect JSON with equity, cash, buyingPower, mode: "paper" or "live"
+     If configured=false or auth error → keys/base URL wrong; re-check 9.4
+
+
+  9.7 Alpaca security checklist
+  -----------------------------
+  • Use PAPER keys for daily practice
+  • Rotate keys if they ever appear in chat, screenshots, or git history
+  • In Alpaca dashboard, restrict IP allow-lists if offered
+  • Do not share .env.local
+  • If a key is exposed: delete it in Alpaca → generate a new pair → update .env.local
+  • Remember: OptionScope = analysis + checklist only; you execute orders yourself
+
+
+  9.8 Common Alpaca errors
+  ------------------------
+  HTTP 401 / 403  Auth failed
+    → Wrong key/secret, or paper key used against live base URL (or reverse)
+    → Regenerated key not updated in .env.local
+    → Dev server not restarted after edit
+
+  Empty / missing option chain
+    → Symbol has no options, or market closed + delayed data limits
+    → Account not approved for options data level you need
+    → Try SPY first; fall back to MARKET_DATA_PROVIDER=demo to prove UI works
+
+  Rate limited (429)
+    → Slow down reloads; wait and retry; avoid hammering chain endpoints
+
+  Account endpoint returns configured: false
+    → ALPACA_API_KEY_ID or ALPACA_API_SECRET_KEY empty/missing in .env.local
+
+  Official Alpaca docs (account + API keys):
+    https://docs.alpaca.markets/
+    https://app.alpaca.markets/
+
+
+--------------------------------------------------------------------------------
+10. OPTIONAL: BOOK PDF INGEST + LOCAL OTA BRAIN
+--------------------------------------------------------------------------------
+
+  PDF knowledge ingest (if you have a book library path configured in scripts):
+    npm run ingest
+    # = python scripts/ingest_option_pdfs.py && node scripts/compile_ingest_rules.mjs
+
+  Local portable trading-brain scripts (if present in the clone):
+    TRADING_BRAIN_LOCAL\README_RUN_ME.txt
+    python\ota\  (self-improve / SPY lab — separate from the Next.js app)
+
+  These are NOT required to open and use the OptionScope web UI.
+
+
+--------------------------------------------------------------------------------
+11. USEFUL COMMANDS (QUICK REFERENCE)
+--------------------------------------------------------------------------------
+
+  npm install          Install Node dependencies
+  npm run dev          Start dev server → http://localhost:3000
+  npm test             Unit tests (domain, brain, knowledge, …)
+  npm run typecheck    TypeScript check
+  npm run build        Production build
+  npm start            Serve production build
+  npm run lint         ESLint
+  npm run ingest       Re-ingest option PDFs + compile rules
+
+
+--------------------------------------------------------------------------------
+12. PROJECT LAYOUT (WHERE THINGS LIVE)
+--------------------------------------------------------------------------------
+
+  src/domain/      Pure options math (payoff, BS, binomial, Monte Carlo)
+  src/data/        Market data providers (demo / polygon / openbb / alpaca)
+  src/brain/       Strategy selector, sizing, explain
+  src/knowledge/   Book rules, empire policy, catalog
+  src/app/         Next.js pages + API routes
+  src/components/  UI panels
+  tests/           Vitest unit tests
+  db/schema.sql    Supabase schema
+  docs/            Architecture, empire doctrine, training, OpenBB setup
+  .env.example     Template for secrets (copy → .env.local)
+
+
+--------------------------------------------------------------------------------
+13. DOCTRINE / SAFETY (READ THIS)
+--------------------------------------------------------------------------------
+
+  • Manual checklist only — the app does NOT place broker orders.
+  • No Robinhood password fields. Import RH history via paste/CSV only.
+  • Alpaca keys are for market data + account sizing only — still no auto-trade.
+  • Prefer Alpaca PAPER until the daily ritual is reliable; live keys = real money.
+  • Model PoP / EV are estimates under stated assumptions, not guarantees.
+  • Personal seed path is designed around honest small capital ($500 ladder),
+    not a fake $25k demo identity for “you.”
+  • Educational tooling. You are responsible for every real order you enter.
+
+
+--------------------------------------------------------------------------------
+14. TROUBLESHOOTING
+--------------------------------------------------------------------------------
+
+  Port 3000 already in use
+    • Stop the other process, or run:  npx next dev -p 3001
+
+  npm error Missing script: "dev"
+    • You are not in the repo root. cd into the folder that contains package.json
+
+  Blank page / module errors after pull
+    • Delete node_modules and reinstall:
+        Windows:  Remove-Item -Recurse -Force node_modules; npm install
+        Unix:     rm -rf node_modules && npm install
+
+  Live chain shows DEMO / fails for a ticker
+    • Check MARKET_DATA_PROVIDER and keys in .env.local
+    • Restart npm run dev after any .env.local change
+    • Demo mode always works for UI practice
+    • For Alpaca-specific failures see SECTION 9.8
+
+  Alpaca auth / account sizing fails
+    • Re-read SECTION 9 (paper vs live base URL mismatch is the #1 cause)
+    • Test: Invoke-RestMethod http://localhost:3000/api/alpaca/account
+
+  Tests fail on a fresh clone
+    • Confirm Node 20+
+    • npm install then npm test
+    • If only one suite fails, open the test output — do not skip typecheck
+
+  gh / GitHub login
+    • Public clone needs no login for HTTPS
+    • Private fork: use a personal access token or SSH key
+
+
+--------------------------------------------------------------------------------
+15. SUPPORT PATHS INSIDE THE REPO
+--------------------------------------------------------------------------------
+
+  README.md                 Product overview
+  ROADMAP.md                Build phases
+  docs/OPENBB_SETUP.md      OpenBB live data
+  docs/methodology.md       Math / probability methodology (if present)
+  docs/nexus/               Sprint / companion status
+  GO_LIVE_TRADING.txt       Day-of live data + real-money ritual (this machine)
+  this file                 install.txt — one-stop install for GitHub users
+
+
+================================================================================
+  Done when: browser opens http://localhost:3000 and Command / Trade Lab load.
+  Live trading: follow GO_LIVE_TRADING.txt (data = Alpaca; orders = you / RH).
+  Long live the empire — capital first, product second for public release.
+================================================================================

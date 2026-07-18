@@ -1,0 +1,1713 @@
+{
+  "Core Foundations": {
+    "Option Greeks & Hedging": [
+      {
+        "snippet": "gy 149 Section 5: Option Analysis 54 Know the True Value Advantage 155 55 Option Analysis Can Be Easy 159 56 The Key to Options Analysis 163 57 Implied Volatility—An Option Analysis Shortcut 165 58 Keep Your Eyes on the Delta 169 59 Use Probability Analysis 171 60 The Secret Weapon of Option Analysis 173 61 A Tool for Your Arsenal 175 62 Searching for the Best Plays 177 63 Situational Analysis 179 64 Unraveling the Mysteries of Baysian Analy",
+        "source": "101 Option Trading Secrets  (2001)",
+        "page": 9,
+        "keyword": "delta"
+      },
+      {
+        "snippet": "CONTENTS 69 Beware of Alligator Spreads 201 70 Avoid Delta Neutral Strategies 203 71 Avoid Repair Strategies 205 72 How to Reduce the Cost of Option Buying 207 73 Rules of the Road 209 Section 7: Trading Tactics 74 Go Online! 213 75 The Hidden Cost of Trading 217 76 Act Like a",
+        "source": "101 Option Trading Secrets  (2001)",
+        "page": 10,
+        "keyword": "delta"
+      },
+      {
+        "snippet": "GEORGE FONTANILLS INCORPORATES OPTIONS TO LOWER RISK Trader George Fontanills first began utilizing options in order to go \"delta neutral\" on his futures positions, which would allow him to \"still sleep well at night.\" Since he began using options in conjunction with his futures trading, Fontanills believes he has found a way to accelerate his pro",
+        "source": "18 Trading Champions Share Their Keys To Top Trading Profits (1996)",
+        "page": 8,
+        "keyword": "delta"
+      },
+      {
+        "snippet": "n that fashion. However, he began to believe that he was missing a lot of the moves, which occurred overnight. At that point, Fontanills began to study options strategies. \"I learned how to use options and how to become delta neutral so I could hedge myself in both directions and still sleep well at night and that's when I really started to accelerate my profitability,\" he said. \"Delta, by definition, is the rate of change of a price of an o",
+        "source": "18 Trading Champions Share Their Keys To Top Trading Profits (1996)",
+        "page": 8,
+        "keyword": "delta"
+      },
+      {
+        "snippet": "ategies. \"I learned how to use options and how to become delta neutral so I could hedge myself in both directions and still sleep well at night and that's when I really started to accelerate my profitability,\" he said. \"Delta, by definition, is the rate of change of a price of an option to the rate of change to the price of the future,” Fontanills noted. \"It's how fast an option will change, relative to the speed of the futures.\" \"Delta neut",
+        "source": "18 Trading Champions Share Their Keys To Top Trading Profits (1996)",
+        "page": 8,
+        "keyword": "delta"
+      },
+      {
+        "snippet": "g of stock options including dividends 35 3.3 Pricing options in terms of the forward 36 3.4 Dividend risk for options 38 3.5 Synthetics 39 4 IMPLIED VOLATILITY 41 4.1 Example 44 4.2 Strategy and implied volatility 45 5 DELTA 47 5.1 Delta-hedging 52 5.2 The most dividend-sensitive options 57 5.3 Exercise-ready American calls on dividend paying stocks 57 6 THREE OTHER GREEKS 61 6.1 Gamma 62 6.2 Theta 65 6.3 Vega 69",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 11,
+        "keyword": "delta"
+      },
+      {
+        "snippet": "tions including dividends 35 3.3 Pricing options in terms of the forward 36 3.4 Dividend risk for options 38 3.5 Synthetics 39 4 IMPLIED VOLATILITY 41 4.1 Example 44 4.2 Strategy and implied volatility 45 5 DELTA 47 5.1 Delta-hedging 52 5.2 The most dividend-sensitive options 57 5.3 Exercise-ready American calls on dividend paying stocks 57 6 THREE OTHER GREEKS 61 6.1 Gamma 62 6.2 Theta 65 6.3 Vega 69",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 11,
+        "keyword": "delta"
+      },
+      {
+        "snippet": "4.1 Example 44 4.2 Strategy and implied volatility 45 5 DELTA 47 5.1 Delta-hedging 52 5.2 The most dividend-sensitive options 57 5.3 Exercise-ready American calls on dividend paying stocks 57 6 THREE OTHER GREEKS 61 6.1 Gamma 62 6.2 Theta 65 6.3 Vega 69",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 11,
+        "keyword": "gamma"
+      }
+    ],
+    "Black-Scholes Formula & Assumptions": [
+      {
+        "snippet": "CONTENTS Title Page Preface Chapter 1: A Look at Trading Mechanics Chapter 2: Python Programming Fundamentals for Finance Chapter 3: Comprehending the Black Scholes Model Chapter 4: A Comprehensive Analysis of the Greeks Chapter 5: Analysis of Market Data using Python Chapter 6: Implementing the Black Scholes Model in Python Chapter 7: Option Trading Strategies Chapter 8: Automatin",
+        "source": "Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024",
+        "page": 3,
+        "keyword": "black scholes"
+      },
+      {
+        "snippet": "Python Programming Fundamentals for Finance Chapter 3: Comprehending the Black Scholes Model Chapter 4: A Comprehensive Analysis of the Greeks Chapter 5: Analysis of Market Data using Python Chapter 6: Implementing the Black Scholes Model in Python Chapter 7: Option Trading Strategies Chapter 8: Automating Trading with Python Chapter 9: Advanced Concepts in Trading and Python Epilogue Additional Resources How to install python Python Libraries for",
+        "source": "Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024",
+        "page": 3,
+        "keyword": "black scholes"
+      },
+      {
+        "snippet": "ash Flow Analysis Scenario and Sensitivity Analysis Capital Budgeting Break-even Analysis Creating a Data Visualization Product in Finance Data Visualization Guide Algorithmic Trading Summary Guide Financial Mathematics Black-Scholes Model The Greeks Formulas Stochastic Calculus For Finance Brownian Motion (Wiener Process) Itô's Lemma Stochastic Differential Equations (SDEs) Geometric Brownian Motion (GBM) Martingales",
+        "source": "Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024",
+        "page": 4,
+        "keyword": "black-scholes"
+      },
+      {
+        "snippet": "the strategies and analyses that will ensue. In the following sections, we will delve into the complexities of call and put options, shed light on the crucial significance of options pricing, and introduce the esteemed Black Scholes Model—a mathematical guiding light that assists traders in navigating the uncertainties of the market. Our journey will be empirical, grounded in the powerful libraries of Python, and filled with examples that bring the",
+        "source": "Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024",
+        "page": 8,
+        "keyword": "black scholes"
+      },
+      {
+        "snippet": "insights about the future of the underlying asset. The price of an option reflects the collective sentiment and expectations of the market, distilled into a single value through advanced mathematical models. ```python # Black-Scholes Model for Option Pricing import math from scipy.stats import norm",
+        "source": "Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024",
+        "page": 11,
+        "keyword": "black-scholes"
+      },
+      {
+        "snippet": "eed on this journey, understanding that comprehending options pricing is not merely about learning a formula; it is about unlocking a vital skill that will guide us in the vast world of options trading. Demystifying the Black Scholes Model: The Essence of Options Valuation",
+        "source": "Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024",
+        "page": 13,
+        "keyword": "black scholes"
+      },
+      {
+        "snippet": "eometric Brownian motion, characterized by constant volatility and a normal distribution of returns. This stochastic process creates a random walk that supports the model's probabilistic approach to pricing. ```python # Black-Scholes Model for Determining the Price of European Call Options import numpy as np from scipy.stats import norm # S: current stock price # K: strike price of the option # T: time to expiration in years # r: risk-free interest",
+        "source": "Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024",
+        "page": 14,
+        "keyword": "black-scholes"
+      },
+      {
+        "snippet": "At the core of modern financial theory lies the Black Scholes Model, an exquisite framework that has transformed the approach to options pricing. Conceived by economists Fischer Black, Myron Scholes, and Robert Merton in the early 1970s, this model offers a theoretical estimate of",
+        "source": "Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024",
+        "page": 14,
+        "keyword": "black scholes"
+      }
+    ],
+    "Put-Call Parity": [
+      {
+        "snippet": "on for American puts and calls paying a continuous dividend. Like the RGW formula it involves solving equations iteratively so whilst it is much faster than the binomial model it is still much slower than Black-Scholes. Put-call parity doesn't hold for American options so you can't just derive the put price from the call price like you can with European options. Luckily American put prices, except for deeply in-the-money puts, are closer to European p",
+        "source": "Options Trading Primer By Marketwise Trading School (2002)",
+        "page": 23,
+        "keyword": "put-call parity"
+      },
+      {
+        "snippet": "solvethefollowingtwoequations: (cid:3)132Cˇ.1C0:1/D32,(cid:3)88Cˇ.1C0:1/D 0.Finally,weget(cid:3) D0:73, ˇ D (cid:3)58:18.Thismeansthatoneshouldbuy0:73sharesofstockandborrow 58:18USDatarisk-freerate. (e) The principle of put-call parity refers to the equivalence of the value of a Europeancall and putoption which have the same maturity dateT, the same delivery price K and the same underlying. Hence, there are combinations of optionswhichcancreatepositio",
+        "source": "Statistics of Financial Markets (2013)",
+        "page": 43,
+        "keyword": "put-call parity"
+      },
+      {
+        "snippet": "s on Futures (cid:9) 4 1.1.4 Margined Options on Futures (cid:9) 5 1.1.5 Currency Options (cid:9) 6 1.1.6 The Generalized Black-Scholes-Merton Option Pricing Formula (cid:9) 7 1.2 Parities and Symmetries (cid:9) 9 1.2.1 Put-Call Parity for European Options (cid:9) 9 1.2.2 At-the-Money Forward Value Symmetry (cid:9) 10 1.2.3 Put-Call Symmetry (cid:9) 10 1.2.4 Put-Call Supersymmetry (cid:9) 11 1.2.5 Black-Scholes-Merton on Variance Form (cid:9) 11 1.3 B",
+        "source": "The Complete Guide to Option Pricing Formulas (2007)",
+        "page": 8,
+        "keyword": "put-call parity"
+      }
+    ]
+  },
+  "Numerical Methods": {
+    "Binomial/Lattice Methods": [
+      {
+        "snippet": "G. Intrinsic and Premium Formulas 307 Introduction Call IntrinsicValue Put IntrinsicValue Call PremiumValue Put PremiumValue H. The Black-ScholesModel 309 Introduction The Binomial Model I. QuizAnswers 311 Glossary 319 Index 333",
+        "source": "Fundamentals of the Option Market (2001)",
+        "page": 15,
+        "keyword": "binomial"
+      },
+      {
+        "snippet": "esentvariousmethodsthathaveproventobeextremely accurateandefficientfornumericalintegration. The second part of this book covers option pricing formulas. In Chapter3 we cover lattice methods. These include the well-known binomial and trinomial trees, but also refinements such as the implied binomial and trinomial trees, the flexible binomial tree, the Leisen-Reimer tree, the Edgeworth binomial tree, and the adapted mesh method. Most of these met",
+        "source": "Option Pricing Models  (2007)",
+        "page": 12,
+        "keyword": "binomial"
+      },
+      {
+        "snippet": "umericalintegration. The second part of this book covers option pricing formulas. In Chapter3 we cover lattice methods. These include the well-known binomial and trinomial trees, but also refinements such as the implied binomial and trinomial trees, the flexible binomial tree, the Leisen-Reimer tree, the Edgeworth binomial tree, and the adapted mesh method. Most of these methods approximate the Black-Scholes model in discrete time. One advantag",
+        "source": "Option Pricing Models  (2007)",
+        "page": 12,
+        "keyword": "binomial"
+      },
+      {
+        "snippet": "s book covers option pricing formulas. In Chapter3 we cover lattice methods. These include the well-known binomial and trinomial trees, but also refinements such as the implied binomial and trinomial trees, the flexible binomial tree, the Leisen-Reimer tree, the Edgeworth binomial tree, and the adapted mesh method. Most of these methods approximate the Black-Scholes model in discrete time. One advantage they have over the Black-Scholes model, h",
+        "source": "Option Pricing Models  (2007)",
+        "page": 12,
+        "keyword": "binomial"
+      },
+      {
+        "snippet": "P1:JYS fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA viii CONTENTS TheBinomialModel 48 TheBlack-Scholes-Merton(BSM)Model 55 Summary 61 CHAPTER 5 The Solution of the Black-Scholes-Merton (BSM) Equation 63 Delta 67 Gamma 72 Theta 76 Vega 80 Summary 88 CHAPTER 6 Option Strategies 89 ForecastingandStr",
+        "source": "Option Trading - Pricing and Volatility Strategies (2010)",
+        "page": 10,
+        "keyword": "binomial"
+      },
+      {
+        "snippet": "dgoodtraderswillbecomefamiliarenoughwiththeprincipleof no arbitrage to be able to apply it to the analysis of unfamiliar structured products. In Chapter 4 we work through the two most important option pric- ingmodels:thebinomialtreeandtheBlack-Scholes-Merton(BSM)model. These are not the most important models because they are the most use- ful.Neitheroneisactuallyusedinpracticemuchanymore.However,they provide the conceptual basis for most other",
+        "source": "Option Trading - Pricing and Volatility Strategies (2010)",
+        "page": 18,
+        "keyword": "binomial"
+      },
+      {
+        "snippet": "For more information about this title, click here. C O N T E N T S Foreword vii Preface On Taking Risk and Blowing Up xi PART ONE THE BASICS Chapter1 What a Derivative Is and What It Isn’t 3 Chapter2 Binomials and Coin Tosses 31 Chapter3 Pascal’s Triangle and the Binomial Theorem 47 Chapter4 Distributions Are the Key—What Are Distributions? 59 Chapter5 Probabilities, Odds, and Payoffs 73 Chapter6 Writing Our First Option 85",
+        "source": "Options And Options Trading - A Simplified Course (2004)",
+        "page": 4,
+        "keyword": "binomial"
+      },
+      {
+        "snippet": "here. C O N T E N T S Foreword vii Preface On Taking Risk and Blowing Up xi PART ONE THE BASICS Chapter1 What a Derivative Is and What It Isn’t 3 Chapter2 Binomials and Coin Tosses 31 Chapter3 Pascal’s Triangle and the Binomial Theorem 47 Chapter4 Distributions Are the Key—What Are Distributions? 59 Chapter5 Probabilities, Odds, and Payoffs 73 Chapter6 Writing Our First Option 85 Chapter7 Sectors, Strike Prices, and Summation Signs 97 Chapter8",
+        "source": "Options And Options Trading - A Simplified Course (2004)",
+        "page": 4,
+        "keyword": "binomial"
+      }
+    ],
+    "Monte Carlo Simulation": [
+      {
+        "snippet": "Contents xiii 21.5 Time-dependent parameters..................................................................468 21.6 Monte Carlo simulation.......................................................................469 21.7 Variance reduction procedures..............................................................475 21.8 Finite difference methods....",
+        "source": "Options and Other Derivatives (2015)",
+        "page": 14,
+        "keyword": "monte carlo"
+      },
+      {
+        "snippet": "...501 22.4 The linear model................................................................................504 22.5 The quadratic model...........................................................................509 22.6 Monte Carlo simulation.......................................................................511 22.7 Comparison of approaches...................................................................512 22.8 Stress testing and back testi",
+        "source": "Options and Other Derivatives (2015)",
+        "page": 14,
+        "keyword": "monte carlo"
+      },
+      {
+        "snippet": "... 636 27.6 Barrier options.................................................................................. 640 27.7 Options on two correlated assets.......................................................... 643 27.8 Monte Carlo simulation and American options...................................... 646 Summary.......................................................................................... 650 Further reading............................",
+        "source": "Options and Other Derivatives (2015)",
+        "page": 15,
+        "keyword": "monte carlo"
+      },
+      {
+        "snippet": "oney from Foreign Currency Options.............................................435 20.2 Crashophobia...........................................................................................438 21.1 Calculating Pi with Monte Carlo Simulation.................................................469 21.2 Checking Black–Scholes–Merton in Excel....................................................472 22.1 How Bank Regulators Use VaR.........................",
+        "source": "Options and Other Derivatives (2015)",
+        "page": 18,
+        "keyword": "monte carlo"
+      },
+      {
+        "snippet": "shaveaccesstothe code forthe functions. DerivaGem 3.00 includes many new features. European options can be valued using the CEV, Merton mixed-jump diffusion, and variance gamma models, which are discussed in Chapter 27. Monte Carlo experiments can be run. LIBOR and OIS zero curvescanbecalculatedfrommarketdata.Swapsandbondscanbevalued.Whenswaps, caps, andswaptions are valued, either OIS or LIBORdiscounting can be used. Thesoftwareisdescribedmoreful",
+        "source": "Options and Other Derivatives (2015)",
+        "page": 21,
+        "keyword": "monte carlo"
+      },
+      {
+        "snippet": "at underlying asset. Whilst the fact that a prediction of the future price of the underlying asset is not necessary to price an option may appear to be counter intuitive it can be easily demonstrated to be correct using Monte Carlo simulation to derive the price of a call using dynamic delta hedging. Irrespective of the assumptions regarding stock price growth built into the Monte Carlo simulation you always end up deriving an option price from th",
+        "source": "Options Trading Primer By Marketwise Trading School (2002)",
+        "page": 21,
+        "keyword": "monte carlo"
+      },
+      {
+        "snippet": "r intuitive it can be easily demonstrated to be correct using Monte Carlo simulation to derive the price of a call using dynamic delta hedging. Irrespective of the assumptions regarding stock price growth built into the Monte Carlo simulation you always end up deriving an option price from the simulation which is very close to the Black-Scholes price. Putting it another way, whether the stock price rises or falls after, e.g., writing a call, it wi",
+        "source": "Options Trading Primer By Marketwise Trading School (2002)",
+        "page": 21,
+        "keyword": "monte carlo"
+      },
+      {
+        "snippet": "ds (cid:9) 334 7.7.1 (cid:9) Explicit Finite Difference (cid:9) 335 7.7.2 (cid:9) Implicit Finite Difference (cid:9) 338 7.7.3 (cid:9) Finite Difference in in(S) (cid:9) 340 7.7.4 The Crank-Nicolson Method (cid:9) 342 8 Monte Carlo Simulation (cid:9) 345 8.1 Standard Monte Carlo Simulation (cid:9) 345 8.1.1 (cid:9) Greeks in Monte Carlo (cid:9) 347 8.1.2 (cid:9) Monte Carlo for Callable Options (cid:9) 349 8.1.3 (cid:9) Two Assets (cid:9) 350 8.1.",
+        "source": "The Complete Guide to Option Pricing Formulas (2007)",
+        "page": 14,
+        "keyword": "monte carlo"
+      }
+    ]
+  },
+  "Trading Strategies": {
+    "Straddle & Strangle": [
+      {
+        "snippet": "69 23 Beat the Clock 71 24 Avoid an Option’s Last Month 73 25 The Secret of Scaling 75 26 Beware of Delusions of Grandeur 77 27 Don’t Plunge! 79 28 Analyze Your Option Position 83 29 The Secret of Profit Boxes 85 30 The Straddle Secret 87 31 Be Patient 91 32 The Option Buyer’s Secret Weapon— Shock and Awe 93 33 The Stock Advantage 97 34 The Put Advantage 99 35 Diversify 101 36 The Quick and the Dead 105 37 The Secret of Portfolio Insurance 107",
+        "source": "101 Option Trading Secrets  (2001)",
+        "page": 8,
+        "keyword": "straddle"
+      },
+      {
+        "snippet": "r mathematics is a regular feature of security pricing, risk management, and business strategy. Pro- fessor Andrew Lo is one of the key people responsible. He is a first-rate scholar who, like others in this volume, can straddle academe and business. His research output is huge, often in collaboration with other leading lights who appear in the Journal of Finance, the Journal of Financial Economics, the Journal of Economet- rics, the Review of",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 47,
+        "keyword": "straddle"
+      },
+      {
+        "snippet": "ONTENTS 9 SKEW 101 9.1 What is skew? 102 9.2 Reasons for skew 103 9.3 Reasons for higher volatilities in falling markets 104 10 SEVERAL OPTION STRATEGIES 105 10.1 Call spread 106 10.2 Put spread 107 10.3 Collar 109 10.4 Straddle 111 10.5 Strangle 112 11 DIFFERENT OPTION STRATEGIES AND WHY INVESTORS EXECUTE THEM 117 11.1 The portfolio manager’s approach to options 118 11.2 Options and corporates with cross-holdings 119 11.3 Options in the event",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 13,
+        "keyword": "straddle"
+      },
+      {
+        "snippet": "9.1 What is skew? 102 9.2 Reasons for skew 103 9.3 Reasons for higher volatilities in falling markets 104 10 SEVERAL OPTION STRATEGIES 105 10.1 Call spread 106 10.2 Put spread 107 10.3 Collar 109 10.4 Straddle 111 10.5 Strangle 112 11 DIFFERENT OPTION STRATEGIES AND WHY INVESTORS EXECUTE THEM 117 11.1 The portfolio manager’s approach to options 118 11.2 Options and corporates with cross-holdings 119 11.3 Options in the event of a takeover 120",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 13,
+        "keyword": "strangle"
+      },
+      {
+        "snippet": "ith clients to ensure that 1. Open an 2. Find Your Level of 3. Pick Your Account Options Trading Objective 1 2 3 4 5 Writing Buying Debit Credit Writing covered calls, spreads, spreads naked options puts, cash- options, straddles secured straddles puts options trading fits into their individual In both visible and invisible ways, The financial plans. They also advise clients Options Industry Council (OIC) and about potential objectives and stra",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 17,
+        "keyword": "straddle"
+      },
+      {
+        "snippet": "ure that 1. Open an 2. Find Your Level of 3. Pick Your Account Options Trading Objective 1 2 3 4 5 Writing Buying Debit Credit Writing covered calls, spreads, spreads naked options puts, cash- options, straddles secured straddles puts options trading fits into their individual In both visible and invisible ways, The financial plans. They also advise clients Options Industry Council (OIC) and about potential objectives and strategies, The Option",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 17,
+        "keyword": "straddle"
+      },
+      {
+        "snippet": "a stock position, you can open an the strike price of the short option so that options position to protect against losses you realize the maximum in another options position. value of the spread. MORE TYPES OF SPREADS A straddle is the A calendar spread is the purchase of one purchase or writing of both option and writing of another a call and a put on an under- with a different expiration lying instrument with the same strike price and the dat",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 33,
+        "keyword": "straddle"
+      },
+      {
+        "snippet": "so you should for your strategy, as well as the circum- be sure you want to take on the challenge. stances under which you might experience them. Having realistic expectations is essential to smart options investing. A strangle is the purchase or writing of a call and a put 44 Finally, you’ll have to make the with the same expiration date transactions through a margin and different—but both account with your brokerage firm. The out-of-the-mone",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 34,
+        "keyword": "strangle"
+      }
+    ],
+    "Covered Call / Wheel": [
+      {
+        "snippet": "CONTENTS 46 Get Out of the Hot Seat! 133 47 Expiration Writing 135 48 Defense, Defense, Defense 137 49 When to Use Covered Call Writing 139 50 The Hidden Risk of Covered Call Writing 143 51 Covered Call Writing Strategies 145 52 Use Naked Put Writing to Buy Stock 147 53 Naked Put Writing Can Create a Win-Win Strategy 149 Section 5: Option Analys",
+        "source": "101 Option Trading Secrets  (2001)",
+        "page": 9,
+        "keyword": "covered call"
+      },
+      {
+        "snippet": "ay. But as an options portfolios. While options can act as writer, you take on a much higher level safety nets, they’re not risk free. Since of risk. For example, if you write an transactions usually open and close in uncovered call, you face unlimited the short term, gains can be realized potential loss, since there is no cap on very quickly. This means that losses can how high a stock price can rise. mount quickly as well. It’s important However,",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 15,
+        "keyword": "covered call"
+      },
+      {
+        "snippet": "ou determine your goals. help you reach that goal. For example, if you want more income from the stocks KnoW WhaT you WanT… you own, you might investigate strategies Before you begin trading options it’s such as writing covered calls. Or, if you’re critical to have a clear idea of what you trying to protect your stocks from a hope to accomplish. Options can play a market downturn, you might think variety of roles in different portfolios, about purc",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 17,
+        "keyword": "covered call"
+      },
+      {
+        "snippet": "irms go further than another—it depends on your goals. by working with clients to ensure that 1. Open an 2. Find Your Level of 3. Pick Your Account Options Trading Objective 1 2 3 4 5 Writing Buying Debit Credit Writing covered calls, spreads, spreads naked options puts, cash- options, straddles secured straddles puts options trading fits into their individual In both visible and invisible ways, The financial plans. They also advise clients Options",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 17,
+        "keyword": "covered call"
+      },
+      {
+        "snippet": "WaTCh The margins Even if you have a general investment Some brokerage firms require that account, there are additional steps to certain options transactions, such as take before you can begin trading options. writing uncovered calls, take place in a First, you’ll have to fill out an options margin account. That means if you write agreement form, which is a document a call, you’ll have to keep a balance in your brokerage firms use to measure your a",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 18,
+        "keyword": "covered call"
+      },
+      {
+        "snippet": "our objective. call Profit from the Neutral to Unlimited for Limited to writing premium received, bearish, naked call the premium SIMPLE AND or lower net cost though writing, limited received NOT-SO-SIMPLE of purchasing covered call for covered Some options strategies, such a stock writing may call writing as writing covered calls, are be bullish relatively simple to under- Put Profit from Neutral to Limited to the Substantial, as stand and execute",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 21,
+        "keyword": "covered call"
+      },
+      {
+        "snippet": "earish, naked call the premium SIMPLE AND or lower net cost though writing, limited received NOT-SO-SIMPLE of purchasing covered call for covered Some options strategies, such a stock writing may call writing as writing covered calls, are be bullish relatively simple to under- Put Profit from Neutral to Limited to the Substantial, as stand and execute. There are buYing decrease in price bearish premium paid the stock price more complicated strategi",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 21,
+        "keyword": "covered call"
+      },
+      {
+        "snippet": "ns is the potential they offer for that you designate an exit strategy or cut- leverage. By investing a small amount, you off point ahead of time, and hold firm. For can earn a significant example, if you plan to sell a covered call, percentage return. It’s very important, how- ? ever, to remember that leverage has a potential downside too: A small decline in value can mean a large percentage loss. Investors who aren’t aware of the risks of leverag",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 22,
+        "keyword": "covered call"
+      }
+    ],
+    "Vertical Spreads": [
+      {
+        "snippet": "e 5 P’s 263 94 The Magic Pyramid 267 Section 10: Power Plays 95 “Thar Is Gold in Them Thar HIlls” 271 96 Rules of the Road for Option Buying 273 97 Aggressive Writing with Limited Risk 275 98 Rules of the Road for Index Credit Spreads 279 99 The Ratio Hedge 281 100 The Diagonal Spread 283 101 The Ultimate Power Play: The Secret Surrogate 287 Conclusion 291 Section 11: Tutorial The Listed Option 295 The Listed Call and Put 296 Parts of the Whole, the",
+        "source": "101 Option Trading Secrets  (2001)",
+        "page": 11,
+        "keyword": "credit spread"
+      },
+      {
+        "snippet": "CONTENTS Liquidity 302 Option Writers 303 Two Types of Option Writers 304 The How-to to Option Writing 306 Exercise Defined 307 Spread Designer 307 The Debit Spread 307 The Credit Spread 308 Index 311 xii",
+        "source": "101 Option Trading Secrets  (2001)",
+        "page": 12,
+        "keyword": "credit spread"
+      },
+      {
+        "snippet": "CONTENTS Liquidity 302 Option Writers 303 Two Types of Option Writers 304 The How-to to Option Writing 306 Exercise Defined 307 Spread Designer 307 The Debit Spread 307 The Credit Spread 308 Index 311 xii",
+        "source": "101 Option Trading Secrets  (2001)",
+        "page": 12,
+        "keyword": "debit spread"
+      },
+      {
+        "snippet": "he overall If, like Investor A, you receive more strategy, and most options money for the option you write than spreads stand on two legs— you pay for the option you buy, you’ve though there are some strategies opened a credit spread. The difference with three or more legs. between the two premiums is a credit you receive, and it will be deposited in WHAT ARE THE BENEFITS? your brokerage account when you open Many options investors use spreads the p",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 33,
+        "keyword": "credit spread"
+      },
+      {
+        "snippet": "redit you receive, and it will be deposited in WHAT ARE THE BENEFITS? your brokerage account when you open Many options investors use spreads the position. In most cases, the goal of because they offer a double hedge, a credit spread is to have both options which means that both profit and loss expire worthless, retaining your credit are limited. Investors who are interested as profit from the transaction. in more aggressive options strategies that",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 33,
+        "keyword": "credit spread"
+      },
+      {
+        "snippet": "n more aggressive options strategies that If you pay more for your long option might expose them to significant potential than you receive for your short option, losses can hedge those risks by making you’re taking on a debit spread. You’ll them one leg of a spread. The trade-off is have to pay your brokerage firm the that the potential profit is limited as well. difference between the two premiums It might help to think of spreads as a when you op",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 33,
+        "keyword": "debit spread"
+      },
+      {
+        "snippet": "ucing his maximum potential loss to $1,280. W 40 c r a i l t l e I b f e t l h o e w s $ to 4 c 0 k a p t r i e c x e p f i a r l a l t s i on: Investor B’s option expires out-of-the-money, and he keeps his entire $720. Credit spread: premium you receive > premium you pay EXECUTING A STRATEGY Debit spread: The first step in executing a premium you receive < premium you pay 11 spread is choosing an underlying security on which to purchase and write A",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 34,
+        "keyword": "credit spread"
+      },
+      {
+        "snippet": "iate for all that you think will be profitable. That investors. Your brokerage firm may have means calculating how far you think a its own approval levels for debit spreads stock will move in a particular direction, and credit spreads, to ensure that you’re as well as how long it will take to do so. financially qualified and have adequate investing experience. Additionally, You should be sure to calculate the 33 managing spreads as expiration nears",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 34,
+        "keyword": "credit spread"
+      }
+    ],
+    "Adjustments & Rolling": [
+      {
+        "snippet": "LLATORS .....................6 TOM DEMARK RELIES 100% ON MARKET TIMING ......................................................7 GEORGE FONTANILLS INCORPORATES OPTIONS TO A LOWER RISK ...…………..8 LEE GETTESS FOCUSES ON CONTROLLING RISK .........................................................9 CYNTHIA KASE RELIES ON PROPRIETARY TECHNICAL INDICATORS ................. 10 GEORGE LANE STILL TRADING OFF STOCHASTICS AT AGE 75 ..........................",
+        "source": "18 Trading Champions Share Their Keys To Top Trading Profits (1996)",
+        "page": 2,
+        "keyword": "rolling"
+      },
+      {
+        "snippet": "LEE GETTESS FOCUSES ON CONTROLLING RISK Trader Lee Gettess focuses on risk control as a major factor in determining his success in the commodity markets. However, it wasn't always that way. Gettess received his introduction to the commodity futures marke",
+        "source": "18 Trading Champions Share Their Keys To Top Trading Profits (1996)",
+        "page": 9,
+        "keyword": "rolling"
+      },
+      {
+        "snippet": "and Scholes obviously: The danger is always in the application. But what happened was that one simple equation—and mathematically, the model is simple—seemed to offer the possibility of quickly “understanding” and con- trolling derivatives risk. This encouraged thousands of banks to employ bright mathematicians, who had little knowledge of the financial markets but nonetheless started furiously programming their spreadsheets on which billions",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 42,
+        "keyword": "rolling"
+      },
+      {
+        "snippet": "d fund-rating com- pany, has screened 4,800 funds since 1982 to see if past winners repeat their success in the future. He finds that the probability of that comes down to “al- most pure random chance:” using three-year rolling average performance as a measure, it turns out that of funds that beat the average six years running, only slightly more than half did so the next year. Guru Response Bill Miller comments: Is active management just a lo",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 60,
+        "keyword": "rolling"
+      },
+      {
+        "snippet": "................214 Mistake #4: Trading the Wrong Market.................................................215 Mistake #5: Lack of a Trading Strategy.................................................216 Mistake #6: Not Controlling Your Emotions..........................................217 Mistake #7: Overtrading........................................................................218 THE TRADER’S PSYCHE..........................................",
+        "source": "A Complete Guide to Day Trading (2008)",
+        "page": 5,
+        "keyword": "rolling"
+      },
+      {
+        "snippet": "ou’ll learn in the third part of this book, there’s more to trading than just having a strategy. You might have heard that a trader’s two biggest enemies are fear and greed. This is very often the case. That’s why con- trolling your emotions is extremely important to your trading. Now, imagine this trader’s situation for me. He MUST be profitable every single week for the next four weeks. Do you think he will be cool and relaxed when he enters",
+        "source": "A Complete Guide to Day Trading (2008)",
+        "page": 54,
+        "keyword": "rolling"
+      },
+      {
+        "snippet": "tents Preface vii Acknowledgments ix 1. Timing Is Everything 1 2. Charting the Trend 18 3. Breakout Trends 36 4. Calculating the Trend 51 5. The Trading Game 78 6. Channels and Bands 91 7. Event-Driven Trends 107 8. Controlling the Risk of a Trade 118 9. One-Day Chart Patterns and Reversals 130 10. Continuation Patterns 145 11. Top and Bottom Formations 153 12. Retracements, Reversals, Fibonacci Numbers, and Gann 167 13. Volume, Breadth, and O",
+        "source": "A Short Course in Technical Trading (2003)",
+        "page": 6,
+        "keyword": "rolling"
+      },
+      {
+        "snippet": "’ u t a fi t i n l n r i t o n a l l d h o t s i o n k t i o n e o o t c . e n n w s u b t l e a 2 i n r 1 20 AN INVeStOR’S GUIDe tO tRADING OptIONS • Puts and Calls covers everything from calls and puts to collars and rolling up, over, or out. It takes the mystery out of options contracts, explains the language of options trading, and lays out some popular options • Equity Options strategies that may suit various portfolios and market foreca",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 1,
+        "keyword": "rolling"
+      }
+    ],
+    "Cash-Secured Put / Wheel": [
+      {
+        "snippet": "on my first trade,\" Fontanills admitted. \"Learn how to use all the methods that are out there to trade ... learn how to use options, because every successful trader I know, knows how to use all instruments. Why reinvent the wheel? Follow the (methods) of people who have been successful,\" he said. He does note, however, the importance of \"whatever methodology you use, it has to fit your personality.\" Finally, of course, \"learn how to limit your r",
+        "source": "18 Trading Champions Share Their Keys To Top Trading Profits (1996)",
+        "page": 8,
+        "keyword": "the wheel"
+      },
+      {
+        "snippet": "The Wheel of Success loss of thousands of dollars. Atrader can ruin his entire day with an inadvertent trade entry error. There are three spokes that make up, what I call the “Wheel of Success” as it relates to trading. The first",
+        "source": "25 Rules Of Day Trading (2003)",
+        "page": 3,
+        "keyword": "the wheel"
+      },
+      {
+        "snippet": "mplifying the process of coding your trading bots and analyzing financial data. Python libraries, essentially, are collections of modules that house pre-written code we can reuse. They allow traders to avoid reinventing the wheel, thereby saving significant time and potential errors. In this chapter, we will investigate the most valuable Python libraries for algorithmic trading: NumPy, pandas, Matplotlib, Scikit-Learn and Zipline. **NumPy** In f",
+        "source": "Algorithmic Essentials_ Trading with Python_ Comprehenive Guide for 2024 by Johann Strauss",
+        "page": 35,
+        "keyword": "the wheel"
+      },
+      {
+        "snippet": "ption is now in-the-money, however, its premium Write Put to Own Stock may cost you more than you collected when you sold the put. Buy back the put for $300 with a loss of $100, or purchase the stock. CASH- SECURED PUTS Cash-secured puts may help protect against the risk you face in writing put options. At the time you write a put option contract, you place the cash needed to fulfill your obligation to buy in reserve in your broker- age account or in a",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 32,
+        "keyword": "cash-secured put"
+      },
+      {
+        "snippet": "aring to change. Using the analogy of a steam locomotive as a trend, most trends do not reverse on a dime. If a train has to reverse direction, there are logical indi- cations. First may be a whistle, then the rhythm of the wheels can be heard to slow down. Steam may shoot out the sides as the brakes are applied. The wheels start squealing on the rails. All these signs give you the belief that the train is coming to a stop. The Candlestick signa",
+        "source": "Profitable Candlestick Trading  (2002)",
+        "page": 31,
+        "keyword": "the wheel"
+      },
+      {
+        "snippet": "ney management rules. We’ll continue our journey of discovery by going step-by-step through the exact chart settings that I use – and of course explain how and why I use them. There is no need to waste time re-inventing the wheel if you can benefit directly from my years of experience.",
+        "source": "Step by Step Trading - Alexander Elder (2015)",
+        "page": 6,
+        "keyword": "the wheel"
+      },
+      {
+        "snippet": "Tapping Into the Market’s Mood.................................................................67 Chapter 6: Targeting Sectors with Technical Analysis................................................85 Chapter 7: Kicking the Wheels of a New Strategy......................................................111 Chapter 8: Mapping Out Your Plan of Attack..............................................................127 Part III: What Every Trader Needs t",
+        "source": "Trading Options For Dummies (2008)",
+        "page": 10,
+        "keyword": "the wheel"
+      },
+      {
+        "snippet": "..................102 Price retracements and extensions.................................................105 Projections and probabilities............................................................107 Chapter 7: Kicking the Wheels of a New Strategy . . . . . . . . . . . . . . .111 Monitoring Option Greek Changes............................................................111 Tracking premium measures...............................................",
+        "source": "Trading Options For Dummies (2008)",
+        "page": 14,
+        "keyword": "the wheel"
+      }
+    ],
+    "Protective Strategies": [
+      {
+        "snippet": "x CONTENTS 9 SKEW 101 9.1 What is skew? 102 9.2 Reasons for skew 103 9.3 Reasons for higher volatilities in falling markets 104 10 SEVERAL OPTION STRATEGIES 105 10.1 Call spread 106 10.2 Put spread 107 10.3 Collar 109 10.4 Straddle 111 10.5 Strangle 112 11 DIFFERENT OPTION STRATEGIES AND WHY INVESTORS EXECUTE THEM 117 11.1 The portfolio manager’s approach to options 118 11.2 Options and corporates with cross-holdings 119 11.3 Opt",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 13,
+        "keyword": "collar"
+      },
+      {
+        "snippet": "s t a d a e ’ u t a fi t i n l n r i t o n a l l d h o t s i o n k t i o n e o o t c . e n n w s u b t l e a 2 i n r 1 20 AN INVeStOR’S GUIDe tO tRADING OptIONS • Puts and Calls covers everything from calls and puts to collars and rolling up, over, or out. It takes the mystery out of options contracts, explains the language of options trading, and lays out some popular options • Equity Options strategies that may suit various portfolios and",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 1,
+        "keyword": "collar"
+      },
+      {
+        "snippet": "es Are 17 How Do You Get Started? Options Offered? 19 Key Terms and Definitions InvESTIng STRATEgIES 21 Introduction to 33 Spread Strategies Options Strategies 35 Understanding Spreads 23 Selecting the Right Security 37 Collar Transactions 25 Call Buying 39 Exit Strategies 27 Call Writing 41 Rolling Up, Over, and Out 29 Put Buying 43 Index Options 31 Put Writing 45 Tax Considerations RESEARCh AnD InFORMATIOn 47 Trading Options 53 Reading Opti",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 4,
+        "keyword": "collar"
+      },
+      {
+        "snippet": "to the Substantial, as stand and execute. There are buYing decrease in price bearish premium paid the stock price more complicated strategies, of the underlying approaches zero however, such as spreads security, or and collars, that require protect against two opening transactions. losses on stock These strategies are often already held used to further limit the risk associated with options, but Put Profit from Neutral to Substantial, as Lim",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 21,
+        "keyword": "collar"
+      },
+      {
+        "snippet": "rategies, difference in bearish, you’ll prepare yourself for values of the depending on advanced options trading. options written the particular In general, the more compli- and purchased spread cated options strategies collars Protect unrealized Neutral or Limited Limited are appropriate only for profits bullish experienced investors. 21 ©2013 by Lightbulb Press, Inc. All Rights Reserved.",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 21,
+        "keyword": "collar"
+      },
+      {
+        "snippet": "be confident in values of the depending on your reasons for thinking that a particular options written the particular stock will move in a certain direction and purchased spread before a certain date. You should also be collars Protect unrealized Neutral or Limited Limited alert to any pending corporate actions profits bullish such as splits and mergers. 22 ©2013 by Lightbulb Press, Inc. All Rights Reserved.",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 22,
+        "keyword": "collar"
+      },
+      {
+        "snippet": "st of the premium, you can lock in a sell- you purchase a put on ing price, protecting yourself against any an equity that you’ve held for some time, drop in asset value below the strike price the strategy is known as a protective put. until the option expires. If you exercise Both of these strategies your option, the put writer must purchase combine the benefits your shares at the strike price, regardless of stock owner- of the stock’s current marke",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 29,
+        "keyword": "protective put"
+      },
+      {
+        "snippet": "lue in case the potential loss is predetermined—and stock price drops, minimizing the risks usually smaller—which makes buying associated with stock ownership. In puts more appealing than another bearish the same way, a protective put locks trading strategy, selling stock short. in unrealized gains on stocks you’ve held, in case they begin to lose value. OR LONG A PUT SHORT A STOCK If you sell stock short, you borrow shares on margin from your broker",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 29,
+        "keyword": "protective put"
+      }
+    ],
+    "Iron Condor & Butterflies": [
+      {
+        "snippet": "can be realized in various market conditions. Directional strategies, such as the Long Call or Long Put, allow traders to leverage their market outlook while keeping risk in check. Non- directional strategies, like the iron condor, aim to profit from limited price movement in the underlying asset. These strategies can provide returns even in a stagnant market, given the asset's price remains within a specific range. Beyond individual tactical haz",
+        "source": "Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024",
+        "page": 22,
+        "keyword": "iron condor"
+      },
+      {
+        "snippet": "ead) Ratio Bull Spread (Long) Ratio Bull Spread (Short) Ratio Bear Spread (Long) Ratio Bear Spread (Short) LongStraddle Short Straddle Long Strangle Short Strangle LongButterfly Short Butterfly Long Iron Butterfly Short Iron Butterfly Long Condor Short Condor Risk CollarlFence (Risk Conversion) Risk CollarlFence (Risk Reversal) c. Indices 295 Sector Indices Broad-Based Indices Foreign Market Indices D. Expiration Cycles 299 E. Fractionsto Decimal Con",
+        "source": "Fundamentals of the Option Market (2001)",
+        "page": 14,
+        "keyword": "iron butterfly"
+      },
+      {
+        "snippet": "Spread (LongPut Spread) Bear Spread (Short Call Spread) Ratio Bull Spread (Long) Ratio Bull Spread (Short) Ratio Bear Spread (Long) Ratio Bear Spread (Short) LongStraddle Short Straddle Long Strangle Short Strangle LongButterfly Short Butterfly Long Iron Butterfly Short Iron Butterfly Long Condor Short Condor Risk CollarlFence (Risk Conversion) Risk CollarlFence (Risk Reversal) c. Indices 295 Sector Indices Broad-Based Indices Foreign Market In",
+        "source": "Fundamentals of the Option Market (2001)",
+        "page": 14,
+        "keyword": "butterfly"
+      },
+      {
+        "snippet": "Spread) Bear Spread (Short Call Spread) Ratio Bull Spread (Long) Ratio Bull Spread (Short) Ratio Bear Spread (Long) Ratio Bear Spread (Short) LongStraddle Short Straddle Long Strangle Short Strangle LongButterfly Short Butterfly Long Iron Butterfly Short Iron Butterfly Long Condor Short Condor Risk CollarlFence (Risk Conversion) Risk CollarlFence (Risk Reversal) c. Indices 295 Sector Indices Broad-Based Indices Foreign Market Indices D. Expirat",
+        "source": "Fundamentals of the Option Market (2001)",
+        "page": 14,
+        "keyword": "butterfly"
+      },
+      {
+        "snippet": "(Short Call Spread) Ratio Bull Spread (Long) Ratio Bull Spread (Short) Ratio Bear Spread (Long) Ratio Bear Spread (Short) LongStraddle Short Straddle Long Strangle Short Strangle LongButterfly Short Butterfly Long Iron Butterfly Short Iron Butterfly Long Condor Short Condor Risk CollarlFence (Risk Conversion) Risk CollarlFence (Risk Reversal) c. Indices 295 Sector Indices Broad-Based Indices Foreign Market Indices D. Expiration Cycles 299 E. Fr",
+        "source": "Fundamentals of the Option Market (2001)",
+        "page": 14,
+        "keyword": "butterfly"
+      },
+      {
+        "snippet": "dactuallydowiththat knowledge. I amcontinuallyfrustratedwhensomeonespeaksabouttrad ingbutterflies(anoptionstrategythathasalowriskwithlotsofrewards) andfails to tell the studentthathe orshe cannottrade this position as a butterflybutinstead mustleginto it (puttingthe position on one step at a time).As a brokerand market makerfor severalyears, I have traded a butterfly once. Ifthe instructor had followed through with his teaching, he would have me",
+        "source": "Fundamentals of the Option Market (2001)",
+        "page": 19,
+        "keyword": "butterfly"
+      },
+      {
+        "snippet": "ewards) andfails to tell the studentthathe orshe cannottrade this position as a butterflybutinstead mustleginto it (puttingthe position on one step at a time).As a brokerand market makerfor severalyears, I have traded a butterfly once. Ifthe instructor had followed through with his teaching, he would have mentioned how one might trade into a butterfly (notjust how itworks). Strategy The second discipline is strateg)r, or plan ofaction. Never wal",
+        "source": "Fundamentals of the Option Market (2001)",
+        "page": 19,
+        "keyword": "butterfly"
+      },
+      {
+        "snippet": "he position on one step at a time).As a brokerand market makerfor severalyears, I have traded a butterfly once. Ifthe instructor had followed through with his teaching, he would have mentioned how one might trade into a butterfly (notjust how itworks). Strategy The second discipline is strateg)r, or plan ofaction. Never walk into the marketblindly:Alwayshaveastrategyora planofaction.Theinvestoror",
+        "source": "Fundamentals of the Option Market (2001)",
+        "page": 19,
+        "keyword": "butterfly"
+      }
+    ],
+    "Hedging Strategies": [
+      {
+        "snippet": ".... 399 19.2 Naked and covered positions............................................................... 400 19.3 A stop-loss strategy............................................................................ 400 19.4 Delta hedging.................................................................................... 402 19.5 Theta............................................................................................... 409 19.6 Gamma...........",
+        "source": "Options and Other Derivatives (2015)",
+        "page": 13,
+        "keyword": "delta hedging"
+      },
+      {
+        "snippet": "Who Bears the Credit Risk?........................................................................572 25.2 The CDS Market......................................................................................574 26.1 Is Delta Hedging Easieror More Difficult for Exotics?...................................617 29.1 Put–Call Parity for Caps and Floors............................................................680 29.2 Swaptions and Bond Options.........",
+        "source": "Options and Other Derivatives (2015)",
+        "page": 18,
+        "keyword": "delta hedging"
+      },
+      {
+        "snippet": "majority of volume for these at-the-money contracts comes from the creation of institutional synthetic positions and delta hedging. This additional open interest provides liquidity when it is needed. For example, if a particular option has 20 open interest and one trader wants to open a 100 contract position, the trade may eventually get done but t",
+        "source": "Options Trading Primer By Marketwise Trading School (2002)",
+        "page": 15,
+        "keyword": "delta hedging"
+      },
+      {
+        "snippet": "Delayed Settlement (cid:9) 234 6.2 The Black-Scholes-Merton Model Adjusted for Trading Day Volatility (cid:9) 235 6.3 Discrete Hedging (cid:9) 236 6.3.1 Hedging Error (cid:9) 236 6.3.2 Discrete-Time Option Valuation and Delta Hedging (cid:9) 237 6.3.3 Discrete-Time Hedging with Transaction Cost . (cid:9) 238",
+        "source": "The Complete Guide to Option Pricing Formulas (2007)",
+        "page": 12,
+        "keyword": "delta hedging"
+      },
+      {
+        "snippet": "g of a call option and ∆ units of short stock. We then apply our knowledge of option dynamics toderivetheBSMequation. That this portfolio is delta hedged should be obvious to option traders. Actually, traders knew about delta hedging long before BSM (for an interesting history, refer to Haug 2007a). But even if this is the first derivation of BSM the reader has seen this shouldn’t be a remarkable fact. A call (put) option gains (declines) in value a",
+        "source": "Volatility Trading (2013)",
+        "page": 21,
+        "keyword": "delta hedging"
+      }
+    ]
+  },
+  "Risk Management": {
+    "Implied Volatility & Rank": [
+      {
+        "snippet": "ut Writing to Buy Stock 147 53 Naked Put Writing Can Create a Win-Win Strategy 149 Section 5: Option Analysis 54 Know the True Value Advantage 155 55 Option Analysis Can Be Easy 159 56 The Key to Options Analysis 163 57 Implied Volatility—An Option Analysis Shortcut 165 58 Keep Your Eyes on the Delta 169 59 Use Probability Analysis 171 60 The Secret Weapon of Option Analysis 173 61 A Tool for Your Arsenal 175 62 Searching for the Best Plays 177 63 Situat",
+        "source": "101 Option Trading Secrets  (2001)",
+        "page": 9,
+        "keyword": "implied volatility"
+      },
+      {
+        "snippet": "your greed in the midst of a bull market and control your fear at the bottom of the market. One indication of whether the stock market is near a bottom is the CBOE Market Volatility Index (VIX). This index measures the implied volatility of the S&P 100 Index Options and, as a re- sult, is a good measure of the fear in the market. When implied volatility is high, options are expensive. This is because when there is a lot of fear in the market, investors",
+        "source": "101 Option Trading Secrets  (2001)",
+        "page": 50,
+        "keyword": "implied volatility"
+      },
+      {
+        "snippet": "the stock market is near a bottom is the CBOE Market Volatility Index (VIX). This index measures the implied volatility of the S&P 100 Index Options and, as a re- sult, is a good measure of the fear in the market. When implied volatility is high, options are expensive. This is because when there is a lot of fear in the market, investors buy put options, forcing put prices up, making options more expen- sive, and the VIX measures how expensive options ar",
+        "source": "101 Option Trading Secrets  (2001)",
+        "page": 50,
+        "keyword": "implied volatility"
+      },
+      {
+        "snippet": "CONTENTS 3 DIVIDENDS AND THEIR EFFECT ON OPTIONS 33 3.1 Forwards 34 3.2 Pricing of stock options including dividends 35 3.3 Pricing options in terms of the forward 36 3.4 Dividend risk for options 38 3.5 Synthetics 39 4 IMPLIED VOLATILITY 41 4.1 Example 44 4.2 Strategy and implied volatility 45 5 DELTA 47 5.1 Delta-hedging 52 5.2 The most dividend-sensitive options 57 5.3 Exercise-ready American calls on dividend paying stocks 57 6 THREE OTHER GREEKS 61",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 11,
+        "keyword": "implied volatility"
+      },
+      {
+        "snippet": "1 Forwards 34 3.2 Pricing of stock options including dividends 35 3.3 Pricing options in terms of the forward 36 3.4 Dividend risk for options 38 3.5 Synthetics 39 4 IMPLIED VOLATILITY 41 4.1 Example 44 4.2 Strategy and implied volatility 45 5 DELTA 47 5.1 Delta-hedging 52 5.2 The most dividend-sensitive options 57 5.3 Exercise-ready American calls on dividend paying stocks 57 6 THREE OTHER GREEKS 61 6.1 Gamma 62 6.2 Theta 65 6.3 Vega 69",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 11,
+        "keyword": "implied volatility"
+      },
+      {
+        "snippet": "ch the stock price Volume. The number of contracts—both may fluctuate in the future, but there’s opening and closing no guarantee that past performance will transactions—traded over be repeated. a certain period. A high Implied volatility is the percentage daily volume means many of volatility that justifies an option’s investors opened or closed market price. Investors may use implied positions on a given day. volatility to predict how volatile the unde",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 19,
+        "keyword": "implied volatility"
+      },
+      {
+        "snippet": "market forecast, research and track securities and strate- or other condition. For gies. You might have access to some or example, if you were looking for options all of the following tools through your with a very high implied volatility, an firm’s website: options screener would provide a list of options with the highest Options calculator. If you implied volatility. enter the details of a parti- cular options trade, this Options chains. If you select",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 48,
+        "keyword": "implied volatility"
+      },
+      {
+        "snippet": "f you were looking for options all of the following tools through your with a very high implied volatility, an firm’s website: options screener would provide a list of options with the highest Options calculator. If you implied volatility. enter the details of a parti- cular options trade, this Options chains. If you select a electronic tool can calculate particular stock or stock index, you the potential profit and loss can see a chart of all put and ca",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 48,
+        "keyword": "implied volatility"
+      }
+    ],
+    "Defined vs Undefined Risk": [
+      {
+        "snippet": "et Out of the Hot Seat! 133 47 Expiration Writing 135 48 Defense, Defense, Defense 137 49 When to Use Covered Call Writing 139 50 The Hidden Risk of Covered Call Writing 143 51 Covered Call Writing Strategies 145 52 Use Naked Put Writing to Buy Stock 147 53 Naked Put Writing Can Create a Win-Win Strategy 149 Section 5: Option Analysis 54 Know the True Value Advantage 155 55 Option Analysis Can Be Easy 159 56 The Key to Options Analysis 163 57 Im",
+        "source": "101 Option Trading Secrets  (2001)",
+        "page": 9,
+        "keyword": "naked put"
+      },
+      {
+        "snippet": "ion Writing 135 48 Defense, Defense, Defense 137 49 When to Use Covered Call Writing 139 50 The Hidden Risk of Covered Call Writing 143 51 Covered Call Writing Strategies 145 52 Use Naked Put Writing to Buy Stock 147 53 Naked Put Writing Can Create a Win-Win Strategy 149 Section 5: Option Analysis 54 Know the True Value Advantage 155 55 Option Analysis Can Be Easy 159 56 The Key to Options Analysis 163 57 Implied Volatility—An Option Analysis Sh",
+        "source": "101 Option Trading Secrets  (2001)",
+        "page": 9,
+        "keyword": "naked put"
+      },
+      {
+        "snippet": "#21 LEARN TO SWEAT The net effect of OUT (SCALE OUT) scaling out of your YOUR WINNERS. winners will be an increased average win per trade while keeping your losses to your pre-defined risk parameters. I can’t tell you how many times You should never scale out of your losers. If your trade size is more than traders have a one lot and your trade is a loser, you must exit the entire position en come into my",
+        "source": "25 Rules Of Day Trading (2003)",
+        "page": 6,
+        "keyword": "defined risk"
+      },
+      {
+        "snippet": "with any type of lock in a good investment, only some of the purchase price strategies will be appropriate for your objective. call Profit from the Neutral to Unlimited for Limited to writing premium received, bearish, naked call the premium SIMPLE AND or lower net cost though writing, limited received NOT-SO-SIMPLE of purchasing covered call for covered Some options strategies, such a stock writing may call writing as writing covered calls, are",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 21,
+        "keyword": "naked call"
+      },
+      {
+        "snippet": "y, or agreed to. An option is a lock in a good contract, and its terms purchase price must be met upon call Profit from the Neutral to Unlimited for Limited to exercise. It’s important writing premium received, bearish, naked call the premium to understand that if or lower net cost though writing, limited received you write a covered call, of purchasing covered call for covered for example, there is a stock writing may call writing a very real ch",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 22,
+        "keyword": "naked call"
+      },
+      {
+        "snippet": "you purchased x $ 50 Per share $55 ($3 per share) 100 shares of LMN stock at $50. = $ 5,000 Investment $300 You write a 55 call on the stock, and 22 receive a $300 premium, or $3 for each share covered by this contract. NAKED CALLS A much more risky strategy is writing naked calls, or options on stock you don’t own. Also known as uncovered call writing, this strategy appeals to bearish investors who want to capitalize on a decline in the underlyi",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 27,
+        "keyword": "naked call"
+      },
+      {
+        "snippet": "100 shares of LMN stock at $50. = $ 5,000 Investment $300 You write a 55 call on the stock, and 22 receive a $300 premium, or $3 for each share covered by this contract. NAKED CALLS A much more risky strategy is writing naked calls, or options on stock you don’t own. Also known as uncovered call writing, this strategy appeals to bearish investors who want to capitalize on a decline in the underlying shares. You write a 55 call on 11 CALL a stock,",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 27,
+        "keyword": "naked call"
+      },
+      {
+        "snippet": "spread Investor B writes a 40 call on strategies are appropriate for LMN, and receives $720. His net different market forecasts. investment is the margin his broker- You use a bear spread if you age firm requires for a naked call. anticipate a decline in the stock price. You use a bull spread if you antici- pate an increase in the stock price. INVESTOR B Each options transaction is CREDIT OR DEBIT? known as a leg of the overall If, like Investor",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 33,
+        "keyword": "naked call"
+      }
+    ],
+    "Collateral & Margin": [
+      {
+        "snippet": "nique because they have \"good volatility, and it doesn't take a big move to make a nice return on a two- to three-day basis,\" Stowell said. Stowell shys away from the S&P 500 contract because “you are getting into large margin requirements, and you are at the mercy of the trading programs. The overnight session in the bonds doesn’t really pose any problems, but that's not really so in the currencies,\" Stowell added. The often large moves in currency pric",
+        "source": "18 Trading Champions Share Their Keys To Top Trading Profits (1996)",
+        "page": 17,
+        "keyword": "margin requirement"
+      },
+      {
+        "snippet": "The Complete Guide to Day Trading And how much of an investment is required to make 500 dollars off one contract in this move? About 4,000 dollars. The margin requirement for the E-mini S&P is approximately 4,000 dollars. And if you’re day trading it, you even get a discount, which means you’ll only have to pay 2,000 dollars. Sometimes, it’s even as lit- tle as $1,000. So, you can deposi",
+        "source": "A Complete Guide to Day Trading (2008)",
+        "page": 80,
+        "keyword": "margin requirement"
+      },
+      {
+        "snippet": "p a balance in your brokerage firms use to measure your account to cover the cost of purchasing knowledge of options and trading the underlying stocks if the option is strategies, as well as your general exercised. This margin requirement investing experience. for uncovered writers is set at a minimum Before you begin trading options, of 100% of options proceeds plus 20% of you should read the document titled the underlying security value less the Charac",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 18,
+        "keyword": "margin requirement"
+      },
+      {
+        "snippet": "return. $5,000 Sale price CALLS – $1,000 Investment $250 ($2.50 per share) = $4,000 Profit or 400% return $ 250 Per call x 20 Calls held = $ 5,000 Sale price BETTER THAN MARGIN For certain investors, buying calls is an margin requirement, liquidate a portion attractive alternative to buying stock on of your position, or face having your margin. Calls offer the same leverage that brokerage firm liquidate your assets. you can get from buying on margin, bu",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 26,
+        "keyword": "margin requirement"
+      },
+      {
+        "snippet": "isk you face is margin account to cover the possible loss loss of the premium, an amount that’s in value of those stocks. If the stock price usually much smaller than the initial does fall, you must add cash to meet the margin requirement. 26 ©2013 by Lightbulb Press, Inc. All Rights Reserved.",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 26,
+        "keyword": "margin requirement"
+      },
+      {
+        "snippet": "ium as profit. If you’ve written this call on If you write a call on stock you stocks you already own, known as a covered hold in a margin account, you should call, the premium can act as a virtual dividend consider the margin requirement that you receive on your assets. Many investors imposed by your firm when calculating use this strategy as a way to earn additional return. If your trade is successful you income on nondividend-paying stocks. retain all",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 27,
+        "keyword": "margin requirement"
+      },
+      {
+        "snippet": "to $100. stock on which you’ve written a covered $ 5,900 Purchase call rises in value, If you choose this strategy, – $ 5,500 Exercise there’s a very real you’ll have to keep the mini- = $ 400 chance that your mum cash margin requirement – $ 300 Premium option will be in your margin account, to exercised, and = $ 100 Net loss cover the possibly steep losses you’ll have to While this loss is moderate, every you face if the option is exer- turn over your",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 28,
+        "keyword": "margin requirement"
+      },
+      {
+        "snippet": "puts is an attractive alternative to shorting stock. Shorting stock requires a margin account with Puts are purchased outright, usually for a much your brokerage firm. A short seller also faces the lower amount than the margin requirement, possibility of a margin call if the stock price rises, so you don’t have to commit as much cash to and could be forced to sell off other assets. the trade. Shorting stock involves potentially unlimited loss A long put",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 29,
+        "keyword": "margin requirement"
+      }
+    ],
+    "Events & Earnings": [
+      {
+        "snippet": "it “event trading.\" Warwick first gained exposure to the financial markets during his days as a student at the University of North Carolina, where he earned an M.B.A. In the course of his studies, he learned about the \"earnings surprise studies\" done back in the 1970s regarding the stock market. The basic thrust behind these studies is that \"when a stock's earnings came out and it was much greater than anticipated, the stock had a tendency to",
+        "source": "18 Trading Champions Share Their Keys To Top Trading Profits (1996)",
+        "page": 19,
+        "keyword": "earnings"
+      },
+      {
+        "snippet": ", where he earned an M.B.A. In the course of his studies, he learned about the \"earnings surprise studies\" done back in the 1970s regarding the stock market. The basic thrust behind these studies is that \"when a stock's earnings came out and it was much greater than anticipated, the stock had a tendency to trend for 60 days,\" Warwick explained. \"There are still fund managers today who trade on earnings surprises,\" Warwick noted. \"I wanted to ta",
+        "source": "18 Trading Champions Share Their Keys To Top Trading Profits (1996)",
+        "page": 19,
+        "keyword": "earnings"
+      },
+      {
+        "snippet": "hind these studies is that \"when a stock's earnings came out and it was much greater than anticipated, the stock had a tendency to trend for 60 days,\" Warwick explained. \"There are still fund managers today who trade on earnings surprises,\" Warwick noted. \"I wanted to take that idea and see if you could do this with the futures markets,\" he said. Over the past six years, Warwick has been refining his \"event trading\" method and recently publishe",
+        "source": "18 Trading Champions Share Their Keys To Top Trading Profits (1996)",
+        "page": 19,
+        "keyword": "earnings"
+      },
+      {
+        "snippet": "models —and certainly does not suggest that Newtonian gravitation theory is incorrect. Guru Response Peter Bernstein comments: For better or worse, economic forecasting is an essential ingredient in in- vesting because earnings and interest rates are both conditional on eco- nomic conditions. So you have to do it or use it in some fashion. Furthermore, although a forecast of next quarter’s GDP or even next year’s earnings per share may be wron",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 35,
+        "keyword": "earnings"
+      },
+      {
+        "snippet": "n in- vesting because earnings and interest rates are both conditional on eco- nomic conditions. So you have to do it or use it in some fashion. Furthermore, although a forecast of next quarter’s GDP or even next year’s earnings per share may be wrong, the kind of forecasting I do—and really that Abby Cohen does too—is to try to define the basic environment— inflationary or not, fast growth or not, competitive or not, and so on. That kind of th",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 35,
+        "keyword": "earnings"
+      },
+      {
+        "snippet": "s improving. Miller is rather liberal in defining the details of his tactics when it suits him. He is not bothered by people who say that Czech bonds, for example, or go-go technology stocks trading at sky-high price-to-earnings ratios are not value investments: if they go up, they were, and that is what counts. The definitional straitjackets of others are their problems, not his. Miller is reaching out to complexity and the Santa Fe Institute,",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 59,
+        "keyword": "earnings"
+      },
+      {
+        "snippet": "Engineering”). But it is very important for any investor to watch closely for changing market drivers. For example, the market drivers until late 1998 were easy credit, moderating inflation, lower interest rates, rising earnings, and the wide public- ity of nearly an eighteen-year bull market in equities—by some counts, a fifty- year bull market. The 1990s produced a 16% compounded rate of growth for equities versus 6% historically, so it is no",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 62,
+        "keyword": "earnings"
+      },
+      {
+        "snippet": "for the last several years than the broad market averages. Good because it suggests leadership? Or bad, meaning that there really is a low level of confidence, and this is just speculation in well-known names? Finally, earnings are good but, on the other hand, the majority of the sur- prises are on the downside: There appears to be a deterioration in terms of buildup of disappointments. So the same news can be seen as good or bad. Read On In P",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 63,
+        "keyword": "earnings"
+      }
+    ],
+    "Position Sizing & VaR": [
+      {
+        "snippet": "t Insights: Changing Styles across Time and Space• by Dean LeBaron 7 CHARTING THE COURSE Macro Tools Chapter 1 Investment Policy 15 GURU • Charles Ellis Chapter 2 Economic Forecasting 22 GURU • Peter Bernstein Chapter 3 Risk Management 28 GURUS • Fischer Black, Robert Merton, andMyron Scholes Chapter 4 Financial Engineering 36 GURU • Andrew Lo OUR DAY WILL COME Investment Style Chapter 5 Active Portfolio Management 47 GURU • William Miller Chapter 6 G",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 3,
+        "keyword": "risk management"
+      },
+      {
+        "snippet": "ted with indexing; then into automated trading; then stock screening and portfolio optimization; then understanding something about mechanical asset allocation and strategic analysis of investment options with a dose of risk management. And finally you are down to the final nub of a personality preference.",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 30,
+        "keyword": "risk management"
+      },
+      {
+        "snippet": "Risk Management 29 tion pricing, 1997 Nobel Laureates for Economics, Robert Merton and Myron Scholes. Yet these instruments—futures, options, and a multitude of variations on these themes—are packages of the basic components of risk: t",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 39,
+        "keyword": "risk management"
+      },
+      {
+        "snippet": "tor, from quite common investment alternatives. Derivatives can turn stocks into bonds and vice versa. And derivatives can pinpoint very precisely specific risks and returns that are packaged within a complex structure. Risk Management Gurus: Fischer Black, Robert Merton, and Myron Scholes Since the mid-1970s, financial futures and options have established themselves as an integral part of the international capital markets. While futures and options o",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 39,
+        "keyword": "risk management"
+      },
+      {
+        "snippet": "everyday work of investment people. Some extracts from the Nobel citation for Merton and Scholes from the Royal Swedish Academy of Sciences provide a useful overview of their work and its many prac- tical applications: Risk management is essential in a modern market economy. Financial mar- kets enable firms and households to select an appropriate level of risk in their transactions, by redistributing risks toward other agents who are will- ing and ab",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 40,
+        "keyword": "risk management"
+      },
+      {
+        "snippet": "ing a large payment in U.S. dollars can hedge against the one- sided risk of large losses due to a future depreciation of sterling by buying call options for dollars on the market for foreign currency options. Effective risk management requires that such instruments be correctly priced. Black, Merton, and Scholes made a pioneering contribution to eco- nomic sciences by developing a new method of determining the value of de- rivatives. Their innovative",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 40,
+        "keyword": "risk management"
+      },
+      {
+        "snippet": "Risk Management 31 The Chicago Board Options Exchange introduced trade in options in April 1973, one month before publication of the option pricing formula. By 1975, traders on the options exchange had begun to apply the formula— using",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 41,
+        "keyword": "risk management"
+      },
+      {
+        "snippet": "ars were gambled. Certainly, it is by no means clear that much of the use of derivatives by non- financial corporations is strictly necessary. Indeed, in some cases, it appears that firms use derivatives not so much for risk management as for trading op- portunities—they are selective hedgers, opting not to hedge when they think they are in a winning position, and treating their treasuries as profit centers. Firms as prominent as Procter and Gamble ha",
+        "source": "30 Great Investing Minds (2002)",
+        "page": 42,
+        "keyword": "risk management"
+      }
+    ],
+    "Assignment & Pin Risk": [
+      {
+        "snippet": "irs). **Operators:** Operators are used to perform operations on values and variables. Python includes arithmetic operators (`+`, `-`, `*`, `/`, `//`, `%`, `**`), comparison operators (`==`, `!=`, `<`, `<=`, `>`, `>=`), assignment operators (`=`, `+=`, `-=`, `*=`, `/=`, etc.), logical operators (`and`, `or`, `not`), and bitwise operators (`&`, `|`, `^`, `>>`, `<<`).",
+        "source": "Algorithmic Essentials_ Trading with Python_ Comprehenive Guide for 2024 by Johann Strauss",
+        "page": 33,
+        "keyword": "assignment"
+      },
+      {
+        "snippet": "firms time, you can buy LEAPS that expire in that has a writer of the series of option the January that is two years away or the you hold. January that is three years away. If the brokerage firm has more 33 eXerCise and assignmenT than one eligible writer, the firm Most options that expire in a given month allocates the assignment using an usually expire on the Saturday after the exchange-approved method. third Friday of the month. That means the",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 8,
+        "keyword": "assignment"
+      },
+      {
+        "snippet": "t is two years away or the you hold. January that is three years away. If the brokerage firm has more 33 eXerCise and assignmenT than one eligible writer, the firm Most options that expire in a given month allocates the assignment using an usually expire on the Saturday after the exchange-approved method. third Friday of the month. That means the The writer who is assigned must last day to trade expiring equity options 44 deliver or receive share",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 8,
+        "keyword": "assignment"
+      },
+      {
+        "snippet": "I N V E S T I N G S T R AT E G I E S IINNVVEESSTTIINNGG SSTTRRAATTEEGGIIEESS assignment on an options series on which If you have written an option on a stock you hold a short position, you may be with an upcoming dividend distribution, selected to fulfill the terms of the contract it’s important to know t",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 28,
+        "keyword": "assignment"
+      },
+      {
+        "snippet": "is strategy combines the possible at any point before expiration— benefits of stock owner- you will have to deliver the underlying ship and options trading, security to your brokerage firm. The and each aspect provides assignment for an exercised call is made some risk protection for the other. If you by OCC to any of its member brokerage write a covered call, you retain your share- firms. If your brokerage firm receives an holder rights, which",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 28,
+        "keyword": "assignment"
+      },
+      {
+        "snippet": "rises in the future, you could realize you’ll have to buy the shares. The premium significant gains. you received, however, will reduce your Or, you could close out your position net price paid on those shares. prior to assignment by purchasing the same put. Since the option is now in-the-money, however, its premium Write Put to Own Stock may cost you more than you collected when you sold the put. Buy back the put for $300 with a loss of $100, or",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 32,
+        "keyword": "assignment"
+      },
+      {
+        "snippet": "ar put debit an approved sequence. Credit Call at higher Call at lower Neutral or Net credit Spread times strike strike bearish 100, less Bear call credit EXIT A SPREAD exercise and When you exit a spread, both legs are assignment usually closed out, rather than exercised, occurred at since buying and selling the underlying expiration, your firm stock means committing large amounts of would probably net capital to the strategy. Instead, you might",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 35,
+        "keyword": "assignment"
+      },
+      {
+        "snippet": "e $6,000 necessary if you and purchase 100 LMN shares for $6,000, were to exercise your long call. Either way, and then sell those shares for $6,500 to you have given up the opportunity to profit meet your short 65 call assignment. If if the stock continues to rise. 35 ©2013 by Lightbulb Press, Inc. All Rights Reserved.",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 35,
+        "keyword": "assignment"
+      }
+    ],
+    "Early Exercise & American Options": [
+      {
+        "snippet": "CONTENTS Preface xiii Acknowledgements xv Introduction xvii 1 OPTIONS 1 1.1 Examples 3 1.2 American versus European options 7 1.3 Terminology 8 1.4 Early exercise of American options 13 1.5 Payoffs 15 1.6 Put–call parity 16 2 THE BLACK–SCHOLES FORMULA 21 2.1 Volatility and the Black–Scholes formula 28 2.2 Interest rate and the Black–Scholes formula 29 2.3 Pricing American options 31",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 10,
+        "keyword": "american option"
+      },
+      {
+        "snippet": "4 Early exercise of American options 13 1.5 Payoffs 15 1.6 Put–call parity 16 2 THE BLACK–SCHOLES FORMULA 21 2.1 Volatility and the Black–Scholes formula 28 2.2 Interest rate and the Black–Scholes formula 29 2.3 Pricing American options 31",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 10,
+        "keyword": "american option"
+      },
+      {
+        "snippet": "CONTENTS Preface xiii Acknowledgements xv Introduction xvii 1 OPTIONS 1 1.1 Examples 3 1.2 American versus European options 7 1.3 Terminology 8 1.4 Early exercise of American options 13 1.5 Payoffs 15 1.6 Put–call parity 16 2 THE BLACK–SCHOLES FORMULA 21 2.1 Volatility and the Black–Scholes formula 28 2.2 Interest rate and the Black–Scholes formula 29 2.3 Pricing American options",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 10,
+        "keyword": "early exercise"
+      },
+      {
+        "snippet": "red:Americancall option, American put option, European call option and theEuropeanputoption.Thevastmajorityoftheoptions thataretradedonexchangesareAmerican.However,itis usefultoanalyzeEuropeanoptions,becausepropertiesof American options can very often be deduced from its European counterpart. Before an example is given, it is worthwhile to look at the boldface sentence in the definition of an option. The holderofanoptionisnotobligatedtoexercisetheopti",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 24,
+        "keyword": "american option"
+      },
+      {
+        "snippet": "rcise his option right. By exercising he would make a profit of $7, $10 from exercising the option and (cid:1)$3 from the price paid for the option. Everything that can be done with a European option can be done with an American option, but the American optionhastheadditionalpropertythatitcanbeexercised at any time up to the expiration date. This means that its price is always at least as much as its European counterpart. Although most options that ar",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 28,
+        "keyword": "american option"
+      },
+      {
+        "snippet": "OPTIONS 13 1.4 EARLY EXERCISE OF AMERICAN OPTIONS For a call option on a non-dividend paying stock, it appears that the prices for both European and American types are exactly the same. In other words, it is never optimaltoexerciseacalloptiononanon-dividendpaying stoc",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 34,
+        "keyword": "american option"
+      },
+      {
+        "snippet": "OPTIONS 13 1.4 EARLY EXERCISE OF AMERICAN OPTIONS For a call option on a non-dividend paying stock, it appears that the prices for both European and American types are exactly the same. In other words, it is never optimaltoexerciseacalloptiononanon-",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 34,
+        "keyword": "early exercise"
+      },
+      {
+        "snippet": "gy2 istokeeptheoptionandshorttheunderlyingstock.This guaranteesapayoffofatleast$10.Ontopofthat,interest isearnedover$50,sincethiswasreceivedbyshortingthe stock, which is more than the interest earned on the $10 were the American option exercised immediately. This means that the discounted expected payoff is more than $10. However,for an American put option itcanbe profitable toexercisetheoptionearly.Thiscanbeshownbylooking atanextremebutsimpleexample.",
+        "source": "An Introduction to Options Trading (2006)",
+        "page": 35,
+        "keyword": "american option"
+      }
+    ],
+    "Probability & Expected Value": [
+      {
+        "snippet": "u select a electronic tool can calculate particular stock or stock index, you the potential profit and loss can see a chart of all put and call of adopting the strategy, as series offered on it, the delayed well as your breakeven point or real-time premiums, and other and any margin requirement. characteristics such as volume and An options calculator can also be used to open interest. determine the Greeks for a particular Options information. Y",
+        "source": "An Investors Guide to Trading Options (2013)",
+        "page": 48,
+        "keyword": "breakeven"
+      },
+      {
+        "snippet": "Ratio Analysis Cash Flow Analysis Scenario and Sensitivity Analysis Capital Budgeting Break-even Analysis Creating a Data Visualization Product in Finance Data Visualization Guide Algorithmic Trading Summary Guide Financial Mathematics Black-Scholes Model The Greeks Formulas Stochastic Calculus For Finance Brownian",
+        "source": "Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024",
+        "page": 4,
+        "keyword": "break-even"
+      },
+      {
+        "snippet": ") $100). Since each option contract is the equivalent of 100 shares of stock, this means that we get to control 100 shares of INTC for the next five months at a cost to us of only $40. In order to find our cost-basis or breakeven price, we add our cost (option premium) to the strike price: $.40 + $25 = $25.40. If the option is held to expiration, we won’t make money on the position unless INTC rises above $25.40. If you plan to trade out of the",
+        "source": "Get Rich With Options (2009)",
+        "page": 23,
+        "keyword": "breakeven"
+      },
+      {
+        "snippet": "to spend a little money up front to control the 100 shares. Instead of paying $2,100 to buy 100 shares of INTC outright, we only have to pay $40 today by using options. That’s the key. Eventually, if INTC gets above our breakeven price of $25.40, we will be faced with a decision: We can either sell the option back to the marketplace and pocket our gain, or “exercise” the option and turn it into actual stock shares. If we decide to exercise, then",
+        "source": "Get Rich With Options (2009)",
+        "page": 24,
+        "keyword": "breakeven"
+      },
+      {
+        "snippet": "d question. The answer, I believe, comes down to “hope and cheap- ness.” Many people don’t want to plunk down the $2,100 today to buy INTC but they feel okay spending only $40 for the chance that INTC will get above the breakeven price of $25.40 within fi ve months. Some people would rather spend a little money today hoping that the stock will go up and become profi table, rather than buying the stock at current market prices. THE PROFIT/LOSS SC",
+        "source": "Get Rich With Options (2009)",
+        "page": 25,
+        "keyword": "breakeven"
+      },
+      {
+        "snippet": "earlier, when you buy options you have limited risk, $40 in this case, and unlimited profi t potential. The thick line starts to bend upward at our strike price of $25 and crosses the $0 P/L line at $25.40—which is our breakeven price. Once INTC gets above $25.40, we’re making money for as long as INTC heads higher. As the price of the stock increases, our profi t goes up indefi nitely. The question is, will INTC get above $25.40 in the next fi",
+        "source": "Get Rich With Options (2009)",
+        "page": 26,
+        "keyword": "breakeven"
+      },
+      {
+        "snippet": "ber that word “hope.” Are you in an investment based on hope? When you buy the INTC $25 call option, you’re really holding something that has no value right off the bat. It becomes valuable only when INTC goes above the breakeven price of $25.40 (if held until expi- ration). That’s over $4 higher than where INTC is trading in the marketplace today. So, do you want to pay $2,100 to own 100 shares outright of INTC stock, or do you want to shell ou",
+        "source": "Get Rich With Options (2009)",
+        "page": 26,
+        "keyword": "breakeven"
+      },
+      {
+        "snippet": "stock, or do you want to shell out a measly $40 and hope INTC goes up another $4 in the next fi ve months? Only you can make that decision. Sure, it costs you only $40, but what’s the probability of INTC getting to your breakeven price? Luckily for us, we have tools that can help fi gure out that probability. Using my probability calculator shown in Figure 1.3, our fi ctional INTC $25 call has a 21.9 percent chance of hitting breakeven by option",
+        "source": "Get Rich With Options (2009)",
+        "page": 26,
+        "keyword": "breakeven"
+      }
+    ],
+    "Volatility Surface": [
+      {
+        "snippet": "TURE'S WORTH A THOUSAND WORDS 80 Chapter15 WOLFE WAVES 88 Chapter16 NEWS 96 Chapter17 MORNING NEWS REVERSALS 99 Chapter18 BIG PICTURE NEWS REVERSALS 104 PART FOUR BREAKOUT MODE Chapter19 RANGE CONTRACTION 109 Chapter 20 HISTORICAL VOLATILITY MEETS TOBY CRABEL 115",
+        "source": "High Probability Short Term Trading Strategies (2005)",
+        "page": 2,
+        "keyword": "historical volatility"
+      },
+      {
+        "snippet": "FIVE MARKET MUSINGS Chapter 21 SMART MONEY INDICATORS 122 Chapter 22 MORE WORDS ON TRADE MANAGEMENT 128 Chapter 23 BE PREPARED! 131 Chapter 24 FINAL THOUGHTS 134 Chapter 25 THE SECRETS OF SUCCESSFUL TRADING 135 APPENDIX Historical Volatility Calculations, 203 Moore Research Center-Statistical Studies, 205 Exhibit A.1 Historical Upper 90% Statistics, 208 Exhibit A.2 Historical Upper 80% Statistics, 209 Exhibit A.3 Historical Lower 10% Statistics, 210 Exhibit",
+        "source": "High Probability Short Term Trading Strategies (2005)",
+        "page": 3,
+        "keyword": "historical volatility"
+      },
+      {
+        "snippet": "f increasing or decreasing position size among assets within a large trading book—e.g., buying one E-mini S&P contract instead of 10—based on various objectively quantifiable “discretionary” factors such as increases in historical volatility, exceeding of worst peak-to-valley drawdowns in eq- uity, and so on, as well as “fuzzier” discretionary elements, including con- trary opinion, fundamental market analysis, and headline news events, are covered in detai",
+        "source": "Mechanical Trading Systems (2005)",
+        "page": 19,
+        "keyword": "historical volatility"
+      },
+      {
+        "snippet": "options.......................................................................................... 383 19. The Greek letters........................................................................................ 399 20. Volatility smiles.......................................................................................... 431 21. Basic numerical procedures.......................................................................... 450 22. Value at ri",
+        "source": "Options and Other Derivatives (2015)",
+        "page": 7,
+        "keyword": "volatility smile"
+      },
+      {
+        "snippet": ".................. 426 Further questions............................................................................... 428 Appendix: Taylor series expansions and hedge parameters ....................... 430 Chapter 20. Volatility smiles........................................................................................... 431 20.1 Why the volatility smile is the same for calls and puts............................. 431 20.2 Foreign currency options",
+        "source": "Options and Other Derivatives (2015)",
+        "page": 13,
+        "keyword": "volatility smile"
+      },
+      {
+        "snippet": "pendix: Taylor series expansions and hedge parameters ....................... 430 Chapter 20. Volatility smiles........................................................................................... 431 20.1 Why the volatility smile is the same for calls and puts............................. 431 20.2 Foreign currency options..................................................................... 433 20.3 Equity options.................................",
+        "source": "Options and Other Derivatives (2015)",
+        "page": 13,
+        "keyword": "volatility smile"
+      },
+      {
+        "snippet": "................................................................ 433 20.3 Equity options................................................................................... 436 20.4 Alternative ways of characterizing the volatility smile............................... 437 20.5 The volatility term structure and volatility surfaces.................................. 438 20.6 Greek letters.....................................................................",
+        "source": "Options and Other Derivatives (2015)",
+        "page": 13,
+        "keyword": "volatility smile"
+      },
+      {
+        "snippet": "xercises are decided based on the change that is applied to the product. Option Valuation Models It is essential to know the differences between historical and implicit volatility when applied for stock market purposes. Historical volatility calculates the movement rate of the underlying asset in a given time in which the standard annual deviation of price changes is given as a percentage. Historical volatility is the retrospective measurement at the date o",
+        "source": "Options Trading Crash Course - Quick Start Guide For Beginners To Learn Risk And Reward",
+        "page": 80,
+        "keyword": "historical volatility"
+      }
+    ]
+  },
+  "Python & Automation": {
+    "Broker Workflow": [
+      {
+        "snippet": "traders. Moreover, the Python ecosystem offers advanced packages for interacting with most popular trading platforms and interfaces. For instance, libraries such as Interactive Brokers' API (ib_insync), Alpaca API, and Robinhood trading API have streamlined the process of implementing Python-based trading algorithms by providing direct programmatic access to trading accounts.",
+        "source": "Algorithmic Essentials_ Trading with Python_ Comprehenive Guide for 2024 by Johann Strauss",
+        "page": 28,
+        "keyword": "robinhood"
+      },
+      {
+        "snippet": "de to try it down the road. Analytical tools. You will want strong analytical tools for your charting as well as for determining potential profits. In our experience, newer brokerages are better options. Tasty-works and Robinhood are good options, with the latter being an excellent choice for beginners. The main argument against Robinhood is the skeletal set of features. But you can make up for that by utilizing charting on other free platforms",
+        "source": "Trading for beginners, The Bible 7 in 1 - Swing Trading,Dividend Investing,Options Trading Crash Course",
+        "page": 32,
+        "keyword": "robinhood"
+      },
+      {
+        "snippet": "s for determining potential profits. In our experience, newer brokerages are better options. Tasty-works and Robinhood are good options, with the latter being an excellent choice for beginners. The main argument against Robinhood is the skeletal set of features. But you can make up for that by utilizing charting on other free platforms like Yahoo Finance. However, Robinhood is very simple to use in order to execute trades. The science of buying",
+        "source": "Trading for beginners, The Bible 7 in 1 - Swing Trading,Dividend Investing,Options Trading Crash Course",
+        "page": 32,
+        "keyword": "robinhood"
+      },
+      {
+        "snippet": "atter being an excellent choice for beginners. The main argument against Robinhood is the skeletal set of features. But you can make up for that by utilizing charting on other free platforms like Yahoo Finance. However, Robinhood is very simple to use in order to execute trades. The science of buying long Buying long means entering trade when a swing is at a low point or point of support. That is, you are expecting the asset to appreciate in val",
+        "source": "Trading for beginners, The Bible 7 in 1 - Swing Trading,Dividend Investing,Options Trading Crash Course",
+        "page": 32,
+        "keyword": "robinhood"
+      },
+      {
+        "snippet": "one. Typically, swing traders can get 2-1 margin, which means if you deposit $2,000, you can buy $4,000 worth of stock. Examples of popular brokerages include E Trade, Tasty works(particularly good for trading options), Robinhood (zero commissions), TD Ameritrade, along with more traditional brokers such as Fidelity or Charles Schwab. In each case, check to determine if you can trade the financial assets you are interested in trading. While its",
+        "source": "Trading for beginners, The Bible 7 in 1 - Swing Trading,Dividend Investing,Options Trading Crash Course",
+        "page": 37,
+        "keyword": "robinhood"
+      },
+      {
+        "snippet": "r an account with anything online. Enter your name, address, and bank account information. Some brokerages may require that you make an initial deposit to get started. If you are a beginning swing trader, consider using Robinhood. This is an app based trading platform that is somewhat skeletal, but also very easy to use. With Robinhood, there are zero commissions and no minimums. So you can limit your deposits to the amount of money that you wan",
+        "source": "Trading for beginners, The Bible 7 in 1 - Swing Trading,Dividend Investing,Options Trading Crash Course",
+        "page": 38,
+        "keyword": "robinhood"
+      },
+      {
+        "snippet": "ay require that you make an initial deposit to get started. If you are a beginning swing trader, consider using Robinhood. This is an app based trading platform that is somewhat skeletal, but also very easy to use. With Robinhood, there are zero commissions and no minimums. So you can limit your deposits to the amount of money that you want to use for trading, rather than having to meet some arbitrary funding requirement. Keep in mind that if yo",
+        "source": "Trading for beginners, The Bible 7 in 1 - Swing Trading,Dividend Investing,Options Trading Crash Course",
+        "page": 38,
+        "keyword": "robinhood"
+      }
+    ]
+  },
+  "ML/AI Integration": {},
+  "Data Pipelines": {},
+  "Edge Cases": {},
+  "Source References": [
+    {
+      "title": "101 Option Trading Secrets  (2001)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\101 Option Trading Secrets  (2001).pdf",
+      "status": "ok",
+      "entries": 14
+    },
+    {
+      "title": "17 Proven Currency Trading Strategies (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\17 Proven Currency Trading Strategies (2013).pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "18 Trading Champions Share Their Keys To Top Trading Profits (1996)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Master Traders Collection\\18 Trading Champions Share Their Keys To Top Trading Profits (1996).pdf",
+      "status": "ok",
+      "entries": 10
+    },
+    {
+      "title": "25 Rules Of Day Trading (2003)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\25 Rules Of Day Trading (2003).pdf",
+      "status": "ok",
+      "entries": 2
+    },
+    {
+      "title": "30 Great Investing Minds (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\30 Great Investing Minds (2002).pdf",
+      "status": "ok",
+      "entries": 41
+    },
+    {
+      "title": "6.1 Trading Mindset",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Options Trading MasterClass Options With Technical Analysis\\[TutsNode.com] - Options Trading MasterClass\\1. Introduction\\6.1 Trading Mindset.pdf",
+      "status": "no_text",
+      "entries": 0
+    },
+    {
+      "title": "A Complete Guide to Day Trading (2008)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\A Complete Guide to Day Trading (2008).pdf",
+      "status": "ok",
+      "entries": 5
+    },
+    {
+      "title": "A Short Course in Technical Trading (2003)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\A Short Course in Technical Trading (2003).pdf",
+      "status": "ok",
+      "entries": 3
+    },
+    {
+      "title": "Adler S. Day Trading with ChatGPT. Test the Power of AI for Stock Market...2023",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Adler S. Day Trading with ChatGPT. Test the Power of AI for Stock Market...2023\\Adler S. Day Trading with ChatGPT. Test the Power of AI for Stock Market...2023.pdf",
+      "status": "ok",
+      "entries": 3
+    },
+    {
+      "title": "Algorithmic Essentials_ Trading with Python_ Comprehenive Guide for 2024 by Johann Strauss",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Algorithmic Essentials_ Trading with Python_ Comprehenive Guide for 2024 by Johann Strauss.pdf",
+      "status": "ok",
+      "entries": 9
+    },
+    {
+      "title": "An Introduction to Options Trading (2006)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\An Introduction to Options Trading (2006).pdf",
+      "status": "ok",
+      "entries": 24
+    },
+    {
+      "title": "An Investors Guide to Trading Options (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\An Investors Guide to Trading Options (2013).pdf",
+      "status": "ok",
+      "entries": 127
+    },
+    {
+      "title": "Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024\\Bisette V. The Algo Rythm. Learn to trade...the Options Market with Python 2024.pdf",
+      "status": "ok",
+      "entries": 60
+    },
+    {
+      "title": "Come Into My Trading Room - A Complete Guide to Trading (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Master Traders Collection\\Come Into My Trading Room - A Complete Guide to Trading (2002).pdf",
+      "status": "ok",
+      "entries": 7
+    },
+    {
+      "title": "Day Trading Ebook (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\Day Trading Ebook (2000).pdf",
+      "status": "ok",
+      "entries": 1
+    },
+    {
+      "title": "Day Trading University (2001)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\Day Trading University (2001).pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "Daytrading University - Advanced Daytrading Two-Day Seminar (2001)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\Daytrading University - Advanced Daytrading Two-Day Seminar (2001).pdf",
+      "status": "ok",
+      "entries": 2
+    },
+    {
+      "title": "Dynamic Trading Indicators (2003)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\Dynamic Trading Indicators (2003).pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "Essentails of Foreign Exchange Trading (2009)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\Essentails of Foreign Exchange Trading (2009).pdf",
+      "status": "ok",
+      "entries": 5
+    },
+    {
+      "title": "Forex - Online Manual for Successful Trading (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\Forex - Online Manual for Successful Trading (2000).pdf",
+      "status": "ok",
+      "entries": 21
+    },
+    {
+      "title": "Forex Trading Techniques (2003)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\Forex Trading Techniques (2003).pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "Fundamentals of the Option Market (2001)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Fundamentals of the Option Market (2001).pdf",
+      "status": "ok",
+      "entries": 41
+    },
+    {
+      "title": "Get Rich With Options (2009)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Get Rich With Options (2009).pdf",
+      "status": "ok",
+      "entries": 17
+    },
+    {
+      "title": "Getting Started in Currency Trading (2008)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\Getting Started in Currency Trading (2008).pdf",
+      "status": "ok",
+      "entries": 4
+    },
+    {
+      "title": "Getting Started in Options (2007)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Getting Started in Options (2007).pdf",
+      "status": "ok",
+      "entries": 8
+    },
+    {
+      "title": "Guide To Winning With Automated Trading Systems (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Guide To Winning With Automated Trading Systems (2000).pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "High Probability Short Term Trading Strategies (2005)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\High Probability Short Term Trading Strategies (2005).pdf",
+      "status": "ok",
+      "entries": 5
+    },
+    {
+      "title": "How To Make Money With Trading Systems (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\How To Make Money With Trading Systems (2000).pdf",
+      "status": "ok",
+      "entries": 1
+    },
+    {
+      "title": "How To Swing Trade - A Beginners Guide to Trading Tools, Money Management, Rules, Routines and Strategies",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\How To Swing Trade - A Beginners Guide to Trading Tools, Money Management, Rules, Routines and Strategies\\How To Swing Trade - A Beginners Guide to Trading Tools, Money Management, Rules, Routines and Strategies.pdf",
+      "status": "ok",
+      "entries": 3
+    },
+    {
+      "title": "Increasing Alpha with Options (2010)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Increasing Alpha with Options (2010).pdf",
+      "status": "ok",
+      "entries": 45
+    },
+    {
+      "title": "Intra-Day Trading Strategies  (2003)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Intra-Day Trading Strategies  (2003).pdf",
+      "status": "ok",
+      "entries": 1
+    },
+    {
+      "title": "Intraday Timing For Low Risk Swing Trading (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Intraday Timing For Low Risk Swing Trading (2000).pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "Jesse H. Generative AI for Trading and Asset Management 2025",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Jesse H. Generative AI for Trading and Asset Management 2025\\Jesse H. Generative AI for Trading and Asset Management 2025.pdf",
+      "status": "ok",
+      "entries": 2
+    },
+    {
+      "title": "John Murphy's Ten Laws Of Technical Trading (2005)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\John Murphy's Ten Laws Of Technical Trading (2005).pdf",
+      "status": "ok",
+      "entries": 2
+    },
+    {
+      "title": "Learn Day Trading (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\Learn Day Trading (2000).pdf",
+      "status": "ok",
+      "entries": 3
+    },
+    {
+      "title": "Margin Trading (2008)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Margin Trading Collection\\Margin Trading (2008).pdf",
+      "status": "ok",
+      "entries": 20
+    },
+    {
+      "title": "Mechanical Trading Systems (2005)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Mechanical Trading Systems (2005).pdf",
+      "status": "ok",
+      "entries": 16
+    },
+    {
+      "title": "NCI_Trading_System_v1.5_MASTER",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\NCI_Trading_System_v1.5_MASTER.pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "Oliver Velez - Swing Trading Tactics (2001)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Oliver Velez - Swing Trading Tactics (2001).pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "Option Pricing Models  (2007)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Pricing Models  (2007).pdf",
+      "status": "ok",
+      "entries": 33
+    },
+    {
+      "title": "Option Spread Strategies (2009)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Spread Strategies (2009).pdf",
+      "status": "ok",
+      "entries": 174
+    },
+    {
+      "title": "Option Spreads and Combinations (2014)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Complete Book of Option Spreads (2014)\\Option Spreads and Combinations (2014).pdf",
+      "status": "ok",
+      "entries": 60
+    },
+    {
+      "title": "Option Strategies - A Quick Guide (2010)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Strategies - A Quick Guide (2010).pdf",
+      "status": "ok",
+      "entries": 14
+    },
+    {
+      "title": "Option Trading - Pricing and Volatility Strategies (2010)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Option Trading - Pricing and Volatility Strategies (2010).pdf",
+      "status": "ok",
+      "entries": 34
+    },
+    {
+      "title": "Options And Options Trading - A Simplified Course (2004)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options And Options Trading - A Simplified Course (2004).pdf",
+      "status": "ok",
+      "entries": 23
+    },
+    {
+      "title": "Options and Other Derivatives (2015)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options and Other Derivatives (2015).pdf",
+      "status": "ok",
+      "entries": 53
+    },
+    {
+      "title": "Options Made Easy (2005)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options Made Easy (2005).pdf",
+      "status": "ok",
+      "entries": 23
+    },
+    {
+      "title": "Options Strategies (1996)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options Strategies (1996).pdf",
+      "status": "ok",
+      "entries": 51
+    },
+    {
+      "title": "Options Trading Crash Course - Quick Start Guide For Beginners To Learn Risk And Reward",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Options Trading Crash Course - Quick Start Guide For Beginners To Learn Risk And Reward\\Options Trading Crash Course - Quick Start Guide For Beginners To Learn Risk And Reward.pdf",
+      "status": "ok",
+      "entries": 79
+    },
+    {
+      "title": "Options Trading for the Conservative Investor (2010)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options Trading for the Conservative Investor (2010).pdf",
+      "status": "ok",
+      "entries": 83
+    },
+    {
+      "title": "Options Trading Primer By Marketwise Trading School (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Options Trading Primer By Marketwise Trading School (2002).pdf",
+      "status": "ok",
+      "entries": 202
+    },
+    {
+      "title": "professional_automated_trading",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\professional_automated_trading.pdf",
+      "status": "ok",
+      "entries": 9
+    },
+    {
+      "title": "Profit With Options - Essential Methods For Investing Success (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Profit With Options - Essential Methods For Investing Success (2002).pdf",
+      "status": "ok",
+      "entries": 58
+    },
+    {
+      "title": "Profitable Candlestick Trading  (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Candlestick Trading Collection\\Profitable Candlestick Trading  (2002).pdf",
+      "status": "ok",
+      "entries": 3
+    },
+    {
+      "title": "Put Option Strategies for Smarter Trading (2010)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Put Option Strategies for Smarter Trading (2010).pdf",
+      "status": "ok",
+      "entries": 54
+    },
+    {
+      "title": "Quantitative Finance (2007)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Quantitative Finance (2007).pdf",
+      "status": "ok",
+      "entries": 24
+    },
+    {
+      "title": "Secrets Of The Millionaire Traders Vol I (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Secrets Of The Millionaire Traders Vol I (2000).pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "Secrets Of The Millionaire Traders Vol II (2001)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Secrets Of The Millionaire Traders Vol II (2001).pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "Statistics of Financial Markets (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Statistics of Financial Markets (2013).pdf",
+      "status": "ok",
+      "entries": 58
+    },
+    {
+      "title": "Step by Step Trading - Alexander Elder (2015)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\Step by Step Trading - Alexander Elder (2015).pdf",
+      "status": "ok",
+      "entries": 9
+    },
+    {
+      "title": "Strategic Analysis And Trading Tactics (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Strategic Analysis And Trading Tactics (2000).pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "Sure Fire Forex Trading (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\Sure Fire Forex Trading (2000).pdf",
+      "status": "ok",
+      "entries": 5
+    },
+    {
+      "title": "Swing Trading Using Candlestick Charting With Pivot Point Analysis  (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\Swing Trading Using Candlestick Charting With Pivot Point Analysis  (2002).pdf",
+      "status": "ok",
+      "entries": 1
+    },
+    {
+      "title": "Technical Trading Tactics (2004)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\Technical Trading Tactics (2004).pdf",
+      "status": "ok",
+      "entries": 10
+    },
+    {
+      "title": "The Candlestick Trading Bible",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\The Candlestick Trading Bible.pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "The Complete Book of Options Spreads (2014)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Complete Book of Options Spreads (2014).pdf",
+      "status": "ok",
+      "entries": 60
+    },
+    {
+      "title": "The Complete Guide to Option Pricing Formulas (2007)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Complete Guide to Option Pricing Formulas (2007).pdf",
+      "status": "ok",
+      "entries": 58
+    },
+    {
+      "title": "The Day Trading Course (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\The Day Trading Course (2000).pdf",
+      "status": "no_text",
+      "entries": 0
+    },
+    {
+      "title": "The Economist - Guide to Investment Strategy (2006)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\The Economist - Guide to Investment Strategy (2006).pdf",
+      "status": "ok",
+      "entries": 13
+    },
+    {
+      "title": "The Equity Options Strategy Guide (2010)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Equity Options Strategy Guide (2010).pdf",
+      "status": "ok",
+      "entries": 94
+    },
+    {
+      "title": "The Forex Trading Course (2008)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\The Forex Trading Course (2008).pdf",
+      "status": "ok",
+      "entries": 5
+    },
+    {
+      "title": "The Four Biggest Mistakes In Futures Trading (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\The Four Biggest Mistakes In Futures Trading (2000).pdf",
+      "status": "ok",
+      "entries": 14
+    },
+    {
+      "title": "The Holy Grail Trading System",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Futures and Forex Collection\\The Holy Grail Trading System (2013)\\The Holy Grail Trading System.pdf",
+      "status": "ok",
+      "entries": 1
+    },
+    {
+      "title": "The Mathematics Of Financial Modeling And Investment Management (2004)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\The Mathematics Of Financial Modeling And Investment Management (2004).pdf",
+      "status": "ok",
+      "entries": 16
+    },
+    {
+      "title": "The Option Trader Handbook - Strategies And Trade Adjustments (2004)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Option Trader Handbook - Strategies And Trade Adjustments (2004).pdf",
+      "status": "ok",
+      "entries": 220
+    },
+    {
+      "title": "The Option Trader's Guide To Probability, Volatility And Timing (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Option Trader's Guide To Probability, Volatility And Timing (2002).pdf",
+      "status": "ok",
+      "entries": 40
+    },
+    {
+      "title": "The Option Trader's Hedge Fund (2012)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Hedge Fund Collection\\The Option Trader's Hedge Fund (2012)\\The Option Trader's Hedge Fund (2012).pdf",
+      "status": "ok",
+      "entries": 27
+    },
+    {
+      "title": "The Options Course  (2005)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Options Course  (2005).pdf",
+      "status": "ok",
+      "entries": 28
+    },
+    {
+      "title": "The Options Course (2005)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\The Options Course (2005).pdf",
+      "status": "ok",
+      "entries": 28
+    },
+    {
+      "title": "The Secret Of Selecting Stocks For Immediate And Substantial Gains (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\The Secret Of Selecting Stocks For Immediate And Substantial Gains (2000).pdf",
+      "status": "ok",
+      "entries": 3
+    },
+    {
+      "title": "The Secrets Of Emotion Free Trading (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Financial Management Collection\\The Secrets Of Emotion Free Trading (2000).pdf",
+      "status": "ok",
+      "entries": 5
+    },
+    {
+      "title": "The Ultimate Trading Guide (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\The Ultimate Trading Guide (2000).pdf",
+      "status": "ok",
+      "entries": 1
+    },
+    {
+      "title": "The Way To Trade (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\The Way To Trade (2000).pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "Trade Options Online (2009)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Trade Options Online (2009).pdf",
+      "status": "ok",
+      "entries": 5
+    },
+    {
+      "title": "Trading as a Business  (2015)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Master Traders Collection\\Trading as a Business  (2015).pdf",
+      "status": "ok",
+      "entries": 5
+    },
+    {
+      "title": "Trading for a Living (2014) - Study Guide",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Trading for a Living Collection - Dr Elder\\Trading for a Living Study - Study Guide  (2014)\\Trading for a Living (2014) - Study Guide.pdf",
+      "status": "ok",
+      "entries": 3
+    },
+    {
+      "title": "Trading for a Living (2014)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Trading for a Living Collection - Dr Elder\\Trading for a Living (2014)\\Trading for a Living (2014).pdf",
+      "status": "ok",
+      "entries": 5
+    },
+    {
+      "title": "Trading for beginners, The Bible 7 in 1 - Swing Trading,Dividend Investing,Options Trading Crash Course",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Trading for beginners, The Bible 7 in 1 - Swing Trading,Dividend Investing,Options Trading Crash Course\\Trading for beginners, The Bible 7 in 1 - Swing Trading,Dividend Investing,Options Trading Crash Course.pdf",
+      "status": "ok",
+      "entries": 23
+    },
+    {
+      "title": "Trading on Momentum (2002)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Day Trading Collection\\Trading on Momentum (2002).pdf",
+      "status": "ok",
+      "entries": 0
+    },
+    {
+      "title": "Trading Options For Dummies (2008)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Trading Options For Dummies (2008).pdf",
+      "status": "ok",
+      "entries": 31
+    },
+    {
+      "title": "Trading Regime Analysis - The Probability of Volatility  (2009)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Volatility and VIX Collection\\Trading Regime Analysis - The Probability of Volatility  (2009).pdf",
+      "status": "ok",
+      "entries": 3
+    },
+    {
+      "title": "Trading Stocks and Options with Moving Averages (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Technical Analysis Collection\\Trading Stocks and Options with Moving Averages (2013).pdf",
+      "status": "ok",
+      "entries": 6
+    },
+    {
+      "title": "Trading Systems and Methods (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Swing Trading Collection\\Trading Systems and Methods (2013).pdf",
+      "status": "ok",
+      "entries": 4
+    },
+    {
+      "title": "Trading with Candlesticks (2011)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Candlestick Trading Collection\\Trading with Candlesticks (2011).pdf",
+      "status": "ok",
+      "entries": 5
+    },
+    {
+      "title": "Trading With Ichimoku Clouds (2009)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Candlestick Trading Collection\\Trading With Ichimoku Clouds (2009).pdf",
+      "status": "ok",
+      "entries": 8
+    },
+    {
+      "title": "Understanding Stocks (2004)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Understanding Stocks (2004).pdf",
+      "status": "ok",
+      "entries": 13
+    },
+    {
+      "title": "Using Excel for Business Analysis (2012)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader\\Using Excel for Business Analysis (2012).pdf",
+      "status": "ok",
+      "entries": 4
+    },
+    {
+      "title": "Using Options To Buy Stocks  (2000)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Using Options To Buy Stocks  (2000).pdf",
+      "status": "ok",
+      "entries": 8
+    },
+    {
+      "title": "Visual Guide to Options (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Options Trading Collection\\Visual Guide to Options (2013).pdf",
+      "status": "ok",
+      "entries": 6
+    },
+    {
+      "title": "Volatility Trading (2013)",
+      "path": "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading\\Books - Investing and Options\\Volatility and VIX Collection\\Volatility Trading (2013).pdf",
+      "status": "ok",
+      "entries": 54
+    }
+  ]
+}

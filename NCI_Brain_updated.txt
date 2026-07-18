@@ -1,0 +1,128 @@
+{
+    "version": "NCI-OS-BRAIN-1.0.0",
+    "name": "OptionScope NCI Trading Brain",
+    "purpose": "Grow an options account and compound profits into a portfolio core using Robinhood as the manual broker path",
+    "broker": "robinhood",
+    "executionMode": "manual_checklist_only",
+    "never": [
+        "auto_place_orders",
+        "request_robinhood_password",
+        "request_2fa",
+        "unofficial_robinhood_api",
+        "undefined_risk_in_companion_mode"
+    ],
+    "pipeline": [
+        "MarketContext (Phase 3)",
+        "StrategyRule library match",
+        "Hard risk gates",
+        "Contract sizing",
+        "Ranked recommendations",
+        "Robinhood order checklist (manual entry)",
+        "Journal + profit allocation to options float vs portfolio core"
+    ],
+    "growthModes": {
+        "aggressive_growth": {
+            "openRiskBudgetPct": 0.3,
+            "perTradeRiskPct": 0.015,
+            "perTradeRiskCapPct": 0.02,
+            "reinvestOptionsPct": 0.7,
+            "portfolioCorePct": 0.3,
+            "maxOpenCampaigns": 6
+        },
+        "balanced": {
+            "openRiskBudgetPct": 0.2,
+            "perTradeRiskPct": 0.01,
+            "perTradeRiskCapPct": 0.02,
+            "reinvestOptionsPct": 0.5,
+            "portfolioCorePct": 0.5,
+            "maxOpenCampaigns": 4
+        },
+        "income_preservation": {
+            "openRiskBudgetPct": 0.12,
+            "perTradeRiskPct": 0.0075,
+            "perTradeRiskCapPct": 0.015,
+            "reinvestOptionsPct": 0.3,
+            "portfolioCorePct": 0.7,
+            "maxOpenCampaigns": 3
+        }
+    },
+    "hardGates": {
+        "blockUndefinedRisk": true,
+        "absoluteMaxLossPct": 0.05,
+        "dailyLossHaltPct": 0.03,
+        "rejectWideLiquidity": true,
+        "respectEventStance": true,
+        "execution": "manual_checklist_only"
+    },
+    "primaryGrowthEngine": {
+        "name": "The Wheel",
+        "steps": [
+            "Sell cash-secured put (delta ~0.25, 30-45 DTE) when IV elevated/neutral and trend up/sideways",
+            "If assigned, sell covered call (delta ~0.30) against 100 shares",
+            "Take 50% max profit or roll/close by 21 DTE",
+            "Allocate realized profit per growthMode into options float + portfolio core"
+        ]
+    },
+    "strategyRules": [
+        "wheel_csp_entry",
+        "wheel_cc_income",
+        "bull_put_credit_income",
+        "bear_call_credit_income",
+        "iron_condor_range",
+        "bull_call_debit_growth",
+        "bear_put_debit_growth",
+        "long_call_basic",
+        "long_put_hedge",
+        "long_straddle_event"
+    ],
+    "wheelUniverse": [
+        "AAPL",
+        "MSFT",
+        "AMZN",
+        "GOOGL",
+        "META",
+        "NVDA",
+        "INTC",
+        "SOFI",
+        "SLV",
+        "SPY",
+        "QQQ",
+        "IWM"
+    ],
+    "corePortfolioUniverse": [
+        "VTI",
+        "VXUS",
+        "BND",
+        "SCHD",
+        "DGRO",
+        "SPY",
+        "QQQ"
+    ],
+    "codeMap": {
+        "policy": "src/knowledge/portfolioPolicy.ts",
+        "rules": "src/knowledge/strategyRules.ts",
+        "selector": "src/brain/selector.ts",
+        "portfolio": "src/brain/portfolio.ts",
+        "riskGates": "src/brain/riskGates.ts",
+        "tests": [
+            "tests/brain/portfolio.test.ts",
+            "tests/brain/selector.test.ts",
+            "tests/brain/growthLock.test.ts"
+        ]
+    },
+    "validationLocks": [
+        "reinvestOptionsPct + portfolioCorePct == 1 for every growth mode",
+        "perTradeRiskPct <= perTradeRiskCapPct",
+        "single trade max loss never exceeds absoluteMaxLossPct of equity",
+        "open risk never exceeds openRiskBudgetPct of equity",
+        "daily realized loss >= dailyLossHaltPct of equity halts new recommendations",
+        "losses hit options float only; portfolio core is never raided",
+        "undefined risk blocked in companion mode",
+        "no Robinhood credentials or auto-execution in brain output",
+        "growth-primary income engines preferred when MarketContext matches"
+    ],
+    "disclaimer": "Educational decision support only. Not investment advice. Not affiliated with Robinhood. All probabilities are model estimates. Verify every order manually in Robinhood before entry.",
+    "updatedAt": "2026-07-11T19:09:46.677Z",
+    "repo": "https://github.com/chapmancapital1-droid/opiontrading.git",
+    "branch": "claude/openbb-data-news-integration"
+}

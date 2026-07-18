@@ -1,0 +1,252 @@
+00Weissman_i_xxii 10/25/04 9:47 AM Page i
+Mechanical
+Trading
+Systems
+00Weissman_i_xxii 10/25/04 9:47 AM Page ii
+Founded in 1807, John Wiley & Sons is the oldest independent publishing
+company in the United States. With offices in North America, Europe,
+Australia, and Asia, Wiley is globally committed to developing and
+marketing print and electronic products and services for our customers’
+professional and personal knowledge and understanding.
+The Wiley Trading series features books by traders who have survived the
+market’s ever-changing temperament and have prospered—some by
+reinventing systems, others by getting back to basics. Whether a novice
+trader, professional or somewhere in-between, these books will provide
+the advice and strategies needed to prosper today and well into the future.
+For a list of available titles, please visit our web site at
+www.WileyFinance.com.
+00Weissman_i_xxii 10/25/04 9:47 AM Page iii
+Mechanical
+Trading
+Systems
+Pairing Trader Psychology
+with Technical Analysis
+RICHARD L. WEISSMAN
+John Wiley & Sons, Inc.
+00Weissman_i_xxii 10/25/04 9:47 AM Page iv
+Copyright © 2005 by Richard L. Weissman. All rights reserved.
+CQG charts are copyright © 2004 CQG, Inc. All rights reserved worldwide.
+Published by John Wiley & Sons, Inc., Hoboken, New Jersey
+Published simultaneously in Canada
+No part of this publication may be reproduced, stored in a retrieval system, or
+transmitted in any form or by any means, electronic, mechanical, photocopying,
+recording, scanning, or otherwise, except as permitted under Section 107 or 108 of
+the 1976 United States Copyright Act, without either the prior written permission
+of the publisher, or authorization through payment of the appropriate per-copy fee
+to the Copyright Clearance Center, Inc., 222 Rosewood Drive, Danvers, MA 01923,
+978-750-8400, fax 978-646-8600, or on the Web at www.copyright.com. Requests to
+the publisher for permission should be addressed to the Permissions Department,
+John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ 07030, 201-748-6011, fax
+201-748-6008.
+Limit of Liability/Disclaimer of Warranty: Although the publisher and author have
+used their best efforts in preparing this book, they make no representations or
+warranties with respect to the accuracy or completeness of the contents of this
+book and specifically disclaim any implied warranties of merchantability or fitness
+for a particular purpose. No warranty may be created or extended by sales repre-
+sentatives or written sales materials. The advice and strategies contained herein
+may not be suitable for your situation. You should consult with a professional
+where appropriate. Neither the publisher nor author shall be liable for any loss of
+profit or any other commercial damages, including but not limited to special, inci-
+dental, consequential, or other damages.
+For general information on our other products and services, or technical support,
+please contact our Customer Care Department within the United States at 800-762-
+2974, outside the United States at 317-572-3993, or fax 317-572-4002.
+Wiley also publishes its books in a variety of electronic formats. Some content that
+appears in print may not be available in electronic books.
+For more information about Wiley products, visit our web site at www.wiley.com.
+0-471-65435-3
+Printed in the United States of America
+10 9 8 7 6 5 4 3 2 1
+00Weissman_i_xxii 10/25/04 9:47 AM Page v
+For my wife, Pamela Nations-Weissman, whose vision inspired
+this manuscript, and also for my parents, whose belief and support
+guided me through the early years
+00Weissman_i_xxii 10/25/04 9:47 AM Page vi
+00Weissman_i_xxii 10/25/04 9:47 AM Page vii
+Every battle is won before it is ever fought.
+—Sun Tzu
+00Weissman_i_xxii 10/25/04 9:47 AM Page viii
+00Weissman_i_xxii 10/25/04 9:47 AM Page ix
+Contents
+Preface xiii
+Acknowledgments xix
+CHAPTER 1 Dispelling Myths and Defining Terms:
+Mathematical Technical Analysis and
+Mechanical Trading Systems 1
+Dispelling the Myths: The Inefficient Market and the
+Hard Road to Profits 1
+Technical Analysis: A Definition 3
+Mechanical Trading Systems: A Definition 5
+Defining the Time frames 6
+Technical Analysis: Why it Works 6
+Types of Technical Indicators: Trend-Following and Mean
+Reversion 10
+CHAPTER 2 Mathematical Technical Analysis: A Building
+Block for Mechanical Trading System
+Development 15
+Types of Technical Indicators 16
+Trend-Following Indicators: Indicator-Driven Triggers 18
+Price-Triggered Trend-Following Indicators: Donchian’s
+Channel Breakout 30
+Mean Reversion Indicator-Driven Triggers: Oscillators 31
+ix
+00Weissman_i_xxii 10/25/04 9:47 AM Page x
+x MECHANICAL TRADING SYSTEMS
+CHAPTER 3 Trend-Following Systems: A Matter
+of Fortitude 41
+Preliminary Considerations 42
+Two Moving Average Crossover 50
+Ichimoku Two Moving Average Crossover 52
+Three Moving Average Crossover 53
+Ichimoku Three Moving Average Crossover 54
+MACD 55
+DMI 56
+DMI with ADX 57
+Channel Breakout 59
+Bollinger Bands 60
+Some Comparisons 61
+General Rules of Thumb 63
+Cutting the Tails of a System’s Distribution 65
+Psychological Profile of a Trend-Following Trader 69
+CHAPTER 4 Mean Reversion Systems:
+A Matter of Patience 73
+Considerations in Analyzing Intermediate-Term Mean
+Reversion Trading Systems 73
+Trend-Following Mean Reversion Systems 74
+Nondirectionally Biased Mean Reversion Systems 81
+Psychological Profile of an Intermediate-Term Mean Reversion
+Trader 85
+CHAPTER 5 Short-Term Systems: A Matter of Quick-
+Mindedness 89
+Fading the Losing System 89
+Liquidity and Volatility 89
+Backtested Results 91
+Swing Trading with 2-Hour Bars 92
+Mean Reversion Systems Using 60-Minute Bars 95
+Nondirectionally Biased Mean Reversion Systems 96
+Mean Reversion Systems Using 30-Minute Bars 98
+00Weissman_i_xxii 10/25/04 9:47 AM Page xi
+Contents xi
+15-Minute Bar Systems: RSI Extremes with 50-Hour
+Moving Average Filter 101
+5-Minute Bar Systems: RSI Extremes with 16.67-Hour
+Moving Average Filter 101
+Psychological Profile of a Short-term Trader 102
+CHAPTER 6 Knowing Oneself: How to Challenge
+Your Knowledge 105
+Trader Psychology: Ever the Same and Perpetually Changing 105
+Time Frames, Trading Systems, and Personality Traits 106
+CHAPTER 7 System Development and Analysis:
+Benefits and Pitfalls 115
+System Development Issues: An Overview 115
+Benefits of Mechanical Trading Systems 116
+Pitfalls of Mechanical Trading Systems 116
+Optimization Process 122
+System Development Process 148
+Data Analysis Process 151
+Trading System Philosophy Statements 159
+Measuring Trading System Performance 160
+CHAPTER 8 Price Risk Management: Schools of Price
+Risk Managment and Other
+Considerations 163
+Price Risk Management Issues: An Overview 163
+Stop-Loss Price Risk Management for Trading Accounts 165
+Two Schools of Price Risk Management 165
+Stop-Loss Price Risk Management 166
+Volumetric Price Risk Management: Martingale and
+Anti-Martingale Strategies 168
+Value at Risk: An Overview 169
+Benefits of Value at Risk 170
+Pitfalls of Value at Risk 171
+Stress Testing 173
+00Weissman_i_xxii 10/25/04 9:47 AM Page xii
+xii MECHANICAL TRADING SYSTEMS
+Psychology of Price Risk Management 173
+Mechanical Trading Systems, Drawdowns, and
+Trader Confidence 174
+CHAPTER 9 Improving the Rate of Return: Improving
+Returns by Expanding the Comfort Zone 177
+Three Types of Diversification 177
+Diversification of Parameter Sets 177
+Mechanics of Trading System Diversification 180
+Psychology of Trading System Diversification 182
+CHAPTER 10 Discretion and Systems Trading:
+Discretion within a Mechanical
+Framework 185
+Discretion and Paradigm Shifts 185
+Discretion, Volatility, and Price Shocks 186
+Mechanical Discretion 187
+Pros and Cons of “True” Discretion 188
+CHAPTER 11 Psychology of Mechanical Trading:
+Trading Systems and Transformational
+Psychology 189
+Discipline and Flexibility 189
+Flexibility in Body and Mind 191
+Knowing Ourselves 192
+Single-mindedness: Unraveling the Onion Layers 193
+Intuition versus the Psychic Trader Syndrome 194
+Transformation via Adherence to Mechanical
+Trading Systems 195
+Transformational Process: In Life and the Markets 196
+Notes 199
+References and Further Reading 205
+Index 207
+00Weissman_i_xxii 10/25/04 9:47 AM Page xiii
+Preface
+In 1987 my father and I purchased a seat on the New York Futures Exchange
+for $100 and established a trading account with $25,000. The goal, he ex-
+plained, was to make $2,500 a week. Although this seemed like an extraor-
+dinary annualized return on investment, I had heard of legendary traders
+who had taken meager sums and transformed them into vast fortunes, and
+so I embarked on a journey that eventually culminated in the publication of
+this book.
+I wish I could tell you that this book contains the secrets of how I ac-
+complished that formidable goal, but I never did learn how to consistently
+produce even a 100 percent average annualized rate of return on my capital.
+I will say that if I had somehow accomplished that goal I would probably
+have very little knowledge to offer the typical trader. Instead my journey
+was a difficult one in which I gradually learned that trying to earn several
+hundred percent on my capital annually was, for me at least, a recipe for dis-
+aster.
+And yet if I had known what I now understand about realistic rates of
+return on investment vis-à-vis risks taken to achieve those returns, I might
+not have chosen speculation as a career, and that path has given me far
+more than mere financial rewards. It has taught me to be open-minded, pa-
+tient, objective, consistent, disciplined, even-minded, and nonattached to
+the results of my actions. In addition, it taught me how to survive as a trader
+while suffering from being severely undercapitalized.
+I am certain that there must be numerous practical methods accessible
+to traders that allow them to produce respectable overall rates of return on
+their capital while minimizing the risk of ruin. However, to this day, the
+only method that I have been able to impart successfully to professional
+traders is that of employing mechanical trading systems based on mathe-
+matical technical analysis. Such mechanical trading systems allow the de-
+velopment of comprehensive, detailed trading plans that include rules of
+entry, exit, and price risk management. More important, they enable the
+backtesting and forward testing of a particular strategy’s results prior to
+xiii
+00Weissman_i_xxii 10/25/04 9:47 AM Page xiv
+xiv MECHANICAL TRADING SYSTEMS
+the commitment of capital. This, in turn, aids in fostering the discipline
+necessary to weather the inevitable losses inherent in employment of any
+trading program.
+This book will not show readers how to turn $10,000 into $1 million in
+one year’s time. I believe that system developers advocating their ability to
+generate such rates of return are charlatans, victims of curve-fitted trading
+systems, or theoreticians blind to the risk of ruin entailed in the achieve-
+ment of such spectacular returns. Instead of spectacular risks and returns,
+I offer simple trading systems that, because of that very simplicity, are quite
+robust in terms of generating overall positive rates of return while simulta-
+neously minimizing the risk of ruin. Although the proprietary strategies I
+personally trade differ from those employed in this book, the systems of-
+fered herein are simple enough to have a significant probability of ensuring
+the achievement of similar, moderately successful results in the future. That
+being said, the methodologies examined herein are certainly not intended
+as “holy grails” of trading, but instead are offered as prototypes to motivate
+and guide readers in developing systems that match their individual tem-
+peraments.
+Critics of books on trading system development suggest that no one
+would give away a successful trading system and that if a profitable system
+were given away, it would no longer work since everyone would be using it.
+Such criticism suggests a naivete regarding market dynamics and trader
+psychology. This book argues that the primary reason for failure as a

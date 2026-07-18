@@ -1,0 +1,265 @@
+P1:PBU/OVY P2:PBU/OVY QC:PBU/OVY T1:PBU
+JWPR020-FM JWPR020-Thomsett June27,2007 19:30
+Getting Started in
+OPTIONS
+S E V E N T H E D I T I O N
+Michael C. Thomsett
+JOHNWILEY&SONS,INC.
+iii
+P1:PBU/OVY P2:PBU/OVY QC:PBU/OVY T1:PBU
+JWPR020-FM JWPR020-Thomsett June27,2007 19:30
+viii
+P1:PBU/OVY P2:PBU/OVY QC:PBU/OVY T1:PBU
+JWPR020-FM JWPR020-Thomsett June27,2007 19:30
+Getting Started in
+OPTIONS
+i
+P1:PBU/OVY P2:PBU/OVY QC:PBU/OVY T1:PBU
+JWPR020-FM JWPR020-Thomsett June27,2007 19:30
+The Getting Started In Series
+Getting Started in Online Day TradingbyKassandraBentley
+Getting Started in Investment ClubsbyMarshaBertrand
+Getting Started in Asset AllocationbyBillBresnanandEricP.Gelb
+Getting Started in Online InvestingbyDavidL.Brownand
+KassandraBentley
+Getting Started in Online BrokersbyKristineDeForge
+Getting Started in Internet AuctionsbyAlanElliott
+Getting Started in StocksbyAlvinD.Hall
+Getting Started in Mutual FundsbyAlvinD.Hall
+Getting Started in Estate PlanningbyKerryHannon
+Getting Started in Online Personal FinancebyBradHill
+Getting Started in 401(k) InvestingbyPaulKatzeff
+Getting Started in Internet InvestingbyPaulKatzeff
+Getting Started in Security AnalysisbyPeterJ.Klein
+Getting Started in Global InvestingbyRobertP.Kreitler
+Getting Started in FuturesbyToddLofton
+Getting Started in Project ManagementbyPaulaMartinand
+KarenTate
+Getting Started in Financial InformationbyDanielMoreauand
+TraceyLongo
+Getting Started in Emerging MarketsbyChristopherPoillon
+Getting Started in Technical AnalysisbyJackD.Schwager
+Getting Started in Hedge FundsbyDanielA.Strachman
+Getting Started in OptionsbyMichaelC.Thomsett
+Getting Started in Six SigmabyMichaelC.Thomsett
+Getting Started in Real Estate InvestingbyMichaelC.Thomsettand
+JeanFreestoneThomsett
+Getting Started in Tax-Savvy InvestingbyAndrewWesthamand
+DonKorn
+Getting Started in AnnuitiesbyGordonM.Williamson
+Getting Started in BondsbySharonSaltzgiverWright
+Getting Started in Retirement PlanningbyRonaldM.Yollesand
+MurrayYolles
+Getting Started in Currency TradingbyMichaelD.Archerand
+JimL.Bickford
+Getting Started in Rental IncomebyMichaelC.Thomsett
+Getting Started in Exchange Traded FundsbyToddLofton
+Getting Started in Fundamental AnalysisbyMichaelC.Thomsett
+Getting Started in REITSbyRichardImperiale
+Getting Started in Swing TradingbyMichaelC.Thomsett
+Getting Started in Property FlippingbyMichaelC.Thomsett
+ii
+P1:PBU/OVY P2:PBU/OVY QC:PBU/OVY T1:PBU
+JWPR020-FM JWPR020-Thomsett June27,2007 19:30
+Getting Started in
+OPTIONS
+S E V E N T H E D I T I O N
+Michael C. Thomsett
+JOHNWILEY&SONS,INC.
+iii
+P1:PBU/OVY P2:PBU/OVY QC:PBU/OVY T1:PBU
+JWPR020-FM JWPR020-Thomsett June27,2007 19:30
+Copyright(cid:2) C 2007byMichaelC.Thomsett.Allrightsreserved.
+PublishedbyJohnWiley&Sons,Inc.,Hoboken,NewJersey.
+PublishedsimultaneouslyinCanada.
+WileyBicentennialLogo:RichardJ.Pacifico
+Nopartofthispublicationmaybereproduced,storedinaretrievalsystem,ortransmittedinanyformorby
+anymeans,electronic,mechanical,photocopying,recording,scanning,orotherwise,exceptaspermitted
+underSection107or108ofthe1976UnitedStatesCopyrightAct,withouteitherthepriorwritten
+permissionofthePublisher,orauthorizationthroughpaymentoftheappropriateper-copyfeetothe
+CopyrightClearanceCenter,Inc.,222RosewoodDrive,Danvers,MA01923,978-750-8400,fax
+978-646-8600,oronthewebatwww.copyright.com.RequeststothePublisherforpermissionshouldbe
+addressedtothePermissionsDepartment,JohnWiley&Sons,Inc.,111RiverStreet,Hoboken,NJ07030,
+201-748-6011,fax201-748-6008,oronlineatwww.wiley.com/go/permissions.
+LimitofLiability/DisclaimerofWarranty:Whilethepublisherandauthorhaveusedtheirbesteffortsin
+preparingthisbook,theymakenorepresentationsorwarrantieswithrespecttotheaccuracyorcompleteness
+ofthecontentsofthisbookandspecificallydisclaimanyimpliedwarrantiesofmerchantabilityorfitnessfora
+particularpurpose.Nowarrantymaybecreatedorextendedbysalesrepresentativesorwrittensalesmaterials.
+Theadviceandstrategiescontainedhereinmaynotbesuitableforyoursituation.Youshouldconsultwitha
+professionalwhereappropriate.Neitherthepublishernorauthorshallbeliableforanylossofprofitorany
+othercommercialdamages,includingbutnotlimitedtospecial,incidental,consequential,orotherdamages.
+Forgeneralinformationonourotherproductsandservicesorfortechnicalsupport,pleasecontactour
+CustomerCareDepartmentwithintheUnitedStatesat800-762-2974,outsidetheUnitedStatesat
+317-572-3993orfax317-572-4002.
+Wileyalsopublishesitsbooksinavarietyofelectronicformats.Somecontentthatappearsinprintmaynot
+beavailableinelectronicbooks.
+FormoreinformationaboutWileyproducts,visitourwebsiteatwww.wiley.com.
+LibraryofCongressCataloging-in-PublicationData:
+Thomsett,MichaelC.
+Gettingstartedinoptions/MichaelC.Thomsett.–7thed.
+p. cm.–(Thegettingstartedinseries)
+Includesindex.
+ISBN978-0-470-13806-9(pbk.)
+1.Stockoptions. 2.Options(Finance) I.Title.
+HG6042.T462007
+332.63(cid:3)2283–dc22 2007026309
+PrintedintheUnitedStatesofAmerica.
+10 9 8 7 6 5 4 3 2 1
+iv
+P1:PBU/OVY P2:PBU/OVY QC:PBU/OVY T1:PBU
+JWPR020-FM JWPR020-Thomsett June27,2007 19:30
+Contents
+Acknowledgments vii
+ElementKey ix
+Introduction 1
+Chapter 1
+CallsandPuts:DefiningtheFieldofPlay 5
+Chapter 2
+Opening,Closing,Tracking:HowItAllWorks 47
+Chapter 3
+BuyingCalls:MaximizingtheRosyView 75
+Chapter 4
+BuyingPuts:ThePositiveSideofPessimism 99
+Chapter 5
+SellingCalls:ConservativeandProfitable 123
+Chapter 6
+ChoosingStocks:FindingtheRightIngredients 165
+Chapter 7
+StrategiesinVolatileMarkets:Uncertainty
+asanAdvantage 209
+v
+P1:PBU/OVY P2:PBU/OVY QC:PBU/OVY T1:PBU
+JWPR020-FM JWPR020-Thomsett June27,2007 19:30
+vi CONTENTS
+Chapter 8
+SellingPuts:TheOverlookedStrategy 227
+Chapter 9
+CombinedTechniques:CreativeRiskManagement 245
+Chapter 10
+PaperTrading:ATestRunoftheTheory 297
+Chapter 11
+OptionsforSpecializedTrading:Leveraging
+theTechnicalApproach 305
+Chapter 12
+RiskandTaxes:RulesoftheGame 325
+Chapter 13
+CalculatingtheReturn:AComplexAspecttoOptions 343
+Glossary 357
+RecommendedReading 375
+Index 377
+P1:PBU/OVY P2:PBU/OVY QC:PBU/OVY T1:PBU
+JWPR020-FM JWPR020-Thomsett June27,2007 19:30
+Acknowledgments
+T
+hanks to those readers of the previous six editions who took the time
+tooffertheircompliments,constructivecriticism,orclarifyingquestions.
+Theirlettershavehelpedtoimprovetheever-emergingsetofexplanations,
+definitions,andexamplesusedinthisbook.
+ThanksalsotomyeditoratJohnWiley&Sons,DebraEnglander,forher
+encouragementthroughmanyeditionsofthisandotherbooks.
+Many thanks to Candlestickchart.com for their permission to use their
+chartstoillustratepointsinthisbook.ThanksalsogototheRediNewsnetwork,
+whichprovidedthemarketdatausedinthecharts.
+Finally,thanksgotomywife,LindaRoseThomsett,forherinsights,sup-
+port,andenthusiasmforthisendeavor.
+vii
+P1:PBU/OVY P2:PBU/OVY QC:PBU/OVY T1:PBU
+JWPR020-FM JWPR020-Thomsett June27,2007 19:30
+viii
+P1:PBU/OVY P2:PBU/OVY QC:PBU/OVY T1:PBU
+JWPR020-FM JWPR020-Thomsett June27,2007 19:30
+Element Key
+Examples: Numerous examples illustrate points made in the discussion sur-
+roundingthemandaredesignedtoexpressideasinpracticalterms.
+Definitions:Thissymbolisfoundinboxednotationsprovidingspe-
+cificdefinitionsofoptionsterms.Theseoccuratthepointofdiscussion
+within the book, making definitions applicable to the section being
+read.(Alldefinitionsarealsosummarizedforyouintheglossary.)
+Smart Investor Tips: These are useful observations, rules of thumb,
+resources, and other useful added points every options investor can
+use.
+ix
+P1:PBU/OVY P2:PBU/OVY QC:PBU/OVY T1:PBU
+JWPR020-FM JWPR020-Thomsett June27,2007 19:30
+x
+int JWPR020-Thomsett May19,2007 7:29
+Introduction
+L
+earning,apparently,isanever-endingprocess.
+No matter how many years you spend mastering the field of options
+trading,thereisinvariablymoretolearn.Inthis,the7theditionofGetting
+StartedinOptions,alotofnewmaterialhasbeenaddeddueto(a)newmarkets
+and new concepts in the field; (b) expanded strategic uses of options; and
+(c)newandimportantaspectsthathavegrownfrompreviouseditions.
+Perhapsthemostimportantattributeofoptionsistheirflexibilityasstrate-
+gicrisktools.Contrarytothereputationashigh-riskinstruments,optionscover
+the entire range of risk. They can be quite speculative and even expensive; the
+shortoptionspositioncanposeaveryrealriskandmayevencauselargelosses.
+Ontheoppositeendofthespectrum,conservativeandlow-riskstrategiesoffer
+youprotectionforexistingpositionsinyourportfolio,diversificationbymarket
+position,andadditionalcashincome.Thenewtraderlookingatoptionsforany
+of these uses should also bear in mind that no two people will find the same
+strategic profile appropriate. All options strategies should be good matches for
+yourindividualincome,experience,andrisktolerance.
+In this edition, all chapters have been changed to some degree; and three
+newandimportantchaptersandtopicshavebeenaddedin.Chapter10explains
+howpapertradingworksandcanprovideyouwithusefulexperiencebeforeyou
+putrealmoneyatrisk.Chapter11examinesthemanyusesofoptionsbeyondthe
+obviousbuyingandselling,includingameansforexpandingswingtrading,day
+trading, and sector trading. And Chapter 13 is devoted entirely to calculations
+ofreturnfromoptionstrading.Thislastchapterdeserveditsownconcentrated
+discussion. Although return calculations are explained within other chapters,
+optionstradinginvolvesadditionalcalculationsyouneedtobeawareof,aswell
+asdifferentmethodsforcalculatingtheoutcome.
+Thepurposeofthisbookistoprovideyouwithasolidfoundationinthe
+optionsmarket.Toachievethisgoal,chaptersaresetuptoprovidemanyuseful
+tools,including:
+Ĺ Definitionsincontext.Terminologyintheoptionsworldiscomplexand
+specialized,oftenconfusingandevenoverwhelminganewcomer.Soas
+eachtermisintroduced,itisdefinedinashadedboxontheapplicable
+page.
+1
+int JWPR020-Thomsett May19,2007 7:29
+2 GETTING STARTED IN OPTIONS
+Ĺ Smartinvestortips.Theseset-asidesgiveyouobservations,resources,or
+summaries to bring home a main point. In fact, one of the best ways
+to use this book is to skim through and read these tips until you find
+an area of discussion especially interesting or relevant to your personal
+questionsofthemoment.
+Ĺ Examples.Alotofbooksincludeexamples,andtheseareoftendifficult
+toapplyinanycontext.Inthisbook,examplesarespecificallydesigned
+to expand upon the discussion of the moment. They are kept straight-
+forward to make a point, without going off into excessive detail and
+discussion.
+Ĺ Checklists.Alotofdiscussioninthisbookisarrangedbywayofchecklists,
+andthismakesiteasiertoabsorbinformationinanorganizedandlogical
+manner.
+Ĺ Illustrations.Mostofwhatyoulearnisvisualinnature.Optionstrading
+can be exceptionally complex, mathematical, and difficult to follow, so
+theuseofalotofillustrativematerialhelpsclarifyimportantpoints.
+Ĺ Tables. Besides illustrations, whenever a lot of numerical information
+is needed (and that is often the case when options are involved) that
+information is set aside in a table. This keeps the narrative segments
+apartfromthenumerical,makingallofthediscussionclearerandmore
+digestible.
+As a method for proceeding through this book, don’t expect yourself to
+graspeverythingatthebeginning.Allowyourselftomovethroughthediscussions
+usingthesixusefultoolssummarizedabove.Setagoalforyourselftomasterthis
+excitingbutcomplexfieldofinvesting,infoursteps:
+1. Master the terminology of the options field. Of course, you cannot
+simplymemorizedefinitionswithoutacontext,whichiswhyallofthe
+termsyouneedareintroducedasthediscussionrequires.
+2. Be constantly aware of risk as you read this book. Options strategies
+are best defined in terms of risk levels, so the context of risk level is of
+utmostimportance.
+3. Watchthemarketandcheckoptionsaswellasstocks.Becomefamiliar
+withhowoptionvalueschangeasstocksmoveupwardanddownward,
+andbecomefamiliarwiththedegreeofmovementofoptionsatvarious
+valuelevels.
+4. Identifyyourownrisktolerancelevelsanddecidehowoptionsaremost
+appropriateinyourownportfolio.Tryvariousstrategiesthroughpaper
+int JWPR020-Thomsett May19,2007 7:29
+INTRODUCTION 3
+trading (see Chapter 10) before you put any cash at risk, to find out
+howthemarketforoptionsactuallyworks.Onlywhenyouhaveaclear
+ideaofwhatrisksare

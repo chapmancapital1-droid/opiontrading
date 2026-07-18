@@ -1,0 +1,147 @@
+N I N T H E D I T I O N
+OPTIONS, FUTURES,
+AND OTHER DERIVATIVES
+This page intentionally left blank
+N I N T H E D I T I O N
+OPTIONS, FUTURES,
+AND OTHER DERIVATIVES
+John C. Hull
+Maple Financial Group Professor of Derivatives and Risk Management
+Joseph L. Rotman School of Management
+University of Toronto
+Boston Columbus Indianapolis NewYork SanFrancisco UpperSaddleRiver
+Amsterdam CapeTown Dubai London Madrid Milan Munich Paris Montreal Toronto
+Delhi MexicoCity Sa˜oPaulo Sydney HongKong Seoul Singapore Taipei Tokyo
+EditorinChief: DonnaBattista
+EditorialProjectManager: ErinMcDonagh
+EditorialAssistant: ElissaSenra-Sargent
+ManagingEditor: JeffHolcomb
+ProjectManager: AlisonKalil
+SeniorManufacturingBuyer: CarolMelville
+AssociateProjectManager,Permissions: SamanthaGraham
+ArtDirector: JayneConte
+CoverArt: #V.Yakobchuk/Fotolia
+ExecutiveMediaProducer: MelissaHonig
+TextComposition: TheGeometricPress
+Printer/Binder: CourierKendallville
+CoverPrinter: Lehigh-Phoenix/Hagerstown
+TextFont: 10/12ptMonotypeTimes
+Creditsandacknowledgmentsborrowedfromothersourcesandreproduced,withpermission,inthistextbookappear
+onappropriatepagewithintext.
+Copyright#2015,2012,2009byPearsonEducation,Inc.Allrightsreserved.ManufacturedintheUnitedStatesof
+America.ThispublicationisprotectedbyCopyright,andpermissionshouldbeobtainedfromthepublisherpriorto
+anyprohibitedreproduction,storageinaretrievalsystem,ortransmissioninanyformorbyanymeans,electronic,
+mechanical,photocopying,recording,orlikewise.Toobtainpermission(s)tousematerialfromthiswork,please
+submitawrittenrequesttoPearsonEducation,Inc.,PermissionsDepartment,OneLakeStreet,UpperSaddleRiver,
+NewJersey07458,oryoumayfaxyourrequestto201-236-3290.
+Manyofthedesignationsbymanufacturersandsellerstodistinguishtheirproductsareclaimedastrademarks.
+Wherethosedesignationsappearinthisbook,andthepublisherwasawareofatrademarkclaim,thedesignations
+havebeenprintedininitialcapsorallcaps.
+LibraryofCongressCataloging-in-PublicationData
+Hull,John
+Options,futures,andotherderivatives/JohnC.Hull,UniversityofToronto.—Ninthedition.
+pagescm.
+Includesindex.
+1.Futures. 2.Stockoptions.3. Derivativesecurities. I. Title.
+HG6024.A3H85 2015
+332.64’5–dc23
+2013042324
+10 9 8 7 6 5 4 3 2 1
+ISBN-10:0-13-345631-5
+ISBN-13:978-0-13-345631-8
+To Michelle
+CONTENTS IN BRIEF
+List of Business Snapshots...........................................................................xvii
+List of Technical Notes................................................................................xviii
+Preface.......................................................................................................xix
+1. Introduction...................................................................................................1
+2. Mechanics of futures markets.........................................................................24
+3. Hedging strategies using futures......................................................................49
+4. Interest rates................................................................................................77
+5. Determination of forward and futures prices................................................... 104
+6. Interest rate futures..................................................................................... 132
+7. Swaps....................................................................................................... 152
+8. Securitization and the credit crisis of 2007...................................................... 185
+9. OIS discounting, credit issues, and funding costs............................................. 200
+10. Mechanics of options markets...................................................................... 213
+11. Properties of stock options........................................................................... 234
+12. Trading strategies involving options............................................................... 254
+13. Binomial trees............................................................................................ 274
+14. Wiener processes and Itoˆ’s lemma................................................................. 302
+15. The Black–Scholes–Merton model................................................................ 321
+16. Employee stock options............................................................................... 354
+17. Options on stock indices and currencies......................................................... 367
+18. Futures options.......................................................................................... 383
+19. The Greek letters........................................................................................ 399
+20. Volatility smiles.......................................................................................... 431
+21. Basic numerical procedures.......................................................................... 450
+22. Value at risk.............................................................................................. 494
+23. Estimating volatilities and correlations........................................................... 521
+24. Credit risk................................................................................................. 544
+25. Credit derivatives........................................................................................ 571
+26. Exotic options............................................................................................ 598
+27. More on models and numerical procedures..................................................... 624
+28. Martingales and measures............................................................................ 655
+29. Interest rate derivatives: The standard market models....................................... 673
+30. Convexity, timing, and quanto adjustments..................................................... 693
+31. Interest rate derivatives: Models of the short rate............................................. 706
+32. HJM, LMM, and multiple zero curves........................................................... 740
+33. Swaps Revisited.......................................................................................... 760
+34. Energy and commodity derivatives................................................................ 775
+35. Real options.............................................................................................. 792
+36. Derivatives mishaps and what we can learn from them..................................... 806
+Glossary of terms....................................................................................... 818
+DerivaGem software.................................................................................... 840
+Majorexchanges trading futures and options.................................................. 845
+Tables for NðxÞ........................................................................................... 846
+Author index.............................................................................................. 847
+Subject index.............................................................................................. 852
+Contents
+List of Business Snapshots..............................................................................xvii
+List of Technical Notes.................................................................................xviii
+Preface.......................................................................................................xix
+Chapter 1. Introduction....................................................................................................1
+1.1 Exchange-traded markets........................................................................2
+1.2 Over-the-counter markets........................................................................3
+1.3 Forward contracts..................................................................................6
+1.4 Futures contracts...................................................................................8
+1.5 Options................................................................................................8
+1.6 Types of traders................................................................................... 11
+1.7 Hedgers.............................................................................................. 11
+1.8 Speculators......................................................................................... 14
+1.9 Arbitrageurs........................................................................................ 16
+1.10 Dangers............................................................................................. 17
+Summary............................................................................................ 18
+Further reading................................................................................... 19
+Practice questions................................................................................. 19
+Further questions................................................................................. 21
+Chapter 2. Mechanics of futures markets........................................................................... 24
+2.1 Background........................................................................................ 24
+2.2 Specification of afutures contract........................................................... 26
+2.3 Convergence of futures price to spot price............................................... 28
+2.4 The operation of margin accounts.......................................................... 29
+2.5 OTC markets...................................................................................... 32
+2.6 Market quotes..................................................................................... 35
+2.7 Delivery............................................................................................. 38
+2.8 Types of traders and types of orders....................................................... 39
+2.9 Regulation.......................................................................................... 40
+2.10 Accounting and tax.............................................................................. 41
+2.11 Forward vs. futures contracts................................................................. 43
+Summary............................................................................................ 44
+Further reading................................................................................... 45
+Practice questions................................................................................. 45
+Further questions................................................................................. 47
+Chapter 3. Hedging strategies using futures........................................................................ 49
+3.1 Basic principles.................................................................................... 49
+3.2 Arguments for and against hedging........................................................ 51
+3.3 Basis risk............................................................................................ 54
+3.4 Cross hedging..................................................................................... 58
+vii
+viii Contents
+3.5 Stock index futures...............................................................................62
+3.6 Stack and roll......................................................................................68
+Summary............................................................................................70
+Further reading....................................................................................70
+Practice questions.................................................................................71
+Further questions.................................................................................73
+Appendix: Capital asset pricing mo

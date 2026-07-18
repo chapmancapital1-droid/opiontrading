@@ -1,0 +1,221 @@
+ffirs.qxd 12/27/04 3:18AM Pagei
+The
+Options
+Course
+ffirs.qxd 12/27/04 3:18AM Pageii
+Founded in 1807, John Wiley & Sons is the oldest independent publishing
+company in the United States. With offices in North America, Europe, Aus-
+tralia, and Asia, Wiley is globally committed to developing and marketing
+print and electronic products and services for our customers’ professional
+and personal knowledge and understanding.
+The Wiley Trading series features books by traders who have survived
+the market’s ever changing temperament and have prospered—some by
+reinventing systems, others by getting back to basics. Whether a novice
+trader, professional, or somewhere in-between, these books will provide
+the advice and strategies needed to prosper today and well into the future.
+For a list of available titles, visit our web site at www.WileyFinance.com.
+ffirs.qxd12/27/043:19AMPageiii
+The
+Options
+Course
+High Profit&LowStress
+Trading Methods
+Second Edition
+GEORGE A. FONTANILLS
+John Wiley &Sons, Inc.
+ffirs.qxd 12/27/04 3:19AM Pageiv
+Copyright © 2005 by George A. Fontanills and Richard Cawood. All rights reserved.
+Published by John Wiley & Sons, Inc., Hoboken, New Jersey.
+Published simultaneously in Canada.
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted
+in any form or by any means, electronic, mechanical, photocopying, recording, scanning, or
+otherwise, except as permitted under Section 107 or 108 of the 1976 United States Copyright
+Act, without either the prior written permission of the Publisher, or authorization through
+payment of the appropriate per-copy fee to the Copyright Clearance Center, Inc., 222
+Rosewood Drive, Danvers, MA 01923, 978-750-8400, fax 978-646-8600, or on the web at
+www.copyright.com. Requests to the Publisher for permission should be addressed to the
+Permissions Department, John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ 07030, 201-
+748-6011, fax 201-748-6008.
+Limit of Liability/Disclaimer of Warranty: While the publisher and author have used their
+best efforts in preparing this book, they make no representations or warranties with respect
+to the accuracy or completeness of the contents of this book and specifically disclaim any
+implied warranties of merchantability or fitness for a particular purpose. No warranty may
+be created or extended by sales representatives or written sales materials. The advice and
+strategies contained herein may not be suitable for your situation. You should consult with
+a professional where appropriate. Neither the publisher nor author shall be liable for any
+loss of profit or any other commercial damages, including but not limited to special,
+incidental, consequential, or other damages.
+For general information on our other products and services, or technical support, please
+contact our Customer Care Department within the United States at 800-762-2974, outside
+the United States at 317-572-3993 or fax 317-572-4002.
+Wiley also publishes its books in a variety of electronic formats. Some content that appears
+in print may not be available in electronic books.
+For more information about Wiley products, visit our web site at www.wiley.com.
+Library of Congress Cataloging-in-Publication Data:
+Fontanills, George.
+The options course : high profit & low stress trading methods / George A.
+Fontanills.—2nd ed.
+p. cm.
+Includes index.
+ISBN 0-471-66851-6 (cloth)
+1. Options (Finance) I. Title.
+HG6024.A3F66 2005
+332.64'53—dc22 2004028852
+Printed in the United States of America.
+10 9 8 7 6 5 4 3 2 1
+ffirs.qxd 12/27/04 3:19AM Pagev
+To Charlene Fontanills—
+the one true love of my life.
+ffirs.qxd 12/27/04 3:19AM Pagevi
+ftoc.qxd 12/27/04 3:19AM Pagevii
+Contents
+Preface ix
+Acknowledgments xiii
+About the Author xv
+Introduction 1
+CHAPTER 1 Options Trading: A Primer 5
+CHAPTER 2 The Big Picture 16
+CHAPTER 3 Option Basics 42
+CHAPTER 4 Basic Trading Strategies 76
+CHAPTER 5 Introducing Vertical Spreads 130
+CHAPTER 6 Demystifying Delta 164
+CHAPTER 7 The Other Greeks 175
+CHAPTER 8 Straddles, Strangles, and Synthetics 187
+CHAPTER 9 Advanced Delta Neutral Strategies 234
+CHAPTER 10 Trading Techniques for
+Range-Bound Markets 265
+CHAPTER 11 Increasing Your Profits
+with Adjustments 311
+vii
+ftoc.qxd 12/27/04 3:19AM Pageviii
+viii CONTENTS
+CHAPTER 12 Choosing the Right Broker 330
+CHAPTER 13 Processing Your Trade 347
+CHAPTER 14 Margin and Risk 371
+CHAPTER 15 A Short Course in
+Economic Analyses 382
+CHAPTER 16 Mastering the Market 403
+CHAPTER 17 How to Spot Explosive Opportunities 415
+CHAPTER 18 Tools of the Trade 453
+CHAPTER 19 Final Summary 466
+APPENDIX A Trading Resources 485
+APPENDIX B Important Charts and Tables 503
+APPENDIX C Strategy Reviews 511
+APPENDIX D Success Guides 527
+Glossary 533
+Index 557
+fpref.qxd 12/27/04 3:20AM Pageix
+Preface
+An investment in knowledge always pays the best
+interest.
+—Benjamin Franklin
+M
+ost new investors and traders, whether they are beginners or pro-
+fessionals, usually lose money for two reasons. First, they do not
+have a grasp of how the markets really work. Second, they are un-
+der too much stress when they trade because they fear losing money.
+Many times, traders liquidate good trades too quickly or have no idea
+when to take profits. But learning to trade successfully is not an impossi-
+ble task. This book is designed to build your knowledge base of the mar-
+kets to a professional level and to provide you with strategies that make
+money in the marketplace. My trading program is the result of many years
+of trading experience, as well as many years of research and development,
+all in the pursuit of developing the optimal methodologies to trade the
+stock, options, and futures markets.
+Students often ask me how I got started as a full-time investor. Per-
+haps like you, I was looking for an opportunity that would allow me to
+achieve my financial dreams after a long road of despair. After attending
+high school in Miami, I felt a college career was necessary to become suc-
+cessful. Although I questioned what success really meant to me and
+whether college would bring me that success, I settled on the University of
+Florida in Gainesville for the wrong reasons. It was close to home and all
+my friends were going there.
+One day, after just a few semesters, I woke up having difficulty breath-
+ing. I went to the university clinic and was told I had a mild case of pneu-
+monia. After a week of useless medications, my breathing troubles
+increased. Finally X-rays were taken, and at the age of 18, I was diagnosed
+with Hodgkin’s disease, a form of cancer. There is no news that can be
+more devastating to a young person and his family.
+Perhaps the hardest thing I had to face was the loss of my physical
+prowess. Until that time, I was in exceptional shape, working out every day
+and participating in lots of sports. Over the next year, I was hospitalized
+ix
+fpref.qxd 12/27/04 3:20AM Pagex
+x PREFACE
+and had to undergo chemotherapy treatments and radiation therapy.
+Throughout this dark time, I continued my studies at a community college.
+At this point, I realized that life was too short to waste time, and that I
+needed to work as hard as I could to achieve everything I wanted to do. As
+my resolve to succeed took flight, I coined the phrase, “Out of adversity
+comes inspiration.”
+I slowly recovered and went on to attend New York University, gradu-
+ating with honors with a bachelor’s degree in accounting. I subsequently
+earned my CPA license and joined a large accounting firm. However, after
+spending several years in public accounting, I once again felt disillu-
+sioned. I needed something more. I applied and, to my surprise, was ac-
+cepted at Harvard Business School. After two grueling years (but
+something I would do again without hesitation), I graduated.
+Here I was, a bright and energetic young man with an MBA from the
+finest business school in the world with countless job offers others would
+never dream of turning down. But somehow I just couldn’t get excited
+about any of the positions, no matter what they paid me. I had already
+traveled down that road and knew that it led to a dead end. Instead, I
+decided to go into business for myself.
+Driven by my need for a more rewarding career, I started my first busi-
+ness. It failed. Strike one. Undaunted, I started a second business, which
+never even got off the ground. Strike two. On my third attempt—an at-
+tempt to strike gold in the real estate business—I realized that I could ac-
+tually be good at something. Working with some wealthy individuals in
+Massachusetts, I was just able to keep my head above water. I would find
+great real estate deals and they would put up the money to buy them.
+Subsequently, I would get a small piece of each deal.
+Unfortunately, I forgot one thing: I needed to eat and pay the rent
+without the benefit of a consistent salary. Finally, the day came when my
+landlord (one of my partners) came to collect my rent and I had no
+money to pay it. I hedged as best I could and asked him to give me a lit-
+tle more time. He turned me down, adding that he was going to throw
+me out regardless of how much money I made him in the past. I was
+shocked. At first I thought he was kidding around. But with a stern look
+on his face, he proved me wrong, stating unequivocally, “One day you
+will thank me for teaching you this lesson.” At the time, I cockily replied
+that I’d be much happier with a wheelbarrow full of money. In hindsight,
+I realize that he was probably referring to my favorite personal proverb
+about finding inspiration in adversity. However, he is still waiting for me
+to thank him.
+Crushed and downhearted, I went to my parents to borrow money to
+eat and live. Being a Harvard MBA and having to borrow money from your
+parents is very demoralizing. Having to listen to “Why don’t you get a real
+fpref.qxd 12/27/04 3:20AM Pagexi
+Preface xi
+job?” not only from them but from others made me decide to give corpo-
+rate life another shot.
+Soon after, I found a consulting job that lasted a whole 30 days. It was
+supposed to be a permanent job. But as I was being fired, I was told I had
+the wrong attitude. In fact, they said much more than that, but most of it
+could never be printed. Unfortunately, they were right. I did have the
+wrong attitude. I just didn’t want to work for anyone but myself. I re-
+turned to real estate and started looking for new projects, but this time I
+was determined to control them. In this roundabout way, I was first intro-
+duced to the concept of an option. A real estate option allowed me to con-
+trol a piece of property with very little cash for a specific period of time.
+As I later learned, stock and futures options are very similar.
+My first deal was exciting. I found a great apartment complex going
+into foreclosure and convinced the owner I could buy the property. In
+fact, I had no cash at all. Even worse, my credit was destroyed and my
+shiny BMW had been repossessed. Since I was approximately $50,000 in
+debt, I did what I had to do: I convinced an investor to put up the option
+money and split the profits after the property was sold. I made a nice
+$35,000 profit on that deal—finally, a success.
+After a series of profitable deals, the bottom fell out of the real estate
+market. There was no money available anywhere. Once again, I was left
+with a big question mark as to what I should be doing with my life. Luck-
+ily, serendipity intervened. One day, I received a small advertisement in
+the mail for a book on futures trading. Although I had no clue as to what
+futures trading was all about, I ordered the book. What struck me most
+were tales about making large amounts of money in a short period of time
+using very little cash. This sounded very similar to what I had been doing
+with real estate.
+Why had I never learned any of this when I attended Harvard Business
+School? How could the great “boot camp of capitalism” neglect to teach
+me about futures markets? My interest was now piqued. I picked up a few
+more books. I began to watch the markets. I even p

@@ -1,0 +1,275 @@
+V
+OLATILITY
+T
+RADING
+Foundedin1807,JohnWiley&Sonsistheoldestindependentpublishing
+company in the United States. With offices in North America, Europe,
+Australia,andAsia,Wileyisgloballycommittedtodevelopingandmarketing
+printandelectronicproductsandservicesforourcustomers’professional
+andpersonalknowledgeandunderstanding.
+The Wiley Tradingseriesfeatures booksby traders who havesurvived
+themarket’severchangingtemperamentandhaveprospered—someby
+reinventing systems, others by getting back to basics. Whether a novice
+trader, professional, or somewhere in-between, these books will provide
+theadviceandstrategiesneededtoprospertodayandwellintothefuture.
+Foralistofavailabletitles,visitourwebsiteatwww.WileyFinance.com.
+V
+OLATILITY
+T
+RADING
+S E
+ECOND DITION
+Euan Sinclair
+Copyright2013byEuanSinclair.Allrightsreserved.
+PublishedbyJohnWiley&Sons,Inc.,Hoboken,NewJersey.
+FirsteditionpublishedbyJohnWiley&Sons,Inc.in2008.
+PublishedsimultaneouslyinCanada.
+Nopartofthispublicationmaybereproduced,storedinaretrievalsystem,ortransmittedinany
+formorbyanymeans,electronic,mechanical,photocopying,recording,scanning,orotherwise,
+exceptaspermittedunderSection107or108ofthe1976UnitedStatesCopyrightAct,without
+eitherthepriorwrittenpermissionofthePublisher,orauthorizationthroughpaymentofthe
+appropriateper-copyfeetotheCopyrightClearanceCenter,Inc.,222RosewoodDrive,Danvers,
+MA01923,(978)750-8400,fax(978)646-8600,orontheWebatwww.copyright.com.Requests
+tothePublisherforpermissionshouldbeaddressedtothePermissionsDepartment,JohnWiley&
+Sons,Inc.,111RiverStreet,Hoboken,NJ07030,(201)748-6011,fax(201)748-6008,oronline
+athttp://www.wiley.com/go/permissions.
+LimitofLiability/DisclaimerofWarranty:Whilethepublisherandauthorhaveusedtheirbest
+effortsinpreparingthisbook,theymakenorepresentationsorwarrantieswithrespecttothe
+accuracyorcompletenessofthecontentsofthisbookandspecificallydisclaimanyimpliedwarranties
+ofmerchantabilityorfitnessforaparticularpurpose.Nowarrantymaybecreatedorextendedby
+salesrepresentativesorwrittensalesmaterials.Theadviceandstrategiescontainedhereinmaynot
+besuitableforyoursituation.Youshouldconsultwithaprofessionalwhereappropriate.Neither
+thepublishernorauthorshallbeliableforanylossofprofitoranyothercommercialdamages,
+includingbutnotlimitedtospecial,incidental,consequential,orotherdamages.
+Forgeneralinformationonourotherproductsandservicesorfortechnicalsupport,pleasecontact
+ourCustomerCareDepartmentwithintheUnitedStatesat(800)762-2974,outsidetheUnited
+Statesat(317)572-3993orfax(317)572-4002.
+Wileypublishesinavarietyofprintandelectronicformatsandbyprint-on-demand.Somematerial
+includedwithstandardprintversionsofthisbookmaynotbeincludedine-booksorinprint-on-
+demand.IfthisbookreferstomediasuchasaCDorDVDthatisnotincludedintheversionyou
+purchased,youmaydownloadthismaterialathttp://booksupport.wiley.com.Formore
+informationaboutWileyproducts,visitwww.wiley.com.
+LibraryofCongressCataloging-in-PublicationData:
+Sinclair,Euan,1969–
+Volatilitytrading/EuanSinclair.—Secondedition.
+pagescm.—(Wileytradingseries)
+Includesbibliographicalreferencesandindex.
+ISBN978-1-118-34713-3(cloth/website);ISBN978-1-118-42044-7(ebk);
+ISBN978-1-118-57487-4(ebk);ISBN978-1-118-41672-3(ebk)
+1. Options(Finance). 2. Hedging(Finance). 3. Futures. 4. Financialfutures. I. Title.
+HG6024.A3S56232013
+332.64’5—dc23
+2012047062
+PrintedintheUnitedStatesofAmerica.
+10 9 8 7 6 5 4 3 2 1
+To Ann—
+Sometimes a trader wins much more than he deserves.
+CONTENTS
+Acknowledgments xi
+IntroductiontotheSecondEdition xiii
+CHAPTER1 OptionPricing 1
+TheBlack-Scholes-MertonModel 1
+vii
+ModelingAssumptions 7
+Conclusion 11
+Summary 11
+CHAPTER2 VolatilityMeasurement 13
+DefiningandMeasuringVolatility 13
+DefinitionofVolatility 14
+AlternativeVolatilityEstimators 20
+UsingHigher-FrequencyData 29
+Summary 33
+CHAPTER3 StylizedFactsaboutReturns
+andVolatility 35
+DefinitionofaStylizedFact 35
+VolatilityIsNotConstant 36
+CharacteristicsoftheReturnDistribution 40
+VolumeandVolatility 43
+DistributionofVolatility 45
+Summary 46
+STNETNOC
+CHAPTER4 VolatilityForecasting 49
+AbsenceofTransactionCosts 50
+PerfectInformationFlow 50
+AgreementaboutthePriceImplications
+ofInformation 50
+MaximumLikelihoodEstimation 54
+VolatilityForecastingUsing
+FundamentalInformation 60
+TheVariancePremium 62
+Summary 65
+CHAPTER5 ImpliedVolatilityDynamics 67
+VolatilityLevelDynamics 70
+TheSmileandtheUnderlying 80
+SmileDynamics 82
+TermStructureDynamics 90
+Summary 91
+viii
+CHAPTER6 Hedging 93
+AdHocHedgingMethods 95
+Utility-BasedMethods 96
+EstimationofTransactionCosts 109
+AggregationofOptionsonDifferentUnderlyings 113
+Summary 115
+CHAPTER7 DistributionofHedgedOptionPositions 117
+DiscreteHedgingandPathDependency 117
+VolatilityDependency 123
+Summary 129
+CHAPTER8 MoneyManagement 131
+AdHocSizingSchemes 131
+TheKellyCriterion 133
+TimeforKellytoDominate 143
+EffectofParameterMis-Estimation 144
+CONTENTS
+WhatisBankroll? 146
+AlternativestoKelly 148
+Summary 161
+CHAPTER9 TradeEvaluation 163
+GeneralPlanningProcedures 164
+Risk-AdjustedPerformanceMeasures 171
+SettingGoals 178
+PersistenceofPerformance 180
+RelativePersistence 180
+Summary 184
+CHAPTER10 Psychology 187
+Self-AttributionBias 191
+Overconfidence 193
+TheAvailabilityHeuristic 197
+Short-TermThinking 199
+LossAversion 199 ix
+ConservatismandRepresentativeness 201
+ConfirmationBias 203
+HindsightBias 206
+AnchoringandAdjustment 207
+TheNarrativeFallacy 208
+ProspectTheory 209
+Summary 212
+CHAPTER11 GeneratingReturnsthroughVolatility 213
+TheVariancePremium 214
+ReasonsfortheVariancePremium 220
+Summary 222
+CHAPTER12 TheVIX 223
+TheVIXIndex 224
+VIXFutures 225
+VolatilityETNs 227
+STNETNOC
+OtherVIXTrades 229
+Summary 230
+CHAPTER13 LeveragedETFs 231
+LeveragedETFsasaTrade-SizingProblem 234
+ALong-ShortTradingStrategy 234
+OptionsonLeveragedETFs 235
+Summary 237
+CHAPTER14 LifeCycleofaTrade 239
+PretradeAnalysis 239
+PosttradeAnalysis 245
+Summary 247
+CHAPTER15 Conclusion 249
+Summary 252
+Resources 253
+x DirectlyApplicableBooks 253
+Thought-ProvokingBooks 256
+UsefulWebsites 257
+References 261
+AbouttheWebsite 273
+AbouttheAuthor 279
+Index 281
+ACKNOWLEDGMENTS
+A
+project like this invariably could not be accomplished without many
+forms of help and support from many people. Although they had no
+direct involvement in the writing, I need to first thank my parents, who
+mademeappreciateeducationandtaughtmethatboredomisamortalsin.
+I must also thank my wife for her patience as I wrote this instead of doing xi
+variouschoresaroundthehouse.
+Formoredirectprofessionalhelp,theregularsatwww.nuclearphynance
+.com have been very generous with their time and knowledge. Their help
+withfindingvariousresearchpapershasalsobeeninvaluable.
+Finally,ChrisMerrill,JituPatel,andErinCallahangavedirecthelpwith
+proofreadingandtechnicalassistance.Thankyou.
+INTRODUCTION TO THE SECOND EDITION
+S
+ince the first edition of Volatility Trading was published, the volatility
+markets have changed. One might think that the big change was the
+exceptionallyvolatileperiodattheendof2008,followedbythelong,slow
+decline of volatility since then. Although this has certainly made trading
+challenging,marketshavebehavedlikethisbeforeandnodoubtwillagain. xiii
+This kind of change is always happening. More interesting has been the
+trendforexchangestolistvolatility-dependentproducts(futures,exchange-
+tradedfunds[ETFs],andexchange-tradednotes[ETNs]).Thisgivesusnew
+waystomakevolatilitytradesandrelativevaluebets.Inthisedition,welook
+attheVolatilityIndex(VIX)futuresandETNs,aswellasleveragedETFs.
+Another major change has been the increasing effects of high frequency
+trading.Traderswhoareaggressivelymarket-makingequityoptions,trying
+tobeoneverybidandoffer,willhavetotakesuchalgorithmsintoaccount.
+These strategies are not covered in this book. My focus is on positional
+tradingofvolatility,andthesetradesgenerallyhaveholdingperiodsofdays
+tomonths.Thesetimescalesarefarfromhighfrequency.
+■
+About This Book
+The concepts behind this type of trading are largely unchanged, but
+my emphasis has probably changed slightly. Although academics have
+continuedtoworkonforecastingvolatility,Ithinktheimprovementsfrom
+the perspective of an option trader are now marginal. For example, the
+profitabilityofequityvolatilitylongshortportfolioshasdeclinedsignificantly
+NOITIDEDNOCESEHTOTNOITCUDORTNI
+overthepastfiveyears.ThiswouldprobablynotbewhatIwouldchooseto
+focusonnow.SoalthoughIhaveslightlyexpandedthesectiononvolatility
+forecasting,Ithinkitisnowmoreimportantthanevertolookforsituations
+where the odds are in our favor whether we can accurately measure and
+forecast volatility. To this end, I have added chapters on stylized facts of
+marketsandthevariancepremium.
+I have also expanded the chapter on psychology. The usefulness of
+behavioral psychology to traders is still a matter of debate. Traders
+themselves seem to be greatly polarized, either being true believers or
+completelydismissive.Imakenoapologiesforbeingabeliever.Iknowthat
+studyingthishashelpedme.
+IseetradingasaprocessandI’vetriedtowritethisbooktobeconsistent
+withthisview.Itwasintendedtobereadintheorderpresented.However,
+most chapters are self-contained and there is probably no great harm in
+jumpingaroundfromsectiontosection.Anexceptionallyimpatientreader
+could even gain much of the benefit of the material by just looking at the
+summaryattheendofeachchapter.Somemoretangentialmaterial,mainly
+mathematicalinnature,hasbeenrelegatedtosidebars.Thesecanprobably
+beskippedentirelywithoutlosingcontinuity.
+This book is about trading volatility. More specifically, it is about using
+xiv
+options to make trades that are primarily dependent on the range of the
+underlyinginstrumentratherthanitsdirection.
+Before discussing technicalities, I give a brief description of my trading
+philosophy. In trading, as in most things, it is necessary to have general
+guiding principles in order to succeed. Not everyone need agree on the
+specificphilosophy,butitsexistenceisessential.Forexample,itispossible
+tobeasuccessfulstockmarketinvestorbyfocusingonvalue-styleinvesting,
+buying stocks with low price-to-earnings or price-to-book ratios. It is also
+possibletobeasuccessfulgrowthinvestor,buyingstocksincompaniesthat
+haverapidlyexpandingearnings.Itisnotpossibletosucceedconsistentlyby
+randomlyacquiringstocksandhopingthatthingsjustworkout.
+Iamatrader.Iamnotamathematician,financialengineer,orphilosopher.
+My success is measured in profits. The tools I use and develop need only
+be useful. They need not be consistent, provable, profound, or even true.
+My approach to trading is mathematical, but I am no more interested in
+mathematics than a mechanic is interested in his tools. However, a certain
+levelofknowledge,familiarity,andevenrespectisneededtogetthemost
+outofthesetools.
+Thereisnoattemptheretogivealistoftradingrules.Sorry,butmarkets
+constantlyevolveandrulesrapidlybecomeobsolete.Whatdonotbecome
+INTRODUCTIONTOTHESECONDEDITION
+obsolete are general principles. These are what I attempt to provide. This
+approach isn’t as easy to digest as a list of magic rules, but I do not claim
+markets are easy to beat, either. The specifics of any trade are always
+different,butgeneralguidelinescanalwayspointussomewhatintheright
+direction.Somelatitudeinstrategyisdesirableandadaptabilityisessential,
+but there are also a number of things that have to be firmly in place in
+ordertosucceed.PicassoandBraquemayhavebrokenmanyrules,butthey
+could certainly paint very well technically before they did so. Similarly,
+beforeyoustartadjustingstrategies,makesureyouhaveagoodgraspofthe
+fundamental aspects on which all trades need to be based: edge, variance,
+andappropriatesize.
+Certain old-school traders have used arguments like: ‘‘Trading is about
+humans. Your models can’t capture the human element.’’ This generally
+seems to be said in a defensive manner. Maybe their models can’t capture
+the human element, but ours will capture at least part of it. Most of
+the reluctance of such traders to embrace quantitative techniques can be
+attributed to defensiveness and aversion to change. It probably isn’t due
+to any deep aversion to quantificatio

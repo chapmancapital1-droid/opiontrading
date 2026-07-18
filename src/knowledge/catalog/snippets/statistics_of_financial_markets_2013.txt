@@ -1,0 +1,309 @@
+Universitext
+http://avaxho.me/blogs/ChrisRedfield
+Universitext
+SeriesEditors:
+SheldonAxler
+SanFranciscoStateUniversity
+VincenzoCapasso
+Universita` degliStudidiMilano
+CarlesCasacuberta
+UniversitatdeBarcelona
+AngusJ.MacIntyre
+QueenMary,UniversityofLondon
+KennethRibet
+UniversityofCalifornia,Berkeley
+ClaudeSabbah
+CNRS,E´colePolytechnique
+EndreSu¨li
+UniversityofOxford
+WojborA.Woyczynski
+CaseWesternReserveUniversity
+Universitextisaseriesoftextbooksthatpresentsmaterialfromawidevarietyof
+mathematicaldisciplinesatmaster’slevelandbeyond.Thebooks,oftenwell
+class-testedbytheirauthor,mayhaveaninformal,personalevenexperimental
+approachtotheirsubjectmatter.Someofthemostsuccessfulandestablished
+booksintheserieshaveevolvedthroughseveraleditions,alwaysfollowingthe
+evolutionofteachingcurricula,toverypolishedtexts.
+Thus as research topics trickle down into graduate-level teaching, first textbooks
+writtenfornew,cutting-edgecoursesmaymaketheirwayintoUniversitext.
+Forfurthervolumes:
+www.springer.com/series/223
+Szymon Borak Wolfgang Karl Ha¨rdle
+(cid:2)
+Brenda Lo´pez-Cabrera
+Statistics of Financial
+Markets
+Exercises and Solutions
+Second Edition
+123
+SzymonBorak
+WolfgangKarlHa¨rdle
+BrendaLo´pez-Cabrera
+Humboldt-Universita¨tzuBerlin
+LadislausvonBortkiewiczChairofStatistics
+C.A.S.E.CentreforAppliedStatisticsandEconomics
+SchoolofBusinessandEconomics
+Berlin
+Germany
+Quantlets may be downloaded from http://extras.springer.com or via a link on http://springer.com/
+978-3-642-33928-8orwww.quantlet.orgforarepositoryofquantlets.
+ISBN978-3-642-33928-8 ISBN978-3-642-33929-5(eBook)
+DOI10.1007/978-3-642-33929-5
+SpringerHeidelbergNewYorkDordrechtLondon
+LibraryofCongressControlNumber:2012954542
+©Springer-VerlagBerlinHeidelberg2010,2013
+Thisworkissubjecttocopyright.AllrightsarereservedbythePublisher,whetherthewholeorpartof
+thematerialisconcerned,specificallytherightsoftranslation,reprinting,reuseofillustrations,recitation,
+broadcasting,reproductiononmicrofilmsorinanyotherphysicalway,andtransmissionorinformation
+storageandretrieval,electronicadaptation,computersoftware,orbysimilarordissimilarmethodology
+nowknownorhereafterdeveloped.Exemptedfromthislegalreservationarebriefexcerptsinconnection
+with reviews or scholarly analysis or material supplied specifically for the purpose of being entered
+and executed on a computer system, for exclusive use by the purchaser of the work. Duplication of
+this publication or parts thereof is permitted only under the provisions of the Copyright Law of the
+Publisher’slocation,initscurrentversion,andpermissionforusemustalwaysbeobtainedfromSpringer.
+PermissionsforusemaybeobtainedthroughRightsLinkattheCopyrightClearanceCenter.Violations
+areliabletoprosecutionundertherespectiveCopyrightLaw.
+Theuseofgeneraldescriptivenames,registerednames,trademarks,servicemarks,etc.inthispublication
+doesnotimply,evenintheabsenceofaspecificstatement,thatsuchnamesareexemptfromtherelevant
+protectivelawsandregulationsandthereforefreeforgeneraluse.
+While the advice and information in this book are believed to be true and accurate at the date of
+publication,neithertheauthorsnortheeditorsnorthepublishercanacceptanylegalresponsibilityfor
+anyerrorsoromissionsthatmaybemade.Thepublishermakesnowarranty,expressorimplied,with
+respecttothematerialcontainedherein.
+Printedonacid-freepaper
+SpringerispartofSpringerScience+BusinessMedia(www.springer.com)
+Preface to the Second Edition
+Morepracticemakesyouevenmoreperfect.Manyreadersofthefirsteditionofthis
+book have followed this advice. We have received very helpful comments of the
+usersofourbookandwehavetriedtomakeitmoreperfectbypresentingyouthe
+secondeditionwithmorequantletsinMatlabandRandwithmoreexercises,e.g.,
+forExoticOptions(Chap.9).
+This new edition is a good complement for the third edition of Statistics of
+FinancialMarkets.Ithascreatedmanyfinancialengineeringpractitionersfromthe
+poolof students at C.A.S.E. at Humboldt-Universita¨tzu Berlin. We would like to
+express our sincere thanks for the highly motivating comments and feedback on
+our quantlets. Very special thanks go to the Statistics of Financial Markets class
+of 2012 for their active collaboration with us. We would like to thank in partic-
+ular Mengmeng Guo, Shih-Kang Chao, Elena Silyakova, Zografia Anastasiadou,
+AnnaRamisch,MatthiasFengler,AlexanderRistig,AndreasGolle,JasminKrauß,
+AwdeschMelzer,GagandeepSinghand,lastbutnotleast,DerrickKanngießer.
+Berlin,Germany,January2013 SzymonBorak
+WolfgangKarlHa¨rdle
+BrendaLo´pezCabrera
+v
+•
+Preface to the First Edition
+WirbehaltenvonunserenStudienamEndedochnurdas,was
+wirpraktischanwenden.
+“Intheend,wereallyonlyretainfromourstudiesthatwhichwe
+applyinapracticalway.”
+J.W.Goethe,Gespra¨chemitEckermann,24.Feb.1824.
+The complexity of modern financial markets requires good comprehension of
+economic processes, which are understood through the formulation of statistical
+models.Nowadaysonecanhardlyimaginethesuccessfulperformanceoffinancial
+products without the support of quantitative methodology. Risk management,
+option pricing and portfolio optimisation are typical examples of extensive usage
+of mathematical and statistical modelling. Models simplify complex reality; the
+simplificationthoughmightstilldemandahighlevelofmathematicalfitness.One
+has to be familiar with the basic notionsof probability theory,stochastic calculus
+and statistical techniques. In addition,data analysis, numericaland computational
+skillsareamust.
+Practice makes perfect. Therefore the best method of mastering models is
+workingwiththem.Inthisbook,wepresentacollectionofexercisesandsolutions
+which can be helpful in the advanced comprehension of Statistics of Financial
+Markets. Our exercises are correlated to Franke, Ha¨rdle, and Hafner (2011). The
+exercisesillustratethetheorybydiscussingpracticalexamplesindetail.Weprovide
+computationalsolutions for the majority of the problems.All numericalsolutions
+arecalculatedwithRandMatlab.Thecorrespondingquantlets–anamewegiveto
+theseprogramcodes–areindicatedby inthetextofthisbook.Theyfollowthe
+nameschemeSFSxyz123andcanbedownloadedfromtheSpringerhomepageof
+thisbookorfromtheauthors’homepages.
+Financialmarketsareglobal.Wehavethereforeadded,beloweachchaptertitle,
+the corresponding translation in one of the world languages. We also head each
+section with a proverb in one of those world languages. We start with a German
+proverbfromGoetheontheimportanceofpractice.
+vii
+viii PrefacetotheFirstEdition
+We have tried to achieve a good balance between theoretical illustration and
+practicalchallenges.We havealsokeptthepresentationrelativelysmoothand,for
+more detailed discussion, refer to more advanced text books that are cited in the
+referencesections.
+Thebookisdividedintothreemainpartswherewediscusstheissuesrelatingto
+optionpricing,timeseriesanalysisandadvancedquantitativestatisticaltechniques.
+Themainmotivationforwritingthisbookcamefromourstudentsofthecourse
+Statistics of Financial Markets which we teach at the Humboldt-Universita¨t zu
+Berlin. The students expressed a strong demand for solving additional problems
+and assured us that (in line with Goethe) giving plenty of examples improves
+learningspeed and quality.We are gratefulfor their highly motivatingcomments,
+commitment and positive feedback. In particular we would like to thank Richard
+Song, Julius Mungo, Vinh Han Lien, Guo Xu, Vladimir Georgescu and Uwe
+ZiegenhagenforadviceandsolutionsonLaTeX.Wearegratefultoourcolleagues
+Ying Chen, Matthias Fengler and Michel Benko for their inspiring contributions
+to the preparation of lectures. We thank Niels Thomas from Springer-Verlag for
+continuoussupportandforvaluablesuggestionsonthewritingstyleandthecontent
+covered.
+Berlin,Germany SzymonBorak
+WolfgangHa¨rdle
+BrendaLo´pezCabrera
+Contents
+PartI OptionPricing
+1 Derivatives................................................................... 3
+2 IntroductiontoOptionManagement..................................... 13
+3 BasicConceptsofProbabilityTheory.................................... 25
+4 StochasticProcessesinDiscreteTime.................................... 35
+5 StochasticIntegralsandDifferentialEquations ........................ 43
+6 Black-ScholesOptionPricingModel..................................... 59
+7 BinomialModelforEuropeanOptions .................................. 79
+8 AmericanOptions.......................................................... 91
+9 ExoticOptions .............................................................. 101
+10 ModelsfortheInterestRateandInterestRateDerivatives ........... 119
+PartII StatisticalModelofFinancialTimeSeries
+11 FinancialTimeSeriesModels............................................. 131
+12 ARIMATimeSeriesModels .............................................. 143
+13 TimeSerieswithStochasticVolatility.................................... 163
+PartIII SelectedFinancialApplications
+14 ValueatRiskandBacktesting............................................. 177
+15 CopulaeandValueatRisk................................................. 189
+16 StatisticsofExtremeRisks ................................................ 197
+ix
+x Contents
+17 VolatilityRiskofOptionPortfolios....................................... 223
+18 PortfolioCreditRisk ....................................................... 231
+References......................................................................... 243
+Index............................................................................... 245
+Language List
+Arabic
+Chinese
+Colognian Ko¨lsch
+Croatian Hrvatskijezik
+Czech
+Dutch Nederlands
+English English
+French Franc¸ais
+German Deutsch
+Greek
+Hebrew
+Hindi
+Indonesian Indonesia
+Italian Italiano
+Japanese
+xi
+xii LanguageList
+Korean
+Latin linguaLatina
+Polish
+Romanian Romaˆn
+Russian
+Spanish Espan˜ol
+Ukrainian
+Vietnamese
+Symbols and Notation
+Basics
+X;Y randomvariablesorvectors
+X ;X ;:::;X randomvariables
+1 2 p
+X D.X ;:::;X /> randomvector
+1 p
+X (cid:3)(cid:4) X hasdistribution(cid:4)
+(cid:2);(cid:3) matrices
+˙ covariancematrix
+1 vectorofones.1;:::;1/>
+n „ ƒ‚ …
+n-times
+0 vectorofzeros.0;:::;0/>
+n „ ƒ‚ …
+n-times
+I identitymatrix
+p
+1.:/ indicatorfunction,forasetM is1D1onM,1D0
+otherwise
+p
+i (cid:5)1
+) implication
+, equivalence
+(cid:6) approximatelyequal
+˝ Kroneckerproduct
+iff ifandonlyif,equivalence
+SDE stochasticdifferentialequation
+W standardWienerprocess
+t
+N Positiveintegerset
+Z Integerset
+.X/C jXj(cid:7)1.X >0/
+xiii
+xiv SymbolsandNotation
+Œ(cid:4)(cid:5) Largestintegernotlargerthan(cid:4)
+a:s: almostsurely
+˛ DO.ˇ / iff ˛n (cid:5)!constant,asn(cid:5)!1
+n n ˇn
+˛
+n
+DO.ˇ
+n
+/ iff
+ˇ
+˛n
+n
+(cid:5)!0,asn(cid:5)!1
+Characteristics ofDistribution
+f.x/ pdfordensityofX
+f.x;y/ jointdensityofX andY
+f .x/;f .y/ marginaldensitiesofX andY
+X Y
+f .x /;:::;f .x / marginaldensitiesofX ;:::;X
+X1 1 Xp p 1 p
+fO.x/ histogramorkernelestimatoroff.x/
+h
+F.x/ cdfordistributionfunctionofX
+F.x;y/ jointdistributionfunctionofX andY
+F .x/;F .y/ marginaldistributionfunctionsofX andY
+X Y
+F .x /;:::;F .x / marginaldistributionfunctionsofX ;:::;X
+X1 1 Xp p 1 p
+f .y/ conditionaldensityofY givenX Dx
+YjXDx
+' .t/ characteristicfunctionofX
+X
+m kthmomentofX
+k
+(cid:6) cumulantsorsemi-invariantsofX
+j
+Moments
+EX;EY mean values of random variables or vectors
+X andY
+E.YjX Dx/ conditional expectation of random variable or
+vectorY givenX Dx
+(cid:7) conditionalexpectationofY givenX
+YjX
+Var.YjX Dx/ conditionalvarianceofY givenX Dx
+(cid:8)2 conditionalvarianceofY givenX
+YjX
+(cid:8) DCov.X;Y/ covariancebetweenrandomvariablesX andY
+XY
+(cid:8) DVar.X/ varianceofrandomvariableX
+XX
+Cov.X;Y/
+(cid:9) D p correlationbetweenrandomvariablesX andY
+XY
+Var.X/Var.Y/
+˙ DCov.X;Y/ covariance between random vectors X and Y,
+XY
+i.e.,Cov.X;Y/DE.X (cid:5)EX/.Y (cid:5)EY/>
+˙ DVar.X/ covariancematrixoftherandomvectorX
+XX
+SymbolsandNotation xv
+Samples
+x;y observationsofX andY
+x ;:::;x Dfx gn sampleofnobservationsofX
+1 n i iD1
+X Dfx g (n(cid:8)p)datamatrixofobservationsofX ;:::;X
+ij iD1;:::;nIjD1;:::;p 1 p
+orofX D.X ;:::;X />
+1 p
+x ;:::;x theorderstatisticofx ;:::;x
+.1/ .n/ 1 n
+Empirical Moments
+Xn
+1
+x D x averageofX sampledbyfx g
+i i iD1;

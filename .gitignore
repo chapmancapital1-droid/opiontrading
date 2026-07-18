@@ -21,3 +21,23 @@ yarn-debug.log*
 yarn-error.log*
 tsconfig.tsbuildinfo
 next-env.d.ts
+# runtime
+.data/
+
+# external workspace dumps
+import/
+
+# local agent / runtime noise
+.grok/
+dev-server.log
+*.log
+TRADING_BRAIN_LOCAL_portable.zip
+.next/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+

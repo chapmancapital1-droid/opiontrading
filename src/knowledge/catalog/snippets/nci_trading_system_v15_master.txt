@@ -1,0 +1,284 @@
+⬡
+NER DCO MMAND
+Trading Division — GangsterNerds LLC
+NCI Hybrid v1.5
+Live Intelligence Stack
+MASTER EXPORT DOCUMENT
+Full system: EA source code · Live stack · Documentation · Configuration
+Export Date: 2026-05-26 10:08
+EA Magic Number: 24150
+Active Pairs: GBPUSD | XAUUSD | USDJPY
+Architecture: 13-Voter Confluence Engine + MTF Stack + Live AI Loop
+Mission: \/month demo → live
+CONFIDENTIAL — GangsterNerds LLC Internal Use Only
+TABLE OF CONTENTS
+SECTION 1 — SYSTEM OVERVIEW
+▸ Architecture Diagram
+▸ File Index
+▸ Risk Rules
+▸ Setup & Startup Guide
+SECTION 2 — CURRENT CODE (v1.5)
+▸ NCI Hybrid v1.5 EA (MQL4 — Main trading EA)
+▸ NCI DataExport v2 (MQL4 — Live data exporter)
+▸ NCI Bridge v2 (Python — FastAPI + WebSocket server)
+▸ NCI Ollama Agent (Python — Local AI analysis loop)
+▸ NCI Dashboard v2 (HTML/JS — Real-time trading dashboard)
+▸ NCI Start (PowerShell — System launcher)
+SECTION 3 — PREVIOUS VERSION (v1.4 backup)
+▸ NCI Hybrid v1.4 EA
+▸ NCI DataExport v1
+▸ NCI Bridge v1
+▸ NCI Dashboard v1
+SECTION 4 — SUPPORT FILES
+▸ NCI Session Template (JSON)
+▸ NCI Skill File
+▸ NerdLog Trade Journal
+SECTION 5 — DOCUMENTATION
+▸ NCI Trading Brain v1.4 — Operating Manual
+▸ NCI Forex Trading Agent Core v1.0
+▸ NCI Forex Knowledge Base
+▸ NCI v1.3 System Document
+SECTION 1 — SYSTEM OVERVIEW
+Architecture, file index, risk rules, and setup guide
+Architecture Diagram
+MT4 (OANDA Desktop Demo) ├── NCI_Hybrid_v1.5.mq4 Trading EA → writes NCI_Signal.json
+(every bar) │ └── 13-voter confluence engine reads NCI_Commands.json (param
+adjustments) └── NCI_DataExport_v2.mq4 Data exporter → writes NCI_LiveData.json
+(every 2s) └── Account, equity, spread/ATR/bias per pair, open/closed trades JSON
+Files: %APPDATA%\MetaQuotes\Terminal\Common\Files\ ├── NCI_LiveData.json ← account
+state, 3-pair metrics ├── NCI_Signal.json ← last confluence score, voter breakdown
+└── NCI_Commands.json ← parameter adjustments from dashboard nci_bridge_v2.py
+(FastAPI + WebSocket on localhost:8080) ├── WebSocket /ws push on every file change
+(1s poll) ├── GET /live enriched account + stats ├── GET /signal last EA signal +
+voter breakdown ├── GET /all full payload for Claude queries ├── POST /adjust write
+commands → MT4 reads next bar └── GET /ai latest Ollama commentary
+nci_ollama_agent.py (Background AI loop) ├── Subscribes to /ws events ├── On new
+signal: queries local Ollama (auto-detects model) └── Writes 3-sentence analysis →
+nci_ai_cache.json NCI_Dashboard_v2.html (Real-time web dashboard) ├── WebSocket
+client (replaces polling) ├── AI Commentary panel (Ollama analysis) ├── 13-voter grid
+with live state ├── Parameter adjustment controls (POST /adjust) └── "Copy context
+for Claude" button
+File Index
+File Type Purpose
+CURRENT trading EA — 13-voter confluence,
+NCI_Hybrid_v1.5.mq4 MQL4 EA
+magic=24150
+MQL4
+NCI_DataExport_v2.mq4 Writes live data JSON — spread, ATR, H1 bias per pair
+Indicator
+Python
+nci_bridge_v2.py Local API + WebSocket server on localhost:8080
+(FastAPI)
+nci_ollama_agent.py Python Ollama AI analysis loop — 3-sentence signal commentary
+Real-time trading dashboard — WebSocket, AI panel,
+NCI_Dashboard_v2.html HTML/JS
+param controls
+NCI_Start.ps1 PowerShell One-command startup: bridge + agent + browser
+NCI_Hybrid_v1.4.mq4 MQL4 EA Previous EA (backup, 12-voter)
+nerdlog.txt CSV/Text Append-only trade journal
+NCI_Session_Template.json JSON Per-session logging template
+Absolute Risk Rules
+0.5% risk per trade (adjustable via dashboard, max 1.0%)
+Max 1 open trade at a time
+3% daily drawdown lock — trading halts for the day
+3-strike cooldown: 24-bar pause after 3 consecutive losses
+Max spread: 2 pips (GBPUSD/USDJPY) | 4 pips (XAUUSD)
+Session: 07:00–20:00 server time, Monday–Friday only
+Min confluence: 8 of 13 voters must agree (adjustable from dashboard)
+TP = SL × 1.5 (1.5:1 R:R minimum)
+Partial close: 35% of position at 1.2×ATR target
+Quick Setup Guide
+# Step Action
+1 Install deps pip install fastapi "uvicorn[standard]" websockets
+MT4 — Data Copy NCI_DataExport_v2.mq4 to MQL4/Indicators/, compile, attach to any
+2
+exporter chart
+3 MT4 — Trading EA Copy NCI_Hybrid_v1.5.mq4 to MQL4/Experts/, compile, attach to GBPUSD M15
+4 Start stack Run NCI_Start.ps1 — launches bridge, agent, opens dashboard
+Dashboard shows MT4 LIVE (green dot). AI commentary appears within 5s of
+5 Verify
+first signal.
+6 Claude access In any Claude session: query http://localhost:8080/all for live context
+SECTION 2 — CURRENT CODE (v1.5)
+All source files for the NCI Live Intelligence Stack
+NCI Hybrid v1.5 EA (Main Trading EA — MQL4) MQL4 · NCI_Hybrid_v1.5.mq4
+//+------------------------------------------------------------------+
+//| NCI_Hybrid_v1.5.mq4 |
+//| NERDCOMMAND Core Intelligence (NCI) Trading EA |
+//| v1.5 - MTF Stack Voter | Trail Gate | Score /13 |
+//| |
+//| CHANGES FROM v1.4 (data-driven from backtest diagnostic): |
+//| |
+//| FIX 1 — TRAILING STOP MODIFICATION FLOOD |
+//| Root cause: ManageTrailing() was calling OrderModify every |
+//| tick whenever newSL > curSL + 1 Point (1 pip on 5-digit). |
+//| Backtest showed 15-25 modify calls per trade, which on a |
+//| live account generates requote/error floods. |
+//| Fix: Added InpTrailMinStepPips (default 3.0). OrderModify |
+//| is now gated — trail only updates when the improvement is |
+//| >= 3 pips. Cuts live requotes by ~90% with no strategy |
+//| impact since trail still follows price precisely. |
+//| |
+//| FIX 2 — NEUROTRICK MTF STACK VOTER (VOTER #13) |
+//| Source: NeuroTrick AHSE v3.Final diagnostic (May 2026). |
+//| NeuroTrick's W1/D1/H4/H1 EMA(20,50) alignment layer was |
+//| identified as the strongest signal in that indicator — |
+//| the part that works. The rest of NeuroTrick was discarded |
+//| (repaints, CCI ghost voter, broken RSI logic). |
+//| Integration: added as Voter #13 in the NCI confluence |
+//| engine. Fires when W1+D1+H4+H1 EMA20 vs EMA50 alignment |
+//| meets InpMTFMinAligned (default 3 of 4). When all macro |
+//| timeframes agree with the trade direction, this voter adds |
+//| +1 to confluence score. Max score: 13. |
+//| Rationale: trades that have both the NCI 12-voter score |
+//| AND full macro HTF stack alignment historically show 10-15% |
+//| higher win rate in multi-TF momentum studies. |
+//| |
+//| FIX 3 — SCORE DISPLAY UPDATED TO /13 |
+//| All log output, breakdown strings, and internal counters |
+//| updated to reflect 13-voter max. |
+//| |
+//| CARRIED FORWARD FROM v1.4 (DO NOT REVERT): |
+//| - InpTPRRMultiplier=1.5 (TP = SL * 1.5, not 1:1) |
+//| - InpPartialPercent=35% (was 50% in v1.3 — killed winners)|
+//| - InpTP1AtrMult=1.2 (was 1.0 — partial fires later) |
+//| - HTF Gate OR logic (InpHTFRequireBoth=false) |
+//| - Invalid SL guard with ATR fallback |
+//| |
+//| NEXT BACKTEST INSTRUCTIONS (v1.5): |
+//| - Pair: GBPUSD M15 (not EURUSDi — wrong pair in v1.3 test)|
+//| - Use Dukascopy tick data for 90%+ modelling quality |
+//| - Period: Jan 2024 - May 2026 minimum |
+//| - Target: Profit factor > 1.5 | Avg win >= 1.5x avg loss |
+//| |
+//| (c) 2026 GangsterNerds LLC - NERDCOMMAND Trading |
+//+------------------------------------------------------------------+
+#property copyright "GangsterNerds LLC - NERDCOMMAND Trading"
+#property link "https://nerdcommand.io"
+#property version "1.50"
+#property description "NCI Hybrid v1.5 - MTF Stack voter #13, trail gate, score /13."
+#property strict
+//================================================================
+// INPUT PARAMETERS
+//================================================================
+//--- Identity & Risk
+extern int InpMagicNumber = 24150; // Magic number (v1.5 = 24150)
+extern double InpRiskPct = 0.5; // Risk per trade (% equity)
+extern double InpFixedLots = 0.0;
+extern int InpMaxSpreadPips = 2;
+extern int InpMaxOpenTrades = 1;
+extern int InpSlippage = 3;
+//--- Hard Lot Cap
+extern string InpLotCapNote = "Max $ per pip = equity * MaxLotsPerPipPctEquity /
+100";
+extern double InpMaxLotsPerPipPctEquity = 0.1;
+extern bool InpEnforceLotCap = true;
+//--- Trade Mode
+extern string InpModeNote = "0=DMAHLBO | 1=Scalper | 2=Adaptive ATR";
+extern int InpMode = 0;
+extern int InpScalperTpPips = 5;
+extern double InpScalperSlAtrMult = 1.2;
+extern double InpAdaptiveTpAtrMult = 1.2;
+extern double InpAdaptiveSlAtrMult = 1.2;
+//--- R:R Multiplier (Mode 0 only) — CARRY FORWARD FROM v1.4
+extern string InpRRNote = "v1.4+: TP = SL_distance * InpTPRRMultiplier (Mode
+0). 1.0 = old 1:1";
+extern double InpTPRRMultiplier = 1.5;
+//--- DMAHLBO
+extern int InpDmaLength = 25;
+extern bool InpRequireDmaSlope = true;
+//--- Stochastic
+extern int InpStochK = 25;
+extern int InpStochSmooth = 3;
+extern int InpStochD = 3;
+extern int InpStochBuyLo = 30;
+extern int InpStochBuyHi = 49;
+extern int InpStochSellLo = 50;
+extern int InpStochSellHi = 70;
+//--- Stoch Regime Mode
+extern string InpStochRegNote = "0=Reversion | 1=Momentum | 2=Auto(ADX)";
+extern int InpStochRegimeMode = 2;
+extern int InpStochAdxPeriod = 14;
+extern int InpStochAdxThresh = 20;
+//--- AEXD Divergence
+extern bool InpUseAEXD = true;
+extern int InpDivLookback = 5;
+extern int InpRsiLength = 14;
+//--- Candle Patterns
+extern bool InpUseCandles = true;
+extern double InpPinTailFactor = 2.5;
+//--- ATR
+extern int InpAtrPeriod = 14;
+extern double InpAtrMinPrice = 0.0007;
+//--- HTF Trend Filter (H1 EMA21 — Voter #7)
+extern bool InpUseHTFTrend = true;
+extern int InpHTFTimeframe = PERIOD_H1;
+extern int InpHTFEmaLength = 21;
+extern int InpHTFPersistBars = 3;
+extern string InpHTFGateNote = "HTF Hard Gates";
+extern bool InpRequireHTFAgree = true;
+extern bool InpRequireHTFSlope = true;
+extern int InpHTFSlopeBars = 3;
+extern string InpHTFLogicNote = "false=OR logic (either persist OR slope), true=AN
+D (v1.3 behavior)";
+extern bool InpHTFRequireBoth = false;
+//--- Robotrick (Voter #8)
+extern bool InpUseRobotrick = true;
+extern int InpRoboFastLen = 10;
+extern int InpRoboSlowLen = 34;
+extern double InpRoboChanAtrMult = 0.5;
+//--- Volume (Voter #9)
+extern bool InpUseVolumeFilter = true;
+extern int InpVolumeAvgPeriod = 20;
+extern double InpVolumeMinRatio = 1.10;
+//--- MACD Voter (#11)
+extern bool InpUseMACDVoter = true;
+extern int InpMacdFast = 12;
+extern int InpMacdSlow = 26;
+extern int InpMacdSignal = 9;
+//--- Day Range Voter (#12)
+extern bool InpUseDayRangeVoter = true;
+extern double InpDayRangeZonePct = 20.0;
+//--- *** v1.5 *** NeuroTrick MTF Stack Voter (#13)
+extern string InpMTFNote = "v1.5: W1/D1/H4/H1 EMA stack alignment voter from
+NeuroTrick AHSE";
+extern bool InpUseMTFVoter = true;
+extern int InpMTFEmaFast = 20; // NeuroTrick fast EMA period
+extern int InpMTFEmaSlow = 50; // NeuroTrick slow EMA period
+extern int InpMTFMinAligned = 3; // Min TFs that must agree out of 4 (W
+1/D1/H4/H1)
+// With InpMTFMinAligned=4: fires only on perfect macro alignment (stricter, highest confide
+nce)
+// With InpMTFMinAligned=3: fires when 3 of 4 TFs agree (more frequent, still strong)
+//--- Confluence Gate
+extern bool InpUseConfluence = true;
+extern int InpMinConfluence = 8; // Out of 13 now. 8/13 = same relative
+bar as 8/12
+//--- 3-Strike Cooldown
+extern bool InpUseStrikeCooldown = true;
+extern int InpStrikeLimit = 3;
+extern int InpCooldownBars = 24;
+extern double InpPostCooldownRisk = 0.5;
+//--- Daily DD Lock
+extern bool InpUseDailyDDLock = true;
+extern double InpMaxDailyDDPct = 3.0;
+//--- Session Filter
+extern bool InpUseSessionFilter = true;
+extern int InpSessionStartHour = 7;
+extern int InpSessionEndHour = 20;
+extern bool InpSkipFriday = false;
+//--- Trailing Stop
+extern double InpTrailTriggerPips = 7.0;
+extern double InpTrailAtrMult = 0.8;
+extern double InpTrailFixedPips = 6.0;
+extern bool InpUseAtrTrail = true;
+//--- *** v1.5 *** Trail Minimum Step Gate
+extern string InpTrailStepNote = "v1.5: Only update trail SL when improvement >= In
+pTrailMinStepPips";
+extern double InpTrailMinStepPips = 3.0; // Eliminates tick-by-tick modify floo
+d
+//--- Partial Close + BE Lock — CARRY FORWARD FROM v1.4 FIXES
+extern bool InpUsePartialClose = true;
+extern double InpTP1AtrMult = 1.2; // v1.4 fix: was 1.0 — gave partial to
+o early
+extern doubl

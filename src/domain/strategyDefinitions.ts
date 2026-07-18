@@ -104,7 +104,9 @@ export const STRATEGIES: StrategyDefinition[] = [
     sourceRefs: ["book_pdf:61-66"],
   },
   {
-    id: "bull_put_credit", name: "Bull Put Credit Spread", aliases: ["Short Put Vertical"],
+    id: "bull_put_credit",
+    name: "Put Credit Spread (Bull Put Vertical)",
+    aliases: ["Bull Put Credit Spread", "Short Put Vertical", "Put Credit", "Credit Put Spread", "PCS"],
     summary: "Sell a higher put and buy a lower put; collect credit, neutral-to-bullish, defined risk.",
     outlook: "bullish", approval: "level3_spreads",
     badges: { risk: "defined", cashFlow: "credit", thetaTendency: "positive", vegaTendency: "negative", earlyAssignment: true, sameExpiration: true },
@@ -152,6 +154,48 @@ export const STRATEGIES: StrategyDefinition[] = [
     ],
     warnings: ["A wide profit zone does not eliminate gap, IV-expansion, or pin risk.", "Show probability of profit AND expected value together."],
     sourceRefs: ["book_pdf:66-69"],
+  },
+  {
+    id: "money_press_put_diagonal",
+    name: "Money Press — Put Diagonal",
+    aliases: [
+      "Money Press",
+      "Diagonal Put",
+      "Put Diagonal",
+      "Weekly Put Press",
+      // legacy calendar ids (redirected)
+      "money_press_put_calendar",
+      "money_press_call_calendar",
+      "money_press_double_calendar",
+    ],
+    summary:
+      "Sell ATM/near weekly put (higher strike), buy lower-strike put 3–6 months out for protection. Weekly premium rolls; defined risk ≈ strike width. Flat-to-up thesis.",
+    outlook: "bullish",
+    approval: "level3_spreads",
+    badges: {
+      risk: "defined",
+      cashFlow: "debit",
+      thetaTendency: "positive",
+      vegaTendency: "positive",
+      earlyAssignment: true,
+      sameExpiration: false,
+    },
+    slots: [
+      OPT("short_near_put", "short", "put", "Sell weekly put (higher / ATM)"),
+      OPT("long_far_put", "long", "put", "Buy protection put (lower, 3–6 mo)"),
+    ],
+    warnings: [
+      "Short weekly strike is ALWAYS higher than the long protection strike (diagonal, not same-strike calendar).",
+      "Initial entry is often a net debit (protection costs more than one weekly credit); multi-week rolls amortize risk.",
+      "Risk capital ≈ difference between the two strikes (width), reduced as weekly credits stack.",
+      "Prefer liquid triple-digit names; fit presses between earnings; avoid commodities/ETFs per method notes.",
+      "Friday roll/adjust routine (~20–30 min). Always use limit orders on the spread.",
+      "Assignment on short put creates long stock — plan cash/margin before Friday.",
+    ],
+    sourceRefs: [
+      "money_press:put-diagonal",
+      "book:Preston James Money Press Method 2020 (personal reference)",
+    ],
   },
   {
     id: "iron_butterfly", name: "Iron Butterfly", aliases: [],

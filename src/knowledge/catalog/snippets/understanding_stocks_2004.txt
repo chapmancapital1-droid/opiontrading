@@ -1,0 +1,219 @@
+10381_Sincere_fm.c 7/18/03 10:59 AM Page i
+UNDERSTANDING
+STOCKS
+M i c h a e l S i n c e re
+ebook_copyright 8 x 10.qxd 8/27/03 9:29 AM Page 1
+Copyright © 2004 by The McGraw-Hill Companies, Inc. All rights reserved. Manufactured in the
+United States of America. Except as permitted under the United States Copyright Act of 1976, no part
+of this publication may be reproduced or distributed in any form or by any means, or stored in a data-
+base or retrieval system, without the prior written permission of the publisher.
+0-07-143582-4
+The material in this eBook also appears in the print version of this title: 0-07-140913-0
+All trademarks are trademarks of their respective owners. Rather than put a trademark symbol after
+every occurrence of a trademarked name, we use names in an editorial fashion only, and to the benefit
+of the trademark owner, with no intention of infringement of the trademark. Where such designations
+appear in this book, they have been printed with initial caps.
+McGraw-Hill eBooks are available at special quantity discounts to use as premiums and sales pro-
+motions, or for use in corporate training programs. For more information, please contact George
+Hoare, Special Sales, at george_hoare@mcgraw-hill.com or (212) 904-4069.
+TERMSOFUSE
+This is a copyrighted work and The McGraw-Hill Companies, Inc. (“McGraw-Hill”) and its licensors
+reserve all rights in and to the work. Use of this work is subject to these terms. Except as permitted
+under the Copyright Act of 1976 and the right to store and retrieve one copy of the work, you may not
+decompile, disassemble, reverse engineer, reproduce, modify, create derivative works based upon,
+transmit, distribute, disseminate, sell, publish or sublicense the work or any part of it without
+McGraw-Hill’s prior consent. You may use the work for your own noncommercial and personal use;
+any other use of the work is strictly prohibited. Your right to use the work may be terminated if you
+fail to comply with these terms.
+THE WORK IS PROVIDED “AS IS”. McGRAW-HILLAND ITS LICENSORS MAKE NO GUAR-
+ANTEES OR WARRANTIES AS TO THE ACCURACY, ADEQUACYOR COMPLETENESS OF
+OR RESULTS TO BE OBTAINED FROM USING THE WORK, INCLUDING ANYINFORMA-
+TION THATCAN BE ACCESSED THROUGH THE WORK VIAHYPERLINK OR OTHERWISE,
+AND EXPRESSLYDISCLAIM ANYWARRANTY, EXPRESS OR IMPLIED, INCLUDING BUT
+NOTLIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITYOR FITNESS FOR A
+PARTICULAR PURPOSE. McGraw-Hill and its licensors do not warrant or guarantee that the func-
+tions contained in the work will meet your requirements or that its operation will be uninterrupted or
+error free. Neither McGraw-Hill nor its licensors shall be liable to you or anyone else for any inac-
+curacy, error or omission, regardless of cause, in the work or for any damages resulting therefrom.
+McGraw-Hill has no responsibility for the content of any information accessed through the work.
+Under no circumstances shall McGraw-Hill and/or its licensors be liable for any indirect, incidental,
+special, punitive, consequential or similar damages that result from the use of or inability to use the
+work, even if any of them has been advised of the possibility of such damages. This limitation of lia-
+bility shall apply to any claim or cause whatsoever whether such claim or cause arises in contract, tort
+or otherwise.
+DOI: 10.1036/0071435824
+DOI Page 6x9 10/2/02 1:33 PM Page 1
+Want to learn more?
+,
+We hope you enjoy this McGraw-Hill eBook! If you d like
+more information about this book, its author, or related books
+and websites, please click here.
+10381_Sincere_fm.c 7/18/03 10:59 AM Page iii
+For more information about. this title, click here.
+Contents
+Acknowledgments v
+Introduction vii
+PART ONE
+WHAT YOU NEED TO KNOW FIRST
+1 Welcome to the Stock Market 3
+2 Stocks:Not Your Only Investment 19
+3 How to Classify Stocks 29
+4 Fun Things You Can Do (with Stocks) 37
+5 Understanding Stock Prices 49
+6 Where to Buy Stocks 55
+PART TWO
+MONEY-MAKING STRATEGIES
+7 Want to Make Money Slowly?
+Try These Investment Strategies 69
+8 Want to Make Money Fast?
+Try These Trading Strategies 77
+Copyright © 2004 by The McGraw-Hill Companies, Inc. Click here for Terms of Use.
+10381_Sincere_fm.c 7/18/03 10:59 AM Page iv
+iv CONTENTS
+PART THREE
+FINDING STOCKS TO BUY AND SELL
+9 It’s Really Fundamental:
+Introduction to Fundamental Analysis 89
+10 Fundamental Analysis:Tools and Tactics 97
+11 Let’s Get Technical:
+Introduction to Technical Analysis 107
+12 Technical Analysis:Tools and Tactics 131
+13 The Psychology of Stocks:
+Introduction to Sentiment Analysis 141
+PART FOUR
+UNCOMMON ADVICE
+14 What Makes Stocks Go Up or Down 149
+15 Why Investors Lose Money 157
+16 What I Really Think about the Stock Market 171
+Index 189
+10381_Sincere_fm.c 7/18/03 10:59 AM Page v
+Acknowledgments
+I’d like to give special thanks:
+To Stephen Isaacs and Jeffrey Krames at McGraw-Hill for once
+again giving me the opportunity to do what I love most, and to Pattie
+Amoroso for helping me put the pieces together to produce a book.
+To my researcher, Maria Schmidt, who found the answer to nearly
+everything I asked; Tine Claes, who never fails to find something that
+needs improvement; and Lois Sincere, who has truly mastered the idio-
+syncrasies of the English language.
+ToTomReid,ateacheratDeerfieldHighSchoolinFlorida,forhelp-
+ingtomakethemostcomplicatedfinancialconceptsseemeasy;student
+Bailey Brooks for helping with editing; Dan Larkin, CEO and senior
+consultant for Larkin Industries, Inc., for his extremely insightful sug-
+gestions and comments; Mike Fredericks, Brad Northern, and Howard
+Kornstein for their thoughtful financial analysis and insights; Colleen
+McCluney for her encouragement and patience; and Oksana Smirnova
+forherinspiration and enthusiasm.
+To the hardworking and friendly staff at Barnes & Noble bookstore
+and Starbucks in Boca Raton, Florida.
+Finally, to my friends, family, and acquaintances:
+Idil Baran, Krista Barth, Bruce Berger, Andrew Brownsword,
+Sylvia Coppersmith, Lourdes Fernandez-Vidal, Alice Fibigrova, Joe
+Harwood, Jackie Krasner, Johan Nilsson, Joanne Pessin, Hal Plotkin,
+Anna Ridolfo, Tim Schenden, Tina Siegismund, Luigi Silverstri, Alex
+Sincere, Debra Sincere, Miriam Sincere, Richard Sincere, Harvey
+Copyright © 2004 by The McGraw-Hill Companies, Inc. Click here for Terms of Use.
+10381_Sincere_fm.c 7/18/03 10:59 AM Page vi
+vi ACKNOWLEDGMENTS
+Small, Bob Spector, Lucie Stejskalova, Deron Wagner, and Kerstin
+Woldorf.
+For additional reading, I recommend the following books:
+The Stock Market Course (John Wiley & Sons, 2001), by George
+Fontanills and Tom Gentile
+A Beginner’s Guide to Short-Term Trading (Adams Media Corpo-
+ration, 2002), by Toni Turner
+Reminiscences of a Stock Operator(John Wiley & Sons, 1994), by
+Edward Lefevre
+10381_Sincere_fm.c 7/18/03 10:59 AM Page vii
+Introduction
+This book will be different.
+Thousands of books have already been written about the stock mar-
+ket, many of them technical and tedious. Before I wrote this book, I was
+amazed that so many boring books had been written about such a fas-
+cinating subject. Just like you, I hate reading books that put me to sleep
+by the second chapter. That is why I was so determined to write an
+entertaining, easy-to-read, and educational book about the market.
+I wanted to write a book that I can hand to you and say, “Read
+everything in this book if you want to learn quickly about stocks.” You
+don’t have to be a dummy, idiot, or fool to understand the market. You
+also don’t have to be a genius. After you read this book, you will real-
+ize that understanding stocks is not that hard. (The hard part is making
+money, but we’ll get to that later.)
+I also don’t think you should have to wade through 300 pages to
+learn about the market. Too many books on stocks are as thick as col-
+lege textbooks and not nearly as exciting. Even though this book is
+short, it is packed with information about investing and trading. I did
+my best to make sure that you would have a short and easy read.
+I wrote this book because I wanted you to know the truth.
+As I was writing, a corporate crime wave was sweeping across
+America. Dozens of corporations were accused of cheating people out
+of millions of dollars. It upset me that so many investors have become
+victims of the stock market. It seems as if the name of the game is entic-
+Copyright © 2004 by The McGraw-Hill Companies, Inc. Click here for Terms of Use.
+10381_Sincere_fm.c 7/18/03 10:59 AM Page viii
+viii INTRODUCTION
+ing individual investors into the market so that they can be duped out of
+all their money.
+The insiders on Wall Street and in many corporations understand
+the rules and know how to use them to lure you into putting your money
+in the market. In this book, I promise to tell you the truth about how the
+markets operate. Without that knowledge, you hardly have a chance to
+win against the pros who do business on Wall Street. They go to work
+every day with one goal in mind: to take money away from you.
+Because the stock market is a brutal game that is often rigged in
+favor of the house, you should be quite sure you know what you’re up
+against before you invest your first dime. Unfortunately, you can’t win
+unless you know how to play. One goal of this book is to educate you
+about how the markets operate so that you can decide for yourself
+whether you want to participate. By the end of the book, you’ll know
+the players, the rules, and the vocabulary.
+I don’t want to scare you, just prepare you.
+After my unsettling introduction, you may decide that you don’t
+want to have anything to do with the stock market. In my opinion, that
+would be a mistake. First of all, understanding the market can help you
+make financial decisions. The stock market is the core of our financial
+system, and understanding how it works will guide you for the rest of
+your life. In addition, the market often acts as a crystal ball, showing
+where the economy is headed.
+This book is also ideal for people who still aren’t sure whether to
+participate in the market. By the last chapter, you should have a better
+idea as to whether investing directly in the stock market makes sense
+for you. Although I can’t make any promises, it is also possible that
+understanding the market will help you build wealth. Perhaps you will
+put your money into the stock market, but I will give you other invest-
+ment ideas.
+How to Read this Book
+If you are a first-time investor (and even if you’re not), I suggest you
+begin by reading the first, second, and fourth sections. This will give
+you an overview of the market (Parts One and Two), and ways to avoid
+10381_Sincere_fm.c 7/18/03 10:59 AM Page ix
+INTRODUCTION ix
+losing money (Part Four). Because Part Three is the most challenging
+and technical, it should be saved for last. As a special bonus, at the end
+of the last chapter I reveal a trading strategy that has not lost money
+during the last eight calendar years. I think you’ll be intrigued by this
+simple but effective strategy that contradicts the advice included in
+nearly every other investment book.
+I wish you the best of luck. I sincerely hope you find that learning
+about stocks is an enlightening experience, one that you will always
+remember.
+This page intentionally left blank.
+10381_Sincere_01.c 7/18/03 10:57 AM Page 1
+PART ONE
+WHAT YOU NEED
+TO KNOW FIRST
+Copyright © 2004 by The McGraw-Hill Companies, Inc. Click here for Terms of Use.
+This page intentionally left blank.
+10381_Sincere_01.c 7/18/03 10:57 AM Page 3
+1
+C H A P T E R
+Welcome to the
+Stock Market
+You may be surprised, but the market is not as difficult to understand as
+you might think. By the time you finish reading this chapter, you
+should have enough knowledge of the market to allow you to sail
+through the rest of the book. The trick is to learn about the market in
+small steps, which is exactly how I present the information to you.
+The Stock Market:The Biggest Auction in the World
+Think of the stock market as a huge auction or swap meet (some might
+call it a flea market) where

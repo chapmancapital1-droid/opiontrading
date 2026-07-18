@@ -1,0 +1,231 @@
+T B
+RADING AS A USINESS
+TheWileyTradingseriesfeaturesbooksbytraderswhohavesurvivedthemarket’s
+ever changing temperament and have prospered--some by reinventing systems,
+othersbygettingbacktobasics.Whetheranovicetrader,professionalorsomewhere
+in-between, these books will provide the advice and strategies needed to prosper
+today and well into the future. For more on this series, visit our Web site at
+www.WileyTrading.com.
+Founded in 1807, John Wiley & Sons is the oldest independent publishing
+companyintheUnitedStates.WithofficesinNorthAmerica,Europe,Australiaand
+Asia,Wileyisgloballycommittedtodevelopingandmarketingprintandelectronic
+productsandservicesforourcustomers’professionalandpersonalknowledgeand
+understanding.
+T
+RADING AS
+B
+A USINESS
+The Methods and Rules I’ve Used to Beat
+the Markets for 40 Years
+Dick Diamond
+Coverimage:©iStock.com/ricardoinfante
+Coverdesign:Wiley
+Copyright©2015byDickDiamond.Allrightsreserved.
+PublishedbyJohnWiley&Sons,Inc.,Hoboken,NewJersey.
+PublishedsimultaneouslyinCanada.
+ChartsinthebookwerecreatedusingtheMetaStocktradingplatform,andhavebeenusedwithpermission.
+©MetaStock2014.
+Nopartofthispublicationmaybereproduced,storedinaretrievalsystem,ortransmittedinanyformorby
+anymeans,electronic,mechanical,photocopying,recording,scanning,orotherwise,exceptaspermitted
+underSection107or108ofthe1976UnitedStatesCopyrightAct,withouteitherthepriorwrittenpermission
+ofthePublisher,orauthorizationthroughpaymentoftheappropriateper-copyfeetotheCopyrightClearance
+Center,Inc.,222RosewoodDrive,Danvers,MA01923,(978)750-8400,fax(978)646-8600,orontheWeb
+atwww.copyright.com.RequeststothePublisherforpermissionshouldbeaddressedtothePermissions
+Department,JohnWiley&Sons,Inc.,111RiverStreet,Hoboken,NJ07030,(201)748-6011,fax(201)
+748-6008,oronlineathttp://www.wiley.com/go/permissions.
+LimitofLiability/DisclaimerofWarranty:Whilethepublisherandauthorhaveusedtheirbesteffortsin
+preparingthisbook,theymakenorepresentationsorwarrantieswithrespecttotheaccuracyorcompleteness
+ofthecontentsofthisbookandspecificallydisclaimanyimpliedwarrantiesofmerchantabilityorfitnessfora
+particularpurpose.Nowarrantymaybecreatedorextendedbysalesrepresentativesorwrittensalesmaterials.
+Theadviceandstrategiescontainedhereinmaynotbesuitableforyoursituation.Youshouldconsultwitha
+professionalwhereappropriate.Neitherthepublishernorauthorshallbeliableforanylossofprofitorany
+othercommercialdamages,includingbutnotlimitedtospecial,incidental,consequential,orotherdamages.
+Forgeneralinformationonourotherproductsandservicesorfortechnicalsupport,pleasecontactour
+CustomerCareDepartmentwithintheUnitedStatesat(800)762-2974,outsidetheUnitedStatesat(317)
+572-3993orfax(317)572-4002.
+Wileypublishesinavarietyofprintandelectronicformatsandbyprint-on-demand.Somematerialincluded
+withstandardprintversionsofthisbookmaynotbeincludedine-booksorinprint-on-demand.Ifthisbook
+referstomediasuchasaCDorDVDthatisnotincludedintheversionyoupurchased,youmaydownloadthis
+materialathttp://booksupport.wiley.com.FormoreinformationaboutWileyproducts,visit
+www.wiley.com.
+LibraryofCongressCataloging-in-PublicationData:
+Diamond,Dick(Stockbroker)
+Tradingasabusiness:themethodsandrulesI’veusedtobeatthemarketsfor40years/DickDiamond.
+pagescm.—(Wileytradingseries)
+Includesindex.
+ISBN:978-1-118-47298-9(paperback)
+1.Investmentanalysis.2.Speculation.3.Investments.4.Portfoliomanagement.5.Stockbrokers.I.Title.
+HG4529.D4972015
+332.64--dc23
+2014032268
+PrintedintheUnitedStatesofAmerica
+10 9 8 7 6 5 4 3 2 1
+CONTENTS
+Foreword ix
+RobertPrechter
+Preface xi
+Acknowledgments xiii
+CHAPTER1 MyLifeasaTrader 1 v
+TradingasaBusiness 5
+CHAPTER2 EmotionalDiscipline 9
+WhyTradersFail 11
+CorePositionand80/20Trades 12
+TheEmotionsofTrading 13
+TheImportanceofCommitment 15
+CHAPTER3 PrinciplesofSuccessfulTrading 17
+TradewithinYourCapital 17
+QuietConfidence 18
+SellTooSoon,NotTooLate 19
+TakePersonalResponsibilityforYourTrading 21
+Waitfor80/20Trades 21
+PlayGreatDefense 22
+PulltheTrigger 22
+OpinionsAreforPundits,NotTraders 23
+STNETNOC
+StrictlyFollowTechnicalData 23
+MarketEntryTactics:UseLimitOrders,Buy/Sell
+Zones,andPositionScaling 24
+UseDefensiveStops 24
+TrackYourResults 25
+ManagingYourTradingAccount 25
+TakeAdvantageofMarketConditions 26
+ReviewtheRulesEveryWeek 27
+CHAPTER4 TechnicalAnalysisandTradingConcepts 29
+MovingAverages 29
+Crossovers 34
+Divergences 35
+Williams%R 37
+StochasticOscillator 38
+StochasticMomentum 40
+Bressert 41
+RMO 42
+vi
+MovingRibbons 43
+CHAPTER5 TradingwiththeMovingAverageTemplate 45
+CHAPTER6 TradingwiththeMovingRibbonsTemplate 65
+CHAPTER7 TradingwiththeBressertTemplate 79
+CHAPTER8 TradingwiththeRMOTemplate 99
+CHAPTER9 ADayofTrading 117
+Appendix:AboutMetaStockProTemplates 123
+CreatingtheDickDiamondTemplates 124
+Template1:WalterBressert 126
+Template2:MovingRibbons 127
+Template3:RMO 127
+Template4:MovingAverages 128
+ApplyinganExistingTemplate 128
+CONTENTS
+MakingChangestoaTemplate 129
+SavingaTemplate 129
+TheDefaultTemplate 130
+CreatingtheDiamondWorkSpace 131
+AbouttheAuthor 135
+Index 137
+vii
+FOREWORD
+In1979,Iwassittingbetweentwotradersataspecialtybrokeragefirm.Theoneon
+myleftwasonthephoneallday,workinghiscontactstogetpreopeningsharesin
+initialpublicofferings,whichhewouldjettisonataprofitshortlyafterthedeals.He
+solicitedopinionsfromfriendstofigureouthotstockstoride.Hewasalwayslong,
+never short. The guy on my right was a plunger who would identify markets that
+were extended and then bet huge wads on a reversal. I was there when a reversal ix
+didn’tcome,andhewasgone.
+Sittingacrosstheroomwasalonerwhoquietlyworkedhissystem.Thefriendto
+my left suggested I meet him, so I did. I asked him what he was doing. He said he
+tradedoptions,andIcouldsitandwatchifIwanted.HisnamewasDickDiamond.
+Mostofthetradersintheroomwerechatty,butDickwasquiet.Mostly,hejust
+watchedthescreenandupdatedhisindicators.Theneverynowandthenhewouldsit
+upstraightandbecomehyperalert.Then—bam—hewouldcallinatrade.(There
+werenoelectronictradingplatformsbackthen.)Hewouldstayonedgeforaperiod
+oftime,maybeanhour,andthencalltoclosethetrade.Thenherelaxedagain.
+WhenIpressedhimaboutwhathewasdoing,hewouldtalkaboutwaitingforthe
+right‘‘setups,’’actingswiftlyandgettingoutwhilemomentumwasstillinhisfavor,
+an absolute must when trading options. He seemed more disciplined than other
+traders. He wasn’t trying to win a war; he was in a bunker, taking the occasional
+shot when his odds of a hit were 80/20. He never changed his tactics, never asked
+other people their opinions, and never bet big. Incredibly, unlike almost everyone
+else,hewasalsomakingaverygoodliving,everysinglemonth.
+I liked Dick right away because he was a pure technician. He never acted on
+news; hedidn’t careabout valuation; hedidn’t trytosolicitinside information; he
+didn’tfactorinwhattheeconomywasdoing,orthepresident,ortheFed.Hejust
+DROWEROF
+waitedforthemarkettosignalthestartofavolatilemove;thenhegrabbedapiece
+ofit,timeandagain.Westruckupafriendshipthat’sstillongoing.
+Inthemid-1980s,DickandItalkedaboutteachinghismethod.Subscriberswere
+alwaysaskingmeaboutwheretheycouldlearntrading,andhewasreadytoshowa
+fewpeoplehowhedidit.Soforseveralyears,hetaughtwould-betraders,usually
+aboutfouratatime,inhisLongIslandhome.Theywouldsitwithhimforaweekas
+he showed them exactly what he did all day. Despite being shown the ropes, most
+students, for psychological and other reasons, never became as successful as he is.
+Buteverynowandthenhewouldreportononewho‘‘gotit’’andwasdoingwell.
+In the 2000s, after Dick moved to Florida, he set up seminars that would
+accommodate 20 or more people. Dick was trading futures by then, but he never
+changed his entry and exit methods. He and his partners, Roberto Hernandez and
+Brad Marcus, kept to the format of allowing prospective traders to learn what he
+was doing, in real time, for a week. Often, he would get dumb questions such as,
+‘‘When you get stopped out, why don’t you just reverse your position?’’ Dick’s
+usualanswerwas,‘‘That’snotwhatIdo.’’Secretly,hewasthinking,‘‘Ifyouwantto
+losemoneyonsomerandomidea,goahead.’’But,occasionally,anattendeewould
+adopthismethodandstartwinningmorethanlosing.
+Inthe1990s,IstartedbuggingDickaboutwritingabook.Isaid,‘‘Lotsoftrading
+booksareaboutmakingkillingsandgettingkilled.Yourswillbeaboutchopping it
+outeveryday,notforathrillbutasabusiness.Itwillbeafirst.’’Hiswifetookup
+x
+thecause.
+Many years went by, and no book. Dick is not a writer; he’s a trader. After a
+falsestartortwo,myfirmputDicktogetherwithseasonededitorKevinCommins,
+with whom we had worked on several projects. Soon the trading book began to
+takeshape.
+Andhereitis!
+Ifyou’relookingforcolorful‘‘warstories,’’youwon’tgetany.Butifyoureadthis
+book,youwillknow—ascloselyasyoucanabsentmathematicalcodification—just
+whatDickhasbeendoingalltheseyears.
+Dick’s approach is so conservative that he’s still trading at an age when most
+peopleareretired.Andhestilldoesn’thaveabossoremployees.Formostpeople,
+tradingproducessleeplessnights.Forhim,itproducessteadyincomeatretirement
+age. What a difference! Incredibly, this is absolutely not what most traders want.
+Consciously or unconsciously, they want big scores. That’s one reason they end
+uplosing.
+AnybodycanadoptDick’smethod.Whetheryoudoisanotherquestion.Butit’s
+allhere,andit’sveryclear.
+ROBERTPRECHTER
+September2014
+PREFACE
+I’ve been around the trading game for over 40 years. I’ve seen a lot of traders
+comeandgo.Butwhileit’satoughandunforgivinggame,itispossibletomakea
+greatlivingfromtrading.Thekeys,asIdiscussthroughoutthisbook,areemotional
+disciplineandriskcontrol.
+I’veorganizedthisbook,TradingasaBusiness,inmuchthesamewaythatIteach
+attendees at my seminar. I recount a little bit about my own history as a trader. xi
+I discuss the principles that I use to guide my trading and explain the technical
+indicatorsthatIuse.Finally,Irevealmyfourtradingtemplatesandprovidedozens
+ofexamplesofhowIusethetemplatestoplacetrades.
+I would suggest reading the entire book from beginning to end and then
+returningtoChapter2,‘‘EmotionalDiscipline’’;Chapter3,‘‘PrinciplesofSuccessful
+Trading’’; and Chapters 5 through 8, which discuss trading with four different
+templates. After you’ve mastered the material, I suggest you set up the trading
+templates on your computer and begin analyzing the markets every day using the
+templates. Just as I do in Chapters 5 through 8, you should try to identify 80/20
+trades(tradesthatwillproduceaprofitfouroutoffivetimes).
+I have taught many traders, and I certainly understand that readers will come
+to this book with different levels of trading experience and expertise in technical
+analysis. Many of my most successful students adapted parts of my methods to
+their preexisting approach and evolved into better traders. Roberto Hernandez, a
+former student who now teaches with me, uses his own trading template, which
+incorporates some indicators that I do not use at all. If you’re going to modify the
+templates or use your own template, I would suggest afew things. First, and most
+importantly, do not rely on a single indicator or even two indicators. The markets
+are too complex to be reducible to a single indicator at all times. I advocate using
+ECAFERP
+threetofiveindicatorsinatemplateandwaitinguntilalltheindicatorsalignbefore
+putting on atrade. Second, make sure thatyour template is effective in identifying
+80/20 trades. From my experience, it’s tough to maintain emotional discipline
+whenyourtemplateiswrongalmostasmuchasitisright.Finally,readandreread
+thechaptersontradingprinciplesandmakethempartofyourtradingDNA.Trade
+small,usetightstops,andcultivateemotionaldiscipline.
+While it’s fine to modify my templates or create your own templates, I believe
+the majority of traders will be better off using the templates in the book. They are
+thetemplatesIuseinmyowntrading;Iknowtheywork.
+As I discuss in the chapter on emotional discipline, it’s essential that you feel
+confident in your trading strategies and your trading rules. A trader without
+confidencewillhaveahardtimepullingthetriggerandwillconstantlysecond-guess
+his/hersystemandrules.Atraderwithconfidencew

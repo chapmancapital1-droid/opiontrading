@@ -1,0 +1,253 @@
+THE CANDLESTICK TRADING BIBLE
+1
+THE CANDLESTICK TRADING BIBLE
+Content
+Introduction 4
+Overview 6
+History of Candlesticks 8
+What is a Candlestick 11
+Candlestick Patterns 14
+The Engulfing Bar Candlestick 16
+The Doji Candlestick Pattern 20
+The Dragon Fly Doji Pattern 22
+The Gravestone Doji Pattern 25
+The Morning Star 28
+The Evening Star Candlestick Pattern 31
+The Hammer Candlestick Pattern 34
+The Shooting Star Candlestick Pattern 37
+The Harami Pattern 40
+The Tweezers Tops and Bottoms 43
+Candlestick Patterns Exercise 47
+The Market Structure 51
+How to Trade Trending Markets 54
+Support and Resistance Levels 58
+How to Draw Trendlines 61
+The Ranging Market 63
+Time Frames and Top Down Analysis 70
+Trading Strategies and Tactics 79
+The Pin Bar Candlestick Pattern Strategies 81
+2
+THE CANDLESTICK TRADING BIBLE
+Trading the Pin Bar Candle With The Trend 88
+Trading Tactics 92
+Trading Pin Bars with Confluence 96
+Pin Bar Trades Examples 100
+Trading Pin Bars in Range Bounds Markets 103
+The Engulfing Bar Candlestick Pattern 109
+How to Trade the Engulfing Bar Price Action Signal 112
+Trading the Engulfing Bar with Moving Averages 117
+How to Trade the Engulfing Bar with Fibonacci Retracements 120
+Trading the Engulfing Bar with Trendlines 122
+Trading the Engulfing Bar in Sideways Markets 125
+The Engulfing Pattern with Supply and Demand Zones 130
+Money Management Trading Rules 133
+The Inside Bar Candlestick Pattern 137
+The Psychology Behind the Inside Bar Pattern Formation 140
+How to Trade Inside Bars with Support and Resistance 143
+Tips on Trading the Inside Bar Price Action Setup 146
+Trading the False Breakout of The Inside Bar Pattern 148
+Inside bar false breakouts trading examples 151
+Trading Inside Bar False Breakout with Fibonacci Retracements 154
+Trades Examples 158
+Money Management Strategies 162
+Conclusion 167
+3
+THE CANDLESTICK TRADING BIBLE
+Introduction
+The Candlestick trading bible is one of the most powerful trading
+systems in history. It was invented by Homma Munehisa.The father of
+candlestick chart patterns.
+This trader is considered to be the most successful trader in history, he
+was known as the God of markets in his days, his discovery made him
+more than $10 billion in today’s dollar.
+I have spent 10 years compiling, testing, organizing, and consistently
+updating this method to create my own new version, which is
+considered to be the easiest and most profitable trading system.
+The Candlestick trading bible is the trading method that is going to
+finally take your trading to where it should be, consistent, profitable,
+easy and requiring very little time and effort.
+This trading system is based on Japanese candlestick patterns in
+combination with technical analysis.
+All what you have to do is to spend as much time as you can to master
+the method that i’am going to share with you and use it to trade any
+financial market.
+Learning Japanese candlestick is like learning a new language. Imagine
+you got a book which is written in a foreign language, you look at the
+pages but you get nothing from what is written.
+The same thing when it comes to financial markets. If you don’t know
+how to read Japanese candlesticks, you will never be able to trade the
+market.
+Japanese candlesticks are the language of financial markets, if you get
+the skill of reading charts, you will understand what the market is
+telling you, and you will be able to make the right decision in the right
+time.
+4
+THE CANDLESTICK TRADING BIBLE
+The easy to follow strategies detailed in this work will provide you with
+profit making techniques that can be quickly learned.
+More importantly, learning the principals of market psychology
+underlying the candlestick methodology will change your overall
+trading psych forever.
+The Candlestick trading bible has already proven itself. Fortunes have
+been made using the Japanese candlestick strategies.
+I congratulate you on taking the first step in your trading education,
+you are on the right path to become a better trader.
+However, this is actually just the beginning of your trading career, after
+finishing this eBook, the real work begins.
+Don’t read this eBook very fast, this is not a novel, you should take
+your time to understand all the concepts i discussed, take your notes,
+and go back from time to time to review the strategies i shared with
+you.
+Remember, this is an educational work that will teach you professional
+methods on how to make money trading financial markets.
+If you got the skills that i shared with you here, you will change
+completely your life and the life of people around you.
+5
+THE CANDLESTICK TRADING BIBLE
+Overview
+The eBook is divided into the following sections:
+1-Candlesticks Anatomy
+Just as humans, candlesticks have different body sizes, and when it
+comes to trading, it’s important to check out the bodies of candlesticks
+and understand the psychology behind it. that’s what you will learn in
+this section.
+2-Candlestick patterns
+Candlestick patterns are an integral part of technical analysis,
+candlestick patterns emerge because human actions and reactions are
+patterned and constantly repeated.
+In this section you will learn how to recognize the most important
+candlestick patterns, the psychology behind it’s formation, and what
+do they indicate when they form in the market.
+3-The Market structure
+In this section, you will learn how to identify trending markets, ranging
+markets, and choppy markets. You will learn how these markets move
+and how to trade them professionally.
+You will also learn how to draw support and resistance, and trendlines.
+4-Time frames and top down analysis
+Multiple time frame analysis is very important for you as a price action
+trader, in this section you will learn how to analyze the market using
+the top down analysis approach.
+5-Trading strategies and tactics
+In this section you will learn how trade the market using four price
+action trading strategies:
+-The pin bar strategy
+6
+THE CANDLESTICK TRADING BIBLE
+-The engulfing bar strategy
+-The inside bar strategy
+-The inside bar false breakout strategy
+-Trades examples
+I highly recommend you to master the previous sections before
+jumping to this section, because if you don’t master the basics, you will
+not be able to use these strategies as effective as it would be.
+In this section you will learn how to identify high probability setups in
+the market, and how to use these candlestick patterns in trending
+markets and ranging markets to maximize your profits.
+6-Money management
+In this section, you will learn how to create a money management and
+risk control plan that will allow you to protect your trading capital and
+become consistently profitable.
+7
+THE CANDLESTICK TRADING BIBLE
+History of candlesticks
+Candlesticks have been around a lot longer than anything similar in the
+Western world.
+The Japanese were looking at charts as far back as the 17th century,
+whereas the earliest known charts in the US appeared in the late 19th
+century.
+Rice trading had been established in Japan in 1654, with gold, silver
+and rape seed oil following soon after.
+Rice markets dominated Japan at this time and the commodity
+became, it seems, more important than hard currency.
+Munehisa Homma (aka Sokyu Honma), a Japanese rice trader born in
+the early 1700s, is widely credited as being one of the early exponents
+of tracking price action.
+He understood basic supply and demand dynamics, but also identified
+the fact that emotion played a part in the setting of price.
+He wanted to track the emotion of the market players, and this work
+became the basis of candlestick analysis.
+He was extremely well respected, to the point of being promoted to
+Samurai status.
+The Japanese did an extremely good job of keeping candlesticks quiet
+from the Western world, right up until the 1980s, when suddenly there
+was a large cross-pollination of banks and financial institutions around
+the world.
+This is when Westerners suddenly got wind of these mystical charts.
+Obviously, this was also about the time that charting in general
+suddenly became a lot easier, due to the widespread use of the PC.
+In the late 1980s several Western analysts became interested in
+candlesticks. In the UK Michael Feeny, who was then head of TA in
+8
+THE CANDLESTICK TRADING BIBLE
+London for Sumitomo, began using candlesticks in his daily work, and
+started introducing the ideas to London professionals.
+In the December 1989 edition of Futures magazine Steve Nison, who
+was a technical analyst at Merrill Lynch in New York, produced a paper
+that showed a series of candlestick reversal patterns and explained
+their predictive powers.
+He went on to write a book on the subject, and a fine book it is too.
+Thank you Messrs Feeny and Nison.
+Since then candlesticks have gained in popularity by the year, and
+these days they seem to be the standard template that most analysts
+work from.
+Why candlesticks are important to your trading analysis?
+-Candlesticks are important to you trading analysis because, it is
+considered as a visual representation of what is going on in the market.
+By looking at a candlestick, we can get valuable information about the
+open, high, low and the close of price, which will give us an idea about
+the price movement.
+-Candlesticks are flexible, they can be used alone or in combination
+with technical analysis tools such as the moving averages, and
+momentum oscillators, they can be used also with methods such the
+Dow Theory or the Eliot wave theory.
+I personally use candlesticks with support and resistance, trend lines,
+and other technical tools that you will discover in the next chapters.
+-The human behavior in relation to money is always dominated by
+fear; greed, and hope, candlestick analysis will help us understand
+these changing psychological factors by showing us how buyers and
+sellers interact with each other’s.
+-Candlesticks provide more valuable information than bar charts, using
+them is a win-win situation, because you can get all the trading signals
+9
+THE CANDLESTICK TRADING BIBLE
+that bar chart generate with the added clarity and additional signals
+generated by candlesticks.
+-Candlesticks are used by most professional traders, banks, and hedge
+funds, these guys trade millions of dollars every day, they can move
+the market whenever they want.
+They can take your money easily if you don’t understand the game.
+Even if you can trade one hundred thousand dollars trading account,
+you can’t move the market; you can’t control what is going in the
+market.
+Using candlestick patterns will help you understand what the big boys
+are doing, and will show you when to enter, when to exit, and when to
+stay away from the market.
+10
+THE CANDLESTICK TRADING BIBLE
+What is a candlestick?
+Japanese candlesticks are formed using the open, high, low and close
+of the chosen time frame.
+-If the close is above the open, we can say that the candlestick is bullish
+which means that the market is rising in this period of time. Bullish
+candlesticks are always displayed as white candlestick.
+The most trading platform use white color to refer to bullish
+candlesticks. But the color doesn’t matter, you can use whatever color
+you want.
+The most important is the open price and the close price.
+-If the close is below the open, we can say that the candlestick is
+bearish which indicates that the market is falling in this session.
+Bearish candles are always displayed as black candlesticks. But this is
+not a rule.
+11
+THE CANDLESTICK TRADING BIBLE
+You can find different colors used to differentiate between bullish
+and bearish candlesticks.
+-The filled part of the candlestick is called the real body.
+-The thin lines poking above and below the body are called shadows.
+-The top of the upper shadow is the high
+-The bottom of the lower shadow is the low.
+Candlestick body sizes:
+Candlesticks have different body sizes:
+Long bodies refer to strong buying or selling pressure, if there is a
+candlestick in which the close is above the open with a long body, this
+indicates that buyers are stronger and they are taking con

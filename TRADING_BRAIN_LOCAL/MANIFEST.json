@@ -1,0 +1,35 @@
+{
+  "exported_at": "2026-07-16T15:20:07.721896+00:00",
+  "dest": "C:\\Users\\Michael Chapman\\opiontrading\\TRADING_BRAIN_LOCAL",
+  "python_modules": [
+    "agent.py",
+    "pricing.py",
+    "knowledge.py",
+    "decision.py",
+    "portfolio.py",
+    "spy_1dte.py",
+    "spy_strategy.py",
+    "options_chain.py",
+    "spy_dashboard.py",
+    "backtester.py",
+    "genome.py",
+    "self_improve.py",
+    "export_brain.py",
+    "__init__.py",
+    "__main__.py",
+    "README.md"
+  ],
+  "domain_ts": [
+    "blackScholes.ts",
+    "montecarlo.ts",
+    "binomial.ts",
+    "payoff.ts",
+    "valuation.ts",
+    "strikeProbability.ts",
+    "normal.ts",
+    "rng.ts",
+    "types.ts",
+    "money.ts"
+  ],
+  "how_to_self_improve": "python -m ota.self_improve --years 400 --generations 12 --pop 8"
+}

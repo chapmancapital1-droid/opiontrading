@@ -13,10 +13,23 @@ export function OrderChecklistCard({ checklist, onSave }: { checklist: OrderChec
   };
 
   return (
-    <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-2)] p-5 print:border-0">
-      <div className="flex items-center justify-between mb-3">
-        <h3 className="text-base font-medium">Robinhood order checklist</h3>
-        <span className="text-xs text-[var(--text-muted)]">{checklist.contracts}× {checklist.strategyName}</span>
+    <div className="os-panel-accent p-5 print:border-0">
+      <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
+        <div>
+          <div className="os-kicker">Own the decision · climax CTA</div>
+          <h3 className="text-base font-medium m-0 mt-0.5">Order checklist (manual Robinhood entry)</h3>
+          <p className="text-xs text-[var(--text-secondary)] m-0 mt-1">
+            Copy into Robinhood yourself. This app never places orders.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-1.5 items-center">
+          <span className="os-badge os-badge-accent">
+            {checklist.contracts}× {checklist.strategyName}
+          </span>
+          {checklist.contracts < 1 && (
+            <span className="os-badge os-badge-warn">SIZE 0 — do not enter</span>
+          )}
+        </div>
       </div>
 
       <dl className="text-sm space-y-1">
@@ -49,14 +62,22 @@ export function OrderChecklistCard({ checklist, onSave }: { checklist: OrderChec
         {checklist.reviewConfirmedLabel}
       </label>
 
-      <div className="flex gap-2 mt-4 print:hidden">
-        <button onClick={copy} className="text-sm border border-[var(--border-strong)] rounded-lg px-3 py-1.5">{copied ? "Copied" : "Copy"}</button>
-        <button onClick={() => window.print()} className="text-sm border border-[var(--border-strong)] rounded-lg px-3 py-1.5">Print / PDF</button>
-        {onSave && <button onClick={onSave} disabled={!confirmed} className="text-sm border border-[var(--border-strong)] rounded-lg px-3 py-1.5 disabled:opacity-50">Save to journal</button>}
+      <div className="flex flex-wrap gap-2 mt-4 print:hidden">
+        <button type="button" onClick={copy} className="os-btn os-btn-primary">
+          {copied ? "Copied" : "Copy checklist"}
+        </button>
+        <button type="button" onClick={() => window.print()} className="os-btn">
+          Print / PDF
+        </button>
+        {onSave && (
+          <button type="button" onClick={onSave} disabled={!confirmed} className="os-btn disabled:opacity-50">
+            Save to journal
+          </button>
+        )}
       </div>
 
       <p className="text-xs text-[var(--text-muted)] mt-3">
-        Estimates only. A limit order is not guaranteed to fill. Not investment advice. Not affiliated with or endorsed by Robinhood.
+        Estimates only. A limit order is not guaranteed to fill. Not investment advice. You enter every order yourself — this app never auto-trades.
       </p>
     </div>
   );

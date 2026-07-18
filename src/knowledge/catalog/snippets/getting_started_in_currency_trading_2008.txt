@@ -1,0 +1,413 @@
+FM.qxd 5/6/08 3:08 PM Page i
+Getting Started in
+CURRENCY
+TRADING
+S E C O N D E D I T I O N
+Winning in Today’s
+Hottest Marketplace
+Michael Duane Archer
+John Wiley & Sons, Inc.
+FM.qxd 5/6/08 3:08 PM Page iv
+FM.qxd 5/6/08 3:08 PM Page i
+Getting Started in
+CURRENCY
+TRADING
+S E C O N D E D I T I O N
+Winning in Today’s
+Hottest Marketplace
+Michael Duane Archer
+John Wiley & Sons, Inc.
+FM.qxd 5/6/08 3:08 PM Page ii
+Copyright © 2008 by Michael D. Archer. All rights reserved
+Published by John Wiley & Sons, Inc., Hoboken, New Jersey
+Published simultaneously in Canada
+A first edition of this book was co-authored by Michael D. Archer and Jim L. Bickford and
+published by John Wiley & Sons, Inc. in 2005.
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any
+form or by any means, electronic, mechanical, photocopying, recording, scanning, or otherwise,
+except as permitted under Section 107 or 108 of the 1976 United States Copyright Act, without
+either the prior written permission of the Publisher, or authorization through payment of the
+appropriate per-copy fee to the Copyright Clearance Center, Inc., 222 Rosewood Drive, Dan-
+vers, MA 01923, (978) 750-8400, fax (978) 750-4470, or on the web at www.copyright.com.
+Requests to the Publisher for permission should be addressed to the Permissions Department,
+John Wiley & Sons, Inc., 111 River Street, Hoboken, NJ 07030, (201) 748-6011, fax (201)
+748-6008, or online at http://www.wiley.com/go/permissions.
+Limit of Liability/Disclaimer of Warranty: While the publisher and author have used their best
+efforts in preparing this book, they make no representations or warranties with respect to the ac-
+curacy or completeness of the contents of this book and specifically disclaim any implied war-
+ranties of merchantability or fitness for a particular purpose. No warranty may be created or
+extended by sales representatives or written sales materials. The advice and strategies contained
+herein may not be suitable for your situation. You should consult with a professional where ap-
+propriate. Neither the publisher nor author shall be liable for any loss of profit or any other
+commercial damages, including but not limited to special, incidental, consequential, or other
+damages.
+For general information on our other products and services or for technical support, please con-
+tact our Customer Care Department within the United States at (800) 762-2974, outside the
+United States at (317) 572-3993 or fax (317) 572-4002.
+Wiley also publishes its books in a variety of electronic formats. Some content that appears in
+print may not be available in electronic books. For more information about Wiley products,
+visit our web site at www.wiley.com.
+Library of Congress Cataloging-in-Publication Data
+Archer, Michael D. (Michael Duane)
+Getting started in currency trading : winning in today’s hottest marketplace /
+Michael Archer.—2nd ed.
+p. cm.—(Getting started in)
+Includes index.
+ISBN 978-0-470-26777-6 (paper/website)
+1. Foreign exchange market. 2. Foreign exchange futures. I. Title.
+HG3851.A739 2008
+332.4’5—dc22
+2008019033
+Printed in the United States of America
+10 9 8 7 6 5 4 3 2 1
+FM.qxd 5/6/08 3:08 PM Page iii
+For my children, Brandy, Jonathan, Stephen, and Anthony
+FM.qxd 5/6/08 3:08 PM Page iv
+FM.qxd 5/6/08 3:08 PM Page v
+Contents
+Acknowledgments xv
+Introduction xvii
+About This Book xvii
+How This Book Is Organized xvii
+Disclaimer xix
+PART 1
+THE FOREIGN EXCHANGE MARKETS
+Chapter 1
+The FOREX Landscape 3
+Introduction—What Is FOREX? 3
+What Is a Spot Market? 3
+Which Currencies Are Traded? 4
+Who Trades on the Foreign Exchange? 4
+How Are Currency Prices Determined? 5
+Why Trade Foreign Currencies? 5
+What Tools Do I Need to Trade Currencies? 8
+What Does It Cost to Trade Currencies? 8
+FOREX versus Stocks 8
+FOREX versus Futures 9
+Summary 10
+Chapter 2
+A Brief History of Currency Trading 11
+Introduction 11
+Ancient Times 11
+The Gold Standard 1816–1933 12
+The Fed 12
+Securities and Exchange Commission 1933–1934 14
+The Bretton Woods System,1944–1973 14
+The End of Bretton Woods and Floating Exchange Rates 15
+International Monetary Market 15
+v
+FM.qxd 5/6/08 3:08 PM Page vi
+vi CONTENTS
+Current Perspective 16
+Arrival of the Euro 16
+Summary 18
+Chapter 3
+Spot or Futures FOREX? 19
+Introduction—Futures Contracts 19
+Currency Futures 20
+Contract Specifications 20
+Currencies Trading Volume 21
+U.S.Dollar Index 22
+Summary 22
+PART 2
+GETTING STARTED
+Chapter 4
+The Regulatory Environment 25
+Regulation Today 25
+The Commodity Futures Trading Commission (CFTC) 26
+National Futures Association 26
+Commodity Futures Modernization Act of 2000 27
+The Patriot Act 27
+The CFTC Reauthorization Act of 2005 27
+Summary 28
+Chapter 5
+The FOREX Lexicon 29
+Currency Pairs 29
+Major and Minor Currencies 29
+Cross Currency 30
+Exotic Currency 30
+Base Currency 30
+Quote Currency 30
+Pips 30
+Ticks 31
+Margin 31
+Leverage 32
+Bid Price 32
+Ask Price 32
+Bid/Ask Spread 32
+FM.qxd 5/6/08 3:08 PM Page vii
+Contents vii
+Quote Convention 32
+Transaction Cost 33
+Rollover 33
+The Trader’s Nemesis 33
+Summary 34
+Chapter 6
+The Calculating Trader 35
+Leverage and Margin Percent 36
+Pip Values 36
+Calculating Profit and Loss 37
+Calculating Units Available 44
+Calculating Margin Requirements 46
+Calculating Transaction Cost 47
+Calculating Account Summary Balance 50
+For Futures Traders 52
+Summary 53
+Chapter 7
+Selecting the Right FOREX Broker for You 55
+Broker-Dealer Due Diligence 55
+Demo Accounts 56
+Market Maker,ECN,or IB? 56
+Introducing Brokers 57
+Platform Capabilities 58
+Trading Tools 58
+Order Execution and Accounting 60
+News 60
+Chat 60
+Platform Stability and Backbone 62
+Historical Data 62
+Data Feed 63
+Third-Party Offerings 63
+Orders 63
+Margin Requirements 64
+Order Backup 64
+Account Minimums 64
+Pairs,Crosses,and Exotics 65
+Deposits and Withdrawals 65
+Transaction Costs 65
+FM.qxd 5/6/08 3:08 PM Page viii
+viii CONTENTS
+Trading Hours 66
+Customer Service 66
+Documentation 68
+Requoting 68
+Financials 68
+Rollovers and Interest 69
+FOREX Broker-Dealers 69
+Popular Broker-Dealers 70
+The Big Three 73
+For the Professional 74
+Fraud,Scams,and Off-Exchange 74
+Summary 76
+Chapter 8
+Opening a FOREX Account 77
+Account Types 78
+Opening the Account:Steps 78
+Summary 81
+Chapter 9
+Pulling the Trigger 83
+Orders 83
+Market Orders 84
+Limit Orders 84
+Stop Orders 85
+Combination Orders 86
+Specialty Orders 86
+Order Placement Walk-Through 86
+Order Execution 86
+Order Confirmation 87
+Transaction Exposure 87
+Summary 88
+PART 3
+THE TOOLS OF THE TRADE
+Chapter 10
+Fundamental Analysis 93
+Supply and Demand 93
+Interest Rates 94
+Balance of Trade 94
+FM.qxd 5/6/08 3:08 PM Page ix
+Contents ix
+Purchasing Power Parity 97
+Gross Domestic Product 98
+Intervention 100
+Other Economic Indicators 100
+Forecasting 102
+Chapter 11
+Technical Analysis 107
+Overview 107
+Bar Charts 108
+Trend Lines 110
+Support and Resistance 111
+Recognizing Chart Patterns 111
+Reversal Patterns 112
+Continuation Patterns 113
+Candlestick Charts 115
+Point and Figure Charts 117
+Charting Caveat—Prediction versus Description 119
+Indicators and Oscillators 120
+Relative Strength Indicator 120
+Momentum Analysis 121
+Moving Averages 123
+Bollinger Bands 123
+Indicator Caveat—Curve-Fit Data 126
+Swing Analysis 126
+Cycle Analysis 128
+Advanced Studies 128
+The Technician’s Creed 129
+Summary 130
+Chapter 12
+The Toolbox Approach 131
+General Principles 131
+A KIS Toolbox 132
+The Goodman Swing Count System 133
+GSCS Rules 133
+“3C”Stands for Carryover,Compensation,and Cancellation 136
+The Nofri Congestion Phase Method 138
+Pugh Swing Chart Formations 139
+A Moving Average and Oscillator Battery 140
+Contrary Opinion 142
+Volume 142
+FM.qxd 5/6/08 3:08 PM Page x
+x CONTENTS
+Open Interest 142
+Heuristics 143
+Summary 144
+Chapter 13
+The FOREX Marketplace 145
+Organizing Your Bookmarks 146
+Cross-Category Services 147
+Portals,Forums,Reviews 147
+Charting and Technical Services 150
+FOREX Education 152
+Trading Signals and Software 153
+News,Announcement Services,and Calendars 154
+Live Data Streams 157
+Historical Data 157
+System Development Tools 159
+FOREX Managed Accounts 161
+Peter Panholzer 163
+Odds and Ends 164
+Summary 166
+PART 4
+THE COMPLETE FOREX TRADER
+Chapter 14
+Psychology of Trading 169
+The Trading Pyramid 169
+Fear and Greed,Greed and Fear 170
+Profiling 171
+The Attitude Heuristic 171
+Characteristics of Successful Traders 172
+Summary 173
+Chapter 15
+Money Management Made Simple 175
+Breaking Even—The Belgian Dentist 175
+Expectations 176
+Trader Profiles 176
+Parameters for Trader Profiles 178
+The Trade Campaign Method (TCM) 179
+Calculating TCM Profit and Loss 179
+FM.qxd 5/6/08 3:08 PM Page xi
+Contents xi
+Stop-Loss Orders—A Brief Discussion 181
+Selecting Markets 181
+Summary 182
+Chapter 16
+Tactics and Strategy 183
+Trending and Trading Markets 183
+Market Environments (ME) 184
+Directional Movement (DM) and Volatility (V) 185
+Price and Time Rhythm (PR and TR) 185
+Thickness (T) 188
+Shape (S) 190
+Pretzels (PZ) 190
+ME Applications 190
+The Three Chart System 193
+The Dagger Entry Principle 193
+Sitting on Your Hands 194
+Time Filters 195
+Trading the News 196
+Going Against the Crowd 196
+Trading Methods 197
+The Flyer 197
+Bathtub Analysis 198
+Summary 198
+Chapter 17
+When and How to Regroup 199
+Common Trading Errors 199
+Performance Review 201
+Heuristics Review 202
+When to Say Uncle 202
+Summary 202
+Chapter 18
+For the Record 203
+Type of Records 203
+The Rogers Method 205
+The SnagIt Tool 205
+Planning Records 206
+Summary 206
+FM.qxd 5/6/08 3:08 PM Page xii
+xii CONTENTS
+PART 5
+EXTRA FOR EXPERTS
+Chapter 19
+Options and Exotics 209
+Options 210
+An Options Primer 210
+Basic Options Terms 211
+The Pros and Cons of Options 212
+The Four Basic Options Strategies 213
+Purchasing and Writing Options 214
+Advanced Options Strategies 214
+The Retail FOREX Options Landscape 214
+Options for Trading 216
+Options for Money Management 216
+Exotics 218
+Trading Exotics 219
+Summary 220
+Chapter 20
+The Final Frontiers 221
+Rollovers 221
+Hedging 222
+Arbitrage 223
+Pros and Cons of Arbitrage 227
+Artificial Intelligence 228
+Complexity Theory Models 228
+The Trend Machine 229
+Automated Trading and Robots 229
+A Last Word 231
+Appendix A 233
+How the FOREX Game Is Played 233
+Appendix B 237
+Retail FOREX Regulations—CFTC Reauthorization
+Act of 2005 237
+Appendix C 243
+List of World Currencies and Symbols 243
+FM.qxd 5/6/08 3:08 PM Page xiii
+Contents xiii
+Appendix D 249
+Major Currency Cross Rates 249
+Appendix E 251
+Euro Currency Unit 251
+Appendix F 253
+Time Zones and Global Banking Hours 253
+Appendix G 255
+Central Banks and Regulatory Agencies 255
+Appendix H 259
+Resources 259
+Glossary 265
+Index 277
+FM.qxd 5/6/08 3:08 PM Page xiv
+FM.qxd 5/6/08 3:08 PM Page xv
+Acknowledgments
+I would like to thank those who assisted with editing, suggestions, and encour-
+agement on this second edition of Getting Started in Currency Trading: Dawn
+Borris and Derek Ching of HawaiiForex (www.hawaiiforex.com), Frank
+Semone, and Jay Meisler of Global-View (www.global-view.com). Continued
+appreciation to Susan Cress and Gregory Morris, who contributed similar
+efforts on the first edition.
+xv
+FM.qxd 5/6/08 3:08 PM Page xvi
+FM.qxd 5/6/08 3:08 PM Page xvii
+Introduction
+About This Book
+This book is intended to introduce the novice investor to the exciting, complex,
+and sometimes profitable realm of trading world currencies on the foreign ex-
+change markets (FOREX). It also serves as a reference guide for stock and fu-
+tures traders who wish to explore new trading opportunities. My primary focus
+is on the rapidly expanding and evolving online trading marketplace for spot
+currencies, generally referred to as retail FOREX.
+From the very beginning I must emphasize currency trading may not be
+to everyone’s disposition. The neophyte investor must be keenly aware of all the
+risks involved and should never trade on funds he or she deems necessary for
+survival. If you have some experience with leveraged markets such as futures or
+options, you owe yourself a look at FOREX. Those who have never traded will
+find it the “purest” of all speculative adven

@@ -1,0 +1,287 @@
+P1:JYS
+ind JWBT294-Sinclair May7,2010 17:11 Printer:CourierWestford,Westford,MA
+300
+P1:JYS
+fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA
+Option
+Trading
+i
+P1:JYS
+fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA
+Founded in 1807, John Wiley & Sons is the oldest independent publish-
+ingcompanyintheUnitedStates.WithofficesinNorthAmerica,Europe,
+Australia,andAsia,Wileyisgloballycommittedtodevelopingandmarket-
+ing print and electronic products and services for our customers’ profes-
+sionalandpersonalknowledgeandunderstanding.
+TheWileyTradingseriesfeaturesbooksbytraderswhohavesurvived
+the market’s ever-changing temperament and have prospered—some by
+reinventing systems, others by getting back to basics. Whether a novice
+trader, professional, or somewhere in-between, these books will provide
+theadviceandstrategiesneededtoprospertodayandwellintothefuture.
+Foralistofavailabletitles,visitourwebsiteatwww.WileyFinance.com.
+ii
+P1:JYS
+fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA
+Option
+Trading
+Pricing and Volatility
+Strategies and Techniques
+EUAN SINCLAIR
+JohnWiley&Sons,Inc.
+iii
+P1:JYS
+fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA
+Copyright(cid:1)C 2010byEuanSinclair.Allrightsreserved.
+PublishedbyJohnWiley&Sons,Inc.,Hoboken,NewJersey.
+PublishedsimultaneouslyinCanada.
+Nopartofthispublicationmaybereproduced,storedinaretrievalsystem,ortransmittedin
+anyformorbyanymeans,electronic,mechanical,photocopying,recording,scanning,or
+otherwise,exceptaspermittedunderSection107or108ofthe1976UnitedStatesCopyright
+Act,withouteitherthepriorwrittenpermissionofthePublisher,orauthorizationthrough
+paymentoftheappropriateper-copyfeetotheCopyrightClearanceCenter,Inc.,222
+RosewoodDrive,Danvers,MA01923,(978)750-8400,fax(978)646-8600,orontheWebat
+www.copyright.com.RequeststothePublisherforpermissionshouldbeaddressedtothe
+PermissionsDepartment,JohnWiley&Sons,Inc.,111RiverStreet,Hoboken,NJ07030,(201)
+748-6011,fax(201)748-6008,oronlineathttp://www.wiley.com/go/permissions.
+LimitofLiability/DisclaimerofWarranty:Whilethepublisherandauthorhaveusedtheirbest
+effortsinpreparingthisbook,theymakenorepresentationsorwarrantieswithrespecttothe
+accuracyorcompletenessofthecontentsofthisbookandspecificallydisclaimanyimplied
+warrantiesofmerchantabilityorfitnessforaparticularpurpose.Nowarrantymaybecreated
+orextendedbysalesrepresentativesorwrittensalesmaterials.Theadviceandstrategies
+containedhereinmaynotbesuitableforyoursituation.Youshouldconsultwitha
+professionalwhereappropriate.Neitherthepublishernorauthorshallbeliableforanylossof
+profitoranyothercommercialdamages,includingbutnotlimitedtospecial,incidental,
+consequential,orotherdamages.
+Forgeneralinformationonourotherproductsandservicesorfortechnicalsupport,please
+contactourCustomerCareDepartmentwithintheUnitedStatesat(800)762-2974,outsidethe
+UnitedStatesat(317)572-3993,orfax(317)572-4002.
+Wileyalsopublishesitsbooksinavarietyofelectronicformats.Somecontentthatappearsin
+printmaynotbeavailableinelectronicbooks.FormoreinformationaboutWileyproducts,
+visitourwebsiteatwww.wiley.com.
+LibraryofCongressCataloging-in-PublicationData:
+Sinclair,Euan,1969-
+Optiontrading:pricingandvolatilitystrategiesandtechniques/EuanSinclair.
+p. cm.–(Wileytradingseries)
+Includesindex.
+ISBN978-0-470-49710-4(cloth)
+1. Options(Finance) 2. Pricing–Mathematicalmodels. I. Title.
+HG6024.A3S56222010
+332.63’2283–dc22 2010003139
+PrintedintheUnitedStatesofAmerica
+10 9 8 7 6 5 4 3 2 1
+iv
+P1:JYS
+fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA
+Tomyparents
+v
+P1:JYS
+fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA
+vi
+P1:JYS
+fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA
+Contents
+Preface xi
+ProfessionalTrading xii
+TheRoleofMathematics xiv
+TheStructureofthisBook xvi
+Acknowledgments xix
+CHAPTER 1 History 1
+Summary 6
+CHAPTER 2 Introduction to Options 7
+Options 9
+SpecificationsforanOptionContract 9
+UsesofOptions 11
+MarketStructure 14
+Summary 20
+CHAPTER 3 Arbitrage Bounds for Option Prices 21
+AmericanOptionsComparedtoEuropeanOptions 25
+AbsoluteMaximumandMinimumValues 25
+Summary 39
+CHAPTER 4 Pricing Models 41
+GeneralModelingPrinciples 42
+ChoiceofDependentVariables 45
+vii
+P1:JYS
+fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA
+viii CONTENTS
+TheBinomialModel 48
+TheBlack-Scholes-Merton(BSM)Model 55
+Summary 61
+CHAPTER 5 The Solution of the
+Black-Scholes-Merton
+(BSM) Equation 63
+Delta 67
+Gamma 72
+Theta 76
+Vega 80
+Summary 88
+CHAPTER 6 Option Strategies 89
+ForecastingandStrategySelection 89
+TheStrategies 93
+Summary 116
+CHAPTER 7 Volatility Estimation 117
+DefiningandMeasuringVolatility 119
+ForecastingVolatility 129
+VolatilityinContext 132
+Summary 136
+CHAPTER 8 Implied Volatility 137
+TheImpliedVolatilityCurve 138
+ParameterizingandMeasuringtheImplied
+VolatilityCurve 142
+TheImpliedVolatilityCurveasaFunction
+ofExpiration 145
+ImpliedVolatilityDynamics 146
+Summary 151
+P1:JYS
+fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA
+Contents ix
+CHAPTER 9 General Principles of Trading
+and Hedging 153
+Edge 154
+Hedging 156
+TradeSizingandLeverage 158
+ScalabilityandBreadth 163
+Summary 164
+CHAPTER 10 Market Making Techniques 165
+MarketStructure 166
+MarketMaking 169
+TradingBasedonOrder-BookInformation 181
+Summary 189
+CHAPTER 11 Volatility Trading 191
+Hedging 192
+HedginginPractice 193
+TheP/LDistributionofHedgedOptionPositions 203
+Summary 213
+CHAPTER 12 Expiration Trading 215
+Pinning 215
+PinRisk 219
+ForwardRisk 221
+ExercisingtheWrongOptions 221
+IrrelevanceoftheGreeks 223
+ExpiringataShortStrike 224
+Summary 225
+CHAPTER 13 Risk Management 227
+ExampleofPositionRepair 228
+Inventory 232
+Delta 234
+P1:JYS
+fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA
+x CONTENTS
+Gamma 234
+Vega 238
+Correlation 240
+Rho 242
+StockRisk:DividendsandBuy-inRisk 242
+TheEarlyExerciseofOptions 243
+Summary 248
+Conclusion 249
+APPENDIX A Distributions 253
+Example 253
+Momentsandthe“Shape”ofDistributions 254
+APPENDIX B Correlation 263
+Glossary 271
+Index 285
+P1:JYS
+fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA
+Preface
+T
+raders tend to be a pragmatic group. They are largely interested in
+results.Actuallysomebecomesofocusedonresultsthatitbecomes
+ahindrance.Thistendencycanbeahandicap,asthewaytoachieve
+goodresultsistofocusongoodprocessesandlettheresultstakecareof
+themselves.Goodtraderslearnthis.
+But good traders are still intellectually parsimonious. They want to
+know what works, but seldom more than the minimum they need. When
+I’m feeling uncharitable I regard this as characteristic of the uncurious,
+dullpeopleIhavehadthemisfortunetoworkwith,andindeedsomewere
+likethis.Morerealistically,however,thisislessareflectiononthetraders
+themselves, most of who were intelligent people with a wide range of in-
+terests,andmoreareflectiononthenatureoftrading.
+Tradingiscomplex,changeable,andpotentiallyemotionallydraining.
+Onceatraderhaslearnedasensible,statisticallyvalid,profitablemethod,
+he is better off concentrating on exploiting it rather than continuing to
+experiment.
+So a perfectly valid question when told something is “Why do I need
+to know this?” As a general answer, in the case where everything else is
+equal,thetraderwithmoreknowledgewillmakemoremoney.Hewillalso
+bemoreeasilyabletoadapttonewmarketsandopportunities.
+It is possible to trade options successfully without knowing about
+the Black-Scholes-Merton model, or any other pricing model. But for the
+traders who do this, everything is a special situation. They have to indi-
+vidually learn every nuance with no organizing principle. It would be like
+tryingtolearnchemistrywithoutknowingabouttheperiodictable.Black-
+Scholes-Mertonprovidesasimplifyingframework.Traderswhoknowthis
+can then learn other things more easily, because they use less energy re-
+memberingtheotherwiseunconnectedfacts.
+ThroughoutthisbookIwilltellyouthingsthataretrulyusefulandnot
+merely“interesting.”Tradingisinterestingonlyifitisprofitable.
+HoweverIhavenointerestin,orintentionof,makingthisaneasyread
+for the “average person.” The reason for this is that the “average person”
+xi
+P1:JYS
+fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA
+xii PREFACE
+will not succeed as a trader, so I would be making things more difficult
+formyselfbyoversimplifying.Thetextwouldbelongerandmoreboring.
+Tradingishardandoptionsarecomplicated.Muchofthisbookwillrequire
+work and thought. It is not meant to be a light read; it is meant to be a
+thoroughtreatment.
+I want this book to be the only book an intelligent, diligent person
+would need in order to go from knowing nothing about options to being
+able to trade professionally at a legitimate trading operation (a bank, a
+hedgefund,oramarketmakingfirm).
+PROFESSIONAL TRADING
+It is commonly believed that 90 percent of those attempting to trade will
+lose money. This is a difficult number to verify. First, the people in pos-
+session of the data needed to prove this are members of brokerages and
+clearingfirms,andtheyhavenointerestinpublicizingthefactthatthevast
+majority of their customers fail. Second, we cannot learn much by inter-
+viewingtradersasthereistheproblemofsurvivorshipbias(theonlypeo-
+ple who will identify themselves as traders are those who have not gone
+bankrupt),andallpeopletendtoexaggeratetheirsuccessesandminimize
+theirlosses.
+But even if this figure is somewhat exaggerated, its implications are
+startling.Mostpeoplewillfailattrading.Thenormalexcusesforthislarge-
+scale failure rate given in trading books or seminars (when it is even ac-
+knowledged)takeoneoftwoforms.
+(cid:1)
+Traders do not know the correct techniques, where “correct” corre-
+spondstowhatevertheparticularexpertistryingtosell.
+(cid:1)
+Tradersdonothavethepsychologicaldisciplineneededtostickwith
+theirplan.Thisislaughable.Iknowofnootherfieldofendeavorwhere
+failuretoperformaskillisroutinelyblamedonpsychology.Wouldyou
+seriouslylistentoabasketballcoachwhotoldyouthatthemainrea-
+son you were not in the NBA was your lack of discipline and desire?
+While great players are also psychologically strong, no amount of de-
+sireandresolvewouldturnmeintoaprofessionallevelplayer.Being
+undisciplinedmightbeapersonalfailing,butitisbynomeansthemost
+importantone.Thisisalsotrueintrading.Psychologicalcoachingcan
+helpawinner,butitwillnotmakeawinner.
+Hundreds of books discuss these subjects, but the survival rate of
+tradersgetsnobetter.Yettheproprietarytradingdesksofbankscontinue
+P1:JYS
+fm JWBT294-Sinclair April21,2010 13:33 Printer:CourierWestford,Westford,MA
+Preface xiii
+tobeprofitable(eveninthecarnageof2008)andhedgefundsproliferate.
+Whycanprofessionalsconsistentlydowhattheamateurscannot?Whyare
+the same groups successful year after year? In many fields the answer to
+thisquestionisobvious:itisbecausetheyarebetter.Forexample,apro-
+fessionalbasketballplayerisdoingwhatIdo,buthedoesitmuchbetter.
+Tradingisdifferent.Professionalsdonotgenerallyhavemoreknowledge,
+moreskill,ormorepsychologicalmastery.Theymakemoneybecausethey
+areplayingatotallydifferentgame.
+Many people completely fail to see this. They are encouraged in this
+view by the proliferation of financial news media. There are several full-
+time business television channels, daily newspapers, business radio sta-
+tions,andvariousWebservicesthatoffertobringpeoplethe“inside”view
+ofthemarkets.Theydonot.Ifanything,theygivetheirconsumersafalse
+senseofthedepthoftheirknowledge.Particularlymisleadingaretheoc-
+casions when a floor trader is interviewed and asked for his views on a
+particularmarket.Theanswerwillinvariablysounduseful,containingan
+analysis of the market’s technical and fundamental factors. But success-
+fultradersdonotcareaboutthesethingsandaskingafloortraderforhis
+opiniononthemislikeaskingTigerWoodsfortennislessons.Heisagreat
+sportsman and he hits a ball with an implement, but his tennis views and
+opinionsarenomorelikelytobevalidthanthoseofmostotherpeople.
+Knowl
