@@ -21,6 +21,12 @@ export default function EducationPage() {
           Recording pack (avatar + screen-share scripts):{" "}
           <code className="text-[11px]">docs/training/OPTIONSCOPE_VIDEO_EDUCATION_PACK.txt</code>
         </p>
+        <p className="text-xs text-[var(--text-muted)] mt-2 m-0">
+          <strong>NerdCommand Beginner Book curriculum</strong> (book · video · teacher · marketing · 4
+          safer strategies):{" "}
+          <code className="text-[11px]">docs/training/nerdcommand-beginner-book/</code> — start at{" "}
+          <code className="text-[11px]">00-INDEX-AND-HANDOFF.md</code>
+        </p>
       </div>
 
       <section className="rounded-xl border border-[var(--border-warning)] bg-[var(--bg-warning)] p-4">
