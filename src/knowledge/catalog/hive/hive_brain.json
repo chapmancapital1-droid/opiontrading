@@ -1,0 +1,14 @@
+{
+  "version": "HIVE-1.0.0",
+  "updatedAt": "1970-01-01T00:00:00.000Z",
+  "totalSuccessfulRuns": 0,
+  "totalRejectedRuns": 0,
+  "strategies": {},
+  "improvementLessons": [],
+  "doctrine": [
+    "Hive metrics are from SYNTHETIC evolve runs — not Robinhood fill history.",
+    "Use win-rate trends for process preference, not as live PoP guarantees.",
+    "Always size real capital in Trade Lab under empire seed ceilings.",
+    "Push catalog/hive/*.json to GitHub so installs share cumulative knowledge."
+  ]
+}
