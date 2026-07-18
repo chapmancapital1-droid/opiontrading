@@ -43,9 +43,13 @@ function TradingViewTimeline({
       width: "100%",
       height,
     });
-    container.appendChild(script);
+    const t = window.setTimeout(() => {
+      if (!container.isConnected) return;
+      container.appendChild(script);
+    }, 0);
 
     return () => {
+      window.clearTimeout(t);
       container.innerHTML = "";
     };
   }, [symbol, height]);

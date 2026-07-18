@@ -14,6 +14,12 @@ probability of profit — then produces a manual-entry order checklist.
 - Provider-independent market data (demo + manual + pluggable licensed feed)
 - Trade journal with write-once forecast snapshots and probability calibration
 - Copyable / printable Robinhood order checklist (no auto-trading)
+- **Evolve Lab** (`/evolve`) — synthetic scientific-method self-improve tool
+  (workspace-0890ad1c); not live signals; no auto-trade
+
+## Install from GitHub
+See **`install.txt`** (clone → `npm install` → `.env.local` → `npm run dev`).  
+Live trading ritual: **`GO_LIVE_TRADING.txt`**.
 
 ## Quick start
 ```bash

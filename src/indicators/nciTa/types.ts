@@ -101,6 +101,17 @@ export interface NciTaSnapshot {
   abcStage: AbcStage;
   allGatesPass: boolean;
   sessionOk: boolean;
+  /** Per-gate breakdown for UI (options co-pilot; not a hard options veto). */
+  gateDetail?: {
+    adx: boolean;
+    fer: boolean;
+    kinetic: boolean;
+    session: boolean;
+    abc: boolean;
+    minAdx: number;
+    minFer: number;
+    minKinetic: number;
+  };
 
   // Trigger
   trigger: TriggerState;
@@ -125,6 +136,33 @@ export interface NciTaSnapshot {
   notes: string[];
   /** True when multi-TF data was incomplete and single-TF proxies were used. */
   degraded: boolean;
+
+  /**
+   * Named direction-bias voters (SuperBrain-style) for UI dashboards.
+   * Optional for older webhook snapshots that only sent aggregates.
+   */
+  voterBreakdown?: readonly NciVoterRow[];
+  portBreakdown?: readonly NciVoterRow[];
+  layerBreakdown?: readonly NciLayerRow[];
+}
+
+/** One directional voter / port for the Bias tab UI. */
+export interface NciVoterRow {
+  id: string;
+  name: string;
+  /** +1 bull, -1 bear, 0 flat/abstain */
+  vote: -1 | 0 | 1;
+  layer: "superbias" | "companion" | "confluence" | "port" | "voter" | "robotrick";
+}
+
+export interface NciLayerRow {
+  id: string;
+  name: string;
+  bull: number;
+  bear: number;
+  total: number;
+  /** Normalized score -1..+1 */
+  score: number;
 }
 
 export interface TradingViewAlertPayload {

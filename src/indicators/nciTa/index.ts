@@ -3,6 +3,8 @@ export type {
   MultiTfSeries,
   NciTaConfig,
   NciTaSnapshot,
+  NciVoterRow,
+  NciLayerRow,
   MasterDir,
   TriggerState,
   AbcStage,

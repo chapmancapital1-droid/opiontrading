@@ -7,9 +7,12 @@ import { useEffect, useState, type ReactNode } from "react";
 const PRIMARY_NAV = [
   { href: "/dashboard", label: "Command", icon: "ti-layout-dashboard", short: "Cmd" },
   { href: "/builder", label: "Trade Lab", icon: "ti-tools", short: "Lab" },
+  { href: "/scanner", label: "Scanner", icon: "ti-filter", short: "Scan" },
+  { href: "/evolve", label: "Evolve", icon: "ti-flask", short: "Evo" },
+  { href: "/library", label: "Library", icon: "ti-books", short: "Lib" },
   { href: "/compare", label: "Compare", icon: "ti-columns", short: "Cmp" },
-  { href: "/saved", label: "Saved", icon: "ti-bookmark", short: "Saved" },
   { href: "/journal", label: "Journal", icon: "ti-notebook", short: "Jrnl" },
+  { href: "/saved", label: "Saved", icon: "ti-bookmark", short: "Saved" },
 ];
 
 const SECONDARY_NAV = [

@@ -1,0 +1,526 @@
+================================================================================
+OPTIONSCOPE — VIDEO EDUCATION PACK (Expert Host)
+Avatar prompts · Screen-share shot lists · Full teach scripts
+Owner: Michael Chapman / NERDCOMMAND · Product: OptionScope
+Audience: New users learning the empire companion (seed → $20k path)
+Tone: Calm expert · process over hype · never “guaranteed money”
+Version: 1.0 · 2026-07-16
+================================================================================
+
+HOW TO USE THIS PACK
+--------------------
+1. Record 10–12 short videos (3–8 min each) OR one long masterclass (45–60 min).
+2. Each MODULE has:
+   A) AVATAR PROMPT — paste into image/avatar tool for talking-head stills or Grok/avatar video
+   B) ON-SCREEN ACTIONS — exact clicks for screen share
+   C) SCRIPT — speak this (customize with “I / we” as expert)
+   D) B-ROLL / GRAPHICS cues
+3. Always end modules with risk disclaimer (see LEGAL TAG at bottom).
+4. Brand: dark empire UI, “See · Trust · Own”, no buy/sell buttons that look like broker orders.
+
+
+================================================================================
+SERIES TITLE OPTIONS
+================================================================================
+- “OptionScope Field Manual: From Seed Capital to $20k Process”
+- “Trade Like an Operator: OptionScope Walkthrough”
+- “Your Options Desk: Scanner · Lab · Bias · Lessons”
+
+
+================================================================================
+MODULE 00 — COLD OPEN / WHO THIS IS FOR (60–90 sec)
+================================================================================
+
+A) AVATAR PROMPT
+----------------
+"Medium close-up of a confident Black male educator / fintech founder in a
+modern dark studio, soft teal accent light, blurred multi-monitor trading desk
+behind him (no readable P&L), navy blazer over black tee, calm serious expression,
+cinematic shallow depth of field, 4K, professional YouTube educator energy,
+not crypto hype, not meme stock energy."
+
+B) ON-SCREEN
+------------
+- OptionScope login/home → Education page open for 2 seconds → cut to Command.
+
+C) SCRIPT
+---------
+“I’m going to teach you OptionScope the way I use it as my personal options
+companion — not a get-rich signal machine. We build process: scan, bias-check,
+size with risk rules, journal, and learn from real fills. Goal number one is
+surviving and growing capital toward twenty thousand dollars with defined-risk
+habits. If you want lottery tickets only, this isn’t your course. If you want
+an operator’s desk, stay with me.”
+
+D) GRAPHICS
+-----------
+Lower-third: “OptionScope · Empire companion · Educational”
+
+
+================================================================================
+MODULE 01 — SAFETY + MINDSET (3–4 min)
+================================================================================
+
+A) AVATAR PROMPT
+----------------
+"Same educator, slightly wider shot, hands visible gesturing ‘stop’, red-amber
+accent light subtle, chalkboard style text overlay later: RISK. Expression:
+protective mentor."
+
+B) ON-SCREEN
+------------
+1. Open /education
+2. Scroll “Read this first” yellow box
+3. Point to OCC link at bottom
+4. Show Settings seed equity briefly
+
+C) SCRIPT
+---------
+“Before any button: options can lose 100% of premium. Some structures can lose
+more than the debit. Model probability of profit and expected value are model
+outputs under assumptions — not promises. Delta is not probability of profit.
+OptionScope does not place trades. You own the fill on Robinhood or your broker.
+
+Our capital ladder: seed money is small. One percent risk might be too small
+for even one contract. When size shows zero, that’s honesty — not a broken app.
+Prefer defined-risk spreads while growing toward twenty thousand.”
+
+D) B-ROLL
+---------
+- Close-up of warning box
+- Cursor circling “does not place trades”
+
+
+================================================================================
+MODULE 02 — TOUR OF THE SIDEBAR (4 min)
+================================================================================
+
+A) AVATAR PROMPT
+----------------
+"Educator pointing off-camera to left (as if to app nav), dual-tone teal/navy
+lighting, clean modern desk, tablet showing abstract candlesticks."
+
+B) ON-SCREEN — slow pan down nav
+--------------------------------
+Command → Trade Lab → Scanner → Library → Compare → Journal → Saved →
+Settings → Education
+
+For each: click once, show page title 2 seconds, return.
+
+C) SCRIPT
+---------
+“Left nav is your desk.
+
+Command — mission control and tabs for bias, SPY, lessons, brain.
+Trade Lab — build and model the trade.
+Scanner — Finviz-style strategy filter: pick a strategy, get a shortlist.
+Library — book rules the brain can cite.
+Compare — side-by-side structures.
+Journal — plan before, review after.
+Saved — local analyses.
+Settings — seed equity and imports.
+Education — this field manual.
+
+Memorize that loop: Scan → Bias → Lab → Journal.”
+
+
+================================================================================
+MODULE 03 — COMMAND CENTER DEEP DIVE (6–8 min)
+================================================================================
+
+A) AVATAR PROMPT
+----------------
+"Educator at multi-monitor desk, center screen shows dark fintech dashboard
+UI (no real account numbers), teal UI glow on face, focused."
+
+B) ON-SCREEN SEQUENCE
+---------------------
+1. /dashboard — Cockpit: ritual, snapshot, chart, news
+2. Type SOFI → Load
+3. Tab Bias — show Master, voters, FIRE gates SOFT FAIL explanation
+4. Tab Lessons — scroll patterns / how to do better
+5. Tab Brain — run recommend if data loads; expand one rec
+6. Tab SPY — only if teaching SPY; switch bias bullish/neutral
+7. Tab Playbook — open pre-trade form fields (don’t need to save)
+
+C) SCRIPT
+---------
+“Command is home.
+
+Cockpit: symbol load, market snapshot, TradingView chart, news timeline,
+quick links.
+
+Bias: NCI direction system from my trade-assistant work — SuperBias, ports,
+voters, master direction. FIRE gates failing is not ‘no options allowed.’
+It’s soft context for directional energy. Credit strategies can still make
+sense when the market is quiet.
+
+Lessons: your actual Robinhood history, reconstructed. Win rate, long options
+pain, assignments, best and worst symbols. This is how we stop repeating
+mistakes and build on wins.
+
+Brain: ranks structures for the loaded ticker with size under empire rules.
+Read advanced instructions. Robinhood next step is a checklist — you still
+click the broker yourself.
+
+SPY tab: special 1DTE playbook — when to trade, strike guides up to four,
+adjustment ladder.
+
+Playbook: write the plan before you risk a dollar.”
+
+
+================================================================================
+MODULE 04 — STRATEGY SCANNER (Finviz for options) (5–7 min)  ★ KEY
+================================================================================
+
+A) AVATAR PROMPT
+----------------
+"Educator smiling slightly, confident, green accent light, holographic stock
+grid floating (blurred), cyber-fintech aesthetic, high production."
+
+B) ON-SCREEN
+------------
+1. From Command click “Strategy filter” OR nav Scanner
+2. Select “Put credit spread (bull put vertical)”
+3. Show price 8–150 defaults
+4. Toggle Seed → $20k mode ON
+5. Bias = bullish
+6. Run filter — scroll table (≤15 rows)
+7. Click row 1–3 — open detail reasons
+8. Click Open Trade Lab
+9. Switch strategy to Bull call debit — show list changes
+10. Switch to Iron condor + bias neutral
+11. Show empty/short list honesty if you tighten band
+
+C) SCRIPT
+---------
+“Scanner is Finviz thinking for option strategies.
+
+You don’t start with a random ticker. You start with a strategy.
+
+Example: I want a bull put credit spread — defined risk, income style,
+fits seed growth. Price band eight to one-fifty keeps us in liquid names
+small accounts can actually trade.
+
+Max fifteen results. If only nine qualify, you get nine. We never invent
+tickers to fill a grid.
+
+Fit percent is a model score from thesis, IV proxy, trend proxy, seed rules,
+and your personal history coach. It is not a guarantee.
+
+Click a name, read why it fits, open Trade Lab, then verify the live chain.
+That’s professional process.”
+
+
+================================================================================
+MODULE 05 — TRADE LAB MASTERCLASS (8–10 min)
+================================================================================
+
+A) AVATAR PROMPT
+----------------
+"Educator in profile three-quarter, looking at large ultrawide monitor with
+options chain UI mock, warm key light, cool fill, concentration."
+
+B) ON-SCREEN
+------------
+1. /builder with symbol from Scanner
+2. Show strategy template applied / legs
+3. Hit Recommend (if available)
+4. Show payoff sketch / Greeks panel if present
+5. Open model backtest / PoP EV numbers — emphasize estimates
+6. Order checklist — max loss, strikes
+7. Demo size 0 case (high price CSP) if possible — teach honesty
+8. Mention Money Press template only if teaching advanced
+
+C) SCRIPT
+---------
+“Trade Lab is where the structure becomes numbers.
+
+You bring a candidate from Scanner. You lock the strategy. You look at
+payoff at expiration, Greeks, and Monte Carlo style model stats.
+
+I say model on purpose. Markets violate assumptions.
+
+If contracts show zero, the empire risk rules are protecting a small account.
+Switch to a cheaper defined-risk vertical, not a revenge size.
+
+Checklist is your last human gate. Then you leave OptionScope and place
+the order yourself on the broker. That’s See, Trust, Own.”
+
+
+================================================================================
+MODULE 06 — BIAS + NCI VOTERS (4–5 min)
+================================================================================
+
+A) AVATAR PROMPT
+----------------
+"Educator half-lit cinematic, background abstract network nodes (voters),
+blue-teal palette, thoughtful expression — ‘co-pilot not autopilot’ vibe."
+
+B) ON-SCREEN
+------------
+1. Command → Bias
+2. Load SPY or AAPL
+3. Point Master direction, SuperBias bars, voter chips, ports
+4. Expand FIRE gates breakdown — ADX FER Kinetic ABC
+5. Recompute once
+
+C) SCRIPT
+---------
+“Bias is the NCI co-pilot from my trading assistant stack.
+
+Twenty-four SuperBias signals, companions, confluence, eleven ports,
+fifteen voters — they vote bull or bear. Master is the average language.
+
+FIRE buy or sell is context for energy, not an auto-entry. Gates failing
+means the old forex system would not fire a scalp. On options that can
+still mean ‘sell premium carefully’ or ‘wait.’
+
+I use Bias to avoid fighting a strong master direction with a dumb debit.”
+
+
+================================================================================
+MODULE 07 — LESSONS FROM ROBINHOOD HISTORY (5 min)
+================================================================================
+
+A) AVATAR PROMPT
+----------------
+"Educator holding printed report lightly (blurred), warmer light, honest
+expression — accountability coach, not guru."
+
+B) ON-SCREEN
+------------
+1. Command → Lessons
+2. Show win rate, long vs short stats
+3. Scroll patterns (long options, assignments)
+4. Worst symbols / best symbols tables
+5. Mention folder robinhoodhistory + re-run command briefly on Education
+
+C) SCRIPT
+---------
+“Lessons are uncomfortable and useful.
+
+We loaded Robinhood activity exports, reconstructed option trades, and
+asked: where did I bleed, where did I get paid?
+
+In this book, long options often underperformed. Assignments hurt.
+Some symbols were serial problems. Short defined-risk premium was the
+relative edge.
+
+The brain soft-coaches recommendations with that memory so we don’t
+romanticize the same mistake. Build on wins — names and styles that
+actually paid — still with one to two percent risk.”
+
+
+================================================================================
+MODULE 08 — SPY SPECIAL / 1DTE (optional advanced) (5–6 min)
+================================================================================
+
+A) AVATAR PROMPT
+----------------
+"Educator sharper energy, SPY ticker motif subtle in background, still
+professional, no ‘0DTE gambling’ aesthetic — institutional caution."
+
+B) ON-SCREEN
+------------
+1. Click SPY button
+2. Bias bullish → show four strike guides
+3. Adjustment ladder
+4. Safe cheap credit sketches
+5. Brain advanced block if visible
+
+C) SCRIPT
+---------
+“SPY tab is a special playbook for index ETF options — including short-dated
+work. Selective entry, high-POP style guides up to four strikes, and the
+professional adjustment: convert a losing long into a debit spread around
+minus forty percent of premium.
+
+This is advanced. Seed accounts should mostly live in defined-risk verticals
+from Scanner, not naked 0DTE lottery tickets.”
+
+
+================================================================================
+MODULE 09 — JOURNAL + COMPARE + SAVED (4 min)
+================================================================================
+
+A) AVATAR PROMPT
+----------------
+"Educator writing in notebook beside laptop, soft morning light, calm
+discipline aesthetic."
+
+B) ON-SCREEN
+------------
+1. Journal — fill pre-trade fields demo (thesis, max loss, exit)
+2. Compare — open page, describe side-by-side
+3. Saved — show list concept
+
+C) SCRIPT
+---------
+“If you don’t journal, you don’t improve.
+
+Plan before the fill. Close with realized P/L and one rule to keep or ban.
+Compare helps when two structures look good on Scanner.
+Saved keeps local work on this machine.”
+
+
+================================================================================
+MODULE 10 — SETTINGS + DATA SOURCES (3 min)
+================================================================================
+
+A) AVATAR PROMPT
+----------------
+"Educator adjusting settings gear prop or on-screen, cool light, technical."
+
+B) ON-SCREEN
+------------
+1. Settings — seed equity
+2. Mention RH paste/import (no password)
+3. Optional Alpaca paper
+4. Theme toggle
+
+C) SCRIPT
+---------
+“Settings is truth for sizing. Put real seed equity here so the empire
+risk engine isn’t lying.
+
+Robinhood import is file or paste — never type your password into this app.
+Optional paper brokerage for practice equity. This is a companion, not a
+hidden broker.”
+
+
+================================================================================
+MODULE 11 — FULL WORKFLOW LIVE DEMO (8–12 min)  ★ FLAGSHIP
+================================================================================
+
+A) AVATAR PROMPT
+----------------
+"Educator standing, two-shot energy as if teaching a class, confident close,
+then cut to pure screen share for 80% of module."
+
+B) ON-SCREEN (no talking head after intro)
+------------------------------------------
+Minute 0–1: Education page skim
+Minute 1–3: Scanner → bull put credit → pick ticker in $8–$150
+Minute 3–4: Bias tab on that ticker
+Minute 4–5: Lessons coach for that ticker if any
+Minute 5–8: Trade Lab recommend / checklist
+Minute 8–9: Playbook pre-trade save
+Minute 9–10: Journal note
+Minute 10: Disclaimer card full screen
+
+C) SCRIPT (voiceover)
+---------------------
+Narrate each click calmly. End with:
+
+“That’s one clean loop. Scan, bias, history check, model, plan, journal.
+Repeat. Size small. Grow toward twenty thousand. Then we scale process —
+not ego.”
+
+
+================================================================================
+MODULE 12 — OUTRO / CTA (45 sec)
+================================================================================
+
+A) AVATAR PROMPT
+----------------
+"Same educator, warm smile, softer light, end-slate ready."
+
+B) ON-SCREEN
+------------
+End card text:
+  OptionScope · See · Trust · Own
+  Education tab + this pack
+  Not financial advice
+
+C) SCRIPT
+---------
+“Use Education inside the app anytime. Re-watch the Scanner and Lab modules
+until the loop is muscle memory. Trade only what you can explain and size.
+I’ll see you on the next desk session.”
+
+
+================================================================================
+AVATAR STYLE LOCK (use every episode)
+================================================================================
+- Same wardrobe: navy blazer, black tee, subtle gold chain optional
+- Background: dark studio OR blurred multi-monitor (never show real balances)
+- Lighting: soft key + teal rim
+- Camera: eye-level, 50mm feel
+- Delivery: measured pace, short sentences, no yelling
+- Forbidden: “guaranteed,” “can’t lose,” “free money,” “all-in”
+
+
+================================================================================
+SCREEN-SHARE PRODUCTION RULES
+================================================================================
+1. 1920×1080, 60 or 30 fps, dark theme OptionScope
+2. Cursor highlight ON; zoom 110–125% on tables
+3. Blur any real brokerage account numbers
+4. Prefer demo/paper symbols if live keys flaky
+5. Lower-thirds for module title
+6. Chapters in description matching MODULE numbers
+7. Pin comment: risk disclaimer + OCC link
+
+
+================================================================================
+SOCIAL CUTDOWNS (30–60 sec)
+================================================================================
+Clip A: “Size zero is honesty” — Trade Lab
+Clip B: “Never pad to 15 tickers” — Scanner
+Clip C: “FIRE gates soft fail ≠ no options” — Bias
+Clip D: “Long options bled — defined risk” — Lessons
+Clip E: “Scan → Lab → Journal” — full loop montage
+
+
+================================================================================
+THUMBNAIL VISUAL PROMPTS
+================================================================================
+1. "Bold text OPTIONSCOPE DESK, educator face left third, dark UI screenshot
+   right, teal neon frame, YouTube thumbnail high contrast"
+2. "Text SCANNER 15 TICKERS, filter funnel icon, stock grid background blurred"
+3. "Text SEED TO 20K, ladder graphic, serious educator"
+4. "Text LESSONS FROM MY FILLS, red/green candles subtle, accountability face"
+
+
+================================================================================
+LEGAL TAG (end every video + description)
+================================================================================
+“Educational demonstration of OptionScope software features. Not investment,
+tax, or trading advice. Options involve substantial risk of loss and are not
+suitable for all investors. Past or modeled results do not guarantee future
+outcomes. You are solely responsible for orders placed with any broker.
+See OCC Characteristics and Risks of Standardized Options.”
+
+
+================================================================================
+CHECKLIST BEFORE YOU HIT RECORD
+================================================================================
+[ ] Dark theme, large UI scale
+[ ] Seed equity set (demo numbers OK for teaching)
+[ ] Scanner loads at least one strategy list
+[ ] Bias tab loads for a sample ticker
+[ ] Lessons data present if teaching Module 07
+[ ] No real RH password or 2FA screens
+[ ] Disclaimer slide exported as PNG
+[ ] Avatar stills generated from AVATAR PROMPTs
+[ ] Water nearby; 3 takes max per module
+
+
+================================================================================
+ONE-PAGE CHEAT SHEET (print for desk while recording)
+================================================================================
+Loop: SCANNER strategy → BIAS → LESSONS → TRADE LAB → PLAYBOOK → JOURNAL
+Seed rule: defined-risk first; size 0 = protect capital
+Scanner: max 15, no padding, $8–$150 default
+SPY tab: advanced only
+Never: auto-trade claims, guarantee language
+Always: See · Trust · Own
+
+
+================================================================================
+END OF EDUCATION PACK
+Path: docs/training/OPTIONSCOPE_VIDEO_EDUCATION_PACK.txt
+Also copy to Desktop NERDCOMMAND_TRADING_BRAIN if packaging for travel.
+In-app mirror: /education
+================================================================================

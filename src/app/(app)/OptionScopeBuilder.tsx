@@ -2,15 +2,24 @@
 // The typed, unit-tested engine lives in src/domain/*; rewiring this UI to
 // call it is tracked as follow-up. Kept as-is here to wire the page live.
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { LineChart, Line, XAxis, YAxis, ReferenceLine, ReferenceDot, ResponsiveContainer, Tooltip, BarChart, Bar, Cell } from "recharts";
 import { dataClient } from "@/data/client";
 import MarketContextPanel from "@/components/MarketContextPanel";
 import BrainRecommendPanel from "@/components/BrainRecommendPanel";
 import { OrderChecklistCard } from "@/components/OrderChecklistCard";
+import StrikeHitProbabilityBox from "@/components/StrikeHitProbabilityBox";
+import PositionGreeksPanel from "@/components/PositionGreeksPanel";
 import { pickPreferredExpiration } from "@/brain";
-import { buildChecklist } from "@/lib/orderChecklist";
+import { buildChecklist, checklistToText } from "@/lib/orderChecklist";
 import { addJournalPlan } from "@/lib/localJournal";
+import {
+  domainGreeks,
+  domainMonteCarlo,
+  domainPayoff,
+  uiLegsToDomain,
+  isDiagonalStructure,
+} from "@/lib/builderDomainBridge";
 
 /* ============================================================================
    OptionScope — Strategy Builder + Analysis Results (working demo)
@@ -20,27 +29,26 @@ import { addJournalPlan } from "@/lib/localJournal";
    ============================================================================ */
 
 // ---- engine (mirrors src/domain/payoff.ts + montecarlo.ts, JS form) ----
-// Money Press calendars: at front expiry short settles intrinsic; long keeps residual extrinsic.
+// Money Press diagonal: at near (weekly) expiry short settles intrinsic; long keeps residual value.
 const optEntry = (l) => (l.side === "long" ? -1 : 1) * l.prem * l.qty * 100 - l.fees;
 const stkEntry = (l) => (l.side === "long" ? -1 : 1) * l.entry * l.shares - l.fees;
-/** Residual long-calendar value after front month expires (approx). */
+/** Residual long (protection) value after front week expires (approx). */
 function residualLong(l, s, sigma) {
   const tRem = Math.max(l.remainingT || 0, 0);
   if (tRem <= 0) {
     const intr = l.type === "call" ? Math.max(s - l.strike, 0) : Math.max(l.strike - s, 0);
     return intr * l.qty * 100;
   }
-  // Rough BS-ish ATM residual scaled by moneyness
+  // Rough BS-ish residual scaled by moneyness
   const m = Math.abs(s - l.strike) / Math.max(s, 1);
   const atm = 0.4 * s * Math.max(sigma, 0.1) * Math.sqrt(tRem);
   const res = Math.max(0.01, atm * Math.exp(-m * 4));
   return res * l.qty * 100;
 }
 const optExpiry = (l, s, sigma = 0.3) => {
-  // Far long in calendar: value remaining extrinsic + intrinsic
+  // Far long protection: remaining extrinsic + intrinsic after near expiry
   if (l.term === "far" && l.side === "long" && (l.remainingT || 0) > 0) {
-    const intr = l.type === "call" ? Math.max(s - l.strike, 0) : Math.max(l.strike - s, 0);
-    return residualLong({ ...l, remainingT: l.remainingT }, s, sigma); // residual already ~ full mark
+    return residualLong({ ...l, remainingT: l.remainingT }, s, sigma);
   }
   if (l.term === "far" && l.side === "long") {
     const intr = l.type === "call" ? Math.max(s - l.strike, 0) : Math.max(l.strike - s, 0);
@@ -58,12 +66,18 @@ function plAt(legs, s, sigma = 0.3) {
 function netCash(legs) {
   return legs.reduce((t, l) => t + (l.kind === "opt" ? optEntry(l) : stkEntry(l)), 0);
 }
-function isCalendar(legs) {
+function isMoneyPressLegs(legs) {
   return legs.some((l) => l.term === "near" || l.term === "far");
 }
+function moneyPressWidth(legs) {
+  const short = legs.find((l) => l.kind === "opt" && l.side === "short" && l.term === "near");
+  const long = legs.find((l) => l.kind === "opt" && l.side === "long" && l.term === "far");
+  if (!short || !long) return 0;
+  return Math.max(0, short.strike - long.strike) * (short.qty || 1) * 100;
+}
 function tailSlopes(legs) {
-  // Calendars: after front expiry risk is long back-month — treat as defined by debit (no unlimited tails)
-  if (isCalendar(legs)) return { lower: 0, upper: 0 };
+  // Money Press diagonal: defined risk — no unlimited tails after front settles with long protection
+  if (isMoneyPressLegs(legs)) return { lower: 0, upper: 0 };
   let lower = 0, upper = 0;
   for (const l of legs) {
     if (l.kind === "stk") { const s = (l.side === "long" ? 1 : -1) * l.shares; lower += s; upper += s; }
@@ -88,20 +102,23 @@ function breakEvens(legs, sigma = 0.3) {
 function extrema(legs, sigma = 0.3) {
   const { upper } = tailSlopes(legs), b = bps(legs);
   const pts = new Set([0, ...b, (b.length ? Math.max(...b) : 100) * 3 + 100]);
-  // denser grid for calendars (peak near ATM)
-  if (isCalendar(legs) && b.length) {
+  // denser grid for Money Press (payoff shaped by short ATM + lower protection)
+  if (isMoneyPressLegs(legs) && b.length) {
     const lo = Math.min(...b) * 0.7, hi = Math.max(...b) * 1.3;
     for (let i = 0; i <= 40; i++) pts.add(lo + ((hi - lo) * i) / 40);
   }
   let mx = -Infinity, mn = Infinity;
   for (const x of pts) { const y = plAt(legs, x, sigma); if (y > mx) mx = y; if (y < mn) mn = y; }
-  // Calendar: max loss capped at net debit (approx)
-  if (isCalendar(legs)) {
-    const debit = -Math.min(0, netCash(legs));
-    mn = Math.min(mn, -debit);
+  // Diagonal put: risk ≈ strike width ± entry debit/credit (book: risk is the width)
+  if (isMoneyPressLegs(legs)) {
+    const cash = netCash(legs); // +credit / −debit at open
+    const width = moneyPressWidth(legs);
+    const floor = width > 0 ? -(width - cash) : Math.min(mn, Math.min(0, cash));
+    // Floor is most-negative allowed; curve may be better (less loss) thanks to residual long
+    mn = Math.max(mn, floor);
     return {
       maxProfit: Number(mx.toFixed(2)),
-      maxLoss: Number(Math.min(mn, -debit + 0.01).toFixed(2)),
+      maxLoss: Number(mn.toFixed(2)),
       unlimitedUp: false,
       unlimitedDown: false,
     };
@@ -131,93 +148,145 @@ const usd = (n) => (n < 0 ? "-$" : "$") + Math.abs(n).toLocaleString("en-US", { 
 const pct1 = (f) => (f * 100).toFixed(1) + "%";
 
 // ---- strategy templates (must cover every brain strategyId for "Load in builder") ----
-// Money Press calendars: short near (collect front premium) + long far same strike.
-// remainingT = years left on far leg when near expires (approx farDte-nearDte).
-function moneyPressCall(S, nearPrem, farPrem, remT) {
-  const k = round5(S);
+// Money Press Method (book): short higher weekly put + long lower 3–6 mo put (diagonal).
+// remainingT = years left on protection when weekly expires (approx farDte-nearDte).
+function moneyPressPutDiagonal(S, nearPrem, farPrem, remT) {
+  const shortK = round5(S); // ATM / near-money weekly (higher)
+  const longK = Math.max(1, round5(S * 0.88)); // lower protection strike
   return [
-    { kind: "opt", side: "short", type: "call", qty: 1, strike: k, prem: nearPrem, fees: 0, term: "near", label: "NEAR short call" },
-    { kind: "opt", side: "long", type: "call", qty: 1, strike: k, prem: farPrem, fees: 0, term: "far", label: "FAR long call", remainingT: remT },
-  ];
-}
-function moneyPressPut(S, nearPrem, farPrem, remT) {
-  const k = round5(S);
-  return [
-    { kind: "opt", side: "short", type: "put", qty: 1, strike: k, prem: nearPrem, fees: 0, term: "near", label: "NEAR short put" },
-    { kind: "opt", side: "long", type: "put", qty: 1, strike: k, prem: farPrem, fees: 0, term: "far", label: "FAR long put", remainingT: remT },
+    {
+      kind: "opt",
+      side: "short",
+      type: "put",
+      qty: 1,
+      strike: shortK,
+      prem: nearPrem,
+      fees: 0,
+      term: "near",
+      label: "NEAR short put (weekly)",
+    },
+    {
+      kind: "opt",
+      side: "long",
+      type: "put",
+      qty: 1,
+      strike: longK,
+      prem: farPrem,
+      fees: 0,
+      term: "far",
+      label: "FAR long put (protection)",
+      remainingT: remT,
+    },
   ];
 }
 
 const TEMPLATES = {
-  money_press_call_calendar: {
-    name: "Money Press — Call calendar",
+  money_press_put_diagonal: {
+    name: "Money Press — Put diagonal",
     group: "Money Press",
-    legs: (S) => moneyPressCall(S, 2.4, 4.1, 30 / 365),
+    legs: (S) => moneyPressPutDiagonal(S, 2.4, 3.6, 100 / 365),
   },
-  money_press_put_calendar: {
-    name: "Money Press — Put calendar",
-    group: "Money Press",
-    legs: (S) => moneyPressPut(S, 2.35, 4.0, 30 / 365),
-  },
-  money_press_double_calendar: {
-    name: "Money Press — Double calendar",
-    group: "Money Press",
+  // Credit income first — put credit is the core empire seller structure
+  bull_put_credit: {
+    name: "Put credit spread (bull put)",
+    group: "Credit income",
     legs: (S) => [
-      ...moneyPressPut(S, 2.2, 3.8, 30 / 365),
-      ...moneyPressCall(S, 2.2, 3.8, 30 / 365),
+      { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 5, prem: 1.8, fees: 0 },
+      { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S) - 15, prem: 0.6, fees: 0 },
     ],
   },
-  bull_call_debit: { name: "Bull call debit spread", group: "Verticals", legs: (S) => [
-    { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S), prem: 6.2, fees: 0 },
-    { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 10, prem: 3.1, fees: 0 },
-  ]},
-  bear_put_debit: { name: "Bear put debit spread", group: "Verticals", legs: (S) => [
-    { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S), prem: 6.0, fees: 0 },
-    { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 10, prem: 3.0, fees: 0 },
-  ]},
-  bull_put_credit: { name: "Bull put credit spread", group: "Verticals", legs: (S) => [
-    { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 5, prem: 1.8, fees: 0 },
-    { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S) - 15, prem: 0.6, fees: 0 },
-  ]},
-  bear_call_credit: { name: "Bear call credit spread", group: "Verticals", legs: (S) => [
-    { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 5, prem: 1.7, fees: 0 },
-    { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S) + 15, prem: 0.55, fees: 0 },
-  ]},
-  covered_call: { name: "Covered call", group: "Stock + option", legs: (S) => [
-    { kind: "stk", side: "long", shares: 100, entry: round5(S), fees: 0 },
-    { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 5, prem: 2.5, fees: 0 },
-  ]},
-  cash_secured_put: { name: "Cash-secured put", group: "Stock + option", legs: (S) => [
-    { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 5, prem: 2.0, fees: 0 },
-  ]},
-  long_straddle: { name: "Long straddle", group: "Volatility", legs: (S) => [
-    { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S), prem: 4.0, fees: 0 },
-    { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S), prem: 3.5, fees: 0 },
-  ]},
-  iron_condor: { name: "Iron condor", group: "Range", legs: (S) => [
-    { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S) - 15, prem: 0.5, fees: 0 },
-    { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 10, prem: 1.2, fees: 0 },
-    { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 10, prem: 1.1, fees: 0 },
-    { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S) + 15, prem: 0.4, fees: 0 },
-  ]},
-  long_call: { name: "Long call", group: "Directional", legs: (S) => [
-    { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S), prem: 5.0, fees: 0 },
-  ]},
-  long_put: { name: "Long put", group: "Directional", legs: (S) => [
-    { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S), prem: 4.8, fees: 0 },
-  ]},
+  bear_call_credit: {
+    name: "Call credit spread (bear call)",
+    group: "Credit income",
+    legs: (S) => [
+      { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 5, prem: 1.7, fees: 0 },
+      { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S) + 15, prem: 0.55, fees: 0 },
+    ],
+  },
+  iron_condor: {
+    name: "Iron condor (put + call credit)",
+    group: "Credit income",
+    legs: (S) => [
+      { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S) - 15, prem: 0.5, fees: 0 },
+      { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 10, prem: 1.2, fees: 0 },
+      { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 10, prem: 1.1, fees: 0 },
+      { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S) + 15, prem: 0.4, fees: 0 },
+    ],
+  },
+  bull_call_debit: {
+    name: "Bull call debit spread",
+    group: "Debit verticals",
+    legs: (S) => [
+      { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S), prem: 6.2, fees: 0 },
+      { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 10, prem: 3.1, fees: 0 },
+    ],
+  },
+  bear_put_debit: {
+    name: "Bear put debit spread",
+    group: "Debit verticals",
+    legs: (S) => [
+      { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S), prem: 6.0, fees: 0 },
+      { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 10, prem: 3.0, fees: 0 },
+    ],
+  },
+  covered_call: {
+    name: "Covered call",
+    group: "Stock + option",
+    legs: (S) => [
+      { kind: "stk", side: "long", shares: 100, entry: round5(S), fees: 0 },
+      { kind: "opt", side: "short", type: "call", qty: 1, strike: round5(S) + 5, prem: 2.5, fees: 0 },
+    ],
+  },
+  cash_secured_put: {
+    name: "Cash-secured put",
+    group: "Stock + option",
+    legs: (S) => [
+      { kind: "opt", side: "short", type: "put", qty: 1, strike: round5(S) - 5, prem: 2.0, fees: 0 },
+    ],
+  },
+  long_straddle: {
+    name: "Long straddle",
+    group: "Volatility",
+    legs: (S) => [
+      { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S), prem: 4.0, fees: 0 },
+      { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S), prem: 3.5, fees: 0 },
+    ],
+  },
+  long_call: {
+    name: "Long call",
+    group: "Directional",
+    legs: (S) => [
+      { kind: "opt", side: "long", type: "call", qty: 1, strike: round5(S), prem: 5.0, fees: 0 },
+    ],
+  },
+  long_put: {
+    name: "Long put",
+    group: "Directional",
+    legs: (S) => [
+      { kind: "opt", side: "long", type: "put", qty: 1, strike: round5(S), prem: 4.8, fees: 0 },
+    ],
+  },
 };
+
+const STRATEGY_GROUPS = [
+  "Money Press",
+  "Credit income",
+  "Debit verticals",
+  "Stock + option",
+  "Volatility",
+  "Directional",
+];
 function round5(x) { return Math.round(x / 5) * 5; }
 function isMoneyPress(id) {
   return String(id).startsWith("money_press_");
 }
 
 export default function OptionScopeBuilder() {
-  const [tpl, setTpl] = useState("bull_call_debit");
+  const [tpl, setTpl] = useState("bull_put_credit");
   const [spot, setSpot] = useState(500);
   const [sigma, setSigma] = useState(0.30);
-  const [dte, setDte] = useState(14); // Money Press front month often ~1–3 weeks
-  const [farDte, setFarDte] = useState(45); // back month
+  const [dte, setDte] = useState(7); // Money Press: weekly short (~3–10 DTE)
+  const [farDte, setFarDte] = useState(105); // protection: ~3–6 months
   const [rate, setRate] = useState(0.045);
   const [divYield, setDivYield] = useState(0.005);
   const [driftMode, setDriftMode] = useState("rn");
@@ -235,12 +304,16 @@ export default function OptionScopeBuilder() {
   // Brain Phase 4.1/5: when user loads a recommendation, pin the exact legs scored by the engine
   const [brainLegs, setBrainLegs] = useState(null); // builder-format legs or null
   const [brainNote, setBrainNote] = useState("");
+  const [brainProfitWindow, setBrainProfitWindow] = useState([]); // string[] from Recommend backtest
+  /** Empire sizing from brain — null until a rec is applied; may be 0. */
+  const [suggestedContracts, setSuggestedContracts] = useState(null);
+  const analysisAnchorRef = useRef(null);
 
   async function loadLive(exp) {
     const t = ticker.trim().toUpperCase().split(":").pop();
     if (!t) return;
     setLoading(true); setLoadErr("");
-    setBrainLegs(null); setBrainNote("");
+    setBrainLegs(null); setBrainNote(""); setSuggestedContracts(null);
     try {
       const q = await dataClient.quote(t);
       const spotVal = Number(q.quote.price.toFixed(2));
@@ -300,7 +373,7 @@ export default function OptionScopeBuilder() {
       );
     }
     let base = TEMPLATES[tpl].legs(spot);
-    // Inject calendar residual horizon from UI far/near DTE
+    // Inject protection residual horizon from UI far/near DTE
     if (isMoneyPress(tpl)) {
       base = base.map((l) =>
         l.term === "far" ? { ...l, remainingT: remT } : l
@@ -311,25 +384,84 @@ export default function OptionScopeBuilder() {
       if (l.kind !== "opt") return l;
       const cands = live.chain.filter((c) => c.type === l.type && c.mark != null);
       if (!cands.length) return l;
-      const near = cands.reduce((b, c) => Math.abs(c.strike - l.strike) < Math.abs(b.strike - l.strike) ? c : b);
-      // Far leg: if no dual chain, mark up near premium as proxy for longer DTE
+      // Snap each leg to its own target strike (diagonal: short higher, long lower)
+      const snapped = cands.reduce((b, c) =>
+        Math.abs(c.strike - l.strike) < Math.abs(b.strike - l.strike) ? c : b
+      );
       if (l.term === "far") {
-        const farPrem = Math.max(near.mark * 1.35, near.mark + 0.4);
-        return { ...l, strike: near.strike, prem: Number(farPrem.toFixed(2)), remainingT: remT };
+        // Single-chain proxy: longer-dated protection usually richer than front
+        const farPrem = Math.max(snapped.mark * 1.4, snapped.mark + 0.5);
+        return {
+          ...l,
+          strike: snapped.strike,
+          prem: Number(farPrem.toFixed(2)),
+          remainingT: remT,
+        };
       }
-      return { ...l, strike: near.strike, prem: near.mark, remainingT: l.remainingT };
+      return { ...l, strike: snapped.strike, prem: snapped.mark, remainingT: l.remainingT };
     });
   }, [tpl, spot, live, brainLegs, dte, farDte]);
 
+  // Typed domain engine (unit-tested src/domain/*) — primary for standard structures
+  const domainLegsTyped = useMemo(
+    () => uiLegsToDomain(legs, { dte, farDte, sigma }),
+    [legs, dte, farDte, sigma]
+  );
+
+  const domainAnalysis = useMemo(() => {
+    try {
+      const diagonal = isDiagonalStructure(legs);
+      const payoff = domainPayoff(domainLegsTyped, spot);
+      const mc = domainMonteCarlo(domainLegsTyped, {
+        spot,
+        dte,
+        sigma,
+        r: rate,
+        q: divYield,
+        simulations: sims,
+        seed,
+        userDrift: driftMode === "user" ? userDrift : null,
+      });
+      const greeks = domainGreeks(domainLegsTyped, { spot, sigma, r: rate, q: divYield });
+      return { payoff, mc, greeks, diagonal, ok: true };
+    } catch {
+      return { payoff: null, mc: null, greeks: null, diagonal: false, ok: false };
+    }
+  }, [domainLegsTyped, legs, spot, dte, sigma, rate, divYield, driftMode, userDrift, sims, seed]);
+
   const analysis = useMemo(() => {
+    // Prefer typed domain for non-diagonal; Money Press keeps residual-long path in UI engine
+    const useDomain = domainAnalysis.ok && domainAnalysis.payoff && !domainAnalysis.diagonal;
+    if (useDomain) {
+      const p = domainAnalysis.payoff;
+      const m = domainAnalysis.mc;
+      const net = p.netCashFlow;
+      const be = p.breakEvens.map((x) => Number(Number(x).toFixed(2)));
+      const ex = {
+        maxProfit: p.maxProfit,
+        maxLoss: p.maxLoss,
+        unlimitedUp: p.hasUnlimitedUpside,
+        unlimitedDown: p.hasUnlimitedDownside,
+      };
+      const mc = {
+        pp: m.probProfit,
+        pl: m.probLoss,
+        ev: m.expectedPL,
+        median: m.median,
+        p5: m.p5,
+        p95: m.p95,
+        ci: m.ci95Prob,
+        hist: (m.histogram || []).map((h) => ({ x: h.bin, count: h.count })),
+      };
+      return { net, be, ex, mc, engine: "domain" };
+    }
     const net = netCash(legs);
     const be = breakEvens(legs, sigma);
     const ex = extrema(legs, sigma);
-    // MC to front-month horizon for Money Press
     const tFront = Math.max(dte / 365, 1 / 365);
     const mc = monteCarlo(legs, spot, tFront, sigma, rate, divYield, driftMode, userDrift, sims, seed);
-    return { net, be, ex, mc };
-  }, [legs, spot, sigma, dte, rate, divYield, driftMode, userDrift, sims, seed]);
+    return { net, be, ex, mc, engine: "ui-money-press" };
+  }, [legs, spot, sigma, dte, rate, divYield, driftMode, userDrift, sims, seed, domainAnalysis]);
 
   const chartData = useMemo(() => {
     const b = bps(legs); const lo = Math.max(0, Math.min(...b) * 0.85), hi = Math.max(...b) * 1.15;
@@ -373,20 +505,36 @@ export default function OptionScopeBuilder() {
   const checklist = useMemo(() => {
     const sym = (ticker.trim() || "DEMO").toUpperCase().split(":").pop();
     const perShare = net / 100;
+    // Scale totals when brain size > 1; honesty when size is 0 under empire ceiling
+    const sizeMult =
+      suggestedContracts != null && suggestedContracts > 1 ? suggestedContracts : 1;
+    const contractsOverride =
+      suggestedContracts != null && Number.isFinite(suggestedContracts)
+        ? Math.max(0, Math.floor(suggestedContracts))
+        : undefined;
     return buildChecklist({
       underlying: sym,
       strategyName: TEMPLATES[tpl]?.name || tpl,
       legs: domainLegs,
-      netCashFlow: net,
+      netCashFlow: net * (contractsOverride != null && contractsOverride > 0 ? sizeMult : 1),
       perShareNet: perShare,
-      maxLoss: ex.maxLoss,
+      maxLoss:
+        ex.maxLoss === "undefined"
+          ? "undefined"
+          : typeof ex.maxLoss === "number"
+            ? Math.abs(ex.maxLoss) * (contractsOverride != null && contractsOverride > 0 ? sizeMult : 1)
+            : ex.maxLoss,
       collateral: null,
       breakEvens: be,
       quoteTimestamp: live?.freshness ? new Date().toISOString() : null,
-      plannedProfitTarget: typeof ex.maxProfit === "number" ? ex.maxProfit * 0.5 : null,
-      plannedLossLimit: typeof ex.maxLoss === "number" ? Math.abs(ex.maxLoss) : null,
+      plannedProfitTarget: typeof ex.maxProfit === "number" ? ex.maxProfit * 0.5 * sizeMult : null,
+      plannedLossLimit:
+        typeof ex.maxLoss === "number"
+          ? Math.abs(ex.maxLoss) * (contractsOverride != null && contractsOverride > 0 ? sizeMult : 1)
+          : null,
+      contracts: contractsOverride,
     });
-  }, [ticker, tpl, domainLegs, net, ex, be, live]);
+  }, [ticker, tpl, domainLegs, net, ex, be, live, suggestedContracts]);
 
 
   const dataBadge = live
@@ -454,7 +602,17 @@ export default function OptionScopeBuilder() {
                 </select>
               )}
               {live && (
-                <button type="button" className="os-btn" onClick={() => { setLive(null); setLoadErr(""); setBrainLegs(null); setBrainNote(""); }}>
+                <button
+                  type="button"
+                  className="os-btn"
+                  onClick={() => {
+                    setLive(null);
+                    setLoadErr("");
+                    setBrainLegs(null);
+                    setBrainNote("");
+                    setBrainProfitWindow([]);
+                  }}
+                >
                   Use demo
                 </button>
               )}
@@ -470,8 +628,8 @@ export default function OptionScopeBuilder() {
             <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))" }}>
               <label className="os-label">
                 Strategy
-                <select className="os-input mt-1" value={tpl} onChange={(e) => { setTpl(e.target.value); setBrainLegs(null); setBrainNote(""); }}>
-                  {["Money Press", "Verticals", "Range", "Volatility", "Stock + option", "Directional"].map((g) => (
+                <select className="os-input mt-1" value={tpl} onChange={(e) => { setTpl(e.target.value); setBrainLegs(null); setBrainNote(""); setBrainProfitWindow([]); }}>
+                  {STRATEGY_GROUPS.map((g) => (
                     <optgroup key={g} label={g}>
                       {Object.entries(TEMPLATES)
                         .filter(([, v]) => (v.group || "Other") === g)
@@ -494,16 +652,17 @@ export default function OptionScopeBuilder() {
                 {isMoneyPress(tpl) ? "Near DTE (short)" : "DTE"} {dte}
                 <input className="w-full mt-2" type="range" min="1" max="180" step="1" value={dte} onChange={(e) => setDte(+e.target.value)} />
               </label>
+              {/* strike hit score uses short leg when present */}
               {isMoneyPress(tpl) && (
                 <label className="os-label">
-                  Far DTE (long) {farDte}
+                  Far DTE (protection) {farDte}
                   <input
                     className="w-full mt-2"
                     type="range"
-                    min={Math.max(dte + 7, 14)}
-                    max="180"
+                    min={Math.max(dte + 30, 60)}
+                    max="250"
                     step="1"
-                    value={Math.max(farDte, dte + 7)}
+                    value={Math.max(farDte, dte + 30)}
                     onChange={(e) => setFarDte(+e.target.value)}
                   />
                 </label>
@@ -512,26 +671,68 @@ export default function OptionScopeBuilder() {
 
             {isMoneyPress(tpl) && (
               <div className="os-well mt-3 px-3 py-2 text-xs text-[var(--text-secondary)] leading-relaxed">
-                <strong className="text-[var(--text-accent)]">Money Press method:</strong> sell{" "}
-                <strong>near</strong> premium, buy <strong>far</strong> same strike — collect front-month
-                theta while the long hedges. Usually a <strong>net debit</strong>; max loss ≈ debit.
-                Best when price stays near the short strike into near expiry and front IV is rich.
-                Analysis P/L is at <em>near</em> expiration (far leg still has value).
+                <strong className="text-[var(--text-accent)]">Money Press Method (put diagonal):</strong>{" "}
+                <strong>sell</strong> ATM/near weekly put (higher strike) + <strong>buy</strong> lower-strike
+                put 3–6 months out (protection). Not a same-strike calendar — short strike is always higher.
+                Entry is often a <strong>net debit</strong>; risk capital ≈ strike width; weekly credits stack
+                over many Fridays. Flat-to-up thesis. Prefer liquid names, fit between earnings, limit orders.
+                Analysis P/L is at <em>near</em> expiry (protection still has residual value). Personal
+                reference: Preston James, <em>The Money Press Method</em> 2020 — not a guarantee of results.
               </div>
             )}
 
             {brainNote && (
               <div className="os-well mt-3 px-3 py-2 text-xs text-[var(--text-secondary)] flex flex-wrap items-center justify-between gap-2">
                 <span>Brain structure locked: <strong className="text-[var(--text-primary)]">{brainNote}</strong></span>
-                <button type="button" className="os-btn text-xs py-1" onClick={() => { setBrainLegs(null); setBrainNote(""); }}>
+                <button
+                  type="button"
+                  className="os-btn text-xs py-1"
+                  onClick={() => {
+                    setBrainLegs(null);
+                    setBrainNote("");
+                    setBrainProfitWindow([]);
+                  }}
+                >
                   Clear lock
                 </button>
               </div>
             )}
+            {brainProfitWindow.length > 0 && (
+              <div
+                className="os-well mt-3 px-3 py-2 text-xs text-[var(--text-secondary)]"
+                style={{ borderColor: "var(--border-accent)" }}
+              >
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-accent)] font-medium mb-1">
+                  Profit window (brain model)
+                </div>
+                <ul className="m-0 pl-4 list-disc space-y-0.5">
+                  {brainProfitWindow.map((line) => (
+                    <li key={line.slice(0, 48)}>{line}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div className="mt-3">
+              <StrikeHitProbabilityBox
+                spot={spot}
+                strike={
+                  (() => {
+                    const shortLeg = legs.find((l) => l.kind === "opt" && l.side === "short");
+                    const anyOpt = legs.find((l) => l.kind === "opt");
+                    return Number(shortLeg?.strike ?? anyOpt?.strike ?? round5(spot));
+                  })()
+                }
+                dte={dte}
+                sigma={sigma}
+                r={rate}
+                q={divYield}
+              />
+            </div>
           </section>
 
           {/* Legs table */}
-          <section className="os-panel p-4">
+          <section className="os-panel p-4" ref={analysisAnchorRef}>
             <div className="text-sm font-medium mb-2">Legs</div>
             <div className="overflow-x-auto">
               <table className="w-full text-sm" style={{ fontVariantNumeric: "tabular-nums" }}>
@@ -596,13 +797,21 @@ export default function OptionScopeBuilder() {
               <div className="os-metric-label">Break-even(s)</div>
               <div className="os-metric-value text-base">{be.length ? be.map((x) => "$" + x).join(", ") : "—"}</div>
             </div>
+            <div className="os-metric">
+              <div className="os-metric-label">Calc engine</div>
+              <div className="os-metric-value text-sm">
+                {analysis.engine === "domain" ? "Domain" : "Diagonal UI"}
+              </div>
+            </div>
           </div>
+
+          <PositionGreeksPanel greeks={domainAnalysis.greeks} engine={analysis.engine === "domain" ? "domain-bs/crr" : "domain-greeks"} />
 
           {/* Payoff */}
           <section className="os-panel p-4">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-medium">Expiration payoff</span>
-              <span className="os-badge text-[10px]">ENGINE</span>
+              <span className="os-badge text-[10px]">{analysis.engine === "domain" ? "DOMAIN" : "ENGINE"}</span>
             </div>
             <div className="rounded-lg border overflow-hidden" style={{ borderColor: "var(--border)", background: "var(--surface-1)", height: 260 }}>
               <ResponsiveContainer width="100%" height="100%">
@@ -699,7 +908,8 @@ export default function OptionScopeBuilder() {
             <div className="os-panel p-3">
               <div className="os-kicker mb-1">Brain rail</div>
               <p className="text-xs text-[var(--text-secondary)] m-0">
-                Load a live chain to rank structures under empire policy. Click Load in builder to lock legs.
+                Load a ticker, then hit <strong>✦ Recommend</strong> — top pick locks strikes, prices,
+                DTE, profit window, and runs a model backtest in this panel.
               </p>
             </div>
             {ticker.trim() ? (
@@ -711,32 +921,117 @@ export default function OptionScopeBuilder() {
                   onSelectStrategy={(payload) => {
                     const id = typeof payload === "string" ? payload : payload.strategyId;
                     if (TEMPLATES[id]) setTpl(id);
-                    else setLoadErr(`No template for "${id}" — legs applied if present.`);
+                    else if (typeof payload === "object" && payload.legs?.length) {
+                      // Legs still apply even without a named template
+                    } else {
+                      setLoadErr(`No template for "${id}" — legs applied if present.`);
+                    }
+
+                    // Brain empire size (may be 0 — still honest on checklist)
+                    if (typeof payload === "object" && payload.suggestedContracts != null) {
+                      setSuggestedContracts(Math.max(0, Math.floor(Number(payload.suggestedContracts) || 0)));
+                    } else {
+                      setSuggestedContracts(null);
+                    }
+
+                    if (typeof payload === "object") {
+                      if (payload.spot != null && payload.spot > 0) setSpot(Number(payload.spot.toFixed(2)));
+                      if (payload.sigma != null && payload.sigma > 0) setSigma(payload.sigma);
+                      if (payload.dte != null) setDte(Math.max(1, payload.dte));
+                      if (payload.farDte != null) setFarDte(Math.max((payload.dte || 7) + 7, payload.farDte));
+                      if (payload.backtest?.simulations) setSims(Math.min(50000, Math.max(5000, payload.backtest.simulations)));
+                      if (payload.backtest?.profitWindow?.length) {
+                        setBrainProfitWindow(payload.backtest.profitWindow);
+                      } else {
+                        setBrainProfitWindow([]);
+                      }
+                      if (payload.expiration) {
+                        setExpiry(payload.expiration);
+                      }
+                    }
+
                     const dLegs = typeof payload === "object" ? payload.legs : null;
                     if (dLegs && dLegs.length) {
+                      // Scale option qty when brain suggests ≥1; keep 1-lot for model when size 0
+                      const sizeLots =
+                        typeof payload === "object" &&
+                        payload.suggestedContracts != null &&
+                        payload.suggestedContracts >= 1
+                          ? Math.floor(payload.suggestedContracts)
+                          : 1;
+                      // Dual-expiry → near/far tags for Money Press residual pricing
+                      const optExps = [
+                        ...new Set(
+                          dLegs
+                            .filter((l) => l.assetType === "option" && l.expiration)
+                            .map((l) => l.expiration)
+                        ),
+                      ].sort();
+                      const nearExp = optExps[0];
+                      const farExp = optExps[optExps.length - 1];
+                      const multi = optExps.length > 1 && nearExp !== farExp;
+                      const remT =
+                        multi && farExp && nearExp
+                          ? Math.max(
+                              7 / 365,
+                              (new Date(farExp).getTime() - new Date(nearExp).getTime()) /
+                                (365.25 * 864e5)
+                            )
+                          : Math.max(7 / 365, ((payload.farDte || 105) - (payload.dte || 7)) / 365);
+
                       const mapped = dLegs.map((l) => {
                         if (l.assetType === "stock") {
-                          return { kind: "stk", side: l.side, shares: l.shares, entry: l.entryPrice, fees: l.feesTotal || 0 };
+                          return {
+                            kind: "stk",
+                            side: l.side,
+                            shares: l.shares,
+                            entry: l.entryPrice,
+                            fees: l.feesTotal || 0,
+                          };
                         }
-                        return {
+                        const isFar = multi && l.expiration === farExp;
+                        const baseQty = Math.max(1, l.contracts || 1);
+                        const row = {
                           kind: "opt",
                           side: l.side,
                           type: l.optionType,
-                          qty: l.contracts,
+                          qty: baseQty * sizeLots,
                           strike: l.strike,
                           prem: l.premiumPerShare,
                           fees: l.feesTotal || 0,
                         };
+                        if (multi) {
+                          row.term = isFar ? "far" : "near";
+                          if (isFar) {
+                            row.remainingT = remT;
+                            row.label = "FAR long (protection)";
+                          } else {
+                            row.label = "NEAR short (weekly)";
+                          }
+                        }
+                        return row;
                       });
                       setBrainLegs(mapped);
-                      setBrainNote(typeof payload === "object" ? (payload.legsNote || payload.name || id) : id);
-                      if (typeof payload === "object" && payload.expiration) {
-                        setExpiry(payload.expiration);
-                        setDte(Math.max(1, Math.round((new Date(payload.expiration).getTime() - Date.now()) / 86400000)));
-                      }
+                      setBrainNote(
+                        typeof payload === "object"
+                          ? payload.legsNote || payload.name || id
+                          : id
+                      );
+                      // Scroll left rail to locked legs / payoff
+                      requestAnimationFrame(() => {
+                        try {
+                          analysisAnchorRef.current?.scrollIntoView?.({
+                            behavior: "smooth",
+                            block: "start",
+                          });
+                        } catch {
+                          /* ignore */
+                        }
+                      });
                     } else {
                       setBrainLegs(null);
                       setBrainNote("");
+                      setBrainProfitWindow([]);
                     }
                   }}
                 />
@@ -750,27 +1045,45 @@ export default function OptionScopeBuilder() {
         </aside>
       </div>
 
-      {/* Full-width checklist climax */}
+      {/* Full-width checklist climax — primary CTA after brain recommend */}
       {!blocked && (
-        <OrderChecklistCard
-          checklist={checklist}
-          onSave={() => {
-            const sym = (ticker.trim() || "DEMO").toUpperCase().split(":").pop();
-            addJournalPlan({
-              underlying: sym,
-              strategy: tpl,
-              title: `${TEMPLATES[tpl]?.name || tpl} ${sym}`,
-              thesis: brainNote || "From Trade Lab checklist",
-              legsNote: brainNote || legs.map((l) => (l.kind === "opt" ? `${l.side} ${l.type} ${l.strike}` : `stock ${l.shares}`)).join("; "),
-              plannedMaxLoss: typeof ex.maxLoss === "number" ? Math.abs(ex.maxLoss) : null,
-              plannedContracts: 1,
-              forecastPoP: mc.pp,
-              forecastEV: mc.ev,
-              checklistText: null,
-            });
-            alert("Saved plan to Journal. Mark opened/closed after your broker fill.");
-          }}
-        />
+        <div id="order-checklist" className="scroll-mt-4">
+          <OrderChecklistCard
+            checklist={checklist}
+            onSave={() => {
+              const sym = (ticker.trim() || "DEMO").toUpperCase().split(":").pop();
+              const text = checklistToText(checklist);
+              const planned =
+                suggestedContracts != null && Number.isFinite(suggestedContracts)
+                  ? Math.max(0, Math.floor(suggestedContracts))
+                  : checklist.contracts;
+              addJournalPlan({
+                underlying: sym,
+                strategy: tpl,
+                title: `${TEMPLATES[tpl]?.name || tpl} ${sym}`,
+                thesis: brainNote || "From Trade Lab checklist",
+                legsNote:
+                  brainNote ||
+                  legs
+                    .map((l) =>
+                      l.kind === "opt" ? `${l.side} ${l.type} ${l.strike}` : `stock ${l.shares}`
+                    )
+                    .join("; "),
+                plannedMaxLoss:
+                  typeof checklist.maxModeledLoss === "number"
+                    ? Math.abs(checklist.maxModeledLoss)
+                    : typeof ex.maxLoss === "number"
+                      ? Math.abs(ex.maxLoss)
+                      : null,
+                plannedContracts: planned,
+                forecastPoP: mc.pp,
+                forecastEV: mc.ev,
+                checklistText: text,
+              });
+              alert("Saved plan to Journal (with checklist). Mark opened/closed after your broker fill.");
+            }}
+          />
+        </div>
       )}
 
       <div className="os-panel p-3" style={{ background: "var(--bg-warning)", borderColor: "var(--border-warning)" }}>

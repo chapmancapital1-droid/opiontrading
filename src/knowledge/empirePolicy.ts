@@ -39,9 +39,7 @@ const SEED_PREFERRED = [
   "long_put",
   "bull_put_credit",
   "bear_call_credit",
-  "money_press_call_calendar",
-  "money_press_put_calendar",
-  // double calendar often too much debit for micro seed — still allowed, not preferred
+  "money_press_put_diagonal",
 ];
 
 const SEED_BLOCKED = [

@@ -28,8 +28,17 @@
   "roots": [
     "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\option trader",
     "C:\\Users\\Michael Chapman\\Documents\\Claude\\Projects\\Master Trader stocks forex and algorithms trading",
-    "C:\\Users\\Michael Chapman\\Downloads"
+    "C:\\Users\\Michael Chapman\\Downloads",
+    "L:\\newdump"
   ],
+  "newdumpPass": {
+    "date": "2026-07-12",
+    "inventory": "src/knowledge/catalog/newdump_inventory.json",
+    "rules": "src/knowledge/newdumpRules.ts",
+    "design": "docs/empire/NEWDUMP_INGEST_AND_COMMAND_DESIGN.md",
+    "ui": ["Command Center tabs", "/library", "Playbook pre/post forms"],
+    "note": "Metadata + structured rules only; no full PDF text in repo"
+  },
   "topSourcesByEntries": [
     "The Option Trader Handbook - Strategies And Trade Adjustments (2004)",
     "Options Trading Primer By Marketwise Trading School (2002)",

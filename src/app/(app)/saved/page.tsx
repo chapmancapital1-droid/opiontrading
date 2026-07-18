@@ -3,6 +3,10 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { loadSaved, saveAnalysis, deleteSaved, type SavedAnalysis } from "@/lib/localSaved";
+import {
+  STRATEGY_PICKER,
+  STRATEGY_PICKER_GROUPS,
+} from "@/lib/strategyCatalog";
 
 const usd = (n: number) =>
   (n < 0 ? "-$" : "$") + Math.abs(n).toLocaleString("en-US", { maximumFractionDigits: 0 });
@@ -55,11 +59,21 @@ export default function SavedPage() {
           </label>
           <label className="text-xs text-[var(--text-secondary)]">
             Strategy
-            <input
+            <select
               className="mt-1 w-full text-sm rounded-lg border border-[var(--border)] bg-[var(--surface-1)] px-2 py-1.5"
               value={strategy}
               onChange={(e) => setStrategy(e.target.value)}
-            />
+            >
+              {STRATEGY_PICKER_GROUPS.map((g) => (
+                <optgroup key={g} label={g}>
+                  {STRATEGY_PICKER.filter((s) => s.group === g).map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.label}
+                    </option>
+                  ))}
+                </optgroup>
+              ))}
+            </select>
           </label>
         </div>
         <label className="text-xs text-[var(--text-secondary)]">

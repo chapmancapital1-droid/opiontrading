@@ -151,6 +151,52 @@ export function parseRhPaste(text: string): RhImportResult {
 
 const RH_KEY = "optionscope.rhImport.v1";
 
+/** Detect option-like activity lines (not equity share lots). */
+function looksLikeOptionRow(row: RhImportRow): boolean {
+  const blob = `${row.raw} ${row.side}`;
+  // Explicit call/put without "shares" → option
+  if (/\b(call|put|calls|puts)\b/i.test(blob) && !/\bshares?\b/i.test(blob)) return true;
+  return false;
+}
+
+/**
+ * Best-effort stock share inventory from import rows.
+ * Skips pure option lines (call/put in raw). Buy/bot add; sell/sld subtract; floor 0.
+ * Used for gates (e.g. covered-call share check) — not live broker truth / not equity.
+ */
+export function rowsToSharesHeld(rows: RhImportRow[]): Record<string, number> {
+  const out: Record<string, number> = {};
+  for (const r of rows) {
+    const sym = (r.symbol || "").toUpperCase().replace(/[^A-Z0-9.]/g, "");
+    if (!sym) continue;
+    if (looksLikeOptionRow(r)) continue;
+    const q = Number(r.qty);
+    if (!Number.isFinite(q) || q === 0) continue;
+    const signed = /sell|sld|sold/i.test(r.side) ? -Math.abs(q) : Math.abs(q);
+    out[sym] = (out[sym] ?? 0) + signed;
+  }
+  for (const k of Object.keys(out)) {
+    if ((out[k] ?? 0) <= 0) delete out[k];
+  }
+  return out;
+}
+
+/** Alias matching handoff naming (deriveSharesHeld). */
+export const deriveSharesHeld = rowsToSharesHeld;
+
+/**
+ * Rough open-risk proxy when price present: sum |qty * price|.
+ * Best-effort only — not true max-loss modeling; never invents prices.
+ */
+export function estimateOpenRiskProxy(rows: RhImportRow[]): number {
+  let sum = 0;
+  for (const r of rows) {
+    if (r.price == null || !Number.isFinite(r.price) || !Number.isFinite(r.qty)) continue;
+    sum += Math.abs(r.qty * r.price);
+  }
+  return Number(sum.toFixed(2));
+}
+
 export function saveRhImport(result: RhImportResult & { importedAt: string; sourceNote: string }): void {
   if (typeof window === "undefined") return;
   localStorage.setItem(RH_KEY, JSON.stringify(result));

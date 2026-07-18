@@ -44,33 +44,29 @@ function stk(spot: number): Leg {
 }
 
 export const COMPARE_STRATEGY_IDS = [
-  "money_press_call_calendar",
-  "money_press_put_calendar",
-  "money_press_double_calendar",
-  "long_call",
-  "long_put",
-  "bull_call_debit",
-  "bear_put_debit",
   "bull_put_credit",
   "bear_call_credit",
   "iron_condor",
-  "long_straddle",
+  "money_press_put_diagonal",
   "cash_secured_put",
   "covered_call",
+  "bull_call_debit",
+  "bear_put_debit",
+  "long_call",
+  "long_put",
+  "long_straddle",
 ] as const;
 
 export type CompareStrategyId = (typeof COMPARE_STRATEGY_IDS)[number];
 
 export const COMPARE_STRATEGY_LABELS: Record<CompareStrategyId, string> = {
-  money_press_call_calendar: "Money Press call calendar",
-  money_press_put_calendar: "Money Press put calendar",
-  money_press_double_calendar: "Money Press double calendar",
+  money_press_put_diagonal: "Money Press put diagonal",
   long_call: "Long call",
   long_put: "Long put",
   bull_call_debit: "Bull call debit",
   bear_put_debit: "Bear put debit",
-  bull_put_credit: "Bull put credit",
-  bear_call_credit: "Bear call credit",
+  bull_put_credit: "Put credit spread",
+  bear_call_credit: "Call credit spread",
   iron_condor: "Iron condor",
   long_straddle: "Long straddle",
   cash_secured_put: "Cash-secured put",
@@ -86,20 +82,18 @@ export function buildDemoLegs(
   const exp = new Date(Date.now() + Math.max(1, dte) * 864e5).toISOString().slice(0, 10);
   const w = Math.max(5, Math.round(S * 0.025));
 
-  const far = new Date(Date.now() + Math.max(dte + 30, 45) * 864e5).toISOString().slice(0, 10);
+  // Protection leg: 3–6 months out (book default ~90–120d)
+  const far = new Date(Date.now() + Math.max(dte + 90, 105) * 864e5).toISOString().slice(0, 10);
+  // Short ATM higher; long lower by ~8–12% (diagonal width)
+  const shortK = S;
+  const longK = Math.max(1, round5(S * 0.88));
 
   switch (strategyId) {
-    case "money_press_call_calendar":
-      // Short near richer / long far — net debit calendar
-      return [opt("short", "call", S, 2.4, exp), opt("long", "call", S, 4.1, far)];
-    case "money_press_put_calendar":
-      return [opt("short", "put", S, 2.35, exp), opt("long", "put", S, 4.0, far)];
-    case "money_press_double_calendar":
+    case "money_press_put_diagonal":
+      // Book Money Press: sell higher weekly put, buy lower far put — often net debit
       return [
-        opt("short", "put", S, 2.2, exp),
-        opt("long", "put", S, 3.8, far),
-        opt("short", "call", S, 2.2, exp),
-        opt("long", "call", S, 3.8, far),
+        opt("short", "put", shortK, 2.4, exp),
+        opt("long", "put", longK, 3.6, far),
       ];
     case "long_call":
       return [opt("long", "call", S, 5.0, exp)];

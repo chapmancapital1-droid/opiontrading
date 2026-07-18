@@ -24,6 +24,8 @@ export {
   buildRiskMapsFromChain,
 } from "./engineScore";
 export { demoAccount, DEFAULT_DEMO_ACCOUNT, DEFAULT_SEED_ACCOUNT, seedAccount } from "./demoAccount";
+export { resolvePersonalAccountState, isSeedSizedAccount } from "./resolveAccount";
+export type { ResolvePersonalAccountArgs } from "./resolveAccount";
 export { explainStrategy, explanationToMarkdown } from "./explain";
 export type { StrategyExplanation, ExplainCitation, BrainExplainInput } from "./explain";
 export { mapLiveToAccountState, demoAsLiveClient } from "./liveAccount";

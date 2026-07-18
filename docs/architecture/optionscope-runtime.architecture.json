@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "OptionScope Runtime",
+    "subtitle": "Seed → $20k companion · Superagent view",
+    "output": "optionscope-runtime.html"
+  },
+  "layout": {
+    "mode": "grid",
+    "cols": 6,
+    "origin": [40, 90],
+    "gapX": 36,
+    "gapY": 72,
+    "cellW": 128,
+    "cellH": 64
+  },
+  "components": [
+    { "id": "user", "type": "external", "label": "Operator", "sublabel": "Michael · RH fills", "row": 1, "col": 0 },
+    { "id": "cmd", "type": "frontend", "label": "Command", "sublabel": "Bias · SPY · Lessons", "row": 0, "col": 1 },
+    { "id": "scan", "type": "frontend", "label": "Scanner", "sublabel": "Strategy filter ≤15", "row": 1, "col": 1 },
+    { "id": "lab", "type": "frontend", "label": "Trade Lab", "sublabel": "Payoff · MC · checklist", "row": 2, "col": 1 },
+    { "id": "brain", "type": "backend", "label": "Trading Brain", "sublabel": "selector · riskGates", "row": 1, "col": 2 },
+    { "id": "nci", "type": "backend", "label": "NCI TA", "sublabel": "voters · SuperBias", "row": 0, "col": 2 },
+    { "id": "domain", "type": "backend", "label": "Domain Engine", "sublabel": "BS · MC · Greeks", "row": 2, "col": 2 },
+    { "id": "api", "type": "backend", "label": "Next API", "sublabel": "scanner · chain · bias", "row": 1, "col": 3 },
+    { "id": "data", "type": "database", "label": "Market data", "sublabel": "demo · OpenBB · Alpaca", "row": 0, "col": 4 },
+    { "id": "rh", "type": "external", "label": "Robinhood", "sublabel": "CSV history · manual", "row": 2, "col": 4 },
+    { "id": "know", "type": "database", "label": "Knowledge", "sublabel": "books · RH lessons", "row": 1, "col": 4 },
+    { "id": "ota", "type": "backend", "label": "Python OTA", "sublabel": "self-improve · learn", "row": 2, "col": 3 }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "OptionScope Next.js app", "wraps": ["cmd", "scan", "lab", "brain", "nci", "domain", "api"] },
+    { "kind": "security-group", "label": "No auto-trade · human fill", "wraps": ["user", "rh"] }
+  ],
+  "connections": [
+    { "from": "user", "to": "cmd", "variant": "emphasis" },
+    { "from": "user", "to": "scan" },
+    { "from": "user", "to": "lab" },
+    { "from": "cmd", "to": "brain" },
+    { "from": "scan", "to": "brain", "variant": "emphasis" },
+    { "from": "lab", "to": "domain", "variant": "emphasis" },
+    { "from": "brain", "to": "nci", "fromSide": "top", "toSide": "bottom" },
+    { "from": "brain", "to": "know" },
+    { "from": "api", "to": "data", "fromSide": "top", "toSide": "bottom" },
+    { "from": "api", "to": "brain" },
+    { "from": "ota", "to": "know", "variant": "dashed", "fromSide": "top", "toSide": "bottom" },
+    { "from": "user", "to": "rh", "variant": "security" },
+    { "from": "rh", "to": "ota", "variant": "dashed" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Growth path", "items": ["Seed capital → Scanner defined-risk shortlist", "Lab size 1–2% · Journal · Lessons", "Target process toward $20k"] },
+    { "dot": "emerald", "title": "Superagent skills", "items": ["Hallmark — anti-slop UI craft", "Archify — architecture diagrams", "NEXUS — multi-agent pipeline"] },
+    { "dot": "rose", "title": "Hard rails", "items": ["No auto-trade to Robinhood", "Human fill + checklist", "Model PoP/EV are estimates"] }
+  ]
+}

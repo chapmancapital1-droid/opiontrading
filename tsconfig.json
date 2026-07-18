@@ -42,6 +42,9 @@
   ],
   "exclude": [
     "node_modules",
-    "design"
+    "design",
+    "import",
+    "import/**",
+    ".next"
   ]
 }

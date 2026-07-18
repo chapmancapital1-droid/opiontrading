@@ -80,6 +80,16 @@ export interface BrainRecommendation {
   exitRules: string[];
   bookSource: string;
   robinhoodNextStep: string;
+  /**
+   * Pure coach copy when suggestedContracts === 0 and maxLoss is known.
+   * Always populated in that case so UI never shows silent zero.
+   */
+  zeroSizeCoach?: string | null;
+  /**
+   * SPY (or SPX) advanced playbook lines — when to trade, how to adjust, structure tips.
+   * Only populated when context.symbol is SPY-class.
+   */
+  advancedInstructions?: string[];
 }
 
 export interface BrainDecision {
@@ -117,6 +127,11 @@ export interface BrainDecision {
   };
   disclaimer: string;
   marketNotes: string[];
+  /**
+   * Full SPY advanced playbook when symbol is SPY/SPX.
+   * UI surfaces this on Command SPY tab + Brain panel.
+   */
+  spyPlaybook?: import("@/knowledge/spyPlaybook").SpyAdvancedPlaybook | null;
 }
 
 export interface SelectInput {

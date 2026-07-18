@@ -1,0 +1,856 @@
+{
+  "meta": {
+    "version": "1.0",
+    "owner": "Michael Chapman / NERDCOMMAND / GangsterNerds LLC",
+    "goal": "Self-improving option trading brain \u2014 ingest books, price, decide, risk-manage, adjust.",
+    "updated_at": "2026-07-16T15:19:53.463396+00:00",
+    "genome": {
+      "min_entry_score": 71.76839686895083,
+      "min_pop": 0.5042120796282679,
+      "max_strikes": 4,
+      "atr_momentum_weight": 20.0,
+      "risk_per_trade": 0.020087157743819754,
+      "max_contracts": 7,
+      "commission_per_contract": 0.65,
+      "slippage_per_share": 0.05,
+      "loss_trigger_pct": 0.4441950375503746,
+      "prefer_defined_risk": false,
+      "use_adjustments": true,
+      "profit_take_pct": 0.4830909921150658,
+      "default_iv": 0.10725248725866142,
+      "r": 0.05,
+      "min_option_premium": 0.15,
+      "max_option_premium": 15.0,
+      "atm_band": 12.387542743689096,
+      "generation": 4,
+      "fitness": 125.68964072657126,
+      "notes": "validated 400y fit=125.69 mean_ret=0.058"
+    },
+    "self_improve": {
+      "last_run": "2026-07-16T15:19:53.463188+00:00",
+      "years": 400,
+      "metrics": {
+        "fitness": 125.68964072657126,
+        "mean_return": 0.05812273207387794,
+        "median_return": 0.027987505360463683,
+        "mean_max_dd": 0.00033040136255103685,
+        "p95_max_dd": 0.0013059263731768458,
+        "mean_pf": 6.730641084780295,
+        "mean_win_rate": 0.6308323479596788,
+        "mean_trades_per_year": 70.2375,
+        "crisis_mean_return": 0.09749035976522263,
+        "ruin_years": 0.0,
+        "n_years": 400.0
+      }
+    }
+  },
+  "catalog": {
+    "Core Foundations": [
+      {
+        "section": "Core Foundations",
+        "tags": [
+          "bs_formula",
+          "gbm"
+        ],
+        "snippet": "GBM: dS = \u03bcS dt + \u03c3S dW. Risk-neutral: \u03bc = r \u2212 q. Call c = S e^{-q\u03c4} N(d1) \u2212 X e^{-r\u03c4} N(d2). Use implied vol from market; adjust for dividends (Merton).",
+        "source": "OTA_SEED:Crack_Basic_Black_Scholes",
+        "keyword": "black-scholes",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:00.833657+00:00",
+        "page": null
+      },
+      {
+        "section": "Core Foundations",
+        "tags": [
+          "bs_formula",
+          "assumptions"
+        ],
+        "snippet": "Chapter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. A",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "black-scholes",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:00.835443+00:00",
+        "page": null
+      },
+      {
+        "section": "Core Foundations",
+        "tags": [
+          "bs_formula",
+          "assumptions"
+        ],
+        "snippet": "Chapter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. A",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "black-scholes",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:47.064535+00:00",
+        "page": null
+      },
+      {
+        "section": "Core Foundations",
+        "tags": [
+          "bs_formula",
+          "assumptions"
+        ],
+        "snippet": "Chapter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. A",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "black-scholes",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:13:08.185744+00:00",
+        "page": null
+      }
+    ],
+    "Numerical Methods": [
+      {
+        "section": "Numerical Methods",
+        "tags": [
+          "monte_carlo",
+          "variance_reduction"
+        ],
+        "snippet": "Monte Carlo European: simulate risk-neutral paths, discount E[payoff]. One-step exact lognormal terminal; antithetic (Z,-Z) reduces variance. Converges to BS as N\u2192\u221e. Path-dependent options need multi-step paths.",
+        "source": "OTA_SEED:Numerical_MC",
+        "keyword": "monte carlo",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:00.833679+00:00",
+        "page": null
+      },
+      {
+        "section": "Numerical Methods",
+        "tags": [
+          "monte_carlo"
+        ],
+        "snippet": "Chapter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "monte carlo",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:00.835555+00:00",
+        "page": null
+      },
+      {
+        "section": "Numerical Methods",
+        "tags": [
+          "monte_carlo"
+        ],
+        "snippet": "Chapter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "monte carlo",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:47.064652+00:00",
+        "page": null
+      },
+      {
+        "section": "Numerical Methods",
+        "tags": [
+          "monte_carlo"
+        ],
+        "snippet": "Chapter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "monte carlo",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:13:08.185899+00:00",
+        "page": null
+      }
+    ],
+    "Trading Strategies": [
+      {
+        "section": "Trading Strategies",
+        "tags": [
+          "spreads"
+        ],
+        "snippet": "Convert long call losing value \u2192 sell higher strike call = debit spread. Collects credit, lowers net debit and breakeven, caps upside.",
+        "source": "OTA_SEED:Adjustment_Debit_Spread",
+        "keyword": "debit spread",
+        "strategy_ids": [
+          "convert_debit_spread",
+          "bull_call"
+        ],
+        "timestamp": "2026-07-16T15:11:00.833693+00:00",
+        "page": null
+      },
+      {
+        "section": "Trading Strategies",
+        "tags": [
+          "spreads"
+        ],
+        "snippet": "Chapter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "debit spread",
+        "strategy_ids": [
+          "debit_spread",
+          "bull_call"
+        ],
+        "timestamp": "2026-07-16T15:11:00.835579+00:00",
+        "page": null
+      },
+      {
+        "section": "Trading Strategies",
+        "tags": [
+          "backtesting"
+        ],
+        "snippet": "l risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "backtest",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:00.835704+00:00",
+        "page": null
+      },
+      {
+        "section": "Trading Strategies",
+        "tags": [
+          "spreads"
+        ],
+        "snippet": "Chapter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "debit spread",
+        "strategy_ids": [
+          "debit_spread",
+          "bull_call"
+        ],
+        "timestamp": "2026-07-16T15:11:47.064679+00:00",
+        "page": null
+      },
+      {
+        "section": "Trading Strategies",
+        "tags": [
+          "backtesting"
+        ],
+        "snippet": "l risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "backtest",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:47.064810+00:00",
+        "page": null
+      },
+      {
+        "section": "Trading Strategies",
+        "tags": [
+          "spreads"
+        ],
+        "snippet": "Chapter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "debit spread",
+        "strategy_ids": [
+          "debit_spread",
+          "bull_call"
+        ],
+        "timestamp": "2026-07-16T15:13:08.185927+00:00",
+        "page": null
+      },
+      {
+        "section": "Trading Strategies",
+        "tags": [
+          "backtesting"
+        ],
+        "snippet": "l risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "backtest",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:13:08.186066+00:00",
+        "page": null
+      }
+    ],
+    "Risk Management": [
+      {
+        "section": "Risk Management",
+        "tags": [
+          "sizing"
+        ],
+        "snippet": "Never risk >1\u20132% of capital per trade. Prefer defined-risk structures. Size with fixed-fractional or fractional Kelly. Model risk in crashes / fat tails.",
+        "source": "OTA_SEED:Risk_Rules",
+        "keyword": "position sizing",
+        "strategy_ids": [
+          "fixed_fractional"
+        ],
+        "timestamp": "2026-07-16T15:11:00.833686+00:00",
+        "page": null
+      },
+      {
+        "section": "Risk Management",
+        "tags": [
+          "iv"
+        ],
+        "snippet": "Chapter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfittin",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "implied volatility",
+        "strategy_ids": [
+          "iron_condor",
+          "credit_spread"
+        ],
+        "timestamp": "2026-07-16T15:11:00.835498+00:00",
+        "page": null
+      },
+      {
+        "section": "Risk Management",
+        "tags": [
+          "vol_surface"
+        ],
+        "snippet": "E calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "volatility smile",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:00.835533+00:00",
+        "page": null
+      },
+      {
+        "section": "Risk Management",
+        "tags": [
+          "sizing"
+        ],
+        "snippet": "olatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "position sizing",
+        "strategy_ids": [
+          "kelly",
+          "fixed_fractional"
+        ],
+        "timestamp": "2026-07-16T15:11:00.835683+00:00",
+        "page": null
+      },
+      {
+        "section": "Risk Management",
+        "tags": [
+          "iv"
+        ],
+        "snippet": "Chapter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfittin",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "implied volatility",
+        "strategy_ids": [
+          "iron_condor",
+          "credit_spread"
+        ],
+        "timestamp": "2026-07-16T15:11:47.064596+00:00",
+        "page": null
+      },
+      {
+        "section": "Risk Management",
+        "tags": [
+          "vol_surface"
+        ],
+        "snippet": "E calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "volatility smile",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:47.064629+00:00",
+        "page": null
+      },
+      {
+        "section": "Risk Management",
+        "tags": [
+          "sizing"
+        ],
+        "snippet": "olatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "position sizing",
+        "strategy_ids": [
+          "kelly",
+          "fixed_fractional"
+        ],
+        "timestamp": "2026-07-16T15:11:47.064790+00:00",
+        "page": null
+      },
+      {
+        "section": "Risk Management",
+        "tags": [
+          "iv"
+        ],
+        "snippet": "Chapter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfittin",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "implied volatility",
+        "strategy_ids": [
+          "iron_condor",
+          "credit_spread"
+        ],
+        "timestamp": "2026-07-16T15:13:08.185828+00:00",
+        "page": null
+      },
+      {
+        "section": "Risk Management",
+        "tags": [
+          "vol_surface"
+        ],
+        "snippet": "E calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "volatility smile",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:13:08.185871+00:00",
+        "page": null
+      },
+      {
+        "section": "Risk Management",
+        "tags": [
+          "sizing"
+        ],
+        "snippet": "olatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "position sizing",
+        "strategy_ids": [
+          "kelly",
+          "fixed_fractional"
+        ],
+        "timestamp": "2026-07-16T15:13:08.186037+00:00",
+        "page": null
+      }
+    ],
+    "Python Automation": [],
+    "ML AI Pipelines": [],
+    "Data Pipelines": [],
+    "Edge Cases": [
+      {
+        "section": "Edge Cases",
+        "tags": [
+          "backtest_pitfalls"
+        ],
+        "snippet": "fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "overfitting",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:00.835718+00:00",
+        "page": null
+      },
+      {
+        "section": "Edge Cases",
+        "tags": [
+          "model_risk"
+        ],
+        "snippet": "tion sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "fat tails",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:00.835733+00:00",
+        "page": null
+      },
+      {
+        "section": "Edge Cases",
+        "tags": [
+          "backtest_pitfalls"
+        ],
+        "snippet": "fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "overfitting",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:47.064825+00:00",
+        "page": null
+      },
+      {
+        "section": "Edge Cases",
+        "tags": [
+          "model_risk"
+        ],
+        "snippet": "tion sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "fat tails",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:11:47.064841+00:00",
+        "page": null
+      },
+      {
+        "section": "Edge Cases",
+        "tags": [
+          "backtest_pitfalls"
+        ],
+        "snippet": "fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "overfitting",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:13:08.186080+00:00",
+        "page": null
+      },
+      {
+        "section": "Edge Cases",
+        "tags": [
+          "model_risk"
+        ],
+        "snippet": "tion sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "fat tails",
+        "strategy_ids": [],
+        "timestamp": "2026-07-16T15:13:08.186095+00:00",
+        "page": null
+      },
+      {
+        "section": "Edge Cases",
+        "tags": [
+          "self_improve",
+          "long_horizon",
+          "genome"
+        ],
+        "snippet": "Self-improve after 40 synthetic years: min_entry_score=70.1, min_pop=0.50, risk_per_trade=0.021, loss_trigger=0.43, use_adjustments=True, prefer_defined_risk=False. Metrics: mean_return=0.060, mean_dd=0.000, win_rate=0.765, fitness=152.11.",
+        "source": "SELF_IMPROVE_LAB",
+        "keyword": "self improve",
+        "strategy_ids": [
+          "self_improve_champion",
+          "fixed_fractional",
+          "convert_debit_spread"
+        ],
+        "timestamp": "2026-07-16T15:18:56.567664+00:00",
+        "page": null
+      },
+      {
+        "section": "Edge Cases",
+        "tags": [
+          "self_improve",
+          "long_horizon",
+          "genome"
+        ],
+        "snippet": "Self-improve after 400 synthetic years: min_entry_score=71.8, min_pop=0.50, risk_per_trade=0.020, loss_trigger=0.44, use_adjustments=True, prefer_defined_risk=False. Metrics: mean_return=0.058, mean_dd=0.000, win_rate=0.631, fitness=125.69.",
+        "source": "SELF_IMPROVE_LAB",
+        "keyword": "self improve",
+        "strategy_ids": [
+          "self_improve_champion",
+          "fixed_fractional",
+          "convert_debit_spread"
+        ],
+        "timestamp": "2026-07-16T15:19:53.463222+00:00",
+        "page": null
+      }
+    ],
+    "Source References": [],
+    "SPY 1DTE Playbook": [
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "1dte",
+          "adjustments",
+          "orb"
+        ],
+        "snippet": "SPY 1DTE: selective entry (trend + ORB/VWAP + vol filter), not every day. Losing long: primary convert to debit spread (sell OTM wing); secondary roll forward; tertiary hedge opposite; butterfly for recovery. No magic \u2014 adjustments lower breakeven / max loss, not guarantee profit. Backtest with commissions/slippage before live.",
+        "source": "OTA_SEED:SPY_1DTE_ReverseEngineer",
+        "keyword": "1dte",
+        "strategy_ids": [
+          "spy_1dte_long",
+          "convert_debit_spread",
+          "roll_forward"
+        ],
+        "timestamp": "2026-07-16T15:11:00.833690+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "1dte"
+        ],
+        "snippet": "k-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "1dte",
+        "strategy_ids": [
+          "spy_1dte_long"
+        ],
+        "timestamp": "2026-07-16T15:11:00.835604+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "orb"
+        ],
+        "snippet": "ad conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "opening range",
+        "strategy_ids": [
+          "spy_1dte_orb"
+        ],
+        "timestamp": "2026-07-16T15:11:00.835622+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "vwap"
+        ],
+        "snippet": "y adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "vwap",
+        "strategy_ids": [
+          "spy_1dte_vwap"
+        ],
+        "timestamp": "2026-07-16T15:11:00.835638+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "adjustments"
+        ],
+        "snippet": "ter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "adjustment",
+        "strategy_ids": [
+          "convert_debit_spread"
+        ],
+        "timestamp": "2026-07-16T15:11:00.835664+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "1dte"
+        ],
+        "snippet": "k-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "1dte",
+        "strategy_ids": [
+          "spy_1dte_long"
+        ],
+        "timestamp": "2026-07-16T15:11:47.064705+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "orb"
+        ],
+        "snippet": "ad conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "opening range",
+        "strategy_ids": [
+          "spy_1dte_orb"
+        ],
+        "timestamp": "2026-07-16T15:11:47.064728+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "vwap"
+        ],
+        "snippet": "y adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "vwap",
+        "strategy_ids": [
+          "spy_1dte_vwap"
+        ],
+        "timestamp": "2026-07-16T15:11:47.064746+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "adjustments"
+        ],
+        "snippet": "ter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "adjustment",
+        "strategy_ids": [
+          "convert_debit_spread"
+        ],
+        "timestamp": "2026-07-16T15:11:47.064772+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "1dte"
+        ],
+        "snippet": "k-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "1dte",
+        "strategy_ids": [
+          "spy_1dte_long"
+        ],
+        "timestamp": "2026-07-16T15:13:08.185954+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "orb"
+        ],
+        "snippet": "ad conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "opening range",
+        "strategy_ids": [
+          "spy_1dte_orb"
+        ],
+        "timestamp": "2026-07-16T15:13:08.185974+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "vwap"
+        ],
+        "snippet": "y adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "vwap",
+        "strategy_ids": [
+          "spy_1dte_vwap"
+        ],
+        "timestamp": "2026-07-16T15:13:08.185991+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "adjustments"
+        ],
+        "snippet": "ter on Monte Carlo and Black-Scholes. Implied volatility drives pricing. Debit spread conversion is the primary adjustment for losing long 1DTE calls. Position sizing with fixed fractional risk. Opening range breakout and VWAP filters. Watch for volatility smile and fat tails. Avoid overfitting in backtests.",
+        "source": "DemoBook_SPY1DTE_Notes",
+        "keyword": "adjustment",
+        "strategy_ids": [
+          "convert_debit_spread"
+        ],
+        "timestamp": "2026-07-16T15:13:08.186018+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "1dte",
+          "evolved"
+        ],
+        "snippet": "Evolved 1DTE gates from multi-century lab. Only trade when score\u226570 and POP\u226550%. Adjust losers at 43% premium loss. Prefer defined-risk structures for survival across regimes.",
+        "source": "SELF_IMPROVE_LAB",
+        "keyword": "1dte",
+        "strategy_ids": [
+          "spy_1dte_orb",
+          "spy_1dte_debit_adjust"
+        ],
+        "timestamp": "2026-07-16T15:18:56.567817+00:00",
+        "page": null
+      },
+      {
+        "section": "SPY 1DTE Playbook",
+        "tags": [
+          "1dte",
+          "evolved"
+        ],
+        "snippet": "Evolved 1DTE gates from multi-century lab. Only trade when score\u226572 and POP\u226550%. Adjust losers at 44% premium loss. Prefer defined-risk structures for survival across regimes.",
+        "source": "SELF_IMPROVE_LAB",
+        "keyword": "1dte",
+        "strategy_ids": [
+          "spy_1dte_orb",
+          "spy_1dte_debit_adjust"
+        ],
+        "timestamp": "2026-07-16T15:19:53.463239+00:00",
+        "page": null
+      }
+    ]
+  },
+  "strategy_rules": {
+    "convert_debit_spread": {
+      "when": "long_option_loss_pct > 0.4441950375503746",
+      "action": "CONVERT_TO_DEBIT_SPREAD",
+      "priority": 1,
+      "source": "SELF_IMPROVE",
+      "enabled": true
+    },
+    "roll_forward": {
+      "when": "time_left_years < 0.1 and pnl < 0",
+      "action": "ROLL_FORWARD",
+      "priority": 2,
+      "source": "OTA_SEED"
+    },
+    "fixed_fractional": {
+      "risk_per_trade": 0.020087157743819754,
+      "action": "SIZE_BY_RISK",
+      "source": "SELF_IMPROVE",
+      "priority": 1
+    },
+    "spy_1dte_orb": {
+      "min_setup_score": 71.76839686895083,
+      "min_pop": 0.5042120796282679,
+      "filters": [
+        "ema_trend",
+        "orb",
+        "atr_momentum"
+      ],
+      "source": "SELF_IMPROVE"
+    },
+    "iron_condor": {
+      "action": "IRON_CONDOR",
+      "source": "DemoBook_SPY1DTE_Notes",
+      "keyword": "implied volatility",
+      "priority": 50
+    },
+    "credit_spread": {
+      "action": "CREDIT_SPREAD",
+      "source": "DemoBook_SPY1DTE_Notes",
+      "keyword": "implied volatility",
+      "priority": 50
+    },
+    "debit_spread": {
+      "action": "DEBIT_SPREAD",
+      "source": "DemoBook_SPY1DTE_Notes",
+      "keyword": "debit spread",
+      "priority": 50
+    },
+    "bull_call": {
+      "action": "BULL_CALL",
+      "source": "DemoBook_SPY1DTE_Notes",
+      "keyword": "debit spread",
+      "priority": 50
+    },
+    "spy_1dte_long": {
+      "action": "SPY_1DTE_LONG",
+      "source": "DemoBook_SPY1DTE_Notes",
+      "keyword": "1dte",
+      "priority": 50
+    },
+    "spy_1dte_vwap": {
+      "action": "SPY_1DTE_VWAP",
+      "source": "DemoBook_SPY1DTE_Notes",
+      "keyword": "vwap",
+      "priority": 50
+    },
+    "kelly": {
+      "action": "KELLY",
+      "source": "DemoBook_SPY1DTE_Notes",
+      "keyword": "position sizing",
+      "priority": 50
+    },
+    "spy_bull_put_credit": {
+      "action": "Bull Put Credit Spread",
+      "when": "mildly bullish or neutral, IV not crushed",
+      "how": "Sell put ~0.15\u20130.30 delta; buy lower put $1\u20135 wide. Max loss = width \u2212 credit.",
+      "source": "SPY_SAFE_CHEAP_RESEARCH",
+      "priority": 10
+    },
+    "spy_bear_call_credit": {
+      "action": "Bear Call Credit Spread",
+      "when": "mildly bearish or range day",
+      "how": "Sell call ~0.15\u20130.30 delta; buy higher call $1\u20135 wide.",
+      "source": "SPY_SAFE_CHEAP_RESEARCH",
+      "priority": 10
+    },
+    "spy_iron_condor": {
+      "action": "Iron Condor",
+      "when": "low expected move / high IV rank with range bias",
+      "how": "Bull put + bear call; short strikes OTM both sides",
+      "source": "SPY_SAFE_CHEAP_RESEARCH",
+      "priority": 10
+    },
+    "spy_1dte_debit_adjust": {
+      "action": "1DTE Long \u2192 Debit Spread Adjust",
+      "when": "long ATM call/put down \u226540% premium",
+      "how": "Sell OTM wing to convert to debit spread; lowers BE and risk",
+      "source": "SPY_SAFE_CHEAP_RESEARCH",
+      "priority": 10
+    },
+    "self_improve_champion": {
+      "action": "APPLY_GENOME",
+      "genome": {
+        "min_entry_score": 71.76839686895083,
+        "min_pop": 0.5042120796282679,
+        "max_strikes": 4,
+        "atr_momentum_weight": 20.0,
+        "risk_per_trade": 0.020087157743819754,
+        "max_contracts": 7,
+        "commission_per_contract": 0.65,
+        "slippage_per_share": 0.05,
+        "loss_trigger_pct": 0.4441950375503746,
+        "prefer_defined_risk": false,
+        "use_adjustments": true,
+        "profit_take_pct": 0.4830909921150658,
+        "default_iv": 0.10725248725866142,
+        "r": 0.05,
+        "min_option_premium": 0.15,
+        "max_option_premium": 15.0,
+        "atm_band": 12.387542743689096,
+        "generation": 4,
+        "fitness": 125.68964072657126,
+        "notes": "validated 400y fit=125.69 mean_ret=0.058"
+      },
+      "source": "SELF_IMPROVE",
+      "priority": 0
+    }
+  }
+}

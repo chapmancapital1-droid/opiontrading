@@ -103,3 +103,50 @@ describe("empire rule gates", () => {
     expect(gates.some((g) => g.code === "EMPIRE_PHASE_BLOCK")).toBe(true);
   });
 });
+
+describe("seed zero-size coach purity (W1-B03)", () => {
+  it("always populates coach when size is 0 — maxLoss 150 @ equity 500", () => {
+    // Hard ceiling @ $500 seed ≈ $2.50 (0.5% target). Typical vertical 1-lot is $25–$200+ → correctly 0.
+    // Honesty > fake size: seed often sizes 0; coach must teach, not invent contracts.
+    const account = seedAccount(500);
+    const sized = sizePosition({
+      account,
+      maxLossPerContract: 150,
+      empireMode: true,
+    });
+    expect(sized.contracts).toBe(0);
+    const coach = zeroSizeCoach({
+      equity: 500,
+      maxLossPerContract: 150,
+      strategyId: "bull_call_debit",
+    });
+    expect(coach).toMatch(/size is 0/i);
+    expect(coach).toMatch(/500/);
+    expect(coach).toMatch(/150/);
+  });
+
+  it("sizes ≥1 only when 1-lot max loss fits hard ceiling (~$2.50 at $500)", () => {
+    // Micro structure fixture: $2 max loss ≤ $2.50 ceiling → 1 contract
+    const sized = sizePosition({
+      account: seedAccount(500),
+      maxLossPerContract: 2,
+      empireMode: true,
+    });
+    expect(sized.contracts).toBeGreaterThanOrEqual(1);
+  });
+
+  it("seed phase forces income_preservation growth mode", () => {
+    expect(getEmpirePhaseLimits(500).growthMode).toBe("income_preservation");
+    expect(seedAccount(500).growthMode).toBe("income_preservation");
+    expect(seedAccount(4999).growthMode).toBe("income_preservation");
+  });
+
+  it("CSP remains blocked; preferred verticals not blocked at seed", () => {
+    expect(empireBlocksStrategy("cash_secured_put", 500)).toBe(true);
+    expect(empireBlocksStrategy("bull_call_debit", 500)).toBe(false);
+    expect(empireBlocksStrategy("bear_put_debit", 500)).toBe(false);
+    const prefs = getEmpirePhaseLimits(500).preferredStrategyIds;
+    expect(prefs).toContain("bull_call_debit");
+    expect(prefs).not.toContain("cash_secured_put");
+  });
+});

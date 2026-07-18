@@ -13,11 +13,23 @@
  */
 
 import { PORTFOLIO_POLICY } from "@/knowledge/portfolioPolicy";
-import { empirePrefersStrategy, getEmpirePhaseLimits } from "@/knowledge/empirePolicy";
+import {
+  empirePrefersStrategy,
+  getEmpirePhaseLimits,
+  zeroSizeCoach,
+} from "@/knowledge/empirePolicy";
 import { STRATEGY_RULES } from "@/knowledge/strategyRules";
 import type { StrategyRule } from "@/knowledge/types";
 import type { MarketContext } from "@/lib/marketContext";
 import type { NciTaSnapshot } from "@/indicators/nciTa";
+import {
+  buildSpyAdvancedPlaybook,
+  isSpySymbol,
+  spyAdvancedInstructionLines,
+  spyBiasFromContext,
+  SPY_STRATEGY_BOOST,
+} from "@/knowledge/spyPlaybook";
+import { rhHistoryScoreAdjust } from "@/knowledge/rhHistoryLessons";
 import {
   allPassed,
   evaluateAccountGates,
@@ -100,6 +112,24 @@ function scoreRule(
       score += 0.04;
       reasons.push(`${ctx.symbol} is in wheel universe`);
     }
+  }
+
+  // SPY special strategy boost + advanced-instruction flags
+  if (isSpySymbol(ctx.symbol)) {
+    const boost = SPY_STRATEGY_BOOST[rule.strategyId] ?? 0.05;
+    score += boost;
+    reasons.push(
+      boost >= 0.12
+        ? `SPY playbook: ${rule.strategyId} is a preferred SPY structure (+${(boost * 100).toFixed(0)} pts)`
+        : "SPY playbook: liquid ETF options — defined-risk preferred"
+    );
+  }
+
+  // Personal Robinhood history soft coach (wins/losses patterns)
+  const rh = rhHistoryScoreAdjust(ctx.symbol, rule.strategyId);
+  if (rh.delta !== 0 || rh.reasons.length) {
+    score += rh.delta;
+    reasons.push(...rh.reasons);
   }
 
   // ---- NCI Complete Trading Assistant live bias (chart language) ----
@@ -200,10 +230,15 @@ function robinhoodNextStep(rule: StrategyRule, contracts: number, symbol: string
       PORTFOLIO_POLICY.disclaimer
     );
   }
-  return (
+  const base =
     `In Robinhood: open ${symbol} options chain → build ${rule.name} ` +
     `(${contracts} contract${contracts > 1 ? "s" : ""}) → verify strikes/expiry/limits against OptionScope checklist → ` +
-    `submit only after reviewing max loss and collateral. ${PORTFOLIO_POLICY.disclaimer}`
+    `submit only after reviewing max loss and collateral. ${PORTFOLIO_POLICY.disclaimer}`;
+  if (!isSpySymbol(symbol)) return base;
+  return (
+    base +
+    " SPY advanced: prefer multi-leg defined-risk; for 1DTE use nearest 0–2 DTE expiry; " +
+    "if long option −40% premium → convert to debit spread (sell OTM wing) before panic flat."
   );
 }
 
@@ -221,13 +256,39 @@ export function runTradingBrain(input: SelectInput): BrainDecision {
 
   const candidates = evaluateCandidates(context, account, STRATEGY_RULES, input.nciTa);
   const eligible = candidates.filter((c) => c.eligible);
+  const empPhase = getEmpirePhaseLimits(account.equity);
 
   eligible.sort((a, b) => {
+    // Seed: prefer empire preferred micro structures over growth-primary CSP-style engines
+    if (empPhase.phase === "seed") {
+      const aPref = empirePrefersStrategy(a.rule.strategyId, account.equity) ? 1 : 0;
+      const bPref = empirePrefersStrategy(b.rule.strategyId, account.equity) ? 1 : 0;
+      if (aPref !== bPref) return bPref - aPref;
+      return b.matchScore - a.matchScore;
+    }
     if (preferGrowth && a.rule.growthPrimary !== b.rule.growthPrimary) {
       return a.rule.growthPrimary ? -1 : 1;
     }
     return b.matchScore - a.matchScore;
   });
+
+  const spy = isSpySymbol(context.symbol);
+  const spyBias = spy
+    ? spyBiasFromContext({
+        spotTrend: context.spotTrend,
+        newsSentiment: context.newsSentiment,
+        ...(input.nciTa?.fireBuy != null ? { nciFireBuy: input.nciTa.fireBuy } : {}),
+        ...(input.nciTa?.fireSell != null ? { nciFireSell: input.nciTa.fireSell } : {}),
+      })
+    : "neutral";
+  const spyPlaybook = spy
+    ? buildSpyAdvancedPlaybook({
+        spot: context.spot,
+        bias: spyBias,
+        atmIv: context.atmIv,
+        ivTrend: context.ivTrend,
+      })
+    : null;
 
   const recommendations: BrainRecommendation[] = [];
 
@@ -247,6 +308,43 @@ export function runTradingBrain(input: SelectInput): BrainDecision {
         riskDollars = sized.riskDollars;
       }
 
+      const matchReasons = [...c.matchReasons];
+      let coach: string | null = null;
+      if (contracts < 1 && maxLoss != null && maxLoss > 0) {
+        matchReasons.push(
+          `Infeasible at equity $${account.equity.toFixed(0)}: 1-lot max loss $${maxLoss.toFixed(2)} exceeds empire hard ceiling`
+        );
+        coach = zeroSizeCoach({
+          equity: account.equity,
+          maxLossPerContract: maxLoss,
+          strategyId: c.rule.strategyId,
+        });
+      }
+
+      const advancedInstructions =
+        spy && spyPlaybook
+          ? spyAdvancedInstructionLines(c.rule.strategyId, spyPlaybook)
+          : undefined;
+
+      if (advancedInstructions?.length) {
+        matchReasons.push(...advancedInstructions.slice(0, 2));
+      }
+
+      // SPY: blend entry/exit with playbook adjustment ladder
+      const entryRules = spy && spyPlaybook
+        ? [
+            ...c.rule.entryRules,
+            ...spyPlaybook.whenToTrade.slice(0, 2),
+            `SPY bias ${spyPlaybook.bias}: use ≤4 high-POP strikes from SPY tab`,
+          ]
+        : c.rule.entryRules;
+      const exitRules = spy && spyPlaybook
+        ? [
+            ...c.rule.exitRules,
+            ...spyPlaybook.adjustmentLadder.slice(0, 3),
+          ]
+        : c.rule.exitRules;
+
       recommendations.push({
         rank: recommendations.length + 1,
         ruleId: c.rule.id,
@@ -254,20 +352,32 @@ export function runTradingBrain(input: SelectInput): BrainDecision {
         name: c.rule.name,
         portfolioRole: c.rule.portfolioRole,
         matchScore: c.matchScore,
-        matchReasons: c.matchReasons,
+        matchReasons,
         growthPrimary: c.rule.growthPrimary,
         suggestedContracts: contracts,
         maxLossPerContract: maxLoss,
         riskDollars,
-        entryRules: c.rule.entryRules,
-        exitRules: c.rule.exitRules,
+        entryRules,
+        exitRules,
         bookSource: c.rule.bookSource,
         robinhoodNextStep: robinhoodNextStep(c.rule, contracts, context.symbol),
+        zeroSizeCoach: coach,
+        ...(advancedInstructions ? { advancedInstructions } : {}),
       });
     }
   }
 
   const ta = input.nciTa ?? null;
+  const spyNotes =
+    spy && spyPlaybook
+      ? [
+          `SPY ADVANCED: ${spyPlaybook.summary}`,
+          `SPY when: ${spyPlaybook.whenToTrade[0]}`,
+          `SPY adjust: ${spyPlaybook.adjustmentLadder[0]}`,
+          "Open Command → SPY tab for full strike guides + session checklist",
+        ]
+      : [];
+
   return {
     version: PORTFOLIO_POLICY.version,
     broker: "robinhood",
@@ -281,6 +391,7 @@ export function runTradingBrain(input: SelectInput): BrainDecision {
     haltTrading,
     haltReason: haltTrading && halt ? `${halt.code}: ${halt.message}` : null,
     recommendations,
+    spyPlaybook,
     nciTa: ta
       ? {
           masterDir: ta.masterDir,
@@ -305,6 +416,7 @@ export function runTradingBrain(input: SelectInput): BrainDecision {
     disclaimer: PORTFOLIO_POLICY.disclaimer,
     marketNotes: [
       ...context.notes,
+      ...spyNotes,
       ...(ta?.notes ?? []),
       ...(ta
         ? [

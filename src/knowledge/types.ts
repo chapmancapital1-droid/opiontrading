@@ -35,6 +35,8 @@ export type ExitRuleId =
   | "profit_50pct_max"
   | "profit_25pct_max"
   | "dte_21_close_or_roll"
+  | "dte_7_close_or_roll"
+  | "friday_roll_or_close"
   | "stop_2x_credit"
   | "stop_1x_debit"
   | "assignment_then_cc"

@@ -14,14 +14,22 @@ export function OrderChecklistCard({ checklist, onSave }: { checklist: OrderChec
 
   return (
     <div className="os-panel-accent p-5 print:border-0">
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
         <div>
-          <div className="os-kicker">Own the decision</div>
-          <h3 className="text-base font-medium m-0 mt-0.5">Order checklist (manual entry)</h3>
+          <div className="os-kicker">Own the decision · climax CTA</div>
+          <h3 className="text-base font-medium m-0 mt-0.5">Order checklist (manual Robinhood entry)</h3>
+          <p className="text-xs text-[var(--text-secondary)] m-0 mt-1">
+            Copy into Robinhood yourself. This app never places orders.
+          </p>
         </div>
-        <span className="os-badge os-badge-accent">
-          {checklist.contracts}× {checklist.strategyName}
-        </span>
+        <div className="flex flex-wrap gap-1.5 items-center">
+          <span className="os-badge os-badge-accent">
+            {checklist.contracts}× {checklist.strategyName}
+          </span>
+          {checklist.contracts < 1 && (
+            <span className="os-badge os-badge-warn">SIZE 0 — do not enter</span>
+          )}
+        </div>
       </div>
 
       <dl className="text-sm space-y-1">

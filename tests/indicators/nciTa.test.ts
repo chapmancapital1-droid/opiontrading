@@ -38,6 +38,9 @@ describe("computeNciTa — Pine language port", () => {
     });
     expect(snap.version).toBe("NCI-TA-2.0");
     expect(snap.symbol).toBe("SPY");
+    expect(snap.voterBreakdown?.length).toBe(15);
+    expect(snap.portBreakdown?.length).toBe(11);
+    expect(snap.layerBreakdown?.length).toBe(5);
     expect(snap.sbBull + snap.sbBear).toBe(24);
     expect(snap.master).toBeGreaterThanOrEqual(-1);
     expect(snap.master).toBeLessThanOrEqual(1);

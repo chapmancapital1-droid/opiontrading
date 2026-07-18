@@ -369,11 +369,40 @@ export function computeNciTa(input: ComputeNciTaInput): NciTaSnapshot {
           : 0
       : 0;
   const vFer = fer >= cfg.minFer ? (c[i1]! > c[Math.max(0, i1 - 5)]! ? 1 : -1) : 0;
-  const voters = [
-    vDma, vStoch, vDiv, vCandle, vAtr, vHtf, vRobot, vVol, vRsis, vMacd, vDrange, vMtf, vTtf, vVegas, vFer,
+  const voterDefs: { id: string; name: string; vote: 1 | -1 | 0 }[] = [
+    { id: "dma", name: "DMA / SMA21 break", vote: vDma as 1 | -1 | 0 },
+    { id: "stoch", name: "Stochastic", vote: vStoch as 1 | -1 | 0 },
+    { id: "div", name: "RSI divergence", vote: vDiv as 1 | -1 | 0 },
+    { id: "candle", name: "Candle pattern", vote: vCandle as 1 | -1 | 0 },
+    { id: "atr", name: "ATR expansion", vote: vAtr as 1 | -1 | 0 },
+    { id: "htf", name: "HTF H1 EMA", vote: vHtf as 1 | -1 | 0 },
+    { id: "robot", name: "Robotrick MA", vote: vRobot as 1 | -1 | 0 },
+    { id: "vol", name: "Volume confirm", vote: vVol as 1 | -1 | 0 },
+    { id: "rsi_slope", name: "RSI slope", vote: vRsis as 1 | -1 | 0 },
+    { id: "macd", name: "MACD cross", vote: vMacd as 1 | -1 | 0 },
+    { id: "day_range", name: "Day range pos", vote: vDrange as 1 | -1 | 0 },
+    { id: "mtf", name: "MTF EMA stack", vote: vMtf as 1 | -1 | 0 },
+    { id: "ttf", name: "TTF pressure", vote: vTtf as 1 | -1 | 0 },
+    { id: "vegas", name: "Vegas tunnel H4", vote: vVegas as 1 | -1 | 0 },
+    { id: "fer", name: "FER energy", vote: vFer as 1 | -1 | 0 },
   ];
+  const voters = voterDefs.map((v) => v.vote);
   const voterBull = voters.filter((x) => x === 1).length;
   const voterBear = voters.filter((x) => x === -1).length;
+
+  const portDefs: { id: string; name: string; vote: 1 | -1 | 0 }[] = [
+    { id: "p1", name: "Donchian break", vote: p1 as 1 | -1 | 0 },
+    { id: "p2", name: "Kinetic thrust", vote: p2 as 1 | -1 | 0 },
+    { id: "p3", name: "PRISM dual ST", vote: p3 as 1 | -1 | 0 },
+    { id: "p4", name: "ADX trend DI", vote: p4 as 1 | -1 | 0 },
+    { id: "p5", name: "EMA ribbon", vote: p5 as 1 | -1 | 0 },
+    { id: "p6", name: "H4 vs EMA20", vote: p6 as 1 | -1 | 0 },
+    { id: "p7", name: "Daily pivot", vote: p7 as 1 | -1 | 0 },
+    { id: "p8", name: "VWAP side", vote: p8 as 1 | -1 | 0 },
+    { id: "p9", name: "Volume thrust", vote: p9 as 1 | -1 | 0 },
+    { id: "p10", name: "Candle eng/pin", vote: p10 as 1 | -1 | 0 },
+    { id: "p11", name: "H4 EMA21/55", vote: p11 as 1 | -1 | 0 },
+  ];
 
   // --- Gates & master ---
   const sessionOk = input.sessionOk ?? true;
@@ -381,6 +410,16 @@ export function computeNciTa(input: ComputeNciTaInput): NciTaSnapshot {
   const gateFer = fer >= cfg.minFer;
   const gateKin = kinetic >= cfg.minKinetic;
   const allGatesPass = gateAdx && gateFer && gateKin && sessionOk && abcOk;
+  const gateDetail = {
+    adx: gateAdx,
+    fer: gateFer,
+    kinetic: gateKin,
+    session: sessionOk,
+    abc: abcOk,
+    minAdx: cfg.minAdx,
+    minFer: cfg.minFer,
+    minKinetic: cfg.minKinetic,
+  };
   const fullOkBuy = compOkBuy && cbOkBuy && portsOkBuy && allGatesPass;
   const fullOkSell = compOkSell && cbOkSell && portsOkSell && allGatesPass;
 
@@ -489,6 +528,7 @@ export function computeNciTa(input: ComputeNciTaInput): NciTaSnapshot {
     abcStage,
     allGatesPass,
     sessionOk,
+    gateDetail,
     trigger,
     fireBuy,
     fireSell,
@@ -505,5 +545,59 @@ export function computeNciTa(input: ComputeNciTaInput): NciTaSnapshot {
     },
     notes,
     degraded,
+    voterBreakdown: voterDefs.map((v) => ({
+      id: v.id,
+      name: v.name,
+      vote: v.vote,
+      layer: "voter" as const,
+    })),
+    portBreakdown: portDefs.map((p) => ({
+      id: p.id,
+      name: p.name,
+      vote: p.vote,
+      layer: "port" as const,
+    })),
+    layerBreakdown: [
+      {
+        id: "superbias",
+        name: "SuperBias 24",
+        bull: sbBull,
+        bear: sbBear,
+        total: 24,
+        score: Number(msSb.toFixed(4)),
+      },
+      {
+        id: "companion",
+        name: "Companion 7",
+        bull: companionBuy,
+        bear: companionSell,
+        total: 7,
+        score: Number(msCo.toFixed(4)),
+      },
+      {
+        id: "confluence",
+        name: "Confluence 6",
+        bull: cbBull,
+        bear: cbBear,
+        total: 6,
+        score: Number(msCb.toFixed(4)),
+      },
+      {
+        id: "ports",
+        name: "SuperBrain ports 11",
+        bull: portBull,
+        bear: portBear,
+        total: 11,
+        score: Number(msPorts.toFixed(4)),
+      },
+      {
+        id: "voters",
+        name: "Direction voters 15",
+        bull: voterBull,
+        bear: voterBear,
+        total: 15,
+        score: Number(msVoters.toFixed(4)),
+      },
+    ],
   };
 }

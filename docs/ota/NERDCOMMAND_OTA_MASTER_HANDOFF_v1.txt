@@ -1,0 +1,363 @@
+================================================================================
+NERDCOMMAND OPTION TRADING ASSISTANT (OTA) — MASTER HANDOFF
+Version: 1.0 | July 2026
+Owner: Michael Chapman (Nerd Command Studios / GangsterNerds LLC)
+Audience: SuperGrok Dev Team / Grok Build CLI / Hermes Architect Pipeline
+Repo workspace: C:\Users\Michael Chapman\opiontrading
+================================================================================
+
+================================================================================
+SECTION 1 — INSTRUCTIONS FOR THE AI / DEV TEAM (READ FIRST)
+================================================================================
+
+1.1 OWNER GOAL (do not dilute)
+Michael is building a production-grade, modular Option Trading Agent — a
+"trading brain" that:
+
+  A) Prices options with rigorous Black-Scholes + Monte Carlo (+ binomial /
+     American paths over time).
+  B) Recommends trades on stocks/options with full rationale (math + economic
+     intuition), risk-first sizing, and explainability.
+  C) SELF-IMPROVES by ingesting option trading books/PDFs: auto-detects
+     keywords → maps into a fixed hierarchical knowledge catalog → updates
+     strategy rules the decision/adjustment engines can use — WITHOUT requiring
+     a full manual rewrite of the agent every time a book is added.
+  D) Extends into SPY 1DTE / 0DTE selective-entry + professional ADJUSTMENT
+     playbooks (debit-spread conversion, rolls, hedges) that are TRANSPARENT
+     and BACKTESTABLE — not black-box course marketing.
+  E) Integrates with the existing OptionScope TypeScript product
+     (Next.js dashboards, domain engines, knowledge catalog under src/knowledge)
+     and broader NERDCOMMAND systems (NCI brain, EAs, pipelines).
+
+1.2 PRODUCT TRUTH (empire constraints)
+  - Personal companion / paper-first. Never claim guaranteed profits.
+  - Adjustments reduce breakeven / max loss; they do NOT magic-print winners.
+  - Synthetic backtests are for plumbing; real SPY data + commissions/slippage
+    are required before any live risk.
+  - TypeScript domain (`src/domain/*`) is the live UI source of truth for BS,
+    binomial, payoff, Monte Carlo strategy P/L. Python OTA is the research /
+    pipeline / ingestion / backtest / agent brain that can feed rules upstream.
+
+1.3 WHAT YOU ARE HANDED
+  docs/ota/NERDCOMMAND_OTA_MASTER_HANDOFF_v1.txt   ← this file
+  python/ota/                                      ← runnable Python package
+    pricing.py       Black-Scholes + MC (antithetic, multi-step)
+    knowledge.py     KnowledgeBase + auto-ingestion (keyword map)
+    decision.py      Edge detection + news tilt + confidence
+    portfolio.py     Cash / size / positions
+    spy_1dte.py      Entry score + AdjustmentEngine
+    backtester.py    SPY 1DTE backtester (synthetic sessions default)
+    agent.py         NERDCOMMAND_OTA orchestrator
+    data/            brain_catalog.json (created on first run)
+  python/requirements-ota.txt
+  Existing OptionScope TS:
+    src/domain/montecarlo.ts, blackScholes.ts, binomial.ts, payoff.ts
+    src/knowledge/* + scripts/ingest_option_pdfs.py (PDF ingest already exists)
+
+1.4 SUCCESS CRITERIA (v0.1 done when)
+  [x] MC European call/put converges toward BS
+  [x] Agent demo runs end-to-end (price → recommend → portfolio → backtest)
+  [x] Ingest text/PDF keywords → catalog JSON → strategy_rules grow
+  [x] SPY 1DTE entry score + adjustment suggestions coded
+  [x] Backtester reports expectancy, win rate, PF, max DD
+  [ ] Real SPY bars + option marks wired
+  [ ] pdfplumber full-library re-ingest into Python brain_catalog
+  [ ] Sync new strategy_rules into TS selector / empirePolicy
+  [ ] Paper broker hooks (Alpaca already partially in OptionScope)
+
+1.5 HOW TO WORK WITH MICHAEL
+  - Prefer: build → run demo → show metrics JSON → ask for next module.
+  - Keep risk-first language; no hype.
+  - When he adds books: drop PDFs into a library path and run ingest.
+  - Dual-stack: improve Python OTA AND keep TS domain tests green
+    (`pnpm test` in repo root).
+
+
+================================================================================
+SECTION 2 — BRAIN PLAN / KNOWLEDGE CATALOG STRUCTURE
+================================================================================
+
+2.1 FIXED SECTIONS (stable IDs — append entries, do not rename casually)
+  Core Foundations
+  Numerical Methods
+  Trading Strategies
+  Risk Management
+  Python Automation
+  ML AI Pipelines
+  Data Pipelines
+  Edge Cases
+  Source References
+  SPY 1DTE Playbook
+
+2.2 ENTRY SHAPE (JSON)
+  {
+    "section": "Numerical Methods",
+    "tags": ["monte_carlo", "variance_reduction"],
+    "snippet": "…extracted or seeded logic…",
+    "source": "BookTitle_or_path",
+    "keyword": "monte carlo",
+    "strategy_ids": ["convert_debit_spread"],
+    "timestamp": "ISO-8601",
+    "page": null
+  }
+
+2.3 STRATEGY RULES (machine-actionable)
+  strategy_rules: {
+    "convert_debit_spread": {
+      "when": "long_option_loss_pct > 0.40",
+      "action": "CONVERT_TO_DEBIT_SPREAD",
+      "priority": 1,
+      "source": "…"
+    }
+  }
+  DecisionEngine / AdjustmentEngine SHOULD consult these rules when extended.
+
+2.4 AUTO-INGESTION RULES
+  Text/PDF → lowercase scan against KEYWORD_MAP in knowledge.py
+  Match → extract ~400-char window → map to section + tags + strategy_ids
+  Append + save brain_catalog.json
+  Dev upgrade path:
+    1. Use pdfplumber (see scripts/ingest_option_pdfs.py)
+    2. Optional LLM summarization for scanned/image PDFs
+    3. Merge into src/knowledge/catalog/ingested/* for UI Library search
+    4. compile_ingest_rules.mjs → TS strategy seeds
+
+2.5 KEYWORD → SECTION (summary — full list in knowledge.py)
+  black-scholes, GBM, put-call parity     → Core Foundations
+  monte carlo, binomial, longstaff        → Numerical Methods
+  debit/credit spread, iron condor, …     → Trading Strategies
+  IV, VaR, sizing, drawdown               → Risk Management
+  0dte, 1dte, ORB, VWAP, roll, adjust     → SPY 1DTE Playbook
+  RL, feature eng, mlflow                 → ML AI Pipelines
+  overfitting, fat tails, liquidity       → Edge Cases
+
+
+================================================================================
+SECTION 3 — ARCHITECTURE OVERVIEW
+================================================================================
+
+  ┌──────────────────┐    ┌─────────────────┐    ┌──────────────────┐
+  │ Data (bars,      │───▶│ Pricing BS + MC │───▶│ DecisionEngine   │
+  │ chain, news)     │    │ Greeks          │    │ edge + sentiment │
+  └──────────────────┘    └─────────────────┘    └────────┬─────────┘
+                                                           │
+  ┌──────────────────┐    ┌─────────────────┐             ▼
+  │ Book/PDF ingest  │───▶│ KnowledgeBase   │───▶  Portfolio + size
+  │ keyword auto-map │    │ strategy_rules  │───▶  AdjustmentEngine
+  └──────────────────┘    └─────────────────┘───▶  SPY1DTE entry filter
+                                                           │
+                                                           ▼
+                                                   Backtester / logs / JSON
+
+OptionScope UI (TS) already has:
+  Trade Lab, Compare, Command dashboard, domain MC/BS/payoff/Greeks,
+  brain selector, PDF catalog search.
+
+
+================================================================================
+SECTION 4 — FULL PYTHON PACKAGE (LOCATION + HOW TO RUN)
+================================================================================
+
+Path:  opiontrading/python/ota/
+
+Install (from repo):
+  pip install -r python/requirements-ota.txt
+
+Run demo:
+  cd "C:\Users\Michael Chapman\opiontrading\python"
+  python -m ota
+
+Or:
+  python -c "from ota.agent import NERDCOMMAND_OTA; NERDCOMMAND_OTA().run_demo()"
+
+Ingest a book:
+  from ota.agent import NERDCOMMAND_OTA
+  a = NERDCOMMAND_OTA()
+  print(a.ingest_new_book(r"C:\path\to\options_book.pdf", "Crack_BS"))
+
+Price + recommend:
+  a.price(S0=100, X=100, T=0.5, r=0.05, sigma=0.3)
+  a.recommend(S0=100, X=100, T=0.5, r=0.05, sigma=0.3,
+              market_price=10.5, news_sentiment=0.2, option_type="call")
+
+Backtest:
+  print(a.backtest_spy_1dte(n_days=150, seed=11))
+
+Monte Carlo API (matches classic handoff snippet):
+  from ota.pricing import monte_carlo_european_call, black_scholes
+  mc, err, sample = monte_carlo_european_call(100, 100, 0.5, 0.05, 0.30)
+  bs = black_scholes(100, 100, 0.5, 0.05, 0.30, "call")
+
+
+================================================================================
+SECTION 5 — MONTE CARLO SPEC (NUMERICAL METHODS)
+================================================================================
+
+Risk-neutral GBM:
+  dS = (r − q) S dt + σ S dW
+Exact one-step terminal:
+  S_T = S0 * exp( (μ − ½σ²)T + σ√T Z ),  Z ~ N(0,1)
+European call payoff: max(S_T − K, 0); put: max(K − S_T, 0)
+Price = e^{−rT} mean(payoffs)
+std_err = e^{−rT} std(payoffs) / √N   (or on discounted samples)
+Antithetic: pair Z and −Z when steps=1
+Multi-step: cumsum of increments (path-dependent / charts)
+Convergence: abs(MC − BS) → 0 as N → ∞
+
+Also implemented in TypeScript: src/domain/montecarlo.ts
+  runMonteCarlo (strategy P/L)
+  monteCarloEuropean (pricing vs BS)
+  simulateGbmPaths
+
+
+================================================================================
+SECTION 6 — SPY 1DTE SYSTEM (REVERSE-ENGINEERED PLAYBOOK)
+================================================================================
+
+6.1 Marketing courses often claim "adjustment turns losers to BE/profit".
+    Real mechanics (ranked likelihood):
+      1. Convert long option → debit spread (sell OTM wing)  ★★★★★
+      2. Average down (dangerous — doubles risk)
+      3. Roll forward to next DTE
+      4. Hedge with opposite option (strangle/straddle)
+      5. Butterfly / broken-wing recovery structures
+
+6.2 Our coded behavior
+  EntryFilter score 0–100:
+    trend vs EMA20 (40), ORB / ATR momentum (up to 30), IV rank (up to 20),
+    range liquidity (10). Trade only if score ≥ 70 and direction clear.
+  AdjustmentEngine:
+    loss ≥ 40% of premium → CONVERT_TO_DEBIT_SPREAD
+    near expiry + loss → ROLL_FORWARD
+    moderate loss + vega → HEDGE_OPPOSITE_WING
+    +50% premium → TAKE_PARTIAL_PROFIT
+
+6.3 Backtester honesty
+  Default data = synthetic GBM sessions.
+  Metrics always include commissions + slippage params.
+  DO NOT ship expectancy claims from synthetic alone.
+
+
+================================================================================
+SECTION 7 — EXPANSION ROADMAP (ORDERED)
+================================================================================
+
+P0  Keep demo green; expand keyword map as books arrive
+P1  Wire real SPY 1m/5m bars (yfinance / Polygon / OpenBB) into backtester
+P2  pdfplumber batch ingest of Michael's book libraries (see drive map docs)
+P3  Sync strategy_rules → src/knowledge + selector
+P4  Path-dependent MC (Asian, barrier); Longstaff-Schwartz American
+P5  Greeks finite-difference / pathwise on MC
+P6  News NLP sentiment (replace scalar news_sentiment)
+P7  MLflow experiment logging for MC params / backtests
+P8  Paper trading via existing Alpaca hooks in OptionScope
+P9  Optional MT4/EA signal export (file or ZMQ)
+P10 UI panels for MC distribution + adjustment suggestions in Trade Lab
+
+
+================================================================================
+SECTION 8 — MAPPING TO EXISTING OPTIONSCOPE (DO NOT FORK BLINDLY)
+================================================================================
+
+Python OTA                         TypeScript OptionScope
+-------------------------------    --------------------------------
+pricing.black_scholes              src/domain/blackScholes.ts
+pricing.monte_carlo_european       src/domain/montecarlo.ts (monteCarloEuropean)
+knowledge / KEYWORD_MAP            scripts/ingest_option_pdfs.py + catalog/
+decision / portfolio               src/brain/* selector, portfolio, riskGates
+spy_1dte adjustments               NEW — add TS module + Lab panel later
+backtester                         NEW — keep Python first; port metrics later
+
+When adding formulas: implement in TS domain + tests if the UI must use them;
+keep Python for research speed and book ingestion pipelines.
+
+
+================================================================================
+SECTION 9 — SEED BRAIN LOGIC (ALWAYS PRESENT)
+================================================================================
+
+- Risk-neutral pricing; compare BS vs MC for robustness.
+- Never risk > 1–2% capital per trade (default risk_tolerance=0.02).
+- Prefer defined-risk when adjusting losers (debit spreads).
+- Selective 1DTE entry — not every day.
+- Log every recommendation with params, edge, confidence, knowledge hits.
+- Model breaks in crashes / fat tails / liquidity droughts.
+
+
+================================================================================
+SECTION 10 — HAND-OFF CHECKLIST FOR NEXT AGENT SESSION
+================================================================================
+
+1. Read this file fully.
+2. cd python && python -m ota   → confirm demo JSON prints.
+3. pnpm test (repo root) → domain MC tests still pass.
+4. Ask Michael which book folder to ingest next OR which of:
+     real data | richer adjustments | American MC | UI panel | MT4 bridge
+5. Commit work on branch claude/openbb-data-news-integration (or feature branch).
+6. Update docs/nexus/11-DASHBOARDS-AND-CALCS-STATUS.md when UI wires change.
+
+Owner contact context: chapmancapital1 / gangsternerd68 Vercel/Git identity;
+trading brain is personal capital path — paper first.
+
+
+================================================================================
+SECTION 11 — QUICK REFERENCE CODE POINTERS
+================================================================================
+
+# European MC (call)
+from ota.pricing import monte_carlo_european
+r = monte_carlo_european(100, 100, 0.5, 0.05, 0.30, "call",
+                         num_simulations=100000, num_steps=1, antithetic=True)
+print(r.price, r.black_scholes, r.abs_error, r.std_err)
+
+# Agent
+from ota.agent import NERDCOMMAND_OTA
+agent = NERDCOMMAND_OTA()
+agent.ingest_new_book("my_options_book.pdf")
+print(agent.recommend(S0=500, X=500, T=1/365, r=0.05, sigma=0.16,
+                      market_price=2.1, option_type="call"))
+print(agent.backtest_spy_1dte(n_days=200))
+
+# Catalog file after first run:
+#   python/ota/data/brain_catalog.json
+
+
+================================================================================
+SECTION 12 — SPY 1DTE SPECIAL STRATEGY + STANDALONE DASHBOARD (v1.1)
+================================================================================
+
+Special module for SPY-only trading (not multi-ticker):
+
+  python/ota/spy_strategy.py     SPY1DTEStrategy — ≤4 high-POP strikes
+  python/ota/options_chain.py    RealOptionsChain — yfinance live chain
+  python/ota/spy_dashboard.py    Standalone alerts (JSON + log + optional webhook)
+
+Safe / cheap research baked into strategy rules:
+  - Bull put / bear call credit spreads (defined risk, low capital)
+  - Iron condors on range days
+  - 1DTE long → debit-spread adjustment (not naked hope)
+  - 1–2% capital risk; no naked short options as default
+
+High-POP output rules:
+  - Max 4 strikes
+  - If fewer qualify on POP/liquidity/premium band → return fewer (never pad)
+
+Run dashboard:
+  cd python
+  python -m ota.spy_dashboard --bias bullish --once
+  python -m ota.spy_dashboard --loop 900
+
+Agent hooks:
+  a.spy_trade_plan(bias="bullish")
+  a.spy_high_pop_strikes(num_strikes=4)
+  a.spy_dashboard_alert()
+
+Latest alert JSON:
+  python/ota/data/spy_dashboard_latest.json
+
+
+================================================================================
+END OF MASTER HANDOFF v1.1
+Michael: hand this TXT + the python/ota package + your option PDFs to the team.
+Team: make ingestion eat the PDFs, then harden backtests on real SPY data.
+================================================================================

@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Python Algo Trading Market Neutral Hedge Fund Strategy (course root)",
+    "path": "L:\\dump2\\Python Algo Trading Market Neutral Hedge Fund Strategy",
+    "mb": 1038,
+    "tag": "course"
+  },
+  {
+    "title": "1. Introduction — sentiment long/short course overview",
+    "path": "L:\\dump2\\Python Algo Trading Market Neutral Hedge Fund Strategy\\...\\1. Introduction",
+    "mb": 15,
+    "tag": "process"
+  },
+  {
+    "title": "2. Introduction to the Platform — Quantopian ecosystem",
+    "path": "L:\\dump2\\Python Algo Trading Market Neutral Hedge Fund Strategy\\...\\2. Introduction to the Platform",
+    "mb": 62,
+    "tag": "platform_legacy"
+  },
+  {
+    "title": "3. Introduction to Python",
+    "path": "L:\\dump2\\Python Algo Trading Market Neutral Hedge Fund Strategy\\...\\3. Introduction to Python",
+    "mb": 180,
+    "tag": "python_basics"
+  },
+  {
+    "title": "4. NumPy — arrays, expected return, linear algebra",
+    "path": "L:\\dump2\\Python Algo Trading Market Neutral Hedge Fund Strategy\\...\\4. NumPy",
+    "mb": 55,
+    "tag": "python_basics"
+  },
+  {
+    "title": "5. Pandas — Series / DataFrame",
+    "path": "L:\\dump2\\Python Algo Trading Market Neutral Hedge Fund Strategy\\...\\5. Pandas",
+    "mb": 95,
+    "tag": "python_basics"
+  },
+  {
+    "title": "6. Pipeline — factors, filters, classifiers, custom factors",
+    "path": "L:\\dump2\\Python Algo Trading Market Neutral Hedge Fund Strategy\\...\\6. Pipeline",
+    "mb": 420,
+    "tag": "quant_pipeline"
+  },
+  {
+    "title": "7. Professional Quant Workflow — universe→alpha→risk→execution",
+    "path": "L:\\dump2\\Python Algo Trading Market Neutral Hedge Fund Strategy\\...\\7. Professional Quant Workflow",
+    "mb": 4,
+    "tag": "process"
+  },
+  {
+    "title": "8. Trading with Sentiment — Psychsignal / StockTwits (in zip; extract incomplete)",
+    "path": "L:\\dump2\\Python Algo Trading Market Neutral Hedge Fund Strategy\\...\\8. Trading with Sentiment Analysis - Psychsignal",
+    "mb": 180,
+    "tag": "sentiment"
+  },
+  {
+    "title": "9. Trading with Sentiment 2 — Sentdex news sentiment (in zip; extract incomplete)",
+    "path": "L:\\dump2\\Python Algo Trading Market Neutral Hedge Fund Strategy\\...\\9. Trading with Sentiment Analysis 2 - Sentdex",
+    "mb": 120,
+    "tag": "sentiment"
+  },
+  {
+    "title": "Course zip archive (full media)",
+    "path": "L:\\dump2\\Python Algo Trading Market Neutral Hedge Fund Strategy\\Python Algo Trading Market Neutral Hedge Fund Strategy.zip",
+    "mb": 1038,
+    "tag": "archive"
+  },
+  {
+    "title": "Sargent T. & Stachurski J. — Python Programming for Economics and Finance (2023)",
+    "path": "L:\\dump2\\Sargent T. Python Programming for Economics and Finance 2023\\Sargent T. Python Programming for Economics and Finance 2023.pdf",
+    "mb": 9,
+    "tag": "tooling"
+  },
+  {
+    "title": "Sargent — Part I Introduction to Python (About, Getting Started, Functions, OOP, longer programs)",
+    "path": "L:\\dump2\\Sargent T. Python Programming for Economics and Finance 2023 (PDF lectures)",
+    "mb": 0,
+    "tag": "tooling"
+  },
+  {
+    "title": "Sargent — Part II Scientific Libraries (NumPy, Matplotlib, SciPy, Pandas, SymPy)",
+    "path": "L:\\dump2\\Sargent T. Python Programming for Economics and Finance 2023 (PDF lectures)",
+    "mb": 0,
+    "tag": "tooling"
+  },
+  {
+    "title": "Sargent — Part III High Performance Computing (Numba, Parallelization, JAX)",
+    "path": "L:\\dump2\\Sargent T. Python Programming for Economics and Finance 2023 (PDF lectures)",
+    "mb": 0,
+    "tag": "tooling"
+  },
+  {
+    "title": "Sargent — Part IV Advanced Python (good code, language features, debugging)",
+    "path": "L:\\dump2\\Sargent T. Python Programming for Economics and Finance 2023 (PDF lectures)",
+    "mb": 0,
+    "tag": "tooling"
+  },
+  {
+    "title": "Kneusel R. — Math for Programming: Learn the Math, Write Better Code (2025, No Starch)",
+    "path": "L:\\dump2\\Kneusel R. Math for Programming. Learn the Math, Write Better Code 2025\\Kneusel R. Math for Programming. Learn the Math, Write Better Code 2025.pdf",
+    "mb": 13,
+    "tag": "tooling"
+  },
+  {
+    "title": "Kneusel — Ch.1–7 Computers/numbers, sets, Boolean, functions, induction, recursion, number theory",
+    "path": "L:\\dump2\\Kneusel R. Math for Programming (PDF)",
+    "mb": 0,
+    "tag": "tooling"
+  },
+  {
+    "title": "Kneusel — Ch.8–12 Combinatorics, graphs, trees, probability, statistics",
+    "path": "L:\\dump2\\Kneusel R. Math for Programming (PDF)",
+    "mb": 0,
+    "tag": "tooling"
+  },
+  {
+    "title": "Kneusel — Ch.13–16 Linear algebra, differential/integral calculus, differential equations",
+    "path": "L:\\dump2\\Kneusel R. Math for Programming (PDF)",
+    "mb": 0,
+    "tag": "tooling"
+  }
+]

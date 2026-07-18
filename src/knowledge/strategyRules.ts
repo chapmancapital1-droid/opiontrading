@@ -6,6 +6,11 @@
 import type { StrategyRule } from "./types";
 import { BOOK_EXTRA_RULES } from "./bookRulesExtra";
 import { BOOK_INGEST_RULES } from "./bookIngestRules";
+import { NEWDUMP_RULES } from "./newdumpRules";
+import { BOOKLIBRARY_RULES } from "./bookLibraryRules";
+import { DUMP2_RULES } from "./dump2Rules";
+import { DUMP3_RULES } from "./dump3Rules";
+import { SALIBA_RULES } from "./salibaPlaybook";
 
 const CORE_STRATEGY_RULES: StrategyRule[] = [
   {
@@ -24,9 +29,10 @@ const CORE_STRATEGY_RULES: StrategyRule[] = [
     entryRules: [
       "IV rank elevated or neutral (prefer elevated to sell premium)",
       "30–45 DTE preferred",
-      "Short put |delta| ~0.25",
+      "Short put |delta| ~0.20–0.30 (Steadiest ideal band; avoid >0.40 assignment coin-flip)",
       "Cash reserved = strike × 100 × contracts − credit",
-      "Underlying in wheel universe or user-approved quality name",
+      "Only names you would not mind owning; prefer quality / strong FCF yield large-caps",
+      "Avoid earnings inside short DTE",
     ],
     exitRules: ["profit_50pct_max", "dte_21_close_or_roll", "assignment_then_cc"],
     shortDeltaTarget: 0.25,
@@ -34,11 +40,13 @@ const CORE_STRATEGY_RULES: StrategyRule[] = [
     dteMax: 45,
     priority: 0.95,
     growthPrimary: true,
-    bookSource: "NCI Build Spec Strategy 1 (Wheel) + OptionScope book_pdf:34-45",
+    bookSource:
+      "NCI Wheel + Henry Moldavskiy The Steadiest Option Trader 2023 Ch.8–9 (personal reference)",
     structure: "Sell cash-secured put; reserve cash for assignment",
     notes: [
-      "Primary income engine for account growth on Robinhood Level 2+",
+      "Primary income engine for account growth on Robinhood Level 2+ when cash allows",
       "On assignment, campaign continues as covered call",
+      "Seed accounts usually cannot cash-secure — use defined credit spreads / Money Press instead",
     ],
   },
   {
@@ -88,14 +96,16 @@ const CORE_STRATEGY_RULES: StrategyRule[] = [
       "30–45 DTE",
       "Short put delta ~0.30",
       "Defined risk = width − credit",
+      "Close Friday morning if between strikes near expiry (pin risk)",
     ],
-    exitRules: ["profit_50pct_max", "dte_21_close_or_roll", "stop_2x_credit"],
+    exitRules: ["profit_50pct_max", "dte_21_close_or_roll", "stop_2x_credit", "friday_roll_or_close"],
     shortDeltaTarget: 0.30,
     dteMin: 21,
     dteMax: 45,
     priority: 0.88,
     growthPrimary: true,
-    bookSource: "OptionScope book_pdf:61-66 + ROADMAP sample rule",
+    bookSource:
+      "OptionScope + Henry Moldavskiy The Steadiest Option Trader 2023 Ch.12 (personal reference)",
     structure: "Short higher put + long lower put, same expiry",
     notes: ["Capital-efficient alternative to CSP when Level 3 is available"],
   },
@@ -112,16 +122,23 @@ const CORE_STRATEGY_RULES: StrategyRule[] = [
     eventStance: "avoid_earnings",
     minLiquidity: "normal",
     newsBias: "any",
-    entryRules: ["IV elevated preferred", "30–45 DTE", "Short call delta ~0.30"],
-    exitRules: ["profit_50pct_max", "dte_21_close_or_roll", "stop_2x_credit"],
+    entryRules: [
+      "IV elevated preferred",
+      "30–45 DTE",
+      "Short call delta ~0.30",
+      "Prefer short strike near resistance / consolidation high / overbought fade",
+      "Max profit = credit; max loss = width − credit",
+    ],
+    exitRules: ["profit_50pct_max", "dte_21_close_or_roll", "stop_2x_credit", "friday_roll_or_close"],
     shortDeltaTarget: 0.30,
     dteMin: 21,
     dteMax: 45,
     priority: 0.85,
     growthPrimary: true,
-    bookSource: "OptionScope book_pdf:53-61",
+    bookSource:
+      "OptionScope + Henry Moldavskiy The Steadiest Option Trader 2023 Ch.11 (personal reference)",
     structure: "Short lower call + long higher call, same expiry",
-    notes: [],
+    notes: ["Neutral-to-bearish income with defined risk"],
   },
   {
     id: "iron_condor_range",
@@ -136,22 +153,29 @@ const CORE_STRATEGY_RULES: StrategyRule[] = [
     eventStance: "avoid_earnings",
     minLiquidity: "normal",
     newsBias: "any",
-    entryRules: ["Elevated IV only", "Range-bound spot trend", "Wings define max loss", "Target 30–45 DTE"],
+    entryRules: [
+      "Elevated IV only",
+      "Range-bound spot trend",
+      "Wings define max loss",
+      "Target 21–40 DTE (faster theta; manage wings actively)",
+      "Roll/close if price approaches short strikes — do not hold hope through breakouts",
+    ],
     exitRules: ["profit_50pct_max", "dte_21_close_or_roll", "stop_2x_credit"],
     shortDeltaTarget: 0.16,
-    dteMin: 25,
-    dteMax: 45,
+    dteMin: 21,
+    dteMax: 40,
     priority: 0.8,
     growthPrimary: false,
-    bookSource: "OptionScope book_pdf:66-69",
+    bookSource:
+      "OptionScope + Henry Moldavskiy The Steadiest Option Trader 2023 Ch.13 (personal reference)",
     structure: "Short put spread + short call spread",
     notes: ["Show PoP and expected value together"],
   },
   {
-    id: "money_press_call_calendar_income",
-    strategyId: "money_press_call_calendar",
-    name: "Money Press — Call Calendar (Premium)",
-    thesis: "neutral",
+    id: "money_press_put_diagonal_income",
+    strategyId: "money_press_put_diagonal",
+    name: "Money Press — Put Diagonal (Weekly Premium)",
+    thesis: "bullish",
     portfolioRole: "income_engine",
     riskProfile: "defined",
     approval: "level3_spreads",
@@ -161,80 +185,30 @@ const CORE_STRATEGY_RULES: StrategyRule[] = [
     minLiquidity: "normal",
     newsBias: "any",
     entryRules: [
-      "Money Press: sell near-term call, buy further call same strike (ATM or slight OTM)",
-      "Prefer front-month IV rich vs back month (calendar term structure)",
-      "Underlying expected near strike through front expiration",
-      "Risk defined ≈ net debit paid; size debit to empire risk budget",
-      "Avoid hard catalysts inside front DTE when possible",
+      "Money Press (book): SELL weekly put ATM/near-money (higher strike) + BUY lower-strike put 3–6 months out (protection)",
+      "Short strike ALWAYS higher than protection strike — this is a diagonal, not a same-strike calendar",
+      "Enter both legs together; usually net debit at open; use limit orders on the diagonal",
+      "Protection cost ≈ 2.5× ATM weekly premium (cheat sheet); risk capital ≈ strike width",
+      "Prefer liquid large/triple-digit names with weeklies; do NOT start if earnings < 2 weeks away",
+      "Require a compelling circumstance (earnings reaction, crow-bar, product launch, etc.) + price/volume confirm",
+      "Avoid commodities, most ETFs, clothing retailers, semis for this method",
+      "Flat-to-up underlying; Friday roll short; keep protection ≥ ~6 weeks DTE",
     ],
-    exitRules: ["profit_50pct_max", "dte_21_close_or_roll", "manual_review"],
-    shortDeltaTarget: 0.45,
-    dteMin: 7,
-    dteMax: 21,
-    priority: 0.88,
+    exitRules: ["friday_roll_or_close", "dte_7_close_or_roll", "manual_review", "profit_50pct_max"],
+    shortDeltaTarget: 0.5,
+    dteMin: 3,
+    dteMax: 10,
+    priority: 0.9,
     growthPrimary: true,
-    bookSource: "Money Press method — calendar premium harvest + OptionScope calendar notes",
-    structure: "Short near call + long far call, same strike",
+    bookSource:
+      "Preston James — The Money Press Method 2020 (personal reference): diagonal put = weekly short higher + long lower 3–6 mo",
+    structure: "Short near put (higher/ATM) + long far put (lower, 3–6 mo) — diagonal",
     notes: [
-      "Primary premium-collection path when CSP/wheel capital is too large (seed-friendly if debit is small)",
-      "At front expiry: short settles; long keeps extrinsic — peak value often near ATM",
+      "Primary empire income path when CSP cash lock is too large",
+      "WORK-style example shape: short ~ATM weekly, long ~10–15% lower / multi-month",
+      "Friday = roll/adjust day (~20–30 min). Multi-week press — do not judge on a single week",
+      "Marketing claims in the book are not guarantees; size under empire risk budget",
     ],
-  },
-  {
-    id: "money_press_put_calendar_income",
-    strategyId: "money_press_put_calendar",
-    name: "Money Press — Put Calendar (Premium)",
-    thesis: "neutral",
-    portfolioRole: "income_engine",
-    riskProfile: "defined",
-    approval: "level3_spreads",
-    ivConditions: ["elevated", "neutral"],
-    trends: ["sideways", "down"],
-    eventStance: "prefer_clear",
-    minLiquidity: "normal",
-    newsBias: "any",
-    entryRules: [
-      "Money Press: sell near-term put, buy further put same strike",
-      "Prefer elevated front IV; stay near strike into front expiry",
-      "Defined risk ≈ net debit; watch short-put assignment",
-    ],
-    exitRules: ["profit_50pct_max", "dte_21_close_or_roll", "manual_review"],
-    shortDeltaTarget: 0.45,
-    dteMin: 7,
-    dteMax: 21,
-    priority: 0.87,
-    growthPrimary: true,
-    bookSource: "Money Press method — put calendar premium harvest",
-    structure: "Short near put + long far put, same strike",
-    notes: ["Works when mildly bearish-to-neutral and front puts are rich"],
-  },
-  {
-    id: "money_press_double_calendar_range",
-    strategyId: "money_press_double_calendar",
-    name: "Money Press — Double Calendar (Range)",
-    thesis: "range",
-    portfolioRole: "income_engine",
-    riskProfile: "defined",
-    approval: "level3_spreads",
-    ivConditions: ["elevated"],
-    trends: ["sideways"],
-    eventStance: "prefer_clear",
-    minLiquidity: "normal",
-    newsBias: "any",
-    entryRules: [
-      "Twin calendars: near short straddle vs far long straddle (or matching strikes slightly OTM each side)",
-      "Elevated IV preferred; range-bound thesis",
-      "Higher debit — check empire size rules",
-    ],
-    exitRules: ["profit_50pct_max", "dte_21_close_or_roll", "manual_review"],
-    shortDeltaTarget: 0.4,
-    dteMin: 7,
-    dteMax: 21,
-    priority: 0.82,
-    growthPrimary: true,
-    bookSource: "Money Press method — double calendar",
-    structure: "Near short call+put / far long call+put",
-    notes: ["Scale only when debit fits risk budget"],
   },
   {
     id: "bull_call_debit_growth",
@@ -358,10 +332,19 @@ const CORE_STRATEGY_RULES: StrategyRule[] = [
   },
 ];
 
-/** Core + hand book rules + PDF-ingest seeds (dedupe by id). */
+/** Core + hand books + L/E:\newdump distillations + Saliba playbook + PDF-ingest seeds (dedupe by id). */
 export const STRATEGY_RULES: StrategyRule[] = (() => {
   const map = new Map<string, StrategyRule>();
-  for (const r of [...CORE_STRATEGY_RULES, ...BOOK_EXTRA_RULES, ...BOOK_INGEST_RULES]) {
+  for (const r of [
+    ...CORE_STRATEGY_RULES,
+    ...BOOK_EXTRA_RULES,
+    ...NEWDUMP_RULES,
+    ...SALIBA_RULES,
+    ...BOOKLIBRARY_RULES,
+    ...DUMP2_RULES,
+    ...DUMP3_RULES,
+    ...BOOK_INGEST_RULES,
+  ]) {
     map.set(r.id, r);
   }
   return [...map.values()];

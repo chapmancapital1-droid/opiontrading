@@ -9,6 +9,10 @@ import {
   journalStats,
   type LocalJournalEntry,
 } from "@/lib/localJournal";
+import {
+  STRATEGY_PICKER,
+  STRATEGY_PICKER_GROUPS,
+} from "@/lib/strategyCatalog";
 
 const usd = (n: number) =>
   (n < 0 ? "-$" : "$") + Math.abs(n).toLocaleString("en-US", { maximumFractionDigits: 2 });
@@ -62,12 +66,22 @@ export default function JournalPage() {
               onChange={(e) => setUnderlying(e.target.value.toUpperCase())}
             />
           </Field>
-          <Field label="Strategy id">
-            <input
+          <Field label="Strategy">
+            <select
               className="w-full text-sm rounded-lg border border-[var(--border)] bg-[var(--surface-1)] px-2 py-1.5"
               value={strategy}
               onChange={(e) => setStrategy(e.target.value)}
-            />
+            >
+              {STRATEGY_PICKER_GROUPS.map((g) => (
+                <optgroup key={g} label={g}>
+                  {STRATEGY_PICKER.filter((s) => s.group === g).map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.label}
+                    </option>
+                  ))}
+                </optgroup>
+              ))}
+            </select>
           </Field>
           <Field label="Planned max loss $">
             <input
@@ -179,6 +193,16 @@ export default function JournalPage() {
                 <div className="text-[11px] text-[var(--text-warning)] mt-2">
                   Fix flags: {e.processFlags.join(" · ")}
                 </div>
+              )}
+              {e.checklistText && (
+                <details className="mt-2 text-[11px] text-[var(--text-secondary)]">
+                  <summary className="cursor-pointer text-[var(--text-accent)]">
+                    Order checklist ({e.plannedContracts}×) — from Trade Lab
+                  </summary>
+                  <pre className="mt-1 p-2 rounded-lg bg-[var(--surface-1)] border border-[var(--border)] whitespace-pre-wrap font-mono text-[10px] overflow-x-auto m-0">
+                    {e.checklistText}
+                  </pre>
+                </details>
               )}
             </article>
           ))

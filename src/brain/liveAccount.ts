@@ -6,7 +6,7 @@
 import type { ApprovalProfile } from "@/domain/strategyDefinitions";
 import type { GrowthMode } from "@/knowledge/types";
 import type { AccountState } from "./types";
-import { DEFAULT_DEMO_ACCOUNT } from "./demoAccount";
+import { DEFAULT_SEED_ACCOUNT } from "./demoAccount";
 
 /** Sanitized client-facing live account (from /api/alpaca/account). */
 export interface LiveAccountClient {
@@ -63,9 +63,12 @@ export function mapLiveToAccountState(
   };
 }
 
-/** Fallback demo when live broker unavailable. */
+/**
+ * Fallback when live broker unavailable.
+ * Uses empire seed ($500), not legacy $25k DEFAULT_DEMO_ACCOUNT.
+ */
 export function demoAsLiveClient(): LiveAccountClient {
-  const d = DEFAULT_DEMO_ACCOUNT;
+  const d = DEFAULT_SEED_ACCOUNT;
   return {
     source: "demo",
     equity: d.equity,
@@ -74,6 +77,6 @@ export function demoAsLiveClient(): LiveAccountClient {
     openRiskDollars: d.openRiskDollars,
     openCampaigns: d.openCampaigns,
     dailyRealizedPL: d.dailyRealizedPL,
-    note: "Demo account — Alpaca not connected",
+    note: "Seed account ($500) — Alpaca not connected; sizing from empire seed",
   };
 }

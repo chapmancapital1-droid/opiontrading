@@ -1,0 +1,258 @@
+================================================================================
+  OptionScope — GO LIVE TRADING PLAYBOOK
+  For: Michael Chapman / personal companion use
+  Repo: https://github.com/chapmancapital1-droid/opiontrading
+================================================================================
+
+CRITICAL TRUTH (read before risking money)
+------------------------------------------
+  OptionScope is a LIVE DATA + ANALYSIS + CHECKLIST companion.
+  It does NOT place orders on Robinhood, Alpaca, or anywhere else.
+
+  Live trading workflow =
+    1) Live quotes / chains in OptionScope
+    2) Brain sizes off YOUR real capital (honest equity)
+    3) You copy the checklist
+    4) YOU enter the trade manually in Robinhood (or your broker)
+    5) You journal the plan / open / close in OptionScope
+
+  Model PoP / EV are estimates — not guarantees.
+  Not financial advice. You own every fill.
+
+
+--------------------------------------------------------------------------------
+1. YOUR CURRENT MACHINE STATUS (verified on this PC)
+--------------------------------------------------------------------------------
+
+  .env.local already has:
+    MARKET_DATA_PROVIDER=alpaca          ← live data path ON
+    ALPACA_API_KEY_ID=PK…                ← PAPER keys (good for market data)
+    ALPACA_DATA_BASE_URL=https://data.alpaca.markets
+    ALPACA_TRADING_BASE_URL=https://paper-api.alpaca.markets
+
+  Dev server cascade (from runtime log):
+    [OptionScope] data cascade: alpaca → demo
+
+  That means quotes/chains try Alpaca first; demo only if Alpaca fails.
+  App: http://localhost:3000
+
+  START APP ANY DAY:
+    cd "C:\Users\Michael Chapman\opiontrading"
+    npm run dev
+    open http://localhost:3000
+
+
+--------------------------------------------------------------------------------
+2. LIVE DATA vs LIVE MONEY (do not confuse these)
+--------------------------------------------------------------------------------
+
+  LIVE DATA (what you need for the full program) — YOU HAVE THIS
+    MARKET_DATA_PROVIDER=alpaca
+    Paper (PK) or Live (AK) keys both talk to data.alpaca.markets for quotes/chains.
+    Paper keys are fine for analysis while you trade cash in Robinhood.
+
+  LIVE ALPACA BROKERAGE EQUITY (optional, different thing)
+    Only if you fund and trade AT Alpaca itself.
+    Requires LIVE keys from the Live dashboard + :
+      ALPACA_TRADING_BASE_URL=https://api.alpaca.markets
+    Do NOT switch this unless you intentionally use Alpaca as the broker account
+    of record for sizing.
+
+  ROBINHOOD LIVE CASH (your likely path)
+    Keep Alpaca on PAPER for data + paper equity feed.
+    In OptionScope Settings set equity to YOUR REAL RH account size:
+      Equity source = Manual seed (recommended)
+      Manual equity $ = actual RH equity (example: 500, 1000, 2500, …)
+      Manual cash $   = cash available for collateral
+    Optionally paste RH positions CSV so sharesHeld / open risk inform gates.
+
+
+--------------------------------------------------------------------------------
+3. DAY-OF LIVE SESSION — 10 MINUTE RITUAL
+--------------------------------------------------------------------------------
+
+  A. Start the stack
+     1. Market open awareness (options are thin near open/close)
+     2. npm run dev  (if not already running)
+     3. http://localhost:3000
+
+  B. Settings — capital honesty (MOST IMPORTANT for live money)
+     1. Open Settings
+     2. Equity source: Manual seed
+     3. Set Manual equity $ and Manual cash $ to YOUR real Robinhood numbers
+        (Not Alpaca paper’s fake ~$100k)
+     4. Seed presets $500 / $1k / $5k only if those match real capital
+     5. Save
+     6. Optional: paste RH positions CSV / text for open risk + sharesHeld
+     7. Confirm NO password fields — paste only
+
+  C. Command
+     1. Confirm equity strip shows the number you just set
+     2. Confirm paper/live badges make sense (data = Alpaca; capital = seed)
+     3. No “fantasy $25k” identity
+
+  D. Trade Lab — live chain
+     1. Ticker (liquid first: SPY, QQQ, IWM, or your liquid single-name)
+     2. Load live chain
+     3. Badge should NOT say pure DEMO
+        (HYBRID is OK if one leg fell back; pure DEMO = keys/data problem)
+     4. Run brain / pick structure
+     5. Confirm size uses YOUR equity (if size=0, read the zero-size coach —
+        that is the system protecting capital, not a bug)
+     6. Analyze → Order checklist (max loss, contracts, net limit, legs)
+     7. Copy checklist
+
+  E. Execute OUTSIDE the app
+     1. Open Robinhood
+     2. Enter the EXACT legs / limits from the checklist
+     3. Verify max loss matches what you accepted
+     4. Do not “freestyle” size above brain/risk ceiling
+
+  F. Journal
+     1. Save plan with checklist text
+     2. Mark OPEN after fill (real premium / contracts)
+     3. Mark CLOSE when done with realized P/L
+     4. This is how the companion learns YOUR process
+
+
+--------------------------------------------------------------------------------
+4. HOW TO CONFIRM DATA IS TRULY LIVE (not demo)
+--------------------------------------------------------------------------------
+
+  In the UI after Load live chain:
+    • Look for provider / DEMO / LIVE / HYBRID badge on Lab or Market Snapshot
+    • Spot price should track the real market (compare to RH or TradingView)
+    • Expirations list should match listed option expiries for that symbol
+
+  In the browser address bar (while dev server runs):
+    http://localhost:3000/api/quote?symbol=SPY
+    http://localhost:3000/api/chain?symbol=SPY
+    http://localhost:3000/api/alpaca/account
+
+  Good signs:
+    quote.meta.source ≈ "alpaca"  (or status.quoteSource = alpaca)
+    status.usingDemoFallback = false
+    account.ok = true, mode = "paper" or "live"
+
+  Bad signs:
+    usingDemoFallback = true for a liquid symbol during market hours
+    → Check keys, Alpaca options entitlement, restart npm run dev
+    account configured = false
+    → .env.local missing ALPACA_API_KEY_ID / ALPACA_API_SECRET_KEY
+
+
+--------------------------------------------------------------------------------
+5. IF YOU NEED STRONGER / FULLER LIVE DATA
+--------------------------------------------------------------------------------
+
+  Free / paper Alpaca often uses IEX stock feed in this app (see alpaca provider).
+  Options need your Alpaca account to have options data entitlement.
+
+  Upgrade path (Alpaca dashboard → Market Data subscriptions):
+    1. Log in https://app.alpaca.markets/
+    2. Enable Options data if chains are empty or “not_found”
+    3. Optional paid SIP for richer stock prints (vs IEX)
+    4. After plan changes, regenerate keys if Alpaca asks you to
+    5. Restart: stop dev server → npm run dev
+
+  If a chain still fails only for obscure tickers, that can be liquidity —
+  try SPY first to prove the pipe.
+
+
+--------------------------------------------------------------------------------
+6. SWITCHING TO ALPACA LIVE KEYS (only if broker account is Alpaca)
+--------------------------------------------------------------------------------
+
+  Skip this section if you execute on Robinhood and only need live chains.
+
+  1. Alpaca dashboard → switch to LIVE
+  2. Generate LIVE API Key ID + Secret (AK… often; trust Live tab)
+  3. Put in .env.local:
+
+       MARKET_DATA_PROVIDER=alpaca
+       ALPACA_API_KEY_ID=...
+       ALPACA_API_SECRET_KEY=...
+       ALPACA_DATA_BASE_URL=https://data.alpaca.markets
+       ALPACA_TRADING_BASE_URL=https://api.alpaca.markets
+
+  4. NEVER commit .env.local
+  5. Restart npm run dev
+  6. GET /api/alpaca/account should show mode: "live" and real equity
+
+  Still: OptionScope will not send orders. Manual entry only.
+
+
+--------------------------------------------------------------------------------
+7. LIVE MONEY RISK RULES (empire seed path)
+--------------------------------------------------------------------------------
+
+  At small equity (under ~$5k) the brain should:
+    • Block cash-secured puts as primary theater trades when too large
+    • Prefer defined-risk micro structures
+    • Size to hard risk ceiling (order of ~0.5% equity target; see empirePolicy)
+    • Show zero-size coach when 1-lot exceeds ceiling — OBEY IT
+
+  Before every live entry:
+    [ ] Max loss in dollars written down
+    [ ] Contracts match checklist
+    [ ] Expiry matches checklist
+    [ ] Defined risk (or you explicitly accepted undefined risk outside empire mode)
+    [ ] Not revenge-sizing after a loss
+    [ ] Journal plan saved BEFORE or immediately after fill
+
+
+--------------------------------------------------------------------------------
+8. WHEN SOMETHING BREAKS DURING A LIVE SESSION
+--------------------------------------------------------------------------------
+
+  No quotes / all DEMO
+    • Restart npm run dev (env only loads at start)
+    • Confirm MARKET_DATA_PROVIDER=alpaca in .env.local
+    • Open https://app.alpaca.markets/ and verify keys not revoked
+    • Fall back: MARKET_DATA_PROVIDER=demo only for UI practice — do NOT live trade on demo marks
+
+  Auth 401/403
+    • Paper key used with live base URL or reverse
+    • Regenerate keys; paste carefully (no spaces/newlines)
+
+  Chain empty for one symbol
+    • Try SPY; if SPY works, symbol/liquidity/entitlement issue
+    • Check options approval on the broker you execute with (RH)
+
+  Brain sizes to 0
+    • Capital too small for that structure’s max loss — pick a cheaper defined-risk idea
+    • Do not override with manual 10x size “because it feels right”
+
+  App hung
+    • Kill Node on port 3000, npm run dev again
+    • Prefer liquid underlyings near the open
+
+
+--------------------------------------------------------------------------------
+9. MINIMUM LIVE-DAY CHECKLIST (print this)
+--------------------------------------------------------------------------------
+
+  [ ] npm run dev running
+  [ ] Settings equity = REAL RH equity (manual seed)
+  [ ] RH positions pasted if you have open risk
+  [ ] Trade Lab load chain — not DEMO for your ticker
+  [ ] Brain + checklist max loss acceptable
+  [ ] Entered in RH exactly as checklist
+  [ ] Journaled plan / open
+  [ ] Stop trading if rules broken or emotions high
+
+
+--------------------------------------------------------------------------------
+10. RELATED FILES
+--------------------------------------------------------------------------------
+
+  install.txt              Full GitHub install + Alpaca key signup (Section 9)
+  .env.example             Template for secrets
+  .env.local               YOUR keys (never commit)
+  docs/OPENBB_SETUP.md     Alternate data path
+  README.md                Product overview
+
+================================================================================
+  Live data: ON (Alpaca). Auto-trade: OFF. You are the execution layer.
+  Long live the empire — capital first.
+================================================================================

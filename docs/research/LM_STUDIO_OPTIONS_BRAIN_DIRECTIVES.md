@@ -1,9 +1,15 @@
 # LM Studio × OptionScope Trading Brain — Directives (store for later embed)
 
-**Status:** RESEARCH + DIRECTIVES — do not implement until ~95% gate  
+**Status:** LIVE constitution for hybrid brain (+ partial UI)  
 **Audience:** Future Grok / Agency / Phase 5.1 implementer  
-**Related:** `LOCAL_LLM_BACKBURNER.md`, `src/brain/*`, `src/domain/*`, `src/lib/marketContext.ts`  
-**Owner intent:** Personal local companion that is **obsessed with options** — live prices, Greeks, chains, real strategies, real numbers — never freelanced fantasy trades.
+**Related:** `LOCAL_LLM_BACKBURNER.md`, `src/brain/*`, `src/domain/*`, `src/lib/marketContext.ts`, `src/knowledge/newdumpRules.ts`, `docs/empire/NEWDUMP_INGEST_AND_COMMAND_DESIGN.md`  
+**Owner intent:** Personal local companion that is **obsessed with options profits** — live prices, Greeks, chains, real strategies, real numbers — never freelanced fantasy trades.
+
+### 2026-07-12 library pass (L:\newdump)
+- Structured rules: `NEWDUMP_RULES` (BS discipline, Saliba credits/condors, IV-rich sells, Money Press diagonal, cheap-IV debits).
+- AI charter: `AI_COPILOT_CHARTER` — local LLM teaches; engine owns strikes/PoP/size.
+- Command Center tabs: Cockpit / Brain / Library / Playbook forms.
+- Full catalog UI: `/library`. Inventory: `src/knowledge/catalog/newdump_inventory.json`.
 
 ---
 

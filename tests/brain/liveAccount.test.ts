@@ -25,10 +25,11 @@ describe("mapLiveToAccountState", () => {
     expect(a.approvalProfile).toBe("level3_spreads");
   });
 
-  it("demo fallback is finite and non-zero", () => {
+  it("demo fallback is seed $500 (not $25k fantasy)", () => {
     const d = demoAsLiveClient();
     expect(d.source).toBe("demo");
-    expect(d.equity).toBeGreaterThan(0);
+    expect(d.equity).toBe(500);
+    expect(d.equity).toBeLessThan(5_000);
     const a = mapLiveToAccountState(d);
     expect(a.equity).toBe(d.equity);
   });

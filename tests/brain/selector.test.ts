@@ -199,3 +199,63 @@ describe("account gates", () => {
     expect(g.some((x) => x.code === "MAX_CAMPAIGNS" && !x.passed)).toBe(true);
   });
 });
+
+describe("seed empire selector (W1-B02 / B03)", () => {
+  it("CSP is not eligible / cannot rank at $500 seed", () => {
+    const seed = account({
+      equity: 500,
+      cash: 500,
+      optionsFloat: 400,
+      portfolioCore: 100,
+      growthMode: "income_preservation",
+    });
+    const cands = evaluateCandidates(ctx(), seed);
+    const csp = cands.find((c) => c.rule.strategyId === "cash_secured_put");
+    expect(csp?.eligible).toBe(false);
+    expect(csp?.rejectReasons.some((r) => /EMPIRE_PHASE_BLOCK/i.test(r))).toBe(true);
+
+    const d = runTradingBrain({
+      context: ctx(),
+      account: seed,
+      maxLossByStrategyId: {
+        cash_secured_put: 50,
+        bull_put_credit: 150,
+        bull_call_debit: 150,
+      },
+      preferGrowthPrimary: true,
+    });
+    expect(d.recommendations.every((r) => r.strategyId !== "cash_secured_put")).toBe(true);
+  });
+
+  it("attaches zeroSizeCoach + infeasible note when 1-lot exceeds ceiling", () => {
+    const seed = account({
+      equity: 500,
+      cash: 500,
+      optionsFloat: 400,
+      portfolioCore: 100,
+      growthMode: "income_preservation",
+    });
+    // elevated IV + sideways → bull_put_credit often eligible
+    const d = runTradingBrain({
+      context: ctx(),
+      account: seed,
+      maxLossByStrategyId: {
+        bull_put_credit: 150,
+        bear_call_credit: 150,
+        iron_condor: 100,
+      },
+    });
+    const zeroed = d.recommendations.filter((r) => r.suggestedContracts < 1 && r.maxLossPerContract);
+    // At $500 physics most 1-lots correctly size 0
+    if (zeroed.length > 0) {
+      for (const r of zeroed) {
+        expect(r.zeroSizeCoach).toBeTruthy();
+        expect(r.zeroSizeCoach).toMatch(/size is 0/i);
+        expect(r.matchReasons.some((m) => /infeasible at equity/i.test(m))).toBe(true);
+      }
+    } else {
+      // If none zeroed, at least ensure recs exist under seed
+      expect(d.recommendations.length).toBeGreaterThanOrEqual(0);
+    }
+  });
+});

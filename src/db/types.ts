@@ -5,7 +5,7 @@ export type StrategyKind =
   | "bull_call_debit" | "bear_put_debit" | "bull_put_credit" | "bear_call_credit"
   | "long_straddle" | "long_strangle" | "iron_condor" | "iron_butterfly"
   | "call_butterfly" | "put_butterfly" | "custom_same_expiration"
-  | "money_press_call_calendar" | "money_press_put_calendar" | "money_press_double_calendar";
+  | "money_press_put_diagonal";
 
 export type LifecycleState =
   | "planned" | "opened" | "adjusted" | "closed" | "expired" | "exercised" | "assigned";

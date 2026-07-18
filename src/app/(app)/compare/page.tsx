@@ -14,7 +14,7 @@ const usd = (n: number) =>
   (n < 0 ? "-$" : "$") + Math.abs(n).toLocaleString("en-US", { maximumFractionDigits: 0 });
 const pct = (f: number) => (f * 100).toFixed(1) + "%";
 
-const EMPTY: (CompareStrategyId | "")[] = ["bull_call_debit", "bull_put_credit", "iron_condor"];
+const EMPTY: (CompareStrategyId | "")[] = ["bull_put_credit", "bear_call_credit", "iron_condor"];
 
 export default function ComparePage() {
   const [slots, setSlots] = useState<(CompareStrategyId | "")[]>([...EMPTY]);
