@@ -39,15 +39,31 @@ For education / personal analysis only. Never auto-trades.
   git clone git@github.com:chapmancapital1-droid/opiontrading.git
   cd opiontrading
 
-  Default branch on GitHub is usually:  main
-
-  If you were told to use the companion / data-integration branch:
-    git checkout claude/openbb-data-news-integration
-    git pull
+  Default branch on GitHub:  main
 
 
 --------------------------------------------------------------------------------
-3. INSTALL DEPENDENCIES
+3. ONE-COMMAND SETUP (RECOMMENDED)
+--------------------------------------------------------------------------------
+
+  From the repo root (folder that contains package.json):
+
+    npm run setup
+
+  This will:
+    • Check Node.js 20+
+    • Create .env.local from .env.example if missing (demo mode, no keys)
+    • Run npm install
+
+  Windows PowerShell alternative:
+    powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
+
+  macOS / Linux alternative:
+    chmod +x scripts/setup.sh && ./scripts/setup.sh
+
+
+--------------------------------------------------------------------------------
+4. INSTALL DEPENDENCIES (MANUAL, IF YOU SKIP setup)
 --------------------------------------------------------------------------------
 
   Either package manager works. Prefer the one that matches the lockfile you have.
@@ -63,7 +79,7 @@ For education / personal analysis only. Never auto-trades.
 
 
 --------------------------------------------------------------------------------
-4. ENVIRONMENT FILE (REQUIRED ONCE)
+5. ENVIRONMENT FILE (REQUIRED ONCE — skip if you used npm run setup)
 --------------------------------------------------------------------------------
 
   Copy the example env file to a local env file (never commit secrets):
@@ -79,11 +95,11 @@ For education / personal analysis only. Never auto-trades.
     MARKET_DATA_PROVIDER=demo
     NEXT_PUBLIC_APP_NAME=OptionScope
 
-  Edit .env.local only when you add live data (see section 8).
+  Edit .env.local only when you add live data (see section 9).
 
 
 --------------------------------------------------------------------------------
-5. RUN THE APP (DEVELOPMENT)
+6. RUN THE APP (DEVELOPMENT)
 --------------------------------------------------------------------------------
 
   npm run dev
@@ -134,7 +150,7 @@ For education / personal analysis only. Never auto-trades.
 
 
 --------------------------------------------------------------------------------
-6. VERIFY INSTALL (OPTIONAL BUT RECOMMENDED)
+7. VERIFY INSTALL (OPTIONAL BUT RECOMMENDED)
 --------------------------------------------------------------------------------
 
   npm test
@@ -151,7 +167,7 @@ For education / personal analysis only. Never auto-trades.
 
 
 --------------------------------------------------------------------------------
-7. DATABASE / JOURNAL (OPTIONAL)
+8. DATABASE / JOURNAL (OPTIONAL)
 --------------------------------------------------------------------------------
 
   Local-first journal uses the browser (localStorage). No setup required.
@@ -166,7 +182,7 @@ For education / personal analysis only. Never auto-trades.
 
 
 --------------------------------------------------------------------------------
-8. LIVE MARKET DATA (OPTIONAL)
+9. LIVE MARKET DATA (OPTIONAL)
 --------------------------------------------------------------------------------
 
   NEVER put market-data secrets in client code.
@@ -181,7 +197,7 @@ For education / personal analysis only. Never auto-trades.
      MARKET_DATA_BASE_URL=https://api.polygon.io
 
   C) Alpaca (paper recommended; live optional)
-     Full step-by-step: see SECTION 9 below (get keys + wire .env.local)
+     Full step-by-step: see SECTION 10 below (get keys + wire .env.local)
      Day-of live trading with real capital: see GO_LIVE_TRADING.txt
 
   D) OpenBB (local REST)
@@ -199,7 +215,7 @@ For education / personal analysis only. Never auto-trades.
 
 
 --------------------------------------------------------------------------------
-9. ALPACA KEYS — PAPER FIRST, THEN “GO LIVE” (OPTIONAL)
+10. ALPACA KEYS — PAPER FIRST, THEN “GO LIVE” (OPTIONAL)
 --------------------------------------------------------------------------------
 
   OptionScope uses Alpaca for TWO server-side things only:
@@ -358,7 +374,7 @@ For education / personal analysis only. Never auto-trades.
 
 
 --------------------------------------------------------------------------------
-10. OPTIONAL: BOOK PDF INGEST + LOCAL OTA BRAIN
+11. OPTIONAL: BOOK PDF INGEST + LOCAL OTA BRAIN
 --------------------------------------------------------------------------------
 
   PDF knowledge ingest (if you have a book library path configured in scripts):
@@ -373,13 +389,15 @@ For education / personal analysis only. Never auto-trades.
 
 
 --------------------------------------------------------------------------------
-11. USEFUL COMMANDS (QUICK REFERENCE)
+12. USEFUL COMMANDS (QUICK REFERENCE)
 --------------------------------------------------------------------------------
 
+  npm run setup        One-shot: check Node, .env.local, npm install
   npm install          Install Node dependencies
   npm run dev          Start dev server → http://localhost:3000
   npm test             Unit tests (domain, brain, knowledge, …)
   npm run typecheck    TypeScript check
+  npm run verify       typecheck + test
   npm run build        Production build
   npm start            Serve production build
   npm run lint         ESLint
@@ -387,7 +405,7 @@ For education / personal analysis only. Never auto-trades.
 
 
 --------------------------------------------------------------------------------
-12. PROJECT LAYOUT (WHERE THINGS LIVE)
+13. PROJECT LAYOUT (WHERE THINGS LIVE)
 --------------------------------------------------------------------------------
 
   src/domain/      Pure options math (payoff, BS, binomial, Monte Carlo)
@@ -403,7 +421,7 @@ For education / personal analysis only. Never auto-trades.
 
 
 --------------------------------------------------------------------------------
-13. DOCTRINE / SAFETY (READ THIS)
+14. DOCTRINE / SAFETY (READ THIS)
 --------------------------------------------------------------------------------
 
   • Manual checklist only — the app does NOT place broker orders.
@@ -417,7 +435,7 @@ For education / personal analysis only. Never auto-trades.
 
 
 --------------------------------------------------------------------------------
-14. TROUBLESHOOTING
+15. TROUBLESHOOTING
 --------------------------------------------------------------------------------
 
   Port 3000 already in use
@@ -435,10 +453,10 @@ For education / personal analysis only. Never auto-trades.
     • Check MARKET_DATA_PROVIDER and keys in .env.local
     • Restart npm run dev after any .env.local change
     • Demo mode always works for UI practice
-    • For Alpaca-specific failures see SECTION 9.8
+    • For Alpaca-specific failures see SECTION 10.8
 
   Alpaca auth / account sizing fails
-    • Re-read SECTION 9 (paper vs live base URL mismatch is the #1 cause)
+    • Re-read SECTION 10 (paper vs live base URL mismatch is the #1 cause)
     • Test: Invoke-RestMethod http://localhost:3000/api/alpaca/account
 
   Tests fail on a fresh clone
@@ -452,7 +470,7 @@ For education / personal analysis only. Never auto-trades.
 
 
 --------------------------------------------------------------------------------
-15. SUPPORT PATHS INSIDE THE REPO
+16. SUPPORT PATHS INSIDE THE REPO
 --------------------------------------------------------------------------------
 
   README.md                 Product overview

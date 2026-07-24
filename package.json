@@ -2,7 +2,20 @@
   "name": "optionscope",
   "version": "0.1.0",
   "private": true,
+  "description": "Educational options strategy calculator & Robinhood trading companion (OptionScope)",
+  "homepage": "https://github.com/chapmancapital1-droid/opiontrading#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chapmancapital1-droid/opiontrading.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chapmancapital1-droid/opiontrading/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
+    "setup": "node scripts/setup.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -10,6 +23,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
+    "verify": "npm run typecheck && npm test",
     "ingest:pdfs": "python scripts/ingest_option_pdfs.py",
     "ingest:compile": "node scripts/compile_ingest_rules.mjs",
     "ingest": "python scripts/ingest_option_pdfs.py && node scripts/compile_ingest_rules.mjs"
@@ -21,7 +35,8 @@
     "next": "16.2.10",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "recharts": "^2.12.7"
+    "recharts": "^2.12.7",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "20.14.10",
