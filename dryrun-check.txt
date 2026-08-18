@@ -1,0 +1,187 @@
+param(
+    [string]$Repo = 'D:\GITHUBCLONES\opiontrading'
+)
+
+# Dry run for make_optionscope_research_slice.ps1.
+# Lists EXACTLY which files the bundle would include, then actively hunts for
+# the things whose absence would silently break the study downstream:
+#   1. the bar-pull / cache-generator script (needed to EXTEND bars to >=2020)
+#   2. the replay harness entrypoint the scaffold imports (runReplay)
+#   3. scoreMeanReversion's home file
+#   4. whether the required data files are tracked (untracked => NOT in zip)
+# Nothing is copied or zipped. Read-only inspection.
+
+$ErrorActionPreference = 'Stop'
+
+if (-not (Test-Path -LiteralPath $Repo -PathType Container)) {
+    throw "Repository directory not found: $Repo"
+}
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+    throw 'git is required (the real bundle keys off git ls-files).'
+}
+
+$tracked = @(git -C $Repo ls-files)
+if ($LASTEXITCODE -ne 0) { throw 'git ls-files failed.' }
+
+# --- Mirror the EXACT selection logic from the real script -------------------
+$always = @(
+    'package.json','package-lock.json','pnpm-lock.yaml','yarn.lock','tsconfig.json',
+    'REPLAY.bat','setup-nci.js','data/bars-daily.json',
+    'docs/ota/LESSONS_FROM_YOUR_TRADES.md',
+    'src/knowledge/catalog/ingested/rh_history_lessons.json'
+)
+
+$selected = @($tracked | Where-Object {
+    $_ -like 'runner/*' -or
+    $_ -in $always -or
+    $_ -match '(?i)(replay|walk[-_ ]?forward|exit[-_ ]?lab|mean[-_ ]?reversion|scoreMeanReversion|bars[-_ ]?daily|rh_history_lessons|lessons_from_your_trades)' -or
+    (
+        $_ -match '(?i)(fetch|pull|download|cache|generate).*(bar|market|price|history)|(bar|market|price|history).*(fetch|pull|download|cache|generate)' -and
+        $_ -match '(?i)\.(ts|tsx|js|cjs|mjs|py|ps1|bat)$'
+    )
+} | Sort-Object -Unique)
+
+Write-Host ''
+Write-Host "=== FILES THE BUNDLE WOULD INCLUDE ($($selected.Count)) ===" -ForegroundColor Cyan
+$selected | ForEach-Object { Write-Host "  $_" }
+
+# --- GAP CHECK 1: the bar-pull generator ------------------------------------
+# The real risk: bars-daily.json (the OUTPUT) is hardcoded, but the SCRIPT that
+# generates/extends it is only included if its NAME matches the regex. If the
+# generator is named something off-pattern (mcp-client.ts, robinhood.ts,
+# pull-daily.ts) AND lives outside runner/, it silently won't be bundled and
+# the agent can't extend data to 2020. Search the WHOLE tree for likely
+# candidates and report any that the selection would MISS.
+Write-Host ''
+Write-Host "=== BAR-PULL / CACHE-GENERATOR CHECK ===" -ForegroundColor Cyan
+
+# Broad net: anything that looks like it touches bar/market/price data pulling,
+# OR references the cache filename, OR mentions the MCP bar call.
+$generatorCandidates = @($tracked | Where-Object {
+    $_ -match '(?i)\.(ts|tsx|js|cjs|mjs|py)$' -and (
+        $_ -match '(?i)(bar|market|price|history|quote|candle|ohlc|daily)' -or
+        $_ -match '(?i)(robinhood|mcp)' -or
+        $_ -match '(?i)(fetch|pull|download|cache|generate|seed|backfill|ingest)'
+    )
+})
+
+# Also grep file CONTENTS for the cache filename and common pull signatures,
+# because a generator might have a totally generic name (e.g. build-data.ts).
+$contentHits = @()
+foreach ($rel in $tracked) {
+    if ($rel -notmatch '(?i)\.(ts|tsx|js|cjs|mjs|py)$') { continue }
+    $full = Join-Path $Repo ($rel -replace '/', '\')
+    if (-not (Test-Path -LiteralPath $full -PathType Leaf)) { continue }
+    try {
+        $text = Get-Content -LiteralPath $full -Raw -ErrorAction Stop
+    } catch { continue }
+    if ($text -match '(?i)bars-daily' -or
+        $text -match '(?i)(get_historical|historical_?bars|getBars|fetchBars|pullBars|writeFile.*bars|daily.*bars)' -or
+        $text -match '(?i)(robinhood).*(bar|history|quote|candle)') {
+        $contentHits += $rel
+    }
+}
+
+$allCandidates = @(($generatorCandidates + $contentHits) | Sort-Object -Unique)
+$missedGenerators = @($allCandidates | Where-Object { $selected -notcontains $_ })
+
+if ($allCandidates.Count -eq 0) {
+    Write-Host "  WARNING: found NO obvious bar-pull generator anywhere in the tree." -ForegroundColor Yellow
+    Write-Host "  The agent may be unable to EXTEND bars to 2020. Confirm how bars-daily.json" -ForegroundColor Yellow
+    Write-Host "  was produced (it may be an untracked script or a manual MCP session)." -ForegroundColor Yellow
+} else {
+    Write-Host "  Candidate generator files found:" -ForegroundColor Green
+    $allCandidates | ForEach-Object {
+        $inBundle = if ($selected -contains $_) { 'IN BUNDLE' } else { 'MISSING FROM BUNDLE' }
+        $color = if ($selected -contains $_) { 'Green' } else { 'Red' }
+        Write-Host ("    [{0}] {1}" -f $inBundle, $_) -ForegroundColor $color
+    }
+    if ($missedGenerators.Count -gt 0) {
+        Write-Host ''
+        Write-Host "  >>> ACTION: these look like data generators but are NOT in the bundle." -ForegroundColor Red
+        Write-Host "  >>> Add them to `$always in make_optionscope_research_slice.ps1 before zipping," -ForegroundColor Red
+        Write-Host "  >>> or the agent cannot extend the bar cache." -ForegroundColor Red
+    }
+}
+
+# --- GAP CHECK 2: replay harness entrypoint (scaffold imports runReplay) -----
+Write-Host ''
+Write-Host "=== REPLAY HARNESS CHECK (scaffold imports 'runReplay') ===" -ForegroundColor Cyan
+$replayFiles = @($selected | Where-Object { $_ -match '(?i)replay' })
+if ($replayFiles.Count -eq 0) {
+    Write-Host "  WARNING: no replay file in bundle. walk-forward.ts imports from './replay'." -ForegroundColor Yellow
+} else {
+    $replayFiles | ForEach-Object { Write-Host "  $_" -ForegroundColor Green }
+    # Does any of them actually EXPORT a callable runReplay, or is it CLI-only?
+    $hasCallable = $false
+    foreach ($rel in $replayFiles) {
+        $full = Join-Path $Repo ($rel -replace '/', '\')
+        if (-not (Test-Path -LiteralPath $full -PathType Leaf)) { continue }
+        $text = Get-Content -LiteralPath $full -Raw -ErrorAction SilentlyContinue
+        if ($text -match '(?i)export.*(function|const)\s+runReplay' -or $text -match '(?i)export.*runReplay') {
+            $hasCallable = $true
+            Write-Host "    -> exports runReplay: $rel" -ForegroundColor Green
+        }
+    }
+    if (-not $hasCallable) {
+        Write-Host "  >>> NOTE: no export named 'runReplay' found. The harness may be CLI-only" -ForegroundColor Yellow
+        Write-Host "  >>> (REPLAY.bat). Agent must expose a callable wrapper (see agent note item 3)." -ForegroundColor Yellow
+    }
+}
+
+# --- GAP CHECK 3: scoreMeanReversion home -----------------------------------
+Write-Host ''
+Write-Host "=== scoreMeanReversion CHECK ===" -ForegroundColor Cyan
+$smrFiles = @()
+foreach ($rel in $selected) {
+    $full = Join-Path $Repo ($rel -replace '/', '\')
+    if (-not (Test-Path -LiteralPath $full -PathType Leaf)) { continue }
+    $text = Get-Content -LiteralPath $full -Raw -ErrorAction SilentlyContinue
+    if ($text -match '(?i)scoreMeanReversion') { $smrFiles += $rel }
+}
+if ($smrFiles.Count -eq 0) {
+    Write-Host "  >>> WARNING: 'scoreMeanReversion' not found in any bundled file." -ForegroundColor Red
+    Write-Host "  >>> The strategy under test is missing. Check runner/sessions.ts is included." -ForegroundColor Red
+} else {
+    $smrFiles | ForEach-Object { Write-Host "  found in: $_" -ForegroundColor Green }
+}
+
+# --- GAP CHECK 4: are required data files TRACKED? --------------------------
+# The bundle only copies tracked files. An untracked extended cache or pull
+# script is on disk but WON'T be zipped.
+Write-Host ''
+Write-Host "=== TRACKED-STATUS OF KEY DATA FILES ===" -ForegroundColor Cyan
+$keyData = @(
+    'data/bars-daily.json',
+    'docs/ota/LESSONS_FROM_YOUR_TRADES.md',
+    'src/knowledge/catalog/ingested/rh_history_lessons.json'
+)
+foreach ($k in $keyData) {
+    if ($tracked -contains $k) {
+        Write-Host "  [TRACKED]   $k" -ForegroundColor Green
+    } else {
+        $onDisk = Test-Path -LiteralPath (Join-Path $Repo ($k -replace '/', '\')) -PathType Leaf
+        if ($onDisk) {
+            Write-Host "  [UNTRACKED] $k  (on disk but WILL NOT be bundled)" -ForegroundColor Red
+        } else {
+            Write-Host "  [ABSENT]    $k  (not found at all)" -ForegroundColor Yellow
+        }
+    }
+}
+
+# --- Dirty working tree warning --------------------------------------------
+Write-Host ''
+Write-Host "=== WORKING TREE ===" -ForegroundColor Cyan
+$porcelain = @(git -C $Repo status --porcelain=v1)
+if ($porcelain.Count -eq 0) {
+    Write-Host "  Clean. commit_sha.txt will fully describe the bundle state." -ForegroundColor Green
+} else {
+    Write-Host "  $($porcelain.Count) uncommitted change(s). The SHA alone won't capture these;" -ForegroundColor Yellow
+    Write-Host "  the bundle records status_porcelain.txt, but for a fundable result you want" -ForegroundColor Yellow
+    Write-Host "  to run against a COMMITTED state so repo_commit_sha is meaningful." -ForegroundColor Yellow
+    $porcelain | Select-Object -First 15 | ForEach-Object { Write-Host "    $_" }
+    if ($porcelain.Count -gt 15) { Write-Host "    ... (+$($porcelain.Count - 15) more)" }
+}
+
+Write-Host ''
+Write-Host "Dry run complete. Nothing was copied or zipped." -ForegroundColor Cyan
